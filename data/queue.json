@@ -1,0 +1,271 @@
+[
+ {
+  "id": "ant",
+  "ja": "クロオオアリ（働きアリ）",
+  "sci": "Camponotus japonicus",
+  "group": "insect",
+  "lifespan": {
+   "typical": [
+    1,
+    2
+   ],
+   "max": 28,
+   "note": "働きアリは平均1〜2年。28年は女王の記録。ゲームで引くのはほぼ働きアリ"
+  },
+  "maturity": null,
+  "hint": "働きアリとして。巣の仲間を育て、巣が新しい女王を送り出すことが子孫。"
+ },
+ {
+  "id": "bee",
+  "ja": "ミツバチ（働きバチ）",
+  "sci": "Apis mellifera",
+  "group": "insect",
+  "lifespan": {
+   "typical_summer": [
+    0.04,
+    0.12
+   ],
+   "typical_winter_max": 0.38,
+   "max": 8,
+   "note": "夏の働きバチは2〜6週、冬生まれは最長20週程度。8年は女王の記録"
+  },
+  "maturity": null,
+  "hint": "働きバチとして。巣の仲間を育て、巣が分蜂して新しい群れを出すことが子孫。"
+ },
+ {
+  "id": "mosquito",
+  "ja": "アカイエカ",
+  "sci": "Culex pipiens pallens",
+  "group": "insect",
+  "lifespan": {
+   "typical": 0.064,
+   "range": [
+    0.003,
+    0.25
+   ],
+   "note": "雌成虫の寿命の中央値23.4日（範囲1〜92日、実験室中心）。野外の冬季調査では、吸血と糖があると最長14週"
+  },
+  "maturity": null,
+  "hint": "雌。日本の町。水たまりで幼虫→成虫→吸血して産卵をくり返す。"
+ },
+ {
+  "id": "swallowtail",
+  "ja": "アゲハ（ナミアゲハ）",
+  "sci": "Papilio xuthus",
+  "group": "insect",
+  "lifespan": {
+   "typical": null,
+   "note": "成虫の寿命は未収集。本州では年2〜5回発生"
+  },
+  "maturity": null,
+  "hint": "日本の町・里山。ミカン類の葉で幼虫→蛹→成虫。年に数回発生。"
+ },
+ {
+  "id": "krill",
+  "ja": "ナンキョクオキアミ",
+  "sci": "Euphausia superba",
+  "group": "marine_crustacean",
+  "lifespan": {
+   "typical": null,
+   "max": [
+    5,
+    6
+   ],
+   "note": "5〜6年を超えるという推定（インド洋側の調査）。初期の説は2〜4年"
+  },
+  "maturity": null,
+  "hint": "南極海。群れで植物プランクトンを食べ、夏に産卵。"
+ },
+ {
+  "id": "copepod",
+  "ja": "カイアシ類（カラヌス）",
+  "sci": "Calanus finmarchicus",
+  "group": "marine_crustacean",
+  "lifespan": {
+   "typical": null,
+   "note": "多くの海域で年2世代以上 → 寿命は1年未満と推定（数値は未収集）"
+  },
+  "maturity": null,
+  "hint": "北大西洋。季節で深い海と浅い海を行き来する。"
+ },
+ {
+  "id": "tuna",
+  "ja": "クロマグロ",
+  "sci": "Thunnus orientalis",
+  "group": "fish",
+  "lifespan": {
+   "typical": null,
+   "max": 15,
+   "note": "AnAgeの最大寿命（大西洋種）"
+  },
+  "maturity": {
+   "value": 3.75
+  },
+  "hint": "太平洋。南西諸島・日本海で生まれ、太平洋を回遊して大きく育つ。"
+ },
+ {
+  "id": "octopus",
+  "ja": "ミズダコ",
+  "sci": "Enteroctopus dofleini",
+  "group": "mollusc",
+  "lifespan": {
+   "typical": [
+    3,
+    5
+   ]
+  },
+  "maturity": null,
+  "hint": "北海道の沿岸。浮遊期→岩場の巣穴で暮らす→雌は一生に一度、岩穴で卵を守り、ふ化を見届けて死ぬ。"
+ },
+ {
+  "id": "humpback",
+  "ja": "ザトウクジラ",
+  "sci": "Megaptera novaeangliae",
+  "group": "mammal",
+  "lifespan": {
+   "typical": null,
+   "max": 95
+  },
+  "maturity": {
+   "value": 4.5,
+   "note": "AnAgeは4.5年。アラスカ南東部では75%超の雌が13歳までに初産"
+  },
+  "hint": "北太平洋。夏は北の海で食べ、冬は南の暖かい海で子を産む。"
+ },
+ {
+  "id": "dragonfly",
+  "ja": "アキアカネ",
+  "sci": "Sympetrum frequens",
+  "group": "insect",
+  "lifespan": {
+   "typical": 1,
+   "max": 1.2,
+   "note": "年1世代。秋に産まれた卵が半年ほど越冬し、ヤゴ期間3〜6か月、5月末〜6月下旬に羽化。成虫は11月まで見られ、12月上旬まで生き延びるものもいる（Wikipedia）。max は卵の時期を含めた仮の値"
+  },
+  "maturity": {
+   "value": 0.95,
+   "note": "夏は未熟な成虫のまま山で過ごし、秋に平地へ戻って成熟・産卵する（卵から数えて約1年）"
+  },
+  "hint": "日本の田んぼ。夏は山へ上がり、秋に平地へ戻って産卵。"
+ },
+ {
+  "id": "earthworm",
+  "ja": "フトミミズの仲間",
+  "sci": "Amynthas spp.（フトミミズ科 Megascolecidae）",
+  "group": "annelid",
+  "lifespan": {
+   "typical": [
+    1,
+    1.2
+   ],
+   "max": 1.2,
+   "note": "一年生。夏〜秋に卵包（まゆ）を産み、卵包で冬を越して4〜5月に孵る。7月ごろ大人になり、11月の最初の強い霜で大人はほぼ全滅（Nouri-Aiin et al. 2025 が日本と北米の観察として記述）。数字は卵包が産まれてからの年数"
+  },
+  "maturity": {
+   "value": 0.8,
+   "range": [
+    0.75,
+    0.85
+   ],
+   "note": "孵化（4〜5月）から約2か月で成熟（7月）。卵包の期間（夏秋〜翌春、約半年以上）を足した値"
+  },
+  "hint": "日本の畑・林の土。卵包で冬を越す一年生。"
+ },
+ {
+  "id": "heron",
+  "ja": "アオサギ",
+  "sci": "Ardea cinerea",
+  "group": "bird",
+  "lifespan": {
+   "typical": [
+    2,
+    5
+   ],
+   "max": 37.5,
+   "note": "繁殖年齢に達した鳥の平均余命は約5年（BTO）。足環の最長記録は英国で23年9か月、AnAgeの最大は37.5年"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "BTO: 初繁殖はふつう2歳"
+  },
+  "hint": "日本の川・田んぼ。集団で巣を作る（コロニー）。"
+ },
+ {
+  "id": "jellyfish",
+  "ja": "ミズクラゲ",
+  "sci": "Aurelia coerulea（旧 Aurelia aurita）",
+  "group": "cnidarian",
+  "lifespan": {
+   "typical": [
+    1,
+    1.5
+   ],
+   "max": 2.8,
+   "note": "ポリプで約半年〜（冬に分裂してエフィラを出す）＋クラゲの姿で4か月〜2年弱（Suzuki et al. 2019 が引く文献値）。ポリプは何年も生き続けることがあるが、ここでは1つのエフィラ（自分）の一生として数える"
+  },
+  "maturity": {
+   "value": 1,
+   "range": [
+    0.9,
+    1.1
+   ],
+   "note": "夏〜秋にポリプとして着底→冬〜春にストロビラ→春（3〜4月）にエフィラ放出→50〜60日で傘10cm（徳島水研）→夏に成熟"
+  },
+  "hint": "日本の内湾。1つのエフィラとして春に放出され、夏に成熟して幼生を放ち、秋〜冬に弱って終わる。流れに流される。"
+ },
+ {
+  "id": "orca",
+  "ja": "シャチ",
+  "sci": "Orcinus orca",
+  "group": "mammal",
+  "lifespan": {
+   "typical": [
+    19,
+    30
+   ],
+   "max": 90,
+   "note": "平均余命は雌30年・雄19年（1996〜2004年。増加期は雌46・雄31年）。最大は雌で約80年、雄60〜70年（Olesiuk et al. 2005）。AnAgeは90年"
+  },
+  "maturity": {
+   "value": 15,
+   "note": "雌の初産は平均15.4歳（範囲10〜21）、雄の性成熟13歳。AnAgeは雌10.4歳"
+  },
+  "hint": "カナダ・ブリティッシュコロンビアの定住型。母系の群れで暮らす。"
+ },
+ {
+  "id": "snake",
+  "ja": "アオダイショウ",
+  "sci": "Elaphe climacophora",
+  "group": "herp",
+  "lifespan": {
+   "typical": null,
+   "max": 13.1,
+   "note": "13.1年はAnAgeの飼育下記録（標本少）。野生の寿命は未収集。近縁のハイイロネズミヘビは成長モデルから最長25〜30年と推定されている"
+  },
+  "maturity": {
+   "value": 3.5,
+   "range": [
+    3,
+    4
+   ],
+   "note": "3〜4年で成熟（世界大百科事典）"
+  },
+  "hint": "日本の里山・農村。夏に卵からかえり、ネズミや小鳥の卵を食べて育つ。冬眠。初夏に交尾、夏に産卵。人家の近くにも住む。"
+ },
+ {
+  "id": "spider",
+  "ja": "ジョロウグモ",
+  "sci": "Trichonephila clavata",
+  "group": "arachnid",
+  "lifespan": {
+   "typical": 1,
+   "max": 1.2,
+   "note": "年1世代。卵で越冬し4〜5月に孵化、雌は3〜5か月で成体、冬の寒さで死ぬ（孵化から約6〜8か月）"
+  },
+  "maturity": {
+   "value": 0.85,
+   "note": "秋（8〜9月）に成体になり、10〜11月に産卵（卵から数えて約1年弱）"
+  },
+  "hint": "日本の里山。卵で越冬、春にかえり、秋に網を張って成体、産卵して冬に死ぬ。"
+ }
+]

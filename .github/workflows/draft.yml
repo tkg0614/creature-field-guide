@@ -1,0 +1,61 @@
+# 素材の表を、ローカルAI（Ollama）で無人で下書きする。公開リポジトリなので標準の機械は無料・無制限。
+# 1回で queue のまだの種を最大 N 種、種ごとに別の機械で同時に回す（1種 約30〜90分）。
+name: draft sheets
+on:
+  workflow_dispatch:
+    inputs:
+      ids: { description: "種の id（空白区切り。空なら queue のまだの種から）", required: false, default: "" }
+      max: { description: "最大何種", required: false, default: "8" }
+      model: { description: "Ollama のモデル", required: false, default: "gemma2:9b" }
+  schedule:
+    - cron: "17 18 * * *"   # 毎日 日本の深夜3:17
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.p.outputs.ids }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          node -e '
+            const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean), max=+(process.env.MAX||8);
+            const q=JSON.parse(fs.readFileSync("data/queue.json","utf8")).map(x=>x.id);
+            const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};
+            const ids=(want.length?want:q.filter(id=>["none","draft","draft-ng"].includes(st(id)))).slice(0,max);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,`ids=${JSON.stringify(ids)}\n`); console.log(ids);'
+        env: { IDS: "${{ inputs.ids }}", MAX: "${{ inputs.max || 8 }}" }
+  draft:
+    needs: plan
+    if: needs.plan.outputs.ids != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        id: ${{ fromJson(needs.plan.outputs.ids) }}
+    env:
+      MODEL: ${{ inputs.model || 'gemma2:9b' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with: { path: ~/.ollama/models, key: "ollama-${{ inputs.model || 'gemma2:9b' }}" }
+      - name: Ollama を入れて起動
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh >/dev/null
+          (ollama serve >/tmp/ollama.log 2>&1 &) ; sleep 5
+          ollama pull "$MODEL" >/dev/null 2>&1
+      - name: 資料を取ってきて下書きする
+        run: |
+          node tools/fetch.js ${{ matrix.id }}
+          node tools/draft.js ${{ matrix.id }} --tries 4 || true
+          node tools/check.js ${{ matrix.id }} || true
+      - name: 送る（ほかの種と同時に push するので、ぶつかったら取り直して再挑戦）
+        run: |
+          git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
+          git add sheets/${{ matrix.id }}.json sources/${{ matrix.id }}
+          git diff --cached --quiet && exit 0
+          git commit -q -m "draft: ${{ matrix.id }}（${MODEL}）"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep $((i*7)); done

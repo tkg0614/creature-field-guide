@@ -7,8 +7,8 @@ on:
       ids: { description: "種の id（空白区切り。空なら queue のまだの種から）", required: false, default: "" }
       max: { description: "最大何種", required: false, default: "8" }
       model: { description: "Ollama のモデル", required: false, default: "gemma2:9b" }
-  schedule:
-    - cron: "17 18 * * *"   # 毎日 日本の深夜3:17
+  # schedule:  毎晩の自動は、下書きの質を確かめてから入れる（いまは手動だけ）
+  #   - cron: "17 18 * * *"
 permissions:
   contents: write
 jobs:

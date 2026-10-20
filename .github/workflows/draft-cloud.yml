@@ -10,6 +10,8 @@ on:
       max: { description: "最大何種", required: false, default: "4" }
   schedule:
     - cron: "3 20 * * *"   # 毎日 日本の朝5:03（Gemini の無料枠は日本の16〜17時に戻り、朝まで使わずに残っている）
+    - cron: "33 21 * * *"  # 控え 6:33（GitHub は定時の起動を落とすことがある。枠が無ければすぐ終わる）
+    - cron: "33 23 * * *"  # 控え 8:33
 permissions:
   contents: write
 concurrency: { group: draft, cancel-in-progress: false }

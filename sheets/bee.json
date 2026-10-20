@@ -1,0 +1,802 @@
+{
+ "id": "bee",
+ "ja": "ミツバチ",
+ "sci": "Apis mellifera",
+ "status": "checked",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "長野県安曇野の農村",
+  "geo": "Azumino",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "brood_cell",
+   "ja": "育児房",
+   "danger": 0,
+   "cover": true,
+   "about": "六角形のロウの部屋。卵から幼虫、蛹へと静かに育つ。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.304,
+   "lon": 137.905
+  },
+  {
+   "id": "brood_comb",
+   "ja": "巣の中心部",
+   "danger": 0,
+   "cover": true,
+   "about": "幼虫が並ぶ巣板。仲間の世話や掃除、体温での保温に励む。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.304,
+   "lon": 137.937
+  },
+  {
+   "id": "honey_storage",
+   "ja": "貯蜜房",
+   "danger": 0,
+   "cover": true,
+   "about": "蜜や花粉を蓄える場所。羽ばたきで風を送り、蜜を濃縮する。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.332,
+   "lon": 137.925
+  },
+  {
+   "id": "hive_entrance",
+   "ja": "巣門",
+   "danger": 2,
+   "cover": false,
+   "about": "外の世界への出入口。侵入を狙うスズメバチや外敵を見張る。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.321,
+   "lon": 137.893
+  },
+  {
+   "id": "meadow",
+   "ja": "花咲く草原",
+   "danger": 2,
+   "cover": false,
+   "about": "シロツメクサやレンゲが広がる。花々を巡り、蜜と花粉を集める。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.304,
+   "lon": 137.873
+  },
+  {
+   "id": "orchard",
+   "ja": "果樹の林",
+   "danger": 2,
+   "cover": false,
+   "about": "リンゴの花が咲く樹上。風に煽られやすく、鳥の視線にさらされる。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.276,
+   "lon": 137.885
+  },
+  {
+   "id": "water_edge",
+   "ja": "水たまりのほとり",
+   "danger": 1,
+   "cover": false,
+   "about": "巣を冷やすための水を飲む。滑りやすく、水面に落ちると溺れる。",
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse",
+    "adult"
+   ],
+   "lat": 36.287,
+   "lon": 137.917
+  }
+ ],
+ "start": {
+  "place": "brood_cell",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "長野県安曇野の農村",
+  "lon0": 137.854,
+  "lon1": 137.956,
+  "lat0": 36.351,
+  "lat1": 36.257,
+  "k": 4902,
+  "labels": [
+   [
+    36.34536,
+    137.905,
+    "長野県安曇野の農村"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "brood_cell",
+   "hive_entrance"
+  ],
+  [
+   "brood_cell",
+   "water_edge"
+  ],
+  [
+   "brood_comb",
+   "water_edge"
+  ],
+  [
+   "brood_comb",
+   "honey_storage"
+  ],
+  [
+   "hive_entrance",
+   "honey_storage"
+  ],
+  [
+   "hive_entrance",
+   "meadow"
+  ],
+  [
+   "meadow",
+   "orchard"
+  ],
+  [
+   "orchard",
+   "water_edge"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "mm",
+  "start": 1.5
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "遠くの花へ飛ぶ・向かい風を突っ切る時に効く"
+  },
+  "sense": {
+   "ja": "ダンスの勘",
+   "use": "蜜源の方角や距離を仲間に伝える・花の匂いを嗅ぎ分ける時に効く"
+  },
+  "forage": {
+   "ja": "集蜜力",
+   "use": "花蜜を胃に吸い上げ・花粉団子を脚につける時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "幼虫",
+   "days": 6,
+   "hunger": 8,
+   "grow": 3
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.016,
+   "days": 12,
+   "hunger": 0,
+   "grow": 7.5,
+   "goal": "さなぎになる",
+   "enter": "育児房に蜜蝋の蓋がされた。暗がりの中で体が作り変わっていく。"
+  },
+  {
+   "id": "nurse",
+   "ja": "内勤バチ",
+   "fromAge": 0.05,
+   "days": 18,
+   "hunger": 10,
+   "grow": 1,
+   "goal": "巣の中で働く",
+   "enter": "蓋をかじり破って外へ出た。巣房を掃除し、幼虫に餌を配る。"
+  },
+  {
+   "id": "adult",
+   "ja": "外勤バチ",
+   "fromAge": 0.1,
+   "days": 25,
+   "hunger": 12,
+   "grow": 0,
+   "adult": true,
+   "goal": "花へ飛び立つ",
+   "enter": "巣門から青空へと飛び立った。野原の花々を目指す。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.08,
+   0.15
+  ],
+  "text": "すり切れた羽で、もう飛ぶことができなかった。草の上で静かに冷たくなっていった。"
+ },
+ "breeding": {
+  "ja": "群れで分蜂する",
+  "ds": "春の晴れた日に、女王や仲間とともに巣を飛び立ち、新しい群れを作る",
+  "months": [
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "hive_entrance",
+   "orchard",
+   "meadow"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   2
+  ],
+  "many": 3,
+  "label": {
+   "ja": "分蜂した群れ",
+   "unit": "群",
+   "child": "新しい巣の働きバチ"
+  },
+  "ok": "唸るような羽音とともに巣立ち、新天地に群れを下ろした。",
+  "ng": "天候が崩れ、分蜂の機を逃した。",
+  "goal1": "分蜂する",
+  "goal2": "群れを2群に分ける"
+ },
+ "foods": [
+  {
+   "id": "brood_food",
+   "ja": "育児房で給餌される",
+   "name": "幼虫の餌",
+   "ds": "働きバチから口移しで花粉や蜜をもらう",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "brood_cell"
+   ],
+   "rich": [
+    "brood_cell"
+   ],
+   "ok": "働きバチが運んできた液状の餌を、夢中で飲み干した。",
+   "full": 30
+  },
+  {
+   "id": "honey_pollen",
+   "ja": "貯蜜と花粉を食べる",
+   "name": "ハチミツと花粉",
+   "ds": "巣房に蓄えられたハチミツや花粉を食べる",
+   "stages": [
+    "nurse",
+    "adult"
+   ],
+   "places": [
+    "honey_storage",
+    "brood_comb"
+   ],
+   "rich": [
+    "honey_storage"
+   ],
+   "ok": "蓄えられた甘いハチミツをなめて、元気を補った。",
+   "full": 28
+  },
+  {
+   "id": "flower_nectar",
+   "ja": "花の蜜を吸う",
+   "name": "花蜜",
+   "ds": "咲き誇る花々を巡り、蜜を吸い上げる",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "meadow",
+    "orchard"
+   ],
+   "rich": [
+    "meadow"
+   ],
+   "ok": "花の中に口吻を伸ばし、あふれる甘い蜜を吸った。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "waggle_dance",
+   "ja": "8の字ダンスを踊る",
+   "ds": "2手のあいだ、採餌の効率が上がる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "巣板の上で体を小刻みに揺らし、蜜源の方角と距離を仲間に伝えた。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "varroa_mite",
+   "ja": "ミツバチヘギイタダニ",
+   "kind": "arachnid",
+   "places": [
+    "brood_cell",
+    "brood_comb"
+   ],
+   "stages": [
+    "larva",
+    "pupa",
+    "nurse"
+   ],
+   "sev": 2,
+   "texts": [
+    "赤褐色の小さなダニが、体に吸いついている。",
+    "巣房のすき間から、平たい虫が這い寄ってくる。"
+   ]
+  },
+  {
+   "id": "wax_moth",
+   "ja": "ハチノスツヅリガ",
+   "kind": "insect",
+   "places": [
+    "brood_cell",
+    "brood_comb",
+    "honey_storage"
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "白い糸を吐きながら、蛾の幼虫が巣板を食い破ってくる。",
+    "巣房の底が、幼虫の糞と糸で覆われていく。"
+   ],
+   "again": [
+    [
+     "また、巣板の隙間にあの太いツヅリガの幼虫がいる。巣を食い荒らしている。"
+    ],
+    [
+     "糸を張りめぐらせたツヅリガが、再び巣房に迫る。"
+    ]
+   ],
+   "bye": "羽化して巣房を出た。巣板の底を這う影から逃れた。"
+  },
+  {
+   "id": "asian_giant_hornet",
+   "ja": "オオスズメバチ",
+   "kind": "insect",
+   "places": [
+    "hive_entrance",
+    "meadow",
+    "orchard"
+   ],
+   "stages": [
+    "nurse",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "重い羽音を響かせ、巨大なスズメバチが巣門へ迫る。",
+    "太い大あごを打ち鳴らし、仲間を噛み砕いていく。"
+   ],
+   "again": [
+    [
+     "また、あの胸の黒いオオスズメバチだ。巣門の前を旋回している。"
+    ],
+    [
+     "胸の黒いオオスズメバチが、再び大あごを鳴らして突進してくる。"
+    ]
+   ],
+   "bye": "晩秋の冷え込みが巣を包み、大あごを鳴らす影は二度と現れなくなった。"
+  },
+  {
+   "id": "yellow_hornet",
+   "ja": "キイロスズメバチ",
+   "kind": "insect",
+   "places": [
+    "hive_entrance",
+    "meadow",
+    "orchard"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "ホバリングしながら、帰巣する仲間を空中で捕らえる。",
+    "黄色い影が、花の上を素早くかすめ飛ぶ。"
+   ]
+  },
+  {
+   "id": "praying_mantis",
+   "ja": "オオカマキリ",
+   "kind": "insect",
+   "places": [
+    "meadow",
+    "orchard"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "草の葉にまぎれ、鎌のような前脚を構えている。",
+    "花に降り立った瞬間、緑の腕が素早く伸びてくる。"
+   ],
+   "again": [
+    [
+     "また、あの右鎌の欠けたカマキリだ。アザミの花の後ろで待ち構えている。"
+    ],
+    [
+     "右鎌の欠けたカマキリが、同じ花の上でじっと潜んでいる。"
+    ]
+   ],
+   "bye": "霜が降りて草が枯れ果て、待ち伏せる緑の影も消え去った。"
+  },
+  {
+   "id": "crab_spider",
+   "ja": "ハナグモ",
+   "kind": "arachnid",
+   "places": [
+    "meadow",
+    "orchard"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "花びらと同じ白い体で、前脚を広げて待ち構えている。",
+    "蜜を吸おうとした瞬間、花の中心から白いクモが飛びついてくる。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "orchard",
+    "meadow"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "枝のあいだに、金色の粘る網が張られている。",
+    "羽が糸に絡まり、黄色と黒の縞模様のクモが迫ってくる。"
+   ]
+  },
+  {
+   "id": "dragonfly",
+   "ja": "シオカラトンボ",
+   "kind": "insect",
+   "places": [
+    "water_edge",
+    "meadow"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "fast": true,
+   "texts": [
+    "水辺の上空から、素早い旋回で飛びかかってくる。",
+    "硬い脚で抱えこまれ、空中で噛みつかれる。"
+   ]
+  },
+  {
+   "id": "swallow",
+   "ja": "ツバメ",
+   "kind": "bird",
+   "places": [
+    "meadow",
+    "orchard",
+    "water_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "低空を滑空しながら、飛翔中の仲間を鋭いくちばしでくわえ去る。",
+    "青黒い影が頭上をかすめ、風圧が羽を揺らす。"
+   ]
+  },
+  {
+   "id": "frog",
+   "ja": "トノサマガエル",
+   "kind": "amphibian",
+   "places": [
+    "water_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "水を飲みに降りた足元で、泥色の体が跳ねる。",
+    "長い舌が素早く伸び、水際で引きずりこまれそうになる。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "農薬散布",
+   "kind": "human",
+   "places": [
+    "orchard",
+    "meadow"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "果樹の間に、白い霧状の薬剤が吹きつけられていく。",
+    "花粉に混ざった異臭が、あたり一面に立ちこめる。"
+   ],
+   "lose": "散布された薬液を全身に浴び、麻痺した羽に傷を負った。",
+   "fleeJa": "霧の届かない上空へ逃げのびる",
+   "hideJa": "葉の裏に張りついてやり過ごす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "春、群れの約３分の２が古い女王とともに出ていく。同行するか、残るか",
+   "stages": [
+    "nurse",
+    "adult"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "古い女王の分蜂群についていく",
+     "ds": "新しい巣を拓く。新居が決まるまで野宿で風雨にさらされる",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "say": "古い女王の匂いを追い、大群となって青空へ飛び出した。",
+     "chip": "分蜂についていく"
+    },
+    {
+     "ja": "住み慣れた元の巣に残る",
+     "ds": "既存の巣と蜜の蓄えがある。新女王の誕生まで巣を支える",
+     "fx": {
+      "food": 1,
+      "danger": -1
+     },
+     "goto": "brood_comb",
+     "say": "残った幼虫の世話を続け、妹女王の羽化を待った。",
+     "chip": "元の巣に残る"
+    }
+   ]
+  },
+  {
+   "q": "真夏の日差しで巣の温度が上がっている。どう動くか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "水たまりへ水を汲みに行く",
+     "ds": "気化熱で巣を冷却できる。水辺には溺れる危険がある",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "water_edge",
+     "say": "水たまりの湿った土にとまり、口いっぱいに水を吸い上げた。",
+     "chip": "水を汲む"
+    },
+    {
+     "ja": "巣門で羽を羽ばたかせて風を送る",
+     "ds": "巣の換気を助け熱を逃がす。体力を激しく消耗する",
+     "fx": {
+      "kids": 1,
+      "food": -1
+     },
+     "goto": "hive_entrance",
+     "say": "巣門に整列し、外へ向けて懸命に羽を旋回させた。",
+     "chip": "扇風する"
+    }
+   ]
+  },
+  {
+   "q": "外勤バチとして蜜を集めに出る。どこへ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "一斉に開花した果樹の林へ飛ぶ",
+     "ds": "大量の蜜と花粉を一度に集められる。天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "orchard",
+     "say": "花咲くリンゴの梢へ潜りこみ、花粉だんごを太ももに丸めた。",
+     "chip": "果樹の林へ"
+    },
+    {
+     "ja": "風が吹き抜ける草原へ飛ぶ",
+     "ds": "花は点在して手間がかかるが、見晴らしがよく安全である",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "meadow",
+     "say": "クローバーの香る草地を低く飛び、小さな花から蜜を吸った。",
+     "chip": "草原へ"
+    }
+   ]
+  },
+  {
+   "q": "秋が深まり冷え込んできた。冬を越す準備をどうするか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "巣の中心で仲間と身を寄せ合う",
+     "ds": "蜂球を作って熱を保ち、越冬の生存率を高める",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "brood_comb",
+     "say": "仲間とぎっしり体を密着させ、女王を中心に抱きこんだ。",
+     "chip": "蜂球を作る"
+    },
+    {
+     "ja": "寒風の中、最後の蜜を探して飛ぶ",
+     "ds": "冬の備蓄を増やせる。寒さで筋肉が動かなくなる危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "meadow",
+     "say": "冷える空気をついて飛び、枯れ残った野花へ向かった。",
+     "chip": "最後の採餌"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "オオスズメバチが巣門を襲い、仲間とともに針を構えて包囲した。",
+   "full": -15
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "nurse",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "氷点下の冷気が巣に差しこみ、羽の筋肉を震わせて熱を生み出した。",
+   "full": -10
+  },
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "nurse"
+   ],
+   "p": 0.2,
+   "say": "女王が産み落とした卵が次々と孵り、育児房へ royal jelly と花粉を運び続けた。",
+   "full": -5
+  }
+ ],
+ "lead": "育児房の六角形の底で生まれ、幼虫たちを世話し、花咲く野へと蜜を探しに出る。群れの一員として、新たな群れを送り出せるか。",
+ "texts": {
+  "move": "{to}へ羽ばたいていった。",
+  "fleeJa": "羽音を立てて逃げる",
+  "restJa": "巣板のすき間で休む",
+  "watchJa": "巣門で外の気配をうかがう",
+  "lieJa": "巣の暗がりに身を寄せる",
+  "lastMemory": "初夏の柔らかな光のなか、群れとともに空へ舞い上がった日を思い出した。"
+ },
+ "intro": [
+  "薄暗い育児房の底で、白い小さな幼虫として孵った。",
+  "まわりには無数の六角形の部屋が並び、内勤バチたちが絶え間なく行き交っている。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "新しい群れが旅立った",
+   "line": "育て上げた仲間たちが分蜂し、新たな巣へと飛び立った。",
+   "mem": "大空を埋め尽くす羽音のなか、仲間たちと舞い上がった熱気を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "花咲く草原で、花粉まみれになって蜜を吸った昼下がりを思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "分蜂を見届けられなかった",
+  "line": "群れが新たな分蜂を果たす前に、力尽きた。"
+ },
+ "facts": [
+  {
+   "quote": "Western honey bee colonies reproduce through a process called \"swarming\".",
+   "ja": "セイヨウミツバチの群れは「分蜂」と呼ばれる過程を通じて繁殖する。"
+  },
+  {
+   "quote": "In most climates, western honey bees swarm in the spring and early summer, when there is an abundance of blooming flowers from which to collect nectar and pollen.",
+   "ja": "多くの地域では、蜜や花粉を集めるための花が豊富に咲き乱れる春から初夏にかけて分蜂を行う。"
+  },
+  {
+   "quote": "For the first 10 days of their lives, worker bees clean the hive and feed the larvae.",
+   "ja": "働きバチは羽化して最初の10日間、巣を掃除し幼虫に餌を与える。"
+  }
+ ]
+}

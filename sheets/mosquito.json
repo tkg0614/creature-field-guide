@@ -1,0 +1,681 @@
+{
+ "id": "mosquito",
+ "ja": "アカイエカ",
+ "sci": "Culex pipiens pallens",
+ "status": "checked",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "武蔵野の住宅街",
+  "geo": "Musashino, Tokyo",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "gutter",
+   "ja": "側溝の汚水溜まり",
+   "danger": 1,
+   "cover": true,
+   "about": "ヘドロが堆積した淀んだ水路。幼虫が有機物を食べて育つ。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.718,
+   "lon": 139.566
+  },
+  {
+   "id": "garden_grass",
+   "ja": "庭の茂み",
+   "danger": 2,
+   "cover": true,
+   "about": "昼間の直射日光を避けて葉裏に潜む。クモやカマキリが待ち受ける。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.718,
+   "lon": 139.598
+  },
+  {
+   "id": "underfloor",
+   "ja": "民家の縁の下",
+   "danger": 1,
+   "cover": true,
+   "about": "風が通らず湿り気のある暗がり。休息や冬越しの場になる。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.748,
+   "lon": 139.578
+  },
+  {
+   "id": "bedroom",
+   "ja": "民家の寝室",
+   "danger": 3,
+   "cover": false,
+   "about": "夜間に網戸の隙間から忍び込み、眠る人間を探す。叩かれる危険が最も高い。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.729,
+   "lon": 139.547
+  },
+  {
+   "id": "park_trees",
+   "ja": "公園の木立",
+   "danger": 2,
+   "cover": true,
+   "about": "ねぐらにいる野鳥を狙って吸血する。薄暮にはコウモリが飛び交う。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.703,
+   "lon": 139.54
+  },
+  {
+   "id": "water_tray",
+   "ja": "軒下の植木鉢の受け皿",
+   "danger": 0,
+   "cover": false,
+   "about": "天敵の魚がいない浅い水たまり。産卵に適するが、乾きやすい。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.688,
+   "lon": 139.578
+  }
+ ],
+ "start": {
+  "place": "gutter",
+  "month": 6,
+  "day": 10
+ },
+ "region": {
+  "ja": "武蔵野の住宅街",
+  "lon0": 139.523,
+  "lon1": 139.615,
+  "lat0": 35.765,
+  "lat1": 35.671,
+  "k": 5435,
+  "labels": [
+   [
+    35.75936,
+    139.56900000000002,
+    "武蔵野の住宅街"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "bedroom",
+   "gutter"
+  ],
+  [
+   "gutter",
+   "park_trees"
+  ],
+  [
+   "garden_grass",
+   "gutter"
+  ],
+  [
+   "garden_grass",
+   "underfloor"
+  ],
+  [
+   "gutter",
+   "underfloor"
+  ],
+  [
+   "bedroom",
+   "park_trees"
+  ],
+  [
+   "gutter",
+   "water_tray"
+  ],
+  [
+   "garden_grass",
+   "water_tray"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "mm",
+  "start": 1.2
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "風や叩打から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "気配の察知",
+   "use": "熱や呼気を嗅ぎ分け、危険を避ける時に効く"
+  },
+  "forage": {
+   "ja": "吸汁・吸血の技",
+   "use": "皮ふを刺して血を吸う、または糖液を吸う時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "幼虫（ボウフラ）",
+   "days": 8,
+   "hunger": 6,
+   "grow": 0.5
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹（オニボウフラ）",
+   "fromAge": 0.022,
+   "days": 3,
+   "hunger": 0,
+   "grow": 0.2,
+   "goal": "蛹になる",
+   "enter": "丸い頭の蛹になった。水面から呼吸管を出し、羽化を待つ。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.03,
+   "days": 30,
+   "hunger": 10,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "羽化して成虫になる",
+   "enter": "水面で薄い殻を脱ぎ、翅を広げた。血と糖を求めて夜の街へ飛び立つ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.064,
+   0.25
+  ],
+  "text": "翅が擦り切れ、飛ぶ力が尽きた。草陰に落ちて動かなくなった。"
+ },
+ "breeding": {
+  "ja": "水面に卵舟を産み落とす",
+  "ds": "吸血を終えたあと、よどんだ水面に寄り添わせるように卵を固めて産む",
+  "months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "places": [
+   "gutter",
+   "water_tray"
+  ],
+  "perYear": 4,
+  "kids": [
+   100,
+   250
+  ],
+  "many": 800,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった幼虫の一匹"
+  },
+  "ok": "水面に{born}個の卵をいかだ状に産み落とした。",
+  "ng": "水面が揺れてうまく留まれず、産み落とせなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を累計800個産む"
+ },
+ "foods": [
+  {
+   "id": "detritus",
+   "ja": "汚水の有機物をこし取る",
+   "name": "水中の有機物",
+   "ds": "口のブラシを動かし、水中の微生物やよごれを食べる",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "gutter",
+    "water_tray"
+   ],
+   "rich": [
+    "gutter"
+   ],
+   "ok": "水底の泥や微生物を口いっぱいに吸い込んだ。",
+   "full": 15
+  },
+  {
+   "id": "nectar",
+   "ja": "草花の蜜を吸う",
+   "name": "花の蜜・果汁",
+   "ds": "日常のエネルギー源として草木から糖分を補給する",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "garden_grass",
+    "park_trees"
+   ],
+   "rich": [
+    "garden_grass"
+   ],
+   "ok": "花にとまり、口吻を差し込んで甘い蜜を吸った。",
+   "full": 20
+  },
+  {
+   "id": "blood",
+   "ja": "人や鳥から血を吸う",
+   "name": "温血動物の血液",
+   "ds": "卵を育てるために皮ふを刺し、腹一杯に血を吸い込む",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "bedroom",
+    "underfloor",
+    "park_trees"
+   ],
+   "rich": [
+    "bedroom"
+   ],
+   "ok": "寝静まった相手の肌に針を刺し、腹が赤くふくらむまで血を吸った。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "hide_shadow",
+   "ja": "薄暗がりに潜む",
+   "ds": "2手のあいだ、風や外敵に襲われない",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "縁の下の湿った暗がりに身を寄せ、息をひそめた。"
+  }
+ ],
+ "levelEvery": 2,
+ "foes": [
+  {
+   "id": "water_strider",
+   "ja": "ヒメアメンボ",
+   "kind": "insect",
+   "places": [
+    "gutter"
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "sev": 1,
+   "texts": [
+    "水面を滑る長い足が、波紋を立てて近づく。",
+    "水面に呼吸管を出したところを、鋭い口吻が狙っている。"
+   ]
+  },
+  {
+   "id": "diving_beetle",
+   "ja": "ヒメゲンゴロウ",
+   "kind": "insect",
+   "places": [
+    "gutter",
+    "water_tray"
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "平たい甲虫が、汚水の中を素早く漕ぎ寄せてくる。",
+    "水底の泥の隙間から、鎌のような大顎が伸びてくる。"
+   ]
+  },
+  {
+   "id": "jumping_spider",
+   "ja": "チャスジハエトリ",
+   "kind": "arachnid",
+   "places": [
+    "bedroom",
+    "underfloor"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "壁の隅で、正面の大きな複眼がこちらを見つめている。",
+    "音もなく間合いを詰め、一気に跳びかかってくる。"
+   ],
+   "again": [
+    [
+     "また、あの脚の1本欠けたチャスジハエトリだ。壁の上で待ち構えている。"
+    ],
+    [
+     "脚の欠けたチャスジハエトリが、障子の隙間から見張っている。"
+    ]
+   ],
+   "bye": "天井の梁へと高く飛び立ち、片脚のハエトリグモは追うのを諦めた。"
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "garden_grass",
+    "park_trees"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "木々の間に、目に見えにくい粘る糸の網が張られている。",
+    "黄色と黒の縞模様の体が、網のわずかな揺れに反応して身構える。"
+   ]
+  },
+  {
+   "id": "tree_frog",
+   "ja": "ニホンアマガエル",
+   "kind": "amphibian",
+   "places": [
+    "garden_grass",
+    "water_tray"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "濡れた葉の上から、丸い瞳がじっと見上げている。",
+    "草の茂みから、粘つく舌が素早く伸びてくる。"
+   ]
+  },
+  {
+   "id": "gecko",
+   "ja": "ニホンヤモリ",
+   "kind": "reptile",
+   "places": [
+    "underfloor",
+    "bedroom"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "明かりの漏れる障子の外側に、平たい影が張りついている。",
+    "壁を音もなく滑るように走り、間合いを詰めてくる。"
+   ],
+   "again": [
+    [
+     "また、あの尾の太いヤモリだ。明かりの下で待ち構えている。"
+    ],
+    [
+     "尾の太いヤモリが、縁の下の柱に潜んでいる。"
+    ]
+   ],
+   "bye": "外の暗闇へ高く飛び出し、太い尾のヤモリの視界から消え去った。"
+  },
+  {
+   "id": "dragonfly",
+   "ja": "ウスバキトンボ",
+   "kind": "insect",
+   "places": [
+    "park_trees",
+    "garden_grass"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "澄んだ羽音を響かせ、薄茶色の翅が空中にとどまる。",
+    "旋回するトンボが、飛行中の背後から急接近してくる。"
+   ]
+  },
+  {
+   "id": "pipistrelle",
+   "ja": "アブラコウモリ",
+   "kind": "mammal",
+   "places": [
+    "park_trees",
+    "garden_grass"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "夕暮れの空から、不規則に羽ばたく黒い影が急降下してくる。",
+    "かすかな超音波の気配とともに、皮膜の翼が迫る。"
+   ],
+   "again": [
+    [
+     "また、翼の端に裂け目のあるコウモリだ。頭上を旋回している。"
+    ],
+    [
+     "翼の裂けたコウモリが、軒先から音もなく飛び出してきた。"
+    ]
+   ],
+   "bye": "狭い木立の隙間へ潜りこみ、翼の裂けたコウモリを振り切った。"
+  },
+  {
+   "id": "swallow",
+   "ja": "ツバメ",
+   "kind": "bird",
+   "places": [
+    "park_trees",
+    "garden_grass"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "鋭い流線型の鳥が、地面すれすれをかすめて飛ぶ。",
+    "開いた嘴が、飛行ルートを横切るように突っ込んでくる。"
+   ]
+  },
+  {
+   "id": "human_hand",
+   "ja": "人間の手",
+   "kind": "human",
+   "places": [
+    "bedroom"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "吸血を感知した人間が、巨大な平手を振り下ろしてくる。",
+    "暗がりの中で、勢いよく両の手のひらが打ち合わされる。"
+   ],
+   "lose": "風圧に巻き込まれて叩き落とされ、翅に深い傷を負った。",
+   "fleeJa": "暗い天井の隅へ飛び去る",
+   "hideJa": "カーテンのひだに滑り込む"
+  }
+ ],
+ "choices": [
+  {
+   "q": "夜になった。吸血する相手を求めて飛び立つ",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "寝室の人間を狙う",
+     "ds": "血を吸いやすい。叩かれる危険が大きい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "bedroom",
+     "say": "網戸の隙間から寝室へ入り、露出した皮膚を刺した。",
+     "chip": "人を刺す"
+    },
+    {
+     "ja": "木立の野鳥を狙う",
+     "ds": "反撃されにくい。羽毛に覆われ吸血しにくい",
+     "fx": {
+      "food": -0.5,
+      "danger": -0.5
+     },
+     "goto": "park_trees",
+     "say": "木立の枝先にとまり、眠る鳥の露出した肌を探した。",
+     "chip": "鳥を刺す"
+    }
+   ]
+  },
+  {
+   "q": "卵が成熟した。どこに産卵するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "側溝の汚水溜まりに産む",
+     "ds": "有機物が多く幼虫の餌が豊富。雨で流される危険がある",
+     "fx": {
+      "kids": 1,
+      "danger": 0.5
+     },
+     "goto": "gutter",
+     "say": "濁った水面に卵舟を浮かべ、多くの卵を産みつけた。",
+     "chip": "側溝に産卵"
+    },
+    {
+     "ja": "植木鉢の受け皿に産む",
+     "ds": "天敵が少ない。水が干上がる危険がある",
+     "fx": {
+      "kids": 0.5,
+      "danger": -0.5
+     },
+     "goto": "water_tray",
+     "say": "植木鉢の受け皿のわずかな水たまりに卵を産み落とした。",
+     "chip": "受け皿に産卵"
+    }
+   ]
+  },
+  {
+   "q": "晩秋、寒さが迫る。越冬の場所をどこにするか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "民家の縁の下へ潜り込む",
+     "ds": "寒さをしのぎやすい。天敵のクモがいる",
+     "fx": {
+      "danger": 0.5
+     },
+     "goto": "underfloor",
+     "say": "縁の下の暗がりに入り、壁にとまって活動を止めた。",
+     "chip": "縁の下で越冬"
+    },
+    {
+     "ja": "庭の茂みの根元に残る",
+     "ds": "湿度を保てる。厳しい冷え込みで凍死しやすい",
+     "fx": {
+      "danger": -0.5
+     },
+     "goto": "garden_grass",
+     "say": "茂みの落ち葉の下に潜り込み、冷気の中でじっと耐えた。",
+     "chip": "茂みで越冬"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "p": 0.2,
+   "say": "激しい夕立が降り注ぎ、濁流に流されそうになった。"
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "真冬の強い冷え込みで、体が凍りつくように冷えた。"
+  }
+ ],
+ "lead": "町の水たまりで生まれ、夜に吸血し、卵を産んで次世代へと命をつなぐ。",
+ "texts": {
+  "move": "{to}へ、飛び立つ。",
+  "fleeJa": "刺激を受けて飛び去る。",
+  "restJa": "葉陰や水面で止まる。",
+  "watchJa": "光に引き寄せられ、周囲を探る。",
+  "lieJa": "水面に静かに漂う。",
+  "lastMemory": "血を吸った人の皮膚が、薄く光った夜を思い出す。"
+ },
+ "intro": [
+  "側溝の汚水溜まりで幼虫として孵化した。",
+  "水面で呼吸しながら成長し、羽化して成虫になる。"
+ ],
+ "wins": [
+  {
+   "minKids": 100,
+   "title": "大量の卵を産んだ",
+   "line": "{kids}個の卵が水面に浮かび、次の幼虫になる。",
+   "mem": "水面に散らばる卵の粒が、星のように見えた。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "雨が降り、汚水が流れ込む音を思い出す。"
+  }
+ ],
+ "noKids": "血を吸えずに死んだ。",
+ "facts": [
+  {
+   "quote": "成虫はほぼ年間を通して見られる。"
+  },
+  {
+   "quote": "雌は鳥類や人などから吸血する。"
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
  "gemini": {
-  "until": "2026-10-20T07:39:05.690Z",
-  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+  "until": "2026-10-21T07:50:10.747Z",
+  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
  },
  "openrouter": {
   "until": "2026-10-20T08:30:06.851Z",
@@ -12,7 +12,7 @@
   "why": "壊れた返事 404 {\"error\":{\"code\":404,\"message\":\"This model models/gemini-2.5-pro is no longer available to new users. Please update your"
  },
  "gemini-older": {
-  "until": "2026-10-20T07:39:06.720Z",
-  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+  "until": "2026-10-21T07:50:10.859Z",
+  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
  }
 }

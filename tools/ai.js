@@ -8,19 +8,35 @@ const LIST = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'providers.json'
 const load = () => { try { return JSON.parse(fs.readFileSync(CD, 'utf8')); } catch { return {}; } };
 let cool = load();
 const save = () => fs.writeFileSync(CD, JSON.stringify(cool, null, 1) + '\n');
+// モデル名は書かない: その時に使えるモデルの一覧を取り、prefer の上から当たったもの（同じ順位なら名前の新しい方）を使う
+const MODELS = path.join(ROOT, 'data', 'models.json');
+let chosen = (() => { try { return JSON.parse(fs.readFileSync(MODELS, 'utf8')); } catch { return {}; } })();
+async function listModels(p) {
+  const key = process.env[p.key];
+  if (p.kind === 'gemini') { const j = await (await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', { headers: { 'x-goog-api-key': key } })).json(); return (j.models || []).filter((m) => (m.supportedGenerationMethods || []).includes('generateContent')).map((m) => m.name.replace(/^models\//, '')); }
+  const j = await (await fetch(p.list, { headers: { authorization: `Bearer ${key}` } })).json();
+  return (j.data || []).map((m) => m.id).filter((id) => !p.onlyFree || /:free$/.test(id));
+}
+async function resolve(p, force) {
+  if (chosen[p.name] && !force) return chosen[p.name];
+  const ids = (await listModels(p).catch(() => [])).filter((id) => !/preview|exp|tts|image|vision|embed|audio|live|guard|whisper/i.test(id));
+  for (const re of p.prefer) { const hit = ids.filter((id) => new RegExp(re, 'i').test(id)).sort().reverse()[0]; if (hit) { chosen[p.name] = hit; fs.writeFileSync(MODELS, JSON.stringify(chosen, null, 1) + '\n'); return hit; } }
+  return null;
+}
 const usable = () => LIST.filter((p) => process.env[p.key] && !(cool[p.name] && Date.parse(cool[p.name].until) > Date.now()));
 
 async function call(p, prompt) {
-  const key = process.env[p.key];
+  const key = process.env[p.key], model = await resolve(p);
+  if (!model) return { status: 404, raw: { error: '使えるモデルが一覧に無い' } };
   if (p.kind === 'gemini') {
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${p.model}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': key, 'content-type': 'application/json' },
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': key, 'content-type': 'application/json' },
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, responseMimeType: 'application/json' } }) });
     const j = await r.json().catch(() => ({}));
     return { status: r.status, retry: r.headers.get('retry-after'), text: j.candidates && j.candidates[0].content && j.candidates[0].content.parts[0].text, raw: j };
   }
   const gh = /models\.github\.ai/.test(p.url) ? { accept: 'application/vnd.github+json', 'x-github-api-version': '2022-11-28' } : {};
   const r = await fetch(p.url, { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json', ...gh },
-    body: JSON.stringify({ model: p.model, temperature: 0.5, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
+    body: JSON.stringify({ model, temperature: 0.5, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
   const body = await r.text(); let j = {}; try { j = JSON.parse(body); } catch { j = { body: body.slice(0, 200) }; }
   return { status: r.status, retry: r.headers.get('retry-after'), text: j.choices && j.choices[0].message.content, raw: j };
 }
@@ -43,12 +59,13 @@ async function ask(prompt) {
       save(); console.log(`  [${p.name}] 上限 → ${Math.round(sec / 60)}分休ませて次の AI へ`); continue;
     }
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
+    if (res.status === 404 && !p.retried) { p.retried = 1; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
     if (!res.text || (res.status && res.status >= 400)) { cool[p.name] = { until: new Date(Date.now() + 6 * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] 返事が壊れている → 6時間休ませて次の AI へ`); continue; }
-    return { json: JSON.parse(res.text.replace(/^```(json)?|```$/g, '').trim()), by: p.name };
+    return { json: JSON.parse(res.text.replace(/^```(json)?|```$/g, '').trim()), by: `${p.name} ${chosen[p.name]}` };
   }
 }
 module.exports = { ask, usable };
 if (require.main === module) (async () => {
   console.log('使える AI:', usable().map((p) => p.name).join(', ') || 'なし');
-  if (process.argv.includes('--ping')) for (const p of usable()) { const r = await call(p, '{"ok": true} とだけ JSON で答えて').catch((e) => ({ status: 0, raw: { error: e.message } })); console.log(`  ${p.name}: ${r.status} ${r.text ? r.text.slice(0, 60) : JSON.stringify(r.raw).slice(0, 200)}`); }
+  if (process.argv.includes('--ping')) for (const p of usable()) { const r = await call(p, '{"ok": true} とだけ JSON で答えて').catch((e) => ({ status: 0, raw: { error: e.message } })); console.log(`  ${p.name}（${chosen[p.name] || '?'}）: ${r.status} ${r.text ? r.text.slice(0, 60) : JSON.stringify(r.raw).slice(0, 200)}`); }
 })();

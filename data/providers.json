@@ -1,29 +1,43 @@
 [
  {
-  "name": "gemini-2.5-flash",
+  "name": "gemini",
   "kind": "gemini",
-  "model": "gemini-2.5-flash",
-  "key": "GEMINI_API_KEY"
+  "key": "GEMINI_API_KEY",
+  "prefer": [
+   "gemini-[0-9.]+-flash$",
+   "gemini-[0-9.]+-pro$",
+   "flash$",
+   "flash"
+  ]
  },
  {
-  "name": "groq-llama-3.3-70b",
+  "name": "groq",
   "kind": "openai",
   "url": "https://api.groq.com/openai/v1/chat/completions",
-  "model": "llama-3.3-70b-versatile",
-  "key": "GROQ_API_KEY"
+  "list": "https://api.groq.com/openai/v1/models",
+  "key": "GROQ_API_KEY",
+  "prefer": [
+   "gpt-oss-120b",
+   "llama-4-maverick",
+   "qwen.*32b",
+   "llama-3\\.3-70b",
+   "70b",
+   "gpt-oss"
+  ]
  },
  {
-  "name": "openrouter-free",
+  "name": "openrouter",
   "kind": "openai",
   "url": "https://openrouter.ai/api/v1/chat/completions",
-  "model": "deepseek/deepseek-chat-v3-0324:free",
-  "key": "OPENROUTER_API_KEY"
- },
- {
-  "name": "mistral-small",
-  "kind": "openai",
-  "url": "https://api.mistral.ai/v1/chat/completions",
-  "model": "mistral-small-latest",
-  "key": "MISTRAL_API_KEY"
+  "list": "https://openrouter.ai/api/v1/models",
+  "key": "OPENROUTER_API_KEY",
+  "onlyFree": true,
+  "prefer": [
+   "deepseek.*:free",
+   "qwen.*:free",
+   "llama.*70b.*:free",
+   "gemma.*:free",
+   ":free$"
+  ]
  }
 ]

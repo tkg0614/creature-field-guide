@@ -1,14 +1,1 @@
-{
- "gemini-2.5-flash": {
-  "until": "2026-10-20T10:21:03.077Z",
-  "why": "壊れた返事 404 {\"error\":{\"code\":404,\"message\":\"This model models/gemini-2.5-flash is no longer available to new users. Please update yo"
- },
- "groq-llama-3.3-70b": {
-  "until": "2026-10-20T10:21:03.160Z",
-  "why": "壊れた返事 404 {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invali"
- },
- "openrouter-free": {
-  "until": "2026-10-20T10:21:03.205Z",
-  "why": "壊れた返事 404 {\"error\":{\"message\":\"This model is unavailable for free. The paid version is available now - use this slug instead: deep"
- }
-}
+{}

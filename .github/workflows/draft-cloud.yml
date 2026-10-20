@@ -39,7 +39,7 @@ jobs:
             node tools/fetch.js "$id"
             set +e; node tools/draft.js "$id" --tries 4; code=$?; set -e
             node tools/check.js "$id" || true
-            git add -A sheets sources data/cooldown.json 2>/dev/null || true
+            git add -A sheets sources data/cooldown.json data/models.json 2>/dev/null || true
             git diff --cached --quiet || { git commit -q -m "draft: $id"; for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep 5; done; }
             [ "$code" = 3 ] && { echo "使える AI が無くなったので、続きは次の回"; break; }
           done

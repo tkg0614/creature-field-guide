@@ -8,7 +8,7 @@
   "life": "groq openai/gpt-oss-120b"
  },
  "locale": {
-  "ja": "多摩の里山",
+  "ja": "東京都八王子市",
   "geo": "Tama Hills",
   "scale": "local"
  },
@@ -19,15 +19,15 @@
    "danger": 1,
    "cover": true,
    "about": "発酵熱で温かい枯草や落ち葉の山。夏に卵がかえる。",
-   "lat": 14.596,
-   "lon": 121.038,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.666,
+   "lon": 139.316
   },
   {
    "id": "stonewall",
@@ -35,15 +35,15 @@
    "danger": 1,
    "cover": true,
    "about": "石のすき間に身を潜める。天気がよい日は日なたに出て体を温める。",
-   "lat": 14.596,
-   "lon": 121.07,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.666,
+   "lon": 139.348
   },
   {
    "id": "attic",
@@ -51,15 +51,15 @@
    "danger": 0,
    "cover": true,
    "about": "暗く静かな屋根裏。ネズミの通路になっており、大型の天敵も入ってこない。",
-   "lat": 14.624,
-   "lon": 121.058,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.694,
+   "lon": 139.336
   },
   {
    "id": "paddy",
@@ -67,15 +67,15 @@
    "danger": 3,
    "cover": false,
    "about": "カエルなどの獲物が多い。身を隠す草が少なく、空からトビやタカに狙われる。",
-   "lat": 14.613,
-   "lon": 121.026,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.683,
+   "lon": 139.304
   },
   {
    "id": "treetop",
@@ -83,15 +83,15 @@
    "danger": 2,
    "cover": false,
    "about": "鱗の縁を幹に引っかけて登る。小鳥の巣や卵を狙える。",
-   "lat": 14.596,
-   "lon": 121.006,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.666,
+   "lon": 139.284
   },
   {
    "id": "bush",
@@ -99,15 +99,15 @@
    "danger": 2,
    "cover": true,
    "about": "トカゲや小動物を追う。タヌキやイノシシなど地上の天敵も通りかかる。",
-   "lat": 14.568,
-   "lon": 121.018,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.638,
+   "lon": 139.296
   },
   {
    "id": "burrow",
@@ -115,15 +115,15 @@
    "danger": 1,
    "cover": true,
    "about": "霜が届かない地中のすき間。晩秋から春先まで数か月間眠る。",
-   "lat": 14.579,
-   "lon": 121.05,
    "stages": [
     "egg",
     "hatchling",
     "juvenile",
     "subadult",
     "adult"
-   ]
+   ],
+   "lat": 35.649,
+   "lon": 139.328
   }
  ],
  "start": {
@@ -131,29 +131,30 @@
   "month": 9,
   "day": 5
  },
+ "country": "jp",
  "region": {
-  "ja": "多摩の里山",
-  "lon0": 120.994,
-  "lon1": 121.082,
-  "lat0": 14.636,
-  "lat1": 14.556,
+  "ja": "東京都八王子市",
+  "lon0": 139.272,
+  "lon1": 139.36,
+  "lat0": 35.706,
+  "lat1": 35.626,
   "k": 5682,
   "labels": [
    [
-    14.6312,
-    121.038,
-    "多摩の里山"
+    35.7012,
+    139.316,
+    "東京都八王子市"
    ]
   ]
  },
  "edges": [
   [
-   "compost",
-   "paddy"
-  ],
-  [
    "burrow",
    "compost"
+  ],
+  [
+   "compost",
+   "paddy"
   ],
   [
    "burrow",

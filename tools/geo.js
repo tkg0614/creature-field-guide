@@ -1,19 +1,21 @@
 // 地図の数字はAIに書かせない: 地名を OpenStreetMap（Nominatim）で緯度経度にし、地域の枠・名前の位置・道（edges）はコードで決める。
 'use strict';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-async function geocode(q) {
+async function geocode(q, cc) {
   await sleep(1100); // Nominatim の決まり: 1秒に1回まで
-  const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`, { headers: { 'user-agent': 'creature-field-guide/0.1 (github.com/tkg0614/creature-field-guide)' } });
+  const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1${cc ? `&countrycodes=${cc}` : ''}&q=${encodeURIComponent(q)}`, { headers: { 'user-agent': 'creature-field-guide/0.1 (github.com/tkg0614/creature-field-guide)' } });
   const j = await r.json().catch(() => []);
   return j[0] ? { lat: +(+j[0].lat).toFixed(3), lon: +(+j[0].lon).toFixed(3) } : null;
 }
 // places: [{id, ja, geo?(地名)}] に lat/lon を付け、region と edges を作る
 async function layout(sh, locale) {
-  const center = (await geocode(locale.geo || locale.ja)) || (await geocode(locale.ja));
+  // 日本語の地名を先に、国を絞って引く（2026-10-20: 「Tama Hills」がフィリピンに当たった）
+  const cc = locale.country || sh.country || null;
+  const center = (await geocode(locale.ja, cc)) || (await geocode(locale.geo || locale.ja, cc)) || (cc ? null : await geocode(locale.geo || locale.ja));
   if (!center) throw new Error(`地名が見つからない: ${locale.geo || locale.ja}`);
   const P = sh.places, n = P.length, R = locale.scale === 'regional' ? 3 : 0.04; // 里山なら半径4km ほど・海や大陸なら数百km
   for (const [i, p] of P.entries()) {
-    const g = p.geo && locale.scale === 'regional' ? await geocode(p.geo) : null;
+    const g = p.geo && locale.scale === 'regional' ? await geocode(p.geo) : null; // 海や大陸を渡る種は国で絞らない
     if (g) Object.assign(p, g);
     else if (i === 0) Object.assign(p, center); // 生まれた場所を真ん中に
     else { const a = (2 * Math.PI * (i - 1)) / (n - 1), r = R * (0.6 + 0.4 * ((i * 7) % 3) / 2); p.lat = +(center.lat + r * Math.sin(a) * 0.8).toFixed(3); p.lon = +(center.lon + r * Math.cos(a)).toFixed(3); }

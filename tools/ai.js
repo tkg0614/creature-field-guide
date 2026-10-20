@@ -51,7 +51,12 @@ async function ask(prompt) {
   }
   for (;;) {
     const p = usable()[0];
-    if (!p) { const e = new Error('使える AI が無い（全部が上限で休み中か、鍵が無い）'); e.allLimited = true; throw e; }
+    if (!p) {
+      // 休み明けが近い（5分以内）なら待つ。遠ければ、この回はおしまい
+      const soon = LIST.filter((q) => process.env[q.key] && cool[q.name]).map((q) => Date.parse(cool[q.name].until) - Date.now()).sort((a, b) => a - b)[0];
+      if (soon != null && soon < 300e3) { console.log(`  全部が休み中。${Math.ceil(soon / 1000)}秒待つ`); await new Promise((r) => setTimeout(r, Math.max(1000, soon + 500))); continue; }
+      const e = new Error('使える AI が無い（全部が上限で休み中か、鍵が無い）'); e.allLimited = true; throw e;
+    }
     let res; try { res = await call(p, prompt); } catch (e) { res = { status: 0, raw: { error: e.message } }; }
     if (limited(res)) {
       const sec = +res.retry > 0 ? +res.retry : /day|daily|per.?day|RPD/i.test(JSON.stringify(res.raw)) ? 86400 : 3600;
@@ -60,7 +65,7 @@ async function ask(prompt) {
     }
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
     if (res.status === 404 && !p.retried) { p.retried = 1; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
-    if (!res.text || (res.status && res.status >= 400)) { cool[p.name] = { until: new Date(Date.now() + 6 * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] 返事が壊れている → 6時間休ませて次の AI へ`); continue; }
+    if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] 返事が壊れている → 6時間休ませて次の AI へ`); continue; }
     return { json: JSON.parse(res.text.replace(/^```(json)?|```$/g, '').trim()), by: `${p.name} ${chosen[p.name]}` };
   }
 }

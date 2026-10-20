@@ -55,7 +55,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
 
 (async () => {
   if (!Q) { console.error('data/queue.json に無い:', id); process.exit(1); }
-  const sheet = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { id: Q.id, ja: Q.ja.replace(/（.*?）/g, ''), sci: Q.sci, status: 'draft' };
+  const sheet = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { id: Q.id, ja: Q.ja.replace(/（.*?）/g, ''), sci: Q.sci, status: 'draft', ...(Q.country ? { country: Q.country } : {}) };
   for (const P of PARTS) {
     if (P.keys.every((k) => k in sheet) && !validate(sheet, SRC, [P.part]).errors.length) { console.log(`  ${P.part}: 済`); continue; }
     let errors = [], ok = false;

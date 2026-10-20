@@ -31,6 +31,8 @@ jobs:
         run: |
           git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
           node tools/ai.js --ping
+          curl -s -o /dev/null -w "catalog: %{http_code}\n" -H "Authorization: Bearer $GITHUB_TOKEN" https://models.github.ai/catalog/models || true
+          curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://models.github.ai/inference/chat/completions -d '{"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"hi"}]}' -D - | head -c 600; echo
           IDS=$(node -e '
             const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);
             const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};

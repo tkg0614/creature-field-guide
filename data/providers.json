@@ -1,8 +1,50 @@
 [
- {"name": "github-gpt-4.1", "kind": "openai", "url": "https://models.github.ai/inference/chat/completions", "model": "openai/gpt-4.1", "key": "GITHUB_TOKEN"},
- {"name": "gemini-2.5-flash", "kind": "gemini", "model": "gemini-2.5-flash", "key": "GEMINI_API_KEY"},
- {"name": "groq-llama-3.3-70b", "kind": "openai", "url": "https://api.groq.com/openai/v1/chat/completions", "model": "llama-3.3-70b-versatile", "key": "GROQ_API_KEY"},
- {"name": "openrouter-free", "kind": "openai", "url": "https://openrouter.ai/api/v1/chat/completions", "model": "deepseek/deepseek-chat-v3-0324:free", "key": "OPENROUTER_API_KEY"},
- {"name": "mistral-small", "kind": "openai", "url": "https://api.mistral.ai/v1/chat/completions", "model": "mistral-small-latest", "key": "MISTRAL_API_KEY"},
- {"name": "github-gpt-4.1-mini", "kind": "openai", "url": "https://models.github.ai/inference/chat/completions", "model": "openai/gpt-4.1-mini", "key": "GITHUB_TOKEN"}
+ {
+  "name": "github-gpt-4.1",
+  "kind": "openai",
+  "url": "https://models.github.ai/inference/chat/completions",
+  "model": "openai/gpt-4.1",
+  "key": "GITHUB_TOKEN"
+ },
+ {
+  "name": "github-azure-gpt-4o",
+  "kind": "openai",
+  "url": "https://models.inference.ai.azure.com/chat/completions",
+  "model": "gpt-4o",
+  "key": "GITHUB_TOKEN"
+ },
+ {
+  "name": "gemini-2.5-flash",
+  "kind": "gemini",
+  "model": "gemini-2.5-flash",
+  "key": "GEMINI_API_KEY"
+ },
+ {
+  "name": "groq-llama-3.3-70b",
+  "kind": "openai",
+  "url": "https://api.groq.com/openai/v1/chat/completions",
+  "model": "llama-3.3-70b-versatile",
+  "key": "GROQ_API_KEY"
+ },
+ {
+  "name": "openrouter-free",
+  "kind": "openai",
+  "url": "https://openrouter.ai/api/v1/chat/completions",
+  "model": "deepseek/deepseek-chat-v3-0324:free",
+  "key": "OPENROUTER_API_KEY"
+ },
+ {
+  "name": "mistral-small",
+  "kind": "openai",
+  "url": "https://api.mistral.ai/v1/chat/completions",
+  "model": "mistral-small-latest",
+  "key": "MISTRAL_API_KEY"
+ },
+ {
+  "name": "github-gpt-4.1-mini",
+  "kind": "openai",
+  "url": "https://models.github.ai/inference/chat/completions",
+  "model": "openai/gpt-4.1-mini",
+  "key": "GITHUB_TOKEN"
+ }
 ]

@@ -1,0 +1,709 @@
+{
+ "id": "snake",
+ "ja": "アオダイショウ",
+ "sci": "Elaphe climacophora",
+ "status": "checked",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "丹波篠山の農村",
+  "geo": "Tamba-Sasayama",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "stone_wall",
+   "ja": "古い石垣のすき間",
+   "danger": 1,
+   "cover": true,
+   "about": "崩れかけた石の奥に湿り気と温もりがある。外敵から卵や体を隠しやすい。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.076,
+   "lon": 135.219
+  },
+  {
+   "id": "barn_attic",
+   "ja": "農家の納屋の屋根裏",
+   "danger": 0,
+   "cover": true,
+   "about": "柱を伝って登る高い梁の上。ネズミや小鳥が巣を作り、天敵の侵入もない。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.076,
+   "lon": 135.251
+  },
+  {
+   "id": "paddy_ridge",
+   "ja": "水田のあぜ道",
+   "danger": 3,
+   "cover": false,
+   "about": "カエルが豊富に跳ね回る。開けているため、上空を飛ぶ猛禽類に見つかりやすい。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.104,
+   "lon": 135.239
+  },
+  {
+   "id": "treetop",
+   "ja": "雑木林の樹上",
+   "danger": 1,
+   "cover": true,
+   "about": "粗い樹皮に腹の鱗を引っかけて登る。枝先の鳥の巣にある卵やヒナを狙える。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.093,
+   "lon": 135.207
+  },
+  {
+   "id": "forest_edge",
+   "ja": "林のへりの茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "下草が茂り身を潜めやすい。通りかかるトカゲや小動物をじっと待ち伏せる。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.076,
+   "lon": 135.187
+  },
+  {
+   "id": "sunny_bank",
+   "ja": "日当たりのよい土手",
+   "danger": 2,
+   "cover": false,
+   "about": "冷えた体を温める絶好の日光浴場。タヌキやイノシシの徘徊する危険がある。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.048,
+   "lon": 135.199
+  },
+  {
+   "id": "underfloor",
+   "ja": "古民家の床下",
+   "danger": 0,
+   "cover": true,
+   "about": "風雨をしのげる暗がり。外気の変化が小さく、冬眠の越冬場所にも向く。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.059,
+   "lon": 135.231
+  }
+ ],
+ "start": {
+  "place": "stone_wall",
+  "month": 9,
+  "day": 5
+ },
+ "region": {
+  "ja": "丹波篠山の農村",
+  "lon0": 135.175,
+  "lon1": 135.263,
+  "lat0": 35.116,
+  "lat1": 35.036,
+  "k": 5682,
+  "labels": [
+   [
+    35.1112,
+    135.219,
+    "丹波篠山の農村"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "stone_wall",
+   "treetop"
+  ],
+  [
+   "stone_wall",
+   "underfloor"
+  ],
+  [
+   "barn_attic",
+   "underfloor"
+  ],
+  [
+   "barn_attic",
+   "paddy_ridge"
+  ],
+  [
+   "paddy_ridge",
+   "treetop"
+  ],
+  [
+   "forest_edge",
+   "treetop"
+  ],
+  [
+   "forest_edge",
+   "sunny_bank"
+  ],
+  [
+   "sunny_bank",
+   "underfloor"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 40
+ },
+ "stats": {
+  "run": {
+   "ja": "すり抜ける力",
+   "use": "敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "舌先で探る勘",
+   "use": "獲物の臭いや外敵に気づく時に効く"
+  },
+  "forage": {
+   "ja": "締めつける力",
+   "use": "獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "幼蛇",
+   "days": 60,
+   "hunger": 8,
+   "grow": 0.35
+  },
+  {
+   "id": "young",
+   "ja": "若蛇",
+   "fromAge": 1,
+   "days": 90,
+   "hunger": 10,
+   "grow": 0.4,
+   "goal": "若蛇になる",
+   "enter": "脱皮を繰り返し、まだら模様が薄れて緑みがさしてきた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成蛇",
+   "fromAge": 3.5,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体が2メートル近くに伸び、繁殖ができる体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   15
+  ],
+  "text": "冷え込む冬の床下で、眠るように息を引き取った。"
+ },
+ "breeding": {
+  "ja": "石垣の隙間に産卵する",
+  "ds": "初夏に交尾をすませ、夏の隙間に白い卵を産み落とす",
+  "months": [
+   7,
+   8
+  ],
+  "places": [
+   "stone_wall",
+   "underfloor",
+   "barn_attic"
+  ],
+  "perYear": 1,
+  "kids": [
+   4,
+   17
+  ],
+  "many": 50,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった子ヘビの一匹"
+  },
+  "ok": "温もり残る隙間に、{born}個の白い卵を産み落とした。",
+  "ng": "安全な隙間が見つからず、産みそびれた。",
+  "goal1": "卵を産む",
+  "goal2": "卵を50個産む"
+ },
+ "foods": [
+  {
+   "id": "frog",
+   "ja": "カエルを待ち伏せる",
+   "name": "カエル",
+   "ds": "水辺の草陰に潜み、通りかかった獲物をとらえる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "paddy_ridge",
+    "forest_edge",
+    "sunny_bank"
+   ],
+   "rich": [
+    "paddy_ridge"
+   ],
+   "ok": "あぜ道で素早く身を乗り出し、カエルを呑み込んだ。",
+   "full": 20
+  },
+  {
+   "id": "bird_egg",
+   "ja": "樹上の巣を襲う",
+   "name": "鳥の卵",
+   "ds": "幹を垂直によじ登り、枝先の巣から卵を呑む",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "treetop",
+    "forest_edge"
+   ],
+   "rich": [
+    "treetop"
+   ],
+   "ok": "器用に枝を渡り、巣の中の卵を殻ごと呑み下した。",
+   "full": 25
+  },
+  {
+   "id": "rat",
+   "ja": "納屋のネズミを締め上げる",
+   "name": "野ネズミ",
+   "ds": "暗がりで獲物に巻きつき、強く締めつけて仕留める",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "barn_attic",
+    "underfloor",
+    "stone_wall"
+   ],
+   "rich": [
+    "barn_attic"
+   ],
+   "ok": "太い胴体で獲物を巻き込み、静かに締め上げた。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "vertical_climb",
+   "ja": "垂直登攀",
+   "ds": "腹板の側稜を樹皮や壁に引っかけ、高所へ逃れる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.65,
+   "calm": true,
+   "ok": "腹のうろこを幹の凹凸に引っかけ、垂直の木をするすると登った。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "heron",
+   "ja": "アオサギ",
+   "kind": "bird",
+   "places": [
+    "paddy_ridge",
+    "sunny_bank"
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "sev": 2,
+   "texts": [
+    "水田のあぜに、細長い影が音もなく降り立つ。",
+    "黄色い鋭い嘴が、泥のすき間を目がけて突き刺さる。"
+   ]
+  },
+  {
+   "id": "striped_snake",
+   "ja": "シマヘビ",
+   "kind": "reptile",
+   "places": [
+    "paddy_ridge",
+    "stone_wall",
+    "sunny_bank"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "赤い目をした黒い縞のヘビが、すばやく草を分けて追ってくる。",
+    "同じヘビの仲間が、獲物として巻きつこうと迫る。"
+   ],
+   "again": [
+    [
+     "また、尾のちぎれたシマヘビだ。あぜ道で待ち構えている。"
+    ],
+    [
+     "尾のちぎれたシマヘビが、草陰から飛び出してきた。"
+    ]
+   ],
+   "bye": "体が太く長くなり、もう同じヘビに呑まれることはない。"
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "barn_attic",
+    "treetop",
+    "sunny_bank",
+    "stone_wall"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "屋根の上から、太い嘴を持つ黒い鳥が見下ろしている。",
+    "頭上から大きな羽音が迫り、鋭い爪が土手をかすめる。"
+   ]
+  },
+  {
+   "id": "weasel",
+   "ja": "ニホンイタチ",
+   "kind": "mammal",
+   "places": [
+    "stone_wall",
+    "barn_attic",
+    "underfloor"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "赤褐色の細長い獣が、石垣のすき間に鼻先を突っこんでくる。",
+    "すばやい身のこなしで、床下の暗がりを隅々まで嗅ぎ回っている。"
+   ],
+   "again": [
+    [
+     "また、片耳の裂けたイタチだ。床下のすき間をのぞきこんでいる。"
+    ],
+    [
+     "片耳の裂けたイタチが、納屋の隅から疾走してくる。"
+    ]
+   ],
+   "bye": "体がたくましく育ち、納屋の小獣も容易には手を出せない。"
+  },
+  {
+   "id": "buzzard",
+   "ja": "ノスリ",
+   "kind": "bird",
+   "places": [
+    "paddy_ridge",
+    "sunny_bank",
+    "treetop"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "枯れ木の梢から、鋭い眼が土手の上をじっと見定めている。",
+    "音もなく舞い降りた猛禽の太い鉤爪が、背中めがけて伸びてくる。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "ホンドタヌキ",
+   "kind": "mammal",
+   "places": [
+    "forest_edge",
+    "paddy_ridge",
+    "underfloor"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ずんぐりした獣が、湿った土を掘り返しながら近づいてくる。",
+    "茂みの中から太い鼻先を突き出し、こちらの匂いを嗅ぎつける。"
+   ]
+  },
+  {
+   "id": "fox",
+   "ja": "ホンドキツネ",
+   "kind": "mammal",
+   "places": [
+    "sunny_bank",
+    "paddy_ridge",
+    "forest_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "黄金色の毛並みの獣が、土手を軽やかに跳ねて距離を詰める。",
+    "草むらに潜む姿を嗅ぎつけ、鋭い牙を剥いて飛びかかってくる。"
+   ],
+   "again": [
+    [
+     "また、足の白いキツネだ。土手の風下から忍び寄ってくる。"
+    ],
+    [
+     "足の白いキツネが、畦道の草むらで立ち止まりこちらを見据えている。"
+    ]
+   ],
+   "bye": "林の奥深くへ身を潜める術を覚え、キツネの鼻をかわしきった。"
+  },
+  {
+   "id": "boar",
+   "ja": "ニホンイノシシ",
+   "kind": "mammal",
+   "places": [
+    "forest_edge",
+    "sunny_bank",
+    "paddy_ridge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "荒い鼻息とともに、黒黒とした巨体が笹薮を突き破ってくる。",
+    "硬い鼻先で土を激しく掘り返し、潜んでいた草地を暴き立てる。"
+   ]
+  },
+  {
+   "id": "human_mower",
+   "ja": "草刈りをする農民",
+   "kind": "human",
+   "places": [
+    "paddy_ridge",
+    "sunny_bank"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "けたたましい金属音とともに、土手の草が一気に刈り払われていく。",
+    "高速で回転する刃が、身を隠していた草むらを足元から切り裂く。"
+   ],
+   "lose": "鋭い金属刃にかすめられ、背の鱗を裂かれて傷を負った。",
+   "fleeJa": "刈り取られた草の隙間から石垣へ滑りこむ",
+   "hideJa": "土の窪みに張りついて刃をやり過ごす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "初夏、腹を空かせた。どこで獲物を探すか",
+   "stages": [
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "雑木林の木に登って鳥の巣を狙う",
+     "ds": "栄養豊富な卵やヒナがいる。樹上は天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "treetop",
+     "say": "腹の鱗を木の幹に引っかけて垂直によじ登った。",
+     "chip": "木に登る"
+    },
+    {
+     "ja": "林のへりの茂みで小動物を追う",
+     "ds": "茂みに隠れやすい。獲物は小さく見つけにくい",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "forest_edge",
+     "say": "枯れ草のすき間をすり抜け、地表のトカゲを狙った。",
+     "chip": "茂みで待つ"
+    }
+   ]
+  },
+  {
+   "q": "初夏、繁殖の季節だ。交尾の相手をどう探すか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "日当たりのよい土手を広く進む",
+     "ds": "相手の匂いを捉えやすい。上空のタカに見つかりやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "sunny_bank",
+     "say": "陽の当たる草地をすべるように進み、仲間の匂いを追った。",
+     "chip": "土手を進む"
+    },
+    {
+     "ja": "古い石垣のすき間伝いに慎重に探す",
+     "ds": "天敵に襲われにくい。出会える機会は少ない",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "stone_wall",
+     "say": "石垣の冷たい割れ目に身を隠しながら、静かに進んだ。",
+     "chip": "石垣伝い"
+    }
+   ]
+  },
+  {
+   "q": "秋が深まり冷えてきた。どこで冬眠に入るか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "農家の納屋の屋根裏に潜り込む",
+     "ds": "風雨を防げて暖かい。ネズミもいるが人に見つかりやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "barn_attic",
+     "say": "梁を伝って屋根裏へ入り、乾いたわらに体を埋めた。",
+     "chip": "納屋の屋根裏"
+    },
+    {
+     "ja": "古い石垣の奥深くに潜る",
+     "ds": "外敵から身を守れる。春先に暖まるのが遅い",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "stone_wall",
+     "say": "崩れた石垣の奥底、光の届かない穴へと潜った。",
+     "chip": "石垣の奥"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "厳しい冷え込みで体がこわばり、穴の底で深い眠りに落ちた。",
+   "full": -10
+  },
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "頭上をタカが旋回した。総排出口から強い匂いを出して茂みへ逃げこんだ。",
+   "danger": 1
+  }
+ ],
+ "lead": "里山の土手で産卵し、夏は子を育て、冬は岩陰で眠る。",
+ "texts": {
+  "move": "{to}へ、ゆっくりと這い進む。",
+  "fleeJa": "危険を感じて草むらへ逃げる",
+  "restJa": "日陰の石の上で体を伸ばす",
+  "watchJa": "木の枝先で獲物を見張る",
+  "lieJa": "葉の裏で体を丸めて横たわる",
+  "lastMemory": "春の雨が葉を叩く音を思い出す。"
+ },
+ "intro": [
+  "水田のあぜ道で、温かな土に抱かれた卵が孵化した。",
+  "淡い灰色の幼蛇は梯子状の褐色斑紋を持ち、草むらを這う。"
+ ],
+ "wins": [
+  {
+   "minKids": 4,
+   "title": "子を残した",
+   "line": "{kids}個の卵が次の命になる。",
+   "mem": "土の中で揺れる小さな命を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "夏の昼、樹上の鳥巣を襲い卵を奪った光景を思い出す。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "3〜4年で成熟（世界大百科事典）"
+  },
+  {
+   "quote": "7-20個の卵を産む（Wikipedia）"
+  },
+  {
+   "quote": "日本の里山・農村に生息し、夏に卵からかえり、冬眠する。"
+  }
+ ]
+}

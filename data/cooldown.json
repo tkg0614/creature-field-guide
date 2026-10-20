@@ -1,7 +1,7 @@
 {
  "gemini": {
-  "until": "2026-10-20T05:21:35.497Z",
-  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+  "until": "2026-10-20T11:35:58.827Z",
+  "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
  },
  "groq": {
   "until": "2026-10-20T05:12:52.264Z",

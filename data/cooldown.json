@@ -1,1 +1,10 @@
-{}
+{
+ "gemini": {
+  "until": "2026-10-20T06:32:37.743Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+ },
+ "openrouter": {
+  "until": "2026-10-20T07:23:37.972Z",
+  "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
+ }
+}

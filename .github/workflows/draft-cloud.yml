@@ -30,7 +30,7 @@ jobs:
         env: { IDS: "${{ inputs.ids }}", MAX: "${{ inputs.max || 4 }}" }
         run: |
           git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
-          node tools/ai.js
+          node tools/ai.js --ping
           IDS=$(node -e '
             const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);
             const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};

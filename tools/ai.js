@@ -18,9 +18,10 @@ async function call(p, prompt) {
     const j = await r.json().catch(() => ({}));
     return { status: r.status, retry: r.headers.get('retry-after'), text: j.candidates && j.candidates[0].content && j.candidates[0].content.parts[0].text, raw: j };
   }
-  const r = await fetch(p.url, { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
+  const gh = /models\.github\.ai/.test(p.url) ? { accept: 'application/vnd.github+json', 'x-github-api-version': '2022-11-28' } : {};
+  const r = await fetch(p.url, { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json', ...gh },
     body: JSON.stringify({ model: p.model, temperature: 0.5, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
-  const j = await r.json().catch(() => ({}));
+  const body = await r.text(); let j = {}; try { j = JSON.parse(body); } catch { j = { body: body.slice(0, 200) }; }
   return { status: r.status, retry: r.headers.get('retry-after'), text: j.choices && j.choices[0].message.content, raw: j };
 }
 // 上限の印: 429、または本文に quota / rate limit / RESOURCE_EXHAUSTED
@@ -46,4 +47,7 @@ async function ask(prompt) {
   }
 }
 module.exports = { ask, usable };
-if (require.main === module) console.log('使える AI:', usable().map((p) => p.name).join(', ') || 'なし');
+if (require.main === module) (async () => {
+  console.log('使える AI:', usable().map((p) => p.name).join(', ') || 'なし');
+  if (process.argv.includes('--ping')) for (const p of usable()) { const r = await call(p, '{"ok": true} とだけ JSON で答えて').catch((e) => ({ status: 0, raw: { error: e.message } })); console.log(`  ${p.name}: ${r.status} ${r.text ? r.text.slice(0, 60) : JSON.stringify(r.raw).slice(0, 200)}`); }
+})();

@@ -1,0 +1,182 @@
+出典: https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%B3%E3%82%AD%E3%83%A7%E3%82%AF%E3%82%AA%E3%82%AD%E3%82%A2%E3%83%9F（CC BY-SA 4.0）
+ナンキョクオキアミ（南極沖醤蝦、学名：Euphausia superba）は、オキアミ目に属する動物の一種。南極海に分布する。エビに似た外見をしており、巨大な群れを作って群泳する。群れはときには1m3に10,000–30,000個体の高密度に達する。ナンキョクオキアミは微小な植物プランクトンを直接食べる。その結果、植物プランクトンが外洋でのライフサイクルを支えるために太陽光から引き出した第一次生産エネルギーを利用していることになる。
+体長6cm、体重最大2グラムまで成長し、寿命は最高で6年とされている。南極の生態系のキーストーン種であり、バイオマス（およそ5億トン）でいえば、この惑星で最も成功している動物であるといわれている。
+
+
+== 分類 ==
+オキアミ目は、エビに外見が似た動物で、エビやカニの含まれる十脚目と同じ甲殻亜門軟甲綱ホンエビ上目に属する。頭胸甲の側縁にひだ状に伸張する鰓域はあるが、十脚目のように鰓室を形成するほどには広く発達しないため、付属肢基部の鰓は外に露出して見える。胸部付属肢には顎脚となって頭部付属肢の大顎、第一小顎、第二小顎とともに口器に組み込まれるものがない点も、十脚目などと異なる（Euphausia superba at Wikispecies ウィキスピーシーズも参照）。
+
+
+== 生活環 ==
+
+産卵は主に1月から3月にかけて、大陸棚から外洋の深海域にかけての範囲の上層部で行われる。交接様式はオキアミ類の典型的なパターンと同じで、雄は雌の生殖孔に精莢を付着させる。そのため、雄の第一腹肢は交接器に変形している。雌は1回に6,000-10,000の卵を産出する。卵は生殖孔を通るときに精莢から遊離した精子で受精する（I・ヘンペルとG・ヘンペル、1986年）。
+著名なイギリスの研究船、ディスカバリー号の航海によるデータに基づくマー（1962年）の古典的な仮説によれば、卵発生の経過は次のようになる。まず原腸形成は、大陸棚では直径0.6mmの卵が海底に沈降して、外洋では2,000-3,000mの深度で沈降しながら起こる。そのすぐ後に、卵は孵化してノープリウス幼生第1期となると、3対の付属肢を使って浮上を開始する。
+引き続く2期の幼生、つまりノープリウス幼生第2期とメタノープリウス幼生の間は摂食せず、卵黄に蓄えられた栄養素で生活、発生を続ける。孵化後3週間で、浮上は完了する。 ここからさらにオキアミのゾエア前期幼生であるカリプトピス幼生第2期と第3期、ゾエア後期幼生であるフルシリア幼生第1期から第6期が続き、大きく成長していく。これらの発生段階は付属肢の増加、複眼と剛毛の出現に特徴づけられる。全長15mmになると、成体とほぼ同じ形態の幼体となる。 成熟するのはさらに2-3年後となる。全ての甲殻類と同様、オキアミは成長に伴って脱皮する必要がある。オキアミの場合、だいたい13-20日ごとに外骨格を脱ぎ捨てる。
+
+ 
+
+
+== 食性 ==
+
+ナンキョクオキアミの胃は、たいてい透明な外骨格を通して鮮やかな緑色に見える。この事は、食物の中で植物プランクトン、特にその中でも20μm程の小型のケイソウが優占していることを示している。これらの植物プランクトンは剛毛によってかご状になっている胸脚によって海水中から濾過される[1]。ケイソウのケイ酸質の細胞壁は胃の内面の歯状突起によって破砕され、内部の原形質は中腸腺の中で消化される。ナンキョクオキアミは橈脚類や端脚類などの小型の動物プランクトンを捕食することもできる。消化管は屈曲したり巻いたりしない真っ直ぐな管で、消化能力はそれほど高いわけではない。そのため、糞には未消化の有機物態の炭素がかなり残る（生物学的ポンプ、生物ポンプ参照）。
+水槽内で、ナンキョクオキアミは共食いもすることが観察されている。 また、水槽内で絶食させた場合、動物の中でも極めて異例なことに、脱皮をしては体が縮小する。 この事は、餌の供給量の季節変動に対する適応と考えられている。 南極の海では、冬には何ヶ月も氷の下で暗闇に閉ざされ、食物がほとんど供給されなくなるからである。
+
+ 
+
+
+=== 濾過摂食 ===
+
+ナンキョクオキアミは、同じぐらいの大きさの他の高等動物が利用できないような小型の単細胞の植物プランクトンを利用できる。これは、著しく特殊化して効果的な濾過器となった、胸脚を使った濾過摂食によって実現されている（U・キルス、1983年）。6対の胸脚がかご状となり、海水中から植物プランクトンを集めるのである。この胸脚でできたかごの目の最も細かい部位は、直径1μm程しかない。この驚異的な構造は、走査型電子顕微鏡写真によって研究されている参照ページ。右図にリンクした映像では、ナンキョクオキアミは55°の角度で上を向いて定位している。餌の植物プランクトンが低密度のとき、ナンキョクオキアミは胸脚のかごの口を開いた状態で50cmほど海水中を突き進んで餌を濾過し、胸脚の内側の特殊な剛毛で、口の中に梳き入れる。
+
+ 
+
+
+=== アイスアルジーの掻き取り摂食 ===
+
+ナンキョクオキアミは叢氷（パックアイス）の下面から、アイスアルジーの芝生状のマットを掻きとって摂食することもできる。右の写真は、Kils, U.; Marshall, P. (1995)の有索潜水機による調査によって得られた。ナンキョクオキアミには胸脚の先端に特殊な熊手状の剛毛が発達しており、これで芝刈り機のようにジグザグに氷の表面の藻類を刈り取る。1匹のナンキョクオキアミは1秒当たり1.5cm2の割合で氷の表面の藻類を食べつくすことができる。アイスアルジーのフィルムが広範な水域で非常に発達していて、その下の水塊よりも炭素量換算ではるかに大きなバイオマスとなっているというのはごく最近の知見である。ナンキョクオキアミは（殊にアイスアルジーの発達する春には）巨大なエネルギー源を確保していることになるのである。
+
+
+=== 生物学的ポンプと炭素隔離 ===
+
+ナンキョクオキアミの食事は非常に乱雑に見える。何千もの植物プランクトンの細胞の塊 (spit balls) を頻繁に口から吐き、また、大量の炭素（元素としての）とケイソウのケイ酸質の細胞壁とを大量に含んだ糞紐を排泄する。これら両者は重く、急速に深海に沈降する。この過程は生物学的ポンプと呼ばれている。南極圏の海域は水深2,000-4,000mと非常に深く、生物学的ポンプは、二酸化炭素を沈めこむ働きをすることになる。このプロセスによって、莫大な量の炭素（二酸化炭素が植物プランクトンの光合成で固定されたもの）が生物圏から送り込まれ、約1,000年間にわたって大気から隔離される事になる。
+もしも海洋生態系において、植物プランクトンが別の生態学的要素によって消費されているならば、大量の炭素が海洋上層部に残存しているはずである。この一連のプロセスは、地球上で最大級のバイオフィードバック機構のひとつであろうという予想がある。おそらく、単一の巨大なバイオマスによって動かされている機構としては最大のものである。今後も南氷洋の生態系についての、さらなる定量的研究が求められる。
+
+
+== 生物学的特性 ==
+
+
+=== 生物発光 ===
+
+ナンキョクオキアミは、発光器官によって光を放つことができる。このため「光るエビ」と呼ばれることがある。
+これらの器官はナンキョクオキアミの体の様々な場所にある。眼柄に1対、第2、第7胸脚の先端に1対ずつ、4対の遊泳脚の基部に1組ずつある。
+これらの発光器官は、黄緑色の光を最長で2-3秒間、繰り返し瞬かせる。この光は、トーチライトなみに明るいと考えられている。光を誘導するために器官の後部には凸面の反射鏡があり、前部にはレンズがある。さらに器官全体は筋肉によって回転させることができる。
+この、発光の果たす機能はまだ完全には理解されていない。いくつかの仮説は、海中で下方からナンキョクオキアミを見上げる捕食者に対し、発光がオキアミの影を打ち消し、発見されにくくすると示唆している。別の仮説では、発光が、夜間の配偶行動か、群れの形成に需要な役割をもつと考えられている。
+ナンキョクオキアミの発光器官は、複数の蛍光物質を含有している。蛍光物質の主要成分は、355nmで励起、510nmで放出（発光）する蛍光特性を持つ。
+
+ 
+
+
+=== 逃避反応 ===
+
+ナンキョクオキアミは、捕食者から逃れるために、腹部を伸曲することによって尾扇をはばたかせ、すばやく後ろ向きに泳ぐことができる。いわゆる「エビ跳ね」といわれている行動である。移動速度は秒速60cmにもなる。危険を視認してから行動するまでの反応時間は、わずか55ミリ秒である。
+
+ 
+
+
+=== 複眼 ===
+
+ナンキョクオキアミが巨大な複眼をどのようにして進化させたのかは謎めいているが、これがきわめて複雑で、優れた視覚器官だとはいえるだろう。
+すでに述べたように、ナンキョクオキアミは餌供給の変動に合わせて脱皮を繰り返して、体を小さくすることができるが、複眼だけは脱皮をしても小さくなる事はない。このため、目のサイズと体長との比率を、個体の飢餓状態の信頼度の高い指標として用いることができる。
+
+
+=== 繁殖 ===
+pH7.7以下にまで海洋酸性化が進むと、卵のふ化率が急激に低下する。
+
+
+== 地理的分布 ==
+
+ナンキョクオキアミは南氷洋全域の表層に生息している。ちょうど極点を取り巻くように分布するが、特に大西洋との境界域に集中している。
+南氷洋と、大西洋、太平洋、インド洋との境界域は、南極収束線を形成する。南極収束線の周極フロントと呼ばれる海域では、南極域の冷たい表層水が、外部の暖かい水と接し、沈降している。周極フロントは、大まかに南緯55度付近に形成されている。この周極フロントから南極大陸までの約3200万平方キロメートルの海域が南氷洋である。これは北極海の約65倍の面積にあたる。冬季には、この海域の約四分の三が氷に覆われ、夏季には2400万平方キロメートルの海面が現れる。水温は約1.3から3℃である。
+南氷洋では、南緯40-60度では偏西風によって表層水が東に向けて時計回りに移動し、周南極海流を形成している。一方で内側の大陸沿岸部では東風が反時計回りに吹き、二つの逆向きの海流が出会うことによって巨大な渦状の海流が形成される。ウェッデル海の高密度水塊などがその例である。
+ナンキョクオキアミの群れは、水塊に乗って移動し、海域ごとに孤立することなく南極全域でひとつの大きな個体群を形成している。しかし、ナンキョクオキアミへの標識再捕技術は確立されていないため、実際の移動パターンはまだわずかしか判明していない。
+
+
+=== 南極圏の生態系における地位 ===
+ナンキョクオキアミは南極圏の生態系におけるキーストーン種であり、ヒゲクジラ類、アザラシ類、イカ、コオリウオ、ペンギンやアホウドリなど鳥類の重要な食料である。
+カニクイアザラシは、ナンキョクオキアミを捕食するために特殊化された歯を持つ。カニクイアザラシは、辺縁が櫛状に分岐した歯を利用して、ナンキョクオキアミを水中から濾しとることができる。この効率の良い濾過器のような歯を、具体的にどのように使用するのかまでは詳しくはわかっていない。カニクイアザラシは、アザラシの中では最も広い分布域を持ち、餌の98パーセントをナンキョクオキアミが占めている。
+カニクイアザラシが一年間に捕食するナンキョクオキアミの総量は6300万トンに達すると見積もられている。餌の45パーセントをナンキョクオキアミが占めるヒョウアザラシもまた同様の歯を発達させている。全てのアザラシ類は合計で6300万 - 1億3000万トンのナンキョクオキアミを、鯨類は合計で3400万 - 4300万トン、鳥類は1500万 - 2000万トン、イカ類は3000万 - 1億トン、魚類は1000万 - 2000万トン、これらを合計して1億5200万 - 3億1300万トンのナンキョクオキアミが消費されていると見積もられている。尚、鯨類でもハクジラ類がナンキョクオキアミを直接捕食する事はないが、イカ類を主に捕食している為、イカ類を介してナンキョクオキアミを消費しているともいえる。
+ナンキョクオキアミと、その捕食者との個体サイズは、例外的なほどに差が大きい。一般には、20マイクロメータほどの極小の植物プランクトンから、ナンキョクオキアミのサイズの生物にいたるまでの食物連鎖は、3から4段階の捕食-被食関係がある。この場合には、植物プランクトン-小型のカイアシ類-大型カイアシ類-アミ類-5センチ前後の小型魚類という階層構造のステップを経ている。ところが、食物連鎖の次の段階では、いきなり巨大な鯨に直結してしまう。
+このような食物連鎖のサイズの飛躍現象は、南氷洋でのみ見られるものである。
+ナンキョクオキアミの分布は南氷洋に限られており、南氷洋における優先種であるが、北大西洋ではNorthern krill（Meganyctiphanes norvegica）が、太平洋ではツノナシオキアミ（E. pacifica）が優先種となっている。
+
+
+=== バイオマスおよび生産量 ===
+ナンキョクオキアミのバイオマスは1億2500万トンから7億2500万トンと見積もられており、ナンキョクオキアミは、地球上でもっとも成功した種であるといえる。
+ただし、ある生物学者は、肉眼で見えるサイズの生物では、アリの占めるバイオマスがもっとも大きなものであると推定していることにも留意する必要がある。また、別の推定では、カイアシ類のバイオマスこそが最大であろうとされている。ただし、これらのバイオマスはそれぞれ数百種類のアリやカイアシ類によるものであり、単独の種で構成されたナンキョクオキアミのバイオマスとは単純に比較はできない。
+ナンキョクオキアミのバイオマスが、他の種よりもいかに巨大なものであるか、強く印象づける比較として、以下のようなものがある。
+全世界の水産資源のうち、魚類、貝類、甲殻類、頭足類、プランクトンなどの合計量は、年間約1億トンであるのに対し、ナンキョクオキアミ単独の年間生産量は1億3000万トンから数億トンと見積もられている。
+ナンキョクオキアミにこのような膨大な量のバイオマスを生産することを可能にしている原因としては、南極大陸の周辺の海域が、世界最大級でおそらくは地球最大のプランクトン集団を抱えていることが挙げられる。
+南極の海は植物プランクトンで満ちている。大陸沿岸で深海域から表層へと湧きあがる海水は、全世界の海洋の光合成層の下部を経由してきており、豊富な栄養塩を含み、かつ、栄養塩が消費されていない。そして南極大陸沿岸で再び生物生産に寄与することになる。
+こうして、基礎生産 -食物網の基礎をなす生産で、植物によって太陽エネルギーが生物のバイオマスに変換されること- は広大な海洋で、年次1m2あたり1-2gの炭素固定を行っているのだが、南極の氷の周辺では、1m2あたり30-50gにまで達する。 北海や他の大陸沿岸の湧昇流の海域のような非常に産出力がある領域と比べれば、これらの値は目ざましく高いわけではないが、生産が行われている海域は、熱帯雨林などの地球上の他の大規模な第一次生産地域と比較してもなお広大である。 さらに、南半球の夏の間、何時間も照射し続ける日光が、生産過程を促進させる。 これらの要素のすべてが、プランクトンとナンキョクオキアミを、地球の生態系の物質循環サイクルの重要な部分にしているのである。
+
+
+=== 流氷原の縮小に伴う減少 ===
+
+ナンキョクオキアミの全バイオマスが過去数十年間に急速に減少しているという懸念がある。この減少が80%にも達すると推測する科学者もいる。これは地球温暖化に伴う流氷の減少のためであると思われる。右のグラフは過去40年間の温度上昇と南極の流氷の減少（逆スケール）を示す。ナンキョクオキアミは特に発達の初期諸段階において生存のため流氷が必要であるらしい。流氷にはオキアミが捕食者から逃れるための洞窟状の構造がある。何年も流氷が少ない状態が続くと、オキアミと同様にプランクトンを捕食する尾索動物のプランクトンにその座を譲るようだ。
+
+
+=== 漁業 ===
+
+ナンキョクオキアミの漁獲量は年10万トン前後で推移している。主な漁獲国として韓国、ノルウェー、日本、ポーランドが挙げられる。右図の通り1990年代前半に漁獲量が激減しているのは、大量の漁獲を行っていた旧ソ連がロシア政権に移行し、採算が取れなくなってオキアミ漁業を行わなくなったことによる。
+オキアミ漁の操業は二つの点で困難であるとされる。一つには非常に細かい目を持つ漁網が必要であるため高い抗力が発生し、引き起こされた船首波によりオキアミが船側面へ押しやられてしまうこと、もう一つは細かな網がすぐに目詰まりを起こしてしまうことである。さらにこれらの網は非常に繊細で、オキアミ漁業の草創期には、大量のオキアミを漁獲する際に網が破けてしまったという。
+船上への引き揚げ作業もまた問題となる。オキアミを満載した漁網が海中から引き揚げられる際にはオキアミ同士が圧迫し合い、体液の多くが流失してしまうのである。このため大きなチューブを使いオキアミを水中から船上へ直接吸い上げる漁法が試験的に行われており、またオキアミ用の特殊な漁網の開発も進められている。オキアミは漁獲後数時間で急激に品質が劣化するため、迅速な加工処理が必要となる。冷凍オキアミおよび濃縮粉末への加工の前段階として、筋肉質から成る体の後部を頭胸部から切り離したり、外殻を除去するなどの処理を施すことがある。
+
+加工品
+加工品は飼料や釣り餌に使用される。
+
+オケアン (食料) - ソビエト連邦で作られていたペースト状にしたオキアミの加工品。
+クリルオイル
+
+
+== 今後の展望と海洋エンジニアリング ==
+南極の生態系に関してはいまだ全体像が解明されているわけではないが、炭素隔離の推進を目的とした大規模な実験が既に進行中であり、その中でオキアミの生態が利用されている。南洋の広大な海域は豊富な栄養を含んでいるにもかかわらず、植物プランクトンがあまり生育しない。これらの海域にはHNLC海域という用語が当てられ（HNLCとはHigh Nutrinet Low Chlorophyll、つまり高栄養塩・低クロロフィルをさす）、この現象は「南極パラドックス」と呼ばれているが、これは鉄の欠乏により起こるものである[2]。調査船から少量の鉄を散布する実験において、植物プランクトンは広域にわたり大規模な増殖をみせる。このような大規模な試みは、化石燃料の燃焼により増加を続ける二酸化炭素の削減にもつながるものとして期待されている[3]。オキアミはこのプロセスにおいて、二酸化炭素を含んだ微小プランクトンの細胞を収集し、塊状の吐出物および紐状の糞便へと変える、つまり速やかに海中に沈む形へと炭素を変換するという重要な役割を担っているのである。
+
+ 
+
+
+== 補足 ==
+Note 1:  この種はしばしば、Euphasia superba[4]とかEupausia superba [5]などと誤綴される。
+
+
+== 参考文献 ==
+A+04: Atkinson, A.; Siegel, V.; Pakhomov, E.; Rothery, P.: Long-term decline in krill stock and increase in salps within the Southern Ocean. In Nature 432:100-103; 2004.
+Bon95: Bonner, B.: Birds and Mammals - Antarctic Seals, in Buckley, R.: Antarctica; Pergamon Press 1995, pp. 202 – 222.
+E+00: Everson, I.; Agnew D. J.; Miller, D. G. M.: Krill fisheries and the future. In Everson, I. (ed.): Krill: biology, ecology and fisheries. Oxford, Blackwell Science, 345-348; 2000.
+FAO05: FAO: Species Fact Sheet Euphausia superba. Accessed Jun 16, 2005.
+Gr05: Gross, L.: As the Antarctic Ice Pack Recedes, a Fragile Ecosystem hangs in the Balance. Public Library of Science; PLoS Biol 3(4):127; 2005.
+H+83: Hamner, W. M.; Hamner, P. P.; Strand, S. W.; Gilmer, R. W.: Behavior of Antarctic Krill, Euphausia superba: Chemoreception, Feeding, Schooling and Molting; Science 220, pp. 433 – 435; 1983.
+HS01: Harvey, H. R.; Se-Jong Ju: Biochemical Determination of Age Structure and Diet History of the Antarctic Krill, Euphausia superba, during Austral Winter; Third U.S. Southern Ocean GLOBEC Science Investigator Meeting; Arlington, 2001.
+KK79: Kils, U.; Klages, N: Der Krill. Naturwissenschaftliche Rundschau 10:397-402, 1979. (English translation: The Krill)
+Kils82: Kils, U.: Swimming behavior, Swimming Performance and Energy Balance of Antarctic Krill Euphausia superba. BIOMASS Scientific Series 3, BIOMASS Research Series, 1-122; 1982.
+Kils83: Kils, U.: Swimming and feeding of Antarctic Krill, Euphausia superba - some outstanding energetics and dynamics - some unique morphological details. In Berichte zur Polarforschung, Alfred Wegener Institute for Polar and Marine Research, Special Issue 4 (1983): "On the biology of Krill Euphausia superba", Proceedings of the Seminar and Report of Krill Ecology Group, Editor S. B. Schnack, 130-155 and title page image.
+KM95: Kils, U.; Marshall, P.: Der Krill, wie er schwimmt und frisst - neue Einsichten mit neuen Methoden ("The antarctic krill - feeding and swimming performances - new insights with new methods"). In Hempel, I.; Hempel, G.: Biologie der Polarmeere - Erlebnisse und Ergebnisse (Biology of the polar oceans) Fischer 1995; pp. 201-210. ISBN 3-334-60950-2.
+L+97: Loeb, V.; Siegel, V.; Holm-Hansen, O.; Hewitt, R.; Fraser, W., et al.: Effects of sea-ice extent and krill or salp dominance on the Antarctic food web. Nature 387:897-900; 1997.
+Marr62: Marr, J. W. S.: The natural history and geography of the Antarctic Krill Euphausia superba. Discovery report 32:33-464; 1962.
+Mar88: Marschall, P.: The overwintering strategy of Antarctic krill under the pack ice of the Weddell Sea, Polar Biol 9;129-135; 1988
+MH89: Miller, D. G. and Hampton, I.: Biology and Ecology of the Antarctic Krill (Euphausia superba Dana): a review. BIOMASS Scientific Series 9, pp. 1 – 66; 1989.
+NE97: Nicol, S.; Endo, Y.: Krill Fisheries of the World, FAO Fisheries Technical Paper 367; 1997.
+RQ86: Ross, R. M.; Quetin, L. B.: How Productive are Antarctic Krill? Bioscience 36, pp. 264 – 269; 1986.
+SN02: Hyoung-Chul Shin; Nicol, S.: Using the relationship between eye diameter and body length to detect the effects of long-term starvation on Antarctic krill Euphausia superba. Mar Ecol Progress Series (MEPS) 239:157-167; 2002.
+
+
+== さらに詳しく知りたい人のために ==
+HH86: Hempel, I.; Hempel, G.: Field observations on the developmental ascent of larval Euphausia superba (Crustacea). Polar Biol 6; pp. 121 – 126; 1986.
+Hem85: Hempel, G.: Antarctic marine food webs. In Siegfried, W. R.; Condy, P. R.; Laws, R. M. (eds): Antarctic nutrient cycles and food webs. Springer-Verlag, Berlin, pp. 266 – 270; 1985.
+Hem87: Hempel, G.: The krill-dominated pelagic system of the Southern Ocean. Envir. Inter. 13, pp. 33 – 36; 1987.
+Hem91: Hempel, G.: Life in the Antarctic sea ice zone. Polar Record 27(162); pp. 249 – 253; 1991
+HS03: Hempel, G.; Sherman, K.: Large marine ecosystems of the world: trends in exploitation, protection, and research. Elsevier, Amsterdam: Large marine ecosystems 12, 423 pp; 2003
+MF69: Mauchline, J.; Fisher, L.R.: The biology of euphausiids. Adv. Mar. Biol. 7; 1969.
+NF03: Nicol, S.; Foster, J.: Recent trends in the fishery for Antarctic krill, Aquat. Living Resour. 16, pp. 42 – 45; 2003.
+QRC94: Quetin, L. B., Ross, R. M. and Clarke, A.: Krill energetics: seasonal and environmental aspects of the physiology of Euphausia superba. In El-Sayed, S. Z. (ed.): Southern Ocean Ecology: the BIOMASS perspective, pp. 165 – 184. Cambridge University Press, 1994.
+Sar89: Sahrhage, D.: Antarctic Krill Fisheries: Potential Resources and Ecological Concerns. In Caddy, J. F. (ed.): Marine Invertebrate Fisheries; their assessment and management; pp. 13 – 33. Wiley, 1989.
+Ikeda, T. (1984) The influence of feeding on the metabolic activity of Antarctic krill (Euphausia superba Dana). Polar Biology 3(1)
+Clarke, A. (1983) Towards an energy budget for krill: The physiology and biochemistry of Euphausia superba Dana. Polar Biology 2(2)
+Ishii, H. (1987) Metabolic rates and elemental composition of the Antarctic krill, Euphausia superba dana. Polar Biology 7(6)
+
+
+== 脚注 ==
+
+
+== 外部リンク ==
+Euphausia superba from MarineBio.
+広松久水産株式会社http://www.hiromatsu-kyu-fishery.co.jp/okiami/
+"Virtual microscope" of Antarctic krill for an interactive tour of their morphology and behavior, along with other peer-reviewed information.
+High resolution images at Wikisource.
+"Krill fights for survival as sea ice melts" from the NASA's "Earth Observatory".
+"Antarctic Wildlife at Risk From Overfishing, Experts Say", from National Geographic News, August 5, 2003.
+Diary of the RRS James Clark Ross, giving a popular introduction to the Antarctic krill.
+"Less krill for predators in the Southern Ocean" from the British Antarctic Survey. See also "Climate row touches blue whales", from the BBC, July 19, 2001.
+A time to krill
+Extensive bibliography.
+特許電子図書館（公開番号H10-500004「オキアミの採集および処理についての方法および装置」）
+CCAMLR Statistical Bulletin vol. 20 (1998-2007)

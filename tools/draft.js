@@ -14,7 +14,7 @@ const Q = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'queue.json'), 'utf
 const SAMPLE = JSON.parse(fs.readFileSync(path.join(ROOT, 'sheets', 'sardine.json'), 'utf8'));
 const dir = path.join(ROOT, 'sources', id);
 const SRC = fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n') : '';
-const OUT = path.join(ROOT, 'sheets', `${id}.json`);
+const OUT = process.env.SHEET_OUT || path.join(ROOT, 'sheets', `${id}.json`);
 
 const AI = require('./ai.js');
 const PROVIDER = process.env.PROVIDER || 'cloud';
@@ -66,9 +66,12 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
       let got; try { const a = await AI.ask(prompt(P, sheet, errors)); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
       // 包みを外す: {"sheet": {...}} のように1段包んで返す AI がいる
       for (let n = 0; n < 2 && got && !P.keys.some((k) => k in got); n++) { const v = Object.values(got).find((x) => x && typeof x === 'object' && !Array.isArray(x)); if (!v) break; got = v; }
-      const trial = JSON.parse(JSON.stringify(sheet)); // 深いコピー（失敗した回の書き換えを残さない） for (const k of P.keys) if (k in got) trial[k] = got[k];
+      // 並びを揃える: 配列のはずの欄を {id: {...}} の形で返す AI がいる → [{id, ...}] に直す
+      for (const k of ['places', 'stages', 'foods', 'foes', 'choices', 'special', 'happen', 'wins', 'memories', 'facts', 'intro', 'edges']) if (got && got[k] && !Array.isArray(got[k]) && typeof got[k] === 'object') got[k] = Object.entries(got[k]).map(([id, v]) => (v && typeof v === 'object' && !Array.isArray(v) ? { id, ...v } : v));
+      const trial = JSON.parse(JSON.stringify(sheet)); // 深いコピー（失敗した回の書き換えを残さない）
+      for (const k of P.keys) if (k in got) trial[k] = got[k];
       if (P.part === 'places') for (const p of trial.places || []) p.stages = (trial.stages || []).map((s) => s.id); // すみかの段はコードが決める（AI の書いたものは捨てる）
-      if (P.part === 'places') { try { if (!Array.isArray(trial.places) || !trial.locale) throw new Error(`locale と places が要る（返ってきた欄: ${Object.keys(got || {}).join(', ')}）`); await layout(trial, trial.locale); } catch (e) { errors = [e.message]; console.log(`  places ${t}回目: ✗ ${e.message}`); continue; } }
+      if (P.part === 'places') { try { if (!Array.isArray(trial.places) || !trial.locale) throw new Error(`locale と places が要る（返ってきた欄: ${Object.keys(got || {}).join(', ')}・places は ${Array.isArray(trial.places) ? '配列' : typeof trial.places}・locale は ${typeof trial.locale}）`); await layout(trial, trial.locale); } catch (e) { errors = [e.message]; console.log(`  places ${t}回目: ✗ ${e.message}`); continue; } }
       // 段を決めたら、すみかの stages を補う（空なら全部の段）
       if (P.part === 'life' && Array.isArray(trial.stages)) for (const p of trial.places || []) p.stages = trial.stages.map((s) => s.id); // すみかは全部の段で使える（細かい制限は後で人が足す）
       errors = validate(trial, SRC, P.part === 'places' ? ['places'] : ['places', 'life', P.part]).errors;

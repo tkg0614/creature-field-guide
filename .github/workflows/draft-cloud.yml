@@ -28,6 +28,7 @@ jobs:
         env: { IDS: "${{ inputs.ids }}", MAX: "${{ inputs.max || 4 }}" }
         run: |
           git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
+          node tools/selftest.js | tail -2 | grep -q '✓' || { echo '道具の手元試験に落ちた（AI を使う前に止める）'; exit 1; }
           node tools/ai.js --ping
           IDS=$(node -e '
             const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);

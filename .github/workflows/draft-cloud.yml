@@ -1,6 +1,6 @@
 # 素材の表を、無料枠のクラウドAIを順に使い回して下書きする（毎晩・手動でも）。
 # AI は data/providers.json の上から。上限に当たったら次の AI へ、休み明けにまた使う（data/cooldown.json に記録して引き継ぐ）。
-# 鍵: GitHub Models は鍵なし（GITHUB_TOKEN）。ほかは Settings → Secrets → Actions に入れたものだけ使う。
+# 鍵:  Settings → Secrets → Actions に入れたものだけ使う。
 # 1つの機械で種を1つずつ順に（上限の記録を1か所で持つため）。使える AI が無くなったら、その回はおしまい。
 name: draft sheets (cloud AI)
 on:
@@ -12,14 +12,12 @@ on:
     - cron: "17 18 * * *"   # 毎日 日本の深夜3:17
 permissions:
   contents: write
-  models: read
 concurrency: { group: draft, cancel-in-progress: false }
 jobs:
   draft:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -31,8 +29,6 @@ jobs:
         run: |
           git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
           node tools/ai.js --ping
-          curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://models.github.ai/catalog/models | head -c 300; echo; curl -s -I https://models.github.ai/ | head -5; curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" -H "Content-Type: application/json" https://models.github.ai/inference/chat/completions -d '{"model":"openai/gpt-4o-mini","messages":[{"role":"user","content":"hi"}]}' -w " [%{http_code} %{content_type} %{remote_ip}]" | head -c 300; echo
-          curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://models.github.ai/inference/chat/completions -d '{"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"hi"}]}' -D - | head -c 600; echo
           IDS=$(node -e '
             const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);
             const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};

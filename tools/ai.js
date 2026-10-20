@@ -42,7 +42,8 @@ async function ask(prompt) {
       cool[p.name] = { until: new Date(Date.now() + sec * 1000).toISOString(), why: String(JSON.stringify(res.raw)).slice(0, 160) };
       save(); console.log(`  [${p.name}] 上限 → ${Math.round(sec / 60)}分休ませて次の AI へ`); continue;
     }
-    if (!res.text) throw new Error(`[${p.name}] ${res.status} ${JSON.stringify(res.raw).slice(0, 200)}`);
+    // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
+    if (!res.text || (res.status && res.status >= 400)) { cool[p.name] = { until: new Date(Date.now() + 6 * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] 返事が壊れている → 6時間休ませて次の AI へ`); continue; }
     return { json: JSON.parse(res.text.replace(/^```(json)?|```$/g, '').trim()), by: p.name };
   }
 }

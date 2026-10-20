@@ -1,19 +1,5 @@
 [
  {
-  "name": "github-gpt-4.1",
-  "kind": "openai",
-  "url": "https://models.github.ai/inference/chat/completions",
-  "model": "openai/gpt-4.1",
-  "key": "GITHUB_TOKEN"
- },
- {
-  "name": "github-azure-gpt-4o",
-  "kind": "openai",
-  "url": "https://models.inference.ai.azure.com/chat/completions",
-  "model": "gpt-4o",
-  "key": "GITHUB_TOKEN"
- },
- {
   "name": "gemini-2.5-flash",
   "kind": "gemini",
   "model": "gemini-2.5-flash",
@@ -39,12 +25,5 @@
   "url": "https://api.mistral.ai/v1/chat/completions",
   "model": "mistral-small-latest",
   "key": "MISTRAL_API_KEY"
- },
- {
-  "name": "github-gpt-4.1-mini",
-  "kind": "openai",
-  "url": "https://models.github.ai/inference/chat/completions",
-  "model": "openai/gpt-4.1-mini",
-  "key": "GITHUB_TOKEN"
  }
 ]

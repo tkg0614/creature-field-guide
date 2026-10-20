@@ -21,7 +21,7 @@ async function layout(sh, locale) {
     else { const a = (2 * Math.PI * (i - 1)) / (n - 1), r = R * (0.6 + 0.4 * ((i * 7) % 3) / 2); p.lat = +(center.lat + r * Math.sin(a) * 0.8).toFixed(3); p.lon = +(center.lon + r * Math.cos(a)).toFixed(3); }
     delete p.geo;
   }
-  const lats = P.map((p) => p.lat), lons = P.map((p) => p.lon), m = Math.max(0.01, (Math.max(...lons) - Math.min(...lons)) * 0.18);
+  const lats = P.map((p) => p.lat), lons = P.map((p) => p.lon), m = Math.max(0.01, (Math.max(...lons) - Math.min(...lons)) * 0.3);
   const lon0 = +(Math.min(...lons) - m).toFixed(3), lon1 = +(Math.max(...lons) + m).toFixed(3), lat0 = +(Math.max(...lats) + m).toFixed(3), lat1 = +(Math.min(...lats) - m).toFixed(3);
   sh.region = { ja: locale.ja, lon0, lon1, lat0, lat1, k: Math.round(500 / (lon1 - lon0)), labels: [[lat0 - (lat0 - lat1) * 0.06, (lon0 + lon1) / 2, locale.ja]] };
   // 道: それぞれ近い2か所とつなぐ（つながらなければ一番近い組を足す）

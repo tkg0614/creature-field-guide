@@ -2,7 +2,7 @@
  "id": "snake",
  "ja": "アオダイショウ",
  "sci": "Elaphe climacophora",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -221,8 +221,8 @@
  ],
  "oldAge": {
   "years": [
-   10,
-   15
+   8,
+   12
   ],
   "text": "冷え込む冬の床下で、眠るように息を引き取った。"
  },
@@ -705,5 +705,6 @@
   {
    "quote": "日本の里山・農村に生息し、夏に卵からかえり、冬眠する。"
   }
- ]
+ ],
+ "review": "Claude 2026-10-20: 寿命を [10,15]→[8,12]（飼育下の最大13.1年より短い野外の目安・推測）。事実の引用3件は資料外（要確認）"
 }

@@ -1,0 +1,323 @@
+{
+ "id": "ant",
+ "ja": "クロオオアリ",
+ "sci": "Camponotus japonicus",
+ "status": "draft-ng",
+ "country": "jp",
+ "by": {
+  "places": "groq openai/gpt-oss-120b",
+  "life": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "本州の山林と住宅地",
+  "geo": "Honshu, Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "garden",
+   "ja": "住宅街の庭",
+   "danger": 1,
+   "cover": true,
+   "about": "庭の土は乾燥しやすく甘露や小昆虫が集まる。天敵は少なく巣作りに適している。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.677,
+   "lon": 139.764
+  },
+  {
+   "id": "park",
+   "ja": "公園の芝生",
+   "danger": 1,
+   "cover": true,
+   "about": "芝生の下に小さな空洞ができ、巣の入口となる。人の往来が多く捕食者も散在する。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.694,
+   "lon": 135.501
+  },
+  {
+   "id": "field",
+   "ja": "農耕地の畑",
+   "danger": 2,
+   "cover": false,
+   "about": "耕作された土は頻繁に耕され巣は破壊されやすいが、作物残渣が餌になる。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 43.452,
+   "lon": 142.82
+  },
+  {
+   "id": "forest",
+   "ja": "林道の落葉林",
+   "danger": 2,
+   "cover": true,
+   "about": "落葉が厚く隠れ場所を提供し、天敵のアリやクモが多い。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.114,
+   "lon": 138.032
+  },
+  {
+   "id": "riverbank",
+   "ja": "河川敷の砂地",
+   "danger": 2,
+   "cover": false,
+   "about": "砂地は乾燥しやすく巣の維持が難しいが、昆虫が集まり餌になる。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.012,
+   "lon": 135.768
+  },
+  {
+   "id": "mountain",
+   "ja": "山岳の岩場",
+   "danger": 3,
+   "cover": true,
+   "about": "岩の割れ目に巣を作り、猛禽類やクモの捕食圧が高い。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 38.475,
+   "lon": 140.083
+  },
+  {
+   "id": "ruins",
+   "ja": "廃墟の壁裏",
+   "danger": 1,
+   "cover": true,
+   "about": "壁裏は湿度が保たれ巣の構造が安定する。人間の活動が少なく天敵も限られる。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 33.625,
+   "lon": 130.618
+  }
+ ],
+ "start": {
+  "place": "garden",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "本州の山林と住宅地",
+  "lon0": 126.957,
+  "lon1": 146.481,
+  "lat0": 47.113,
+  "lat1": 29.964,
+  "k": 26,
+  "labels": [
+   [
+    46.08406,
+    136.719,
+    "本州の山林と住宅地"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "forest",
+   "garden"
+  ],
+  [
+   "garden",
+   "mountain"
+  ],
+  [
+   "park",
+   "riverbank"
+  ],
+  [
+   "forest",
+   "park"
+  ],
+  [
+   "field",
+   "mountain"
+  ],
+  [
+   "field",
+   "garden"
+  ],
+  [
+   "forest",
+   "riverbank"
+  ],
+  [
+   "forest",
+   "mountain"
+  ],
+  [
+   "park",
+   "ruins"
+  ],
+  [
+   "riverbank",
+   "ruins"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "mm",
+  "start": 6
+ },
+ "stats": {
+  "run": {
+   "ja": "走る力",
+   "use": "巣や餌場へ速く移動する時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚",
+   "use": "フェロモンや敵を感知する時に効く"
+  },
+  "forage": {
+   "ja": "採餌力",
+   "use": "獲物や甘露を集める時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "egg",
+   "ja": "卵",
+   "days": 10,
+   "adult": false
+  },
+  {
+   "id": "larva",
+   "ja": "幼虫",
+   "days": 30,
+   "adult": false
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "days": 20,
+   "adult": false
+  },
+  {
+   "id": "adult",
+   "ja": "働きアリ",
+   "days": 365,
+   "adult": true
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   2
+  ],
+  "text": "老化で活動が鈍くなり、巣の外へ出なくなる"
+ },
+ "breeding": {
+  "ja": "女王が卵を産む",
+  "ds": "巣の中で女王が大量の卵を産む",
+  "months": [
+   5,
+   6
+  ],
+  "places": [
+   "forest",
+   "garden",
+   "park",
+   "field"
+  ],
+  "perYear": 1,
+  "kids": [
+   2000,
+   5000
+  ],
+  "many": 10000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "孵化した幼虫"
+  },
+  "ok": "女王は{born}個の卵を産んだ。",
+  "ng": "女王が産卵に失敗した。",
+  "goal1": "卵を産む",
+  "goal2": "多数の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "insect_larvae",
+   "ja": "昆虫の幼虫を捕食する",
+   "name": "昆虫幼虫",
+   "ds": "大顎で捕らえ、蟻酸で殺して巣に持ち帰る",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "places": [
+    "forest",
+    "field",
+    "garden"
+   ],
+   "rich": [
+    "forest"
+   ],
+   "ok": "幼虫を捕らえて巣に持ち帰った。",
+   "full": 20
+  },
+  {
+   "id": "aphid_honeydew",
+   "ja": "アブラムシの甘露を採取する",
+   "name": "甘露",
+   "ds": "アブラムシの分泌物を舐め取る",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "garden",
+    "park",
+    "field"
+   ],
+   "rich": [
+    "garden"
+   ],
+   "ok": "甘露を舐め取った。",
+   "full": 10
+  }
+ ],
+ "special": [
+  {
+   "id": "pheromone_call",
+   "ja": "フェロモンで仲間を呼ぶ",
+   "ds": "体表からフェロモンを放出し、働きアリを呼び寄せる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "フェロモンを放出し、仲間が集まった。"
+  }
+ ],
+ "levelEvery": 4
+}

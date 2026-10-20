@@ -2,7 +2,7 @@
  "id": "ant",
  "ja": "クロオオアリ",
  "sci": "Camponotus japonicus",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -682,5 +682,6 @@
   {
    "quote": "働きアリの寿命はせいぜい1 - 2年であり、10年を超える女王アリのひいてはコロニー全体の潜在的な寿命と比べ、著しく短い。"
   }
- ]
+ ],
+ "review": "Claude 2026-10-20: 天敵・すみか・分かれ道を読んで可（Gemini 作）"
 }

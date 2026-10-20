@@ -2,7 +2,7 @@
  "id": "mosquito",
  "ja": "アカイエカ",
  "sci": "Culex pipiens pallens",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -104,7 +104,7 @@
  ],
  "start": {
   "place": "gutter",
-  "month": 6,
+  "month": 8,
   "day": 10
  },
  "region": {
@@ -677,5 +677,6 @@
   {
    "quote": "雌は鳥類や人などから吸血する。"
   }
- ]
+ ],
+ "review": "Claude 2026-10-20: 天敵・すみか・分かれ道を読んで可（Gemini 作）。生まれ月を8月へ（越冬の分かれ道が届くように。越冬する雌は秋に羽化する）"
 }

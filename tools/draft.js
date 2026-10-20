@@ -16,25 +16,8 @@ const dir = path.join(ROOT, 'sources', id);
 const SRC = fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n') : '';
 const OUT = path.join(ROOT, 'sheets', `${id}.json`);
 
-// AI の呼び出しはここだけ。PROVIDER=ollama（ローカル）| github（GitHub Models・Actions の GITHUB_TOKEN）| gemini（GEMINI_API_KEY）
-const PROVIDER = opt('provider', process.env.PROVIDER || 'ollama');
-async function ask(prompt) {
-  if (PROVIDER === 'github') {
-    const r = await fetch('https://models.github.ai/inference/chat/completions', { method: 'POST', headers: { authorization: `Bearer ${process.env.GITHUB_TOKEN}`, 'content-type': 'application/json' },
-      body: JSON.stringify({ model: MODEL, temperature: 0.5, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
-    const j = await r.json(); if (!j.choices) throw new Error(`${r.status} ${JSON.stringify(j).slice(0, 200)}`);
-    return JSON.parse(j.choices[0].message.content);
-  }
-  if (PROVIDER === 'gemini') {
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'content-type': 'application/json' },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, responseMimeType: 'application/json' } }) });
-    const j = await r.json(); const t = j.candidates && j.candidates[0].content.parts[0].text; if (!t) throw new Error(`${r.status} ${JSON.stringify(j).slice(0, 200)}`);
-    return JSON.parse(t);
-  }
-  const r = await fetch(`${HOST}/api/chat`, { method: 'POST', body: JSON.stringify({ model: MODEL, stream: false, format: 'json', options: { temperature: 0.5, num_ctx: 8192 }, messages: [{ role: 'user', content: prompt }] }) });
-  const j = await r.json(); if (!j.message) throw new Error(JSON.stringify(j).slice(0, 200));
-  return JSON.parse(j.message.content);
-}
+const AI = require('./ai.js');
+const PROVIDER = process.env.PROVIDER || 'cloud';
 
 // 段: 埋める欄・見本の欄・頼み方
 const PARTS = [
@@ -78,7 +61,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
     let errors = [], ok = false;
     for (let t = 1; t <= TRIES && !ok; t++) {
       const t0 = Date.now();
-      let got; try { got = await ask(prompt(P, sheet, errors)); } catch (e) { errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
+      let got; try { const a = await AI.ask(prompt(P, sheet, errors)); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
       const trial = { ...sheet }; for (const k of P.keys) if (k in got) trial[k] = got[k];
       if (P.part === 'places') { try { if (!Array.isArray(trial.places) || !trial.locale) throw new Error('locale と places が要る'); await layout(trial, trial.locale); } catch (e) { errors = [e.message]; console.log(`  places ${t}回目: ✗ ${e.message}`); continue; } }
       // 段を決めたら、すみかの stages を補う（空なら全部の段）

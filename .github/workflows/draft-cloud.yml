@@ -1,43 +1,47 @@
-# 素材の表を、クラウドのAI（GitHub Models: Actions の GITHUB_TOKEN だけで使える・鍵の登録なし）で下書きする。
-# 手動だけ。種ごとに別の機械で同時に回す。モデルや回数の上限は GitHub Models の無料枠に従う。
+# 素材の表を、無料枠のクラウドAIを順に使い回して下書きする（毎晩・手動でも）。
+# AI は data/providers.json の上から。上限に当たったら次の AI へ、休み明けにまた使う（data/cooldown.json に記録して引き継ぐ）。
+# 鍵: GitHub Models は鍵なし（GITHUB_TOKEN）。ほかは Settings → Secrets → Actions に入れたものだけ使う。
+# 1つの機械で種を1つずつ順に（上限の記録を1か所で持つため）。使える AI が無くなったら、その回はおしまい。
 name: draft sheets (cloud AI)
 on:
   workflow_dispatch:
     inputs:
-      ids: { description: "種の id（空白区切り）", required: true, default: "snake" }
-      model: { description: "モデル（GitHub Models の名前）", required: false, default: "openai/gpt-4.1" }
+      ids: { description: "種の id（空白区切り。空なら queue のまだの種から）", required: false, default: "" }
+      max: { description: "最大何種", required: false, default: "4" }
+  schedule:
+    - cron: "17 18 * * *"   # 毎日 日本の深夜3:17
 permissions:
   contents: write
   models: read
+concurrency: { group: draft, cancel-in-progress: false }
 jobs:
-  plan:
-    runs-on: ubuntu-latest
-    outputs: { ids: "${{ steps.p.outputs.ids }}" }
-    steps:
-      - id: p
-        run: node -e 'const ids=process.env.IDS.split(/\s+/).filter(Boolean); require("fs").appendFileSync(process.env.GITHUB_OUTPUT,`ids=${JSON.stringify(ids)}\n`)'
-        env: { IDS: "${{ inputs.ids }}" }
   draft:
-    needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      max-parallel: 3
-      matrix: { id: "${{ fromJson(needs.plan.outputs.ids) }}" }
+    timeout-minutes: 300
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - name: 資料を取ってきて下書きする
-        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", PROVIDER: github, MODEL: "${{ inputs.model }}" }
-        run: |
-          node tools/fetch.js ${{ matrix.id }}
-          rm -f sheets/${{ matrix.id }}.json
-          node tools/draft.js ${{ matrix.id }} --tries 4 || true
-          node tools/check.js ${{ matrix.id }} || true
-      - name: 送る
+      - name: 下書きする（種ごとに commit・push）
+        env: { IDS: "${{ inputs.ids }}", MAX: "${{ inputs.max || 4 }}" }
         run: |
           git config user.name "field-guide-bot"; git config user.email "field-guide-bot@users.noreply.github.com"
-          git add sheets/${{ matrix.id }}.json sources/${{ matrix.id }}
-          git diff --cached --quiet && exit 0
-          git commit -q -m "draft: ${{ matrix.id }}（GitHub Models ${{ inputs.model }}）"
-          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep $((i*7)); done
+          node tools/ai.js
+          IDS=$(node -e '
+            const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);
+            const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};
+            const q=JSON.parse(fs.readFileSync("data/queue.json","utf8")).map(x=>x.id);
+            console.log((want.length?want:q.filter(id=>["none","draft"].includes(st(id)))).slice(0,+process.env.MAX).join(" "))')
+          echo "今回: $IDS"
+          for id in $IDS; do
+            node tools/fetch.js "$id"
+            set +e; node tools/draft.js "$id" --tries 4; code=$?; set -e
+            node tools/check.js "$id" || true
+            git add -A sheets sources data/cooldown.json 2>/dev/null || true
+            git diff --cached --quiet || { git commit -q -m "draft: $id"; for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep 5; done; }
+            [ "$code" = 3 ] && { echo "使える AI が無くなったので、続きは次の回"; break; }
+          done

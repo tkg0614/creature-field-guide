@@ -1,4 +1,4 @@
-# 素材の表を、無料枠のクラウドAIを順に使い回して下書きする（毎晩・手動でも）。
+# 素材の表を、無料枠のクラウドAIを順に使い回して下書きする（毎日の夜中・手動でも）。
 # AI は data/providers.json の上から。上限に当たったら次の AI へ、休み明けにまた使う（data/cooldown.json に記録して引き継ぐ）。
 # 鍵:  Settings → Secrets → Actions に入れたものだけ使う。
 # 1つの機械で種を1つずつ順に（上限の記録を1か所で持つため）。使える AI が無くなったら、その回はおしまい。
@@ -9,9 +9,9 @@ on:
       ids: { description: "種の id（空白区切り。空なら queue のまだの種から）", required: false, default: "" }
       max: { description: "最大何種", required: false, default: "4" }
   schedule:
-    - cron: "3 20 * * *"   # 毎日 日本の朝5:03（Gemini の無料枠は日本の16〜17時に戻り、朝まで使わずに残っている）
-    - cron: "33 21 * * *"  # 控え 6:33（GitHub は定時の起動を落とすことがある。枠が無ければすぐ終わる）
-    - cron: "33 23 * * *"  # 控え 8:33
+    - cron: "3 18 * * *"   # 毎日 日本の3:03（Gemini の無料枠は日本の16〜17時に戻り、夜中まで使わずに残っている）。5:00 に Claude が検品する
+    - cron: "33 18 * * *"  # 控え 3:33（GitHub は定時の起動を落とすことがある。枠が無ければすぐ終わる）
+    - cron: "3 19 * * *"   # 控え 4:03
 permissions:
   contents: write
 concurrency: { group: draft, cancel-in-progress: false }

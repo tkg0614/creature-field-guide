@@ -4,7 +4,7 @@
   "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  },
  "groq": {
-  "until": "2026-10-20T04:50:29.544Z",
+  "until": "2026-10-20T04:55:03.734Z",
   "why": "{\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m5brcpcqexd9hg4hmeagw7ez` service tier `on_demand` on tokens per "
  },
  "openrouter": {

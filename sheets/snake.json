@@ -1,0 +1,10 @@
+{
+ "id": "snake",
+ "ja": "アオダイショウ",
+ "sci": "Elaphe climacophora",
+ "status": "draft-ng",
+ "country": "jp",
+ "by": {
+  "places": "groq openai/gpt-oss-120b"
+ }
+}

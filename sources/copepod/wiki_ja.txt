@@ -1,0 +1,323 @@
+出典: https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%A4%E3%82%A2%E3%82%B7%E9%A1%9E（CC BY-SA 4.0）
+カイアシ類（カイアシるい、橈脚類）は、節足動物門六幼生綱カイアシ亜綱（カイアシあこう、Copepoda）に属する甲殻類の総称。現在は、10目約15,000種が報告されている。ケンミジンコまたは、学名のカタカナ読みでコペポーダとも呼ばれる。多くは浮遊生物として生活する微小な甲殻類であるが、底生性、寄生性なども存在する。海洋生態系においては食物連鎖上、重要な位置付けである。
+
+
+== 概要 ==
+カイアシ（橈脚）類は、カイアシ亜綱に属する甲殻類である。学名の「Copepoda（コペポーダ）」はギリシャ語での、船のオール（橈）を意味する「kope」と、脚を意味する「pous」から因んでいる。カイアシ類の別名「ケンミジンコ（剣微塵子）」はオイトナ亜目の一部とエルガシルス亜目を除く、キクロプス目に分類される種のことを指すことが多い。胴体を剣の刃、第1触角を鍔に見立てた名称である。なお、「ケンミジンコ」は一般名であり、学術的にはあまり使わない呼び名である。カラヌス目は「ヒゲナガケンミジンコ」と呼ばれるが、「ケンミジンコ」との混合を避けるため「ヒゲミジンコ」と称する場合がある。
+大部分は浮遊生活（プランクトン）をしている。他に底生性、間隙性、寄生性もある。一部では地下水性や半陸上性（土壌や落葉、コケなどの水膜中に生息し、完全に陸上で生息しているわけではない）、葉上性も知られる。半陸上性のグループは主に開拓されていない里山の土壌中や落葉中に多くの種が生息するが、例外的に皇居からの発見例もある。
+海洋において、プランクトンネットで採集される動物プランクトンで、カイアシ類が数、量ともに最大の割合を占めることが多い。魚やクラゲなどの肉食性動物の餌としてきわめて重要である。藻類による光合成で生産されたエネルギーを魚など高次の捕食者へ受け渡すという食物連鎖上で重要な位置である。
+
+
+== 形態 ==
+
+体形は基本的に円筒形～紡錘形である。体長は0.3-5ミリメートル程度で、多くは1ミリメートルと、とても小さい。詳細な形態を観察するには顕微鏡が必要になる。一方で、寄生性の種（ヒジキムシ科 Pennellidae；ペンネラとも呼ばれる）は体長32 cmに達することもある。
+寄生性の種を除く、基本的なカイアシ類の体制は、大きく分けて前体部と後体部で構成される（寄生性の種は高度に変態し、体節が消失、付属肢が欠損していることがある）。前体部と後体部の境界は可動で、屈曲ができる。頭部には第1触角、第2触角、大顎、第1小顎、第2小顎、顎脚がある。胸部には第1胸脚～第4あるいは第5胸脚がある。第6胸脚は退化的で、雌では生殖節上の生殖蓋に変形していることがある。完全に欠如する種もいる。腹肢はどの種もない。尾部先端、肛門節に尾叉が付属する。外見上の体節数は頭部1節（頭胸節）、胸部6節（第6胸節は「生殖節」）、腹部4節（第4腹節は肛門節）、合計11節（幼生や幼体では減少している；種により頭部あるいは肛門節と、いくつかの胸節あるいは腹節が融合していることがある）となる。しかし、雌では第6胸節と第1腹節が完全あるいは不完全に融合して「生殖複合節」を形成する（原始的な種であるプラティコピア目では分離し、第6胸脚が生殖節となる）。そのため雌の場合は合計10節になる。ただし、便宜上、生殖複合節の次の節は第1腹節とすることが多い。種によっては生殖複合節に1つまたは2つの卵嚢を付けることがある。他の種は卵塊または個々で水中へ放つ。生殖複合節に貯精嚢をもち、精子を貯蔵する事ができる種もいる。この種は、一度の交尾で必要に応じて精子と卵と受精させ、一生涯、産卵することが可能である。
+
+第1触角
+感覚器として機能し、多くは触角から複数の刺毛が生えている。振動や水中の化学物質を受容する。カラヌス目では前体部程度の長さがある。カラヌス目以外の種では触角は短く、欠くものもいる。雄の片方あるいは両方の触角が、肥大するなどの変形をして、交尾時に雌を捕まえるための把握器になっている場合がある。
+第2触角
+第1触角と比べると著しく小型化しており解剖をしないと観察できないことがある。遊泳や摂食時の餌をかき集める役割がある。寄生性のあるグループでは宿主へ付着するために鉤爪状へ変形したものもいる。
+大顎
+餌を咀嚼する器官で、複数の咀嚼歯をもつ。種によっては成体になると退化して摂食をしなくなるものもいる。
+第1小顎
+餌を捕まえる把握器として機能がある。底節と基節には無数の刺毛が生えており、遊泳としての役割も持つ。
+第2小顎
+餌を把握する。第1下顎と合わせて餌粒子を濾しとる、懸濁物摂食（suspension feeding）の要となる。これらが位置する部分をフィーディング・バスケット（feeding basket）と称することがある。
+顎脚
+胸部に位置する摂食に関わる付属肢。遊泳としての役割も持つ。
+胸脚
+4対あるいは5対、稀に6対ある。多くは5対で、通常は遊泳として機能する。底生性では歩脚に変形したものや、第1胸脚が把握としての役割をもつものもいる。カラヌス目の多くは、雄の第5胸脚が交尾時に雌を把握し、雌の生殖孔へ精包をつける働きをもつ。また、第6胸脚は雄で欠損し、雌では小型化し生殖孔の生殖蓋に変形している。
+ノープリウス眼（nauplius eye）と呼ばれる眼は第一触角の間にあり、多くは単眼のような働きがある。代表的な属のひとつ、キクロプス (Cyclops) 属の属名はギリシャ神話の一つ目巨人キュクロープスに由来する。種によっては2つ目や5つ目、または眼を欠くものもいる。視力は大抵、明度を認識する程度しかない。しかし、ポンテラ科（Pontellidae）やコリケウス科（Corycaeidae）などのグループでは眼が発達し大きなレンズ眼となり、形態を認識する視力を持っているとされている。
+カラヌス目（Calanoida）とミソフリア目（Misophrioida）の一部は心臓をもち、第1胸節または第2胸節の背面に位置する。側面に2つ、後方に1つの開口があり、前方に大動脈がある。ただし大動脈を欠く種もいる。心拍数は1分間に300回程度。開放循環系であり、心臓を出た血液は体腔内の小溝中を循環し、心臓へ戻る。血色素はヘムエリスリンだが、甲殻類で一般的なヘモシアニンは報告されていない。
+
+
+== 生態 ==
+
+
+=== 生活史 ===
+卵から孵化すると、ノープリウス幼生、コペポディット幼体を経て成体になる。ノープリウス幼生はノープリウス第1-6期、コペポディット幼体はコペポディット第1-5期、成体はコペポディット第6期に相当する。計12つのステージがある。寄生性の種ではステージ数を短縮することが知られている。それぞれのステージは脱皮をすることで次のステージに移行し、成体になると脱皮をしなくなる。したがって、一生の脱皮回数は11回となる。
+
+
+=== 休眠 ===
+ハルパクチクス目（Harpscticoida）の一部とキクロプス目（Cyclopoida）の一部、カラヌス目（Calanoida）の一部のグループは生息に不適な状況（例えば、低酸素、高温、干ばつ）の間休眠する。コペポディット幼体や稀に成体のときに休眠するが、中には休眠卵（耐久卵）やシスト（粘液物を分泌して体を包み込みカプセル状に硬化）になるものもいる。
+多くは産卵後にすぐに発生し孵化する急発卵（subitaneous egg）だが、種により環境が好機になると孵化する休止卵（quiescent egg）、あるいは環境が好機になっても一定期間経過しないと孵化しない休眠卵（耐久卵；diapause egg）を産卵する。後者2つを広義な意味の休眠卵（dormancyあるいはresting egg）とまとめることもある。休眠卵の形状は、海産種では枝状突起や円盤状構造物を付ける。これに対し、急発卵は卵殻が平滑で構造物がない。。海底には数cmで数万個の休眠卵が堆積している試算がある。300年経過した休眠卵を好適条件にしたところ孵化し、成体まで成長したという例がある。
+コペポディット幼体または成体の休眠は体内に多くの油球（oil sac）を形成する。この油球体積比（いわば体脂肪率）は60%を越える。脂質の種類は多くはワックスエステルとトリグリセリドで、油球中にはワックスエステルが含まれ、トリグリセリドは体内中に分散している。一部にプリステインがあり、中性浮力として機能していると考えられている。トリグリセリドをもつ個体は休眠以外でも見られ、休眠個体にはワックスエステルを多く貯蔵している。ワックスエステルはエネルギー貯蔵として働くが、トリグリセリドは海水よりも比重が小さく、浮力としての役割があると考えられている。こうした油球を多く持った休眠個体は食物連鎖上、重要な栄養源となり、水産物中の脂質成分の分布や動態が大きく関わっている。
+
+
+=== 発光 ===
+発光はルシフェリン–ルシフェラーゼ反応による。セレンテラジンを基質とし、コペポーダルシフェラーゼが酸化反応の触媒となっている。ATPやマグネシウム等の金属イオンを必要としないのが特徴である。発光する種は Augaptiloidea 上科がよく知られ、この上科には、Arietellidae 科、Augaptilidae 科、Heterorhabdidae 科、Lucicutiidae 科、Metridinidae 科、Nullosetigeridae 科が含まれる。その他、2目数種が発光することが報告されている。120℃20分、強酸性、強塩基性で失活せず、あらゆるルシフェラーゼの中で最小サイズ（20 kDa 程度）、最輝度である。カイアシ類は生活で高温、強酸性、強塩基性にさらされることはないが、なぜ、それらの耐性があるのかは分かっていない。ただし、タンパク質構造において強い結合力をもつS-S結合が多く、それが耐性に関連しているのかもしれない。
+発光は分泌型で、体表に分泌腺がある。通常、発光には性的二型があり、生殖行動に関連していると考えられている。
+Heterorhabdidae 科 Disseta 属の一種は、視覚捕食者に目掛けて分泌し、発光を目くらましに使用することがある。この際、発光するのに遅延があり、視覚捕食者の目の前で炸裂するように発光する。
+
+
+== 生態系の中での役割 ==
+カイアシ類は世界中の海域で優占する動物プランクトンであり、地球上で最も個体数が多い多細胞生物だと言われている。生物量においても90%を占めることがある。特に海洋で繁栄しているのは、カイアシ類の中でもカラヌス目に分類される種である。したがって、動物プランクトンを摂餌する生物、例えば魚類はカイアシ類を主に摂餌しているということになる。実際に、日本近海では、消化管内容物を調べると、サンマは62～100%がカイアシ類であり、アユ仔稚魚は92.6%、スズキ仔稚魚は69.4～93.1%、カタクチイワシは83%、カタクチイワシの仔稚魚は100%を占めている。概ね、魚類の全長が200 mm以下の場合、カイアシ類を主に摂餌しているということになる。カイアシ類は植物プランクトンを摂餌して成長するが、植物プランクトンのエネルギーを高次の食物連鎖の段階（栄養段階）へ受け渡すという役割を担っている。いわば、食物連鎖の要という位置付けである。シラスの釜揚げは、シラス（カタクチイワシなどの仔稚魚）のお腹が赤くなっていることが多いが、これは摂餌したカイアシ類が釜揚げの熱によって、アスタキサンチンの色素が遊離し、赤色を呈したことによる。
+
+
+== 分類 ==
+
+六幼生綱を認めない場合、カイアシ綱に分類する説もある。
+分類はWorld Register of Marine Species (2022)及び文献に従い、カラヌス目の上科はOhtsuka & Huys (2001)と日本海洋データセンター（JODC）に準じて分類した。和名は図鑑などを参考にした。
+2017年にポエキロストム目（Poecilostomatoida）は解体されキクロプス目（Cyclopoida）に統合、ハルパクチクス目（Harpacticoida）の一部のグループ（ポリアルスラ亜目Polyarthra）がカヌエラ目（Canuelloida）に昇格（ただし、分類変更の根拠となった論文は2020年に撤回されており、Canuelloidaは不適格名とされる）。2003年からあったタウマトプシルス目（Thaumatopsylloida）は、2019年にキクロプス目の科に降格、現在の10目となる（発生の観点からタウマトプシルス目を竿尾上目Rhabdomopleaに分割する説も対立しているが、ここでは扱わない）。2019年にキクロプス目は4亜目に細分化、タウマトプシルス科はオイトナ亜目（Oithonida）の下位分類となる。
+
+原始前脚下綱 Progymnoplea Lang, 1948
+プラティコピア目 Platycopioida Fosshagen, 1985
+新カイアシ下綱 Neocopepoda Huys & Boxshall, 1991
+前脚上目 Gymnoplea Giesbrecht, 1882
+カラヌス目 Calanoida Sars G. O., 1903
+アリエテルス上科 Arietelloidea
+アウガプティルス科 Augaptilidae Sars G.O., 1905
+アエティデウス科 Aetideidae Giesbrecht, 1892
+ヘテロラブドゥス科 Heterorhabdidae Sars G.O., 1902
+ルシクチア科 Lucicutiidae Sars G.O., 1902
+メトリディア科 Metridinidae Matthews, 1961
+メトリディア属 Metridia Boeck, 1865
+Metridia pacifica Brodsky, 1950
+バシィポンティア上科 Bathypontioidea
+バシィポンティア科 Bathypontiidae Brodsky, 1950
+セントロパジェス上科 Centropagoidea
+アカルチア科 Acartiidae Sars G.O., 1903
+アカルチア属 Acartia Dana, 1846
+Acartia (Acartiura) hudsonica Pinhey, 1926
+Acartia (Acartiura) omorii Bradford, 1976
+セントロパジェス科（ケントロパガス科） Centropagidae Giesbrecht, 1893
+セントロパジェス属 Centropages Krøyer, 1849
+ヒゲナガケンミジンコ属 Sinocalanus Burckhardt, 1913
+Sinocalanus tenellus (Kikuchi K., 1928) （キスイヒゲナガケンミジンコ）
+ヒゲナガケンミジンコ科 Diaptomidae Giesbrecht, 1850
+アカントディアプトムス（ヤマトヒゲナガケンミジンコ）属 Acanthodiaptomus Kiefer, 1932
+Acanthodiaptomus pacificus (Burckhardt, 1913) （ヒゲナガケンミジンコ）
+ディアプトムス属 Diaptomus Westwood, 1836
+ポンテラ科 Pontellidae Dana, 1852
+ポンテラ属 Pontella Dana, 1846
+シュードディアプトムス科（プセウドディアプトムス科、ニセヒゲナガケンミジンコ科） Pseudodiaptomidae Sars G.O., 1902
+ニセヒゲナガケンミジンコ属 Pseudodiaptomus Herrick, 1884
+Pseudodiaptomus inopinus Burckhardt, 1913 （ニセヒゲナガケンミジンコ）
+テモラ科 Temoridae Giesbrecht, 1893
+ユウリテモラ属 Eurytemora Giesbrecht, 1881
+Eurytemora affinis (Poppe, 1880) （ケブカヒゲナガケンミジンコ）
+テモラ属 Temora Baird, 1850
+トルタヌス科 Tortanidae Sars G.O., 1902
+クラウソカラヌス上科 Clausocalanoidea
+クラウソカラヌス科 Clausocalanidae Giesbrecht, 1893
+ユウキータ科 Euchaetidae Giesbrecht, 1893
+フェンナ科 Phaennidae Sars G.O., 1902
+セファロファネス属 Cephalophanes Sars G.O., 1907
+スコレシスリックス科 Scolecitrichidae Giesbrecht, 1893
+スピノカラヌス上科 Spinocalanoidea
+スピノカラヌス科 Spinocalanidae Vervoort, 1951
+ユウカラヌス上科 Eucalanoidea
+ユウカラヌス科 Eucalanidae Giesbrecht, 1893
+ユウカラヌス属 Eucalanus Dana, 1852
+Eucalanus bungii Giesbrecht, 1893
+サブユウカラヌス科 Subeucalanidae Giesbrecht, 1893
+メガカラヌス上科 Megacalanoidea
+カラヌス科 Calanidae Dana, 1849
+カラヌス属 Calanus Leach, 1816
+Calanus sinicus Brodsky, 1962
+ネオカラヌス属 Neocalanus Sars G.O., 1925
+Neocalanus cristatus (Krøyer, 1848)
+Neocalanus flemingeri Miller, 1988
+Neocalanus plumchrus (Marukawa, 1921)
+メガカラヌス科 Megacalanidae Sewell, 1947
+パラカラヌス科 Paracalanidae Soh, Ohtsuka, Imabayashi & Suh, 1999
+カロカラヌス属 Calocalanus Giesbrecht, 1888
+Calocalanus pavo (Dana, 1852)
+Calocalanus plumulosus (Claus, 1863)
+シュードキクロプス上科 Pseudocyclopidea
+シュードキクロプス科 Pseudocyclopidae Giesbrecht, 1893
+リオカラヌス上科 Ryocalanoidea
+リオカラヌス科 Ryocalanidae Andronov, 1974
+後脚上目 Podoplea Giesbrecht, 1882
+目 Polyarthra Lang, 1944（ハルパクチクス目のポリアルスラ亜目が目に昇格。カヌエラ目 Canuelloida Khodami et al, 2017はシノニム）
+カヌエラ科 Canuellidae Lang, 1944
+ロンギペディア科（アシナガソコミジンコ科） Longipediidae Boeck, 1865
+アシナガソコミジンコ属 Longipedia Claus, 1862
+Longipedia andamanica Wells, 1980 （アンダマンアシナガソコミジンコ）
+Longipedia andamanica nipponica Itô, 1985 （ニホンアシナガソコミジンコ）
+Longipedia spinulosa Itô, 1981 （トゲアシナガソコミジンコ）
+キクロプス目（ケンミジンコ目） Cyclopoida Burmeister, 1834
+キクロピシナ亜目 Cyclopicinida Kohdami Mercado-Salas, Tang & Martinez Arbizu, 2019
+キクロピシナ科 Cyclopicinidae Kohdami Mercado-Salas, Tang & Martinez Arbizu, 2019
+キクロピシナ属 Cyclopicina  Lindberg, 1953
+Cyclopicina toyoshioae Ohtsuka, Tanaka & Boxshall, 2016
+キクロプス（ケンミジンコ）亜目 Cyclopida Kohdami Mercado-Salas, Tang & Martinez Arbizu, 2019
+ケンミジンコ科（キクロプス科） Cyclopidae Rafinesque, 1815
+ケンミジンコ属（キクロプス属） Cyclops Müller O.F., 1785
+Cyclops strenuus strenuus Fischer, 1851 （ケンミジンコ）
+Cyclops kikuchi Smirnov, 1932 （オナガケンミジンコ）
+エクトキクロプス属 Ectocyclops Brady, 1904
+ノコギリケンミジンコ属 Eucyclops Claus, 1893
+オオケンミジンコ属 Macrocyclops Claus, 1893
+メガキクロプス属 Megacyclops Kiefer, 1927
+アサガオケンミジンコ属 Mesocyclops Sars G.O., 1914
+コガタケンミジンコ属 Microcyclops Claus, 1893
+オクリダキクロプス属 Ochridacyclops Kiefer, 1937
+ハリキクロプス科 Halicyclopidae Kiefer, 1927
+シオミズケンミジンコ属 Halicyclops Norman, 1903
+イカリムシ科 Lernaeidae Cobbold, 1879
+イカリムシ属 Lernaea Linnaeus, 1758
+Lernaea cyprinacea Linnaeus, 1758 （イカリムシ）
+Lernaea parasiluri Yü, 1938 （ナマズイカリムシ）
+ヒメイカリムシ属 Lamproglena von Nordmann, 1832
+Lamproglena chinensis Yü, 1937 （ヒメイカリムシ）
+ニセエラジラミ亜目 Ergasilida Kohdami Mercado-Salas, Tang & Martinez Arbizu, 2019
+カイヤドリケンミジンコ科 Anthessiidae Humes, 1986
+カイヤドリケンミジンコ属 Anthessius Della Valle, 1880
+ヒキコモリハラムシ属 Neanthessius Izawa, 1976
+サザエノハラムシ属 Panaietis Stebbing, 1900
+Panaietis incamerata Stebbing, 1900 （サザエノハラムシ）
+エラジラミ科（ボモロクス科） Bomolochidae Claus, 1875
+ツブムシ科 Chondracanthidae Milne Edwards, 1840
+オシリカジリムシ科 Choreftriidae Uyeno, 2022
+オシリカジリムシ属 Choreftria Uyeno, 2022
+Choreftria shiranui Uyeno, 2022 （オシリカジリムシ）
+ジゴロケンミジンコ科 Clausidiidae Embleton, 1901
+カイジゴロケンミジンコ属 Conchyliurus Bocquet and Stock, 1957
+ヘミキクロプス属 Hemicyclops Boeck, 1872
+Hemicyclops gomsoensis Ho & Kim I.H., 1991
+Hemicyclops japonicus Itoh & Nishida, 1993
+シンカイジゴロケンミジンコ属 Hyphalion Humes, 1987
+コリケウス科 Corycaeidae Dana, 1852
+コリケウス属 Corycaeus Dana, 1845
+ニセエラジラミ科 Ergasilidae von Nordmann, 1832
+フトウデニセエラジラミ属 Dermoergasilus Ho & Do, 1982
+ニセエラジラミ属 Ergasilus von Nordmann, 1832
+ヤマトニセエラジラミ属 Neoergasilus Yin, 1956
+オオユビニセエラジラミ属 Nipergasilus Yin, 1949
+ミツユビバナジラミ属 Paraergasilus Markevich, 1937
+トゲウオジラミ属 Thersitina Norman, 1905
+シノビケンミジンコ科 Lichomolgidae Kossmann, 1877
+ヘルマンケンミジンコ属 Herrmannella Canu, 1891
+シノビケンミジンコ属 Lichomolgus Thorell, 1860
+ヒバリシノビケンミジンコ属 Modiolicola Aurivillius, 1883
+マヨヒガケンミジンコ属 Neomenicola Avdeev and Avdeev, 1991
+カイノミタマ属 Philoconcha Yamaguti, 1936
+エボンノミタマ属 Paraphiloconcha Yamaguti, 1936
+ヒメサザエノハラムシ属 Parapanaietis Hoshina and Sugiura, 1953
+カキヤドリケンミジンコ科 Myicolidae Yamaguti, 1936
+カイバラヤドリ科 Mytilicolidae Bocquet & Stock, 1957
+カイバラヤドリ属 Mytilicola Steuer, 1902
+ホタテエラカザリ属 Pectinophilus Nagasawa, Bresciani & Lutzen, 1988
+Pectinophilus ornatus Nagasawa, Bresciani & Lutzen, 1988 （ホタテエラカザリ）
+ニセカイバラヤドリ属 Trochicola Dollfus, 1914
+ニセカイバラヤドリモドキ属 Piratasta Leigh-Sharpe, 1934
+オンケア科 Oncaeidae Giesbrecht, 1893
+オンケア属 Oncaea Philippi, 1843
+トリコニア属 Triconia Böttger-Schnack, 1999
+カクレムシ科 Philichthyidae Vogt, 1877
+カイノモリガミ科 Philoblennidae Izawa, 1976
+チドリケンミジンコ科 Pseudanthessiidae Humes and Stock, 1972
+カクレケンミジンコ科 Rhynchomolgidae Humes and Stock, 1972
+サフィリナ科 Sapphirinidae Thorell, 1859
+サフィリナ属 Sapphirina Thompson J., 1829
+Sapphirina gemma Dana, 1852
+Sapphirina opalina Dana, 1849
+ウミウシヤドリ科 Splanchnotrophidae Norman and Scott T., 1906
+ホソエラジラミ科 Taeniacanthidae C. B. Wilson, 1911
+オイトナ亜目 Oithonida Kohdami Mercado-Salas, Tang & Martinez Arbizu, 2019
+ヒザラガイヤドリ科 Chitonophilidae Avdeev and Sirenko, 1991
+キクロピナ科 Cyclopinidae Sars, 1913
+サルノカシラヤドリ科 Mantridae Leigh-Sharpe, 1934
+ノトデルフィルス科（ホヤノシラミ科） Notodelphyidae Dana, 1853
+オイトナ科 Oithonidae Dana, 1853
+オイトナ属 Oithona Baird, 1843
+Oithona davisae Ferrari F.D. & Orsi, 1984
+Oithona similis Claus, 1866
+タウマトプシルス科 Thaumatopsyllidae Sars G.O., 1913
+ゲリエラ目 Gelyelloida Huys, 1988
+ハルパクチクス目（ソコミジンコ目） Harpacticoida Sars M., 1903
+カントカンプタス科 Canthocamptidae Brady, 1880
+ブリオカンプタス属 Bryocamptus Chappuis, 1929
+Bryocamptus (Rheocamptus) zschokkei (Schmeil, 1893) （コケソコミジンコ）
+モラリア属 Moraria Scott T. & A. Scott, 1893
+Moraria (Moraria) terrula Kikuchi Y., 1991 （コブソコミジンコ）
+Moraria (Moraria) tsukubaensis Kikuchi Y., 1991 （ツクバソコミジンコ）
+Moraria (Moraria) varica (Graeter, 1911) （アルキソコミジンコ）
+エパクトファネス亜科 Epactophaninae (Borutsky, 1952)
+エパクトファネス属 Epactophanes Mrázek, 1893
+Epactophanes richardi richardi Mrázek, 1893 （チビソコミジンコ）
+ダクチロプジア科 Dactylopusiidae Lang, 1936
+ダクチロプジオイデス属 Dactylopusioides Brian, 1928
+ユウテルピナ（カワリソコミジンコ）科 Tachidiidae Sars G.O., 1909
+ユウテルピナ属 Euterpina Norman, 1903
+ハルパクチクス（ソコミジンコ）科 Harpacticidae Dana, 1846
+ハルパクチクス（ソコミジンコ）属 Harpacticus Milne Edwards H., 1840
+チグリオパス（シオダマリミジンコ）属 Tigriopus Norman, 1869
+Tigriopus californicus (Baker, 1912) （カリフォルニアシオダマリミジンコ）
+Tigriopus japonicus Mori, 1938 （シオダマリミジンコ）
+フネガタソコミジンコ科 Ectinosomatidae Sars G.O., 1903
+オヨギソコミジンコ属 Microsetella Brady & Robertson D., 1873
+Microsetella norvegica (Boeck, 1865) （オヨギソコミジンコ）
+Microsetella rosea (Dana, 1847) （アカオヨギソコミジンコ）
+フィログナソプス科 Phyllognathopodidae Gurney, 1932
+フィログナソプス属 Phyllognathopus Mrázek, 1893
+Phyllognathopus viguieri (Maupas, 1892) （コノハアゴソコミジンコ）
+ポスセロイデス（スイツキミジンコ）科 Porcellidiidae Boeck, 1865
+テガステス（ヨコミジンコ）科 Tegastidae Sars G.O., 1904
+イソミジンコ科 Tisbidae Stebbing, 1910
+ブレッシアニアワツブミジンコ属 Brescianiana Avdeev, 1982
+アワツブミジンコ属 Cholidyella Avdeev, 1982
+タコヤドリイソミジンコ属 Octopinella Avdeev, 1986
+ミソフリア目 Misophrioida Gurney, 1933
+モンストリラ目 Monstrilloida Sars G.O., 1901
+モルモニラ目 Mormonilloida Boxshall, 1979
+シフォノストム目（管口目、ウオジラミ目） Siphonostomatoida Thorell, 1859
+ウオジラミ科（カリグス科） Caligidae Burmeister, 1835
+ウオジラミ属 Caligus O.F. Müller, 1785
+Caligus fugu (Yamaguti, 1936) （セトウオジラミ）
+Caligus lagocephali Pillai, 1961（フグウオジラミ：Caligus fugu Yamaguti & Yamasu, 1959はセトウオジラミのホモニム）
+Caligus tanago Yamaguti, 1939 （タナゴウオジラミ）
+メナシウオジラミ属（サケジラミ属） Lepeophtheirus von Nordmann, 1832
+Lepeophtheirus longiventralis Yü & Wu, 1932 （ナガバラメナシウオジラミ）
+Lepeophtheirus salmonis (Krøyer, 1837) （サケジラミ）
+ツツウオジラミ科 Dichelesthiidae Milne Edwards, 1840
+ハナガタムシ属 Anthosoma Leach, 1816
+エラノミ科 Hatschekiidae Kabata, 1979
+アナゴノエラノミ属 Congericola van Beneden, 1854
+エラノミ属 Hatschekia Poche, 1902
+アシュラエラノミ属 Prohatschekia Nuñes-Ruvio, 1954
+ハモノエラノミ属 Pseudocongericola Yu, 1933
+ナガクビムシ科 Lernaeopodidae Milne Edwards, 1840
+ヤマメナガクビムシ属 Salmincola Wilson C.B., 1915
+Salmincola carpionis (Krøyer, 1837)（イワナナガクビムシ）
+Salmincola markewitshi Shedko & Shedko, 2002（ミヤマナガクビムシ）
+Salmincola stellata Markewitsch, 1936（イトウナガクビムシ）
+Salmincola edwardsii (Olsson, 1869)（オショロコマナガクビムシ）
+Salmincola californiensis (Dana, 1852)（ヤマメナガクビムシ）
+ヒトガタムシ科 Lernanthropidae Kabata, 1979
+サメジラミ科（パンダルス科） Pandaridae Milne Edwards, 1840
+ヒジキムシ科（ペンネラ科） Pennellidae Burmeister, 1835
+ニホンヒジキムシ属 Allotrifur Yamaguti，1963
+ウオノカンザシ属 Cardiodectes C. B. Wilson，1917
+ウオノワキザシ属 Creopelates Shiino，1958
+イカリムシモドキ属 Lernaeenicus Lesueur，1824
+ウオノハブラシ属 Lernaeolophus Heller，1865
+ヘビイカリムシ属 Ophiolernaea Shiino，1958
+ツパサヒジキムシ属 Peniculisa C. B. Wilson，1917
+コヅツヒジキムシ属 Peniculus von Nordmann，1832
+ヒジキムシ属 Pennella Oken, 1815
+Pennella filosa (Linnaeus, 1758)（マグロヒジキムシ）
+ウオノフトコロガタナ属 Peroderma Heller，1865
+メダマイカリムシ属 Phrixocephalus C. B. Wi1son，1908
+シンカイヒジキムシ属 Sarcotretes Jungersen，1911
+リュウノヒゲ属 Serpentisaccus Blasiola，1979
+ニセエラノミ科 Pseudohatschekiidae Tang, Izawa, Uyeno and Nagasawa, 2010
+ニセエラノミ属 Pseudohatschekia Yamaguti, 1939
+
+
+== 脚注 ==
+
+
+== 参考文献 ==
+長澤和也 (2005) カイアシ類学入門. 東海大学出版会. pp. 326
+大塚攻 (2006) カイアシ類・水平進化という戦略―海洋生態系を支える微小生物の世界. NHKブックス. pp. 260.
+Reid, JW. 2001. "A human challenge: discovering and understanding continental copepod habitats." Hydrobiologia 453/454: 201-226. doi:10.1023/A:1013148808110
+
+
+== 外部リンク ==
+
+“カイアシ類は、地球で最も繁栄している甲殻類です”.   広島大学水産実験所. 2022年1月27日閲覧。
+“ケンミジンコ”.   淡水プランクトンのページ. 2012年8月7日閲覧。
+近藤昌和、安本信哉、高橋幸則、「カイアシ類の血球の形態学的特徴」『水産大学校研究報告』 2014年 第62巻 第4号 p.129-135, 水産大学校, ISSN 0370-9361
+大塚攻, 西田周平、「海産浮遊性カイアシ類(甲殻類)の食性再考」『海の研究』 1997年 6巻 5号 p.299-320, doi:10.5928/kaiyou.6.299

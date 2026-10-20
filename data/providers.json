@@ -8,7 +8,8 @@
    "gemini-[0-9.]+-pro$",
    "flash$",
    "flash"
-  ]
+  ],
+  "quality": 3
  },
  {
   "name": "groq",
@@ -23,7 +24,8 @@
    "llama-3\\.3-70b",
    "70b",
    "gpt-oss"
-  ]
+  ],
+  "quality": 1
  },
  {
   "name": "openrouter",
@@ -38,6 +40,7 @@
    "llama.*70b.*:free",
    "gemma.*:free",
    ":free$"
-  ]
+  ],
+  "quality": 2
  }
 ]

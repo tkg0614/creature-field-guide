@@ -21,11 +21,11 @@ const PROVIDER = process.env.PROVIDER || 'cloud';
 
 // 段: 埋める欄・見本の欄・頼み方
 const PARTS = [
-  { part: 'places', keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
-  { part: 'life', keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery'], ask: '育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
-  { part: 'foes', keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
-  { part: 'choices', keys: ['choices', 'happen'], ask: '生き方の分かれ道 choices を3〜4個（実際の生態にある選択だけ。どの選択肢にも損と得。fx は −1〜1）と、季節の出来事 happen を書く。' },
-  { part: 'texts', keys: ['lead', 'texts', 'intro', 'wins', 'memories', 'noKids', 'facts'], ask: '見出しの1文 lead、決まった言い回し texts、生まれた時の文 intro、子を残して終わった時 wins、思い出 memories、資料から抜き出した事実 facts（quote は資料の文をそのまま写す）を書く。' },
+  { part: 'places', minQ: 2, keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
+  { part: 'life', minQ: 3, keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery'], ask: '育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
+  { part: 'foes', minQ: 3, keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
+  { part: 'choices', minQ: 2, keys: ['choices', 'happen'], ask: '生き方の分かれ道 choices を3〜4個（実際の生態にある選択だけ。どの選択肢にも損と得。fx は −1〜1）と、季節の出来事 happen を書く。' },
+  { part: 'texts', minQ: 1, keys: ['lead', 'texts', 'intro', 'wins', 'memories', 'noKids', 'facts'], ask: '見出しの1文 lead、決まった言い回し texts、生まれた時の文 intro、子を残して終わった時 wins、思い出 memories、資料から抜き出した事実 facts（quote は資料の文をそのまま写す）を書く。' },
 ];
 
 function prompt(P, sheet, errors) {
@@ -63,7 +63,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
     let errors = [], ok = false;
     for (let t = 1; t <= TRIES && !ok; t++) {
       const t0 = Date.now();
-      let got; try { const a = await AI.ask(prompt(P, sheet, errors)); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
+      let got; try { const a = await AI.ask(prompt(P, sheet, errors), P.minQ); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
       // 包みを外す: {"sheet": {...}} のように1段包んで返す AI がいる
       for (let n = 0; n < 2 && got && !P.keys.some((k) => k in got); n++) { const v = Object.values(got).find((x) => x && typeof x === 'object' && !Array.isArray(x)); if (!v) break; got = v; }
       // 並びを揃える: 配列のはずの欄を {id: {...}} の形で返す AI がいる → [{id, ...}] に直す

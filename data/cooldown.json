@@ -1,14 +1,1 @@
-{
- "gemini": {
-  "until": "2026-10-20T11:35:58.827Z",
-  "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
- },
- "groq": {
-  "until": "2026-10-20T06:01:10.751Z",
-  "why": "{\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m5brcpcqexd9hg4hmeagw7ez` service tier `on_demand` on tokens per "
- },
- "openrouter": {
-  "until": "2026-10-20T06:40:26.567Z",
-  "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
- }
-}
+{}

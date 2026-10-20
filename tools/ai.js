@@ -20,7 +20,7 @@ async function listModels(p) {
 async function resolve(p, force) {
   if (chosen[p.name] && !force) return chosen[p.name];
   const ids = (await listModels(p).catch(() => [])).filter((id) => !/preview|exp|tts|image|vision|embed|audio|live|guard|whisper/i.test(id));
-  for (const re of p.prefer) { const hit = ids.filter((id) => new RegExp(re, 'i').test(id)).sort().reverse()[0]; if (hit) { chosen[p.name] = hit; fs.writeFileSync(MODELS, JSON.stringify(chosen, null, 1) + '\n'); return hit; } }
+  for (const re of p.prefer) { const hit = ids.filter((id) => new RegExp(re, 'i').test(id)).sort().reverse()[p.pick === 'second' ? 1 : 0]; /* second: 1つ前の版（新しい版が混んでいる時の控え） */ if (hit) { chosen[p.name] = hit; fs.writeFileSync(MODELS, JSON.stringify(chosen, null, 1) + '\n'); return hit; } }
   return null;
 }
 const usable = (minQ = 0) => LIST.filter((p) => (p.quality || 1) >= minQ && process.env[p.key] && !(cool[p.name] && Date.parse(cool[p.name].until) > Date.now()));
@@ -53,9 +53,9 @@ async function ask(prompt, minQ = 0) {
   for (;;) {
     const p = usable(minQ)[0];
     if (!p) {
-      // 休み明けが近い（5分以内）なら待つ。遠ければ、この回はおしまい
+      // 休み明けが近い（15分以内）なら待つ。遠ければ、この回はおしまい
       const soon = LIST.filter((q) => (q.quality || 1) >= minQ && process.env[q.key] && cool[q.name]).map((q) => Date.parse(cool[q.name].until) - Date.now()).sort((a, b) => a - b)[0];
-      if (soon != null && soon < 300e3) { console.log(`  全部が休み中。${Math.ceil(soon / 1000)}秒待つ`); await new Promise((r) => setTimeout(r, Math.max(1000, soon + 500))); continue; }
+      if (soon != null && soon < 900e3) { console.log(`  全部が休み中。${Math.ceil(soon / 1000)}秒待つ`); await new Promise((r) => setTimeout(r, Math.max(1000, soon + 500))); continue; }
       const e = new Error('使える AI が無い（全部が上限で休み中か、鍵が無い）'); e.allLimited = true; throw e;
     }
     let res; try { res = await call(p, prompt); } catch (e) { res = { status: 0, raw: { error: e.message } }; }

@@ -12,6 +12,25 @@
   "quality": 3
  },
  {
+  "name": "gemini-pro",
+  "kind": "gemini",
+  "key": "GEMINI_API_KEY",
+  "quality": 3,
+  "prefer": [
+   "gemini-[0-9.]+-pro$"
+  ]
+ },
+ {
+  "name": "gemini-older",
+  "kind": "gemini",
+  "key": "GEMINI_API_KEY",
+  "quality": 3,
+  "prefer": [
+   "gemini-[0-9.]+-flash$"
+  ],
+  "pick": "second"
+ },
+ {
   "name": "groq",
   "kind": "openai",
   "url": "https://api.groq.com/openai/v1/chat/completions",

@@ -4,7 +4,7 @@
  "sci": "Elaphe climacophora",
  "status": "draft-ng",
  "by": {
-  "places": "gemini gemini-3.8-flash",
+  "places": "groq openai/gpt-oss-120b",
   "life": "groq openai/gpt-oss-120b"
  },
  "locale": {

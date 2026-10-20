@@ -58,11 +58,14 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
   const sheet = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { id: Q.id, ja: Q.ja.replace(/（.*?）/g, ''), sci: Q.sci, status: 'draft', ...(Q.country ? { country: Q.country } : {}) };
   for (const P of PARTS) {
     if (P.keys.every((k) => k in sheet) && !validate(sheet, SRC, [P.part]).errors.length) { console.log(`  ${P.part}: 済`); continue; }
+    // この段を書き直すなら、後ろの段は前提が変わるので消す
+    for (const Q2 of PARTS.slice(PARTS.indexOf(P) + 1)) for (const k of Q2.keys) delete sheet[k];
     let errors = [], ok = false;
     for (let t = 1; t <= TRIES && !ok; t++) {
       const t0 = Date.now();
       let got; try { const a = await AI.ask(prompt(P, sheet, errors)); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
       const trial = JSON.parse(JSON.stringify(sheet)); // 深いコピー（失敗した回の書き換えを残さない） for (const k of P.keys) if (k in got) trial[k] = got[k];
+      if (P.part === 'places') for (const p of trial.places || []) p.stages = (trial.stages || []).map((s) => s.id); // すみかの段はコードが決める（AI の書いたものは捨てる）
       if (P.part === 'places') { try { if (!Array.isArray(trial.places) || !trial.locale) throw new Error('locale と places が要る'); await layout(trial, trial.locale); } catch (e) { errors = [e.message]; console.log(`  places ${t}回目: ✗ ${e.message}`); continue; } }
       // 段を決めたら、すみかの stages を補う（空なら全部の段）
       if (P.part === 'life' && Array.isArray(trial.stages)) for (const p of trial.places || []) p.stages = trial.stages.map((s) => s.id); // すみかは全部の段で使える（細かい制限は後で人が足す）

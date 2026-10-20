@@ -2,5 +2,182 @@
  "id": "snake",
  "ja": "アオダイショウ",
  "sci": "Elaphe climacophora",
- "status": "draft-ng"
+ "status": "draft-ng",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "多摩の里山",
+  "geo": "Tama Hills",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "compost",
+   "ja": "堆肥の山",
+   "danger": 1,
+   "cover": true,
+   "about": "発酵熱で温かい枯草や落ち葉の山。夏に卵がかえる。",
+   "lat": 14.596,
+   "lon": 121.038,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "stonewall",
+   "ja": "屋敷の石垣",
+   "danger": 1,
+   "cover": true,
+   "about": "石のすき間に身を潜める。天気がよい日は日なたに出て体を温める。",
+   "lat": 14.596,
+   "lon": 121.07,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "attic",
+   "ja": "農家の天井裏",
+   "danger": 0,
+   "cover": true,
+   "about": "暗く静かな屋根裏。ネズミの通路になっており、大型の天敵も入ってこない。",
+   "lat": 14.624,
+   "lon": 121.058,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "paddy",
+   "ja": "水田のあぜ道",
+   "danger": 3,
+   "cover": false,
+   "about": "カエルなどの獲物が多い。身を隠す草が少なく、空からトビやタカに狙われる。",
+   "lat": 14.613,
+   "lon": 121.026,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "treetop",
+   "ja": "雑木林の高木",
+   "danger": 2,
+   "cover": false,
+   "about": "鱗の縁を幹に引っかけて登る。小鳥の巣や卵を狙える。",
+   "lat": 14.596,
+   "lon": 121.006,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "bush",
+   "ja": "林のへりの藪",
+   "danger": 2,
+   "cover": true,
+   "about": "トカゲや小動物を追う。タヌキやイノシシなど地上の天敵も通りかかる。",
+   "lat": 14.568,
+   "lon": 121.018,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  },
+  {
+   "id": "burrow",
+   "ja": "斜面の横穴",
+   "danger": 1,
+   "cover": true,
+   "about": "霜が届かない地中のすき間。晩秋から春先まで数か月間眠る。",
+   "lat": 14.579,
+   "lon": 121.05,
+   "stages": [
+    "egg",
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ]
+  }
+ ],
+ "start": {
+  "place": "compost",
+  "month": 9,
+  "day": 5
+ },
+ "region": {
+  "ja": "多摩の里山",
+  "lon0": 120.994,
+  "lon1": 121.082,
+  "lat0": 14.636,
+  "lat1": 14.556,
+  "k": 5682,
+  "labels": [
+   [
+    14.6312,
+    121.038,
+    "多摩の里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "compost",
+   "paddy"
+  ],
+  [
+   "burrow",
+   "compost"
+  ],
+  [
+   "burrow",
+   "stonewall"
+  ],
+  [
+   "attic",
+   "stonewall"
+  ],
+  [
+   "attic",
+   "paddy"
+  ],
+  [
+   "paddy",
+   "treetop"
+  ],
+  [
+   "bush",
+   "treetop"
+  ],
+  [
+   "burrow",
+   "bush"
+  ]
+ ]
 }

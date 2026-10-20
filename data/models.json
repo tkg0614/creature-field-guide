@@ -1,0 +1,5 @@
+{
+ "gemini": "gemini-3.8-flash",
+ "groq": "openai/gpt-oss-120b",
+ "openrouter": "google/gemma-4-31b-it:free"
+}

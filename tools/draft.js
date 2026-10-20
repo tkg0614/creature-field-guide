@@ -22,7 +22,7 @@ const PROVIDER = process.env.PROVIDER || 'cloud';
 // 段: 埋める欄・見本の欄・頼み方
 const PARTS = [
   { part: 'places', keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
-  { part: 'life', keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery'], ask: '育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats、大きさ size を書く。場所の id は上の places から選ぶ。' },
+  { part: 'life', keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery'], ask: '育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
   { part: 'foes', keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
   { part: 'choices', keys: ['choices', 'happen'], ask: '生き方の分かれ道 choices を3〜4個（実際の生態にある選択だけ。どの選択肢にも損と得。fx は −1〜1）と、季節の出来事 happen を書く。' },
   { part: 'texts', keys: ['lead', 'texts', 'intro', 'wins', 'memories', 'noKids', 'facts'], ask: '見出しの1文 lead、決まった言い回し texts、生まれた時の文 intro、子を残して終わった時 wins、思い出 memories、資料から抜き出した事実 facts（quote は資料の文をそのまま写す）を書く。' },
@@ -47,7 +47,7 @@ ${JSON.stringify(Object.fromEntries(Object.entries(sheet).filter(([k]) => ['plac
 ${JSON.stringify(sample)}
 
 ## 資料（抜粋）
-${SRC.slice(0, PROVIDER === 'ollama' ? 5000 : 20000)}
+${SRC.slice(0, 7000)}
 ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.join('\n- ')}` : ''}
 
 出力: ${P.keys.map((k) => `"${k}"`).join('・')} を持つ JSON オブジェクトだけ。`;

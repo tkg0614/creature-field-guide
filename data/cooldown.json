@@ -4,7 +4,7 @@
   "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
  },
  "groq": {
-  "until": "2026-10-20T05:47:07.258Z",
+  "until": "2026-10-20T05:49:46.197Z",
   "why": "{\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m5brcpcqexd9hg4hmeagw7ez` service tier `on_demand` on tokens per "
  },
  "openrouter": {

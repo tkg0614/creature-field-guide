@@ -62,10 +62,10 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
     for (let t = 1; t <= TRIES && !ok; t++) {
       const t0 = Date.now();
       let got; try { const a = await AI.ask(prompt(P, sheet, errors)); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
-      const trial = { ...sheet }; for (const k of P.keys) if (k in got) trial[k] = got[k];
+      const trial = JSON.parse(JSON.stringify(sheet)); // 深いコピー（失敗した回の書き換えを残さない） for (const k of P.keys) if (k in got) trial[k] = got[k];
       if (P.part === 'places') { try { if (!Array.isArray(trial.places) || !trial.locale) throw new Error('locale と places が要る'); await layout(trial, trial.locale); } catch (e) { errors = [e.message]; console.log(`  places ${t}回目: ✗ ${e.message}`); continue; } }
       // 段を決めたら、すみかの stages を補う（空なら全部の段）
-      if (P.part === 'life' && Array.isArray(trial.stages)) for (const p of trial.places || []) if (!p.stages || !p.stages.length) p.stages = trial.stages.map((s) => s.id);
+      if (P.part === 'life' && Array.isArray(trial.stages)) for (const p of trial.places || []) p.stages = trial.stages.map((s) => s.id); // すみかは全部の段で使える（細かい制限は後で人が足す）
       errors = validate(trial, SRC, P.part === 'places' ? ['places'] : ['places', 'life', P.part]).errors;
       console.log(`  ${P.part} ${t}回目: ${errors.length ? `✗ ${errors.length}件（${errors.slice(0, 2).join(' / ')}）` : '✓'}（${Math.round((Date.now() - t0) / 1000)}秒）`);
       if (!errors.length || t === TRIES) { Object.assign(sheet, trial); ok = !errors.length; }

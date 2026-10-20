@@ -65,7 +65,7 @@ async function ask(prompt) {
     }
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
     if (res.status === 404 && !p.retried) { p.retried = 1; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
-    if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] 返事が壊れている → 6時間休ませて次の AI へ`); continue; }
+    if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] ${res.status >= 500 ? '混んでいる → 10分' : '返事が壊れている → 6時間'}休ませて次の AI へ`); continue; }
     return { json: JSON.parse(res.text.replace(/^```(json)?|```$/g, '').trim()), by: `${p.name} ${chosen[p.name]}` };
   }
 }

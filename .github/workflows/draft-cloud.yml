@@ -9,7 +9,7 @@ on:
       ids: { description: "種の id（空白区切り。空なら queue のまだの種から）", required: false, default: "" }
       max: { description: "最大何種", required: false, default: "4" }
   schedule:
-    - cron: "17 18 * * *"   # 毎日 日本の深夜3:17
+    - cron: "17 8 * * *"   # 毎日 日本の17:17（Gemini の無料枠は太平洋時間の0時＝日本の16〜17時に戻るので、その直後に回す）
 permissions:
   contents: write
 concurrency: { group: draft, cancel-in-progress: false }

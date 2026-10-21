@@ -2,7 +2,7 @@
  "id": "swallowtail",
  "ja": "アゲハ",
  "sci": "Papilio xuthus",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -213,8 +213,8 @@
    "id": "adult",
    "ja": "成虫",
    "fromAge": 0.1,
-   "days": 30,
-   "hunger": 10,
+   "days": 5,
+   "hunger": 5,
    "grow": 0,
    "adult": true,
    "goal": "羽化する",
@@ -223,8 +223,8 @@
  ],
  "oldAge": {
   "years": [
-   0.1,
-   0.8
+   0.15,
+   0.22
   ],
   "text": "羽が擦り切れ、力尽きて草むらに落ちた。静かに動かなくなった。"
  },
@@ -235,7 +235,8 @@
    5,
    6,
    7,
-   8
+   8,
+   9
   ],
   "places": [
    "citrus_sprout",
@@ -289,7 +290,8 @@
    "places": [
     "sunlit_flowerbed",
     "citrus_grove",
-    "forest_edge"
+    "forest_edge",
+    "garden_tree"
    ],
    "rich": [
     "sunlit_flowerbed"
@@ -330,24 +332,6 @@
    "texts": [
     "黒いアリが、枝を伝って新芽に登ってくる。",
     "葉の上の小さな幼虫を、アリの群れが囲んでいる。"
-   ]
-  },
-  {
-   "id": "tree_cricket",
-   "ja": "カンタン",
-   "kind": "insect",
-   "places": [
-    "citrus_sprout",
-    "garden_tree",
-    "forest_edge"
-   ],
-   "stages": [
-    "young_larva"
-   ],
-   "sev": 1,
-   "texts": [
-    "葉の陰から、淡い緑色の細い虫がすり寄ってくる。",
-    "長い触角を動かしながら、葉の上の小さな体を狙っている。"
    ]
   },
   {
@@ -427,7 +411,7 @@
   },
   {
    "id": "chalcid_wasp",
-   "ja": "アゲハコバチ",
+   "ja": "アオムシコバチ",
    "kind": "insect",
    "places": [
     "citrus_grove",
@@ -520,7 +504,7 @@
     "young_larva",
     "final_larva"
    ],
-   "sev": 3,
+   "sev": 2,
    "texts": [
     "霧状の白い薬液が、木立一面に勢いよく吹きつけられた。",
     "強い刺激臭とともに、葉の表面が急速に濡れていく。"

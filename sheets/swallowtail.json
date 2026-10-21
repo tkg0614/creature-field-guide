@@ -2,6 +2,711 @@
  "id": "swallowtail",
  "ja": "アゲハ",
  "sci": "Papilio xuthus",
- "status": "draft",
- "country": "jp"
+ "status": "checked",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini-older gemini-3.7-flash",
+  "foes": "gemini-older gemini-3.7-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "静岡のミカン畑と里山",
+  "geo": "Shizuoka",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "citrus_sprout",
+   "ja": "ミカンの新芽",
+   "danger": 3,
+   "cover": false,
+   "about": "やわらかな若葉が芽吹く日なたの枝先。アリやクモが絶えず葉の上を徘徊する。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.975,
+   "lon": 138.383
+  },
+  {
+   "id": "citrus_grove",
+   "ja": "ミカン畑の木立",
+   "danger": 2,
+   "cover": true,
+   "about": "葉が青々と茂り餌には困らないが、アシナガバチや寄生蜂が獲物を探して飛び交う。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.975,
+   "lon": 138.415
+  },
+  {
+   "id": "garden_tree",
+   "ja": "民家の庭のサンショウ",
+   "danger": 1,
+   "cover": true,
+   "about": "生垣に囲まれた静かな庭先。天敵のハチが少なく、幼虫が落ち着いて育つ。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 35.005,
+   "lon": 138.395
+  },
+  {
+   "id": "sunlit_flowerbed",
+   "ja": "日当たりのよい花壇",
+   "danger": 2,
+   "cover": false,
+   "about": "色とりどりの花が咲き乱れ、成虫が吸蜜に訪れる。開けていて外敵に見つかりやすい。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.986,
+   "lon": 138.364
+  },
+  {
+   "id": "forest_edge",
+   "ja": "雑木林のへり",
+   "danger": 1,
+   "cover": true,
+   "about": "木漏れ日が差し込む明るい林境。オスが梢を巡回して飛び回り、パートナーを探す。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.96,
+   "lon": 138.357
+  },
+  {
+   "id": "eaves_wall",
+   "ja": "納屋の軒下や板塀",
+   "danger": 1,
+   "cover": true,
+   "about": "雨風をしのげる乾いた人工の壁。天敵の目を逃れて帯糸をかけ、蛹になって羽化を待つ。",
+   "stages": [
+    "young_larva",
+    "final_larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.945,
+   "lon": 138.395
+  }
+ ],
+ "start": {
+  "place": "citrus_sprout",
+  "month": 5,
+  "day": 12
+ },
+ "region": {
+  "ja": "静岡のミカン畑と里山",
+  "lon0": 138.34,
+  "lon1": 138.432,
+  "lat0": 35.022,
+  "lat1": 34.928,
+  "k": 5435,
+  "labels": [
+   [
+    35.01636,
+    138.386,
+    "静岡のミカン畑と里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "citrus_sprout",
+   "sunlit_flowerbed"
+  ],
+  [
+   "citrus_sprout",
+   "forest_edge"
+  ],
+  [
+   "citrus_grove",
+   "citrus_sprout"
+  ],
+  [
+   "citrus_grove",
+   "garden_tree"
+  ],
+  [
+   "citrus_sprout",
+   "garden_tree"
+  ],
+  [
+   "forest_edge",
+   "sunlit_flowerbed"
+  ],
+  [
+   "citrus_sprout",
+   "eaves_wall"
+  ],
+  [
+   "citrus_grove",
+   "eaves_wall"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.3
+ },
+ "stats": {
+  "run": {
+   "ja": "羽ばたく力",
+   "use": "素早く飛び去る時に効く"
+  },
+  "sense": {
+   "ja": "色を見る眼",
+   "use": "食草や花を見分ける時に効く"
+  },
+  "forage": {
+   "ja": "蜜を吸う力",
+   "use": "花の蜜を吸う時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "young_larva",
+   "ja": "若齢幼虫",
+   "days": 12,
+   "hunger": 8,
+   "grow": 1.2
+  },
+  {
+   "id": "final_larva",
+   "ja": "終齢幼虫",
+   "fromAge": 0.03,
+   "days": 10,
+   "hunger": 15,
+   "grow": 2.5,
+   "goal": "終齢幼虫になる",
+   "enter": "脱皮して鮮やかな緑色になった。鳥の糞の擬態を脱ぎ捨てる。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.06,
+   "days": 14,
+   "hunger": 0,
+   "grow": 0,
+   "goal": "蛹になる",
+   "enter": "帯糸をかけて枝に身を固定した。殻の中で体が組み換わる。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.1,
+   "days": 30,
+   "hunger": 10,
+   "grow": 0,
+   "adult": true,
+   "goal": "羽化する",
+   "enter": "蛹の殻を割り、黄と黒の羽を広げた。空へと飛び立つ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.1,
+   0.8
+  ],
+  "text": "羽が擦り切れ、力尽きて草むらに落ちた。静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "ミカン類の新芽に産卵する",
+  "ds": "日当たりのよい若葉を選び、1粒ずつ産みつける",
+  "months": [
+   5,
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "citrus_sprout",
+   "garden_tree"
+  ],
+  "perYear": 4,
+  "kids": [
+   10,
+   30
+  ],
+  "many": 30,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった幼虫の一匹"
+  },
+  "ok": "やわらかな新芽に、{born}個の丸い卵を産みつけた。",
+  "ng": "適した葉が見つからず、産み落とせなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を30個産む"
+ },
+ "foods": [
+  {
+   "id": "citrus_leaf",
+   "ja": "ミカン科の葉を食べる",
+   "name": "ミカン科の葉",
+   "ds": "柑橘類やサンショウの若葉をかじる",
+   "stages": [
+    "young_larva",
+    "final_larva"
+   ],
+   "places": [
+    "citrus_sprout",
+    "citrus_grove",
+    "garden_tree"
+   ],
+   "rich": [
+    "citrus_sprout"
+   ],
+   "ok": "やわらかな葉のへりを旺盛にかじり取った。",
+   "full": 25
+  },
+  {
+   "id": "flower_nectar",
+   "ja": "花の蜜を吸う",
+   "name": "花の蜜",
+   "ds": "花にとまり口吻を伸ばして吸蜜する",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "sunlit_flowerbed",
+    "citrus_grove",
+    "forest_edge"
+   ],
+   "rich": [
+    "sunlit_flowerbed"
+   ],
+   "ok": "花に止まり、奥深くから甘い蜜を吸い上げた。",
+   "full": 20
+  }
+ ],
+ "special": [
+  {
+   "id": "osmeterium",
+   "ja": "臭角を突き出す",
+   "ds": "敵に襲われた時、頭部から橙色の肉角を出して強い匂いを放つ",
+   "stages": [
+    "young_larva",
+    "final_larva"
+   ],
+   "stat": "run",
+   "base": 0.6,
+   "calm": true,
+   "ok": "頭から鮮やかな臭角を出し、強烈な匂いで敵をひるませた。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "ant",
+   "ja": "トビイロケアリ",
+   "kind": "insect",
+   "places": [
+    "citrus_sprout",
+    "garden_tree"
+   ],
+   "stages": [
+    "young_larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "黒いアリが、枝を伝って新芽に登ってくる。",
+    "葉の上の小さな幼虫を、アリの群れが囲んでいる。"
+   ]
+  },
+  {
+   "id": "tree_cricket",
+   "ja": "カンタン",
+   "kind": "insect",
+   "places": [
+    "citrus_sprout",
+    "garden_tree",
+    "forest_edge"
+   ],
+   "stages": [
+    "young_larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "葉の陰から、淡い緑色の細い虫がすり寄ってくる。",
+    "長い触角を動かしながら、葉の上の小さな体を狙っている。"
+   ]
+  },
+  {
+   "id": "jumping_spider",
+   "ja": "ハエトリグモ",
+   "kind": "arachnid",
+   "places": [
+    "citrus_sprout",
+    "citrus_grove",
+    "garden_tree"
+   ],
+   "stages": [
+    "young_larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "葉の上を、毛の生えたクモが小刻みに跳ねてくる。",
+    "正面の大きな目が、じっと獲物の動きを追っている。"
+   ]
+  },
+  {
+   "id": "paper_wasp",
+   "ja": "アシナガバチ",
+   "kind": "insect",
+   "places": [
+    "citrus_sprout",
+    "citrus_grove",
+    "garden_tree"
+   ],
+   "stages": [
+    "young_larva",
+    "final_larva"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黄色と黒のハチが、葉のあいだを低く飛び回っている。",
+    "強い羽音を立てて枝にとまり、大あごを開いて探している。"
+   ],
+   "again": [
+    [
+     "また、あの脚の長いアシナガバチが葉をのぞきこんでいる。"
+    ],
+    [
+     "同じアシナガバチが、枝の間を低く巡回している。"
+    ]
+   ],
+   "bye": "蛹になって動かずにいると、アシナガバチは気づかずに飛び去った。"
+  },
+  {
+   "id": "ichneumon_wasp",
+   "ja": "アゲハヒメバチ",
+   "kind": "insect",
+   "places": [
+    "citrus_grove",
+    "garden_tree",
+    "forest_edge"
+   ],
+   "stages": [
+    "final_larva",
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "赤褐色の腹を持つハチが、葉の上の青虫に狙いをつけて降りてくる。",
+    "体を丸めて、長い産卵管を突き出してきた。"
+   ],
+   "again": [
+    [
+     "また、あの赤黒いヒメバチがつきまとってくる。"
+    ],
+    [
+     "あのヒメバチが、執拗に背後から迫る。"
+    ]
+   ],
+   "bye": "羽化して大空へ飛び立つと、ヒメバチの姿はもう見えなくなった。"
+  },
+  {
+   "id": "chalcid_wasp",
+   "ja": "アゲハコバチ",
+   "kind": "insect",
+   "places": [
+    "citrus_grove",
+    "eaves_wall"
+   ],
+   "stages": [
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "ごく小さなハチが、固まった蛹の表面に群がっている。",
+    "硬い殻の上を這い回り、産卵のすき間をうかがっている。"
+   ]
+  },
+  {
+   "id": "praying_mantis",
+   "ja": "オオカマキリ",
+   "kind": "insect",
+   "places": [
+    "citrus_grove",
+    "sunlit_flowerbed",
+    "forest_edge"
+   ],
+   "stages": [
+    "final_larva",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑色の前脚が、草陰から音もなく持ち上がった。",
+    "三角の頭を傾け、花にとまる獲物を狙っている。"
+   ]
+  },
+  {
+   "id": "sparrow",
+   "ja": "スズメ",
+   "kind": "bird",
+   "places": [
+    "citrus_grove",
+    "garden_tree",
+    "eaves_wall"
+   ],
+   "stages": [
+    "final_larva",
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "小鳥が枝を揺らしながら、葉の裏をのぞきこんでいる。",
+    "硬いくちばしで、木の幹や板塀のすき間を突いている。"
+   ]
+  },
+  {
+   "id": "bulbul",
+   "ja": "ヒヨドリ",
+   "kind": "bird",
+   "places": [
+    "citrus_grove",
+    "sunlit_flowerbed",
+    "forest_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "甲高い鳴き声とともに、灰色の鳥が急降下してきた。",
+    "花壇の上を飛ぶ蝶の背後へ、鋭いくちばしが迫る。"
+   ],
+   "again": [
+    [
+     "また、あの尾の長いヒヨドリが木の上から見下ろしている。"
+    ],
+    [
+     "あのヒヨドリが、花壇のまわりを低く飛んで追ってくる。"
+    ]
+   ],
+   "bye": "風に乗って高く雑木林の上へと舞い上がると、ヒヨドリは追うのをあきらめた。"
+  },
+  {
+   "id": "pesticide",
+   "ja": "農薬散布",
+   "kind": "human",
+   "places": [
+    "citrus_grove",
+    "citrus_sprout"
+   ],
+   "stages": [
+    "young_larva",
+    "final_larva"
+   ],
+   "sev": 3,
+   "texts": [
+    "霧状の白い薬液が、木立一面に勢いよく吹きつけられた。",
+    "強い刺激臭とともに、葉の表面が急速に濡れていく。"
+   ],
+   "lose": "吹きつけられた薬液を浴びて、傷を負った。",
+   "fleeJa": "葉の裏へ滑り落ちて逃げる",
+   "hideJa": "枝の付け根で身を縮めてやり過ごす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "蛹になる場所を決める。どこで体を固定するか",
+   "stages": [
+    "final_larva"
+   ],
+   "opts": [
+    {
+     "ja": "ミカンの小枝に残る",
+     "ds": "歩き回る体力を省ける。木立の寄生バチや天敵に見つかりやすい",
+     "fx": {
+      "danger": 1
+     },
+     "goto": "citrus_grove",
+     "say": "ミカンの枝の付け根に帯糸をかけ、静かに体を預けた。",
+     "chip": "ミカンの枝"
+    },
+    {
+     "ja": "納屋の板塀まで這っていく",
+     "ds": "雨風や天敵を避けやすい。移動中に地面で襲われる危険がある",
+     "fx": {
+      "danger": -1
+     },
+     "goto": "eaves_wall",
+     "say": "木を降り、乾いた納屋の板塀まで長い道のりを歩いた。",
+     "chip": "納屋の板塀"
+    }
+   ]
+  },
+  {
+   "q": "一度交尾を終えた。別のオスの求愛にどう応じるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "ふたたび交尾を受け入れる",
+     "ds": "産卵数が増え遺伝的多様性も高まる。隙ができて狙われやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "say": "羽を休め、別のオスの求愛を受け入れて受精させた。",
+     "chip": "複数回交尾"
+    },
+    {
+     "ja": "交尾を避けて産卵を優先する",
+     "ds": "天敵に捕まる危険を減らせる。卵の数や多様性は控えめになる",
+     "fx": {
+      "danger": -1,
+      "kids": -1
+     },
+     "say": "オスの追従を羽ばたきでかわし、産卵場所へ飛び去った。",
+     "chip": "交尾を避ける"
+    }
+   ]
+  },
+  {
+   "q": "卵を産み落とす場所を探す。どこへ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "日当たりのよいミカン畑の新芽",
+     "ds": "若葉が豊富で子の育ちがよい。同種が集まり天敵にも目立つ",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "citrus_sprout",
+     "say": "陽光を浴びるミカンの新芽に、ひとつずつ丸い卵を産みつけた。",
+     "chip": "ミカンの新芽"
+    },
+    {
+     "ja": "民家の庭のサンショウ",
+     "ds": "天敵やライバルが少ない。葉の量は限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "garden_tree",
+     "say": "塀を越え、民家の庭のひっそりとしたサンショウに産卵した。",
+     "chip": "庭のサンショウ"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "young_larva",
+    "final_larva"
+   ],
+   "p": 0.2,
+   "say": "秋の長雨が降り続いた。冷たい滴に濡れそぼり、病にかかる幼虫が出た。",
+   "full": -10
+  }
+ ],
+ "lead": "ミカンの新芽で卵から孵り、鳥の糞に擬態して育ち、羽を広げて日だまりを舞う。柑橘の香る里山で、命をつなげるか。",
+ "texts": {
+  "move": "{to}へ、羽ばたいて飛んでいった。",
+  "fleeJa": "素早く羽ばたいて逃げる",
+  "restJa": "葉の裏に羽を閉じて休む",
+  "watchJa": "複眼で周囲の気配をうかがう",
+  "lieJa": "葉陰にじっと身を潜める",
+  "lastMemory": "初夏の光の中、ミカンの葉に産みつけた卵の丸みを思い出した。"
+ },
+ "intro": [
+  "ミカンの新芽の裏で、小さな卵から孵った。",
+  "鳥の糞に似た黒と白の姿で、柔らかな葉をかじり始める。"
+ ],
+ "wins": [
+  {
+   "minKids": 20,
+   "title": "多くの命を託した",
+   "line": "日当たりのよい若葉を選び、{kids}個の卵を産みつけた。",
+   "mem": "陽光の中を飛び回り、瑞々しい新芽に命を託した記憶がよみがえった。"
+  },
+  {
+   "minKids": 1,
+   "title": "次の世代を残した",
+   "line": "風に揺れる食草に、{kids}個の卵を残した。",
+   "mem": "緑の葉の上に産み落とした、小さな丸い粒を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "鳥の糞の姿で身を縮め、アリをやり過ごした若葉の上を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "緑色の太い体に脱皮し、サンショウの葉を夢中で食んだ日々を思い出した。"
+  },
+  {
+   "flag": "c0_3",
+   "text": "硬い蛹の殻を割り、黄と黒の羽を乾かした朝の光を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "子を残せなかった",
+  "line": "卵を産み残すことなく、羽を閉じた。",
+  "mem": "日の差す花壇の上を、軽やかに舞い抜けた日を思い出した。"
+ },
+ "facts": [
+  {
+   "quote": "The young caterpillar mimics bird feces and has a white and brown spot on its head. As they mature, caterpillars develop a light green body color with brown spots.",
+   "fact": "若齢幼虫は鳥の糞に擬態した白と茶色の斑紋を持つ。成長すると茶色の斑点がある明るい緑色の体色になる。"
+  },
+  {
+   "quote": "During the first and second larval instars, their main predators are ants (particularly Lasius niger), spiders, and various other bugs.",
+   "fact": "1齢および2齢幼虫の主な捕食者は、トビイロケアリなどのアリ、クモ、および様々な半翅類の昆虫である。"
+  },
+  {
+   "quote": "multiple matings allow females to produce a greater number of eggs, of which there can be up to thirty.",
+   "fact": "複数回の交尾によって、メスは最大30個までのより多くの卵を産むことができる。"
+  },
+  {
+   "quote": "They decide on the number of eggs they deposit in different subhabitats by certain criteria such as the quality of the subhabitat, the existing adult population in the area, the quantity of young leaves in the vicinity, the degree of sun exposure (females prefer sunnier areas), and host plant height.",
+   "fact": "メスは環境の質、周囲の若葉の量、日当たりの良さ（日当たりのよい場所を好む）、食草の高さなどを基準に産卵場所や卵の数を決める。"
+  }
+ ]
 }

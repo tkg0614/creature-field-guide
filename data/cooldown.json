@@ -16,7 +16,7 @@
   "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
  },
  "gemini-gemma": {
-  "until": "2026-10-21T22:34:00.487Z",
+  "until": "2026-10-21T22:54:37.409Z",
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  }
 }

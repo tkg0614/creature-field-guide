@@ -17,9 +17,10 @@ async function listModels(p) {
   const j = await (await fetch(p.list, { headers: { authorization: `Bearer ${key}` } })).json();
   return (j.data || []).map((m) => m.id).filter((id) => !p.onlyFree || /:free$/.test(id));
 }
+const nextUtc = (h) => { const d = new Date(); d.setUTCHours(h, 5, 0, 0); if (d <= Date.now()) d.setUTCDate(d.getUTCDate() + 1); return +d; };
 async function resolve(p, force) {
   if (chosen[p.name] && !force) return chosen[p.name];
-  const ids = (await listModels(p).catch(() => [])).filter((id) => !/preview|exp|tts|image|vision|embed|audio|live|guard|whisper/i.test(id));
+  const bad = chosen._bad || [], ids = (await listModels(p).catch(() => [])).filter((id) => !bad.includes(id) && !/preview|exp|tts|image|vision|embed|audio|live|guard|whisper/i.test(id)); /* _bad: 一覧にあるのに 404 を返したモデル（gemini-2.5-pro）*/
   for (const re of p.prefer) { const hit = ids.filter((id) => new RegExp(re, 'i').test(id)).sort().reverse()[p.pick === 'second' ? 1 : 0]; /* second: 1つ前の版（新しい版が混んでいる時の控え） */ if (hit) { chosen[p.name] = hit; fs.writeFileSync(MODELS, JSON.stringify(chosen, null, 1) + '\n'); return hit; } }
   return null;
 }
@@ -60,12 +61,15 @@ async function ask(prompt, minQ = 0) {
     }
     let res; try { res = await call(p, prompt); } catch (e) { res = { status: 0, raw: { error: e.message } }; }
     if (limited(res)) {
-      const sec = +res.retry > 0 ? +res.retry : /day|daily|per.?day|RPD/i.test(JSON.stringify(res.raw)) ? 86400 : 3600;
-      cool[p.name] = { until: new Date(Date.now() + sec * 1000).toISOString(), why: String(JSON.stringify(res.raw)).slice(0, 160) };
+      const daily = /day|daily|per.?day|RPD/i.test(JSON.stringify(res.raw));
+      // 1日の枠: Gemini は太平洋時間の0時（日本の16〜17時）に戻る → 24時間ではなく次の 08:00 UTC まで（2026-10-22: 24時間休ませて翌朝の回が Gemini を使えなかった）
+      const until = +res.retry > 0 ? Date.now() + +res.retry * 1000 : daily && p.kind === 'gemini' ? nextUtc(8) : Date.now() + (daily ? 86400 : 3600) * 1000;
+      const sec = Math.round((until - Date.now()) / 1000);
+      cool[p.name] = { until: new Date(until).toISOString(), why: String(JSON.stringify(res.raw)).slice(0, 160) };
       save(); console.log(`  [${p.name}] 上限 → ${Math.round(sec / 60)}分休ませて次の AI へ`); continue;
     }
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
-    if (res.status === 404 && !p.retried) { p.retried = 1; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
+    if (res.status === 404 && !p.retried) { p.retried = 1; chosen._bad = [...new Set([...(chosen._bad || []), chosen[p.name]])]; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
     if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 || !res.status ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] ${res.status >= 500 ? '混んでいる → 10分' : '返事が壊れている → 6時間'}休ませて次の AI へ`); continue; }
     try { return { json: pickJson(res.text), by: `${p.name} ${chosen[p.name]}` }; }
     catch (e) { console.log(`  [${p.name}] JSON が読めない: ${JSON.stringify(res.text.slice(0, 160))}`); e.message += `（${p.name}）`; throw e; }

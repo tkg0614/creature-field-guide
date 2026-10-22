@@ -4,5 +4,7 @@
  "openrouter": "google/gemma-4-31b-it:free",
  "gemini-older": "gemini-3.7-flash",
  "gemini-gemma": "gemma-4-31b-it",
- "gemini-pro": "gemini-2.5-pro"
+ "_bad": [
+  "gemini-2.5-pro"
+ ]
 }

@@ -11,12 +11,15 @@ async function geocode(q, cc) {
 async function layout(sh, locale) {
   // 日本語の地名を先に、国を絞って引く（2026-10-20: 「Tama Hills」がフィリピンに当たった）
   const cc = locale.country || sh.country || null;
-  const center = (await geocode(locale.ja, cc)) || (await geocode(locale.geo || locale.ja, cc)) || (cc ? null : await geocode(locale.geo || locale.ja));
+  // home: 舞台の中心 [緯度, 経度]（queue に書いた値）。AI の地名より優先し、span 度より遠い地名は捨てて輪に並べる
+  // 2026-10-22: ミズダコの「North Pacific」などの地名がオレゴンとボルネオに当たった
+  const home = sh.home ? { lat: sh.home[0], lon: sh.home[1] } : null, span = sh.span || 15;
+  const center = home || (await geocode(locale.ja, cc)) || (await geocode(locale.geo || locale.ja, cc)) || (cc ? null : await geocode(locale.geo || locale.ja));
   if (!center) throw new Error(`地名が見つからない: ${locale.geo || locale.ja}`);
   const P = sh.places, n = P.length, R = locale.scale === 'regional' ? 3 : 0.04; // 里山なら半径4km ほど・海や大陸なら数百km
   for (const [i, p] of P.entries()) {
     const g = p.geo && locale.scale === 'regional' ? await geocode(p.geo) : null; // 海や大陸を渡る種は国で絞らない
-    if (g) Object.assign(p, g);
+    if (g && Math.hypot(g.lat - center.lat, g.lon - center.lon) <= span) Object.assign(p, g);
     else if (i === 0) Object.assign(p, center); // 生まれた場所を真ん中に
     else { const a = (2 * Math.PI * (i - 1)) / (n - 1), r = R * (0.6 + 0.4 * ((i * 7) % 3) / 2); p.lat = +(center.lat + r * Math.sin(a) * 0.8).toFixed(3); p.lon = +(center.lon + r * Math.cos(a)).toFixed(3); }
     delete p.geo;

@@ -4,7 +4,19 @@
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-10-21T22:54:37.409Z",
-  "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
+  "until": "2026-10-22T20:18:00.764Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+ },
+ "gemini": {
+  "until": "2026-10-22T20:15:51.831Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+ },
+ "gemini-pro": {
+  "until": "2026-10-23T02:06:52.087Z",
+  "why": "壊れた返事 404 {\"error\":\"使えるモデルが一覧に無い\"}"
+ },
+ "gemini-older": {
+  "until": "2026-10-22T20:17:20.291Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  }
 }

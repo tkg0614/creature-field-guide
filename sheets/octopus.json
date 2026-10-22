@@ -2,10 +2,14 @@
  "id": "octopus",
  "ja": "ミズダコ",
  "sci": "Enteroctopus dofleini",
- "status": "draft",
+ "status": "checked",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini-older gemini-3.7-flash",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "北海道沿岸から北太平洋",
@@ -20,7 +24,11 @@
    "danger": 3,
    "cover": false,
    "about": "ふ化したばかりの幼体が漂う。多くのプランクトンに捕食される。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 45.712,
    "lon": -121.523
   },
@@ -31,7 +39,11 @@
    "danger": 2,
    "cover": true,
    "about": "身を隠しながら獲物を探す。大型の個体ほど好む。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 5.91,
    "lon": 116.092
   },
@@ -42,7 +54,11 @@
    "danger": 1,
    "cover": true,
    "about": "休息や食事をする拠点となる。周囲に食べかすが溜まる。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 5.91,
    "lon": 116.092
   },
@@ -53,7 +69,11 @@
    "danger": 2,
    "cover": false,
    "about": "二枚貝などの餌が豊富である。巣穴を掘って潜む。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 5.91,
    "lon": 116.092
   },
@@ -64,7 +84,11 @@
    "danger": 2,
    "cover": true,
    "about": "水深2000メートルまでの深海。冷たく酸素の豊かな水が流れる。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 45.712,
    "lon": -121.523
   },
@@ -75,7 +99,11 @@
    "danger": 2,
    "cover": true,
    "about": "潮が満ちる時間帯に活動する。岩の隙間に身を潜める。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 5.91,
    "lon": 116.092
   },
@@ -86,7 +114,11 @@
    "danger": 2,
    "cover": true,
    "about": "雌が卵を守る終の棲家。ふ化まで絶えず世話を続ける。",
-   "stages": [],
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
    "lat": 5.91,
    "lon": 116.092
   }
@@ -152,5 +184,540 @@
    "nest",
    "rocky_den"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.7
+ },
+ "stats": {
+  "run": {
+   "ja": "噴射の力",
+   "use": "漏斗から水を吹き出し、すばやく逃げる時に効く"
+  },
+  "sense": {
+   "ja": "環境の察知",
+   "use": "外敵に気づく・体色を変えて隠れる時に効く"
+  },
+  "forage": {
+   "ja": "腕と吸盤の力",
+   "use": "岩をまさぐり、獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "paralarva",
+   "ja": "浮遊幼生",
+   "days": 20,
+   "hunger": 10,
+   "grow": 0.5
+  },
+  {
+   "id": "juvenile",
+   "ja": "若だこ",
+   "fromAge": 0.3,
+   "days": 40,
+   "hunger": 12,
+   "grow": 1.2,
+   "goal": "海底に定着する",
+   "enter": "表層を離れ、冷たい海底の岩陰に巣穴を見つけた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 2.5,
+   "days": 60,
+   "hunger": 15,
+   "grow": 0.6,
+   "adult": true,
+   "goal": "成熟する",
+   "enter": "巨体となり、北の海の岩場を自在に徘徊する。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   3,
+   5
+  ],
+  "text": "岩穴で卵を守り続け、水を送り続けた。ふ化を見届け、力尽きて横たわった。"
+ },
+ "breeding": {
+  "ja": "岩穴で卵を守る",
+  "ds": "暗い岩穴の天井に房状の卵を産みつけ、飲まず食わずで守り続ける",
+  "months": [
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "places": [
+   "nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   30000,
+   100000
+  ],
+  "many": 100000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した浮遊幼生の一匹"
+  },
+  "ok": "岩穴の天井に、{born}個の卵を藤の花のように産みつけた。",
+  "ng": "安全な産卵穴を確保できず、産みそびれた。",
+  "goal1": "一生に一度の卵を産む",
+  "goal2": "卵を10万個産む"
+ },
+ "foods": [
+  {
+   "id": "plankton",
+   "ja": "小型の動物プランクトンを捕らえる",
+   "name": "動物プランクトン",
+   "ds": "海中を漂い、腕に触れた小さな甲殻類を絡め取る",
+   "stages": [
+    "paralarva"
+   ],
+   "places": [
+    "open_water"
+   ],
+   "rich": [
+    "open_water"
+   ],
+   "ok": "腕の吸盤で微小な甲殻類を捕らえて食べた。",
+   "full": 20
+  },
+  {
+   "id": "crab",
+   "ja": "カニを捕らえて殻を割る",
+   "name": "カニ",
+   "ds": "岩陰から腕を伸ばして捕らえ、硬い嘴で殻をかみ割る",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "rocky_den",
+    "kelp",
+    "intertidal"
+   ],
+   "rich": [
+    "rocky_den"
+   ],
+   "ok": "太い腕でカニを抱え込み、甲羅をかみ割って肉を食べた。",
+   "full": 35
+  },
+  {
+   "id": "clam",
+   "ja": "砂泥底の貝を掘り出す",
+   "name": "二枚貝",
+   "ds": "砂泥に腕を差し入れ、潜む貝を掘り出してこじ開ける",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "soft_bottom"
+   ],
+   "rich": [
+    "soft_bottom"
+   ],
+   "ok": "強力な吸盤で殻をこじ開け、中身を平らげた。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "den_hide",
+   "ja": "巣穴に潜り込む",
+   "ds": "外敵の気配を感じ、狭い岩の隙間に体を押し縮めて隠れる",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "わずかな隙間に柔軟な体を滑り込ませ、外敵をやり過ごした。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "zooplankton",
+   "ja": "大型動物プランクトン",
+   "kind": "any",
+   "places": [
+    "open_water"
+   ],
+   "stages": [
+    "paralarva"
+   ],
+   "sev": 1,
+   "texts": [
+    "毛の生えた触角を広げ、貪欲な浮遊生物が漂ってくる。",
+    "潮に乗って漂う幼生を、無数の小顎がかすめ取っていく。"
+   ]
+  },
+  {
+   "id": "filter_feeder",
+   "ja": "濾過食の魚",
+   "kind": "fish",
+   "places": [
+    "open_water"
+   ],
+   "stages": [
+    "paralarva"
+   ],
+   "sev": 2,
+   "texts": [
+    "大きな口を開けた魚が、潮の境目を泳ぎ抜ける。",
+    "海水を吸い込む渦に巻き込まれ、群れが吸い寄せられる。"
+   ]
+  },
+  {
+   "id": "sea_otter",
+   "ja": "ラッコ",
+   "kind": "mammal",
+   "places": [
+    "kelp",
+    "intertidal",
+    "rocky_den"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ケルプの林をかき分け、鋭い爪を持つ影が潜ってくる。",
+    "海藻を巻いた海獣が、巣穴の隙間に前足を差し入れる。"
+   ],
+   "again": [
+    [
+     "また、胸に白い毛が混ざったラッコだ。ケルプの上から海中を見下ろしている。"
+    ],
+    [
+     "あの白い毛のラッコが、岩棚の奥まで手を伸ばしてくる。"
+    ]
+   ],
+   "bye": "岩穴の奥深くへ潜りこむ術を覚え、ラッコの爪も届かなくなった。"
+  },
+  {
+   "id": "harbor_seal",
+   "ja": "ゼニガタアザラシ",
+   "kind": "mammal",
+   "places": [
+    "kelp",
+    "rocky_den",
+    "open_water"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "銭形の斑点を持つアザラシが、音もなく背後へ回り込む。",
+    "太い体が水流を切り裂き、岩陰へ突進してくる。"
+   ],
+   "again": [
+    [
+     "また、左鼻の横に傷痕があるアザラシだ。岩の出口を塞ぐように見張っている。"
+    ],
+    [
+     "傷痕のあるアザラシが、薄暗い岩礁の隙間をのぞき込んでいる。"
+    ]
+   ],
+   "bye": "体が岩のように巨大になり、アザラシは警戒して遠巻きに見送るようになった。"
+  },
+  {
+   "id": "sleeper_shark",
+   "ja": "オンデンザメ",
+   "kind": "fish",
+   "places": [
+    "deep_sea",
+    "soft_bottom"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "冷たく暗い海底から、巨大な灰色の影がすべるように現れる。",
+    "鈍い光を宿した目が、海底を這う腕を捉える。"
+   ],
+   "again": [
+    [
+     "また、背びれが裂けたオンデンザメだ。暗い海底を静かに旋回している。"
+    ],
+    [
+     "裂けた背びれのサメが、泥底すれすれを這うように近づいてくる。"
+    ]
+   ],
+   "bye": "すばやい噴流で岩の割れ目へ逃げ込み、巨大なサメの追跡を完全に断ち切った。"
+  },
+  {
+   "id": "sperm_whale",
+   "ja": "マッコウクジラ",
+   "kind": "mammal",
+   "places": [
+    "deep_sea",
+    "open_water"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "深海を震わせるクリック音が、頭上から降り注ぐ。",
+    "暗黒の海を裂いて、白い下あごを開いた巨体が迫る。"
+   ]
+  },
+  {
+   "id": "scavenger",
+   "ja": "卵を狙う底生生物",
+   "kind": "any",
+   "places": [
+    "nest"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "天井から吊るした卵房を狙い、ヒトデやカニが這い寄ってくる。",
+    "母親が弱るのを見計らい、無数の掃除屋たちが壁をよじ登る。"
+   ]
+  },
+  {
+   "id": "pot_trap",
+   "ja": "タコ箱・タコ籠",
+   "kind": "human",
+   "places": [
+    "rocky_den",
+    "soft_bottom"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "暗がりを好む習性を誘うように、木箱の入口が海底に沈んでいる。",
+    "餌のにおいに引かれて入った隙間が、海面へと引き上げられる。"
+   ],
+   "lose": "引き揚げられる籠の木枠に腕を挟まれ、傷を負った。",
+   "fleeJa": "隙間から体を絞り出して逃げる",
+   "hideJa": "岩の割れ目に吸盤で張りつく"
+  },
+  {
+   "id": "spear_and_net",
+   "ja": "タコヤスと刺網",
+   "kind": "human",
+   "places": [
+    "intertidal",
+    "rocky_den",
+    "kelp"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "潮だまりの岩陰へ、鉄のヤスが容赦なく突き刺さる。",
+    "岩礁の周りに張られた網が、海藻とともに腕を絡め取る。"
+   ],
+   "lose": "鋭いヤスの先端にかすめられ、傷を負った。",
+   "fleeJa": "墨を吐いて視界を奪い逃げる",
+   "hideJa": "体色を岩肌と同化させて潜む"
+  }
+ ],
+ "choices": [
+  {
+   "q": "海底に降り立つ時が来た。どこに巣穴を構えるか",
+   "stages": [
+    "juvenile"
+   ],
+   "opts": [
+    {
+     "ja": "岩場のすき間に潜り込む",
+     "ds": "隠れ場所が多くカニも多い。狭い隙間の奪い合いがある",
+     "fx": {
+      "danger": -0.5,
+      "food": 0.5
+     },
+     "goto": "rocky_den",
+     "say": "狭い岩のすき間に体をすべり込ませ、吸盤で石を引き寄せて入口を塞いだ。",
+     "chip": "岩場のすき間"
+    },
+    {
+     "ja": "砂泥底に穴を掘る",
+     "ds": "貝などの獲物が多い。周囲から見つかりやすい",
+     "fx": {
+      "danger": 0.8,
+      "food": 0.8
+     },
+     "goto": "soft_bottom",
+     "say": "砂泥を吹き飛ばして浅い穴を掘り、周囲の砂と同じ色に体色を変えた。",
+     "chip": "砂泥底の穴"
+    }
+   ]
+  },
+  {
+   "q": "季節の変わり目だ。どこへ移動するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "浅瀬の海藻の森へ向かう",
+     "ds": "獲物が群れている。アザラシなどの天敵に狙われやすい",
+     "fx": {
+      "food": 0.8,
+      "danger": 0.8
+     },
+     "goto": "kelp",
+     "say": "腕を伸ばして海底を這い、豊かな海藻が生い茂る浅瀬へ上がった。",
+     "chip": "浅瀬の藻場"
+    },
+    {
+     "ja": "冷たい深海域へと潜る",
+     "ds": "外敵が少なく水温が安定している。獲物は見つけにくい",
+     "fx": {
+      "food": -0.6,
+      "danger": -0.8
+     },
+     "goto": "deep_sea",
+     "say": "水管からジェットを噴射し、静まり返った暗い深海へと下りていった。",
+     "chip": "冷たい深海"
+    }
+   ]
+  },
+  {
+   "q": "腹が減った。何を狙うか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "岩陰に潜む甲殻類を探す",
+     "ds": "安全に仕留められる。一度に得られる栄養は控えめ",
+     "fx": {
+      "danger": -0.4,
+      "food": 0.4
+     },
+     "say": "腕の吸盤で岩肌をまさぐり、逃げ惑うカニを硬い嘴でかみ砕いた。",
+     "chip": "カニやエビ"
+    },
+    {
+     "ja": "通りかかるサメを奇襲する",
+     "ds": "莫大な栄養を得られる。鋭い歯で傷を負う危険がある",
+     "fx": {
+      "danger": 0.9,
+      "food": 0.9
+     },
+     "say": "岩の模様に擬態して待ち伏せ、頭上を泳ぐサメに飛びかかった。",
+     "chip": "サメを奇襲"
+    }
+   ]
+  },
+  {
+   "q": "一生に一度の産卵期を迎えた。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "狭く入り組んだ岩穴の奥",
+     "ds": "外敵が侵入しにくい。卵に水を送り続ける負担が大きい",
+     "fx": {
+      "danger": -0.8,
+      "kids": 0.6
+     },
+     "goto": "nest",
+     "say": "限界まで体を押し込んで岩穴の天井に卵を産み付け、入口を塞いだ。",
+     "chip": "狭い岩穴"
+    },
+    {
+     "ja": "潮流が通る岩棚の窪み",
+     "ds": "新鮮な酸素が届きやすい。卵を狙う腐肉食者が集まりやすい",
+     "fx": {
+      "danger": 0.8,
+      "kids": 0.8
+     },
+     "goto": "nest",
+     "say": "潮が通る岩肌に数万の卵を産み、絶え間なく新鮮な水を吹きかけ続けた。",
+     "chip": "潮通しのよい岩棚"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "stages": [
+    "paralarva"
+   ],
+   "p": 0.2,
+   "say": "表層を漂う中、ろ過摂食者の大きな口が迫った。",
+   "danger": 0.6
+  },
+  {
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "アザラシが巣穴を覗き込み、墨を吐いて奥深くに身を縮めた。",
+   "danger": 0.4
+  },
+  {
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "卵を狙う魚を払い除けながら何も食べず、体が白くやせ細っていった。",
+   "danger": 0.5
+  }
+ ],
+ "lead": "北海道沿岸の表層海域で浮遊幼生として生まれ、岩場の巣穴で成体となり、卵を守り尽くして死ぬ。一生は隠れと狩りの繰り返しである。",
+ "texts": {
+  "move": "{to}へ、岩場の巣穴へ移動した。",
+  "fleeJa": "危険を感じて岩陰へ逃げた。",
+  "restJa": "岩の隙間で静かに休む。",
+  "watchJa": "巣穴の入口で周囲を見張る。",
+  "lieJa": "岩陰に身を潜めて眠る。",
+  "lastMemory": "最後に見た光が差し込む岩穴の朝を思い出す。"
+ },
+ "intro": [
+  "北海道沿岸の表層海域で、夜の潮流に乗って浮遊幼生が漂ってきた。",
+  "周囲には同時期に生まれた仲間の幼生が無数に漂っている。"
+ ],
+ "wins": [
+  {
+   "title": "卵を守り死んだ",
+   "line": "産卵の岩穴で卵を守り続け、最後に死んだ。",
+   "mem": "守り切った卵の光を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "岩穴の中で潮の音と光が交差した朝を思い出す。"
+  }
+ ],
+ "noKids": [],
+ "facts": [
+  {
+   "quote": "E. dofleini are den dwellers, which serve as a central point from which they forage while also providing protection, shelter, and privacy."
+  },
+  {
+   "quote": "Adults usually weigh around 15 kg (33 lb), with an arm span up to 4.3 m (14 ft)."
+  }
  ]
 }

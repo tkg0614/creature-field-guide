@@ -1,0 +1,734 @@
+{
+ "id": "humpback",
+ "ja": "ザトウクジラ",
+ "sci": "Megaptera novaeangliae",
+ "status": "checked",
+ "by": {
+  "places": "gemini-older gemini-3.7-flash",
+  "life": "gemini-older gemini-3.7-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "ハワイ諸島からベーリング海",
+  "geo": "North Pacific Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "maui_shallows",
+   "ja": "マウイ島沖の浅い海",
+   "danger": 1,
+   "cover": false,
+   "about": "冬に子を産み育てる暖かく穏やかな浅瀬。天敵のシャチは少ないが、餌になる生き物はほとんどいない。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 20.803,
+   "lon": -156.311
+  },
+  {
+   "id": "north_pacific",
+   "ja": "北太平洋の外洋",
+   "danger": 2,
+   "cover": false,
+   "about": "南北を何千キロも渡る長大な回遊路。隠れる場所はなく、巨大な貨物船が高速で行き交う。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 30,
+   "lon": -170
+  },
+  {
+   "id": "gulf_of_alaska",
+   "ja": "アラスカ湾の沖合",
+   "danger": 2,
+   "cover": false,
+   "about": "栄養に富んだ冷たい海水が広がる海。春になるとオキアミの群れが浮上し始める。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 59,
+   "lon": -145
+  },
+  {
+   "id": "frederick_sound",
+   "ja": "アラスカ南東部の入り江",
+   "danger": 1,
+   "cover": true,
+   "about": "氷河の雪解け水が注ぐ複雑なフィヨルド。ニシンが集まり、泡の網を吐いて一網打尽に捕らえる。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 51.028,
+   "lon": -126.718
+  },
+  {
+   "id": "aleutian_passes",
+   "ja": "アリューシャン列島の海峡",
+   "danger": 3,
+   "cover": false,
+   "about": "島と島の間を激しい潮流が洗う狭い海。餌の魚が濃縮されるが、獲物を狙うシャチの群れが待ち伏せる。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 54.721,
+   "lon": -164.041
+  },
+  {
+   "id": "bering_shelf",
+   "ja": "ベーリング海の大陸棚",
+   "danger": 2,
+   "cover": false,
+   "about": "夏の太陽を浴びてプランクトンが爆発的に湧く海。冬の絶食に備えて皮下脂肪を限界まで蓄え込む。",
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 60,
+   "lon": -175
+  }
+ ],
+ "start": {
+  "place": "maui_shallows",
+  "month": 1,
+  "day": 20
+ },
+ "region": {
+  "ja": "ハワイ諸島からベーリング海",
+  "lon0": -189.485,
+  "lon1": -112.233,
+  "lat0": 74.485,
+  "lat1": 6.318,
+  "k": 6,
+  "labels": [
+   [
+    70.39498,
+    -150.859,
+    "ハワイ諸島からベーリング海"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "maui_shallows",
+   "north_pacific"
+  ],
+  [
+   "aleutian_passes",
+   "maui_shallows"
+  ],
+  [
+   "aleutian_passes",
+   "north_pacific"
+  ],
+  [
+   "aleutian_passes",
+   "gulf_of_alaska"
+  ],
+  [
+   "frederick_sound",
+   "gulf_of_alaska"
+  ],
+  [
+   "aleutian_passes",
+   "frederick_sound"
+  ],
+  [
+   "aleutian_passes",
+   "bering_shelf"
+  ],
+  [
+   "bering_shelf",
+   "gulf_of_alaska"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "m",
+  "start": 4.3
+ },
+ "stats": {
+  "run": {
+   "ja": "泳ぐ力",
+   "use": "長距離の回遊やシャチから逃げる時に効く"
+  },
+  "sense": {
+   "ja": "声と気配",
+   "use": "遠くの仲間との交信や周囲の把握に効く"
+  },
+  "forage": {
+   "ja": "こし取る力",
+   "use": "泡で魚を囲い、海水ごと飲み込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "calf",
+   "ja": "仔クジラ",
+   "days": 60,
+   "hunger": 10,
+   "grow": 0.08
+  },
+  {
+   "id": "juvenile",
+   "ja": "若クジラ",
+   "fromAge": 1,
+   "days": 90,
+   "hunger": 15,
+   "grow": 0.05,
+   "goal": "若クジラになる",
+   "enter": "母離れを終えた。北の豊かな海へ向かい、自力で餌を追い始める。"
+  },
+  {
+   "id": "adult",
+   "ja": "成クジラ",
+   "fromAge": 4.5,
+   "days": 120,
+   "hunger": 20,
+   "grow": 0.02,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体が十分に育った。冬になれば南の浅海へ渡り、繁殖の歌を響かせる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   60,
+   95
+  ],
+  "text": "幾千キロの旅を繰り返した巨体に、力尽きる時が訪れた。青い深海へと静かに沈んでいった。"
+ },
+ "breeding": {
+  "ja": "浅い海で出産する",
+  "ds": "冬の暖かい海で、雌が雄たちに見守られながら子を産む",
+  "months": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "places": [
+   "maui_shallows"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 12,
+  "label": {
+   "ja": "産んだ子",
+   "unit": "頭",
+   "child": "生まれた仔クジラ"
+  },
+  "ok": "温かな浅瀬で、{born}頭の元気な仔クジラを海面へ押し上げた。",
+  "ng": "雄同士の激しい衝突に巻き込まれ、子を残せなかった。",
+  "goal1": "子を産む",
+  "goal2": "子を10頭産む"
+ },
+ "foods": [
+  {
+   "id": "krill_and_fish",
+   "ja": "群れをこし取る",
+   "name": "オキアミと小魚",
+   "ds": "大きく口を開けて海水ごと飲み込み、ヒゲ板でこし取る",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "gulf_of_alaska",
+    "frederick_sound",
+    "aleutian_passes",
+    "bering_shelf"
+   ],
+   "rich": [
+    "frederick_sound",
+    "bering_shelf"
+   ],
+   "ok": "口いっぱいに広げた畝で、オキアミの群れをごっそりこし取った。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "bubble_net",
+   "ja": "バブルネットフィーディング",
+   "ds": "泡のカーテンで魚を閉じ込め、一気にすくい上げる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.7,
+   "calm": false,
+   "ok": "水底から円を描いて泡を吐き出し、逃げ場を失った小魚の群れを丸呑みにした。"
+  }
+ ],
+ "levelEvery": 5,
+ "foes": [
+  {
+   "id": "tiger_shark",
+   "ja": "イタチザメ",
+   "kind": "fish",
+   "places": [
+    "maui_shallows"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 2,
+   "texts": [
+    "浅い海を、縞模様の大きなサメが嗅ぎまわっている。",
+    "母クジラの腹の下へ逃げこむ。"
+   ],
+   "again": [
+    [
+     "あの鼻先が欠けたイタチザメが、波打ち際で旋回している。"
+    ],
+    [
+     "鼻先の欠けたサメが、海面近くを横切る。"
+    ]
+   ],
+   "bye": "体がたくましく育ち、浅瀬のサメはもう近寄らない。"
+  },
+  {
+   "id": "oceanic_whitetip",
+   "ja": "ヨゴレ",
+   "kind": "fish",
+   "places": [
+    "maui_shallows",
+    "north_pacific"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 2,
+   "texts": [
+    "白く丸い胸びれのサメが、外洋の青い層から浮き上がってくる。",
+    "泳ぎ疲れて遅れたすきを、サメが遠巻きに見張っている。"
+   ]
+  },
+  {
+   "id": "cookiecutter",
+   "ja": "ダルマザメ",
+   "kind": "fish",
+   "places": [
+    "maui_shallows",
+    "north_pacific"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "暗い深みから小さな影が寄り添い、体表の皮を円形に噛みちぎる。",
+    "夜の海面近くで、暗闇から無数の小さな歯が迫る。"
+   ]
+  },
+  {
+   "id": "great_white",
+   "ja": "ホオジロザメ",
+   "kind": "fish",
+   "places": [
+    "north_pacific",
+    "gulf_of_alaska"
+   ],
+   "stages": [
+    "calf",
+    "juvenile"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "深い蒼の底から、鈍く光る巨体が突き上げてくる。",
+    "鋭い歯の列が、尾びれの付け根を狙ってかすめる。"
+   ]
+  },
+  {
+   "id": "sleeper_shark",
+   "ja": "オンデンザメ",
+   "kind": "fish",
+   "places": [
+    "gulf_of_alaska",
+    "bering_shelf"
+   ],
+   "stages": [
+    "calf",
+    "juvenile"
+   ],
+   "sev": 2,
+   "texts": [
+    "冷たく濁った海底近くを、灰色の大きなサメがのたうつように泳ぐ。",
+    "海底へ沈みかけたところを、鈍重なサメが大きな口を開けて追う。"
+   ]
+  },
+  {
+   "id": "orca_pack",
+   "ja": "シャチの群れ",
+   "kind": "mammal",
+   "places": [
+    "aleutian_passes",
+    "bering_shelf",
+    "gulf_of_alaska",
+    "frederick_sound"
+   ],
+   "stages": [
+    "calf",
+    "juvenile"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "高い背びれの列が、海面を裂いてまっすぐ突進してくる。",
+    "呼吸を塞ごうと、何頭もの黒い背中が上からのしかかる。"
+   ]
+  },
+  {
+   "id": "orca_leader",
+   "ja": "背びれの裂けたシャチ",
+   "kind": "mammal",
+   "places": [
+    "aleutian_passes",
+    "frederick_sound",
+    "gulf_of_alaska"
+   ],
+   "stages": [
+    "calf",
+    "juvenile"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "裂けた大きな背びれが、波間からまっすぐこちらへ向かってくる。",
+    "胸びれで激しく水を叩き、巨大な黒い影を威嚇する。"
+   ],
+   "again": [
+    [
+     "またあの背びれの裂けたシャチが、海峡の出口を塞いでいる。"
+    ],
+    [
+     "裂けた背びれが、氷のように冷たい海面を割って現れた。"
+    ]
+   ],
+   "bye": "大人の巨体になり、胸びれを一閃すると、裂けた背びれの影は深みへ去った。"
+  },
+  {
+   "id": "crab_pot_rope",
+   "ja": "カニ籠のロープ",
+   "kind": "human",
+   "places": [
+    "bering_shelf",
+    "frederick_sound"
+   ],
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海底へ伸びる太いロープが、尾びれにきつく絡みつく。",
+    "浮標と重い籠に引かれ、息継ぎのために海面へ上がれなくなる。"
+   ],
+   "lose": "締めつけるロープが肉へ食いこみ、傷を負った。",
+   "fleeJa": "力まかせに体をひねって引きちぎる",
+   "hideJa": "動かずにロープの緩みを待つ"
+  },
+  {
+   "id": "drift_gillnet",
+   "ja": "流し網",
+   "kind": "human",
+   "places": [
+    "north_pacific",
+    "gulf_of_alaska"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "外洋を漂う巨大なナイロンの網が、頭部のでっぱりや胸びれを包みこむ。",
+    "もがくほどに細い糸が皮膚を切り裂く。"
+   ],
+   "lose": "絡みつく合成繊維の糸で皮膚が削られ、傷を負った。",
+   "fleeJa": "長い胸びれを大きく羽ばたいて振り払う",
+   "hideJa": "深く潜航して網の下をくぐり抜ける"
+  },
+  {
+   "id": "container_ship",
+   "ja": "大型貨物船",
+   "kind": "human",
+   "places": [
+    "north_pacific",
+    "gulf_of_alaska",
+    "maui_shallows"
+   ],
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "轟音とともに、鉄の巨大な船底が頭上を覆い尽くす。",
+    "回転するスクリューの水流に巻きこまれそうになる。"
+   ],
+   "lose": "鋭いスクリューの刃に背を打たれ、傷を負った。",
+   "fleeJa": "海中深く垂直に潜る",
+   "hideJa": "海面すれすれで横へ身をかわす"
+  },
+  {
+   "id": "whaling_catcher",
+   "ja": "捕鯨船",
+   "kind": "human",
+   "places": [
+    "bering_shelf",
+    "aleutian_passes",
+    "north_pacific"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "甲板の砲頭がこちらへ向き、爆薬付きの銛が射出される。",
+    "響きわたる船のエンジン音が、息継ぎの浮上を阻むように追う。"
+   ],
+   "lose": "放たれた鉄の銛が背をかすめ、傷を負った。",
+   "fleeJa": "息を深く吸い、白波を立てて外洋へ逃げる",
+   "hideJa": "息を潜めて冷たい深海へ身を沈める"
+  }
+ ],
+ "choices": [
+  {
+   "q": "北へ向かう回遊の季節が来た。どの餌場を目指すか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "month": [
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "アラスカ南東部の入り江へ入る",
+     "ds": "島陰で波が静か。入り江の奥は採餌場が限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "frederick_sound",
+     "say": "複雑に入り組んだ穏やかな海峡へ滑り込んだ。",
+     "chip": "沿岸の入り江へ"
+    },
+    {
+     "ja": "ベーリング海の大陸棚まで渡る",
+     "ds": "オキアミや魚が群生している。外洋を越える旅が長い",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "bering_shelf",
+     "say": "荒れる波を越え、豊かな大陸棚の縁を目指した。",
+     "chip": "ベーリング海へ"
+    }
+   ]
+  },
+  {
+   "q": "小魚の群れを捉えた。どのように捕食するか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "気泡を吐いて魚を囲い込む",
+     "ds": "獲物を密集させて大量に呑める。呼吸孔から気泡を吐く息を要する",
+     "fx": {
+      "food": 1,
+      "stamina": -1
+     },
+     "say": "らせん状に泡の壁を吹き上げ、逃げ場を失った群れを一気に呑み込んだ。",
+     "chip": "バブルネット"
+    },
+    {
+     "ja": "下方からそのまま突進する",
+     "ds": "体力の消耗が少ない。散らばる魚を取りこぼしやすい",
+     "fx": {
+      "stamina": 1,
+      "food": -1
+     },
+     "say": "顎を大きく広げ、群れの真下から水面へ突き上げた。",
+     "chip": "下から突進"
+    }
+   ]
+  },
+  {
+   "q": "秋が深まり北の海が冷えてきた。いつ南へ旅立つか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "早めに暖かい海へ向かう",
+     "ds": "荒れる冬の外洋を避けられる。北で太る時間が減る",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "north_pacific",
+     "say": "水温が落ちきる前に針路を南へ向けた。",
+     "chip": "早めに南下"
+    },
+    {
+     "ja": "氷が張る手前まで北に残る",
+     "ds": "脂皮を厚く蓄えられる。冬の荒天に巻き込まれやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "冷たい波間にとどまり、ぎりぎりまで魚を追った。",
+     "chip": "北に残る"
+    }
+   ]
+  },
+  {
+   "q": "冬の繁殖期を迎えた。子育てをどこで行うか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    1,
+    2,
+    3
+   ],
+   "opts": [
+    {
+     "ja": "マウイ島沖の浅瀬にとどまる",
+     "ds": "外洋の捕食者を避けやすい。発情した雄の追跡を受けやすい",
+     "fx": {
+      "danger": -1,
+      "stamina": -1
+     },
+     "goto": "maui_shallows",
+     "say": "白い砂の海底が見える浅い海で、仔の息継ぎに寄り添った。",
+     "chip": "浅い海で子育て"
+    },
+    {
+     "ja": "水深のある外洋寄りを泳ぐ",
+     "ds": "雄の喧騒から逃れやすい。シャチに遭遇しやすい",
+     "fx": {
+      "stamina": 1,
+      "danger": 1
+     },
+     "goto": "north_pacific",
+     "say": "群れを離れ、青黒い深みへと仔を導いた。",
+     "chip": "沖合へ出る"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "calf",
+    "juvenile"
+   ],
+   "p": 0.15,
+   "say": "シャチの群れが背後に迫り、胸びれを大きく振り上げて威嚇した。",
+   "danger": 1
+  },
+  {
+   "month": [
+    1,
+    2
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "青い海に、雄たちの長大な歌がどこまでも響き渡った。",
+   "stamina": 1
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "皮膚にフジツボが群がり、水を受ける感触が重くなった。",
+   "stamina": -1
+  }
+ ],
+ "lead": "北太平洋で生まれ、夏は極北の海で餌を取り、冬は赤道付近の暖かい海で子を産う。",
+ "texts": {
+  "move": "北太平洋の外洋へ、群れで泳ぐ。",
+  "fleeJa": "捕食者を察知し、群れ全体で方向転換する。",
+  "restJa": "潮流の緩やかな所で浮上し、呼吸を整える。",
+  "watchJa": "表層の波紋を読み、餌場を探す。",
+  "lieJa": "深海の影に潜み、エネルギーを温存する。",
+  "lastMemory": "全体が一斉に背びれを叩く瞬間を思い出す。"
+ },
+ "intro": [
+  "北太平洋の外洋、夜明け前の海で仔クジラが誕生した。",
+  "周囲には同時に生まれた他の仔が数十頭漂っていた。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を残した",
+   "line": "{kids}頭の子が次の世代になる。",
+   "mem": "母の背中に揺られた潮の匂いを思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "夏の氷のない海で餌を追う光景を覚えている。"
+  },
+  {
+   "flag": "c1_1",
+   "text": "繁殖地の暖かな浅瀬で母が歌う声が胸に残る。"
+  }
+ ],
+ "noKids": [],
+ "facts": [
+  {
+   "quote": "ハンプバッククジラは世界の海に分布し、極地の餌場と赤道付近の繁殖地を往復する。"
+  },
+  {
+   "quote": "主な天敵はオルカである。"
+  }
+ ]
+}

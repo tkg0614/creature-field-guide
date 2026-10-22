@@ -1,0 +1,131 @@
+{
+ "id": "dragonfly",
+ "ja": "アキアカネ",
+ "sci": "Sympetrum frequens",
+ "status": "draft",
+ "country": "jp",
+ "by": {
+  "places": "gemini-older gemini-3.7-flash"
+ },
+ "locale": {
+  "ja": "諏訪盆地と八ヶ岳",
+  "geo": "Yatsugatake Mountains",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "winter_paddy",
+   "ja": "冬の田んぼの泥",
+   "danger": 1,
+   "cover": true,
+   "about": "水が落とされた泥の底。冬の寒さに耐えながら卵が越冬する。",
+   "stages": [],
+   "lat": 35.983,
+   "lon": 138.383
+  },
+  {
+   "id": "spring_paddy",
+   "ja": "水が入った田んぼ",
+   "danger": 2,
+   "cover": true,
+   "about": "水が張られてミジンコが湧く。孵化したヤゴが泥に潜みながら獲物を狙う。",
+   "stages": [],
+   "lat": 35.983,
+   "lon": 138.415
+  },
+  {
+   "id": "satoyama_woods",
+   "ja": "平地の林のへり",
+   "danger": 2,
+   "cover": true,
+   "about": "羽化したばかりの若い成虫が集まる。山へ登る体力を蓄えるために小昆虫を捕らえる。",
+   "stages": [],
+   "lat": 36.013,
+   "lon": 138.395
+  },
+  {
+   "id": "highland_grassland",
+   "ja": "高原の草地",
+   "danger": 1,
+   "cover": false,
+   "about": "平地の厳しい暑さを逃れて過ごす場所。涼しい風の中で餌を食べ、生殖組織が充実していく。",
+   "stages": [],
+   "lat": 35.994,
+   "lon": 138.364
+  },
+  {
+   "id": "windy_ridge",
+   "ja": "風の吹き抜ける山の尾根",
+   "danger": 3,
+   "cover": false,
+   "about": "強い風が吹き荒れ、鳥に見つかりやすい尾根。強い日差しを避けるために逆立ちして止まる。",
+   "stages": [],
+   "lat": 35.968,
+   "lon": 138.357
+  },
+  {
+   "id": "autumn_paddy",
+   "ja": "秋の刈り取り後の田んぼ",
+   "danger": 2,
+   "cover": false,
+   "about": "山を降りた赤色の成虫が集まる。浅い水たまりの上でつながり、水面を叩いて産卵する。",
+   "stages": [],
+   "lat": 35.953,
+   "lon": 138.395
+  }
+ ],
+ "start": {
+  "place": "winter_paddy",
+  "month": 10,
+  "day": 15
+ },
+ "region": {
+  "ja": "諏訪盆地と八ヶ岳",
+  "lon0": 138.34,
+  "lon1": 138.432,
+  "lat0": 36.03,
+  "lat1": 35.936,
+  "k": 5435,
+  "labels": [
+   [
+    36.02436,
+    138.386,
+    "諏訪盆地と八ヶ岳"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "highland_grassland",
+   "winter_paddy"
+  ],
+  [
+   "windy_ridge",
+   "winter_paddy"
+  ],
+  [
+   "spring_paddy",
+   "winter_paddy"
+  ],
+  [
+   "autumn_paddy",
+   "spring_paddy"
+  ],
+  [
+   "satoyama_woods",
+   "winter_paddy"
+  ],
+  [
+   "satoyama_woods",
+   "spring_paddy"
+  ],
+  [
+   "highland_grassland",
+   "windy_ridge"
+  ],
+  [
+   "autumn_paddy",
+   "winter_paddy"
+  ]
+ ]
+}

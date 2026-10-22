@@ -30,13 +30,13 @@ async function call(p, prompt) {
   if (!model) return { status: 404, raw: { error: '使えるモデルが一覧に無い' } };
   if (p.kind === 'gemini') {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': key, 'content-type': 'application/json' },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, ...(p.plainText ? {} : { responseMimeType: 'application/json' }) } }) }); /* plainText: JSON 指定を受け付けないモデル（Gemma） */
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, maxOutputTokens: 8192, ...(p.plainText ? {} : { responseMimeType: 'application/json' }) } }) }); /* plainText: JSON 指定を受け付けないモデル（Gemma） */
     const j = await r.json().catch(() => ({}));
     return { status: r.status, retry: r.headers.get('retry-after'), text: j.candidates && j.candidates[0].content && j.candidates[0].content.parts[0].text, raw: j };
   }
   const gh = /models\.github\.ai/.test(p.url) ? { accept: 'application/vnd.github+json', 'x-github-api-version': '2022-11-28' } : {};
   const r = await fetch(p.url, { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json', ...gh },
-    body: JSON.stringify({ model, temperature: 0.5, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
+    body: JSON.stringify({ model, temperature: 0.5, max_tokens: 8192 /* 既定が短い所がある（途中で切れた） */, response_format: { type: 'json_object' }, messages: [{ role: 'user', content: prompt }] }) });
   const body = await r.text(); let j = {}; try { j = JSON.parse(body); } catch { j = { body: body.slice(0, 200) }; }
   return { status: r.status, retry: r.headers.get('retry-after'), text: j.choices && j.choices[0].message.content, raw: j };
 }
@@ -67,10 +67,27 @@ async function ask(prompt, minQ = 0) {
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
     if (res.status === 404 && !p.retried) { p.retried = 1; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
     if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 || !res.status ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] ${res.status >= 500 ? '混んでいる → 10分' : '返事が壊れている → 6時間'}休ませて次の AI へ`); continue; }
-    return { json: JSON.parse(((t) => t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1))(res.text)) /* 前後の説明文や ``` を外す */, by: `${p.name} ${chosen[p.name]}` };
+    try { return { json: pickJson(res.text), by: `${p.name} ${chosen[p.name]}` }; }
+    catch (e) { console.log(`  [${p.name}] JSON が読めない: ${JSON.stringify(res.text.slice(0, 160))}`); e.message += `（${p.name}）`; throw e; }
   }
 }
-module.exports = { ask, usable };
+// 答えから JSON を取り出す: ```json の囲み → 先頭から順に「{ で始まり括弧が閉じる所」を試す（説明文の {place, month} などに惑わされない）
+// 2026-10-22: Gemma が前置きの文や途中で切れた答えを返し、最初の { から最後の } までを読む方法では4回とも落ちた
+function pickJson(t) {
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fence) { try { return JSON.parse(fence[1]); } catch { /* 下で探す */ } }
+  let last;
+  for (let i = t.indexOf('{'); i >= 0; i = t.indexOf('{', i + 1)) {
+    let d = 0, q = false, esc = false;
+    for (let j = i; j < t.length; j++) {
+      const c = t[j];
+      if (q) { if (esc) esc = false; else if (c === '\\') esc = true; else if (c === '"') q = false; continue; }
+      if (c === '"') q = true; else if (c === '{') d++; else if (c === '}' && --d === 0) { try { return JSON.parse(t.slice(i, j + 1)); } catch (e) { last = e; } break; }
+    }
+  }
+  throw last || new Error('JSON が見つからない（途中で切れている）');
+}
+module.exports = { ask, usable, pickJson };
 if (require.main === module) (async () => {
   console.log('使える AI:', usable().map((p) => p.name).join(', ') || 'なし');
   if (process.argv.includes('--ping')) for (const p of usable()) { const r = await call(p, '{"ok": true} とだけ JSON で答えて').catch((e) => ({ status: 0, raw: { error: e.message } })); console.log(`  ${p.name}（${chosen[p.name] || '?'}）: ${r.status} ${r.text ? r.text.slice(0, 60) : JSON.stringify(r.raw).slice(0, 200)}`); }

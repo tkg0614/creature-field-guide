@@ -36,13 +36,13 @@ jobs:
             const fs=require("fs"), want=(process.env.IDS||"").split(/\s+/).filter(Boolean);
             const st=(id)=>{try{return JSON.parse(fs.readFileSync(`sheets/${id}.json`,"utf8")).status}catch{return "none"}};
             const q=JSON.parse(fs.readFileSync("data/queue.json","utf8")).map(x=>x.id);
-            console.log((want.length?want:q.filter(id=>["none","draft"].includes(st(id)))).slice(0,+process.env.MAX).join(" "))')
+            console.log((want.length?want:[...q.filter(id=>["none","draft"].includes(st(id))),...q.filter(id=>st(id)==="draft-ng")]).slice(0,+process.env.MAX).join(" "))')
           echo "今回: $IDS"
           for id in $IDS; do
             node tools/fetch.js "$id"
             set +e; node tools/draft.js "$id" --tries 4; code=$?; set -e
             node tools/check.js "$id" || true
             git add -A sheets sources data/cooldown.json data/models.json 2>/dev/null || true
-            git diff --cached --quiet || { git commit -q -m "draft: $id"; for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep 5; done; }
+            git diff --cached --quiet || { git commit -q -m "draft: $id"; for i in 1 2 3; do { git pull -q --rebase -X theirs origin main || { git rebase --abort; false; }; } && git push -q origin HEAD:main && break || sleep 5; done; }
             [ "$code" = 3 ] && { echo "使える AI が無くなったので、続きは次の回"; break; }
           done

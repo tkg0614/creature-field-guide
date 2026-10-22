@@ -69,8 +69,8 @@
     "juvenile",
     "adult"
    ],
-   "lat": 51.028,
-   "lon": -126.718
+   "lat": 57.0,
+   "lon": -133.8
   },
   {
    "id": "aleutian_passes",
@@ -108,15 +108,15 @@
  },
  "region": {
   "ja": "ハワイ諸島からベーリング海",
-  "lon0": -189.485,
-  "lon1": -112.233,
-  "lat0": 74.485,
-  "lat1": 6.318,
-  "k": 6,
+  "lon0": -187.36,
+  "lon1": -121.44,
+  "lat0": 72.36,
+  "lat1": 8.443,
+  "k": 8,
   "labels": [
    [
-    70.39498,
-    -150.859,
+    68.52498,
+    -154.4,
     "ハワイ諸島からベーリング海"
    ]
   ]
@@ -206,8 +206,8 @@
  ],
  "oldAge": {
   "years": [
-   60,
-   95
+   45,
+   90
   ],
   "text": "幾千キロの旅を繰り返した巨体に、力尽きる時が訪れた。青い深海へと静かに沈んでいった。"
  },
@@ -223,7 +223,7 @@
   "places": [
    "maui_shallows"
   ],
-  "perYear": 1,
+  "perYear": 10,
   "kids": [
    1,
    1
@@ -240,6 +240,28 @@
   "goal2": "子を10頭産む"
  },
  "foods": [
+  {
+   "id": "milk",
+   "ja": "母の乳を飲む",
+   "name": "母の乳",
+   "ds": "母の腹の下にもぐり、濃い乳を飲む",
+   "stages": [
+    "calf"
+   ],
+   "places": [
+    "maui_shallows",
+    "north_pacific",
+    "gulf_of_alaska",
+    "frederick_sound",
+    "aleutian_passes",
+    "bering_shelf"
+   ],
+   "rich": [
+    "maui_shallows"
+   ],
+   "ok": "母の腹の下で、濃い乳を腹いっぱいに飲んだ。",
+   "full": 40
+  },
   {
    "id": "krill_and_fish",
    "ja": "群れをこし取る",
@@ -319,43 +341,6 @@
    "texts": [
     "白く丸い胸びれのサメが、外洋の青い層から浮き上がってくる。",
     "泳ぎ疲れて遅れたすきを、サメが遠巻きに見張っている。"
-   ]
-  },
-  {
-   "id": "cookiecutter",
-   "ja": "ダルマザメ",
-   "kind": "fish",
-   "places": [
-    "maui_shallows",
-    "north_pacific"
-   ],
-   "stages": [
-    "juvenile",
-    "adult"
-   ],
-   "sev": 1,
-   "texts": [
-    "暗い深みから小さな影が寄り添い、体表の皮を円形に噛みちぎる。",
-    "夜の海面近くで、暗闇から無数の小さな歯が迫る。"
-   ]
-  },
-  {
-   "id": "great_white",
-   "ja": "ホオジロザメ",
-   "kind": "fish",
-   "places": [
-    "north_pacific",
-    "gulf_of_alaska"
-   ],
-   "stages": [
-    "calf",
-    "juvenile"
-   ],
-   "sev": 2,
-   "fast": true,
-   "texts": [
-    "深い蒼の底から、鈍く光る巨体が突き上げてくる。",
-    "鋭い歯の列が、尾びれの付け根を狙ってかすめる。"
    ]
   },
   {
@@ -439,7 +424,7 @@
     "juvenile",
     "adult"
    ],
-   "sev": 2,
+   "sev": 1,
    "texts": [
     "海底へ伸びる太いロープが、尾びれにきつく絡みつく。",
     "浮標と重い籠に引かれ、息継ぎのために海面へ上がれなくなる。"
@@ -453,14 +438,12 @@
    "ja": "流し網",
    "kind": "human",
    "places": [
-    "north_pacific",
-    "gulf_of_alaska"
+    "north_pacific"
    ],
    "stages": [
-    "juvenile",
-    "adult"
+    "juvenile"
    ],
-   "sev": 2,
+   "sev": 1,
    "texts": [
     "外洋を漂う巨大なナイロンの網が、頭部のでっぱりや胸びれを包みこむ。",
     "もがくほどに細い糸が皮膚を切り裂く。"
@@ -474,46 +457,22 @@
    "ja": "大型貨物船",
    "kind": "human",
    "places": [
-    "north_pacific",
-    "gulf_of_alaska",
-    "maui_shallows"
+    "gulf_of_alaska"
    ],
    "stages": [
     "calf",
     "juvenile",
     "adult"
    ],
-   "sev": 3,
+   "sev": 1,
    "fast": true,
    "texts": [
     "轟音とともに、鉄の巨大な船底が頭上を覆い尽くす。",
     "回転するスクリューの水流に巻きこまれそうになる。"
    ],
-   "lose": "鋭いスクリューの刃に背を打たれ、傷を負った。",
+   "lose": "船の影に気づくのが遅れ、スクリューに背を切られて傷を負った。",
    "fleeJa": "海中深く垂直に潜る",
    "hideJa": "海面すれすれで横へ身をかわす"
-  },
-  {
-   "id": "whaling_catcher",
-   "ja": "捕鯨船",
-   "kind": "human",
-   "places": [
-    "bering_shelf",
-    "aleutian_passes",
-    "north_pacific"
-   ],
-   "stages": [
-    "juvenile",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "甲板の砲頭がこちらへ向き、爆薬付きの銛が射出される。",
-    "響きわたる船のエンジン音が、息継ぎの浮上を阻むように追う。"
-   ],
-   "lose": "放たれた鉄の銛が背をかすめ、傷を負った。",
-   "fleeJa": "息を深く吸い、白波を立てて外洋へ逃げる",
-   "hideJa": "息を潜めて冷たい深海へ身を沈める"
   }
  ],
  "choices": [
@@ -691,7 +650,7 @@
    "stamina": -1
   }
  ],
- "lead": "北太平洋で生まれ、夏は極北の海で餌を取り、冬は赤道付近の暖かい海で子を産う。",
+ "lead": "北太平洋で生まれ、夏は極北の海で餌を取り、冬は南の暖かい海で子を産む。",
  "texts": {
   "move": "北太平洋の外洋へ、群れで泳ぐ。",
   "fleeJa": "捕食者を察知し、群れ全体で方向転換する。",
@@ -723,12 +682,6 @@
   }
  ],
  "noKids": [],
- "facts": [
-  {
-   "quote": "ハンプバッククジラは世界の海に分布し、極地の餌場と赤道付近の繁殖地を往復する。"
-  },
-  {
-   "quote": "主な天敵はオルカである。"
-  }
- ]
+ "facts": [],
+ "todo": "保留(10-23): 成体がハワイ（出産の場所）へ戻れず子を残す割合が13%で帯の下。回遊を自動の移動（salmon 型の moves）にするか、出産を北の海から南下する出来事にする"
 }

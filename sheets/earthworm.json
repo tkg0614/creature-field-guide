@@ -1,0 +1,141 @@
+{
+ "id": "earthworm",
+ "ja": "フトミミズの仲間",
+ "sci": "Amynthas spp.（フトミミズ科 Megascolecidae）",
+ "status": "draft",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "多摩丘陵の里山",
+  "geo": "Tama Hills",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "leaf_litter",
+   "ja": "雑木林の落ち葉の下",
+   "danger": 1,
+   "cover": true,
+   "about": "クヌギやコナラの枯れ葉が積もる。湿り気が保たれ、冬を越した卵包から幼虫がかえる。",
+   "stages": [],
+   "lat": 35.64,
+   "lon": 139.474
+  },
+  {
+   "id": "under_log",
+   "ja": "朽ち木や石の下",
+   "danger": 0,
+   "cover": true,
+   "about": "日中でも乾かず外敵の目も届きにくい。脱皮や休息に適した安全な隙間である。",
+   "stages": [],
+   "lat": 35.64,
+   "lon": 139.506
+  },
+  {
+   "id": "compost",
+   "ja": "畑の堆肥場",
+   "danger": 2,
+   "cover": true,
+   "about": "発酵した有機物が豊富で急激に育つ。カブトムシの幼虫と競合し、掘り返されることもある。",
+   "stages": [],
+   "lat": 35.668,
+   "lon": 139.494
+  },
+  {
+   "id": "farmland",
+   "ja": "耕作地の作土",
+   "danger": 3,
+   "cover": false,
+   "about": "野菜の根元で土が柔らかい。耕運機やクワに切られたり、カラスに見つかりやすい。",
+   "stages": [],
+   "lat": 35.657,
+   "lon": 139.462
+  },
+  {
+   "id": "grass_ridge",
+   "ja": "あぜ道の草の根元",
+   "danger": 1,
+   "cover": true,
+   "about": "密生した草の根が土を支える。適度な餌があるが、モグラの通り道になりやすい。",
+   "stages": [],
+   "lat": 35.64,
+   "lon": 139.442
+  },
+  {
+   "id": "ditch",
+   "ja": "素掘りの側溝の底",
+   "danger": 2,
+   "cover": true,
+   "about": "吹きだまった枯葉と泥に潜む。大雨が降ると濁流に流される。",
+   "stages": [],
+   "lat": 35.612,
+   "lon": 139.454
+  },
+  {
+   "id": "pavement",
+   "ja": "雨上がりのアスファルト道路",
+   "danger": 3,
+   "cover": false,
+   "about": "雨の夜に地上を這い出て迷い込む。朝の日差しが照りつけると戻れず干からびる。",
+   "stages": [],
+   "lat": 35.623,
+   "lon": 139.486
+  }
+ ],
+ "start": {
+  "place": "leaf_litter",
+  "month": 4,
+  "day": 20
+ },
+ "region": {
+  "ja": "多摩丘陵の里山",
+  "lon0": 139.423,
+  "lon1": 139.525,
+  "lat0": 35.687,
+  "lat1": 35.593,
+  "k": 4902,
+  "labels": [
+   [
+    35.68136,
+    139.474,
+    "多摩丘陵の里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "farmland",
+   "leaf_litter"
+  ],
+  [
+   "leaf_litter",
+   "pavement"
+  ],
+  [
+   "pavement",
+   "under_log"
+  ],
+  [
+   "compost",
+   "under_log"
+  ],
+  [
+   "compost",
+   "farmland"
+  ],
+  [
+   "farmland",
+   "grass_ridge"
+  ],
+  [
+   "ditch",
+   "grass_ridge"
+  ],
+  [
+   "ditch",
+   "pavement"
+  ]
+ ]
+}

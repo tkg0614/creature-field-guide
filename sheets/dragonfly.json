@@ -2,10 +2,14 @@
  "id": "dragonfly",
  "ja": "アキアカネ",
  "sci": "Sympetrum frequens",
- "status": "draft",
+ "status": "checked",
  "country": "jp",
  "by": {
-  "places": "gemini-older gemini-3.7-flash"
+  "places": "gemini-older gemini-3.7-flash",
+  "life": "gemini-older gemini-3.7-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
  },
  "locale": {
   "ja": "諏訪盆地と八ヶ岳",
@@ -19,7 +23,11 @@
    "danger": 1,
    "cover": true,
    "about": "水が落とされた泥の底。冬の寒さに耐えながら卵が越冬する。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 35.983,
    "lon": 138.383
   },
@@ -29,7 +37,11 @@
    "danger": 2,
    "cover": true,
    "about": "水が張られてミジンコが湧く。孵化したヤゴが泥に潜みながら獲物を狙う。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 35.983,
    "lon": 138.415
   },
@@ -39,7 +51,11 @@
    "danger": 2,
    "cover": true,
    "about": "羽化したばかりの若い成虫が集まる。山へ登る体力を蓄えるために小昆虫を捕らえる。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 36.013,
    "lon": 138.395
   },
@@ -49,7 +65,11 @@
    "danger": 1,
    "cover": false,
    "about": "平地の厳しい暑さを逃れて過ごす場所。涼しい風の中で餌を食べ、生殖組織が充実していく。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 35.994,
    "lon": 138.364
   },
@@ -59,7 +79,11 @@
    "danger": 3,
    "cover": false,
    "about": "強い風が吹き荒れ、鳥に見つかりやすい尾根。強い日差しを避けるために逆立ちして止まる。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 35.968,
    "lon": 138.357
   },
@@ -69,7 +93,11 @@
    "danger": 2,
    "cover": false,
    "about": "山を降りた赤色の成虫が集まる。浅い水たまりの上でつながり、水面を叩いて産卵する。",
-   "stages": [],
+   "stages": [
+    "nymph",
+    "tenerall",
+    "adult"
+   ],
    "lat": 35.953,
    "lon": 138.395
   }
@@ -127,5 +155,588 @@
    "autumn_paddy",
    "winter_paddy"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.2
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "風に逆らって飛ぶ・天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "複眼の視力",
+   "use": "獲物や水辺を見つける時に効く"
+  },
+  "forage": {
+   "ja": "捕獲力",
+   "use": "空中で小昆虫を捉える・ヤゴが餌を捕る時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nymph",
+   "ja": "ヤゴ",
+   "days": 40,
+   "hunger": 10,
+   "grow": 0.6,
+   "goal": "ヤゴとして育つ",
+   "enter": "泥の中で孵化した。水田の底を這い、小さな虫を狙う。"
+  },
+  {
+   "id": "tenerall",
+   "ja": "未熟成虫",
+   "fromAge": 0.6,
+   "days": 45,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "山へ渡って体を充実させる",
+   "enter": "夜の水田で羽化した。暑さを避けて涼しい高原を目指す。"
+  },
+  {
+   "id": "adult",
+   "ja": "成熟成虫",
+   "fromAge": 0.95,
+   "days": 45,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "平地へ戻り産卵する",
+   "enter": "腹部が鮮やかな赤に染まった。秋風に乗って麓の田んぼへと下りる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1.2
+  ],
+  "text": "初冬の霜が降りる頃、羽を休めたまま静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "連結打水産卵",
+  "ds": "雌雄がつながったまま飛び、水際や浅い泥を腹の先で打って卵を落とす",
+  "months": [
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "autumn_paddy"
+  ],
+  "perYear": 1,
+  "kids": [
+   300,
+   1500
+  ],
+  "many": 3000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "越冬する卵のひとつ"
+  },
+  "ok": "水田の泥に、{born}個の卵を産み落とした。",
+  "ng": "水たまりが見つからず、産み落とせなかった。",
+  "goal1": "田んぼに卵を産む",
+  "goal2": "累計で3000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "water_flea",
+   "ja": "ミジンコを捕らえる",
+   "name": "ミジンコ",
+   "ds": "下あごを素早く伸ばし、水中のプランクトンを挟み捕る",
+   "stages": [
+    "nymph"
+   ],
+   "places": [
+    "spring_paddy"
+   ],
+   "rich": [
+    "spring_paddy"
+   ],
+   "ok": "すばやく下あごを伸ばし、ミジンコを捕らえた。",
+   "full": 25
+  },
+  {
+   "id": "small_insects",
+   "ja": "小昆虫を空中で捕らえる",
+   "name": "飛翔昆虫",
+   "ds": "脚をかごのように組んで飛び、空中のハエやユスリカを捕らえる",
+   "stages": [
+    "tenerall",
+    "adult"
+   ],
+   "places": [
+    "satoyama_woods",
+    "highland_grassland",
+    "windy_ridge",
+    "autumn_paddy"
+   ],
+   "rich": [
+    "highland_grassland"
+   ],
+   "ok": "空中で器用に脚を使い、羽虫をとらえて食べた。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "obelisk_posture",
+   "ja": "逆立ち姿勢をとる",
+   "ds": "日差しを避けるように腹部を高く持ち上げ、体温の上昇を抑える",
+   "stages": [
+    "tenerall",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "真夏の強い日差しの中、尾を天に向けて静かに暑さをやり過ごした。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    6,
+    7
+   ],
+   "stages": [
+    "tenerall"
+   ],
+   "to": "highland_grassland",
+   "say": "平地の暑さを逃れ、霧の湧く涼しい高原の草地へ群れて登る。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "autumn_paddy",
+   "say": "秋雨のあと、赤く染まった体で群れをなし麓の田んぼへ下りる。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "diving_beetle_larva",
+   "ja": "ゲンゴロウの幼虫",
+   "kind": "insect",
+   "places": [
+    "spring_paddy"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥の中から大あごを広げた幼虫が迫る。",
+    "鎌のような大あごが、水草の間から伸びてくる。"
+   ]
+  },
+  {
+   "id": "crucian_carp",
+   "ja": "フナ",
+   "kind": "fish",
+   "places": [
+    "spring_paddy"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "濁った水底から、鈍い銀色の魚影が浮上してくる。",
+    "大きな口が泥ごと吸いこもうと開く。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "箱処理剤",
+   "kind": "human",
+   "places": [
+    "spring_paddy"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 3,
+   "texts": [
+    "苗の根元から、見えない毒が水へと溶けだしている。",
+    "濁った水とともに、強い薬の気配が迫る。"
+   ],
+   "lose": "水に溶けた薬剤に蝕まれ、傷を負った。",
+   "fleeJa": "泥の底深くへ潜る",
+   "hideJa": "枯れ草の陰にじっと身を寄せる"
+  },
+  {
+   "id": "tree_frog",
+   "ja": "ニホンアマガエル",
+   "kind": "amphibian",
+   "places": [
+    "spring_paddy",
+    "satoyama_woods"
+   ],
+   "stages": [
+    "nymph",
+    "tenerall"
+   ],
+   "sev": 2,
+   "texts": [
+    "イネの葉の影から、緑色の体が飛び出してくる。",
+    "羽化直後の柔らかな体を、素早い舌が狙う。"
+   ]
+  },
+  {
+   "id": "swallow",
+   "ja": "ツバメ",
+   "kind": "bird",
+   "places": [
+    "spring_paddy",
+    "satoyama_woods"
+   ],
+   "stages": [
+    "tenerall"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "田んぼの上を低く飛び交い、鋭いくちばしが迫る。",
+    "風を切る黒い翼が、頭上をかすめ抜ける。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "satoyama_woods",
+    "autumn_paddy"
+   ],
+   "stages": [
+    "tenerall",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "枝と枝の間に、黄色い太い糸の網が広がっている。",
+    "金色の縞模様を持つクモが、網の中央で待ち構える。"
+   ],
+   "again": [
+    [
+     "また、あの枝の間に大きな網が張られている。"
+    ],
+    [
+     "同じ主の網が、行く手をふさぐ。"
+    ]
+   ],
+   "bye": "秋の強い風が吹き荒れ、あのクモの網は跡形もなく破れ去った。"
+  },
+  {
+   "id": "alpine_swift",
+   "ja": "イワツバメ",
+   "kind": "bird",
+   "places": [
+    "windy_ridge",
+    "highland_grassland"
+   ],
+   "stages": [
+    "tenerall"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "尾根の強風を切り裂いて、黒い影が急降下してくる。",
+    "霧の切れ間から、群れをなして滑空してくる。"
+   ]
+  },
+  {
+   "id": "bull_headed_shrike",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "satoyama_woods",
+    "autumn_paddy"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "枯れ枝のてっぺんから、鋭い鉤爪が襲いかかる。",
+    "杭の上で尾羽を振り、獲物を見定めている。"
+   ],
+   "again": [
+    [
+     "また、あの枯れ枝に見張りをするモズがいる。"
+    ],
+    [
+     "尾を振るモズが、上空から目を光らせている。"
+    ]
+   ],
+   "bye": "厳しい寒波が訪れ、あのモズの姿も枝から消えた。"
+  },
+  {
+   "id": "white_wagtail",
+   "ja": "ハクセキレイ",
+   "kind": "bird",
+   "places": [
+    "autumn_paddy"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "刈り取られた株の間を、尾を振りながら素早く駆け寄ってくる。",
+    "泥の上に降りた隙を突き、細いくちばしが突いてくる。"
+   ]
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "satoyama_woods",
+    "autumn_paddy"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "あぜ道から、白い大きな網が勢いよく振り下ろされる。",
+    "日差しを遮って、丸い枠が迫る。"
+   ],
+   "lose": "白い網に払われ、羽に傷を負った。",
+   "fleeJa": "真上へ急上昇してかわす",
+   "hideJa": "イネの茎の裏へ回りこむ"
+  }
+ ],
+ "choices": [
+  {
+   "q": "羽化の夜を迎えた。水田のどこで水から這い上がるか",
+   "stages": [
+    "nymph"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "伸びたイネの茎によじ登る",
+     "ds": "高い位置で安全に翅を伸ばせる。強い風に煽られやすい",
+     "fx": {
+      "danger": -0.5,
+      "energy": -0.5
+     },
+     "goto": "satoyama_woods",
+     "say": "イネの茎を夜陰に紛れて登り、背中を割って翅を広げた。",
+     "chip": "イネで羽化"
+    },
+    {
+     "ja": "あぜ道の低い草にとどまる",
+     "ds": "風を避けて安定して羽化できる。地表の天敵に見つかりやすい",
+     "fx": {
+      "danger": 0.5,
+      "energy": 0.5
+     },
+     "goto": "satoyama_woods",
+     "say": "あぜの草陰で静かに脱皮し、夜明けを待って水辺を離れた。",
+     "chip": "あぜ草で羽化"
+    }
+   ]
+  },
+  {
+   "q": "平地の気温が上がってきた。夏をどこで過ごすか",
+   "stages": [
+    "tenerall"
+   ],
+   "month": [
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "高原の草地にとどまる",
+     "ds": "小昆虫が多く餌が豊富。晴れた日の直射日光が強い",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "highland_grassland",
+     "say": "標高を上げた高原の草地に腰を据え、飛び交う虫を追った。",
+     "chip": "高原の草地"
+    },
+    {
+     "ja": "風の吹き抜ける山の尾根へ登る",
+     "ds": "涼しく暑さをしのげる。強風で餌が捕りにくい",
+     "fx": {
+      "food": -0.5,
+      "danger": -1
+     },
+     "goto": "windy_ridge",
+     "say": "尾根の涼しい岩陰にとまり、暑さをやり過ごした。",
+     "chip": "山の尾根"
+    }
+   ]
+  },
+  {
+   "q": "体が赤く色づき、秋雨前線が近づいた。いつ山を下りるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "前線の風に乗って大群で下りる",
+     "ds": "追い風で一気に移動できる。平地の産卵場が混み合う",
+     "fx": {
+      "danger": -1,
+      "kids": -0.5
+     },
+     "goto": "satoyama_woods",
+     "say": "仲間の大群とともに、吹き抜ける秋風に乗って里へ滑り下りた。",
+     "chip": "大群で下りる"
+    },
+    {
+     "ja": "風が収まったあとに単独で下りる",
+     "ds": "静かに水場を選べる。移動中に鳥に狙われやすい",
+     "fx": {
+      "danger": 1,
+      "kids": 0.5
+     },
+     "goto": "satoyama_woods",
+     "say": "澄んだ秋晴れの空を、単独でゆっくりと平地へ戻った。",
+     "chip": "単独で下りる"
+    }
+   ]
+  },
+  {
+   "q": "稲刈りを終えた田んぼに着いた。どこに卵を産み落とすか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "浅い水たまりの水面を打つ",
+     "ds": "卵が水中で安全に越冬しやすい。冬に水が干上がる恐れがある",
+     "fx": {
+      "kids": 0.5,
+      "danger": -0.5
+     },
+     "goto": "autumn_paddy",
+     "say": "雄とつながったまま、浅い水面を腹の先で繰り返し叩いた。",
+     "chip": "水面に産卵"
+    },
+    {
+     "ja": "水際の湿った泥を叩く",
+     "ds": "水が引いても湿り気を保てる。泥が固まると孵化しにくい",
+     "fx": {
+      "kids": -0.5,
+      "danger": 0.5
+     },
+     "goto": "autumn_paddy",
+     "say": "稲株の根元の湿った泥へ、腹先を打ちつけて卵を産み落とした。",
+     "chip": "泥に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "p": 0.3,
+   "say": "田植えの時期を迎えて水が入り、無数のミジンコが湧いた。",
+   "full": 15
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "tenerall"
+   ],
+   "p": 0.25,
+   "say": "真昼の強い日差しが照りつけ、腹の先を天に向けて逆立ちした。",
+   "full": -5
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "朝の強い霜が降りて、翅が冷たく凍りついた。",
+   "full": -15
+  }
+ ],
+ "lead": "水田の泥の中で孵化し、夏の暑さを避けて山の上へ登り、秋の里へ降りて卵を産む。日本の赤とんぼとして、どこまで命をつなげるか。",
+ "texts": {
+  "move": "{to}へ、風に乗って飛んでいった。",
+  "fleeJa": "草の隙間へ飛び去る",
+  "restJa": "草に止まって体を休める",
+  "watchJa": "複眼で周囲の気配をうかがう",
+  "lieJa": "泥の底に身を潜める",
+  "lastMemory": "秋の田んぼで、水面を叩いて卵を産み落とした日を思い出した。"
+ },
+ "intro": [
+  "水が入った田んぼの底、湿った泥の中で卵からかえった。",
+  "まわりには、田植えのあとに湧いたミジンコが無数に泳いでいる。"
+ ],
+ "wins": [
+  {
+   "minKids": 100,
+   "title": "秋の田に命をつないだ",
+   "line": "刈り取り後の田んぼの泥に、{kids}個の卵を産み落とした。",
+   "mem": "雌雄でつながって水面を叩いた、秋の田んぼを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "初夏の夜、イネによじ登って羽化した時を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "夏の山の草地で、逆立ちをして強い日差しを避けた昼を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命をつなげなかった",
+  "line": "水辺へ戻って卵を残すことなく、その一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "平地で孵化した未熟な成虫は夏に涼しい山地へ移動し、成熟し秋になると平地に戻る。"
+  },
+  {
+   "quote": "卵は水中や湿った泥の中で越冬し、春に水田に水をはる頃になると孵化し、幼虫（ヤゴ）となる。"
+  },
+  {
+   "quote": "産卵は水面の上で上下に飛翔しながら雌が水面や水際の泥を腹部先端で繰り返し叩き、その度に数個ずつ産み落とす。"
+  }
  ]
 }

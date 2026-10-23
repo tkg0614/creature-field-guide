@@ -8,15 +8,15 @@
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
-  "until": "2026-10-23T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-23T19:33:58.353Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  },
  "gemini-pro": {
-  "until": "2026-10-23T02:06:52.087Z",
+  "until": "2026-10-24T00:37:59.608Z",
   "why": "壊れた返事 404 {\"error\":\"使えるモデルが一覧に無い\"}"
  },
  "gemini-older": {
-  "until": "2026-10-23T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-23T19:33:49.622Z",
+  "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
  }
 }

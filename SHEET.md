@@ -30,6 +30,7 @@
 | `breeding` | 子を残す `{ja, ds, months, places, perYear, kids: [最小, 最大], many, label: {ja, unit, child}, ok, ng, goal1, goal2}`。数は実際にありうる数 |
 | `choices` | 生き方の分かれ道（3つ以上）`{q, stages, month, opts: [{ja, ds, fx: {danger, food, kids}, goto, say, chip}]}`。fx は −1〜+1。どの選択肢にも損と得 |
 | `foes` | 天敵8〜14体 `{id, ja, kind, places, stages, sev(1〜3), fast, texts(2〜3通り), again(宿敵だけ), bye, lose(網・車など)}` |
+| `migrate` | 季節の回遊（任意・海や大陸を渡る種）`[{months, stages, to, say}]`。その月になったら `to` の場所へ自動で移る。子を産む場所へ毎年戻る種（クジラなど）は必ず書く |
 | `happen` | 季節の出来事（任意）`{month, stages, places, p, say, full, hurt}` |
 | `texts` | `move`（`{to}`へ…）・`fleeJa`・`restJa`・`watchJa`・`lieJa`・`lastMemory` |
 | `intro` `wins` `memories` `noKids` | 生まれた時の文・子を残して終わった時・死ぬ時に思い出すこと・子を残さずに終わった時 |

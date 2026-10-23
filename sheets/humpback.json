@@ -2,7 +2,7 @@
  "id": "humpback",
  "ja": "ザトウクジラ",
  "sci": "Megaptera novaeangliae",
- "status": "checked",
+ "status": "reviewed",
  "by": {
   "places": "gemini-older gemini-3.7-flash",
   "life": "gemini-older gemini-3.7-flash",
@@ -223,7 +223,7 @@
   "places": [
    "maui_shallows"
   ],
-  "perYear": 10,
+  "perYear": 1,
   "kids": [
    1,
    1
@@ -438,7 +438,8 @@
    "ja": "流し網",
    "kind": "human",
    "places": [
-    "north_pacific"
+    "gulf_of_alaska",
+    "aleutian_passes"
    ],
    "stages": [
     "juvenile"
@@ -460,8 +461,6 @@
     "gulf_of_alaska"
    ],
    "stages": [
-    "calf",
-    "juvenile",
     "adult"
    ],
    "sev": 1,
@@ -683,5 +682,32 @@
  ],
  "noKids": [],
  "facts": [],
- "todo": "保留(10-23): 成体がハワイ（出産の場所）へ戻れず子を残す割合が13%で帯の下。回遊を自動の移動（salmon 型の moves）にするか、出産を北の海から南下する出来事にする"
+ "migrate": [
+  {
+   "months": [
+    11,
+    12
+   ],
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "to": "maui_shallows",
+   "say": "北の海が冷えてきた。群れの後を追い、何千キロも南の暖かい浅瀬へ泳ぎ着いた。"
+  },
+  {
+   "months": [
+    4,
+    5
+   ],
+   "stages": [
+    "calf",
+    "juvenile",
+    "adult"
+   ],
+   "to": "gulf_of_alaska",
+   "say": "日が長くなった。餌の満ちる北の海へ、長い旅を終えて戻った。"
+  }
+ ]
 }

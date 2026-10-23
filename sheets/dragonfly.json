@@ -2,7 +2,7 @@
  "id": "dragonfly",
  "ja": "アキアカネ",
  "sci": "Sympetrum frequens",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini-older gemini-3.7-flash",
@@ -103,9 +103,9 @@
   }
  ],
  "start": {
-  "place": "winter_paddy",
-  "month": 10,
-  "day": 15
+  "place": "spring_paddy",
+  "month": 4,
+  "day": 25
  },
  "region": {
   "ja": "諏訪盆地と八ヶ岳",
@@ -179,7 +179,7 @@
   {
    "id": "nymph",
    "ja": "ヤゴ",
-   "days": 40,
+   "days": 8,
    "hunger": 10,
    "grow": 0.6,
    "goal": "ヤゴとして育つ",
@@ -188,8 +188,8 @@
   {
    "id": "tenerall",
    "ja": "未熟成虫",
-   "fromAge": 0.6,
-   "days": 45,
+   "fromAge": 0.16,
+   "days": 15,
    "hunger": 12,
    "grow": 0.8,
    "goal": "山へ渡って体を充実させる",
@@ -198,8 +198,8 @@
   {
    "id": "adult",
    "ja": "成熟成虫",
-   "fromAge": 0.95,
-   "days": 45,
+   "fromAge": 0.38,
+   "days": 10,
    "hunger": 12,
    "grow": 0.2,
    "adult": true,
@@ -209,8 +209,8 @@
  ],
  "oldAge": {
   "years": [
-   1,
-   1.2
+   0.55,
+   0.65
   ],
   "text": "初冬の霜が降りる頃、羽を休めたまま静かに動かなくなった。"
  },
@@ -397,10 +397,12 @@
    "kind": "bird",
    "places": [
     "spring_paddy",
-    "satoyama_woods"
+    "satoyama_woods",
+    "autumn_paddy"
    ],
    "stages": [
-    "tenerall"
+    "tenerall",
+    "adult"
    ],
    "sev": 2,
    "fast": true,
@@ -512,7 +514,7 @@
     "あぜ道から、白い大きな網が勢いよく振り下ろされる。",
     "日差しを遮って、丸い枠が迫る。"
    ],
-   "lose": "白い網に払われ、羽に傷を負った。",
+   "lose": "白い網に払われ、羽の先が裂けて傷を負った。",
    "fleeJa": "真上へ急上昇してかわす",
    "hideJa": "イネの茎の裏へ回りこむ"
   }

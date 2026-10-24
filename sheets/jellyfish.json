@@ -5,9 +5,8 @@
  "status": "draft-ng",
  "country": "jp",
  "by": {
-  "places": "gemini gemini-3.8-flash",
-  "life": "gemini gemini-3.8-flash",
-  "foes": "gemini gemini-3.8-flash"
+  "places": "gemini-older gemini-3.7-flash",
+  "life": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "東京湾",
@@ -17,106 +16,71 @@
  "places": [
   {
    "id": "pier_shade",
-   "ja": "浮桟橋の下面",
+   "ja": "浮桟橋の下",
    "danger": 1,
    "cover": true,
-   "about": "人工物の下面にポリプがびっしりと並ぶ。春先にストロビラからエフィラが海中へ剥がれ落ちる。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "光の届かない人工物の影。ポリプから離れた小さなエフィラが繊毛虫を追って漂う。",
+   "stages": [],
    "lat": 35.47,
    "lon": 139.848
   },
   {
-   "id": "inner_bay_surface",
+   "id": "inner_surface",
    "ja": "湾奥の表層",
-   "danger": 2,
+   "danger": 1,
    "cover": false,
-   "about": "日差しを浴びて微小な動物プランクトンが湧く。波に揉まれながら傘を拍動させて漂う。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "富栄養化により微小プランクトンが群れ湧く。強い直射日光や淡水が広がることもある。",
+   "stages": [],
    "lat": 35.47,
    "lon": 139.88
   },
   {
-   "id": "seaweed_bed",
-   "ja": "浅瀬のアマモ場",
-   "danger": 2,
+   "id": "eelgrass",
+   "ja": "アマモの生える浅瀬",
+   "danger": 1,
    "cover": true,
-   "about": "水草が揺れる穏やかな浅海。繊毛虫や貝の幼生が豊富だが、稚魚のつつきを受ける。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "波が遮られる穏やかな海草帯。小型の甲殻類が多く、成長した傘を休ませやすい。",
+   "stages": [],
    "lat": 35.498,
    "lon": 139.868
   },
   {
    "id": "tidal_front",
-   "ja": "沖合の潮目",
-   "danger": 3,
+   "ja": "湾内の潮目",
+   "danger": 2,
    "cover": false,
-   "about": "流れが収束して無数のクラゲや浮遊物が吹き溜まる。外洋から入るウミガメや魚に襲われやすい。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "流れがぶつかり合って無数のクラゲと餌が密集する。流速の変化に抗えず巻き込まれる。",
+   "stages": [],
    "lat": 35.487,
    "lon": 139.836
   },
   {
-   "id": "hypoxic_bottom",
-   "ja": "湾底の暗がり",
+   "id": "deep_water",
+   "ja": "湾中央の低層",
    "danger": 1,
    "cover": true,
-   "about": "夏に酸素が薄くなる底層。競合する魚は逃げ出すが、クラゲは低酸素を耐えて漂う。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "夏の強い光や高水温を避けて沈む薄暗い水底。酸素が乏しい水塊でも耐えて留まる。",
+   "stages": [],
    "lat": 35.47,
    "lon": 139.816
   },
   {
-   "id": "intake_front",
-   "ja": "沿岸の取水口付近",
+   "id": "intake",
+   "ja": "臨海工場の取水口",
    "danger": 3,
    "cover": false,
-   "about": "工業用の冷却水を引き込む強い水流が生じる。巻き込まれると水流に砕かれる。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "about": "冷却水を吸い込む激しい引き込み流が渦巻く。近づけば網やポンプに圧迫されて砕かれる。",
+   "stages": [],
    "lat": 35.442,
    "lon": 139.828
   },
   {
-   "id": "sheltered_cove",
-   "ja": "波静かな入り江",
-   "danger": 1,
-   "cover": true,
-   "about": "波風が遮られた停滞域。夏に成熟した成体が集まり、次世代のプラヌラ幼生を放つ。",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
+   "id": "bay_mouth",
+   "ja": "外海に近い湾口",
+   "danger": 3,
+   "cover": false,
+   "about": "外洋水が差し込む開けた海域。視界を遮るものがなく、ウミガメやクラゲ食の魚に捕食される。",
+   "stages": [],
    "lat": 35.453,
    "lon": 139.86
   }
@@ -143,408 +107,36 @@
  },
  "edges": [
   [
-   "pier_shade",
-   "sheltered_cove"
+   "bay_mouth",
+   "pier_shade"
   ],
   [
    "pier_shade",
    "tidal_front"
   ],
   [
-   "inner_bay_surface",
-   "sheltered_cove"
+   "bay_mouth",
+   "inner_surface"
   ],
   [
-   "inner_bay_surface",
-   "seaweed_bed"
+   "eelgrass",
+   "inner_surface"
   ],
   [
-   "seaweed_bed",
+   "eelgrass",
    "tidal_front"
   ],
   [
-   "hypoxic_bottom",
+   "deep_water",
    "tidal_front"
   ],
   [
-   "hypoxic_bottom",
-   "intake_front"
+   "deep_water",
+   "intake"
   ],
   [
-   "intake_front",
-   "sheltered_cove"
+   "bay_mouth",
+   "intake"
   ]
- ],
- "size": {
-  "ja": "傘径",
-  "unit": "cm",
-  "start": 0.3
- },
- "stats": {
-  "run": {
-   "ja": "拍動する力",
-   "use": "傘を開閉して水流を起こし、移動する時に効く"
-  },
-  "sense": {
-   "ja": "平衡感覚",
-   "use": "光の明暗や水中の傾きを察知する時に効く"
-  },
-  "forage": {
-   "ja": "触手で捕らえる力",
-   "use": "刺胞と粘液で獲物を絡め取る時に効く"
-  }
- },
- "stages": [
-  {
-   "id": "ephyra",
-   "ja": "エフィラ",
-   "days": 25,
-   "hunger": 8,
-   "grow": 0.5
-  },
-  {
-   "id": "juv",
-   "ja": "稚クラゲ",
-   "fromAge": 0.1,
-   "days": 35,
-   "hunger": 10,
-   "grow": 2.5,
-   "goal": "稚クラゲになる",
-   "enter": "花びらのような八つの腕の間が薄い膜でふさがり、丸い傘の姿になった。"
-  },
-  {
-   "id": "young",
-   "ja": "若クラゲ",
-   "fromAge": 0.3,
-   "days": 50,
-   "hunger": 12,
-   "grow": 8,
-   "goal": "若クラゲになる",
-   "enter": "傘の縁に細い触手が生えそろい、口腕が柳の葉のように伸びた。"
-  },
-  {
-   "id": "adult",
-   "ja": "成体",
-   "fromAge": 1,
-   "days": 80,
-   "hunger": 12,
-   "grow": 4,
-   "adult": true,
-   "goal": "おとなになる",
-   "enter": "傘のなかに馬蹄形の生殖腺がくっきりと浮かび上がった。"
-  }
- ],
- "oldAge": {
-  "years": [
-   1,
-   1.5
-  ],
-  "text": "傘の拍動が弱まり、波に裂かれた。破片は海水へと静かに溶けていった。"
- },
- "breeding": {
-  "ja": "幼生を放つ",
-  "ds": "夏の浅瀬で受精卵を育て、繊毛の生えたプラヌラ幼生を一斉に放つ",
-  "months": [
-   6,
-   7,
-   8,
-   9
-  ],
-  "places": [
-   "seaweed_bed",
-   "sheltered_cove"
-  ],
-  "perYear": 2,
-  "kids": [
-   5000,
-   20000
-  ],
-  "many": 50000,
-  "label": {
-   "ja": "放った幼生",
-   "unit": "匹",
-   "child": "泳ぎ出たプラヌラの一匹"
-  },
-  "ok": "口腕の保育嚢から、無数のプラヌラ幼生が海へ泳ぎ出た。",
-  "ng": "強い波に揉まれて流され、幼生を放ちそびれた。",
-  "goal1": "幼生を放つ",
-  "goal2": "幼生を5万匹放つ"
- },
- "foods": [
-  {
-   "id": "zooplankton",
-   "ja": "動物プランクトンを食べる",
-   "name": "動物プランクトン",
-   "ds": "傘を拍動させて水流を起こし、触手の刺胞で絡め取る",
-   "stages": [
-    "ephyra",
-    "juv",
-    "young",
-    "adult"
-   ],
-   "places": [
-    "inner_bay_surface",
-    "tidal_front",
-    "sheltered_cove",
-    "seaweed_bed"
-   ],
-   "rich": [
-    "tidal_front",
-    "inner_bay_surface"
-   ],
-   "ok": "触手に触れたプランクトンを刺胞で麻痺させ、口腕へと運んだ。",
-   "full": 25
-  },
-  {
-   "id": "larval_fish",
-   "ja": "魚の仔魚を捕らえる",
-   "name": "魚の仔魚",
-   "ds": "遊泳力の弱い仔魚を傘の縁に巻き込み、刺胞で捕らえる",
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "places": [
-    "inner_bay_surface",
-    "seaweed_bed",
-    "sheltered_cove"
-   ],
-   "rich": [
-    "seaweed_bed"
-   ],
-   "ok": "漂ってきた仔魚を傘の裏側でとらえ、口腕で包み込んだ。",
-   "full": 35
-  }
- ],
- "special": [
-  {
-   "id": "sink_hypoxia",
-   "ja": "貧酸素層へ逃れる",
-   "ds": "他の生き物が耐えられない酸欠の底層へ沈み、天敵をやり過ごす",
-   "stages": [
-    "juv",
-    "young",
-    "adult"
-   ],
-   "stat": "sense",
-   "base": 0.65,
-   "calm": true,
-   "ok": "酸素の薄い暗がりへとゆっくり沈み、天敵の追手をまいた。"
-  }
- ],
- "levelEvery": 4,
- "migrate": [
-  {
-   "months": [
-    4,
-    5,
-    6
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "to": "tidal_front",
-   "say": "春の潮流に運ばれ、プランクトンが密集する沖合の潮目へと流されていく。"
-  },
-  {
-   "months": [
-    8,
-    9,
-    10
-   ],
-   "stages": [
-    "adult"
-   ],
-   "to": "sheltered_cove",
-   "say": "季節風に押されて沖を離れ、波の穏やかな入り江へと吹き寄せられた。"
-  }
- ],
- "foes": [
-  {
-   "id": "anchovy",
-   "ja": "カタクチイワシ",
-   "kind": "fish",
-   "places": [
-    "inner_bay_surface",
-    "sheltered_cove"
-   ],
-   "stages": [
-    "ephyra"
-   ],
-   "sev": 1,
-   "fast": true,
-   "texts": [
-    "銀色の小魚が、群れをなして泳ぎ回っている。",
-    "細い口が開き、漂う微小なプランクトンを次々に吸いこんでいく。"
-   ]
-  },
-  {
-   "id": "beroe",
-   "ja": "ウリクラゲ",
-   "kind": "any",
-   "places": [
-    "pier_shade",
-    "sheltered_cove",
-    "inner_bay_surface"
-   ],
-   "stages": [
-    "ephyra",
-    "juv"
-   ],
-   "sev": 2,
-   "texts": [
-    "虹色に光る櫛板を波打たせ、巨大な口のような体が迫ってくる。",
-    "広げた口が、漂うクラゲをそのまま丸呑みにしようとする。"
-   ]
-  },
-  {
-   "id": "filefish",
-   "ja": "カワハギ",
-   "kind": "fish",
-   "places": [
-    "seaweed_bed",
-    "pier_shade"
-   ],
-   "stages": [
-    "juv",
-    "young"
-   ],
-   "sev": 2,
-   "texts": [
-    "突き出た硬いくちばしが、傘の縁を器用についばんでいく。",
-    "海藻の間から現れ、ひらひらと回り込みながら触手をかじりとる。"
-   ]
-  },
-  {
-   "id": "black_scraper",
-   "ja": "ウマヅラハギ",
-   "kind": "fish",
-   "places": [
-    "seaweed_bed",
-    "inner_bay_surface",
-    "tidal_front"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "灰色の平たい魚が、傘の柔らかい組織を狙って突っついてくる。",
-    "小さな口で、傘の縁や口腕を少しずつ削り取っていく。"
-   ],
-   "again": [
-    [
-     "また、背びれに裂け目のあるウマヅラハギだ。下から執拗に口腕を狙ってくる。"
-    ],
-    [
-     "あの裂けたひれのウマヅラハギが、まだつきまとっている。"
-    ]
-   ],
-   "bye": "沖合の強い潮目に巻きこまれ、鋭いくちばしの影は遠ざかっていった。"
-  },
-  {
-   "id": "sea_turtle",
-   "ja": "アカウミガメ",
-   "kind": "reptile",
-   "places": [
-    "tidal_front"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "重厚な前肢を羽ばたかせ、大きな頭が真正面から突進してくる。",
-    "硬いくちばしが開き、半透明の傘を一息に噛みちぎる。"
-   ],
-   "again": [
-    [
-     "また、甲羅にフジツボのついたウミガメだ。大きな口を開けて迫ってくる。"
-    ],
-    [
-     "あのフジツボのウミガメが、潮目に沿って浮上してきた。"
-    ]
-   ],
-   "bye": "晩秋の冷たい風が吹き、ウミガメの姿は南の沖へと去っていった。"
-  },
-  {
-   "id": "sunfish",
-   "ja": "マンボウ",
-   "kind": "fish",
-   "places": [
-    "tidal_front"
-   ],
-   "stages": [
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "見上げるような巨体が、潮目の先からゆっくりと浮き上がってくる。",
-    "丸い口が水ごと傘を吸いこみ、丸呑みにしようとする。"
-   ]
-  },
-  {
-   "id": "black_tailed_gull",
-   "ja": "ウミネコ",
-   "kind": "bird",
-   "places": [
-    "inner_bay_surface",
-    "tidal_front"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "水面を割って黄色いくちばしが突き刺さり、傘の肉を引き裂いていく。",
-    "空から影が舞い降り、表層に浮いた体を激しくつつき立てる。"
-   ]
-  },
-  {
-   "id": "intake_screen",
-   "ja": "取水スクリーン",
-   "kind": "human",
-   "places": [
-    "intake_front"
-   ],
-   "stages": [
-    "juv",
-    "young",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "暗い格子の方へと、強い水流が絶え間なく吸いこまれていく。",
-    "網目の柵に無数のクラゲが押しつけられ、水圧で潰されていく。"
-   ],
-   "lose": "冷たい鉄格子の隙間に激しく吸着され、傘が裂けて傷を負った。",
-   "fleeJa": "水流の端へ滑り落ちて逃げる",
-   "hideJa": "他の個体の影に隠れて水圧をやり過ごす"
-  },
-  {
-   "id": "jelly_cutter",
-   "ja": "クラゲ破砕装置",
-   "kind": "human",
-   "places": [
-    "inner_bay_surface",
-    "intake_front"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "船の横から、激しい泡とともに回転する刃が下ろされる。",
-    "金属の刃が海水をかき乱し、クラゲの群れを次々に切り刻んでいく。"
-   ],
-   "lose": "回転する水流に巻きこまれ、傘の端を削ぎ落とされて傷を負った。",
-   "fleeJa": "深みへと体を沈めて逃げる",
-   "hideJa": "ばらばらになった破片の陰に紛れる"
-  }
  ]
 }

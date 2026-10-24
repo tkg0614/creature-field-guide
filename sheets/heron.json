@@ -1,0 +1,805 @@
+{
+ "id": "heron",
+ "ja": "アオサギ",
+ "sci": "Ardea cinerea",
+ "status": "checked",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "琵琶湖のほとりと田園",
+  "geo": "Lake Biwa",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "colony_nest",
+   "ja": "雑木林の樹上コロニー",
+   "danger": 1,
+   "cover": true,
+   "about": "高い木の枝に小枝を重ねた皿状の巣が並ぶ。仲間とともに卵やヒナを育てる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.249,
+   "lon": 136.083
+  },
+  {
+   "id": "rice_paddy",
+   "ja": "水を張った田んぼ",
+   "danger": 1,
+   "cover": false,
+   "about": "浅瀬を静かに歩き、カエルやドジョウを狙う。遮るものがなく見通しがよい。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.249,
+   "lon": 136.115
+  },
+  {
+   "id": "river_shallows",
+   "ja": "川の浅瀬",
+   "danger": 1,
+   "cover": false,
+   "about": "流れの中にじっと立ち、泳いできた魚を待ち伏せる。外敵が近づけばすぐに飛び立てる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.277,
+   "lon": 136.103
+  },
+  {
+   "id": "reed_bed",
+   "ja": "湖畔のヨシ原",
+   "danger": 1,
+   "cover": true,
+   "about": "生い茂るヨシが風や外敵の視線を遮る。水際の泥底に小魚やエビが集まる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.266,
+   "lon": 136.071
+  },
+  {
+   "id": "canal_pond",
+   "ja": "コンクリートの用水路",
+   "danger": 2,
+   "cover": false,
+   "about": "狭い水路に降り立ち、逃げ場のない小魚を捕らえる。人や車が頻繁に行き交う。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.249,
+   "lon": 136.051
+  },
+  {
+   "id": "winter_field",
+   "ja": "冬の乾いた刈田",
+   "danger": 2,
+   "cover": false,
+   "about": "水が抜けた田の土手でネズミや昆虫を探す。隠れる草木がなく猛禽類の目が届きやすい。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.221,
+   "lon": 136.063
+  },
+  {
+   "id": "roost_woods",
+   "ja": "湖畔のねぐら林",
+   "danger": 1,
+   "cover": true,
+   "about": "夕暮れになると仲間が集まり、高い枝で眠る。夜間の冷え込みや強風をしのぐ。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.232,
+   "lon": 136.095
+  }
+ ],
+ "start": {
+  "place": "colony_nest",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "琵琶湖のほとりと田園",
+  "lon0": 136.032,
+  "lon1": 136.134,
+  "lat0": 35.296,
+  "lat1": 35.202,
+  "k": 4902,
+  "labels": [
+   [
+    35.29036,
+    136.083,
+    "琵琶湖のほとりと田園"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "colony_nest",
+   "reed_bed"
+  ],
+  [
+   "colony_nest",
+   "roost_woods"
+  ],
+  [
+   "rice_paddy",
+   "roost_woods"
+  ],
+  [
+   "rice_paddy",
+   "river_shallows"
+  ],
+  [
+   "reed_bed",
+   "river_shallows"
+  ],
+  [
+   "canal_pond",
+   "reed_bed"
+  ],
+  [
+   "canal_pond",
+   "winter_field"
+  ],
+  [
+   "roost_woods",
+   "winter_field"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 12
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "危険から飛び立ち逃げる時に効く"
+  },
+  "sense": {
+   "ja": "見張る目",
+   "use": "周囲の異変や外敵に気づく時に効く"
+  },
+  "forage": {
+   "ja": "突く技",
+   "use": "獲物を瞬時に捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 55,
+   "hunger": 10,
+   "grow": 1.2
+  },
+  {
+   "id": "juv",
+   "ja": "巣立ちビナ",
+   "fromAge": 0.15,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "巣立ちビナになる",
+   "enter": "翼が伸びて巣を離れた。水辺で自ら獲物を探す。"
+  },
+  {
+   "id": "young",
+   "ja": "若鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.3,
+   "goal": "冬を越して若鳥になる",
+   "enter": "厳しい最初の冬を生き抜いた。冠羽はまだ短い。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 2,
+   "days": 365,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "黒い冠羽が長く伸びた。コロニーで繁殖できる体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   5
+  ],
+  "text": "枯れ枝のように痩せ、翼を広げる力が残っていなかった。水辺のヨシ原で静かに倒れた。"
+ },
+ "breeding": {
+  "ja": "樹上で巣立ちを育てる",
+  "ds": "高い木の枝に枯れ枝を組み、つがいで青緑色の卵を温める",
+  "months": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "colony_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   3,
+   5
+  ],
+  "many": 15,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "樹上の巣に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "他の鳥との小競り合いが絶えず、営巣できなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を15個産む"
+ },
+ "foods": [
+  {
+   "id": "river_fish",
+   "ja": "浅瀬の魚を捕らえる",
+   "name": "川魚",
+   "ds": "水中に静かに立ち、近づいた魚を鋭い嘴で突き刺す",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "river_shallows",
+    "canal_pond",
+    "reed_bed"
+   ],
+   "rich": [
+    "river_shallows"
+   ],
+   "ok": "電光石火の速さで首を伸ばし、銀色の魚を丸呑みにした。",
+   "full": 35
+  },
+  {
+   "id": "paddy_frog",
+   "ja": "田んぼのカエルを捕らえる",
+   "name": "カエル",
+   "ds": "泥をゆっくりと歩き、足元の生き物を探す",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "rice_paddy",
+    "winter_field"
+   ],
+   "rich": [
+    "rice_paddy"
+   ],
+   "ok": "草陰から飛び出したカエルを一撃で仕留めた。",
+   "full": 28
+  }
+ ],
+ "special": [
+  {
+   "id": "freeze_stalk",
+   "ja": "待ち伏せの静止",
+   "ds": "置物のように動かず、獲物や外敵の油断を誘う",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.7,
+   "calm": true,
+   "ok": "水辺で微動だにせず佇み、獲物が足元に来るのを待った。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "colony_nest",
+   "say": "春が訪れ、仲間が集まる樹上のコロニーへと戻った。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "to": "winter_field",
+   "say": "繁殖期が終わり、餌を求めて冬の刈田へと散らばっていった。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "colony_nest"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い影が巣のふちに舞い降り、鋭いくちばしを突きだす。",
+    "カラスが親鳥の留守をうかがい、枝を伝ってにじり寄ってくる。"
+   ],
+   "again": [
+    [
+     "また、あの風切羽の欠けたカラスが巣をのぞきこんでいる。"
+    ],
+    [
+     "羽の欠けたカラスが、すぐ上の枝で鳴いている。"
+    ]
+   ],
+   "bye": "体が親鳥と同じ大きさに育ち、カラスはもう近寄らない。"
+  },
+  {
+   "id": "rat_snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "colony_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑がかった太い胴体が、樹皮を伝って巣へ這いあがってくる。",
+    "細い舌をちろちろと出し入れし、巣の縁に鎌首を持ちあげる。"
+   ]
+  },
+  {
+   "id": "black_kite",
+   "ja": "トビ",
+   "kind": "bird",
+   "places": [
+    "colony_nest",
+    "rice_paddy",
+    "river_shallows"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "ピーヒョロロと鳴きながら、上空から急降下してくる。",
+    "弱ったヒナを見定めて、低空を旋回している。"
+   ]
+  },
+  {
+   "id": "goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "roost_woods",
+    "rice_paddy",
+    "winter_field"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "林のすき間から白い胸の猛禽が一直線に突っ込んでくる。",
+    "鋭い爪を伸ばし、背後から襲いかかってきた。"
+   ],
+   "again": [
+    [
+     "また、あの胸の斑が濃いオオタカだ。ねぐらの上を旋回している。"
+    ],
+    [
+     "胸の斑が濃いオオタカが、林縁の枯れ木から見下ろしている。"
+    ]
+   ],
+   "bye": "警戒の叫び声を上げて翼を広げると、オオタカは飛び去った。"
+  },
+  {
+   "id": "weasel",
+   "ja": "ニホンイタチ",
+   "kind": "mammal",
+   "places": [
+    "reed_bed",
+    "canal_pond",
+    "river_shallows"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "赤褐色の細長い体が、ヨシの根元から素早く飛び出してきた。",
+    "鋭い牙をむき出しにして、足もとへ飛びかかってくる。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "colony_nest",
+    "reed_bed",
+    "winter_field"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "巣から地面に落ちた個体を探し、暗がりをうろついている。",
+    "丸い背中を低くかがめ、落ちたヒナへにじり寄ってくる。"
+   ]
+  },
+  {
+   "id": "red_fox",
+   "ja": "キツネ",
+   "kind": "mammal",
+   "places": [
+    "winter_field",
+    "rice_paddy"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "刈田の畦を、黄金色のキツネが低くかがんで近づいてくる。",
+    "枯草の中に身を伏せ、跳躍の機をじっとうかがっている。"
+   ],
+   "again": [
+    [
+     "また、尾の先が白いキツネが畦道に現れた。"
+    ],
+    [
+     "尾の先が白いキツネが、遠くからじっと見つめている。"
+    ]
+   ],
+   "bye": "喉を鳴らして大きなくちばしを突きだすと、キツネは諦めて立ち去った。"
+  },
+  {
+   "id": "marsh_harrier",
+   "ja": "チュウヒ",
+   "kind": "bird",
+   "places": [
+    "reed_bed",
+    "winter_field"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "ヨシ原の上を、両翼を浅いV字に保って低く舞っている。",
+    "風に揺れるヨシのすき間へ、急に向きを変えて突っ込んできた。"
+   ]
+  },
+  {
+   "id": "sea_eagle",
+   "ja": "オオワシ",
+   "kind": "bird",
+   "places": [
+    "reed_bed",
+    "river_shallows",
+    "winter_field"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "巨大な黒い翼と黄色いくちばしが、湖面の上から迫ってくる。",
+    "重い羽音を響かせ、水辺の鳥たちを一斉に蹴散らしにかかる。"
+   ]
+  },
+  {
+   "id": "bird_net",
+   "ja": "防鳥糸とネット",
+   "kind": "human",
+   "places": [
+    "rice_paddy",
+    "canal_pond"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "田んぼの上に、見えない細い糸が幾重にも張り巡らされている。",
+    "水路の養魚場に張られたネットが、行く手をふさぐ。"
+   ],
+   "lose": "細い糸が風切羽に絡みつき、傷を負った。",
+   "fleeJa": "力任せにもがいて糸を振り切る",
+   "hideJa": "長い足をたたんで低く降りる"
+  }
+ ],
+ "choices": [
+  {
+   "q": "浅瀬で魚を狙う。どう動くか",
+   "stages": [
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "浅瀬でじっと立ち止まって待つ",
+     "ds": "体力を消耗しない。魚が来ないこともある",
+     "fx": {
+      "energy": 1,
+      "food": -1
+     },
+     "say": "一本足で水中に立ち、波紋が広がるのを待った。",
+     "chip": "立ち止まって待つ"
+    },
+    {
+     "ja": "浅瀬を歩き回って探す",
+     "ds": "獲物を見つけやすい。警戒され、体力も使う",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "say": "長い足で水底を踏みしめ、小魚を追った。",
+     "chip": "歩いて探す"
+    }
+   ]
+  },
+  {
+   "q": "夏が近づき水辺の獲物が減った。どこへ飛ぶか",
+   "stages": [
+    "young"
+   ],
+   "month": [
+    5,
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "水を張った田んぼへ向かう",
+     "ds": "カエルや小魚が多い。人が近くを通りやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "rice_paddy",
+     "say": "水田の畔に降り立った。泥の奥でカエルが跳ねた。",
+     "chip": "田んぼへ"
+    },
+    {
+     "ja": "湖畔のヨシ原に身を隠す",
+     "ds": "敵に見つかりにくい。茂みで獲物を狙いにくい",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "reed_bed",
+     "say": "背の高いヨシの茂みに潜み、水路の気配をうかがった。",
+     "chip": "ヨシ原へ"
+    }
+   ]
+  },
+  {
+   "q": "初冬の冷え込みが強まった。どこで餌を探すか",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "冬の乾いた刈田で小動物を狙う",
+     "ds": "ネズミや虫がいる。遮るものがなく目立つ",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "winter_field",
+     "say": "刈り取られた乾いた田に入り、足元の草むらを見据えた。",
+     "chip": "刈田で探す"
+    },
+    {
+     "ja": "凍らない川の浅瀬に残る",
+     "ds": "身を隠しやすい。冬は魚の動きが鈍い",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "river_shallows",
+     "say": "冷たい浅瀬に立ち続け、川底に沈む魚の影を追った。",
+     "chip": "川の浅瀬に残る"
+    }
+   ]
+  },
+  {
+   "q": "春の繁殖期が来た。コロニーのどこに巣を構えるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4
+   ],
+   "opts": [
+    {
+     "ja": "樹上の高い梢を選ぶ",
+     "ds": "メスに目立つ。風にあおられやすく、争いも激しい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "colony_nest",
+     "say": "雑木林の天辺に陣取り、太い声を響かせて誇示した。",
+     "chip": "梢のてっぺん"
+    },
+    {
+     "ja": "木の内側の落ち着いた枝を選ぶ",
+     "ds": "風を防げて安全。メスへのアピールが弱い",
+     "fx": {
+      "danger": -1,
+      "kids": -1
+     },
+     "goto": "colony_nest",
+     "say": "込み合った枝の隙間に枯れ枝を運び、足場を組んだ。",
+     "chip": "木の内側"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "p": 0.2,
+   "say": "強い寒波が水辺を凍らせ、獲物の姿が消えた。",
+   "full": -15
+  },
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.15,
+   "say": "春の突風が吹き荒れ、高い樹上の巣が大きく傾いた。",
+   "danger": 1
+  },
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "田んぼの水が一斉に抜かれ、泥の底がひび割れた。",
+   "food": -10
+  }
+ ],
+ "lead": "雑木林の樹上で生まれ、田んぼや川の浅瀬で魚を狙い、また林に巣を作って子をつなぐ。水辺に立ち止まり、どこまで命をつなげるか。",
+ "texts": {
+  "move": "{to}へ、大きく羽ばたいて飛んでいった。",
+  "fleeJa": "太い声で鳴いて飛び去る",
+  "restJa": "首を縮めて一本足で休む",
+  "watchJa": "水面をじっと見つめて獲物を待つ",
+  "lieJa": "草の影で身をすくめる",
+  "lastMemory": "樹上の巣から見下ろした、水田の光を思い出した。"
+ },
+ "intro": [
+  "雑木林の樹上コロニーで、青緑色の卵から生まれた。",
+  "枝を重ねた粗末な巣の中で、親鳥の運ぶ餌を待つ。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが羽ばたきを覚え、水辺へ巣立っていった。",
+   "mem": "ヒナが初めて巣の縁を離れた朝を、思い出した。"
+  },
+  {
+   "minKids": 6,
+   "title": "多くの若鳥を送り出した",
+   "line": "{kids}羽の子を育て上げ、琵琶湖の空へと送り出した。",
+   "mem": "賑わうコロニーの梢で、子らと並んで風を受けた日を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "川の浅瀬でじっと待ち、初めて素早く魚をとらえた瞬間を思い出した。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "多くの若鳥が命を落とす、凍てつく冬の刈田を耐え抜いたことを思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに命を終えた。",
+ "facts": [
+  {
+   "quote": "The birds breed colonially in spring in heronries, usually building their nests high in trees.",
+   "factJa": "春に樹上の高い場所に巣を作り、集団で繁殖する。"
+  },
+  {
+   "quote": "A clutch of usually three to five bluish-green eggs is laid. Both birds incubate the eggs for around 25 days, and then both feed the chicks, which fledge when 7–8 weeks old.",
+   "factJa": "ふつう3〜5個の青緑色の卵を産み、雌雄で約25日間抱卵する。ヒナは生後7〜8週で巣立つ。"
+  },
+  {
+   "quote": "Many juveniles do not survive their first winter, but if they do, they can expect to live for about 5 years.",
+   "factJa": "多くの若鳥は最初の冬を生き残れないが、冬を越せれば約5年の余命が見込める。"
+  }
+ ]
+}

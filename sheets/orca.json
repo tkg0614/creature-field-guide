@@ -1,0 +1,133 @@
+{
+ "id": "orca",
+ "ja": "シャチ",
+ "sci": "Orcinus orca",
+ "status": "draft-ng",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "カナダ・ブリティッシュコロンビア沿岸",
+  "geo": "British Columbia coast",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "inlet",
+   "ja": "穏やかな入り江",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "波が静かで、幼い個体が泳ぎを学ぶ場所。",
+   "stages": [],
+   "lat": 50.04,
+   "lon": -125.21
+  },
+  {
+   "id": "river_mouth",
+   "ja": "川の河口",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "サケが遡上してくる。定住型シャチにとって最高の餌場である。",
+   "stages": [],
+   "lat": 49.5,
+   "lon": -122.1
+  },
+  {
+   "id": "channel",
+   "ja": "狭い海峡",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "群れが移動する主要な通り道。仲間との交流が行われる。",
+   "stages": [],
+   "lat": 50.476,
+   "lon": -126.177
+  },
+  {
+   "id": "island_coast",
+   "ja": "島の沿岸",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "複雑な地形が続き、獲物を追い込みやすい。",
+   "stages": [],
+   "lat": 49.151,
+   "lon": -123.693
+  },
+  {
+   "id": "deep_sea",
+   "ja": "外洋の深い海",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "遠くの群れと合流したり、広範囲を移動したりする。",
+   "stages": [],
+   "lat": 48.371,
+   "lon": -126.442
+  },
+  {
+   "id": "fjord",
+   "ja": "深いフィヨルド",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "切り立った崖に囲まれた深い海。静かに休息をとる。",
+   "stages": [],
+   "lat": 47.217,
+   "lon": -123.573
+  }
+ ],
+ "start": {
+  "place": "inlet",
+  "month": 5,
+  "day": 1
+ },
+ "region": {
+  "ja": "カナダ・ブリティッシュコロンビア沿岸",
+  "lon0": -127.745,
+  "lon1": -120.797,
+  "lat0": 51.779,
+  "lat1": 45.914,
+  "k": 72,
+  "labels": [
+   [
+    51.4271,
+    -124.271,
+    "カナダ・ブリティッシュコロンビア沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "channel",
+   "inlet"
+  ],
+  [
+   "inlet",
+   "island_coast"
+  ],
+  [
+   "island_coast",
+   "river_mouth"
+  ],
+  [
+   "fjord",
+   "river_mouth"
+  ],
+  [
+   "channel",
+   "deep_sea"
+  ],
+  [
+   "deep_sea",
+   "inlet"
+  ],
+  [
+   "fjord",
+   "island_coast"
+  ]
+ ]
+}

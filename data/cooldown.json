@@ -1,22 +1,22 @@
 {
  "openrouter": {
-  "until": "2026-10-23T20:51:48.754Z",
+  "until": "2026-10-24T19:39:08.856Z",
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-10-23T20:00:48.543Z",
-  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+  "until": "2026-10-24T18:48:08.670Z",
+  "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
-  "until": "2026-10-24T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-24T18:48:04.616Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  },
  "gemini-pro": {
-  "until": "2026-10-24T00:37:59.608Z",
+  "until": "2026-10-25T00:39:04.874Z",
   "why": "壊れた返事 404 {\"error\":\"使えるモデルが一覧に無い\"}"
  },
  "gemini-older": {
-  "until": "2026-10-24T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-24T18:48:08.439Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  }
 }

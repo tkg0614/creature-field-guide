@@ -2,10 +2,14 @@
  "id": "earthworm",
  "ja": "フトミミズの仲間",
  "sci": "Amynthas spp.（フトミミズ科 Megascolecidae）",
- "status": "draft",
+ "status": "checked",
  "country": "jp",
  "by": {
-  "places": "gemini gemini-3.8-flash"
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
  },
  "locale": {
   "ja": "多摩丘陵の里山",
@@ -19,7 +23,11 @@
    "danger": 1,
    "cover": true,
    "about": "クヌギやコナラの枯れ葉が積もる。湿り気が保たれ、冬を越した卵包から幼虫がかえる。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.64,
    "lon": 139.474
   },
@@ -29,7 +37,11 @@
    "danger": 0,
    "cover": true,
    "about": "日中でも乾かず外敵の目も届きにくい。脱皮や休息に適した安全な隙間である。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.64,
    "lon": 139.506
   },
@@ -39,7 +51,11 @@
    "danger": 2,
    "cover": true,
    "about": "発酵した有機物が豊富で急激に育つ。カブトムシの幼虫と競合し、掘り返されることもある。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.668,
    "lon": 139.494
   },
@@ -49,7 +65,11 @@
    "danger": 3,
    "cover": false,
    "about": "野菜の根元で土が柔らかい。耕運機やクワに切られたり、カラスに見つかりやすい。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.657,
    "lon": 139.462
   },
@@ -59,7 +79,11 @@
    "danger": 1,
    "cover": true,
    "about": "密生した草の根が土を支える。適度な餌があるが、モグラの通り道になりやすい。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.64,
    "lon": 139.442
   },
@@ -69,7 +93,11 @@
    "danger": 2,
    "cover": true,
    "about": "吹きだまった枯葉と泥に潜む。大雨が降ると濁流に流される。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.612,
    "lon": 139.454
   },
@@ -79,7 +107,11 @@
    "danger": 3,
    "cover": false,
    "about": "雨の夜に地上を這い出て迷い込む。朝の日差しが照りつけると戻れず干からびる。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 35.623,
    "lon": 139.486
   }
@@ -137,5 +169,575 @@
    "ditch",
    "pavement"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 1.5
+ },
+ "stats": {
+  "run": {
+   "ja": "這う力",
+   "use": "素早く土にもぐる・逃げる時に効く"
+  },
+  "sense": {
+   "ja": "振動の勘",
+   "use": "地表の気配や外敵を察知する時に効く"
+  },
+  "forage": {
+   "ja": "土を食む力",
+   "use": "落ち葉や腐植を消化する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "ふ化幼体",
+   "days": 15,
+   "hunger": 8,
+   "grow": 0.8
+  },
+  {
+   "id": "young",
+   "ja": "未成体",
+   "fromAge": 0.65,
+   "days": 25,
+   "hunger": 10,
+   "grow": 1.2,
+   "goal": "体を伸ばす",
+   "enter": "土を押し分け、盛んに腐葉土を食べ始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 0.8,
+   "days": 40,
+   "hunger": 12,
+   "grow": 0.5,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体に白っぽい環帯が現れた。夏と秋に卵包を残す。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1.2
+  ],
+  "text": "初冬の霜が土を冷やした。硬くなった体が動かなくなり、静かに土へ還った。"
+ },
+ "breeding": {
+  "ja": "卵包を産み落とす",
+  "ds": "湿った土のすき間に、冬を越す小さな卵包を産み残す",
+  "months": [
+   7,
+   8,
+   9,
+   10
+  ],
+  "places": [
+   "leaf_litter",
+   "under_log",
+   "compost",
+   "farmland"
+  ],
+  "perYear": 3,
+  "kids": [
+   5,
+   15
+  ],
+  "many": 40,
+  "label": {
+   "ja": "産んだ卵包",
+   "unit": "個",
+   "child": "かえった子ミミズの一匹"
+  },
+  "ok": "湿った土の奥深くに、{born}個の卵包を託した。",
+  "ng": "土が乾ききっていて、卵包を残せなかった。",
+  "goal1": "卵包を産む",
+  "goal2": "卵包を40個産む"
+ },
+ "foods": [
+  {
+   "id": "leaf_mold",
+   "ja": "腐葉土を食む",
+   "name": "落ち葉と腐植",
+   "ds": "分解の進んだ柔らかい落ち葉や土を丸ごと飲み込む",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "leaf_litter",
+    "under_log",
+    "compost",
+    "farmland",
+    "grass_ridge"
+   ],
+   "rich": [
+    "leaf_litter",
+    "compost"
+   ],
+   "ok": "湿った腐葉土を飲み込み、栄養を吸収した。",
+   "full": 25
+  },
+  {
+   "id": "surface_litter",
+   "ja": "夜露の落ち葉を引く",
+   "name": "湿った落ち葉",
+   "ds": "夜の地表に出て、柔らかい葉の破片を穴へ引き込む",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "leaf_litter",
+    "under_log",
+    "grass_ridge"
+   ],
+   "rich": [
+    "leaf_litter"
+   ],
+   "ok": "葉の柔らかい部分を巣穴へ引き込み、食べた。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "burrow_deep",
+   "ja": "土中深くもぐる",
+   "ds": "2手のあいだ、乾燥や地表の天敵をやり過ごす",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.6,
+   "calm": true,
+   "ok": "筋肉を波打たせ、硬い土の奥深くへと姿を消した。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "planarian",
+   "ja": "クロイロコウガイビル",
+   "kind": "any",
+   "places": [
+    "leaf_litter",
+    "under_log",
+    "ditch"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒く平たい体が、湿った落ち葉の隙間を這い寄ってくる。",
+    "扇形の頭を広げ、皮膚の表面を覆うように吸いついてくる。"
+   ]
+  },
+  {
+   "id": "ground_beetle",
+   "ja": "オオオサムシ",
+   "kind": "any",
+   "places": [
+    "leaf_litter",
+    "under_log",
+    "grass_ridge"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "銅色に光る甲虫が、土の割れ目をすばやく駆けてくる。",
+    "鋭く曲がった大あごが、湿った土をかきわけて迫る。"
+   ]
+  },
+  {
+   "id": "centipede",
+   "ja": "トビズムカデ",
+   "kind": "any",
+   "places": [
+    "leaf_litter",
+    "under_log",
+    "compost"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "無数の赤い足が、朽ち木の隙間から音もなく滑り出てくる。",
+    "太い毒あごを鳴らしながら、暗い隙間を執拗に追いかけてくる。"
+   ]
+  },
+  {
+   "id": "toad",
+   "ja": "アズマヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "leaf_litter",
+    "farmland",
+    "grass_ridge",
+    "ditch"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "いぼに覆われた重い体が、草むらの奥にどっかと座り込んでいる。",
+    "粘つく舌が、目の前まで一瞬で伸びてくる。"
+   ]
+  },
+  {
+   "id": "hibakari",
+   "ja": "ヒバカリ",
+   "kind": "reptile",
+   "places": [
+    "leaf_litter",
+    "grass_ridge",
+    "ditch"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "細い首をもたげ、舌先をちらつかせながら土の上を滑り寄る。",
+    "濡れた落ち葉をかすかに鳴らし、小さなヘビが近づいてくる。"
+   ],
+   "again": [
+    [
+     "また、首の横に白斑があるヒバカリだ。草の根元から覗いている。"
+    ],
+    [
+     "首に白斑のあるヒバカリが、溝の際を執拗に嗅ぎまわっている。"
+    ]
+   ],
+   "bye": "体が太く大きく育ち、小さなヒバカリの口にはもう入らない。"
+  },
+  {
+   "id": "mole",
+   "ja": "アズマモグラ",
+   "kind": "mammal",
+   "places": [
+    "leaf_litter",
+    "farmland",
+    "grass_ridge"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "土の奥から、激しい振動と土を掻き分ける音が響いてくる。",
+    "太い前足がトンネルの壁を崩し、鋭い鼻先を突き出してきた。"
+   ],
+   "again": [
+    [
+     "また、右の前爪が欠けたモグラだ。土を掘る独特の音でわかる。"
+    ],
+    [
+     "爪の欠けたモグラが、トンネルのすぐ先まで猛烈な勢いで迫ってくる。"
+    ]
+   ],
+   "bye": "激しく身をくねらせて尾を自切し、爪の欠けたモグラのなわばりを脱した。"
+  },
+  {
+   "id": "thrush",
+   "ja": "ツグミ",
+   "kind": "bird",
+   "places": [
+    "farmland",
+    "grass_ridge",
+    "pavement"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面を跳ねては立ち止まり、鋭いくちばしで土を突き崩す。",
+    "枯れ草をくちばしで跳ね飛ばしながら、土の表面を探っている。"
+   ]
+  },
+  {
+   "id": "crow",
+   "ja": "ハシボソガラス",
+   "kind": "bird",
+   "places": [
+    "farmland",
+    "pavement",
+    "grass_ridge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "アスファルトの上へ、大きな黒い翼が音を立てて降り立つ。",
+    "太いくちばしが、逃げ場のない路上を力強く叩く。"
+   ]
+  },
+  {
+   "id": "badger",
+   "ja": "ニホンアナグマ",
+   "kind": "mammal",
+   "places": [
+    "leaf_litter",
+    "compost",
+    "farmland"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "丸い体が、鼻を鳴らしながら落ち葉を激しく掘り返す。",
+    "太い爪で堆肥を掻き分け、土の中の獲物をあさり回る。"
+   ]
+  },
+  {
+   "id": "hoe",
+   "ja": "耕作の鍬",
+   "kind": "human",
+   "places": [
+    "farmland",
+    "compost"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "頭上の土が急に割れ、重い鉄の刃が深く突き刺さる。",
+    "作土が一気に掘り返され、乾いた強い光の中に放り出される。"
+   ],
+   "lose": "鉄の刃にかすめられ、体を裂かれて深い傷を負った。",
+   "fleeJa": "崩れた土の割れ目へ潜り込む",
+   "hideJa": "土塊の陰でじっと丸まる"
+  }
+ ],
+ "choices": [
+  {
+   "q": "初夏の晴天が続き、表土が乾いてきた。どこへ潜るか",
+   "stages": [
+    "young"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "朽ち木や石の下深くに潜る",
+     "ds": "湿り気が保たれて安全。餌の腐植質は少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "under_log",
+     "say": "冷たく湿った石の下へ潜り込み、乾きをやり過ごした。",
+     "chip": "石の下深く"
+    },
+    {
+     "ja": "雑木林の落ち葉層にとどまる",
+     "ds": "餌が豊富で早く育つ。乾燥と外敵にさらされやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "leaf_litter",
+     "say": "乾きかけた落ち葉の下で、腐植を貪り食った。",
+     "chip": "落ち葉層"
+    }
+   ]
+  },
+  {
+   "q": "夏の夜に激しい豪雨が降った。地表に出て移動するか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "雨の地表を這って遠くへ渡る",
+     "ds": "新たな餌場へ行ける。夜明けに路上で干からびる危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "pavement",
+     "say": "水浸しの地表を滑るように進み、新天地を目指した。",
+     "chip": "地表を渡る"
+    },
+    {
+     "ja": "水浸しの土中にとどまる",
+     "ds": "外敵や日光を避けられる。水没による酸欠で体力を奪われる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "farmland",
+     "say": "泥水で息苦しい土の中で、雨が引くのをじっと待った。",
+     "chip": "土中にとどまる"
+    }
+   ]
+  },
+  {
+   "q": "環帯が白く膨らんだ。越冬する卵包をどこへ産み落とすか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "堆肥場の温かい腐植に産む",
+     "ds": "春の孵化が早い。冬の乾燥や鳥の掘り返しを受けやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "compost",
+     "say": "発酵熱の残る堆肥のすき間に、琥珀色の卵包を産み落とした。",
+     "chip": "堆肥場に産む"
+    },
+    {
+     "ja": "石の下の固い深土に産む",
+     "ds": "霜や乾燥から確実に守られる。春の地温上昇が遅い",
+     "fx": {
+      "danger": -1,
+      "kids": -1
+     },
+     "goto": "under_log",
+     "say": "石の下の締まった土を掘り、卵包を一つずつ埋め込んだ。",
+     "chip": "石の下に産む"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "p": 0.3,
+   "say": "地温が上がり、卵包の殻を破って湿った黒土の中へ這い出た。"
+  },
+  {
+   "month": [
+    7
+   ],
+   "stages": [
+    "young"
+   ],
+   "p": 0.4,
+   "say": "孵化から約二か月が過ぎ、体の前方に白っぽい環帯が現れた。"
+  },
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "暗闇の土中をモグラが掘り進む振動が伝わり、慌てて横穴へ逃げた。",
+   "danger": 1
+  },
+  {
+   "month": [
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.9,
+   "say": "強い初霜が降りて表土が凍てつき、冷え切った体が動かなくなった。"
+  }
+ ],
+ "lead": "春の土の中で卵包から這い出し、夏の雨を浴びて肥え、秋の終わりに土へ還る。冬が来る前に、次の春への命を残せるか。",
+ "texts": {
+  "move": "{to}の土へ潜り込んだ。",
+  "fleeJa": "体をくねらせ激しく跳ねる",
+  "restJa": "湿った土の隙間で休む",
+  "watchJa": "土を伝わる振動をうかがう",
+  "lieJa": "落ち葉の影に身を縮める",
+  "lastMemory": "夏の夕立のあと、冷たい土を這った匂いを思い出した。"
+ },
+ "intro": [
+  "春の多摩丘陵、湿った土の中で卵包から這い出た。",
+  "まだ白く透き通る体で、土の粒を押し分けながら進む。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "命の卵包を残した",
+   "line": "土の中に残した卵包が、冷たい冬を越えていく。",
+   "mem": "落ち葉の下に産み落とした、小さなまゆの感触を思い出した。"
+  },
+  {
+   "minKids": 10,
+   "title": "多くの命を土に託した",
+   "line": "{kids}個の卵包が、次の春を待つ。",
+   "mem": "幾度も土に潜り、まゆを残した秋の日の冷え込みを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "腐葉土の豊かな湿り気と、微かな土の香りを思い出した。"
+  },
+  {
+   "flag": "rain_pavement",
+   "text": "雨上がりの濡れたアスファルトを、力尽きる前に這い抜けた夜を思い出した。"
+  },
+  {
+   "flag": "first_frost",
+   "text": "晩秋の朝、急激に冷え込んでいく土の浅い層の寒さを思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "土に還る",
+  "line": "卵包を残すことなく、最初の強い霜の朝に動きを止めた。"
+ },
+ "facts": [
+  {
+   "text": "夏から秋に産み落とされた卵包の状態で冬を越し、翌春の4〜5月に孵化して約2か月後の7月頃に成体となる一年生である。晩秋の11月に最初の強い霜が降りると、成体はほぼ全滅する。",
+   "quote": "夏〜秋に卵包（まゆ）を産み、卵包で冬を越して4〜5月に孵る。7月ごろ大人になり、11月の最初の強い霜で大人はほぼ全滅（Nouri-Aiin et al. 2025 が日本と北米の観察として記述）。"
+  }
  ]
 }

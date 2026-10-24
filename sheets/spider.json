@@ -1,0 +1,10 @@
+{
+ "id": "spider",
+ "ja": "ジョロウグモ",
+ "sci": "Trichonephila clavata",
+ "status": "draft-ng",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ }
+}

@@ -20,10 +20,11 @@ const AI = require('./ai.js');
 const PROVIDER = process.env.PROVIDER || 'cloud';
 
 // 段: 埋める欄・見本の欄・頼み方
+// 2026-10-24: Gemini の無料枠が1日1種分しかなく止まるので、生き方・天敵も質2（Gemma）まで許す（ユーザー承認。事実は毎朝の検品で直す）
 const PARTS = [
   { part: 'places', minQ: 2, keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
-  { part: 'life', minQ: 3, keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery', 'migrate'], ask: '季節で決まった海や土地を行き来する種は、回遊 migrate（[{months, stages, to: 行き先の場所の id, say}]・行きと帰りの2つ）も書く。育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
-  { part: 'foes', minQ: 3, keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
+  { part: 'life', minQ: 2, keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery', 'migrate'], ask: '季節で決まった海や土地を行き来する種は、回遊 migrate（[{months, stages, to: 行き先の場所の id, say}]・行きと帰りの2つ）も書く。育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
+  { part: 'foes', minQ: 2, keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
   { part: 'choices', minQ: 2, keys: ['choices', 'happen'], ask: '生き方の分かれ道 choices を3〜4個（実際の生態にある選択だけ。どの選択肢にも損と得。fx は −1〜1）と、季節の出来事 happen を書く。' },
   { part: 'texts', minQ: 1, keys: ['lead', 'texts', 'intro', 'wins', 'memories', 'noKids', 'facts'], ask: '見出しの1文 lead、決まった言い回し texts、生まれた時の文 intro、子を残して終わった時 wins、思い出 memories、資料から抜き出した事実 facts（quote は資料の文をそのまま写す）を書く。' },
 ];

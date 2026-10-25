@@ -2,7 +2,7 @@
  "id": "krill",
  "ja": "ナンキョクオキアミ",
  "sci": "Euphausia superba",
- "status": "checked",
+ "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
@@ -179,8 +179,8 @@
  "stages": [
   {
    "id": "larva",
-   "ja": "幼生",
-   "days": 21,
+   "ja": "幼生（ノープリウス）",
+   "days": 10,
    "hunger": 10,
    "grow": 0.2,
    "goal": "表層へ昇る",
@@ -188,33 +188,34 @@
   },
   {
    "id": "young",
-   "ja": "未成魚",
+   "ja": "幼生（ファーシリア）",
    "fromAge": 0.1,
-   "days": 300,
+   "days": 20,
    "hunger": 12,
    "grow": 0.8,
-   "goal": "稚魚になる",
+   "goal": "幼体になる",
    "enter": "脚や複眼が発達し、成魚に近い姿になった。"
   },
   {
    "id": "juv",
-   "ja": "稚魚",
-   "fromAge": 0.5,
-   "days": 400,
+   "ja": "幼体",
+   "fromAge": 0.7,
+   "days": 30,
    "hunger": 12,
    "grow": 0.5,
    "goal": "成熟する",
-   "enter": "体長が15mmに達した。"
+   "enter": "体長が2cmを超え、親と同じ姿になった。"
   },
   {
    "id": "adult",
    "fromAge": 2,
-   "days": 60,
+   "days": 30,
    "hunger": 12,
    "grow": 0.1,
    "adult": true,
    "goal": "卵を産む",
-   "enter": "体が熟した。冬になれば、群れで産卵できる。"
+   "enter": "体が熟した。冬になれば、群れで産卵できる。",
+   "ja": "成体"
   }
  ],
  "oldAge": {
@@ -367,7 +368,7 @@
   },
   {
    "id": "crabeater_seal",
-   "ja": "ナンキョクオキアミアシカ",
+   "ja": "カニクイアザラシ",
    "kind": "mammal",
    "places": [
     "pack_ice",
@@ -383,10 +384,10 @@
    ],
    "again": [
     [
-     "あの耳の欠けたアシカが、また氷の上にいる。"
+     "あの鼻先に古傷のあるアザラシが、また氷の上にいる。"
     ],
     [
-     "耳の欠けたアシカが、執拗に群れを追う。"
+     "鼻先に古傷のあるアザラシが、執拗に群れを追う。"
     ]
    ],
    "bye": "深い海域へ移動し、氷上の捕食者から離れる。"
@@ -471,24 +472,6 @@
    ]
   },
   {
-   "id": "toothfish",
-   "ja": "マジェランアイナメ",
-   "kind": "fish",
-   "places": [
-    "deep_ocean",
-    "shelf"
-   ],
-   "stages": [
-    "juv",
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "暗い深海から、白い影が音もなく近づく。",
-    "鋭い牙が、不意に突き出される。"
-   ]
-  },
-  {
    "id": "albatross",
    "ja": "アホウドリ",
    "kind": "bird",
@@ -524,7 +507,7 @@
   },
   {
    "id": "trawler",
-   "ja": "底引き網漁船",
+   "ja": "オキアミ漁のトロール船",
    "kind": "human",
    "places": [
     "surface",
@@ -640,31 +623,6 @@
   }
  ],
  "happen": [
-  {
-   "month": [
-    1,
-    2,
-    3
-   ],
-   "stages": [
-    "adult"
-   ],
-   "p": 0.5,
-   "say": "海中に数千の卵を放った。卵は深い底へと沈んでいく。",
-   "full": -10
-  },
-  {
-   "month": [
-    3,
-    4
-   ],
-   "stages": [
-    "larva"
-   ],
-   "p": 0.6,
-   "say": "深い海底から、光のある表層へと泳ぎ上がった。",
-   "full": -5
-  },
   {
    "month": [
     1,

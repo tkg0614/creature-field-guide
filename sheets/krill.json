@@ -2,10 +2,13 @@
  "id": "krill",
  "ja": "ナンキョクオキアミ",
  "sci": "Euphausia superba",
- "status": "draft-ng",
+ "status": "checked",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "南極海",
@@ -16,11 +19,13 @@
   {
    "id": "shelf",
    "ja": "大陸棚",
-   "sea": true,
-   "danger": 2,
-   "about": "1月から3月にかけて産卵が行われる海域。",
+   "danger": 1,
+   "about": "卵が静かに沈み、胚へと成長する。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -60,
    "lon": -45
@@ -28,23 +33,27 @@
   {
    "id": "deep_ocean",
    "ja": "深海域",
-   "sea": true,
    "danger": 1,
-   "about": "卵が沈み込み、孵化する場所。水深2,000から3,000メートルに達する。",
+   "about": "水深2,000から3,000メートルの暗い底まで卵が降りる。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -60,
    "lon": -42.6
   },
   {
-   "id": "mid_water",
-   "ja": "中層域",
-   "sea": true,
+   "id": "migration_zone",
+   "ja": "垂直移動帯",
    "danger": 2,
-   "about": "幼生が海面へ向かって上昇する道中。水深60メートル付近に大量に現れる。",
+   "about": "孵化した幼生が、光のある表層へ向かって泳ぎ上がる。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -57.717,
    "lon": -44.073
@@ -52,36 +61,43 @@
   {
    "id": "surface",
    "ja": "表層域",
-   "sea": true,
    "danger": 3,
-   "about": "植物プランクトンが豊富な海面近く。巨大な群れを作って泳ぐ。",
+   "cover": false,
+   "about": "植物プランクトンが舞い、多くの捕食者が狙う。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -59.154,
    "lon": -46.456
   },
   {
-   "id": "pack_ice",
-   "ja": "流氷の底",
-   "sea": true,
-   "cover": true,
+   "id": "mid_water",
+   "ja": "中層域",
    "danger": 2,
-   "about": "氷藻が広がる場所。冬から春にかけての貴重な餌場となる。",
+   "about": "一日に数回、水深100メートルまで潜り、再び浮上する。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -61.129,
    "lon": -46.942
   },
   {
-   "id": "migration_zone",
-   "ja": "垂直移動帯",
-   "sea": true,
+   "id": "pack_ice",
+   "ja": "流氷の底",
    "danger": 2,
-   "about": "日中に水深100メートルまで潜り、夜に浮上する。",
+   "cover": true,
+   "about": "冬の寒さの中、氷の底に張り付いた藻類を削り取る。",
    "stages": [
-    null
+    "larva",
+    "young",
+    "juv",
+    "adult"
    ],
    "lat": -62.283,
    "lon": -44.073
@@ -113,53 +129,613 @@
    "surface"
   ],
   [
-   "pack_ice",
-   "shelf"
-  ],
-  [
-   "deep_ocean",
-   "shelf"
-  ],
-  [
-   "deep_ocean",
-   "mid_water"
-  ],
-  [
    "mid_water",
    "shelf"
   ],
   [
-   "pack_ice",
-   "surface"
+   "deep_ocean",
+   "shelf"
+  ],
+  [
+   "deep_ocean",
+   "migration_zone"
   ],
   [
    "migration_zone",
    "shelf"
   ],
   [
+   "mid_water",
+   "surface"
+  ],
+  [
+   "pack_ice",
+   "shelf"
+  ],
+  [
    "deep_ocean",
-   "migration_zone"
+   "pack_ice"
   ]
  ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.06
+ },
+ "stats": {
+  "run": {
+   "ja": "泳ぐ力",
+   "use": "天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "光の感知",
+   "use": "垂直移動や群れの維持に効く"
+  },
+  "forage": {
+   "ja": "ろ過能力",
+   "use": "プランクトンを集める時に効く"
+  }
+ },
  "stages": [
-  "larva"
+  {
+   "id": "larva",
+   "ja": "幼生",
+   "days": 21,
+   "hunger": 10,
+   "grow": 0.2,
+   "goal": "表層へ昇る",
+   "enter": "卵からかえり、光のある海面を目指して泳ぎ始めた。"
+  },
+  {
+   "id": "young",
+   "ja": "未成魚",
+   "fromAge": 0.1,
+   "days": 300,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "稚魚になる",
+   "enter": "脚や複眼が発達し、成魚に近い姿になった。"
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.5,
+   "days": 400,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "成熟する",
+   "enter": "体長が15mmに達した。"
+  },
+  {
+   "id": "adult",
+   "fromAge": 2,
+   "days": 60,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "卵を産む",
+   "enter": "体が熟した。冬になれば、群れで産卵できる。"
+  }
  ],
- "fail": {
-  "part": "life",
-  "errors": [
-   "stages は3〜5個",
-   "stages の最後に \"adult\": true",
-   "stages.undefined: days が無い",
-   "oldAge.years は [最短, 最長]",
-   "stats.run が無い"
+ "oldAge": {
+  "years": [
+   5,
+   6
   ],
-  "got": [
-   "months",
-   "stages",
-   "to",
-   "say"
+  "text": "寿命が尽きた。静かに深海へと沈んでいった。"
+ },
+ "breeding": {
+  "ja": "群れで産卵する",
+  "ds": "夏の間、大陸棚や深海域の上層で卵を産む",
+  "months": [
+   1,
+   2,
+   3
   ],
-  "head": "{\"months\":[1,2,3],\"stages\":[\"larva\"],\"to\":\"deep_ocean\",\"say\":\"卵が深海へと沈んでいく\"}",
-  "raw": "- Phytoplankton is the main one.\n    - Also mentioned copepods/amphipods.\n\n    *Refining `stages`:*\n    1. `larva` (Nauplius/Metanauplius)\n    2. `juvenile` (Calyptopis/Furcilia)\n    3. `adult` (Mature)\n\n    *Refining `breeding`:*\n    Months: January to March (1, 2, 3).\n    Places: `shelf`, `deep_ocean`.\n\n    *Refining `size`:*\n    Start: 0.06 (egg size 0.6mm).\n\n    *Refining `migrate`:*\n    Egg sinks to `deep_ocean` (or `shelf` bottom), Larva rises to `surface`.\n\n    *Final JSON Structure check:*\n    `size`, `stats`, `stages`, `oldAge`, `breeding`, `foods`, `special`, `levelEvery`, `migrate`."
- }
+  "places": [
+   "shelf",
+   "deep_ocean"
+  ],
+  "perYear": 1,
+  "kids": [
+   6000,
+   10000
+  ],
+  "many": 10000,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "仔魚"
+  },
+  "ok": "海に{born}個の卵を放った。",
+  "ng": "産卵のタイミングを逃した。",
+  "goal1": "卵を産む",
+  "goal2": "1万個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "phytoplankton",
+   "ja": "植物プランクトンを食べる",
+   "name": "プランクトン",
+   "ds": "脚でできたろ過籠を使い、水中のプランクトンをこし取る",
+   "stages": [
+    "larva",
+    "young",
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "surface",
+    "mid_water",
+    "migration_zone"
+   ],
+   "rich": [
+    "surface"
+   ],
+   "ok": "プランクトンを大量にこし取った。",
+   "full": 30
+  },
+  {
+   "id": "ice_algae",
+   "ja": "氷底藻をかき出す",
+   "name": "氷底藻",
+   "ds": "流氷の底に生えた藻類を、脚の剛毛でかき集めて食べる",
+   "stages": [
+    "young",
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "pack_ice"
+   ],
+   "rich": [
+    "pack_ice"
+   ],
+   "ok": "流氷の底から、緑色の藻をかき出した。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "light",
+   "ja": "発光する",
+   "ds": "体にある発光器で青白く光る",
+   "stages": [
+    "larva",
+    "young",
+    "juv",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.5,
+   "calm": true,
+   "ok": "暗い海で、静かに光を放った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "larva"
+   ],
+   "to": "deep_ocean",
+   "say": "卵が深海へと沈み、胚へと成長する"
+  },
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "larva"
+   ],
+   "to": "surface",
+   "say": "幼生となり、光のある表層へと昇る"
+  }
+ ],
+ "foes": [
+  {
+   "id": "blue_whale",
+   "ja": "シロナガスクジラ",
+   "kind": "mammal",
+   "places": [
+    "surface",
+    "mid_water"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "巨大な口が、海水ごと飲み込んでくる。",
+    "空気が抜けるような音と共に、壁のような口が開く。"
+   ],
+   "again": [
+    [
+     "また、あの白い傷のあるクジラだ。"
+    ],
+    [
+     "白い傷のクジラが、群れの下にいる。"
+    ]
+   ],
+   "bye": "季節が変わり、クジラたちが北へ去っていく。"
+  },
+  {
+   "id": "crabeater_seal",
+   "ja": "ナンキョクオキアミアシカ",
+   "kind": "mammal",
+   "places": [
+    "pack_ice",
+    "surface"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "漉し取りのような歯が、群れを捉える。",
+    "氷の隙間から、鋭い視線が注がれる。"
+   ],
+   "again": [
+    [
+     "あの耳の欠けたアシカが、また氷の上にいる。"
+    ],
+    [
+     "耳の欠けたアシカが、執拗に群れを追う。"
+    ]
+   ],
+   "bye": "深い海域へ移動し、氷上の捕食者から離れる。"
+  },
+  {
+   "id": "small_fish",
+   "ja": "ナンキョクハダカ",
+   "kind": "fish",
+   "places": [
+    "shelf",
+    "mid_water"
+   ],
+   "stages": [
+    "larva",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "小さな魚の群れが、幼生を追い回す。",
+    "銀色の影が、水中で素早く動く。"
+   ],
+   "again": [
+    [
+     "また、あの素早い魚の群れだ。"
+    ],
+    [
+     "銀色の影が、今年も幼生を狙っている。"
+    ]
+   ],
+   "bye": "体が大きくなり、小さな魚たちも、もう追ってこない。"
+  },
+  {
+   "id": "leopard_seal",
+   "ja": "ヒョウアザラシ",
+   "kind": "mammal",
+   "places": [
+    "pack_ice",
+    "shelf"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "斑点のある大きな体が、猛スピードで突っ込んでくる。",
+    "逃げ場のない氷の底で、牙が光る。"
+   ]
+  },
+  {
+   "id": "adelie_penguin",
+   "ja": "アデリーペンギン",
+   "kind": "bird",
+   "places": [
+    "surface",
+    "pack_ice"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い弾丸のような体が、水面から突き刺さる。",
+    "小刻みに泳ぎながら、群れを追い詰める。"
+   ]
+  },
+  {
+   "id": "emperor_penguin",
+   "ja": "コウテイペンギン",
+   "kind": "bird",
+   "places": [
+    "surface",
+    "mid_water"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "深い海から、鋭い速度で上がってくる。",
+    "水面を割って、大きな嘴が襲いかかる。"
+   ]
+  },
+  {
+   "id": "toothfish",
+   "ja": "マジェランアイナメ",
+   "kind": "fish",
+   "places": [
+    "deep_ocean",
+    "shelf"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "暗い深海から、白い影が音もなく近づく。",
+    "鋭い牙が、不意に突き出される。"
+   ]
+  },
+  {
+   "id": "albatross",
+   "ja": "アホウドリ",
+   "kind": "bird",
+   "places": [
+    "surface"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "大きな翼を広げた鳥が、水面をかすめていく。",
+    "空から鋭い嘴が、一気に突き刺さる。"
+   ]
+  },
+  {
+   "id": "cannibal",
+   "ja": "同種の個体",
+   "kind": "crustacean",
+   "places": [
+    "migration_zone",
+    "mid_water"
+   ],
+   "stages": [
+    "larva",
+    "young"
+   ],
+   "sev": 1,
+   "texts": [
+    "飢えた同種が、小さな幼生を襲う。",
+    "群れの中で、静かに共食いが起きている。"
+   ]
+  },
+  {
+   "id": "trawler",
+   "ja": "底引き網漁船",
+   "kind": "human",
+   "places": [
+    "surface",
+    "mid_water"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "巨大な網が、海の流れを遮る。",
+    "機械的な音が響き、大量の個体が吸い上げられる。"
+   ],
+   "lose": "網の壁に押しこめられ、傷を負った。",
+   "fleeJa": "網の隙間へ逃げ込む",
+   "hideJa": "群れの奥深くへ潜る"
+  }
+ ],
+ "choices": [
+  {
+   "q": "春が来た。どこで餌を食むか",
+   "stages": [
+    "young",
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "表層でプランクトンを濾し取る",
+     "ds": "餌が豊富。天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "表層の海を泳ぎ、プランクトンを掬い上げた。",
+     "chip": "表層で濾過"
+    },
+    {
+     "ja": "流氷の底の藻を削り取る",
+     "ds": "エネルギー効率が良い。移動が制限される",
+     "fx": {
+      "food": 1,
+      "danger": -1
+     },
+     "say": "流氷の底に張り付いた緑の藻を、脚で削り取った。",
+     "chip": "流氷で摂食"
+    }
+   ]
+  },
+  {
+   "q": "冬の暗い海。食料が尽き始めた。どう耐えるか",
+   "stages": [
+    "young",
+    "juv",
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "脱皮して体を小さくする",
+     "ds": "エネルギー消費を抑えられる。成長が止まる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "脱皮し、以前より小さな体になった。飢えをしのぐ術だ。",
+     "chip": "縮小して耐える"
+    },
+    {
+     "ja": "今の体格を維持して泳ぎ回る",
+     "ds": "春に備えて体力を保てる。餓死のリスクがある",
+     "fx": {
+      "danger": 1,
+      "food": -1
+     },
+     "say": "飢えに耐え、広い海を泳ぎ続けて餌を探した。",
+     "chip": "体格を維持"
+    }
+   ]
+  },
+  {
+   "q": "日中の避難場所をどこにするか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "浅い海域に留まる",
+     "ds": "餌へのアクセスが良い。捕食者に狙われやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "光の届く浅い海で、プランクトンを追いかけた。",
+     "chip": "浅場に留まる"
+    },
+    {
+     "ja": "中層まで深く潜る",
+     "ds": "天敵から身を隠せる。餌が少ない",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "say": "暗い中層へと潜り、静かに時を待った。",
+     "chip": "中層へ潜行"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.5,
+   "say": "海中に数千の卵を放った。卵は深い底へと沈んでいく。",
+   "full": -10
+  },
+  {
+   "month": [
+    3,
+    4
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.6,
+   "say": "深い海底から、光のある表層へと泳ぎ上がった。",
+   "full": -5
+  },
+  {
+   "month": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "stages": [
+    "larva",
+    "young",
+    "juv",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "殻を脱ぎ捨てた。新しい皮膚が伸びるまで、体は柔らかい。",
+   "full": 0
+  }
+ ],
+ "lead": "南極の深海で生まれ、表層へと昇り、巨大な群れとなって海を巡る。地球上で最も豊かな生命の連なり。",
+ "texts": {
+  "move": "{to}へ、群れで泳いでいった。",
+  "fleeJa": "光を放ち、群れで逃れる",
+  "restJa": "流氷の底で休む",
+  "watchJa": "表層のプランクトンを探る",
+  "lieJa": "中層の暗がりに沈む",
+  "lastMemory": "氷の下で食べた、緑色の藻を思い出した。"
+ },
+ "intro": [
+  "大陸棚の底か、深海二千メートルから三千メートルの暗闇で生まれた。",
+  "卵から孵った幼生は、光を求めて海面へと昇り始める。"
+ ],
+ "wins": [
+  {
+   "minKids": 6000,
+   "title": "次なる群れを海に放った",
+   "line": "{kids}個の卵が、再び深海へと沈んでいく。",
+   "mem": "冬の氷の下で耐えた、飢えの記憶を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "胸脚の籠で、微細なプランクトンを漉き取った日々を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "流氷の底に広がる、緑の藻の絨毯を思い出した。"
+  }
+ ],
+ "noKids": [
+  {
+   "line": "群れに合流できぬまま、海に溶けた。"
+  }
+ ],
+ "facts": [
+  {
+   "text": "1立方メートルあたり1万から3万個体という高密度で群れる。"
+  },
+  {
+   "text": "飢餓状態になると、脱皮後に体が縮むことがある。"
+  },
+  {
+   "quote": "The gut of E. superba can often be seen shining green through its transparent skin."
+  }
+ ]
 }

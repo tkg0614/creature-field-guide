@@ -2,7 +2,7 @@
  "id": "heron",
  "ja": "アオサギ",
  "sci": "Ardea cinerea",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -200,7 +200,7 @@
   {
    "id": "chick",
    "ja": "ヒナ",
-   "days": 55,
+   "days": 10,
    "hunger": 10,
    "grow": 1.2
   },
@@ -208,7 +208,7 @@
    "id": "juv",
    "ja": "巣立ちビナ",
    "fromAge": 0.15,
-   "days": 120,
+   "days": 30,
    "hunger": 12,
    "grow": 0.5,
    "goal": "巣立ちビナになる",
@@ -218,7 +218,7 @@
    "id": "young",
    "ja": "若鳥",
    "fromAge": 1,
-   "days": 180,
+   "days": 60,
    "hunger": 14,
    "grow": 0.3,
    "goal": "冬を越して若鳥になる",
@@ -228,7 +228,7 @@
    "id": "adult",
    "ja": "成鳥",
    "fromAge": 2,
-   "days": 365,
+   "days": 90,
    "hunger": 14,
    "grow": 0.1,
    "adult": true,
@@ -238,8 +238,8 @@
  ],
  "oldAge": {
   "years": [
-   2,
-   5
+   5,
+   15
   ],
   "text": "枯れ枝のように痩せ、翼を広げる力が残っていなかった。水辺のヨシ原で静かに倒れた。"
  },
@@ -272,6 +272,23 @@
   "goal2": "卵を15個産む"
  },
  "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が吐き戻す魚",
+   "ds": "巣の上で首を伸ばし、親が吐き戻す魚を受け取る",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "colony_nest"
+   ],
+   "rich": [
+    "colony_nest"
+   ],
+   "ok": "親が戻り、吐き戻した小魚を夢中で飲みこんだ。",
+   "full": 35
+  },
   {
    "id": "river_fish",
    "ja": "浅瀬の魚を捕らえる",
@@ -430,8 +447,7 @@
    ],
    "stages": [
     "juv",
-    "young",
-    "adult"
+    "young"
    ],
    "sev": 3,
    "fast": true,
@@ -497,8 +513,7 @@
     "rice_paddy"
    ],
    "stages": [
-    "young",
-    "adult"
+    "young"
    ],
    "sev": 3,
    "texts": [
@@ -531,25 +546,6 @@
    "texts": [
     "ヨシ原の上を、両翼を浅いV字に保って低く舞っている。",
     "風に揺れるヨシのすき間へ、急に向きを変えて突っ込んできた。"
-   ]
-  },
-  {
-   "id": "sea_eagle",
-   "ja": "オオワシ",
-   "kind": "bird",
-   "places": [
-    "reed_bed",
-    "river_shallows",
-    "winter_field"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "巨大な黒い翼と黄色いくちばしが、湖面の上から迫ってくる。",
-    "重い羽音を響かせ、水辺の鳥たちを一斉に蹴散らしにかかる。"
    ]
   },
   {

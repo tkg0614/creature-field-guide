@@ -2,7 +2,7 @@
  "id": "earthworm",
  "ja": "フトミミズの仲間",
  "sci": "Amynthas spp.（フトミミズ科 Megascolecidae）",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -193,15 +193,15 @@
   {
    "id": "hatchling",
    "ja": "ふ化幼体",
-   "days": 15,
+   "days": 10,
    "hunger": 8,
    "grow": 0.8
   },
   {
    "id": "young",
    "ja": "未成体",
-   "fromAge": 0.65,
-   "days": 25,
+   "fromAge": 0.1,
+   "days": 12,
    "hunger": 10,
    "grow": 1.2,
    "goal": "体を伸ばす",
@@ -210,8 +210,8 @@
   {
    "id": "adult",
    "ja": "成体",
-   "fromAge": 0.8,
-   "days": 40,
+   "fromAge": 0.22,
+   "days": 12,
    "hunger": 12,
    "grow": 0.5,
    "adult": true,
@@ -221,8 +221,8 @@
  ],
  "oldAge": {
   "years": [
-   1,
-   1.2
+   0.55,
+   0.7
   ],
   "text": "初冬の霜が土を冷やした。硬くなった体が動かなくなり、静かに土へ還った。"
  },
@@ -531,7 +531,7 @@
     "頭上の土が急に割れ、重い鉄の刃が深く突き刺さる。",
     "作土が一気に掘り返され、乾いた強い光の中に放り出される。"
    ],
-   "lose": "鉄の刃にかすめられ、体を裂かれて深い傷を負った。",
+   "lose": "鉄の刃にかすめられ、体の一部を断たれて傷を負った。",
    "fleeJa": "崩れた土の割れ目へ潜り込む",
    "hideJa": "土塊の陰でじっと丸まる"
   }

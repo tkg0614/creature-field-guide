@@ -64,7 +64,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
     let errors = [], ok = false;
     for (let t = 1; t <= TRIES && !ok; t++) {
       const t0 = Date.now();
-      let got; try { const a = await AI.ask(prompt(P, sheet, errors), P.minQ); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
+      let got; try { const a = await AI.ask(prompt(P, sheet, errors), P.minQ, P.keys); got = a.json; (sheet.by = sheet.by || {})[P.part] = a.by; } catch (e) { if (e.allLimited) { console.log('  使える AI が無い。続きは次の回に'); fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n'); process.exit(3); } errors = [`JSON として読めない: ${e.message.slice(0, 80)}`]; console.log(`  ${P.part} ${t}回目: ✗ ${errors[0]}`); continue; }
       // 包みを外す: {"sheet": {...}} のように1段包んで返す AI がいる
       for (let n = 0; n < 2 && got && !P.keys.some((k) => k in got); n++) { const v = Object.values(got).find((x) => x && typeof x === 'object' && !Array.isArray(x)); if (!v) break; got = v; }
       // 並びを揃える: 配列のはずの欄を {id: {...}} の形で返す AI がいる → [{id, ...}] に直す

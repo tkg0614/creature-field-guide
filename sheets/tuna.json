@@ -2,7 +2,7 @@
  "id": "tuna",
  "ja": "クロマグロ",
  "sci": "Thunnus orientalis",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini gemini-3.8-flash",
@@ -62,8 +62,8 @@
     "young",
     "adult"
    ],
-   "lat": 21.922,
-   "lon": 120.739
+   "lat": 32.5,
+   "lon": 136.0
   },
   {
    "id": "sanriku",
@@ -110,12 +110,12 @@
     "young",
     "adult"
    ],
-   "lat": 27.922,
-   "lon": 138.5
+   "lat": 34,
+   "lon": 150
   },
   {
    "id": "california",
-   "ja": "カリフォルニアの沖",
+   "ja": "北太平洋の東の沖",
    "sea": true,
    "danger": 2,
    "cover": false,
@@ -126,8 +126,8 @@
     "young",
     "adult"
    ],
-   "lat": 28.753,
-   "lon": 140.9
+   "lat": 36,
+   "lon": 170
   }
  ],
  "start": {
@@ -137,44 +137,20 @@
  },
  "region": {
   "ja": "南西諸島から北太平洋",
-  "lon0": 114.423,
-  "lon1": 148.109,
-  "lat0": 49.376,
-  "lat1": 15.606,
-  "k": 15,
+  "lon0": 115.286,
+  "lon1": 182.626,
+  "lat0": 55.686,
+  "lat1": 13.849,
+  "k": 7,
   "labels": [
    [
-    47.349799999999995,
-    131.26600000000002,
+    53.17578,
+    148.95600000000002,
     "南西諸島から北太平洋"
    ]
   ]
  },
  "edges": [
-  [
-   "kuroshio",
-   "nansei"
-  ],
-  [
-   "nansei",
-   "north_pacific"
-  ],
-  [
-   "sea_of_japan",
-   "tsugaru"
-  ],
-  [
-   "sanriku",
-   "sea_of_japan"
-  ],
-  [
-   "kuroshio",
-   "north_pacific"
-  ],
-  [
-   "sanriku",
-   "tsugaru"
-  ],
   [
    "california",
    "north_pacific"
@@ -182,6 +158,38 @@
   [
    "california",
    "sanriku"
+  ],
+  [
+   "kuroshio",
+   "nansei"
+  ],
+  [
+   "kuroshio",
+   "sanriku"
+  ],
+  [
+   "nansei",
+   "sanriku"
+  ],
+  [
+   "north_pacific",
+   "sanriku"
+  ],
+  [
+   "north_pacific",
+   "tsugaru"
+  ],
+  [
+   "sanriku",
+   "sea_of_japan"
+  ],
+  [
+   "sanriku",
+   "tsugaru"
+  ],
+  [
+   "sea_of_japan",
+   "tsugaru"
   ]
  ],
  "size": {
@@ -245,8 +253,8 @@
  ],
  "oldAge": {
   "years": [
-   12,
-   15
+   15,
+   25
   ],
   "text": "巨体を温め続ける熱が静かに尽き、群れから離れて藍色の深海へと沈んだ。"
  },
@@ -354,7 +362,7 @@
     "young"
    ],
    "to": "california",
-   "say": "黒潮続流に乗って北太平洋を横断し、豊かな東太平洋の沿岸を目指した。"
+   "say": "黒潮続流に乗って東へ、北太平洋の沖合まで渡った。"
   },
   {
    "months": [
@@ -470,22 +478,6 @@
    ]
   },
   {
-   "id": "sea_lion",
-   "ja": "カリフォルニアアシカ",
-   "kind": "mammal",
-   "places": [
-    "california"
-   ],
-   "stages": [
-    "young"
-   ],
-   "sev": 2,
-   "texts": [
-    "沿岸の岩場から、しなやかな体躯の獣が潜水してくる。",
-    "巧みな身のこなしで旋回し、群れの進路を塞ぎにかかる。"
-   ]
-  },
-  {
    "id": "mako",
    "ja": "アオザメ",
    "kind": "fish",
@@ -578,7 +570,7 @@
     "海中に巨大な網のカーテンが広がり、群れを円形に取り囲む。",
     "頭上で激しいスクリュー音が唸り、逃げ道がふさがれていく。"
    ],
-   "lose": "網の壁に激突して皮膚とひれを擦りむき、傷を負った。",
+   "lose": "網の壁に激突して、ひれが裂けて傷を負った。",
    "fleeJa": "網が閉じる前に底へ潜り抜ける",
    "hideJa": "群れの真ん中に紛れて網をかわす"
   },

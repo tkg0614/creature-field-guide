@@ -2,7 +2,7 @@
  "id": "copepod",
  "ja": "カイアシ類",
  "sci": "Calanus finmarchicus",
- "status": "checked",
+ "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini gemini-3.8-flash",
@@ -28,7 +28,7 @@
     "adult"
    ],
    "lat": 60,
-   "lon": -20
+   "lon": -25
   },
   {
    "id": "north_sea",
@@ -41,8 +41,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 60,
-   "lon": -17.6
+   "lat": 57,
+   "lon": 2
   },
   {
    "id": "norwegian_sea",
@@ -55,8 +55,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 62.078,
-   "lon": -18.5
+   "lat": 66,
+   "lon": 2
   },
   {
    "id": "maine",
@@ -69,8 +69,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 61.247,
-   "lon": -20.9
+   "lat": 43,
+   "lon": -68
   },
   {
    "id": "svalbard",
@@ -83,8 +83,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 60,
-   "lon": -22.4
+   "lat": 78,
+   "lon": 12
   },
   {
    "id": "deep_sea",
@@ -98,8 +98,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 57.922,
-   "lon": -21.5
+   "lat": 68,
+   "lon": -2
   },
   {
    "id": "abyss",
@@ -112,8 +112,8 @@
     "copepodid",
     "adult"
    ],
-   "lat": 58.753,
-   "lon": -19.1
+   "lat": 60,
+   "lon": -30
   }
  ],
  "start": {
@@ -123,51 +123,59 @@
  },
  "region": {
   "ja": "北大西洋",
-  "lon0": -23.84,
-  "lon1": -16.16,
-  "lat0": 63.518,
-  "lat1": 56.482,
-  "k": 65,
+  "lon0": -92.0,
+  "lon1": 36.0,
+  "lat0": 102.0,
+  "lat1": 19.0,
+  "k": 4,
   "labels": [
    [
-    63.09584,
-    -20,
+    97.02,
+    -28.0,
     "北大西洋"
    ]
   ]
  },
  "edges": [
   [
-   "maine",
-   "surface"
+   "abyss",
+   "deep_sea"
+  ],
+  [
+   "abyss",
+   "maine"
   ],
   [
    "abyss",
    "surface"
   ],
   [
-   "abyss",
+   "deep_sea",
    "north_sea"
   ],
   [
-   "north_sea",
+   "deep_sea",
    "norwegian_sea"
   ],
   [
-   "maine",
-   "norwegian_sea"
-  ],
-  [
-   "maine",
-   "svalbard"
+   "deep_sea",
+   "surface"
   ],
   [
    "deep_sea",
    "svalbard"
   ],
   [
-   "abyss",
-   "deep_sea"
+   "maine",
+   "surface"
+  ],
+  [
+   "north_sea",
+   "norwegian_sea"
+  ],
+  [
+   "norwegian_sea",
+   "svalbard"
   ]
  ],
  "size": {
@@ -531,66 +539,9 @@
     ]
    ],
    "bye": "越冬のため光の届かない深海へと沈み、巨大な影は見えなくなった。"
-  },
-  {
-   "id": "net",
-   "ja": "プランクトンネット",
-   "kind": "human",
-   "places": [
-    "surface",
-    "norwegian_sea",
-    "maine"
-   ],
-   "stages": [
-    "copepodid",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "微小な網目を持つ巨大な袋が、船に引かれて近づいてくる。",
-    "水流に引かれ、逃げ場のない網の奥へと追い込まれていく。"
-   ],
-   "lose": "細かな網目に激しく押しつけられ、触角に深い傷を負った。",
-   "fleeJa": "第一触角を畳んで急激に跳ね、網の外へ逃れる",
-   "hideJa": "水流のわずかな隙間に体を滑り込ませてやり過ごす"
   }
  ],
  "choices": [
-  {
-   "q": "秋が深まり表層の餌が減ってきた。冬をどう過ごすか",
-   "stages": [
-    "copepodid"
-   ],
-   "month": [
-    9,
-    10,
-    11
-   ],
-   "opts": [
-    {
-     "ja": "水深500〜2500メートルの深海へ潜る",
-     "ds": "捕食者を避けて代謝を抑えられる。春まで餌は食べられない",
-     "fx": {
-      "danger": -1,
-      "food": -1
-     },
-     "goto": "deep_sea",
-     "say": "光の届かない深海へと沈み、じっと春を待った。",
-     "chip": "深海で休眠"
-    },
-    {
-     "ja": "表層に残り餌を探し続ける",
-     "ds": "わずかな餌を食べられる。魚やクジラに狙われやすい",
-     "fx": {
-      "danger": 1,
-      "food": 1
-     },
-     "goto": "surface",
-     "say": "冷えゆく表層に残り、漂う微小プランクトンを追った。",
-     "chip": "表層に残る"
-    }
-   ]
-  },
   {
    "q": "表層で植物プランクトンが増えている。何を中心に捕食するか",
    "stages": [
@@ -652,6 +603,41 @@
      "goto": "svalbard",
      "say": "冷たい北の海を目指し、海流に乗って北上した。",
      "chip": "スヴァールバルへ"
+    }
+   ]
+  },
+  {
+   "q": "日が高くなり、魚の目が水の中まで届く。昼はどこで過ごすか",
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "昼は深く沈み、夜だけ浮かぶ",
+     "ds": "魚に見つかりにくい。そのぶん食べる時間が減る",
+     "fx": {
+      "danger": -0.5,
+      "food": -0.4
+     },
+     "say": "日が昇ると深みへ沈み、暗くなってから表層へ上がった。",
+     "chip": "昼は深く"
+    },
+    {
+     "ja": "表層にとどまって食べ続ける",
+     "ds": "珪藻をたくさん食べられる。魚の群れに見つかりやすい",
+     "fx": {
+      "danger": 0.5,
+      "food": 0.5
+     },
+     "say": "明るい表層に残り、珪藻を食べ続けた。",
+     "chip": "表層に残る"
     }
    ]
   }

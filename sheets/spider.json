@@ -5,6 +5,138 @@
  "status": "draft-ng",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の里山",
+  "geo": "Satoyama, Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "eggsac",
+   "ja": "樹木の枝の卵嚢",
+   "danger": 1,
+   "cover": true,
+   "about": "白い卵嚢の中で冬を越す。春、小さな幼体がここから現れる。",
+   "stages": [],
+   "lat": 34.19,
+   "lon": 131.473
+  },
+  {
+   "id": "madoi",
+   "ja": "幼体の集団生活圏",
+   "danger": 2,
+   "cover": true,
+   "about": "孵化した幼体が集まって暮らす。互いに競い合いながら成長する。",
+   "stages": [],
+   "lat": 34.19,
+   "lon": 131.505
+  },
+  {
+   "id": "air",
+   "ja": "上空",
+   "danger": 3,
+   "cover": false,
+   "about": "糸を風に舞わせ、未知の場所へ運ばれる。バルーニングの旅である。",
+   "stages": [],
+   "lat": 34.218,
+   "lon": 131.493
+  },
+  {
+   "id": "shrub",
+   "ja": "林の縁の低木",
+   "danger": 2,
+   "cover": true,
+   "about": "低木の茂みで脱皮を繰り返す。獲物を待つ小さな網を張り巡らせる。",
+   "stages": [],
+   "lat": 34.207,
+   "lon": 131.461
+  },
+  {
+   "id": "open_web",
+   "ja": "樹木の間",
+   "danger": 2,
+   "cover": false,
+   "about": "秋、成体となって黄金色の大きな網を張る。日光に当たると輝く。",
+   "stages": [],
+   "lat": 34.19,
+   "lon": 131.441
+  },
+  {
+   "id": "female_web",
+   "ja": "成熟した雌の網",
+   "danger": 3,
+   "cover": false,
+   "about": "雄が雌の網に忍び寄る。運が悪ければ雌に食われる。",
+   "stages": [],
+   "lat": 34.162,
+   "lon": 131.453
+  },
+  {
+   "id": "trunk",
+   "ja": "樹幹や建物",
+   "danger": 1,
+   "cover": true,
+   "about": "秋の終わりに卵嚢を固定する。次世代を託して、雌の生は終わる。",
+   "stages": [],
+   "lat": 34.173,
+   "lon": 131.485
+  }
+ ],
+ "start": {
+  "place": "eggsac",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の里山",
+  "lon0": 131.422,
+  "lon1": 131.524,
+  "lat0": 34.237,
+  "lat1": 34.143,
+  "k": 4902,
+  "labels": [
+   [
+    34.23136,
+    131.473,
+    "日本の里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "eggsac",
+   "trunk"
+  ],
+  [
+   "eggsac",
+   "shrub"
+  ],
+  [
+   "madoi",
+   "trunk"
+  ],
+  [
+   "air",
+   "madoi"
+  ],
+  [
+   "air",
+   "shrub"
+  ],
+  [
+   "open_web",
+   "shrub"
+  ],
+  [
+   "female_web",
+   "open_web"
+  ],
+  [
+   "female_web",
+   "trunk"
+  ]
+ ]
 }

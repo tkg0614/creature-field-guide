@@ -2,5 +2,141 @@
  "id": "copepod",
  "ja": "カイアシ類",
  "sci": "Calanus finmarchicus",
- "status": "draft-ng"
+ "status": "draft-ng",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "北大西洋",
+  "geo": "North Atlantic Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "surface",
+   "ja": "北大西洋の表層",
+   "sea": true,
+   "danger": 3,
+   "about": "成体が卵を産み、幼生が育つ。プランクトンが豊富に湧く。",
+   "stages": [],
+   "lat": 60,
+   "lon": -20
+  },
+  {
+   "id": "north_sea",
+   "ja": "北海",
+   "sea": true,
+   "danger": 2,
+   "about": "分布の中心となる海域。膨大な数の個体群が存在する。",
+   "stages": [],
+   "lat": 60,
+   "lon": -17.6
+  },
+  {
+   "id": "norwegian_sea",
+   "ja": "ノルウェー海",
+   "sea": true,
+   "danger": 2,
+   "about": "冷たい水が流れる。北極圏に近い環境。",
+   "stages": [],
+   "lat": 62.078,
+   "lon": -18.5
+  },
+  {
+   "id": "maine",
+   "ja": "メイン湾",
+   "sea": true,
+   "danger": 3,
+   "about": "カナダ沿岸の豊かな海。稚魚に卵を狙われる。",
+   "stages": [],
+   "lat": 61.247,
+   "lon": -20.9
+  },
+  {
+   "id": "svalbard",
+   "ja": "スヴァールバル諸島周辺海域",
+   "sea": true,
+   "danger": 2,
+   "about": "極めて冷たい海。分布の北限に近い。",
+   "stages": [],
+   "lat": 60,
+   "lon": -22.4
+  },
+  {
+   "id": "deep_sea",
+   "ja": "水深500〜2500メートルの深海",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "冬の間、休眠して過ごす。外敵から身を守り体力を温存する。",
+   "stages": [],
+   "lat": 57.922,
+   "lon": -21.5
+  },
+  {
+   "id": "abyss",
+   "ja": "水深4000メートルの深海底付近",
+   "sea": true,
+   "danger": 0,
+   "about": "生存可能な限界の深さ。静寂に包まれた暗黒の世界。",
+   "stages": [],
+   "lat": 58.753,
+   "lon": -19.1
+  }
+ ],
+ "start": {
+  "place": "surface",
+  "month": 3,
+  "day": 1
+ },
+ "region": {
+  "ja": "北大西洋",
+  "lon0": -23.84,
+  "lon1": -16.16,
+  "lat0": 63.518,
+  "lat1": 56.482,
+  "k": 65,
+  "labels": [
+   [
+    63.09584,
+    -20,
+    "北大西洋"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "maine",
+   "surface"
+  ],
+  [
+   "abyss",
+   "surface"
+  ],
+  [
+   "abyss",
+   "north_sea"
+  ],
+  [
+   "north_sea",
+   "norwegian_sea"
+  ],
+  [
+   "maine",
+   "norwegian_sea"
+  ],
+  [
+   "maine",
+   "svalbard"
+  ],
+  [
+   "deep_sea",
+   "svalbard"
+  ],
+  [
+   "abyss",
+   "deep_sea"
+  ]
+ ]
 }

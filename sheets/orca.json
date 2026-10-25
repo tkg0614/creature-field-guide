@@ -2,7 +2,7 @@
  "id": "orca",
  "ja": "シャチ",
  "sci": "Orcinus orca",
- "status": "checked",
+ "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
@@ -29,8 +29,8 @@
     "sub",
     "adult"
    ],
-   "lat": 50.04,
-   "lon": -125.21
+   "lat": 50.6,
+   "lon": -126.9
   },
   {
    "id": "river_mouth",
@@ -45,12 +45,12 @@
     "sub",
     "adult"
    ],
-   "lat": 49.5,
-   "lon": -122.1
+   "lat": 49.1,
+   "lon": -123.2
   },
   {
    "id": "channel",
-   "ja": "狭い海峡",
+   "ja": "ジョンストン海峡",
    "sea": true,
    "danger": 1,
    "cover": false,
@@ -61,8 +61,8 @@
     "sub",
     "adult"
    ],
-   "lat": 50.476,
-   "lon": -126.177
+   "lat": 50.5,
+   "lon": -126.5
   },
   {
    "id": "island_coast",
@@ -109,8 +109,8 @@
     "sub",
     "adult"
    ],
-   "lat": 47.217,
-   "lon": -123.573
+   "lat": 50.75,
+   "lon": -125.6
   }
  ],
  "start": {
@@ -120,15 +120,15 @@
  },
  "region": {
   "ja": "カナダ・ブリティッシュコロンビア沿岸",
-  "lon0": -127.745,
-  "lon1": -120.797,
-  "lat0": 51.779,
-  "lat1": 45.914,
-  "k": 72,
+  "lon0": -128.01,
+  "lon1": -122.09,
+  "lat0": 51.86,
+  "lat1": 47.261,
+  "k": 84,
   "labels": [
    [
-    51.4271,
-    -124.271,
+    51.58406,
+    -125.05,
     "カナダ・ブリティッシュコロンビア沿岸"
    ]
   ]
@@ -136,23 +136,15 @@
  "edges": [
   [
    "channel",
-   "inlet"
-  ],
-  [
-   "inlet",
-   "island_coast"
-  ],
-  [
-   "island_coast",
-   "river_mouth"
-  ],
-  [
-   "fjord",
-   "river_mouth"
+   "deep_sea"
   ],
   [
    "channel",
-   "deep_sea"
+   "fjord"
+  ],
+  [
+   "channel",
+   "inlet"
   ],
   [
    "deep_sea",
@@ -160,7 +152,19 @@
   ],
   [
    "fjord",
+   "inlet"
+  ],
+  [
+   "fjord",
    "island_coast"
+  ],
+  [
+   "fjord",
+   "river_mouth"
+  ],
+  [
+   "island_coast",
+   "river_mouth"
   ]
  ],
  "size": {
@@ -186,8 +190,7 @@
   {
    "id": "calf",
    "ja": "仔シャチ",
-   "fromAge": 0,
-   "days": 1095,
+   "days": 30,
    "hunger": 15,
    "grow": 2,
    "goal": "幼シャチになる",
@@ -195,9 +198,9 @@
   },
   {
    "id": "juv",
-   "ja": "幼シャチ",
-   "fromAge": 3,
-   "days": 2555,
+   "ja": "幼いシャチ",
+   "fromAge": 2,
+   "days": 60,
    "hunger": 12,
    "grow": 1.5,
    "goal": "未成魚になる",
@@ -205,9 +208,9 @@
   },
   {
    "id": "sub",
-   "ja": "未成魚",
-   "fromAge": 10,
-   "days": 1825,
+   "ja": "若いシャチ",
+   "fromAge": 8,
+   "days": 90,
    "hunger": 12,
    "grow": 0.8,
    "goal": "成魚になる",
@@ -215,9 +218,9 @@
   },
   {
    "id": "adult",
-   "ja": "成魚",
-   "fromAge": 15,
-   "days": 5475,
+   "ja": "成体",
+   "fromAge": 13,
+   "days": 120,
    "hunger": 12,
    "grow": 0.2,
    "adult": true,
@@ -227,8 +230,8 @@
  ],
  "oldAge": {
   "years": [
-   19,
-   30
+   30,
+   60
   ],
   "text": "群れの絆が途切れた。静かに海へと沈んでいった。"
  },
@@ -315,35 +318,8 @@
  "levelEvery": 4,
  "foes": [
   {
-   "id": "great_white",
-   "ja": "ホホジロザメ",
-   "kind": "fish",
-   "places": [
-    "island_coast",
-    "channel"
-   ],
-   "stages": [
-    "calf",
-    "juv"
-   ],
-   "sev": 3,
-   "texts": [
-    "灰色の影が、速く近づく。",
-    "鋭い歯が、幼い体を狙う。"
-   ],
-   "again": [
-    [
-     "また、あの傷のあるサメだ。"
-    ],
-    [
-     "同じサメが、執拗に追いかけてくる。"
-    ]
-   ],
-   "bye": "体が大きくなり、もう狙われない。"
-  },
-  {
    "id": "transient",
-   "ja": "過渡型シャチ",
+   "ja": "ビッグス型シャチの群れ",
    "kind": "mammal",
    "places": [
     "inlet",
@@ -353,10 +329,9 @@
     "fjord"
    ],
    "stages": [
-    "calf",
-    "juv"
+    "calf"
    ],
-   "sev": 3,
+   "sev": 1,
    "texts": [
     "別の群れのシャチが、冷たい目で見る。",
     "獲物を探す影が、周囲を回っている。"
@@ -369,11 +344,12 @@
      "聞き覚えのある、不気味な鳴き声が響く。"
     ]
    ],
-   "bye": "成魚になり、群れの力で追い払える。"
+   "bye": "成魚になり、群れの力で追い払える。",
+   "lose": "よその群れに追い回され、体当たりを受けて傷を負った。"
   },
   {
    "id": "whaler",
-   "ja": "捕鯨船",
+   "ja": "大型の貨物船",
    "kind": "human",
    "places": [
     "channel",
@@ -385,10 +361,10 @@
     "sub",
     "adult"
    ],
-   "sev": 3,
+   "sev": 2,
    "texts": [
-    "巨大な船が、海面を切り裂く。",
-    "鋭い銛が、水中に突き刺さる。"
+    "低い轟音が水を震わせ、巨大な船底が近づく。",
+    "スクリューの唸りで、仲間の声が聞こえない。"
    ],
    "again": [
     [
@@ -399,36 +375,35 @@
     ]
    ],
    "bye": "捕鯨の時代が終わり、船が姿を消した。",
-   "lose": "銛が体に深く刺さり、傷を負った。",
+   "lose": "大きな船体の脇をすり抜け、背びれをスクリューにかすめられて傷を負った。",
    "fleeJa": "深く潜って逃れる",
    "hideJa": "入り江の奥に隠れる"
   },
   {
    "id": "collector",
-   "ja": "捕獲船",
+   "ja": "ホエールウォッチングの船",
    "kind": "human",
    "places": [
     "inlet",
     "channel"
    ],
    "stages": [
-    "calf",
     "juv",
     "sub",
     "adult"
    ],
-   "sev": 3,
+   "sev": 1,
    "texts": [
-    "網が、逃げ場を奪う。",
-    "狭い水槽へと、追い込まれる。"
+    "いくつもの船のエンジン音が、獲物を探す声をかき消す。",
+    "船が行く手をふさぎ、群れが散らばる。"
    ],
-   "lose": "網に強く締め付けられ、傷を負った。",
+   "lose": "船の群れに囲まれて逃げ場を探し、泳ぎ疲れて傷を負った。",
    "fleeJa": "網の隙間を抜ける",
    "hideJa": "群れの中心に潜り込む"
   },
   {
    "id": "fishery",
-   "ja": "漁船",
+   "ja": "サケ漁の刺網",
    "kind": "human",
    "places": [
     "river_mouth",
@@ -449,61 +424,6 @@
    "lose": "網の太い紐に擦られ、傷を負った。",
    "fleeJa": "急潜行で網を避ける",
    "hideJa": "波の下に身を潜める"
-  },
-  {
-   "id": "sixgill",
-   "ja": "ニシキハダザメ",
-   "kind": "fish",
-   "places": [
-    "deep_sea",
-    "fjord"
-   ],
-   "stages": [
-    "calf"
-   ],
-   "sev": 2,
-   "texts": [
-    "深い闇から、鈍い影が浮かび上がる。",
-    "ゆっくりとした動きで、弱った仔を狙う。"
-   ]
-  },
-  {
-   "id": "sleeper",
-   "ja": " sleeper shark",
-   "kind": "fish",
-   "places": [
-    "deep_sea",
-    "fjord"
-   ],
-   "stages": [
-    "calf"
-   ],
-   "sev": 2,
-   "texts": [
-    "底から、ゆっくりと口が開く。",
-    "冷たい深海で、死骸や幼い個体を待っている。"
-   ]
-  },
-  {
-   "id": "resident_foe",
-   "ja": "他群れの定住型シャチ",
-   "kind": "mammal",
-   "places": [
-    "inlet",
-    "channel",
-    "island_coast",
-    "deep_sea",
-    "fjord"
-   ],
-   "stages": [
-    "calf",
-    "juv"
-   ],
-   "sev": 2,
-   "texts": [
-    "縄張りを争う、別の群れが激しくぶつかる。",
-    "体当たりが、幼い体に衝撃を与える。"
-   ]
   }
  ],
  "choices": [
@@ -681,5 +601,6 @@
   {
    "text": "雌の初産は平均15.4歳である。"
   }
- ]
+ ],
+ "apex": true
 }

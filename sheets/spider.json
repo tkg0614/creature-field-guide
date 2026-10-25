@@ -2,7 +2,7 @@
  "id": "spider",
  "ja": "ジョロウグモ",
  "sci": "Trichonephila clavata",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
@@ -200,7 +200,7 @@
   {
    "id": "egg",
    "ja": "卵",
-   "days": 150,
+   "days": 10,
    "hunger": 0,
    "grow": 0.1,
    "goal": "孵化する",
@@ -209,8 +209,8 @@
   {
    "id": "juv",
    "ja": "幼体",
-   "fromAge": 0.4,
-   "days": 60,
+   "fromAge": 0.05,
+   "days": 15,
    "hunger": 10,
    "grow": 1,
    "goal": "独立する",
@@ -219,8 +219,8 @@
   {
    "id": "subadult",
    "ja": "亜成体",
-   "fromAge": 0.6,
-   "days": 60,
+   "fromAge": 0.25,
+   "days": 15,
    "hunger": 12,
    "grow": 1.5,
    "goal": "成体になる",
@@ -229,8 +229,8 @@
   {
    "id": "adult",
    "ja": "成体",
-   "fromAge": 0.85,
-   "days": 60,
+   "fromAge": 0.3,
+   "days": 15,
    "hunger": 15,
    "grow": 0.1,
    "adult": true,
@@ -240,8 +240,8 @@
  ],
  "oldAge": {
   "years": [
-   1,
-   1.2
+   0.62,
+   0.72
   ],
   "text": "冬の寒さが訪れた。役目を終え、静かに息を引き取った。"
  },
@@ -254,7 +254,10 @@
   ],
   "places": [
    "trunk",
-   "eggsac"
+   "eggsac",
+   "female_web",
+   "open_web",
+   "shrub"
   ],
   "perYear": 1,
   "kids": [
@@ -393,23 +396,6 @@
    "bye": "冬の寒さが訪れ、蜂たちが消えた。"
   },
   {
-   "id": "ao_naga",
-   "ja": "アオナガ",
-   "kind": "insect",
-   "places": [
-    "open_web",
-    "female_web"
-   ],
-   "stages": [
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "青い光沢を持つ蜂が、網に近づく。",
-    "獲物を捕らえ、空へと連れ去る。"
-   ]
-  },
-  {
    "id": "shijukara",
    "ja": "シジュウカラ",
    "kind": "bird",
@@ -480,24 +466,6 @@
    "texts": [
     "素早いトカゲが、幹を駆け上がる。",
     "長い舌が、幼体をひょいと飲み込む。"
-   ]
-  },
-  {
-   "id": "hasumigumo",
-   "ja": "ハスミグモ",
-   "kind": "arachnid",
-   "places": [
-    "open_web",
-    "female_web"
-   ],
-   "stages": [
-    "juv",
-    "subadult"
-   ],
-   "sev": 1,
-   "texts": [
-    "小さなクモが、慎重に網を渡る。",
-    "不意に飛びかかり、獲物を仕留める。"
    ]
   },
   {
@@ -616,18 +584,6 @@
   }
  ],
  "happen": [
-  {
-   "month": [
-    4,
-    5
-   ],
-   "stages": [
-    "egg"
-   ],
-   "p": 1,
-   "say": "暖かい風が吹き、卵から小さな幼体が現れた。",
-   "full": 1
-  },
   {
    "month": [
     7,

@@ -48,8 +48,10 @@ function validate(S, src = '', part = null) {
     for (const f of S.foods || []) { refP(f.places, `foods.${f.id}`); refS(f.stages, `foods.${f.id}`); refP(f.rich, `foods.${f.id}.rich`); }
   }
   if (has('foes')) {
-    if (!((S.foes || []).length >= 8 && S.foes.length <= 14)) err.push(`foes は8〜14体（いま${(S.foes || []).length}）`);
-    if ((S.foes || []).filter((f) => f.again).length < 2) err.push('宿敵（again のある天敵）が2体以上要る');
+    // apex: 自然の天敵がほとんどいない頂点捕食者（シャチ）。数合わせの架空の天敵を書かせないよう下限を下げる（2026-10-25）
+    const fmin = S.apex ? 4 : 8, amin = S.apex ? 1 : 2;
+    if (!((S.foes || []).length >= fmin && S.foes.length <= 14)) err.push(`foes は${fmin}〜14体（いま${(S.foes || []).length}）`);
+    if ((S.foes || []).filter((f) => f.again).length < amin) err.push(`宿敵（again のある天敵）が${amin}体以上要る`);
     for (const f of S.foes || []) {
       const at = `foes.${f.id}`;
       refP(f.places, at); refS(f.stages, at);

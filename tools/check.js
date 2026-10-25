@@ -70,6 +70,42 @@ function validate(S, src = '', part = null) {
       for (const o of arr(c.opts)) { if (!o.ja || !o.ds || !o.say) err.push(`choices[${i}]: opts に ja・ds・say`); if (o.goto) refP(o.goto, `choices[${i}].goto`); for (const v of Object.values(o.fx || {})) if (!(v >= -1 && v <= 1)) err.push(`choices[${i}]: fx は −1〜1`); }
     }
   }
+  // ---- よく出る誤り（2026-10-25: 16種の検品で何度も直したもの。人が見る前に機械で見つける）
+  const TYPES = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'types.json'), 'utf8')); } catch { return []; } })();
+  const T = TYPES.find((t) => t.id === S.type);
+  if (has('life') && (S.stages || []).length && S.oldAge && arr(S.oldAge.years).length === 2) {
+    const st = S.stages, [o0, o1] = S.oldAge.years;
+    st.forEach((s, i) => {
+      if (!s.ja) err.push(`stages.${s.id}: ja（段の名前）が無い`);
+      const a = i ? s.fromAge : 0, next = i + 1 < st.length ? st[i + 1].fromAge : o0;
+      if (i && st[i - 1].fromAge != null && !(a > (i - 1 ? st[i - 1].fromAge : 0))) err.push(`stages.${s.id}: fromAge が前の段より大きくない`);
+      // 1手の日数 days が段の長さより長い＝段を1手で飛び越す（krill 300日・orca 1095日・spider 卵150日）。細かな手数は pack_build の pace() がそろえる
+      const span = ((i + 1 < st.length ? next : o1) - a) * 365; /* 成体は寿命の最長まで */
+      if (s.days > 180) err.push(`stages.${s.id}: 1手 ${s.days}日は長すぎる（長くても半年＝180日。orca の下書きは15年だった）`);
+      if (span > 0 && s.days > span * 1.2 + 1) err.push(`stages.${s.id}: 1手 ${s.days}日が段の長さ（約${Math.round(span)}日）より長い`);
+    });
+    if (o0 > o1) err.push('oldAge.years が [最短, 最長] の順でない');
+    const ad = st[st.length - 1];
+    if (ad.fromAge != null && !(ad.fromAge < o1)) err.push(`stages.${ad.id}: 成体になる年 ${ad.fromAge} が寿命の最長 ${o1} より前でない（成体になれない）`);
+    else if (ad.fromAge != null && !(ad.fromAge < o0)) warn.push(`stages.${ad.id}: 成体になる年 ${ad.fromAge} が寿命の最短 ${o0} より前でない（早く死ぬ個体は成体になれない）`);
+    if (T && (o1 < T.oldAge[0] || o0 > T.oldAge[1])) err.push(`oldAge ${o0}〜${o1}年が「${T.ja}」の幅 ${T.oldAge[0]}〜${T.oldAge[1]}年から外れる`);
+    // 食べ物の無い段（ヒナ・仔・幼生）。卵など hunger 0 の段は要らない
+    for (const s of st) if (s.hunger > 0 && !(S.foods || []).some((f) => arr(f.stages).includes(s.id))) err.push(`stages.${s.id}: この段の食べ物が無い（ヒナなら親の運ぶ餌、仔なら母の乳）`);
+  }
+  if (S.type && !T) err.push(`type「${S.type}」が data/types.json に無い`);
+  if (has('places') && (S.places || []).length > 1) {
+    // 地図の飛び: 生まれた場所から遠すぎる（octopus: オレゴンとボルネオ）
+    const P = S.places, c = P[0], lim = S.locale && S.locale.scale === 'local' ? 1 : 60; /* 海を渡る種は40度ほど離れる（ザトウクジラ）*/
+    const dist = (p) => Math.hypot(p.lat - c.lat, ((((p.lon - c.lon) % 360) + 540) % 360) - 180);
+    for (const p of P) if (typeof p.lat === 'number' && dist(p) > lim) err.push(`places.${p.id}: 生まれた場所から${Math.round(dist(p))}度も離れている（地名の当たり違い？）`);
+    const key = (p) => `${p.lat},${p.lon}`, dup = P.filter((p, i) => P.findIndex((q) => key(q) === key(p)) !== i);
+    if (dup.length) warn.push(`places: 同じ座標の場所がある（${dup.map((p) => p.id).join(', ')}）`);
+  }
+  if (has('foes')) for (const f of S.foes || []) {
+    // 死ぬ時は「傷を負った」が「命を落とした」に置き換わる → 「羽に傷を負った」は「羽に命を落とした」になる
+    if (f.lose && !/[、てで。]傷を負った。$/.test(f.lose)) err.push(`foes.${f.id}: lose は「…され、傷を負った。」のように「、」か「て」の後に（死ぬ時の文が変になる）`);
+  }
+  for (const h of S.happen || []) if (/卵を(産|放)|幼体が現れ|生み落と/.test(h.say || '')) warn.push(`happen: 産卵や孵化の出来事は breeding・段の変わり目と重なる「${h.say.slice(0, 20)}」`);
   // 言葉の決まり
   for (const t of strings(part ? Object.fromEntries(Object.entries(S).filter(([k]) => ['places', 'life', 'foes', 'choices', 'texts'].some((p) => has(p)))) : S)) {
     if (/です|ます[。、]|ました/.test(t)) err.push(`言葉: だ・である調にする「${t.slice(0, 30)}」`);

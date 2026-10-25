@@ -14,7 +14,8 @@
   },
   "maturity": null,
   "hint": "働きアリとして。巣の仲間を育て、巣が新しい女王を送り出すことが子孫。",
-  "country": "jp"
+  "country": "jp",
+  "type": "insect_social"
  },
  {
   "id": "bee",
@@ -32,7 +33,8 @@
   },
   "maturity": null,
   "hint": "働きバチとして。巣の仲間を育て、巣が分蜂して新しい群れを出すことが子孫。",
-  "country": "jp"
+  "country": "jp",
+  "type": "insect_social"
  },
  {
   "id": "mosquito",
@@ -49,7 +51,8 @@
   },
   "maturity": null,
   "hint": "雌。日本の町。水たまりで幼虫→成虫→吸血して産卵をくり返す。",
-  "country": "jp"
+  "country": "jp",
+  "type": "small_invertebrate"
  },
  {
   "id": "swallowtail",
@@ -62,7 +65,8 @@
   },
   "maturity": null,
   "hint": "日本の町・里山。ミカン類の葉で幼虫→蛹→成虫。年に数回発生。",
-  "country": "jp"
+  "country": "jp",
+  "type": "insect_annual"
  },
  {
   "id": "krill",
@@ -83,7 +87,8 @@
    -60,
    -45
   ],
-  "span": 12
+  "span": 12,
+  "type": "drifter"
  },
  {
   "id": "copepod",
@@ -100,7 +105,8 @@
    60,
    -20
   ],
-  "span": 15
+  "span": 15,
+  "type": "drifter"
  },
  {
   "id": "tuna",
@@ -121,7 +127,8 @@
    30,
    140
   ],
-  "span": 40
+  "span": 40,
+  "type": "fish"
  },
  {
   "id": "octopus",
@@ -141,7 +148,8 @@
    43.4,
    140.6
   ],
-  "span": 3
+  "span": 3,
+  "type": "semelparous"
  },
  {
   "id": "humpback",
@@ -161,7 +169,8 @@
    40,
    170
   ],
-  "span": 45
+  "span": 45,
+  "type": "mammal"
  },
  {
   "id": "dragonfly",
@@ -178,7 +187,8 @@
    "note": "夏は未熟な成虫のまま山で過ごし、秋に平地へ戻って成熟・産卵する（卵から数えて約1年）"
   },
   "hint": "日本の田んぼ。夏は山へ上がり、秋に平地へ戻って産卵。",
-  "country": "jp"
+  "country": "jp",
+  "type": "insect_annual"
  },
  {
   "id": "earthworm",
@@ -202,7 +212,8 @@
    "note": "孵化（4〜5月）から約2か月で成熟（7月）。卵包の期間（夏秋〜翌春、約半年以上）を足した値"
   },
   "hint": "日本の畑・林の土。卵包で冬を越す一年生。",
-  "country": "jp"
+  "country": "jp",
+  "type": "small_invertebrate"
  },
  {
   "id": "heron",
@@ -222,7 +233,8 @@
    "note": "BTO: 初繁殖はふつう2歳"
   },
   "hint": "日本の川・田んぼ。集団で巣を作る（コロニー）。",
-  "country": "jp"
+  "country": "jp",
+  "type": "bird"
  },
  {
   "id": "jellyfish",
@@ -246,7 +258,8 @@
    "note": "夏〜秋にポリプとして着底→冬〜春にストロビラ→春（3〜4月）にエフィラ放出→50〜60日で傘10cm（徳島水研）→夏に成熟"
   },
   "hint": "日本の内湾。1つのエフィラとして春に放出され、夏に成熟して幼生を放ち、秋〜冬に弱って終わる。流れに流される。",
-  "country": "jp"
+  "country": "jp",
+  "type": "drifter"
  },
  {
   "id": "orca",
@@ -270,7 +283,8 @@
    49.5,
    -124.5
   ],
-  "span": 4
+  "span": 4,
+  "type": "mammal"
  },
  {
   "id": "snake",
@@ -291,7 +305,8 @@
    "note": "3〜4年で成熟（世界大百科事典）"
   },
   "hint": "日本の里山・農村。夏に卵からかえり、ネズミや小鳥の卵を食べて育つ。冬眠。初夏に交尾、夏に産卵。人家の近くにも住む。",
-  "country": "jp"
+  "country": "jp",
+  "type": "reptile_amphibian"
  },
  {
   "id": "spider",
@@ -308,6 +323,7 @@
    "note": "秋（8〜9月）に成体になり、10〜11月に産卵（卵から数えて約1年弱）"
   },
   "hint": "日本の里山。卵で越冬、春にかえり、秋に網を張って成体、産卵して冬に死ぬ。",
-  "country": "jp"
+  "country": "jp",
+  "type": "insect_annual"
  }
 ]

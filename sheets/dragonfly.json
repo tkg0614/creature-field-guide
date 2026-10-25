@@ -2,6 +2,7 @@
  "id": "dragonfly",
  "ja": "アキアカネ",
  "sci": "Sympetrum frequens",
+ "type": "insect_annual",
  "status": "reviewed",
  "country": "jp",
  "by": {

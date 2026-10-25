@@ -2,6 +2,7 @@
  "id": "copepod",
  "ja": "カイアシ類",
  "sci": "Calanus finmarchicus",
+ "type": "drifter",
  "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",

@@ -1,0 +1,11 @@
+[
+ {"id": "insect_annual", "ja": "一年で終わる虫・クモ", "oldAge": [0.05, 1.5], "about": "卵や幼虫で冬を越し、季節が来ると姿を変えて成虫になり、短い成虫の時期に子を残して死ぬ。季節の窓に間に合うかが勝負", "samples": ["dragonfly", "swallowtail", "spider"]},
+ {"id": "insect_social", "ja": "巣で暮らす虫", "oldAge": [0.05, 3], "about": "働き手として巣のために生きる。自分ではなく巣が新しい女王や群れを送り出すことが子孫", "samples": ["ant", "bee"]},
+ {"id": "small_invertebrate", "ja": "土や水の小さな生き物", "oldAge": [0.03, 5], "about": "土や水たまりの小さな世界で、乾き・寒さ・天敵をしのぎ、短い間に何度も産む", "samples": ["earthworm", "mosquito"]},
+ {"id": "drifter", "ja": "海を漂う生き物", "oldAge": [0.1, 8], "about": "泳ぐ力は弱く、流れや季節の上下移動（migrate）に身を任せる。群れや数で生き残る", "samples": ["jellyfish", "copepod", "krill"]},
+ {"id": "fish", "ja": "魚", "oldAge": [0.5, 40], "about": "卵や仔魚の時期にほとんどが食べられる。育つほど天敵が減る。回遊する種は季節の行き来（migrate）と産卵場へ帰ることが勝負", "samples": ["tuna", "sardine"]},
+ {"id": "semelparous", "ja": "一生に一度だけ産む", "oldAge": [0.5, 10], "about": "長い成長の末に一度だけ産み、卵を守ったり見届けたりして一生を終える", "samples": ["octopus"]},
+ {"id": "reptile_amphibian", "ja": "爬虫類・両生類", "oldAge": [1, 60], "about": "変温動物。冬眠や乾季をしのぎ、季節に合わせて動く。卵や幼生の時期が最も危ない", "samples": ["snake"]},
+ {"id": "bird", "ja": "鳥", "oldAge": [1, 50], "about": "ヒナは巣で親が運ぶ餌を待つ（最初の段の食べ物は親が運ぶもの）。巣立ち後は飛ぶ力で天敵を避け、繁殖期に巣へ戻る。渡りをする種は migrate", "samples": ["heron"]},
+ {"id": "mammal", "ja": "哺乳類", "oldAge": [1, 100], "about": "子は母の乳で育つ（最初の段の食べ物は乳）。長生きの種は何度も子を産み、群れや縄張りで生きる。自然の天敵がほとんどいない頂点捕食者は apex: true", "samples": ["orca", "humpback"]}
+]

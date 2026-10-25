@@ -2,6 +2,7 @@
  "id": "jellyfish",
  "ja": "ミズクラゲ",
  "sci": "Aurelia coerulea（旧 Aurelia aurita）",
+ "type": "drifter",
  "status": "reviewed",
  "country": "jp",
  "by": {

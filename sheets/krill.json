@@ -2,6 +2,7 @@
  "id": "krill",
  "ja": "ナンキョクオキアミ",
  "sci": "Euphausia superba",
+ "type": "drifter",
  "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",

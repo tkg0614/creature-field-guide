@@ -2,6 +2,7 @@
  "id": "earthworm",
  "ja": "フトミミズの仲間",
  "sci": "Amynthas spp.（フトミミズ科 Megascolecidae）",
+ "type": "small_invertebrate",
  "status": "reviewed",
  "country": "jp",
  "by": {

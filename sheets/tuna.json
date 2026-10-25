@@ -2,6 +2,7 @@
  "id": "tuna",
  "ja": "クロマグロ",
  "sci": "Thunnus orientalis",
+ "type": "fish",
  "status": "reviewed",
  "country": "jp",
  "by": {
@@ -289,6 +290,25 @@
   "goal2": "卵を2000万個産む"
  },
  "foods": [
+  {
+   "id": "zooplankton",
+   "ja": "小さなプランクトンを食べる",
+   "name": "動物プランクトン",
+   "ds": "口に入る大きさのプランクトンを吸いこむ",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "nansei",
+    "sea_of_japan",
+    "kuroshio"
+   ],
+   "rich": [
+    "nansei"
+   ],
+   "ok": "漂う小さなプランクトンを、次々と吸いこんだ。",
+   "full": 42
+  },
   {
    "id": "school_fish",
    "ja": "回遊魚の群れを追う",

@@ -2,6 +2,7 @@
  "id": "ant",
  "ja": "クロオオアリ",
  "sci": "Camponotus japonicus",
+ "type": "insect_social",
  "status": "reviewed",
  "country": "jp",
  "by": {

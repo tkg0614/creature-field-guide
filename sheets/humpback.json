@@ -2,6 +2,7 @@
  "id": "humpback",
  "ja": "ザトウクジラ",
  "sci": "Megaptera novaeangliae",
+ "type": "mammal",
  "status": "reviewed",
  "by": {
   "places": "gemini-older gemini-3.7-flash",

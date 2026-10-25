@@ -11,7 +11,10 @@ const argv = process.argv.slice(2), opt = (k, d) => (argv.includes(`--${k}`) ? a
 const id = argv[0], MODEL = opt('model', process.env.MODEL || 'gemma2:9b'), TRIES = +opt('tries', 4);
 const HOST = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
 const Q = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'queue.json'), 'utf8')).find((x) => x.id === id);
-const SAMPLE = JSON.parse(fs.readFileSync(path.join(ROOT, 'sheets', 'sardine.json'), 'utf8'));
+// 見本: 同じ生き方の型（data/types.json）の検品済みの表。無ければマイワシ（2026-10-25: 型ごとの見本で下書きの質を上げる）
+const TYPES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'types.json'), 'utf8')), TYPE = TYPES.find((t) => t.id === (Q && Q.type));
+const sheetOf = (sid) => { try { const s = JSON.parse(fs.readFileSync(path.join(ROOT, 'sheets', `${sid}.json`), 'utf8')); return /reviewed|sample/.test(s.status) && s.id !== (Q && Q.id) ? s : null; } catch { return null; } };
+const SAMPLE = (TYPE && TYPE.samples.map(sheetOf).find(Boolean)) || sheetOf('sardine');
 const dir = path.join(ROOT, 'sources', id);
 const SRC = fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n') : '';
 const OUT = process.env.SHEET_OUT || path.join(ROOT, 'sheets', `${id}.json`);
@@ -22,7 +25,7 @@ const PROVIDER = process.env.PROVIDER || 'cloud';
 // 段: 埋める欄・見本の欄・頼み方
 // 2026-10-24: Gemini の無料枠が1日1種分しかなく止まるので、生き方・天敵も質2（Gemma）まで許す（ユーザー承認。事実は毎朝の検品で直す）
 const PARTS = [
-  { part: 'places', minQ: 2, keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
+  { part: 'places', minQ: 2, keys: ['locale', 'places', 'start'], ask: '舞台の土地 locale（{ja: 実在の地名, geo: 地図で探せる地名, scale: 一か所のまわりで暮らすなら "local"・海や大陸を渡るなら "regional"}）と、すみか places を6〜8か所書く。すみかは、その土地でこの種が実際に暮らす環境（例: 田んぼ・石垣・林のへり）で、損と得がはっきり違うように danger（0〜3・天敵の多さ）・cover（隠れる所があるか）・about（1〜2文）を付ける。scale が "regional" の時だけ、各すみかに geo（地図で探せる地名）を付ける。緯度経度・edges・region は書かない（地図はコードが作る）。places の最初が生まれる場所。start は {place, month, day}。', sample: (s) => ({ locale: s.locale || { ja: '土佐湾から道東の沖', geo: 'Tosa Bay', scale: 'regional' }, places: s.places.map(({ lat, lon, stages, ...p }) => p), start: s.start }) },
   { part: 'life', minQ: 2, keys: ['size', 'stats', 'stages', 'oldAge', 'breeding', 'foods', 'special', 'levelEvery', 'migrate'], ask: '季節で決まった海や土地を行き来する種は、回遊 migrate（[{months, stages, to: 行き先の場所の id, say}]・行きと帰りの2つ）も書く。育ちの段 stages（3〜5個。最後に "adult": true）、寿命 oldAge（野生の値）、繁殖 breeding（実際の季節・場所・数）、食べ物 foods、能力の呼び名 stats（キーは必ず run・sense・forage の3つ。それぞれ {ja, use}）、大きさ size を書く。場所の id は上の places から選ぶ。' },
   { part: 'foes', minQ: 2, keys: ['foes'], ask: '天敵 foes を8〜14体書く。その地域・その段で実際にこの種を食べる生き物だけ。宿敵（again と bye を持つ）を2〜3体。人の危険は kind "human" で lose（「傷を負った。」で終える文）を付ける。' },
   { part: 'choices', minQ: 2, keys: ['choices', 'happen'], ask: '生き方の分かれ道 choices を3〜4個（実際の生態にある選択だけ。どの選択肢にも損と得。fx は −1〜1）と、季節の出来事 happen を書く。' },
@@ -36,7 +39,8 @@ function prompt(P, sheet, errors) {
 ## 生き物
 ${JSON.stringify({ id: Q.id, ja: Q.ja, sci: Q.sci, 寿命: Q.lifespan, 成熟: Q.maturity, 方針: Q.hint })}
 
-## 決まり
+${TYPE ? `## 生き方の型: ${TYPE.ja}\n${TYPE.about}\n寿命 oldAge はこの型ではおよそ ${TYPE.oldAge[0]}〜${TYPE.oldAge[1]} 年の範囲。\n\n` : ''}## 決まり
+- 1手の日数 days は、その段の長さより短く（長くても180日）。段の名前 ja を必ず書く。どの段にも食べ物を（ヒナは親の運ぶ餌、仔は母の乳）。lose は「…され、傷を負った。」の形
 - 実際に起きていることだけ。分からないことは書かない。数字は資料と上の寿命・成熟に合わせる
 - 日本語の文は「だ・である」調。短く、情景が見える文。感嘆符で終えない。自分のことは主語を書かない
 - ${P.ask}
@@ -44,7 +48,7 @@ ${JSON.stringify({ id: Q.id, ja: Q.ja, sci: Q.sci, 寿命: Q.lifespan, 成熟: Q
 ## これまでに決まった欄（id はここから選ぶ）
 ${JSON.stringify(Object.fromEntries(Object.entries(sheet).filter(([k]) => ['places', 'stages', 'region'].includes(k)).map(([k, v]) => [k, k === 'region' ? v : v.map((x) => ({ id: x.id, ja: x.ja }))])))}
 
-## 見本（別の生き物・マイワシの同じ欄。形だけまねる。中身はまねない）
+## 見本（別の生き物・${SAMPLE.ja}の同じ欄。形だけまねる。中身はまねない）
 ${JSON.stringify(sample)}
 
 ## 資料（抜粋）
@@ -56,7 +60,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
 
 (async () => {
   if (!Q) { console.error('data/queue.json に無い:', id); process.exit(1); }
-  const sheet = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { id: Q.id, ja: Q.ja.replace(/（.*?）/g, ''), sci: Q.sci, status: 'draft', ...(Q.country ? { country: Q.country } : {}) };
+  const sheet = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { id: Q.id, ja: Q.ja.replace(/（.*?）/g, ''), sci: Q.sci, status: 'draft', ...(Q.type ? { type: Q.type } : {}), ...(Q.country ? { country: Q.country } : {}) };
   for (const P of PARTS) {
     if (P.keys.every((k) => k in sheet) && !validate(sheet, SRC, [P.part]).errors.length) { console.log(`  ${P.part}: 済`); continue; }
     // この段を書き直すなら、後ろの段は前提が変わるので消す

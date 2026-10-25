@@ -2,6 +2,7 @@
  "id": "orca",
  "ja": "シャチ",
  "sci": "Orcinus orca",
+ "type": "mammal",
  "status": "reviewed",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",

@@ -2,6 +2,7 @@
  "id": "spider",
  "ja": "ジョロウグモ",
  "sci": "Trichonephila clavata",
+ "type": "insect_annual",
  "status": "reviewed",
  "country": "jp",
  "by": {

@@ -2,6 +2,7 @@
  "id": "snake",
  "ja": "アオダイショウ",
  "sci": "Elaphe climacophora",
+ "type": "reptile_amphibian",
  "status": "reviewed",
  "country": "jp",
  "by": {

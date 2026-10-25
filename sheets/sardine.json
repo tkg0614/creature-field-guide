@@ -2,6 +2,7 @@
  "id": "sardine",
  "ja": "マイワシ",
  "sci": "Sardinops melanostictus",
+ "type": "fish",
  "lead": "土佐湾の沖で生まれ、黒潮に運ばれて北の海で育ち、また南の海で卵を産む。群れの一匹として、どこまで命をつなげるか。",
  "status": "sample",
  "start": {

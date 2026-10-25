@@ -2,11 +2,14 @@
  "id": "spider",
  "ja": "ジョロウグモ",
  "sci": "Trichonephila clavata",
- "status": "draft-ng",
+ "status": "checked",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "日本の里山",
@@ -20,7 +23,12 @@
    "danger": 1,
    "cover": true,
    "about": "白い卵嚢の中で冬を越す。春、小さな幼体がここから現れる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.19,
    "lon": 131.473
   },
@@ -30,7 +38,12 @@
    "danger": 2,
    "cover": true,
    "about": "孵化した幼体が集まって暮らす。互いに競い合いながら成長する。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.19,
    "lon": 131.505
   },
@@ -40,7 +53,12 @@
    "danger": 3,
    "cover": false,
    "about": "糸を風に舞わせ、未知の場所へ運ばれる。バルーニングの旅である。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.218,
    "lon": 131.493
   },
@@ -50,7 +68,12 @@
    "danger": 2,
    "cover": true,
    "about": "低木の茂みで脱皮を繰り返す。獲物を待つ小さな網を張り巡らせる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.207,
    "lon": 131.461
   },
@@ -60,7 +83,12 @@
    "danger": 2,
    "cover": false,
    "about": "秋、成体となって黄金色の大きな網を張る。日光に当たると輝く。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.19,
    "lon": 131.441
   },
@@ -70,7 +98,12 @@
    "danger": 3,
    "cover": false,
    "about": "雄が雌の網に忍び寄る。運が悪ければ雌に食われる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.162,
    "lon": 131.453
   },
@@ -80,7 +113,12 @@
    "danger": 1,
    "cover": true,
    "about": "秋の終わりに卵嚢を固定する。次世代を託して、雌の生は終わる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "juv",
+    "subadult",
+    "adult"
+   ],
    "lat": 34.173,
    "lon": 131.485
   }
@@ -138,5 +176,522 @@
    "female_web",
    "trunk"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.6
+ },
+ "stats": {
+  "run": {
+   "ja": "脚力",
+   "use": "網の上を素早く移動する時に効く"
+  },
+  "sense": {
+   "ja": "振動感知",
+   "use": "獲物の位置を特定する時に効く"
+  },
+  "forage": {
+   "ja": "捕食力",
+   "use": "大型の昆虫を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "egg",
+   "ja": "卵",
+   "days": 150,
+   "hunger": 0,
+   "grow": 0.1,
+   "goal": "孵化する",
+   "enter": "卵嚢の中で冬を越す。"
+  },
+  {
+   "id": "juv",
+   "ja": "幼体",
+   "fromAge": 0.4,
+   "days": 60,
+   "hunger": 10,
+   "grow": 1,
+   "goal": "独立する",
+   "enter": "春に孵化した。まどいで集団生活を送り、糸を使って空へ舞い上がる。"
+  },
+  {
+   "id": "subadult",
+   "ja": "亜成体",
+   "fromAge": 0.6,
+   "days": 60,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "成体になる",
+   "enter": "脱皮を繰り返し、体が大きくなった。林の縁に小さな網を張る。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 0.85,
+   "days": 60,
+   "hunger": 15,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "産卵する",
+   "enter": "成熟した。黄金色の大きな網を張り、獲物を待つ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1.2
+  ],
+  "text": "冬の寒さが訪れた。役目を終え、静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "樹木に卵嚢を作る",
+  "ds": "秋の深まりとともに、白い卵嚢を樹幹に固定する",
+  "months": [
+   10,
+   11
+  ],
+  "places": [
+   "trunk",
+   "eggsac"
+  ],
+  "perYear": 1,
+  "kids": [
+   400,
+   1500
+  ],
+  "many": 1500,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "かえった幼体の一匹"
+  },
+  "ok": "樹皮に、{born}個の卵を包んだ卵嚢を作った。",
+  "ng": "寒さが早すぎた。十分な数の卵を産めなかった。",
+  "goal1": "卵嚢を作る",
+  "goal2": "1500個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "insect",
+   "ja": "昆虫を捕食する",
+   "name": "昆虫",
+   "ds": "網に掛かった獲物を毒で麻痺させ、糸で巻き付ける",
+   "stages": [
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "places": [
+    "shrub",
+    "open_web",
+    "female_web"
+   ],
+   "rich": [
+    "open_web",
+    "female_web"
+   ],
+   "ok": "バッタやセミを捕らえ、糸でしっかりと巻いた。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "ballooning",
+   "ja": "バルーニング",
+   "ds": "糸を出して風に乗り、遠くへ移動する",
+   "stages": [
+    "juv"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": true,
+   "ok": "空高く舞い上がり、風に身を任せて新しい土地へ向かう。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "ari",
+   "ja": "蟻",
+   "kind": "insect",
+   "places": [
+    "eggsac",
+    "madoi"
+   ],
+   "stages": [
+    "egg",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "蟻の列が、卵嚢を包囲する。",
+    "小さな顎が、幼体を絶え間なく噛む。"
+   ],
+   "again": [
+    [
+     "また、あの蟻の群れがやってきた。"
+    ],
+    [
+     "同じ蟻の列が、卵嚢を狙っている。"
+    ]
+   ],
+   "bye": "バルーニングで飛び立ち、蟻の手が届かない場所へ逃れた。"
+  },
+  {
+   "id": "suzume",
+   "ja": "スズメバチ",
+   "kind": "insect",
+   "places": [
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "大きな羽音が、空気を震わせる。",
+    "強靭な顎が、脚を噛み切る。"
+   ],
+   "again": [
+    [
+     "また、あの大きなスズメバチだ。"
+    ],
+    [
+     "あの猛毒を持つ蜂が、再び現れた。"
+    ]
+   ],
+   "bye": "冬の寒さが訪れ、天敵である蜂たちが姿を消した。"
+  },
+  {
+   "id": "kumo_bachi",
+   "ja": "クモバチ",
+   "kind": "insect",
+   "places": [
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "泥を運ぶ蜂が、獲物を探して飛んでいる。",
+    "鋭い針が、一瞬で急所を貫く。"
+   ],
+   "again": [
+    [
+     "また、あの泥蜂だ。"
+    ],
+    [
+     "泥を運ぶあの蜂が、再び来た。"
+    ]
+   ],
+   "bye": "冬の寒さが訪れ、蜂たちが消えた。"
+  },
+  {
+   "id": "ao_naga",
+   "ja": "アオナガ",
+   "kind": "insect",
+   "places": [
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "青い光沢を持つ蜂が、網に近づく。",
+    "獲物を捕らえ、空へと連れ去る。"
+   ]
+  },
+  {
+   "id": "shijukara",
+   "ja": "シジュウカラ",
+   "kind": "bird",
+   "places": [
+    "shrub",
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "小さな鳥が、素早く網に飛び込む。",
+    "鋭い嘴が、腹部を突き刺す。"
+   ]
+  },
+  {
+   "id": "karasu",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い影が、上空から急降下してくる。",
+    "太い嘴で、網ごと引きちぎる。"
+   ]
+  },
+  {
+   "id": "kamakiri",
+   "ja": "カマキリ",
+   "kind": "insect",
+   "places": [
+    "shrub",
+    "open_web"
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑の体が、葉の陰に潜んでいる。",
+    "鎌のような前脚が、一気に捉える。"
+   ]
+  },
+  {
+   "id": "tokage",
+   "ja": "ニホントカゲ",
+   "kind": "reptile",
+   "places": [
+    "trunk",
+    "shrub"
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "sev": 1,
+   "texts": [
+    "素早いトカゲが、幹を駆け上がる。",
+    "長い舌が、幼体をひょいと飲み込む。"
+   ]
+  },
+  {
+   "id": "hasumigumo",
+   "ja": "ハスミグモ",
+   "kind": "arachnid",
+   "places": [
+    "open_web",
+    "female_web"
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "sev": 1,
+   "texts": [
+    "小さなクモが、慎重に網を渡る。",
+    "不意に飛びかかり、獲物を仕留める。"
+   ]
+  },
+  {
+   "id": "human",
+   "ja": "人間",
+   "kind": "human",
+   "places": [
+    "open_web",
+    "female_web",
+    "trunk"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "大きな棒が、網を乱暴に払い除ける。",
+    "足元にいた個体が、靴で踏みつけられる。"
+   ],
+   "lose": "網を壊され、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "まどいの生活が終わった。どうやって移動するか",
+   "stages": [
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "糸を出して上空へ舞い上がる",
+     "ds": "遠くの場所へ移動できる。どこに着くか分からない",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "風に身を任せ、空を舞った。",
+     "chip": "バルーニング"
+    },
+    {
+     "ja": "林の縁を歩いて移動する",
+     "ds": "安全に移動できる。餌場が限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "低木の枝を伝い、ゆっくりと場所を移した。",
+     "chip": "歩行移動"
+    }
+   ]
+  },
+  {
+   "q": "雌の網に近づいた。いつ交尾を試みるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "脱皮直後のタイミングを狙う",
+     "ds": "捕食される危険が低い。タイミングを合わせるのが難しい",
+     "fx": {
+      "danger": -1,
+      "mating": 1
+     },
+     "say": "雌が脱皮し、体が柔らかくなる瞬間を待った。",
+     "chip": "脱皮直後"
+    },
+    {
+     "ja": "食事中の隙に近づく",
+     "ds": "チャンスは多い。雌に捕食される危険がある",
+     "fx": {
+      "danger": 1,
+      "mating": 1
+     },
+     "say": "雌が獲物を食べている隙に、静かに忍び寄った。",
+     "chip": "食事中"
+    }
+   ]
+  },
+  {
+   "q": "卵嚢を作る場所を決める",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "樹木の高い枝に作る",
+     "ds": "地上の外敵に見つかりにくい。冬の寒さにさらされる",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "say": "高い枝に、白い絹の塊を丁寧に巻き付けた。",
+     "chip": "高い枝"
+    },
+    {
+     "ja": "建物や樹幹に作る",
+     "ds": "風雨に強く安定している。地上の外敵に狙われやすい",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "say": "安定した壁面に、卵嚢をしっかりと固定した。",
+     "chip": "建物・樹幹"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "egg"
+   ],
+   "p": 1,
+   "say": "暖かい風が吹き、卵から小さな幼体が現れた。",
+   "full": 1
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "p": 0.3,
+   "say": "大きなセミが網に掛かった。激しく暴れる獲物を糸で巻く。",
+   "fx": {
+    "food": 1
+   }
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 1,
+   "say": "冬の寒さが身に染みる。次第に体が動かなくなった。",
+   "full": -10
+  }
+ ],
+ "lead": "日本の里山で卵から孵化し、秋に成体となり、網を張り産卵して冬に命を終える。",
+ "texts": {
+  "move": "{to}へ、枝の間をゆっくり移動する。",
+  "fleeJa": "危険を感じて糸を切り、空中へ逃げる。",
+  "restJa": "網の中心で静かに待機する。",
+  "watchJa": "振動で獲物の接近を察知する。",
+  "lieJa": "葉陰に糸を張り、獲物を待ち伏せる。",
+  "lastMemory": "黄緑の網が朝日に揺れる光景を思い出す。"
+ },
+ "intro": [
+  "春、樹枝の卵嚢から小さな幼体が孵化した。",
+  "まどいと呼ばれる集団で枝間を這い、やがてバルーニングで空へ飛び立った。"
+ ],
+ "wins": [
+  {
+   "minKids": 400,
+   "title": "卵嚢を作り次世代を残す",
+   "line": "{kids}個の卵が次の命になる。",
+   "mem": "白い卵嚢が枝に揺れる光景を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "秋の風に揺れる大きな黄糸の網を思い出す。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "雌は17〜30mm、雄は4〜8mmと性的二形が明瞭である。"
+  },
+  {
+   "quote": "雌は秋に卵嚢を作り、冬を越す。"
+  },
+  {
+   "quote": "成体の雌は黄緑色の腹部に暗青や緑青の横縞がある。"
+  }
  ]
 }

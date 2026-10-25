@@ -20,7 +20,6 @@
    "danger": 2,
    "about": "1月から3月にかけて産卵が行われる海域。",
    "stages": [
-    null,
     null
    ],
    "lat": -60,
@@ -33,7 +32,6 @@
    "danger": 1,
    "about": "卵が沈み込み、孵化する場所。水深2,000から3,000メートルに達する。",
    "stages": [
-    null,
     null
    ],
    "lat": -60,
@@ -46,7 +44,6 @@
    "danger": 2,
    "about": "幼生が海面へ向かって上昇する道中。水深60メートル付近に大量に現れる。",
    "stages": [
-    null,
     null
    ],
    "lat": -57.717,
@@ -59,7 +56,6 @@
    "danger": 3,
    "about": "植物プランクトンが豊富な海面近く。巨大な群れを作って泳ぐ。",
    "stages": [
-    null,
     null
    ],
    "lat": -59.154,
@@ -73,7 +69,6 @@
    "danger": 2,
    "about": "氷藻が広がる場所。冬から春にかけての貴重な餌場となる。",
    "stages": [
-    null,
     null
    ],
    "lat": -61.129,
@@ -86,7 +81,6 @@
    "danger": 2,
    "about": "日中に水深100メートルまで潜り、夜に浮上する。",
    "stages": [
-    null,
     null
    ],
    "lat": -62.283,
@@ -146,5 +140,26 @@
    "deep_ocean",
    "migration_zone"
   ]
- ]
+ ],
+ "stages": [
+  "larva"
+ ],
+ "fail": {
+  "part": "life",
+  "errors": [
+   "stages は3〜5個",
+   "stages の最後に \"adult\": true",
+   "stages.undefined: days が無い",
+   "oldAge.years は [最短, 最長]",
+   "stats.run が無い"
+  ],
+  "got": [
+   "months",
+   "stages",
+   "to",
+   "say"
+  ],
+  "head": "{\"months\":[1,2,3],\"stages\":[\"larva\"],\"to\":\"deep_ocean\",\"say\":\"卵が深海へと沈んでいく\"}",
+  "raw": "- Phytoplankton is the main one.\n    - Also mentioned copepods/amphipods.\n\n    *Refining `stages`:*\n    1. `larva` (Nauplius/Metanauplius)\n    2. `juvenile` (Calyptopis/Furcilia)\n    3. `adult` (Mature)\n\n    *Refining `breeding`:*\n    Months: January to March (1, 2, 3).\n    Places: `shelf`, `deep_ocean`.\n\n    *Refining `size`:*\n    Start: 0.06 (egg size 0.6mm).\n\n    *Refining `migrate`:*\n    Egg sinks to `deep_ocean` (or `shelf` bottom), Larva rises to `surface`.\n\n    *Final JSON Structure check:*\n    `size`, `stats`, `stages`, `oldAge`, `breeding`, `foods`, `special`, `levelEvery`, `migrate`."
+ }
 }

@@ -2,5 +2,131 @@
  "id": "krill",
  "ja": "ナンキョクオキアミ",
  "sci": "Euphausia superba",
- "status": "draft-ng"
+ "status": "draft-ng",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "南極海",
+  "geo": "Southern Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "shelf",
+   "ja": "大陸棚",
+   "sea": true,
+   "danger": 2,
+   "about": "1月から3月にかけて産卵が行われる海域。",
+   "stages": [],
+   "lat": -60,
+   "lon": -45
+  },
+  {
+   "id": "deep_ocean",
+   "ja": "深海域",
+   "sea": true,
+   "danger": 1,
+   "about": "卵が沈み込み、孵化する場所。水深2,000から3,000メートルに達する。",
+   "stages": [],
+   "lat": -60,
+   "lon": -42.6
+  },
+  {
+   "id": "mid_water",
+   "ja": "中層域",
+   "sea": true,
+   "danger": 2,
+   "about": "幼生が海面へ向かって上昇する道中。水深60メートル付近に大量に現れる。",
+   "stages": [],
+   "lat": -57.717,
+   "lon": -44.073
+  },
+  {
+   "id": "surface",
+   "ja": "表層域",
+   "sea": true,
+   "danger": 3,
+   "about": "植物プランクトンが豊富な海面近く。巨大な群れを作って泳ぐ。",
+   "stages": [],
+   "lat": -59.154,
+   "lon": -46.456
+  },
+  {
+   "id": "pack_ice",
+   "ja": "流氷の底",
+   "sea": true,
+   "cover": true,
+   "danger": 2,
+   "about": "氷藻が広がる場所。冬から春にかけての貴重な餌場となる。",
+   "stages": [],
+   "lat": -61.129,
+   "lon": -46.942
+  },
+  {
+   "id": "migration_zone",
+   "ja": "垂直移動帯",
+   "sea": true,
+   "danger": 2,
+   "about": "日中に水深100メートルまで潜り、夜に浮上する。",
+   "stages": [],
+   "lat": -62.283,
+   "lon": -44.073
+  }
+ ],
+ "start": {
+  "place": "shelf",
+  "month": 1,
+  "day": 1
+ },
+ "region": {
+  "ja": "南極海",
+  "lon0": -48.245,
+  "lon1": -41.297,
+  "lat0": -56.414,
+  "lat1": -63.586,
+  "k": 72,
+  "labels": [
+   [
+    -56.84432,
+    -44.771,
+    "南極海"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "shelf",
+   "surface"
+  ],
+  [
+   "pack_ice",
+   "shelf"
+  ],
+  [
+   "deep_ocean",
+   "shelf"
+  ],
+  [
+   "deep_ocean",
+   "mid_water"
+  ],
+  [
+   "mid_water",
+   "shelf"
+  ],
+  [
+   "pack_ice",
+   "surface"
+  ],
+  [
+   "migration_zone",
+   "shelf"
+  ],
+  [
+   "deep_ocean",
+   "migration_zone"
+  ]
+ ]
 }

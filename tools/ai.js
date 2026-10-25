@@ -71,6 +71,7 @@ async function ask(prompt, minQ = 0, keys = []) {
     // 返事が壊れている（JSON でない・中身が無い）AI は、6時間休ませて次へ（2026-10-20: GitHub Models が何を送っても「OK」だけ返した）
     if (res.status === 404 && !p.retried) { p.retried = 1; chosen._bad = [...new Set([...(chosen._bad || []), chosen[p.name]])]; delete chosen[p.name]; await resolve(p, true); continue; } // モデルが消えた → 選び直す
     if (!res.text || (res.status && res.status >= 400)) { const h = res.status >= 500 || !res.status ? 0.15 : 6; /* 5xx（混んでいる）は10分ほど・それ以外は6時間 */ cool[p.name] = { until: new Date(Date.now() + h * 3600e3).toISOString(), why: `壊れた返事 ${res.status} ${JSON.stringify(res.raw).slice(0, 120)}` }; save(); console.log(`  [${p.name}] ${res.status >= 500 ? '混んでいる → 10分' : '返事が壊れている → 6時間'}休ませて次の AI へ`); continue; }
+    exp.lastRaw = res.text; /* 失敗した時に表へ残す */
     try { return { json: pickJson(res.text, keys), by: `${p.name} ${chosen[p.name]}` }; }
     catch (e) { console.log(`  [${p.name}] JSON が読めない: ${JSON.stringify(res.text.slice(0, 160))}`); e.message += `（${p.name}）`; throw e; }
   }
@@ -78,6 +79,29 @@ async function ask(prompt, minQ = 0, keys = []) {
 // 答えから JSON を取り出す: 括弧の対応で「{ … }」をすべて拾い、読めるものの中から、欲しい欄（keys）を一番多く持つもの（同点なら後ろ）を選ぶ
 // 2026-10-22: 前置きの {ja: 地名} 等に惑わされた → 括弧の対応で探す
 // 2026-10-25: Gemma が答えの前に考えメモ（見本の欠片 {ja, geo, scale} など）を書き、最初に読めた欠片を答えにしていた → 欲しい欄で選ぶ
+// 壊れた JSON を直して読む（2026-10-25: Gemma の答えは全体が壊れていて、中の小さな欠片しか読めなかった＝シャチの「段」1つ）
+// 欲しい欄で始まる「{」の最後のもの（考えメモの後の本番の答え）から読み、注釈・末尾のカンマを消し、途中で切れていれば括弧を閉じる
+function repairJson(t, keys) {
+  const re = new RegExp(`\\{\\s*"(${keys.map((k) => k.replace(/[^\w]/g, '')).join('|')})"\\s*:`, 'g');
+  const starts = [...t.matchAll(re)].map((m) => m.index).reverse();
+  for (const i of starts) {
+    let out = '', q = false, esc = false; const st = [];
+    for (let j = i; j < t.length; j++) {
+      const c = t[j];
+      if (q) { out += c; if (esc) esc = false; else if (c === '\\') esc = true; else if (c === '"') q = false; else if (c === '\n') out = out.slice(0, -1) + '\\n'; continue; }
+      if (c === '/' && t[j + 1] === '/') { while (j < t.length && t[j] !== '\n') j++; continue; }
+      if (c === '/' && t[j + 1] === '*') { j = t.indexOf('*/', j + 2); if (j < 0) break; j++; continue; }
+      if (c === '`') break;
+      out += c;
+      if (c === '"') q = true; else if (c === '{' || c === '[') st.push(c === '{' ? '}' : ']'); else if (c === '}' || c === ']') { st.pop(); if (!st.length) break; }
+    }
+    if (q) out += '"';
+    out = out.replace(/,\s*$/, '') + st.reverse().join('');
+    out = out.replace(/,(\s*[}\]])/g, '$1');
+    try { const o = JSON.parse(out); if (keys.some((k) => k in o)) return o; } catch { /* 次の候補 */ }
+  }
+  return null;
+}
 function pickJson(t, keys = []) {
   const found = [];
   const fence = [...t.matchAll(/```(?:json)?\s*([\s\S]*?)```/g)].map((m) => m[1]);
@@ -95,10 +119,11 @@ function pickJson(t, keys = []) {
   const score = (o) => (o && typeof o === 'object' ? keys.filter((k) => k in o).length : 0);
   let best = found[0];
   for (const o of found) if (score(o) >= score(best)) best = o;
+  if (keys.length && !score(best)) { const r = repairJson(t, keys); if (r) return r; }
   if (keys.length && !score(best)) best = found.reduce((a, o) => (JSON.stringify(o).length > JSON.stringify(a).length ? o : a)); // 欲しい欄が無ければ一番大きいもの（包みは draft.js が外す）
   return best;
 }
-module.exports = { ask, usable, pickJson };
+const exp = module.exports = { ask, usable, pickJson, lastRaw: '' };
 if (require.main === module) (async () => {
   console.log('使える AI:', usable().map((p) => p.name).join(', ') || 'なし');
   if (process.argv.includes('--ping')) for (const p of usable()) { const r = await call(p, '{"ok": true} とだけ JSON で答えて').catch((e) => ({ status: 0, raw: { error: e.message } })); console.log(`  ${p.name}（${chosen[p.name] || '?'}）: ${r.status} ${r.text ? r.text.slice(0, 60) : JSON.stringify(r.raw).slice(0, 200)}`); }

@@ -78,7 +78,7 @@ ${errors.length ? `\n## 前の下書きの誤り（直すこと）\n- ${errors.j
       errors = validate(trial, SRC, P.part === 'places' ? ['places'] : ['places', 'life', P.part]).errors;
       console.log(`  ${P.part} ${t}回目: ${errors.length ? `✗ ${errors.length}件（${errors.slice(0, 2).join(' / ')}）` : '✓'}（${Math.round((Date.now() - t0) / 1000)}秒）`);
       if (!errors.length || t === TRIES) { Object.assign(sheet, trial); ok = !errors.length; }
-      if (errors.length && t === TRIES) sheet.fail = { part: P.part, errors: errors.slice(0, 5), got: Object.keys(got || {}), head: JSON.stringify(got || {}).slice(0, 400) }; /* 何が返ってきたかを表に残す（実行中は記録が読めない） */
+      if (errors.length && t === TRIES) sheet.fail = { part: P.part, errors: errors.slice(0, 5), got: Object.keys(got || {}), head: JSON.stringify(got || {}).slice(0, 400), raw: (AI.lastRaw || '').slice(-600) }; /* 何が返ってきたかを表に残す（実行中は記録が読めない） */
       if (!errors.length) delete sheet.fail;
     }
     fs.writeFileSync(OUT, JSON.stringify(sheet, null, 1) + '\n');

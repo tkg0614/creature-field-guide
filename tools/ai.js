@@ -26,6 +26,9 @@ async function resolve(p, force) {
 }
 const usable = (minQ = 0) => LIST.filter((p) => (p.quality || 1) >= minQ && process.env[p.key] && !(cool[p.name] && Date.parse(cool[p.name].until) > Date.now()));
 
+// Gemini API の答えの文: parts のうち考えメモ（thought）でないものをつなぐ
+// 2026-10-25: Gemma は parts[0] が考えメモ・parts[1] が本番の答えで、parts[0] だけ読んでいた（オキアミ・シャチ・クモが止まった）
+const answerText = (j) => { const ps = (j.candidates && j.candidates[0].content && j.candidates[0].content.parts) || []; const ans = ps.filter((x) => x.text && !x.thought); return (ans.length ? ans : ps).map((x) => x.text || '').join('\n') || undefined; };
 async function call(p, prompt) {
   const key = process.env[p.key], model = await resolve(p);
   if (!model) return { status: 404, raw: { error: '使えるモデルが一覧に無い' } };
@@ -33,7 +36,7 @@ async function call(p, prompt) {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': key, 'content-type': 'application/json' },
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, maxOutputTokens: p.plainText ? 32768 : 8192 /* Gemma は考えメモで上限を使い切り、答えが途中で切れる */, ...(p.plainText ? {} : { responseMimeType: 'application/json' }) } }) }); /* plainText: JSON 指定を受け付けないモデル（Gemma） */
     const j = await r.json().catch(() => ({}));
-    return { status: r.status, retry: r.headers.get('retry-after'), text: j.candidates && j.candidates[0].content && j.candidates[0].content.parts[0].text, raw: j };
+    return { status: r.status, retry: r.headers.get('retry-after'), text: answerText(j), raw: j };
   }
   const gh = /models\.github\.ai/.test(p.url) ? { accept: 'application/vnd.github+json', 'x-github-api-version': '2022-11-28' } : {};
   const r = await fetch(p.url, { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json', ...gh },

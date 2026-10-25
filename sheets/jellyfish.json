@@ -2,7 +2,7 @@
  "id": "jellyfish",
  "ja": "ミズクラゲ",
  "sci": "Aurelia coerulea（旧 Aurelia aurita）",
- "status": "checked",
+ "status": "reviewed",
  "country": "jp",
  "by": {
   "places": "gemini-older gemini-3.7-flash",
@@ -200,7 +200,7 @@
   {
    "id": "ephyra",
    "ja": "エフィラ",
-   "days": 20,
+   "days": 10,
    "hunger": 8,
    "grow": 0.05
   },
@@ -208,7 +208,7 @@
    "id": "juv",
    "ja": "稚クラゲ",
    "fromAge": 0.08,
-   "days": 40,
+   "days": 15,
    "hunger": 10,
    "grow": 0.15,
    "goal": "稚クラゲになる",
@@ -218,7 +218,7 @@
    "id": "young",
    "ja": "未成体",
    "fromAge": 0.2,
-   "days": 60,
+   "days": 15,
    "hunger": 12,
    "grow": 0.3,
    "goal": "体を大きくする",
@@ -227,8 +227,8 @@
   {
    "id": "adult",
    "ja": "成体",
-   "fromAge": 1,
-   "days": 90,
+   "fromAge": 0.3,
+   "days": 15,
    "hunger": 14,
    "grow": 0.1,
    "adult": true,
@@ -238,8 +238,8 @@
  ],
  "oldAge": {
   "years": [
-   1,
-   2.8
+   0.6,
+   0.8
   ],
   "text": "傘を縮める力が尽き、冷えた低層へ静かに沈んでいった。"
  },
@@ -362,33 +362,18 @@
    ]
   },
   {
-   "id": "beroe",
-   "ja": "ウリクラゲ",
-   "kind": "any",
-   "places": [
-    "inner_surface",
-    "tidal_front"
-   ],
-   "stages": [
-    "ephyra",
-    "juv"
-   ],
-   "sev": 2,
-   "texts": [
-    "虹色に光る櫛板を動かし、大きな口を開けたウリクラゲが漂ってくる。"
-   ]
-  },
-  {
    "id": "threadfin_filefish",
    "ja": "カワハギ",
    "kind": "fish",
    "places": [
-    "pier_shade",
-    "eelgrass"
+    "tidal_front",
+    "eelgrass",
+    "pier_shade"
    ],
    "stages": [
     "juv",
-    "young"
+    "young",
+    "adult"
    ],
    "sev": 2,
    "texts": [
@@ -403,7 +388,9 @@
    "places": [
     "pier_shade",
     "tidal_front",
-    "bay_mouth"
+    "bay_mouth",
+    "inner_surface",
+    "eelgrass"
    ],
    "stages": [
     "juv",
@@ -431,16 +418,15 @@
    "ja": "アカクラゲ",
    "kind": "any",
    "places": [
-    "inner_surface",
-    "tidal_front",
-    "deep_water"
+    "bay_mouth",
+    "tidal_front"
    ],
    "stages": [
     "juv",
     "young",
     "adult"
    ],
-   "sev": 3,
+   "sev": 2,
    "texts": [
     "赤褐色の縞を持つ傘が、長い触手をたなびかせて迫る。",
     "猛毒の触手が漂い、体組織を絡め取ろうとする。"
@@ -467,7 +453,7 @@
     "young",
     "adult"
    ],
-   "sev": 2,
+   "sev": 1,
    "texts": [
     "水面越しに海鳥の影が横切り、鋭いくちばしが突き刺さる。",
     "水面近くを漂う傘が、上空から狙われている。"
@@ -499,22 +485,6 @@
    ]
   },
   {
-   "id": "loggerhead",
-   "ja": "アカウミガメ",
-   "kind": "reptile",
-   "places": [
-    "bay_mouth"
-   ],
-   "stages": [
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "茶色い甲羅のウミガメが、前脚を羽ばたかせて迫ってくる。",
-    "硬いくちばしが、透きとおった体を噛み砕く。"
-   ]
-  },
-  {
    "id": "intake_filter",
    "ja": "取水口のスクリーン",
    "kind": "human",
@@ -539,8 +509,7 @@
    "ja": "クラゲカッター",
    "kind": "human",
    "places": [
-    "inner_surface",
-    "tidal_front"
+    "intake"
    ],
    "stages": [
     "young",

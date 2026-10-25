@@ -2,9 +2,801 @@
  "id": "tuna",
  "ja": "クロマグロ",
  "sci": "Thunnus orientalis",
- "status": "draft-ng",
+ "status": "checked",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "南西諸島から北太平洋",
+  "geo": "North Pacific Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "nansei",
+   "ja": "南西諸島の沖",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "初夏に親魚が集まる暖かい海。無数の卵が海面近くに産み落とされる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 26.475,
+   "lon": 127.912
+  },
+  {
+   "id": "sea_of_japan",
+   "ja": "日本海南部",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "夏に産卵が行われるもう一つの海域。稚魚や若魚が餌を求めて回遊する。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.06,
+   "lon": 137.335
+  },
+  {
+   "id": "kuroshio",
+   "ja": "太平洋の黒潮流域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "強い暖流に乗って北上する通り道。イワシなどの小魚の群れを追う。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 21.922,
+   "lon": 120.739
+  },
+  {
+   "id": "sanriku",
+   "ja": "三陸の沖",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "黒潮と親潮が混ざり合う豊かな海。サンマやイカなどの獲物に事欠かない。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 39.123,
+   "lon": 141.793
+  },
+  {
+   "id": "tsugaru",
+   "ja": "津軽海峡",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "激しい潮流に良質なイカが集まるが、大型船や一本釣りの針が待ち受ける。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 41.502,
+   "lon": 140.618
+  },
+  {
+   "id": "north_pacific",
+   "ja": "北太平洋中央部",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "果てしなく広がる外洋。若魚が東を目指して数千キロの荒波を泳ぎ続ける。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 27.922,
+   "lon": 138.5
+  },
+  {
+   "id": "california",
+   "ja": "カリフォルニアの沖",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "湧昇流によって小魚やカニ類が豊富に湧く海。数年を過ごして体を大きく育てる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 28.753,
+   "lon": 140.9
+  }
+ ],
+ "start": {
+  "place": "nansei",
+  "month": 5,
+  "day": 20
+ },
+ "region": {
+  "ja": "南西諸島から北太平洋",
+  "lon0": 114.423,
+  "lon1": 148.109,
+  "lat0": 49.376,
+  "lat1": 15.606,
+  "k": 15,
+  "labels": [
+   [
+    47.349799999999995,
+    131.26600000000002,
+    "南西諸島から北太平洋"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "kuroshio",
+   "nansei"
+  ],
+  [
+   "nansei",
+   "north_pacific"
+  ],
+  [
+   "sea_of_japan",
+   "tsugaru"
+  ],
+  [
+   "sanriku",
+   "sea_of_japan"
+  ],
+  [
+   "kuroshio",
+   "north_pacific"
+  ],
+  [
+   "sanriku",
+   "tsugaru"
+  ],
+  [
+   "california",
+   "north_pacific"
+  ],
+  [
+   "california",
+   "sanriku"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.3
+ },
+ "stats": {
+  "run": {
+   "ja": "突進力",
+   "use": "獲物を追う時や逃げる時に効く"
+  },
+  "sense": {
+   "ja": "潮を読む勘",
+   "use": "適水温の潮境や群れを見つける時に効く"
+  },
+  "forage": {
+   "ja": "捕食力",
+   "use": "高速で逃げる魚やイカを捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 15,
+   "hunger": 10,
+   "grow": 0.4
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.08,
+   "days": 40,
+   "hunger": 14,
+   "grow": 2.5,
+   "goal": "稚魚になる",
+   "enter": "ひれが発達し、小さな群れで黒潮の流れに乗った。"
+  },
+  {
+   "id": "young",
+   "ja": "未成魚",
+   "fromAge": 1,
+   "days": 60,
+   "hunger": 18,
+   "grow": 2,
+   "goal": "未成魚になる",
+   "enter": "体側が銀青色に輝き始めた。広大な外洋へ乗り出す。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 3.75,
+   "days": 90,
+   "hunger": 20,
+   "grow": 0.8,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体長が150センチを超えた。産卵期に合わせて生まれ故郷の海へ針路をとる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   12,
+   15
+  ],
+  "text": "巨体を温め続ける熱が静かに尽き、群れから離れて藍色の深海へと沈んだ。"
+ },
+ "breeding": {
+  "ja": "外洋での産卵",
+  "ds": "初夏から盛夏にかけ、暖流の表層で卵を産み放つ",
+  "months": [
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "nansei",
+   "sea_of_japan"
+  ],
+  "perYear": 1,
+  "kids": [
+   5000000,
+   25000000
+  ],
+  "many": 20000000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した仔魚の一匹"
+  },
+  "ok": "夜の海面に、{born}個の卵を放った。",
+  "ng": "潮の流れが合わず、産卵場にたどり着けなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を2000万個産む"
+ },
+ "foods": [
+  {
+   "id": "school_fish",
+   "ja": "回遊魚の群れを追う",
+   "name": "イワシ・サバ",
+   "ds": "群れの下から高速で突進し、丸呑みにする",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "kuroshio",
+    "sanriku",
+    "tsugaru",
+    "sea_of_japan",
+    "california"
+   ],
+   "rich": [
+    "sanriku",
+    "tsugaru"
+   ],
+   "ok": "銀色の群れを突き破り、力強く胃を満たした。",
+   "full": 42
+  },
+  {
+   "id": "squid_krill",
+   "ja": "イカや甲殻類を捕食する",
+   "name": "ホタルイカモドキやオキアミ",
+   "ds": "中層に漂うイカやオキアミを素早く拾い上げる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "kuroshio",
+    "north_pacific",
+    "california"
+   ],
+   "rich": [
+    "north_pacific"
+   ],
+   "ok": "暗い海中で発光する獲物を次々にとらえた。",
+   "full": 36
+  }
+ ],
+ "special": [
+  {
+   "id": "rete_mirabile",
+   "ja": "奇網で体温を保つ",
+   "ds": "筋肉の熱を血管で回収し、冷たい海でも高速で泳ぎ続ける",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.7,
+   "calm": true,
+   "ok": "筋肉を周囲の海水より温かく保ち、鋭い加速で海を切り裂いた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "young"
+   ],
+   "to": "california",
+   "say": "黒潮続流に乗って北太平洋を横断し、豊かな東太平洋の沿岸を目指した。"
+  },
+  {
+   "months": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "nansei",
+   "say": "成熟した体が産卵を促し、西太平洋の産卵場へ向けて大海を渡った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "jelly",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "nansei",
+    "sea_of_japan"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "水面近くを漂う透明な傘が、漂流する仔魚を呑みこんでいく。",
+    "毒の刺胞を持つ細い触手が、目の前をかすめる。"
+   ]
+  },
+  {
+   "id": "anchovy",
+   "ja": "カタクチイワシの群れ",
+   "kind": "fish",
+   "places": [
+    "nansei",
+    "sea_of_japan",
+    "kuroshio"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "銀色の小魚の群れが、口を大きく開けてプランクトンごと仔魚を吸いこむ。",
+    "密集したイワシの群れが、水流を乱しながら通り抜ける。"
+   ]
+  },
+  {
+   "id": "mackerel",
+   "ja": "マサバ",
+   "kind": "fish",
+   "places": [
+    "sea_of_japan",
+    "kuroshio"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "緑の縞模様を光らせたマサバが、泳ぎの覚束ない稚魚に突進してくる。",
+    "素早い旋回で群れが散らされ、一匹ずつ捕らえられていく。"
+   ]
+  },
+  {
+   "id": "skipjack",
+   "ja": "カツオ",
+   "kind": "fish",
+   "places": [
+    "nansei",
+    "kuroshio"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "群れをなしたカツオが、水面を激しく叩きながら獲物を追う。",
+    "濃紺の弾丸のような体が、猛スピードで稚魚の群れを貫く。"
+   ],
+   "again": [
+    [
+     "また、顎の下に傷のあるカツオだ。"
+    ],
+    [
+     "傷のあるカツオが、群れを執拗に追い詰めてくる。"
+    ]
+   ],
+   "bye": "体がカツオ並みに大きくなり、もう追撃を受けることはない。"
+  },
+  {
+   "id": "dolphinfish",
+   "ja": "シイラ",
+   "kind": "fish",
+   "places": [
+    "nansei",
+    "kuroshio"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黄金と緑の巨体が、水面近くの流れ藻の下から飛び出してくる。",
+    "四角い頭部を振りながら、鋭い加速で距離を詰めてくる。"
+   ]
+  },
+  {
+   "id": "sea_lion",
+   "ja": "カリフォルニアアシカ",
+   "kind": "mammal",
+   "places": [
+    "california"
+   ],
+   "stages": [
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "沿岸の岩場から、しなやかな体躯の獣が潜水してくる。",
+    "巧みな身のこなしで旋回し、群れの進路を塞ぎにかかる。"
+   ]
+  },
+  {
+   "id": "mako",
+   "ja": "アオザメ",
+   "kind": "fish",
+   "places": [
+    "kuroshio",
+    "sanriku",
+    "north_pacific",
+    "california"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "藍色の流線形が、深層からすさまじい速度で突きあげてくる。",
+    "剥き出しの鋭い歯を光らせ、背後から急接近してくる。"
+   ],
+   "again": [
+    [
+     "また、背びれが裂けたアオザメだ。深く潜っても追ってくる。"
+    ],
+    [
+     "背びれの裂けたアオザメが、暗がりから浮上してくる。"
+    ]
+   ],
+   "bye": "巨体と強靭な遊泳力で引き離し、裂けた背びれのアオザメも追跡を諦めた。"
+  },
+  {
+   "id": "white_shark",
+   "ja": "ホホジロザメ",
+   "kind": "fish",
+   "places": [
+    "sanriku",
+    "california"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "灰色の巨躯が、視界の隅の暗がりを静かに旋回している。",
+    "下顎を突きだし、巨大な顎を開いて下方から不意打ちを仕掛けてくる。"
+   ]
+  },
+  {
+   "id": "orca",
+   "ja": "シャチ",
+   "kind": "mammal",
+   "places": [
+    "sanriku",
+    "tsugaru",
+    "california"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "白黒の巨体が、冷たい海を切り裂いて突進してくる。",
+    "水中に鋭いクリック音が反響し、複数の影が逃げ場を狭めていく。"
+   ],
+   "again": [
+    [
+     "また、背びれの曲がったシャチの群れだ。"
+    ],
+    [
+     "背びれの曲がったシャチが、先回りして待ち構えている。"
+    ]
+   ],
+   "bye": "外洋深くへと急速潜行し、背びれの曲がったシャチの追撃を完全に振り切った。"
+  },
+  {
+   "id": "purse_seine",
+   "ja": "まき網船団",
+   "kind": "human",
+   "places": [
+    "sea_of_japan",
+    "sanriku",
+    "california"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "海中に巨大な網のカーテンが広がり、群れを円形に取り囲む。",
+    "頭上で激しいスクリュー音が唸り、逃げ道がふさがれていく。"
+   ],
+   "lose": "網の壁に激突して皮膚とひれを擦りむき、傷を負った。",
+   "fleeJa": "網が閉じる前に底へ潜り抜ける",
+   "hideJa": "群れの真ん中に紛れて網をかわす"
+  },
+  {
+   "id": "longline",
+   "ja": "はえ縄漁船",
+   "kind": "human",
+   "places": [
+    "nansei",
+    "tsugaru",
+    "north_pacific"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "暗い海中に、獲物を模した餌のついた無数の針が垂れ下がっている。",
+    "漂うイカの臭いに誘われ、金属の仕掛けが口元に迫る。"
+   ],
+   "lose": "鋭い釣り針が口元を貫いて裂き、傷を負った。",
+   "fleeJa": "餌を吐き出して強引に振りほどく",
+   "hideJa": "針の付いた餌を避けて通り過ぎる"
+  }
+ ],
+ "choices": [
+  {
+   "q": "生まれ育った沿岸を離れる時期だ。太平洋を渡るか、近海に残るか",
+   "stages": [
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "東へ向かい太平洋を横断する",
+     "ds": "カリフォルニア沖は餌が極めて豊富。途方もない大洋航海になる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "california",
+     "say": "波頭の連なる大洋へと針路を定め、東の海へ泳ぎ出した。",
+     "chip": "太平洋を渡る"
+    },
+    {
+     "ja": "日本近海の黒潮流域にとどまる",
+     "ds": "回遊の消耗が少ない。沿岸での漁獲圧力が高い",
+     "fx": {
+      "danger": 1,
+      "food": -1
+     },
+     "goto": "kuroshio",
+     "say": "黒潮の流れに身を任せ、日本近海の小魚を追った。",
+     "chip": "近海にとどまる"
+    }
+   ]
+  },
+  {
+   "q": "秋の気配が濃くなってきた。冷たい北の海へ進むか、暖海に残るか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "津軽海峡へ北上してイカを追う",
+     "ds": "脂の乗った餌に恵まれる。冷水域は体力を大きく消耗する",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "tsugaru",
+     "say": "奇網で体温を保ち、激流がうねる冷たい津軽の瀬へ突入した。",
+     "chip": "津軽海峡へ北上"
+    },
+    {
+     "ja": "三陸沖の潮境でサンマを待つ",
+     "ds": "親潮と黒潮が交わり餌が集まる。大型のサメに出遭いやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "sanriku",
+     "say": "潮と潮がぶつかり合う濃紺の海で、サンマの群れを待ち構えた。",
+     "chip": "三陸沖で待つ"
+    }
+   ]
+  },
+  {
+   "q": "成熟の時期を迎えた。どちらの産卵場へ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "初夏の南西諸島沖へ向かう",
+     "ds": "水温が高く仔魚の成長が早い。長距離の回遊で体力を削られる",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "nansei",
+     "say": "黒潮の源流域を目指し、南西諸島の群青色の海原へ下った。",
+     "chip": "南西諸島で産卵"
+    },
+    {
+     "ja": "盛夏の日本海南部へ向かう",
+     "ds": "移動の負担が比較的小さい。沿岸の巻き網に遭遇しやすい",
+     "fx": {
+      "danger": 1,
+      "kids": -1
+     },
+     "goto": "sea_of_japan",
+     "say": "対馬海流に乗り、初夏を迎えた日本海南部へと進路をとった。",
+     "chip": "日本海で産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.2,
+   "say": "黒潮の渦に巻き込まれ、餌の微小プランクトンが見つからず衰弱した。",
+   "full": -15
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "juv"
+   ],
+   "p": 0.15,
+   "say": "共食いが頻発する稚魚の群れの中で、素早く身をかわして生き延びた。",
+   "full": 10
+  },
+  {
+   "month": [
+    10,
+    11
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "海面に沸き立つイワシの群れへ猛スピードで突っ込み、腹を満たした。",
+   "full": 20
+  }
+ ],
+ "lead": "南西諸島や日本海で生まれ、太平洋を渡って遠く海原を駆け、再び産卵の海へと帰る。巨体を震わせて泳ぎ続け、どこまで命をつなげるか。",
+ "texts": {
+  "move": "{to}へ、力強く泳いでいった。",
+  "fleeJa": "尾びれを激しく振って急加速する",
+  "restJa": "速度を落として巡航する",
+  "watchJa": "水温の変化と獲物の気配を探る",
+  "lieJa": "光の届かない深みへ潜る",
+  "lastMemory": "どこまでも青く澄んだ海原を駆け抜けた日々を思い出した。"
+ },
+ "intro": [
+  "南西諸島の沖、黒潮が流れる温かい海原で生まれた。",
+  "孵化したばかりの小さな体で、青い海面を漂っている。"
+ ],
+ "wins": [
+  {
+   "minKids": 5000000,
+   "title": "海原に命を放った",
+   "line": "{kids}個の卵を、温かい潮に乗せて解き放った。",
+   "mem": "青い光の中に広がっていった卵の群れを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "北太平洋を横断し、遠いカリフォルニアの沖を目指した旅を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "冷たい深海で、群れるイカに突進した瞬間を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "力尽きる",
+  "line": "次の世代を残すことなく、海の深みへと沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "It may reach as much as 3 m (9.8 ft) in length and 450 kg (990 lb) in weight.",
+   "ja": "体長は最大3メートル、体重は450キログラムに達する。"
+  },
+  {
+   "quote": "It spawns in the northwestern Philippine Sea (e.g., off Honshu, Okinawa and Taiwan) and in the Sea of Japan. Some of these migrate to the East Pacific and return to the spawning grounds after a few years.",
+   "ja": "フィリピン海北西部や日本海で産卵し、一部は東太平洋まで回遊して数年後に産卵場へ戻る。"
+  },
+  {
+   "quote": "Warm-blooded fish possess organs near their muscles called retia mirabilia that consist of a series of minute parallel veins and arteries that supply and drain the muscles.",
+   "ja": "筋肉の近くにある奇網と呼ばれる血管網により、体温を保つことができる。"
+  },
+  {
+   "quote": "Large females can carry more eggs than small ones, and between 5 million and 25 million eggs have been reported.",
+   "ja": "大型の雌は500万個から2500万個の卵を産む。"
+  }
+ ]
 }

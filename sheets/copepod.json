@@ -2,10 +2,13 @@
  "id": "copepod",
  "ja": "カイアシ類",
  "sci": "Calanus finmarchicus",
- "status": "draft-ng",
+ "status": "checked",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini-older gemini-3.7-flash",
+  "choices": "gemini-older gemini-3.7-flash",
+  "texts": "gemini-older gemini-3.7-flash"
  },
  "locale": {
   "ja": "北大西洋",
@@ -19,7 +22,11 @@
    "sea": true,
    "danger": 3,
    "about": "成体が卵を産み、幼生が育つ。プランクトンが豊富に湧く。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 60,
    "lon": -20
   },
@@ -29,7 +36,11 @@
    "sea": true,
    "danger": 2,
    "about": "分布の中心となる海域。膨大な数の個体群が存在する。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 60,
    "lon": -17.6
   },
@@ -39,7 +50,11 @@
    "sea": true,
    "danger": 2,
    "about": "冷たい水が流れる。北極圏に近い環境。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 62.078,
    "lon": -18.5
   },
@@ -49,7 +64,11 @@
    "sea": true,
    "danger": 3,
    "about": "カナダ沿岸の豊かな海。稚魚に卵を狙われる。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 61.247,
    "lon": -20.9
   },
@@ -59,7 +78,11 @@
    "sea": true,
    "danger": 2,
    "about": "極めて冷たい海。分布の北限に近い。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 60,
    "lon": -22.4
   },
@@ -70,7 +93,11 @@
    "danger": 1,
    "cover": true,
    "about": "冬の間、休眠して過ごす。外敵から身を守り体力を温存する。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 57.922,
    "lon": -21.5
   },
@@ -80,7 +107,11 @@
    "sea": true,
    "danger": 0,
    "about": "生存可能な限界の深さ。静寂に包まれた暗黒の世界。",
-   "stages": [],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
    "lat": 58.753,
    "lon": -19.1
   }
@@ -138,5 +169,558 @@
    "abyss",
    "deep_sea"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "mm",
+  "start": 0.05
+ },
+ "stats": {
+  "run": {
+   "ja": "跳ねる力",
+   "use": "天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "触角の感覚",
+   "use": "水の揺らぎや気配を察する時に効く"
+  },
+  "forage": {
+   "ja": "こし取る力",
+   "use": "プランクトンを集める時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nauplius",
+   "ja": "ノープリウス幼生",
+   "days": 15,
+   "hunger": 8,
+   "grow": 0.3
+  },
+  {
+   "id": "copepodid",
+   "ja": "コペポディド幼体",
+   "fromAge": 0.05,
+   "days": 45,
+   "hunger": 10,
+   "grow": 1.2,
+   "goal": "幼体になる",
+   "enter": "体に節ができ、胸脚で水を掻いて泳ぐようになった。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 0.2,
+   "days": 90,
+   "hunger": 12,
+   "grow": 0.8,
+   "adult": true,
+   "goal": "成体になる",
+   "enter": "長い第1触角が伸びた。体に脂質をたっぷりと蓄えた。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.5,
+   1
+  ],
+  "text": "ため込んだ脂質を使い果たし、冷たい海で静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "表層で産卵する",
+  "ds": "春の表層で、海中に卵を産み落とす",
+  "months": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "surface",
+   "north_sea",
+   "norwegian_sea",
+   "maine"
+  ],
+  "perYear": 2,
+  "kids": [
+   50,
+   300
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった幼生の一匹"
+  },
+  "ok": "春の表層に、{born}個の卵を産み落とした。",
+  "ng": "水中の栄養が足りず、産みそびれた。",
+  "goal1": "卵を産む",
+  "goal2": "卵を1000個産む"
+ },
+ "foods": [
+  {
+   "id": "phytoplankton",
+   "ja": "植物プランクトンを食べる",
+   "name": "植物プランクトン",
+   "ds": "珪藻や渦鞭毛藻を口元の付属肢でこし取る",
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea",
+    "maine",
+    "svalbard"
+   ],
+   "rich": [
+    "norwegian_sea",
+    "north_sea"
+   ],
+   "ok": "漂う珪藻をたくさんこし取った。",
+   "full": 20
+  },
+  {
+   "id": "microzooplankton",
+   "ja": "微小動物プランクトンを食べる",
+   "name": "微小動物プランクトン",
+   "ds": "繊毛虫などの微小な生き物を捕らえる",
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea",
+    "maine"
+   ],
+   "rich": [
+    "surface"
+   ],
+   "ok": "繊毛虫を捕らえ、脂質を体に蓄えた。",
+   "full": 25
+  }
+ ],
+ "special": [
+  {
+   "id": "diapause",
+   "ja": "深海で休眠する",
+   "ds": "代謝を落とし、捕食や飢えをやり過ごす",
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "冷たい深海でじっと漂い、エネルギー消費を抑えた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "to": "deep_sea",
+   "say": "餌の少ない季節を乗り切るため、水深500〜2500メートルの深海へ潜った。"
+  },
+  {
+   "months": [
+    2,
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "surface",
+   "say": "休眠から目覚め、植物プランクトンが湧く表層へ浮上した。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "jellyfish",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea"
+   ],
+   "stages": [
+    "nauplius",
+    "copepodid",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "透明な触手が、水中に何本も垂れ下がっている。",
+    "拍動する傘の近くへ、水流に乗って流されていく。"
+   ]
+  },
+  {
+   "id": "redfish_larva",
+   "ja": "アカウオの稚魚",
+   "kind": "fish",
+   "places": [
+    "surface",
+    "maine"
+   ],
+   "stages": [
+    "nauplius"
+   ],
+   "sev": 2,
+   "texts": [
+    "孵化したばかりの稚魚が、微小な獲物を求めて口をパクつかせている。",
+    "大きな眼を持つ稚魚が、正面からじっと狙いを定めている。"
+   ],
+   "again": [
+    [
+     "また、あの斑点のある稚魚が口を開けて迫る。"
+    ],
+    [
+     "あの斑点のある稚魚が、再び目の前を横切った。"
+    ]
+   ],
+   "bye": "脱皮して体が硬く大きくなり、小さな稚魚の口には入らなくなった。"
+  },
+  {
+   "id": "chaetognath",
+   "ja": "ヤムシ",
+   "kind": "any",
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea",
+    "deep_sea"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "細長い透明な体が、矢のように一直線に飛び出してきた。",
+    "頭部の鋭い顎毛が、獲物を捕らえようと大きく開く。"
+   ]
+  },
+  {
+   "id": "shrimp",
+   "ja": "深海のエビ",
+   "kind": "any",
+   "places": [
+    "deep_sea",
+    "norwegian_sea",
+    "svalbard"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "暗がりの中で長い触角が揺れ、捕食肢が伸ばされる。",
+    "越冬のために沈んだ深みで、赤い甲殻類が忍び寄る。"
+   ]
+  },
+  {
+   "id": "herring",
+   "ja": "タイセイヨウニシン",
+   "kind": "fish",
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "青く輝く巨大なニシンの群れが、海水を濾しながら突進してくる。",
+    "無数のエラ蓋を開いた魚たちが、逃げ道を塞ぐように迫る。"
+   ]
+  },
+  {
+   "id": "mackerel",
+   "ja": "タイセイヨウサバ",
+   "kind": "fish",
+   "places": [
+    "surface",
+    "north_sea",
+    "norwegian_sea"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "サバの群れが、水面近くを激しい勢いで泳ぎ回っている。",
+    "背の波状模様をきらめかせ、高速で旋回して追い詰めてくる。"
+   ],
+   "again": [
+    [
+     "背の縞がよじれたサバが、また群れを割いて突進してくる。"
+    ],
+    [
+     "あの縞のよじれたサバが、再び大口を開けて迫る。"
+    ]
+   ],
+   "bye": "冷たい深海へと沈降し、表層を回遊するあのサバの追撃から逃れ去った。"
+  },
+  {
+   "id": "cod",
+   "ja": "タイセイヨウダラ",
+   "kind": "fish",
+   "places": [
+    "north_sea",
+    "norwegian_sea",
+    "svalbard"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "あごヒゲを持つ大きなマダラが、下層から浮上してくる。",
+    "群れごと吸い込むような水流が、体のまわりに渦巻く。"
+   ]
+  },
+  {
+   "id": "whale",
+   "ja": "ヒゲクジラ",
+   "kind": "mammal",
+   "places": [
+    "surface",
+    "maine",
+    "norwegian_sea",
+    "svalbard"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "海中に巨大な影が広がり、クジラのヒゲ板の隙間へと水ごと吸い寄せられる。",
+    "開いた巨大な顎が、プランクトンの群れを海水ごと丸呑みにしようとする。"
+   ],
+   "again": [
+    [
+     "頭部に白いコブのある大きなクジラが、再び海水を呑み干しにきた。"
+    ],
+    [
+     "あの白いコブのクジラが、大きく顎を開いて迫ってくる。"
+    ]
+   ],
+   "bye": "越冬のため光の届かない深海へと沈み、巨大な影は見えなくなった。"
+  },
+  {
+   "id": "net",
+   "ja": "プランクトンネット",
+   "kind": "human",
+   "places": [
+    "surface",
+    "norwegian_sea",
+    "maine"
+   ],
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "微小な網目を持つ巨大な袋が、船に引かれて近づいてくる。",
+    "水流に引かれ、逃げ場のない網の奥へと追い込まれていく。"
+   ],
+   "lose": "細かな網目に激しく押しつけられ、触角に深い傷を負った。",
+   "fleeJa": "第一触角を畳んで急激に跳ね、網の外へ逃れる",
+   "hideJa": "水流のわずかな隙間に体を滑り込ませてやり過ごす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "秋が深まり表層の餌が減ってきた。冬をどう過ごすか",
+   "stages": [
+    "copepodid"
+   ],
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "水深500〜2500メートルの深海へ潜る",
+     "ds": "捕食者を避けて代謝を抑えられる。春まで餌は食べられない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "deep_sea",
+     "say": "光の届かない深海へと沈み、じっと春を待った。",
+     "chip": "深海で休眠"
+    },
+    {
+     "ja": "表層に残り餌を探し続ける",
+     "ds": "わずかな餌を食べられる。魚やクジラに狙われやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "surface",
+     "say": "冷えゆく表層に残り、漂う微小プランクトンを追った。",
+     "chip": "表層に残る"
+    }
+   ]
+  },
+  {
+   "q": "表層で植物プランクトンが増えている。何を中心に捕食するか",
+   "stages": [
+    "copepodid",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "豊富に漂う珪藻を食べる",
+     "ds": "見つけやすく腹を満たしやすい。脂質の蓄積は控えめになる",
+     "fx": {
+      "food": 1,
+      "kids": -1
+     },
+     "say": "群れ咲く珪藻を脚でかき集め、次々と飲み込んだ。",
+     "chip": "珪藻を食べる"
+    },
+    {
+     "ja": "微小な動物プランクトンを追う",
+     "ds": "脂質や産卵に必要な栄養が豊富。捕らえるのが難しい",
+     "fx": {
+      "food": -1,
+      "kids": 1
+     },
+     "say": "繊毛虫の気配を触角で捉え、素早く間合いを詰めた。",
+     "chip": "微小動物を追う"
+    }
+   ]
+  },
+  {
+   "q": "春になり休眠から目覚めた。産卵のためにどの海域の表層へ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "ノルウェー海の表層へ上がる",
+     "ds": "仲間が集まり繁殖しやすい。ニシンやタラなどの天敵も多い",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "norwegian_sea",
+     "say": "光が差しこむノルウェー海の表層へ浮上した。",
+     "chip": "ノルウェー海へ"
+    },
+    {
+     "ja": "スヴァールバル諸島周辺の冷水域へ向かう",
+     "ds": "捕食圧が比較的低い。低水温で卵の発育に時間がかかる",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "svalbard",
+     "say": "冷たい北の海を目指し、海流に乗って北上した。",
+     "chip": "スヴァールバルへ"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "p": 0.2,
+   "say": "タラの幼魚の群れに囲まれ、激しい水流に巻き込まれた。",
+   "full": -15
+  },
+  {
+   "stages": [
+    "copepodid"
+   ],
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "p": 0.25,
+   "say": "深海の冷たい水の中で、動きを止めて静かに耐え忍んだ。",
+   "full": -5
+  }
+ ],
+ "lead": "北大西洋の表層で生まれ、珪藻を食べて育ち、冬は深い海へ沈んで休眠する。巨大な海の食物連鎖の真ん中で、次の世代へ命をつなげるか。",
+ "texts": {
+  "move": "{to}へ漂っていった。",
+  "fleeJa": "触角で水の揺らぎを感じて逃げる",
+  "restJa": "暗い深海でじっと休む",
+  "watchJa": "第1触角で周囲の気配をさぐる",
+  "lieJa": "深みの中で動かずに漂う",
+  "lastMemory": "春の光が差し込む表層で、珪藻を食べたことを思い出した。"
+ },
+ "intro": [
+  "北大西洋の表層で、直径0.05ミリメートルの卵から孵化した。",
+  "ノープリウス幼生として、冷たい海水の中を漂い始めた。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "表層に命を放った",
+   "line": "表層の海に、{kids}個の卵を放ち終えた。",
+   "mem": "春の表層に散らばっていった卵を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "diapause",
+   "text": "水深数百メートルを超える冷たい深海で、動かずに春を待った日々を思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、冷たい海のただ中で静かに命を終えた。",
+ "facts": [
+  {
+   "quote": "Calanus finmarchicus is a species of copepod and a component of the zooplankton, which is found in enormous amounts in the northern Atlantic Ocean."
+  },
+  {
+   "quote": "During this six-month period of hibernation, many of these organisms will sink to depths of 500–2,500m in the ocean, where they remain at rest until the following spring when they awake and return to the surface waters to breed."
+  },
+  {
+   "quote": "Adults reproduce almost exclusively in surface waters. Calanus eggs are typically 0.05 mm (0.0020 in) in diameter, and hatch in 2–3 days."
+  }
  ]
 }

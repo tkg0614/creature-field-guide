@@ -31,7 +31,7 @@ async function call(p, prompt) {
   if (!model) return { status: 404, raw: { error: '使えるモデルが一覧に無い' } };
   if (p.kind === 'gemini') {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: 'POST', headers: { 'x-goog-api-key': key, 'content-type': 'application/json' },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, maxOutputTokens: 8192, ...(p.plainText ? {} : { responseMimeType: 'application/json' }) } }) }); /* plainText: JSON 指定を受け付けないモデル（Gemma） */
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.5, maxOutputTokens: p.plainText ? 32768 : 8192 /* Gemma は考えメモで上限を使い切り、答えが途中で切れる */, ...(p.plainText ? {} : { responseMimeType: 'application/json' }) } }) }); /* plainText: JSON 指定を受け付けないモデル（Gemma） */
     const j = await r.json().catch(() => ({}));
     return { status: r.status, retry: r.headers.get('retry-after'), text: j.candidates && j.candidates[0].content && j.candidates[0].content.parts[0].text, raw: j };
   }

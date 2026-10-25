@@ -19,7 +19,10 @@
    "sea": true,
    "danger": 2,
    "about": "1月から3月にかけて産卵が行われる海域。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -60,
    "lon": -45
   },
@@ -29,7 +32,10 @@
    "sea": true,
    "danger": 1,
    "about": "卵が沈み込み、孵化する場所。水深2,000から3,000メートルに達する。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -60,
    "lon": -42.6
   },
@@ -39,7 +45,10 @@
    "sea": true,
    "danger": 2,
    "about": "幼生が海面へ向かって上昇する道中。水深60メートル付近に大量に現れる。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -57.717,
    "lon": -44.073
   },
@@ -49,7 +58,10 @@
    "sea": true,
    "danger": 3,
    "about": "植物プランクトンが豊富な海面近く。巨大な群れを作って泳ぐ。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -59.154,
    "lon": -46.456
   },
@@ -60,7 +72,10 @@
    "cover": true,
    "danger": 2,
    "about": "氷藻が広がる場所。冬から春にかけての貴重な餌場となる。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -61.129,
    "lon": -46.942
   },
@@ -70,7 +85,10 @@
    "sea": true,
    "danger": 2,
    "about": "日中に水深100メートルまで潜り、夜に浮上する。",
-   "stages": [],
+   "stages": [
+    null,
+    null
+   ],
    "lat": -62.283,
    "lon": -44.073
   }
@@ -128,5 +146,9 @@
    "deep_ocean",
    "migration_zone"
   ]
+ ],
+ "stages": [
+  "juv",
+  "adult"
  ]
 }

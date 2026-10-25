@@ -129,5 +129,27 @@
    "fjord",
    "island_coast"
   ]
- ]
+ ],
+ "fail": {
+  "part": "life",
+  "errors": [
+   "stages は3〜5個",
+   "stages の最後に \"adult\": true",
+   "oldAge.years は [最短, 最長]",
+   "stats.run が無い",
+   "stats.sense が無い"
+  ],
+  "got": [
+   "id",
+   "ja",
+   "fromAge",
+   "days",
+   "hunger",
+   "grow",
+   "adult",
+   "goal",
+   "enter"
+  ],
+  "head": "{\"id\":\"adult\",\"ja\":\"成体\",\"fromAge\":15,\"days\":18250,\"hunger\":12,\"grow\":0.5,\"adult\":true,\"goal\":\"群れを維持する\",\"enter\":\"完全に成熟した。母系の群れを支える。\"}"
+ }
 }

@@ -3,5 +3,8 @@
  "ja": "クロマグロ",
  "sci": "Thunnus orientalis",
  "status": "draft-ng",
- "country": "jp"
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ }
 }

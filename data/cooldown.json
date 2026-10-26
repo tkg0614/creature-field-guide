@@ -1,10 +1,10 @@
 {
  "openrouter": {
-  "until": "2026-10-26T19:12:49.106Z",
+  "until": "2026-10-26T20:12:49.903Z",
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-10-26T18:58:02.377Z",
+  "until": "2026-10-26T19:36:16.942Z",
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {

@@ -1,0 +1,789 @@
+{
+ "id": "ladybird",
+ "ja": "ナナホシテントウ",
+ "sci": "Coccinella septempunctata",
+ "status": "checked",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本の農村地帯",
+  "geo": "Rural Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "aphid_leaf",
+   "ja": "アブラムシのいる葉裏",
+   "danger": 1,
+   "cover": true,
+   "about": "アブラムシが密集する場所。成虫が黄色い卵を塊で産み付ける。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.595,
+   "lon": 133.771
+  },
+  {
+   "id": "feeding_shoot",
+   "ja": "植物の新芽",
+   "danger": 2,
+   "cover": false,
+   "about": "餌となるアブラムシが豊富だ。幼虫が激しく動き回り、獲物を捕食して成長する。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.595,
+   "lon": 133.803
+  },
+  {
+   "id": "pupation_stem",
+   "ja": "茎や葉の表面",
+   "danger": 3,
+   "cover": false,
+   "about": "幼虫が腹部を固定して蛹になる。動けないため天敵に見つかりやすい。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.625,
+   "lon": 133.783
+  },
+  {
+   "id": "summer_grassland",
+   "ja": "夏の草地",
+   "danger": 2,
+   "cover": false,
+   "about": "羽化した成虫が飛び回る。日光を浴びて活動し、十分な餌を食べて成熟する。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.606,
+   "lon": 133.752
+  },
+  {
+   "id": "garden_hedge",
+   "ja": "庭の生け垣",
+   "danger": 2,
+   "cover": true,
+   "about": "多様な植物が混在し、餌が安定して存在する。成熟した個体が出会い、交尾を行う。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.58,
+   "lon": 133.745
+  },
+  {
+   "id": "winter_bark",
+   "ja": "樹皮の隙間や落ち葉の下",
+   "danger": 1,
+   "cover": true,
+   "about": "冬の寒さをしのぐ避難所。成虫が集まって冬眠し、春の訪れを待つ。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.565,
+   "lon": 133.783
+  }
+ ],
+ "start": {
+  "place": "aphid_leaf",
+  "month": 5,
+  "day": 20
+ },
+ "region": {
+  "ja": "日本の農村地帯",
+  "lon0": 133.728,
+  "lon1": 133.82,
+  "lat0": 34.642,
+  "lat1": 34.548,
+  "k": 5435,
+  "labels": [
+   [
+    34.63636,
+    133.774,
+    "日本の農村地帯"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "aphid_leaf",
+   "summer_grassland"
+  ],
+  [
+   "aphid_leaf",
+   "garden_hedge"
+  ],
+  [
+   "aphid_leaf",
+   "feeding_shoot"
+  ],
+  [
+   "feeding_shoot",
+   "pupation_stem"
+  ],
+  [
+   "aphid_leaf",
+   "pupation_stem"
+  ],
+  [
+   "garden_hedge",
+   "summer_grassland"
+  ],
+  [
+   "aphid_leaf",
+   "winter_bark"
+  ],
+  [
+   "feeding_shoot",
+   "winter_bark"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.1
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "天敵から逃れる・餌場を探して移動する時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚・視覚",
+   "use": "アブラムシのコロニーや交配相手を見つける時に効く"
+  },
+  "forage": {
+   "ja": "捕食力",
+   "use": "アブラムシを捕らえて食べる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "egg",
+   "ja": "卵",
+   "days": 4,
+   "hunger": 0,
+   "grow": 0.5,
+   "goal": "孵化する",
+   "enter": "葉裏に黄色い卵が産み付けられた。"
+  },
+  {
+   "id": "larva",
+   "ja": "幼虫",
+   "fromAge": 0.01,
+   "days": 15,
+   "hunger": 10,
+   "grow": 0.8,
+   "goal": "蛹になるまで育つ",
+   "enter": "卵から孵化した。アブラムシを貪欲に捕食し、脱皮を繰り返して成長する。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.05,
+   "days": 8,
+   "hunger": 0,
+   "grow": 0.2,
+   "goal": "成虫へ変態する",
+   "enter": "茎や葉に体を固定した。静止した状態で成虫への変態を待つ。"
+  },
+  {
+   "id": "adult",
+   "ja": "成熟成虫",
+   "fromAge": 0.08,
+   "days": 80,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "子を残して冬を越す",
+   "enter": "赤い羽を広げて飛び出した。アブラムシを食らい、次世代へ命をつなぐ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.2,
+   0.4
+  ],
+  "text": "冬の寒さに耐えきれず、樹皮の隙間で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "集団産卵",
+  "ds": "アブラムシの多い葉や茎に、10〜30個の卵をまとめて産み付ける",
+  "months": [
+   5,
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "aphid_leaf",
+   "feeding_shoot"
+  ],
+  "perYear": 1,
+  "kids": [
+   250,
+   500
+  ],
+  "many": 500,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "卵のひとつ"
+  },
+  "ok": "アブラムシのいる葉裏に、{born}個の卵を産み付けた。",
+  "ng": "適切な産卵場所が見つからず、卵を産めなかった。",
+  "goal1": "アブラムシの近くに産卵する",
+  "goal2": "累計で500個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "aphid",
+   "ja": "アブラムシを捕らえる",
+   "name": "アブラムシ",
+   "ds": "鋭い口器でアブラムシを捕らえ、汁を吸い尽くす",
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "places": [
+    "aphid_leaf",
+    "feeding_shoot"
+   ],
+   "rich": [
+    "aphid_leaf"
+   ],
+   "ok": "アブラムシのコロニーを見つけ、次々と捕食した。",
+   "full": 30
+  },
+  {
+   "id": "pollen",
+   "ja": "花粉や蜜を吸う",
+   "name": "花粉・蜜",
+   "ds": "アブラムシが少ない時期に、花の蜜や花粉を食べて飢えを凌ぐ",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "summer_grassland",
+    "garden_hedge"
+   ],
+   "rich": [
+    "garden_hedge"
+   ],
+   "ok": "花から蜜を吸い、体力を維持した。",
+   "full": 15
+  }
+ ],
+ "special": [
+  {
+   "id": "calling_behavior",
+   "ja": "フェロモン放出",
+   "ds": "雌が揮発性の性フェロモンを放出し、遠くの雄を引き寄せる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.6,
+   "calm": true,
+   "ok": "フェロモンを放ち、交配相手の雄を呼び寄せた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "winter_bark",
+   "say": "冬の寒さを避け、樹皮の隙間や落ち葉の下へと潜り込む。"
+  },
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "aphid_leaf",
+   "say": "春の訪れとともに目覚め、アブラムシのいる新芽へと移動する。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "great_tit",
+   "ja": "シジュウカラ",
+   "kind": "bird",
+   "places": [
+    "summer_grassland",
+    "garden_hedge"
+   ],
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "鋭いくちばしが、葉の上の赤い体を正確に捉える。",
+    "枝の間を素早く飛び回り、獲物を探し回る。"
+   ]
+  },
+  {
+   "id": "sparrow",
+   "ja": "スズメ",
+   "kind": "bird",
+   "places": [
+    "summer_grassland"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "地面に近い草むらから、茶色の影が跳ね上がる。",
+    "短い口ばしが、羽を広げた瞬間を狙う。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "コガネグモ",
+   "kind": "arachnid",
+   "places": [
+    "garden_hedge",
+    "summer_grassland"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "粘りつく糸の網に、羽が絡め取られる。",
+    "金色の腹を持つクモが、振動を察知して近づく。"
+   ],
+   "again": [
+    [
+     "また、あの生け垣に大きな網が張られている。"
+    ],
+    [
+     "同じ主の網が、飛行ルートをふさぐ。"
+    ]
+   ],
+   "bye": "秋の強い風が吹き荒れ、あのクモの網は跡形もなく破れ去った。"
+  },
+  {
+   "id": "jumping_spider",
+   "ja": "ハエトリグモ",
+   "kind": "arachnid",
+   "places": [
+    "aphid_leaf",
+    "feeding_shoot"
+   ],
+   "stages": [
+    "egg",
+    "larva",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "葉の裏から、鋭い眼光を持つ小さな影が跳躍してくる。",
+    "獲物の死角から、電撃的な速さで襲いかかる。"
+   ]
+  },
+  {
+   "id": "lacewing_larva",
+   "ja": "クサカゲロウの幼虫",
+   "kind": "insect",
+   "places": [
+    "aphid_leaf"
+   ],
+   "stages": [
+    "egg",
+    "larva"
+   ],
+   "sev": 3,
+   "texts": [
+    "鎌のような大あごを持つ幼虫が、卵の群れに忍び寄る。",
+    "幼い体を、鋭い口器が貫く。"
+   ]
+  },
+  {
+   "id": "mantis",
+   "ja": "カマキリ",
+   "kind": "insect",
+   "places": [
+    "garden_hedge",
+    "summer_grassland"
+   ],
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "緑の体に擬態した鎌が、一瞬で体を挟み込む。",
+    "じっと身を潜めていた捕食者が、目の前で正体を現す。"
+   ],
+   "again": [
+    [
+     "また、あの葉の陰にカマキリが待ち構えている。"
+    ],
+    [
+     "同じ主の鎌が、行く手を阻む。"
+    ]
+   ],
+   "bye": "冬の訪れとともに、あの捕食者は土に還った。"
+  },
+  {
+   "id": "shrew",
+   "ja": "トガリネズミ",
+   "kind": "mammal",
+   "places": [
+    "winter_bark"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "樹皮の隙間で眠る体に、鋭い嗅覚が迫る。",
+    "暗闇の中を這い回る小さな獣が、冬眠中の体を掘り起こす。"
+   ]
+  },
+  {
+   "id": "coccinellid",
+   "ja": "他のテントウムシ",
+   "kind": "insect",
+   "places": [
+    "aphid_leaf"
+   ],
+   "stages": [
+    "egg",
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "同じ種や近縁の幼虫が、互いの卵を食い合う。",
+    "餌を巡る争いが、幼虫同士の共食いへと変わる。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "殺虫剤",
+   "kind": "human",
+   "places": [
+    "aphid_leaf",
+    "feeding_shoot"
+   ],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "葉に散布された毒が、気門から入り込む。",
+    "目に見えない薬剤が、神経を麻痺させる。"
+   ],
+   "lose": "薬剤に蝕まれ、傷を負った。",
+   "fleeJa": "風に乗って遠くへ飛び去る",
+   "hideJa": "葉の裏の深い隙間に潜り込む"
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "summer_grassland",
+    "garden_hedge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "頭上から、白い網が勢いよく振り下ろされる。",
+    "逃げ場のない白い壁が、視界を遮る。"
+   ],
+   "lose": "網に激しく打ち付けられ、傷を負った。",
+   "fleeJa": "真上へ急上昇してかわす",
+   "hideJa": "茂みの奥深くへ逃げ込む"
+  },
+  {
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "summer_grassland"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黒い大きな影が、地上を鋭く見下ろしている。",
+    "太いくちばしが、地面を歩く赤い体を挟み込む。"
+   ]
+  }
+ ],
+ "choices": [
+  {
+   "q": "幼虫となり、アブラムシの群れを見つけた。どう振る舞うか",
+   "stages": [
+    "larva"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "群れの中心で貪欲に食む",
+     "ds": "効率よく成長できる。天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "aphid_leaf",
+     "say": "アブラムシの群れに飛び込み、飽くことなく獲物を食い尽くした。",
+     "chip": "貪欲な捕食"
+    },
+    {
+     "ja": "群れの周辺を慎重に探索する",
+     "ds": "天敵の目を避けられる。成長に時間がかかる",
+     "fx": {
+      "food": -0.5,
+      "danger": -0.5
+     },
+     "goto": "feeding_shoot",
+     "say": "葉の縁をゆっくりと歩き、気配を消しながら獲物を追った。",
+     "chip": "慎重な探索"
+    }
+   ]
+  },
+  {
+   "q": "蛹になる準備が整った。どこに体を固定するか",
+   "stages": [
+    "larva"
+   ],
+   "month": [
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "日光の当たる茎の表面に付く",
+     "ds": "温度が上がり、羽化が早まる。鳥に見つかりやすい",
+     "fx": {
+      "energy": 0.5,
+      "danger": 0.5
+     },
+     "goto": "pupation_stem",
+     "say": "陽の当たる茎に腹部を固定し、静かに硬い殻に包まれた。",
+     "chip": "陽だまりの蛹"
+    },
+    {
+     "ja": "葉の裏の陰に身を潜める",
+     "ds": "外敵から身を守れる。低温で羽化が遅れる",
+     "fx": {
+      "energy": -0.5,
+      "danger": -0.5
+     },
+     "goto": "pupation_stem",
+     "say": "葉の裏の暗がりに身を潜め、外の世界から遮断されて眠った。",
+     "chip": "日陰の蛹"
+    }
+   ]
+  },
+  {
+   "q": "産卵場所を探している。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6,
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "アブラムシが密集する新芽に産む",
+     "ds": "孵化した幼虫がすぐに餌を得られる。競争が激しい",
+     "fx": {
+      "kids": 1,
+      "danger": 0.5
+     },
+     "goto": "feeding_shoot",
+     "say": "獲物の密集する新芽に、黄色い卵をひと塊に産み付けた。",
+     "chip": "最適地の産卵"
+    },
+    {
+     "ja": "アブラムシがまばらな葉裏に産む",
+     "ds": "他の個体との競合を避けられる。幼虫が飢える恐れがある",
+     "fx": {
+      "kids": -0.5,
+      "danger": -0.5
+     },
+     "goto": "aphid_leaf",
+     "say": "静かな葉裏を選び、ひっそりと次世代の命を託した。",
+     "chip": "分散した産卵"
+    }
+   ]
+  },
+  {
+   "q": "冬の気配が近づいた。どこで越冬するか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "樹皮の深い隙間に潜り込む",
+     "ds": "寒風を避け、安全に冬を越せる。春の目覚めが遅くなる",
+     "fx": {
+      "danger": -0.5,
+      "energy": -0.5
+     },
+     "goto": "winter_bark",
+     "say": "樹皮の深い裂け目に身を沈め、深い眠りに落ちた。",
+     "chip": "樹皮で越冬"
+    },
+    {
+     "ja": "生け垣の落ち葉の下にとどまる",
+     "ds": "春に素早く活動を開始できる。凍結の危険がある",
+     "fx": {
+      "danger": 0.5,
+      "energy": 0.5
+     },
+     "goto": "garden_hedge",
+     "say": "湿った落ち葉の層に潜り込み、春の訪れを待った。",
+     "chip": "落ち葉で越冬"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "adult",
+    "larva"
+   ],
+   "p": 0.3,
+   "say": "春の陽気となり、植物の新芽にアブラムシが大量に発生した。",
+   "full": 15
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "adult",
+    "larva"
+   ],
+   "p": 0.2,
+   "say": "猛暑で葉が枯れ始め、餌となるアブラムシが減少した。",
+   "full": -10
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "冷たい雨が降り続き、体温が奪われて動きが鈍くなった。",
+   "full": -10
+  }
+ ],
+ "lead": "葉裏で卵が孵化し、幼虫がアブラムシを食べて成長、蛹となり、成虫が夏の草地を飛び回り、冬を越すまでの一生である。",
+ "texts": {
+  "move": "葉裏から植物の新芽へ、餌を求めて移動するである。",
+  "fleeJa": "天敵の蜘蛛に追われて、茎や葉の表面へ逃げ込むである。",
+  "restJa": "夏の草地で葉陰に止まり、体を休めるである。",
+  "watchJa": "複眼で周囲の動きを観察するである。",
+  "lieJa": "樹皮の隙間や落ち葉の下に身を潜めるである。",
+  "lastMemory": "最後に冬の樹皮の隙間で越冬し、春の芽吹きと共に目覚めた日を思い出すである。"
+ },
+ "intro": [
+  "葉裏のアブラムシが豊富な場所で、卵が約四日で孵化したである。",
+  "幼虫は自らの殻を食べ、すぐに近くのアブラムシを捕食し始めたである。"
+ ],
+ "wins": [
+  {
+   "minKids": 200,
+   "title": "夏の草地に命をつないだ",
+   "line": "成虫は{kids}個の卵を葉裏に産み付けたである。",
+   "mem": "繁茂した草地で、仲間と共に花粉とアブラムシを食べた日を思い出すである。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "初夏の朝、葉の裏で幼虫が初めて自分の体色を変える瞬間を思い出すである。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "秋の夜、成虫が樹皮の隙間で冬を越す準備をする様子を思い出すである。"
+  }
+ ],
+ "noKids": {
+  "title": "子を残さずに終わった",
+  "line": "冬の寒さに耐え切れず、成虫は餌を得られずに死んだである。"
+ },
+ "facts": [
+  {
+   "quote": "C. septempunctata's principal diet is aphids, on which they also depend for development and reproduction."
+  },
+  {
+   "quote": "Adult C. septempunctata have a lifespan of about one to two years, which is dependent on whether they survive through the winter."
+  },
+  {
+   "quote": "C. septempunctata can breed up to five generations per year."
+  }
+ ]
+}

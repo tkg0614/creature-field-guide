@@ -103,6 +103,8 @@ function validate(S, src = '', part = null) {
   }
   if (has('foes')) for (const f of S.foes || []) {
     // 死ぬ時は「傷を負った」が「命を落とした」に置き換わる → 「羽に傷を負った」は「羽に命を落とした」になる
+    // 人の危険が強すぎ・どこにでも出る → 死因の大半が農薬や網になる（ladybird 79%・mantis・humpback の船）
+    if (f.kind === 'human' && f.sev >= 3 && arr(f.places).length > (S.places || []).length / 3) warn.push(`foes.${f.id}: 人の危険が sev 3 で${arr(f.places).length}か所に出る（死因の大半になる。sev 1〜2 にするか場所を絞る）`);
     if (f.lose && !/[、てで。]傷を負った。$/.test(f.lose)) err.push(`foes.${f.id}: lose は「…され、傷を負った。」のように「、」か「て」の後に（死ぬ時の文が変になる）`);
   }
   for (const h of S.happen || []) if (/卵を(産|放)|幼体が現れ|生み落と/.test(h.say || '')) warn.push(`happen: 産卵や孵化の出来事は breeding・段の変わり目と重なる「${h.say.slice(0, 20)}」`);

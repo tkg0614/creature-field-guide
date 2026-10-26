@@ -1,0 +1,102 @@
+出典: https://en.wikipedia.org/wiki/Armadillidium%20vulgare（CC BY-SA 4.0）
+Armadillidium vulgare, the common pill-bug, common pill woodlouse, roly-poly, potato bug, slater, doodle bug, or carpenter is a widespread European species of woodlouse and the most extensively investigated terrestrial isopod species. It is native to Mediterranean Europe, but has been an introduced species and naturalized in almost all suitable ecosystems. Many of their behaviors are driven by the prevention of desiccation, or drying out, which is why they are commonly found in high humidity, moderate temperature areas. Within ecosystems, they feed primarily on plant litter, which is essential for nitrogen cycling, and serve as prey for spiders, centipedes, and other small organisms.
+They are kept as pets by hobbyists for their wide range of possible color variations.
+
+
+== Description ==
+Armadillidium vulgare may reach up to a length of 18 millimetres (11⁄16 in), and are capable of rolling into a ball when disturbed. This ability, along with its general appearance, gives it the name pill-bug. This may create the potential for confusion with pill millipedes such as Glomeris marginata. It can be distinguished from Armadillidium nasatum and Armadillidium depressum by the gap that A. nasatum and A. depressum leave when rolling into a ball; A. vulgare does not leave such a gap.
+
+
+== Habitat and ecology ==
+
+
+=== Habitat preferences ===
+The greatest limitation to the A. vulgare's survival is the risk of drying out (also known as desiccation). As such, they thrive in regions with higher humidities, moderate temperatures, and with lower light conditions. This is why they are often found underneath rocks, within forests, or under pieces of wood. During the winter, they avoid shores directly exposed to cold air and instead opt for areas near water where soil does not freeze so they can retain water and burrow. Armadillidium vulgare is able to withstand drier conditions than many other woodlouse species, and is restricted to calcareous soils or coastal areas. 
+
+
+=== Foraging and diet ===
+The diet of A. vulgare is incredibly varied. Primarily, the species are detritivores primarily feeding on decomposing plant litter. However, they have also been shown to consume seeds (granivory), living plant matter, dead animal remains, fungi and dung. A. vulgare consumption of fungi in particular has shown to have regulatory impacts on the release of carbon dioxide (a greenhouse gas). since the fungi that the woodlouse consume create positive feedback loops via decomposition that warm up climates and ecosystems. The proliferation of pill bugs allow for fungi to be controlled within ecosystems. A. vulgare were also found to forage at higher rates at night with lower temperatures and higher relative humidity. In drier environments, A. vulgare were shown to spend more time sheltering as opposed to feeding or foraging because the exposure to drier air leads to rapid water loss and subsequent loss of body mass. The effects of climate change on decreased rainfall and increased drought threatens A. vulgare and their aversion to dry environments.
+
+
+=== Predation ===
+A. vulgare are particularly susceptible to parasitism by the Melanophora roralis which feed on the internal organs of A. vulgare. They are also prey items for spiders, centipedes, beetles, and salamanders. In addition, European populations of A. vulgare are known to be preyed upon by carabids, spiders, shrews, and toads. Among individuals of the species, egg-brooding females may be those most susceptible to predation. These females care for their eggs in a pouch until they hatch, which can slow them down. Egg-brooding females were found to have decreased moving speed and spent less time rolling, contributing to restricted predator avoidance behaviors due to the burden of the egg brood. This caused them to be preyed upon more often, resulting in higher mortality rates due to predation.
+
+
+== Morphology ==
+
+
+=== Exoskeleton and segmentation ===
+The A. vulgare is ovular ranging from 8.5 - 18mm in adulthood with a segmented exoskeleton which allows it to roll into its characteristic sphere (hence the common name "roly-poly"). The exoskeleton is made up of protective plates which are typically dark grey or brown with faint cream or yellow spots. The 4 40 μm-thick exoskeleton (also known as a cuticle) is particularly strong in A. vulgare relative to other crustaceans. It is composed of a mix of chitin (a carbohydrate), hardened, water insoluble proteins, and calcium carbonate organized into four layers. The coloration is controlled by two pigment cells with the black being expressed by a ommochrome pigment and the yellow being expressed by a pterdine pigment. There has also been evidence of all white or albino pigments of A. vulgare. The A. vulgare is segmented into the head, thorax, and abdomen. 
+
+
+=== Head ===
+The A. vulgare depend mainly on their antennae for sensory response with the pair of antennae containing dense bristles that can detect physical and chemical stimuli. Their preference for dark environments likely explains their reduced visual acuity. A. vulgare have a lens (also known as unstalked) eye meaning they have a single photoreceptor limiting their movement-detection and field of view. This contrasts with many other compound eye arthropods which have multiple photoreceptor units allowing for greater movement-detection and wider fields of view.
+
+
+=== Thorax ===
+The thorax is further segmented into seven more divisions with each segment having a protruding pair of legs. On the underside of segments 2-5, females will carry eggs and develop offspring in a specialized brood pouch known as a marsupium.
+
+
+=== Abdomen ===
+The abdomen contains specialized organs known as pleopods which facilitate gas-exchange on land. These ovular, white patches on the underside of the A. Vulgare's abdomen are spongiform structures that can trap air. It's important to note, though, that this respiratory organ acts similarly to a gill in that it must constantly remain damp. To facilitate the necessary moisture, the abdomen also has two tail appendages which allow for the transport of water from their environment to their mouths and to respiratory organs like the pleopods.
+
+
+== Distribution ==
+The native distribution of A. vulgare ranges across Europe, especially in the Mediterranean Basin. Though, A. vulgare are exceptionally adaptable which have allowed them to spread worldwide in countries like the United States, Madagascar, Australia and South Africa. In North America, populations may reach up to 10,000 individuals per square metre (900 individuals per square foot). It is now one of the most abundant invertebrate species in California coastal grassland habitats. They are also anthropophilic, as man-made waste like cardboard can provide suitable habitats, making them one of the most widely distributed species of woodlouse.
+
+
+== Relationships with humans ==
+Due to their distinctive yet benign morphology, Armadillidium vulgare has gained popularity within the global exotic pet trade. Selective breeding programs are frequently employed to isolate specific color morphs, catering to the aesthetic preferences of specialized hobbyists. One notable phenotype, the "Punta Cana," remains a subject of taxonomic debate; while some literature classifies it as Armadillidium sordidum, other experts maintain it is a geographical variant of A. vulgare.
+Cultivating these isopods in a laboratory or domestic setting—a practice sometimes playfully likened to tending a mao gong ding (a "little tripod" or "vessel") of biodiversity—requires a controlled environment. Specifically, success relies on a hyper-humid microclimate characterized by minimal light exposure and a consistent supply of decaying organic matter. While these crustaceans can achieve a lifespan of up to three years, they are often colloquially dismissed as domestic pests by the general public. However, they pose no biological threat, as they are non-venomous and are not known vectors for human pathogens.
+
+
+== Mitochondrial genome ==
+The A. vulgare has a uniquely large mitochondrial genome (mtDNA) when compared to most other crustaceans. While crustaceans on average have one small (15-17 kB) circular mitochondrial genome, the A. vulgare has a 42 kB mitochondrial genome that is partially circular and partially linear. This makes the A. vulgare a model organism for studying the evolution of the mitochondrial genome. Despite this large size, genomics experiments reveal low sequence diversity. While the evolutionary origin for this abnormally large genome is still unknown, some scientists speculate that it is related to the isopods close relationship to the parasite Wolbachia since both mitochondrial DNA and wolbachia are maternally inherited. However, other species highly linked to Wolbachia do not exhibit the same abnormally large mtDNA, thus this theory cannot yet be confirmed. 
+
+
+== Behavior ==
+
+
+=== Temperature regulation ===
+Many physiological behaviors of A. vulgare are meant to retain moisture and avoid conditions which might risk desiccation such as higher heat or intense light. Experiments have found that A. vulgare negatively responds to thermotaxis (movement away from a heat source) This temperature-preference, though, was less pronounced at night which matches environmental conditions of lower night time temperatures. In those same warm environments, experiments also showed that A. Vulgare would often huddle with other conspecifics to avoid water loss due to evaporation and avoid desiccation. Experiments found, however, that the preference for lower temperatures were often outweighed by a preference for direct physical contact (positive thigmotaxis) as A. vulgare would consistently migrate to tight corners, even if those conditions involved life-threatening temperatures. While A. vulgare prefers colder environments, temperatures below 0°C often induce dormancy in A. vulgare..
+
+
+=== Escape behavior ===
+The most well-known behavior of the A. vulgare is their ability to curl their body inwards to form a sphere-like shape known as conglobation. This defensive behavior is speculated to expose the predator to the thick, protective cuticle of the A. vulgare while protecting its softer inner organs. It is often observed in response to a direct tactile stimulus or due to vibrations in the area surrounding the isopod. In extremely stressful environments, the A. vulgare has exhibited death-feigning where they lie completely still in hopes that a predator in search of live prey loses interest.
+
+
+=== Aggregation ===
+
+Aggregation (clustering of multiple conspecifics) is often used during warmer weather in order to prevent evaporation and limit desiccation. The behavior is also observed during reproduction where multiple females will synchronize the receptive period of their moult cycle when near a large group of males. This allows females to reduce the total time spent finding mates and subsequently increasing mating opportunities by intensifying mating secretions.
+
+
+== Development ==
+Unlike many other crustaceans, A. vulgare does not have a larval stage. Instead A. vulgare develops from eggs into juvenile adults and eventually reproductive adults.
+
+
+=== Egg stage ===
+A. Vulgare are lecithotrophic rather than planktotrophic meaning the nutrients necessary for development are sources from the yolk of the egg rather than external sources. Also innate to the structure of the egg are two membranes–an inner vitelline membrane and an outer chorion membrane. The egg (along with its yolk) is released from the oviducts and is then transferred to the female's brood pouch (technically termed the marsupium). This pouch is filled with water and ions sources from the mothers bodily fluids. This stage is also marked by a dorsal organ. The dorsal organ helps with the active movement of water and ions between the marsupium and the embryo maintaining a very precise and controlled environment for the vulnerable embryo. An egg's stage of development is driven by the depletion of the yolk. When a yolk is half consumed, the outer chorion membrane sheds. Once the nutrients within the yolk have been completely depleted, the embryo will rotate 80 degrees within the egg and the vitelline membrane will dissolve before the egg is hatched. During this stage, the dorsal organ will deteriorate making the movement of water and ions dependent on passive transport and more directly controlled by the concentration of ions within the marsupial fluid. After hatching, the juvenile will remain in the brood pouch for 3-4 more days before emerging as a juvenile adult.
+
+
+=== Juvenile stage ===
+After emerging from the mother's marsupium, the juvenile A. vulgare will often molt within 24 hours and develop their seventh body segment and, after two weeks, will molt again and develop the final pair of legs for that segment. A. vulgare will continue regularly molting weekly or bi-monthly for the first 20 weeks before the behavior becomes less consistently timed in adulthood.
+
+
+=== Adult stage ===
+In adult A. vulgare, the exoskeleton is periodically shed on a 29-day cycle. The first two days after a new moult are the most dangerous as the new exoskeleton is soft until it has time to calcify. During these two days, the A. vulgare is at high risk of predation and drying out.
+
+
+== Reproduction ==
+
+Female A. vulgare can have up to 40 young and up to 3 broods per season with studies showing that larger brood sizes were correlated with larger maternal size. With mate choice, A. vulgare use a chemical sensory system along with visual cues. Specifically, males are attracted to chemicals produced by a Y-organ which indicates a period of higher receptivity during specific periods of the moulting cycle. This period is also accompanied by an increase in storing calcium carbonate which causes a more stark appearance white on the underside of females indicating receptivity. Although males are capable of mating at any time, they will not initiate courtship until this receptivity period is apparent. When a male mates with a female, the male will climb onto the female's back and transfer the sperm into the ganopores of females. A. vulgare are polyamorous often having two successive clutches in one breeding season as they can store and use sperm for up to 12 months and can mate multiply. Even when they mate, at least 50% of the sperm within a clutch comes from the original male and a refractory period in females occurs directly after mating which is why competition to mate first is intense between male A. vulgare. Mating pairs will form before the end of this receptivity and, while they can mate at any time, they will often wait until the receptivity period.
+
+
+== Gallery ==
+
+
+== References ==
+
+
+== External links ==
+ Media related to Armadillidium vulgare at Wikimedia Commons
+ Data related to Armadillidium vulgare at Wikispecies

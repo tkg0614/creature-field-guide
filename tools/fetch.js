@@ -3,9 +3,13 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const Q = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'queue.json'), 'utf8'));
-async function page(lang, title) {
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// 続けて問い合わせると 429（多すぎ）で断られる（2026-10-26: 50種を一度に取って半分以上が「見つからない」になった）→ 間を空け、429 なら待ってやり直す
+async function page(lang, title, tries = 3) {
+  await sleep(1500);
   const u = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&titles=${encodeURIComponent(title)}`;
   const r = await fetch(u, { headers: { 'user-agent': 'creature-field-guide/0.1 (github.com/tkg0614/creature-field-guide)' } });
+  if (r.status === 429 && tries > 1) { await sleep(15000); return page(lang, title, tries - 1); }
   const j = await r.json(), p = Object.values(j.query.pages)[0];
   return p.extract ? { title: p.title, text: p.extract, url: `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(p.title)}` } : null;
 }

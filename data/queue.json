@@ -325,5 +325,950 @@
   "hint": "日本の里山。卵で越冬、春にかえり、秋に網を張って成体、産卵して冬に死ぬ。",
   "country": "jp",
   "type": "insect_annual"
+ },
+ {
+  "id": "ladybird",
+  "ja": "ナナホシテントウ",
+  "sci": "Coccinella septempunctata",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.3,
+   "max": 1.0,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.08,
+   "note": "おおよそ"
+  },
+  "hint": "日本の畑や草地。アブラムシを食べて育ち、成虫で冬を越す。年に1〜2回発生。",
+  "country": "jp"
+ },
+ {
+  "id": "mantis",
+  "ja": "オオカマキリ",
+  "sci": "Tenodera sinensis",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.6,
+   "max": 0.8,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.4,
+   "note": "おおよそ"
+  },
+  "hint": "日本の草地。卵のうで冬を越し、春にかえって脱皮をくり返し、秋に産卵して死ぬ。待ち伏せの狩り。",
+  "country": "jp"
+ },
+ {
+  "id": "cricket",
+  "ja": "エンマコオロギ",
+  "sci": "Teleogryllus emma",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.7,
+   "max": 0.9,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.4,
+   "note": "おおよそ"
+  },
+  "hint": "日本の草地や畑。卵で冬を越し、夏に成虫、雄は鳴いて雌を呼び、秋に産卵して死ぬ。",
+  "country": "jp"
+ },
+ {
+  "id": "locust",
+  "ja": "トノサマバッタ",
+  "sci": "Locusta migratoria",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.5,
+   "max": 0.8,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.2,
+   "note": "おおよそ"
+  },
+  "hint": "日本の河川敷や草地。卵で冬を越す。数が増えると群れになって飛ぶ相変異がある。",
+  "country": "jp"
+ },
+ {
+  "id": "cabbagewhite",
+  "ja": "モンシロチョウ",
+  "sci": "Pieris rapae",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.1,
+   "max": 0.6,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.06,
+   "note": "おおよそ"
+  },
+  "hint": "日本の畑。キャベツの葉で幼虫が育つ。年に数回発生し、蛹で冬を越す。アオムシコマユバチに寄生される。",
+  "country": "jp"
+ },
+ {
+  "id": "asagimadara",
+  "ja": "アサギマダラ",
+  "sci": "Parantica sita",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.3,
+   "max": 0.6,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.1,
+   "note": "おおよそ"
+  },
+  "hint": "日本列島を渡るチョウ。夏は高原、秋に南西諸島や台湾へ1000km以上を旅する。幼虫は毒のあるガガイモ科の葉を食べる。",
+  "country": "jp",
+  "home": [
+   33.0,
+   133.0
+  ],
+  "span": 12
+ },
+ {
+  "id": "stagbeetle",
+  "ja": "ノコギリクワガタ",
+  "sci": "Prosopocoilus inclinatus",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 2,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1.5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の雑木林。幼虫は朽ち木の中で1〜2年育ち、夏に成虫になって樹液で雄どうしが争う。",
+  "country": "jp"
+ },
+ {
+  "id": "divingbeetle",
+  "ja": "ゲンゴロウ",
+  "sci": "Cybister chinensis",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 1,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.3,
+   "note": "おおよそ"
+  },
+  "hint": "日本の田んぼやため池。幼虫は水中の狩人、土の中で蛹になる。成虫は水中と空を行き来し、冬を越す。",
+  "country": "jp"
+ },
+ {
+  "id": "tagame",
+  "ja": "タガメ",
+  "sci": "Kirkaldyia deyrolli",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 1,
+   "max": 1.5,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.25,
+   "note": "おおよそ"
+  },
+  "hint": "日本の田んぼ。カエルや魚を捕らえる水中の狩人。雌が杭や稲に産んだ卵を雄が水をかけて守る。",
+  "country": "jp"
+ },
+ {
+  "id": "termite",
+  "ja": "ヤマトシロアリ",
+  "sci": "Reticulitermes speratus",
+  "group": "insect",
+  "type": "insect_social",
+  "lifespan": {
+   "typical": 1,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.5,
+   "note": "おおよそ"
+  },
+  "hint": "働きアリとして。朽ち木や家の木材の中の巣。春に羽アリが飛び立ち新しい巣を作ることが子孫。",
+  "country": "jp"
+ },
+ {
+  "id": "antlion",
+  "ja": "ウスバカゲロウ",
+  "sci": "Hagenomyia micans",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 2,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "幼虫（アリジゴク）は軒下の乾いた砂にすり鉢の巣を作り、落ちたアリを待つ。2〜3年かけて育ち、夏に成虫になって短い間に産む。",
+  "country": "jp"
+ },
+ {
+  "id": "cockroach",
+  "ja": "クロゴキブリ",
+  "sci": "Periplaneta fuliginosa",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 1.5,
+   "max": 2.5,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の家とその周り。卵鞘で産み、幼虫は1年ほどかけて育つ。夜に動き、人と殺虫剤が最大の危険。",
+  "country": "jp"
+ },
+ {
+  "id": "waterstrider",
+  "ja": "アメンボ",
+  "sci": "Aquarius paludum",
+  "group": "insect",
+  "type": "insect_annual",
+  "lifespan": {
+   "typical": 0.5,
+   "max": 1,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の池や田んぼの水面。脚の毛で水に浮き、落ちた虫を食べる。成虫で冬を越す。",
+  "country": "jp"
+ },
+ {
+  "id": "pillbug",
+  "ja": "オカダンゴムシ",
+  "sci": "Armadillidium vulgare",
+  "group": "small",
+  "type": "small_invertebrate",
+  "lifespan": {
+   "typical": 2,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の庭や公園の石の下。落ち葉を食べ、危ないと丸くなる。雌は腹の袋で子を育てる。",
+  "country": "jp"
+ },
+ {
+  "id": "snail",
+  "ja": "ミスジマイマイ",
+  "sci": "Euhadra peliomphala",
+  "group": "small",
+  "type": "small_invertebrate",
+  "lifespan": {
+   "typical": 2,
+   "max": 4,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の庭や林。雨の日に動き、乾くと殻にこもる。雌雄同体で互いに精子を交換する。",
+  "country": "jp"
+ },
+ {
+  "id": "sawagani",
+  "ja": "サワガニ",
+  "sci": "Geothelphusa dehaani",
+  "group": "small",
+  "type": "small_invertebrate",
+  "lifespan": {
+   "typical": 4,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 3,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山の沢。一生を淡水で過ごし、雌は腹に抱えた卵から小さなカニを直接かえす。",
+  "country": "jp"
+ },
+ {
+  "id": "starfish",
+  "ja": "イトマキヒトデ",
+  "sci": "Patiria pectinifera",
+  "group": "sea",
+  "type": "drifter",
+  "lifespan": {
+   "typical": 3,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "日本の浅い岩礁。幼生は海を漂い、着底するとヒトデの形になって貝や死骸を食べる。",
+  "country": "jp"
+ },
+ {
+  "id": "squid",
+  "ja": "スルメイカ",
+  "sci": "Todarodes pacificus",
+  "group": "sea",
+  "type": "semelparous",
+  "lifespan": {
+   "typical": 1,
+   "max": 1,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.8,
+   "note": "おおよそ"
+  },
+  "hint": "日本近海を回遊する。東シナ海で生まれ、日本海や太平洋を北上して育ち、1年で南へ戻って産卵し死ぬ。",
+  "country": "jp",
+  "home": [
+   36.0,
+   133.0
+  ],
+  "span": 10
+ },
+ {
+  "id": "ayu",
+  "ja": "アユ",
+  "sci": "Plecoglossus altivelis",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 1,
+   "max": 1,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.8,
+   "note": "おおよそ"
+  },
+  "hint": "日本の川。秋に川で生まれ、冬は海で育ち、春に川を上って石の藻を食べ、縄張りを持つ。秋に産卵して1年で死ぬ。",
+  "country": "jp"
+ },
+ {
+  "id": "clownfish",
+  "ja": "カクレクマノミ",
+  "sci": "Amphiprion ocellaris",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 6,
+   "max": 20,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "沖縄のサンゴ礁。イソギンチャクに守られて暮らす。群れで一番大きいものが雌に、次が雄になる。",
+  "country": "jp"
+ },
+ {
+  "id": "seahorse",
+  "ja": "タツノオトシゴ",
+  "sci": "Hippocampus coronatus",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 1,
+   "max": 3,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 0.5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の浅い海の藻場。尾で海藻につかまって暮らし、雄の腹の袋で卵を育てて産む。",
+  "country": "jp"
+ },
+ {
+  "id": "whiteshark",
+  "ja": "ホホジロザメ",
+  "sci": "Carcharodon carcharias",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 30,
+   "max": 70,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 12,
+   "note": "おおよそ"
+  },
+  "hint": "南アフリカの沖。若いうちは魚を、育つとアザラシを狙う。胎内で子を育てて産む。シャチが天敵。",
+  "home": [
+   -34.5,
+   19.0
+  ],
+  "span": 6
+ },
+ {
+  "id": "sunfish",
+  "ja": "マンボウ",
+  "sci": "Mola mola",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 10,
+   "max": 20,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の沖。クラゲを食べ、海面で横になって日を浴びる。一度に莫大な数の卵を産む。",
+  "country": "jp"
+ },
+ {
+  "id": "loach",
+  "ja": "ドジョウ",
+  "sci": "Misgurnus anguillicaudatus",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 3,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の田んぼや水路。泥にもぐり、腸で空気呼吸もする。田に水が入る初夏に産卵。",
+  "country": "jp"
+ },
+ {
+  "id": "flyingfish",
+  "ja": "トビウオ",
+  "sci": "Cypselurus agoo",
+  "group": "fish",
+  "type": "fish",
+  "lifespan": {
+   "typical": 1,
+   "max": 2,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の暖かい海の表層。胸びれを広げて海面を滑空し、シイラなどから逃げる。初夏に岸近くの藻に産卵。",
+  "country": "jp"
+ },
+ {
+  "id": "newt",
+  "ja": "アカハライモリ",
+  "sci": "Cynops pyrrhogaster",
+  "group": "herp",
+  "type": "reptile_amphibian",
+  "lifespan": {
+   "typical": 10,
+   "max": 25,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 3,
+   "note": "おおよそ"
+  },
+  "hint": "日本の田んぼや池。幼生は水中でえらで暮らし、変態して陸へ上がり、成熟するとまた水へ戻る。腹の赤は毒の警告。",
+  "country": "jp"
+ },
+ {
+  "id": "toad",
+  "ja": "ニホンヒキガエル",
+  "sci": "Bufo japonicus",
+  "group": "herp",
+  "type": "reptile_amphibian",
+  "lifespan": {
+   "typical": 5,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 3,
+   "note": "おおよそ"
+  },
+  "hint": "日本の里山。早春に池で大量の卵を産み、おたまじゃくしは小さなカエルになって陸へ散る。冬は土の中で眠る。",
+  "country": "jp"
+ },
+ {
+  "id": "salamander",
+  "ja": "オオサンショウウオ",
+  "sci": "Andrias japonicus",
+  "group": "herp",
+  "type": "reptile_amphibian",
+  "lifespan": {
+   "typical": 50,
+   "max": 80,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山あいの川。夜に待ち伏せで魚やカニを食べる。雄が巣穴で卵を守る。",
+  "country": "jp"
+ },
+ {
+  "id": "gecko",
+  "ja": "ニホンヤモリ",
+  "sci": "Gekko japonicus",
+  "group": "herp",
+  "type": "reptile_amphibian",
+  "lifespan": {
+   "typical": 5,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "日本の家の壁。夜、灯りに集まる虫を食べる。指の裏で壁や窓に張りつく。",
+  "country": "jp"
+ },
+ {
+  "id": "turtle",
+  "ja": "クサガメ",
+  "sci": "Mauremys reevesii",
+  "group": "herp",
+  "type": "reptile_amphibian",
+  "lifespan": {
+   "typical": 20,
+   "max": 40,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 8,
+   "note": "おおよそ"
+  },
+  "hint": "日本の池や川。甲羅干しで体を温め、冬は水底で眠る。初夏に土を掘って卵を産む。",
+  "country": "jp"
+ },
+ {
+  "id": "cuckoo",
+  "ja": "カッコウ",
+  "sci": "Cuculus canorus",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 4,
+   "max": 8,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の草原。南の国から渡ってきて、オオヨシキリなどの巣に卵を産み、ヒナを育てさせる（托卵）。",
+  "country": "jp",
+  "home": [
+   36,
+   138
+  ],
+  "span": 8
+ },
+ {
+  "id": "swan",
+  "ja": "オオハクチョウ",
+  "sci": "Cygnus cygnus",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 10,
+   "max": 25,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 4,
+   "note": "おおよそ"
+  },
+  "hint": "シベリアで生まれ、冬は北海道や東北の湖へ渡る。家族で渡り、つがいは一生続く。",
+  "country": "jp",
+  "home": [
+   50,
+   145
+  ],
+  "span": 25
+ },
+ {
+  "id": "owl",
+  "ja": "フクロウ",
+  "sci": "Strix uralensis",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 10,
+   "max": 20,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "日本の森。夜に音でネズミを狩る。木のうろに巣を作り、ヒナは巣立ってもしばらく親に餌をもらう。",
+  "country": "jp"
+ },
+ {
+  "id": "ptarmigan",
+  "ja": "ライチョウ",
+  "sci": "Lagopus muta",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 3,
+   "max": 8,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本アルプスの高山。冬は白、夏は茶の羽に変わる。ハイマツの近くで子育てし、キツネやオコジョ、テンが天敵。",
+  "country": "jp"
+ },
+ {
+  "id": "kingfisher",
+  "ja": "カワセミ",
+  "sci": "Alcedo atthis",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 2,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の川や池。水に飛びこんで小魚を捕る。土の崖に横穴を掘って巣を作る。",
+  "country": "jp"
+ },
+ {
+  "id": "tancho",
+  "ja": "タンチョウ",
+  "sci": "Grus japonensis",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 20,
+   "max": 40,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 3,
+   "note": "おおよそ"
+  },
+  "hint": "北海道の湿原。つがいで踊り、湿原に巣を作って2羽のヒナを育てる。冬は給餌場に集まる。",
+  "country": "jp"
+ },
+ {
+  "id": "greattit",
+  "ja": "シジュウカラ",
+  "sci": "Parus minor",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 2,
+   "max": 5,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の林や公園。木の穴や巣箱で子育てし、毛虫をヒナに運ぶ。冬は群れで暮らす。",
+  "country": "jp"
+ },
+ {
+  "id": "albatross",
+  "ja": "アホウドリ",
+  "sci": "Phoebastria albatrus",
+  "group": "bird",
+  "type": "bird",
+  "lifespan": {
+   "typical": 30,
+   "max": 60,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 6,
+   "note": "おおよそ"
+  },
+  "hint": "伊豆諸島の鳥島で生まれ、北太平洋を何年も飛び回り、成熟すると島へ戻ってつがいで1羽を育てる。",
+  "country": "jp",
+  "home": [
+   30.5,
+   140.3
+  ],
+  "span": 30
+ },
+ {
+  "id": "macaque",
+  "ja": "ニホンザル",
+  "sci": "Macaca fuscata",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 20,
+   "max": 30,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山。群れで暮らし、雌は生まれた群れに残り、雄は群れを出る。冬は木の皮や芽でしのぐ。",
+  "country": "jp"
+ },
+ {
+  "id": "bear",
+  "ja": "ツキノワグマ",
+  "sci": "Ursus thibetanus japonicus",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 20,
+   "max": 30,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 4,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山の森。秋にドングリを食べて太り、冬は穴で眠り、その間に雌が子を産む。",
+  "country": "jp"
+ },
+ {
+  "id": "deer",
+  "ja": "ニホンジカ",
+  "sci": "Cervus nippon",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 10,
+   "max": 20,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山や森。秋に雄が角で争い、初夏に子を産む。冬は雪と餌不足が厳しい。",
+  "country": "jp"
+ },
+ {
+  "id": "tanuki",
+  "ja": "タヌキ",
+  "sci": "Nyctereutes procyonoides",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 5,
+   "max": 10,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の里山や町はずれ。何でも食べ、ため糞で仲間と情報を交わす。春に子を産み、つがいで育てる。",
+  "country": "jp"
+ },
+ {
+  "id": "boar",
+  "ja": "イノシシ",
+  "sci": "Sus scrofa",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 5,
+   "max": 15,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1.5,
+   "note": "おおよそ"
+  },
+  "hint": "日本の山と里の境。鼻で土を掘って食べ物を探す。春にうり坊を産む。わなと猟が危険。",
+  "country": "jp"
+ },
+ {
+  "id": "squirrel",
+  "ja": "ニホンリス",
+  "sci": "Sciurus lis",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 3,
+   "max": 6,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の森。クルミや松ぼっくりを食べ、秋に木の実を埋めて冬に備える。木の上の巣で子を育てる。",
+  "country": "jp"
+ },
+ {
+  "id": "mole",
+  "ja": "アズマモグラ",
+  "sci": "Mogera imaizumii",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 2,
+   "max": 4,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 1,
+   "note": "おおよそ"
+  },
+  "hint": "日本の畑や草地の地下。トンネルを掘り、ミミズを食べる。地上に出るとフクロウやイタチに狙われる。",
+  "country": "jp"
+ },
+ {
+  "id": "seaotter",
+  "ja": "ラッコ",
+  "sci": "Enhydra lutris",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 10,
+   "max": 20,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 4,
+   "note": "おおよそ"
+  },
+  "hint": "アラスカの海岸のケルプの森。仰向けで石を使って貝を割る。母は子を胸に乗せて育てる。シャチが天敵。",
+  "home": [
+   59.5,
+   -150.0
+  ],
+  "span": 6
+ },
+ {
+  "id": "dolphin",
+  "ja": "ハンドウイルカ",
+  "sci": "Tursiops truncatus",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 25,
+   "max": 50,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 8,
+   "note": "おおよそ"
+  },
+  "hint": "日本の近海。群れで魚を追い、音で獲物を探す。子は数年母と過ごす。",
+  "country": "jp"
+ },
+ {
+  "id": "lion",
+  "ja": "ライオン",
+  "sci": "Panthera leo",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 10,
+   "max": 15,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 3,
+   "note": "おおよそ"
+  },
+  "hint": "アフリカ・セレンゲティのサバンナ。雌の群れ（プライド）で狩りをする。雄は群れを乗っ取ると子を殺すことがある。",
+  "home": [
+   -2.3,
+   34.8
+  ],
+  "span": 3
+ },
+ {
+  "id": "polarbear",
+  "ja": "ホッキョクグマ",
+  "sci": "Ursus maritimus",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 15,
+   "max": 30,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 5,
+   "note": "おおよそ"
+  },
+  "hint": "カナダ・ハドソン湾。海氷の上でアザラシを狩り、氷が解ける夏は陸で絶食する。雌は雪の穴で子を産む。",
+  "home": [
+   58.8,
+   -93.0
+  ],
+  "span": 6
+ },
+ {
+  "id": "koala",
+  "ja": "コアラ",
+  "sci": "Phascolarctos cinereus",
+  "group": "mammal",
+  "type": "mammal",
+  "lifespan": {
+   "typical": 10,
+   "max": 15,
+   "note": "野生でのおよその値（一覧に入れる時の目安・検品で確かめる）"
+  },
+  "maturity": {
+   "value": 2,
+   "note": "おおよそ"
+  },
+  "hint": "オーストラリア東部のユーカリの森。毒のある葉を食べ、一日のほとんどを眠る。子は母の袋で育つ。",
+  "home": [
+   -28.0,
+   153.0
+  ],
+  "span": 4
  }
 ]

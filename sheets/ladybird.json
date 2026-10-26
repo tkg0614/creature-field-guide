@@ -2,7 +2,7 @@
  "id": "ladybird",
  "ja": "ナナホシテントウ",
  "sci": "Coccinella septempunctata",
- "status": "checked",
+ "status": "reviewed",
  "type": "insect_annual",
  "country": "jp",
  "by": {
@@ -21,7 +21,7 @@
   {
    "id": "aphid_leaf",
    "ja": "アブラムシのいる葉裏",
-   "danger": 1,
+   "danger": 2,
    "cover": true,
    "about": "アブラムシが密集する場所。成虫が黄色い卵を塊で産み付ける。",
    "stages": [
@@ -186,7 +186,7 @@
   {
    "id": "egg",
    "ja": "卵",
-   "days": 4,
+   "days": 2,
    "hunger": 0,
    "grow": 0.5,
    "goal": "孵化する",
@@ -196,7 +196,7 @@
    "id": "larva",
    "ja": "幼虫",
    "fromAge": 0.01,
-   "days": 15,
+   "days": 4,
    "hunger": 10,
    "grow": 0.8,
    "goal": "蛹になるまで育つ",
@@ -206,7 +206,7 @@
    "id": "pupa",
    "ja": "蛹",
    "fromAge": 0.05,
-   "days": 8,
+   "days": 3,
    "hunger": 0,
    "grow": 0.2,
    "goal": "成虫へ変態する",
@@ -216,7 +216,7 @@
    "id": "adult",
    "ja": "成熟成虫",
    "fromAge": 0.08,
-   "days": 80,
+   "days": 20,
    "hunger": 12,
    "grow": 0.1,
    "adult": true,
@@ -226,8 +226,8 @@
  ],
  "oldAge": {
   "years": [
-   0.2,
-   0.4
+   0.6,
+   1.0
   ],
   "text": "冬の寒さに耐えきれず、樹皮の隙間で静かに息を引き取った。"
  },
@@ -467,22 +467,6 @@
    "bye": "冬の訪れとともに、あの捕食者は土に還った。"
   },
   {
-   "id": "shrew",
-   "ja": "トガリネズミ",
-   "kind": "mammal",
-   "places": [
-    "winter_bark"
-   ],
-   "stages": [
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "樹皮の隙間で眠る体に、鋭い嗅覚が迫る。",
-    "暗闇の中を這い回る小さな獣が、冬眠中の体を掘り起こす。"
-   ]
-  },
-  {
    "id": "coccinellid",
    "ja": "他のテントウムシ",
    "kind": "insect",
@@ -504,16 +488,14 @@
    "ja": "殺虫剤",
    "kind": "human",
    "places": [
-    "aphid_leaf",
     "feeding_shoot"
    ],
    "stages": [
-    "egg",
     "larva",
     "pupa",
     "adult"
    ],
-   "sev": 3,
+   "sev": 1,
    "texts": [
     "葉に散布された毒が、気門から入り込む。",
     "目に見えない薬剤が、神経を麻痺させる。"

@@ -2,7 +2,7 @@
  "id": "mantis",
  "ja": "オオカマキリ",
  "sci": "Tenodera sinensis",
- "status": "checked",
+ "status": "reviewed",
  "type": "insect_annual",
  "country": "jp",
  "by": {
@@ -180,7 +180,7 @@
   {
    "id": "nymph_early",
    "ja": "幼虫（前期）",
-   "days": 70,
+   "days": 15,
    "hunger": 10,
    "grow": 0.6,
    "goal": "脱皮を繰り返し成長する",
@@ -189,8 +189,8 @@
   {
    "id": "nymph_late",
    "ja": "幼虫（後期）",
-   "fromAge": 0.2,
-   "days": 70,
+   "fromAge": 0.12,
+   "days": 15,
    "hunger": 12,
    "grow": 0.8,
    "goal": "成虫への脱皮に備える",
@@ -199,8 +199,8 @@
   {
    "id": "adult",
    "ja": "成虫",
-   "fromAge": 0.4,
-   "days": 80,
+   "fromAge": 0.25,
+   "days": 15,
    "hunger": 15,
    "grow": 0.2,
    "adult": true,
@@ -210,8 +210,8 @@
  ],
  "oldAge": {
   "years": [
-   0.6,
-   0.8
+   0.5,
+   0.6
   ],
   "text": "冬の冷気が厳しくなり、卵のうを遺して静かに息を引き取った。"
  },
@@ -219,9 +219,9 @@
   "ja": "卵のうによる産卵",
   "ds": "植物の茎や枝に、泡のような物質で包まれた卵のうを産み付ける",
   "months": [
-   8,
    9,
-   10
+   10,
+   11
   ],
   "places": [
    "shrub_branch",
@@ -478,15 +478,14 @@
    "ja": "殺虫剤",
    "kind": "human",
    "places": [
-    "sunny_grass",
-    "low_grass"
+    "sunny_grass"
    ],
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
-   "sev": 3,
+   "sev": 1,
    "texts": [
     "霧のような薬剤が、風に乗って全身に降りかかる。",
     "葉に付着した見えない毒が、気管をじわじわと塞ぐ。"

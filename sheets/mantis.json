@@ -1,0 +1,722 @@
+{
+ "id": "mantis",
+ "ja": "オオカマキリ",
+ "sci": "Tenodera sinensis",
+ "status": "checked",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本の里山と草地",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "shrub_branch",
+   "ja": "低木の枝",
+   "danger": 1,
+   "cover": true,
+   "about": "卵のうが固く付着している。冬の寒さに耐え、春の訪れを待つ。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "low_grass",
+   "ja": "草むらの低い位置",
+   "danger": 3,
+   "cover": true,
+   "about": "孵化したばかりの幼虫が潜む。小さな虫を捕らえ、急いで脱皮を繰り返す。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "sunny_grass",
+   "ja": "日当たりの良い草地",
+   "danger": 2,
+   "cover": true,
+   "about": "体を大きくし、天敵から逃れる力をつける。バッタなどの昆虫を待ち伏せして捕食する。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.605,
+   "lon": 139.251
+  },
+  {
+   "id": "thicket_shadow",
+   "ja": "茂みの陰",
+   "danger": 2,
+   "cover": true,
+   "about": "成虫へと成長し、擬態して獲物を待つ。周囲の緑や茶色に溶け込み、気配を消す。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.586,
+   "lon": 139.22
+  },
+  {
+   "id": "woods_edge",
+   "ja": "林のへり",
+   "danger": 2,
+   "cover": false,
+   "about": "視界が開けており、獲物を見つけやすい。鳥や大型の蜂に狙われる危険がある。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.56,
+   "lon": 139.213
+  },
+  {
+   "id": "autumn_grass",
+   "ja": "秋の草むら",
+   "danger": 2,
+   "cover": true,
+   "about": "成虫が交尾し、次世代へ命をつなぐ。メスは丈夫な卵のうを枝や茎に産み付ける。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.545,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "low_grass",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の里山と草地",
+  "lon0": 139.196,
+  "lon1": 139.288,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 5435,
+  "labels": [
+   [
+    36.61636,
+    139.24200000000002,
+    "日本の里山と草地"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "shrub_branch",
+   "thicket_shadow"
+  ],
+  [
+   "shrub_branch",
+   "woods_edge"
+  ],
+  [
+   "low_grass",
+   "shrub_branch"
+  ],
+  [
+   "low_grass",
+   "sunny_grass"
+  ],
+  [
+   "shrub_branch",
+   "sunny_grass"
+  ],
+  [
+   "thicket_shadow",
+   "woods_edge"
+  ],
+  [
+   "autumn_grass",
+   "shrub_branch"
+  ],
+  [
+   "autumn_grass",
+   "low_grass"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.5
+ },
+ "stats": {
+  "run": {
+   "ja": "移動力",
+   "use": "枝の間を移動し、天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "複眼の視力",
+   "use": "獲物のわずかな動きを察知する時に効く"
+  },
+  "forage": {
+   "ja": "捕獲力",
+   "use": "鎌状の前脚で獲物を確実に挟み込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nymph_early",
+   "ja": "幼虫（前期）",
+   "days": 70,
+   "hunger": 10,
+   "grow": 0.6,
+   "goal": "脱皮を繰り返し成長する",
+   "enter": "春の陽気に誘われ、卵のうから孵化した。草むらの低い位置で小さな虫を狙う。"
+  },
+  {
+   "id": "nymph_late",
+   "ja": "幼虫（後期）",
+   "fromAge": 0.2,
+   "days": 70,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成虫への脱皮に備える",
+   "enter": "脱皮を繰り返し、体が大きくなった。茂みの陰に潜み、獲物を待つ。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.4,
+   "days": 80,
+   "hunger": 15,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "伴侶を探し産卵する",
+   "enter": "最後の脱皮を終え、翅を得た。日当たりの良い草地で、獲物と伴侶を探す。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.6,
+   0.8
+  ],
+  "text": "冬の冷気が厳しくなり、卵のうを遺して静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "卵のうによる産卵",
+  "ds": "植物の茎や枝に、泡のような物質で包まれた卵のうを産み付ける",
+  "months": [
+   8,
+   9,
+   10
+  ],
+  "places": [
+   "shrub_branch",
+   "woods_edge"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   300
+  ],
+  "many": 300,
+  "label": {
+   "ja": "卵のう",
+   "unit": "個",
+   "child": "越冬する卵のひとつ"
+  },
+  "ok": "枝に白い泡のような卵のうを産み付けた。",
+  "ng": "適切な産卵場所が見つからず、卵を遺せなかった。",
+  "goal1": "植物に卵のうを産む",
+  "goal2": "累計で300個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "small_insects",
+   "ja": "小昆虫を捕らえる",
+   "name": "小昆虫",
+   "ds": "鎌状の前脚を素早く突き出し、小さな虫を捕らえる",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "places": [
+    "low_grass",
+    "sunny_grass",
+    "thicket_shadow"
+   ],
+   "rich": [
+    "sunny_grass"
+   ],
+   "ok": "素早く鎌を振り下ろし、小昆虫を捕らえた。",
+   "full": 20
+  },
+  {
+   "id": "large_prey",
+   "ja": "大型の獲物を捕らえる",
+   "name": "大型昆虫・小動物",
+   "ds": "強力な前脚で大型の昆虫や、時には小型の脊椎動物を捕らえる",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "shrub_branch",
+    "sunny_grass"
+   ],
+   "rich": [
+    "shrub_branch"
+   ],
+   "ok": "待ち伏せから一気に襲いかかり、大きな獲物を捕らえた。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "sexual_cannibalism",
+   "ja": "交尾後の捕食",
+   "ds": "雌が交尾中の雄を捕食し、産卵のための栄養にする",
+   "stages": [
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": false,
+   "ok": "交尾の最中、雌の鋭い鎌が雄を捉え、自らの糧とした。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "asian_giant_hornet",
+   "ja": "オオスズメバチ",
+   "kind": "insect",
+   "places": [
+    "sunny_grass",
+    "shrub_branch"
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "黄金色の巨体が、激しい羽音とともに急降下してくる。",
+    "強力な大あごが、鎌の隙間から肉体に食い込む。"
+   ],
+   "again": [
+    [
+     "再び、あの不気味な羽音が近づいてくる。",
+     "空から黄金色の影が、獲物を定めるように旋回している。"
+    ]
+   ],
+   "bye": "冬の訪れとともに、黄金色の刺客は姿を消した。"
+  },
+  {
+   "id": "bull_headed_shrike",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "woods_edge",
+    "sunny_grass"
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "鋭いくちばしが、草むらの隙間から電光石火に突き刺さる。",
+    "枯れ枝のてっぺんから、冷徹な眼光が獲物を捉える。"
+   ],
+   "again": [
+    [
+     "また、あの枯れ枝に鋭い眼光の主が止まっている。",
+     "尾を振る鳥が、上空からじっと様子を伺っている。"
+    ]
+   ],
+   "bye": "寒さが厳しくなり、あの鳥は南へと去った。"
+  },
+  {
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "autumn_grass",
+    "woods_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黒い翼が日光を遮り、太いくちばしが上から襲いかかる。",
+    "地面を歩く隙を突き、鋭い嘴が正確に捉える。"
+   ]
+  },
+  {
+   "id": "giant_centipede",
+   "ja": "ムカデ",
+   "kind": "any",
+   "places": [
+    "thicket_shadow",
+    "low_grass"
+   ],
+   "stages": [
+    "nymph_early",
+    "nymph_late"
+   ],
+   "sev": 2,
+   "texts": [
+    "枯れ葉の下から、無数の脚を持つ褐色の影が這い出してくる。",
+    "鋭い毒爪が、柔らかい腹部を狙って突き刺さる。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "コガネグモ",
+   "kind": "arachnid",
+   "places": [
+    "low_grass",
+    "thicket_shadow"
+   ],
+   "stages": [
+    "nymph_early"
+   ],
+   "sev": 2,
+   "texts": [
+    "気づかぬうちに、粘り気のある白い糸に足を取られる。",
+    "網の中央から、八つの眼を持つ主が静かに近づく。"
+   ]
+  },
+  {
+   "id": "tree_frog",
+   "ja": "ニホンアマガエル",
+   "kind": "amphibian",
+   "places": [
+    "low_grass"
+   ],
+   "stages": [
+    "nymph_early"
+   ],
+   "sev": 2,
+   "texts": [
+    "葉の裏に潜む緑色の体が、突然跳ね上がってくる。",
+    "粘着質な長い舌が、一瞬で体を巻き込む。"
+   ]
+  },
+  {
+   "id": "japanese_skink",
+   "ja": "ニホンカナヘビ",
+   "kind": "reptile",
+   "places": [
+    "sunny_grass"
+   ],
+   "stages": [
+    "nymph_early",
+    "nymph_late"
+   ],
+   "sev": 2,
+   "texts": [
+    "素早い動きで接近し、鋭い歯が体を噛み砕く。",
+    "日向ぼっこをしていた体から、電撃的な速さで襲いかかる。"
+   ]
+  },
+  {
+   "id": "female_mantis",
+   "ja": "メスのオオカマキリ",
+   "kind": "insect",
+   "places": [
+    "sunny_grass",
+    "shrub_branch"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "交尾の最中、信頼していたはずの相手が鎌を振り上げる。",
+    "自分より巨大な同種の影が、捕食者の顔となって迫る。"
+   ]
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "sunny_grass",
+    "shrub_branch"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "視界を遮る白い布が、上から勢いよく振り下ろされる。",
+    "逃げ場のない網の底で、激しく揺さぶられる。"
+   ],
+   "lose": "白い網に激しく打ち付けられ、傷を負った。"
+  },
+  {
+   "id": "pesticide",
+   "ja": "殺虫剤",
+   "kind": "human",
+   "places": [
+    "sunny_grass",
+    "low_grass"
+   ],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "霧のような薬剤が、風に乗って全身に降りかかる。",
+    "葉に付着した見えない毒が、気管をじわじわと塞ぐ。"
+   ],
+   "lose": "薬剤に蝕まれ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "孵化した。どこで最初の獲物を待つか",
+   "stages": [
+    "nymph_early"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "日当たりの良い草地にとどまる",
+     "ds": "小さな虫が多く餌に困らない。鳥などの天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "sunny_grass",
+     "say": "陽光が降り注ぐ草地で、飛び交う小さな虫を狙った。",
+     "chip": "日当たりの良い草地"
+    },
+    {
+     "ja": "低木の枝へ登る",
+     "ds": "地上の天敵から逃れられる。餌となる虫の数が限られる",
+     "fx": {
+      "food": -0.5,
+      "danger": -0.5
+     },
+     "goto": "shrub_branch",
+     "say": "葉の陰に身を潜め、通りかかる虫をじっと待った。",
+     "chip": "低木の枝"
+    }
+   ]
+  },
+  {
+   "q": "体が大きくなってきた。狩りの場所をどこにするか",
+   "stages": [
+    "nymph_late"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "茂みの陰で擬態する",
+     "ds": "獲物に気づかれず捕食できる。日光浴ができず成長が緩やかになる",
+     "fx": {
+      "food": 0.5,
+      "energy": -0.5
+     },
+     "goto": "thicket_shadow",
+     "say": "暗い茂みの中で緑に溶け込み、不意に近づく獲物を捕らえた。",
+     "chip": "茂みの陰"
+    },
+    {
+     "ja": "林のへりで待ち伏せる",
+     "ds": "大型の獲物が集まりやすい。外敵にさらされるリスクが高まる",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "woods_edge",
+     "say": "虫が集まる林の縁に陣取り、効率よく獲物を仕留めた。",
+     "chip": "林のへり"
+    }
+   ]
+  },
+  {
+   "q": "成虫になった。秋の繁殖期をどう過ごすか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "積極的に大型の獲物を追う",
+     "ds": "十分な栄養を得て産卵量を増やせる。激しい狩りで負傷しやすい",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "sunny_grass",
+     "say": "飢えを満たすため、大型のバッタやハチを積極的に狩った。",
+     "chip": "積極的な狩り"
+    },
+    {
+     "ja": "気配を消して待ち伏せに徹する",
+     "ds": "体力を温存でき、天敵の目も避けられる。得られる餌が少なくなる",
+     "fx": {
+      "food": -0.5,
+      "danger": -1
+     },
+     "goto": "thicket_shadow",
+     "say": "静かに潜み、運良く迷い込んできた獲物を確実に捕らえた。",
+     "chip": "待ち伏せ"
+    }
+   ]
+  },
+  {
+   "q": "寒さが近づいた。どこに卵のうを作るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "低木の太い枝に固定する",
+     "ds": "風雨に強く、冬を越しやすい。冬の寒風に直接さらされる",
+     "fx": {
+      "kids": 1,
+      "danger": -0.5
+     },
+     "goto": "shrub_branch",
+     "say": "風に強い低木の枝に、白く泡立つ卵のうをしっかりと固定した。",
+     "chip": "枝に産卵"
+    },
+    {
+     "ja": "草むらの茎に産み付ける",
+     "ds": "雪に覆われ保温されやすい。湿気が多くカビが発生しやすい",
+     "fx": {
+      "kids": 0.5,
+      "danger": 0.5
+     },
+     "goto": "low_grass",
+     "say": "草の茎に卵を産み付け、次世代への命を託した。",
+     "chip": "草に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "nymph_late"
+   ],
+   "p": 0.2,
+   "say": "猛暑の日、葉の裏でじっと息を潜め、体温の上昇をしのいだ。",
+   "full": -5
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "空から急降下してきた鳥に襲われ、前脚を失い、傷を負った。",
+   "full": -20
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "冷たい秋雨が降り続き、体が冷えて動きが鈍くなった。",
+   "full": -10
+  }
+ ],
+ "lead": "日本の草地で卵を越冬させ、春に孵化し、夏に成長、秋に卵を産んで死ぬ。一年で完結する待ち伏せ捕食者である。",
+ "texts": {
+  "move": "{to}へ、草むらを滑空しながら移動した。",
+  "fleeJa": "草陰へすばやく逃げ込んだ。",
+  "restJa": "葉の裏で体を休めた。",
+  "watchJa": "鋭い複眼で周囲の獲物をうかがった。",
+  "lieJa": "葉の裏に身を潜めて待ち伏せた。",
+  "lastMemory": "最後に見た秋の草地で、卵を産み落とした瞬間を思い出した。"
+ },
+ "intro": [
+  "春の暖かい日差しの中、低木の枝に付いた卵嚢から幼虫がかえった。",
+  "周囲には小さな昆虫が飛び交い、成長の機会が満ちていた。"
+ ],
+ "wins": [
+  {
+   "minKids": 100,
+   "title": "秋の草地に命をつないだ",
+   "line": "草地の葉に付いた卵嚢を{kids}個産み落とした。",
+   "mem": "産卵後、葉陰で静かに息を引き取った日を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "初夏の昼、日当たりの良い草地で獲物を捕らえた瞬間を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "秋の夕暮れ、冷たい風が吹く中で卵嚢を葉に固定した時を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命をつなげなかった",
+  "line": "卵を産むことなく、その一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "T. sinensis feeds primarily on other large insects, though adult females sometimes catch small vertebrates."
+  },
+  {
+   "quote": "The female can produce several semispherical oothecae, roughly 2 cm in diameter, containing up to 300 eggs."
+  },
+  {
+   "quote": "Chinese mantises hatch in the spring, eat, grow, and molt through the summer, and lay eggs at the end of summer."
+  },
+  {
+   "quote": "The nymphs are preyed on by a greater variety of insects, many of which are later frequently preyed on by the adults."
+  }
+ ]
+}

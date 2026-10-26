@@ -1,0 +1,751 @@
+{
+ "id": "cricket",
+ "ja": "エンマコオロギ",
+ "sci": "Teleogryllus emma",
+ "status": "checked",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本本土",
+  "geo": "Honshu, Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "winter_soil",
+   "ja": "冬の地中",
+   "danger": 1,
+   "cover": true,
+   "about": "土の中で卵が冬を越す。春に水分を吸収して胚が成長する。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "spring_grass",
+   "ja": "春の草地",
+   "danger": 2,
+   "cover": true,
+   "about": "5月から6月に孵化する。黒い体に白い帯を持つ幼虫が活動を始める。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "field_edge",
+   "ja": "畑の土際",
+   "danger": 2,
+   "cover": true,
+   "about": "植物や小動物の死骸を雑食的に食べる。脱皮を繰り返し、体を大きくする。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "shrubbery",
+   "ja": "草木の茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "昼間は天敵から逃れて潜む。涼しい日陰で休息する。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "night_road",
+   "ja": "夜の道端",
+   "danger": 3,
+   "cover": false,
+   "about": "夜になると周辺を徘徊する。灯火に誘われて飛来することもある。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "autumn_grass",
+   "ja": "秋の草地",
+   "danger": 2,
+   "cover": true,
+   "about": "オスが前翅をこすり合わせて鳴く。雌を呼び寄せ、交尾を行う。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "laying_ground",
+   "ja": "湿った地面",
+   "danger": 2,
+   "cover": false,
+   "about": "メスが長い産卵管を土に突き立てる。次世代の卵を産み付ける。",
+   "stages": [
+    "egg",
+    "nymph",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  }
+ ],
+ "start": {
+  "place": "spring_grass",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本本土",
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
+  "labels": [
+   [
+    36.583800000000004,
+    139.239,
+    "日本本土"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "spring_grass",
+   "winter_soil"
+  ],
+  [
+   "field_edge",
+   "winter_soil"
+  ],
+  [
+   "field_edge",
+   "spring_grass"
+  ],
+  [
+   "shrubbery",
+   "winter_soil"
+  ],
+  [
+   "shrubbery",
+   "spring_grass"
+  ],
+  [
+   "night_road",
+   "winter_soil"
+  ],
+  [
+   "night_road",
+   "spring_grass"
+  ],
+  [
+   "autumn_grass",
+   "winter_soil"
+  ],
+  [
+   "autumn_grass",
+   "spring_grass"
+  ],
+  [
+   "laying_ground",
+   "winter_soil"
+  ],
+  [
+   "laying_ground",
+   "spring_grass"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.3
+ },
+ "stats": {
+  "run": {
+   "ja": "跳躍力",
+   "use": "後脚で大きく跳ね、天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "触角の感知力",
+   "use": "夜間の徘徊や餌、配偶者を探す時に効く"
+  },
+  "forage": {
+   "ja": "雑食性",
+   "use": "植物や小動物の死骸など、あらゆる有機物を食べる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "egg",
+   "ja": "卵",
+   "days": 30,
+   "hunger": 0,
+   "grow": 0.1,
+   "goal": "冬を越し孵化する",
+   "enter": "湿った地面に産み付けられた。冬の寒さに耐え、春の訪れを待つ。"
+  },
+  {
+   "id": "nymph",
+   "ja": "幼虫",
+   "fromAge": 0.3,
+   "days": 30,
+   "hunger": 10,
+   "grow": 0.7,
+   "goal": "脱皮を繰り返し成虫になる",
+   "enter": "初夏に地中から這い出した。白い横帯を身にまとい、草陰で餌を食らう。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.4,
+   "days": 30,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "子を残して生を終える",
+   "enter": "黒褐色の体に羽が生えた。夜の草地で声を張り上げ、伴侶を呼ぶ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.7,
+   0.9
+  ],
+  "text": "秋が深まり、冷たい雨が降り続く頃、静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "地中産卵",
+  "ds": "メスが長い産卵管を地面に突き立て、卵を一粒ずつ産み落とす",
+  "months": [
+   8,
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "laying_ground"
+  ],
+  "perYear": 1,
+  "kids": [
+   50,
+   200
+  ],
+  "many": 500,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "越冬する卵のひとつ"
+  },
+  "ok": "湿った地面に、{born}個の卵を産み落とした。",
+  "ng": "適切な地面が見つからず、産卵できなかった。",
+  "goal1": "地面に卵を産む",
+  "goal2": "累計で500個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "plants",
+   "ja": "植物を食べる",
+   "name": "植物",
+   "ds": "草の葉や種子をかじる",
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "places": [
+    "spring_grass",
+    "field_edge",
+    "shrubbery",
+    "autumn_grass"
+   ],
+   "rich": [
+    "field_edge"
+   ],
+   "ok": "瑞々しい若葉や種子を、頑丈な顎で噛み砕いた。",
+   "full": 20
+  },
+  {
+   "id": "carcass",
+   "ja": "死骸を食べる",
+   "name": "小動物の死骸",
+   "ds": "他の昆虫などの死骸を食べる",
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "places": [
+    "shrubbery",
+    "night_road"
+   ],
+   "rich": [
+    "shrubbery"
+   ],
+   "ok": "草陰に転がる小さな虫の死骸を見つけ、貪欲に食べた。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "singing",
+   "ja": "求愛の鳴き声",
+   "ds": "オスが前翅をこすり合わせ、大きな音でメスを誘う",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.6,
+   "calm": true,
+   "ok": "夜の静寂に、コロコロリーと澄んだ声を響かせた。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "shrike",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "shrubbery",
+    "autumn_grass"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "枯れ枝から急降下し、鋭いくちばしが突き刺さる。",
+    "杭の上で獲物を定め、一気に襲いかかる。"
+   ],
+   "again": [
+    [
+     "また、あの枯れ枝に鋭い目が光っている。"
+    ],
+    [
+     "尾を振る影が、上空から監視している。"
+    ]
+   ],
+   "bye": "厳しい寒波が訪れ、あの鋭い声は遠くへ消えた。"
+  },
+  {
+   "id": "mantis",
+   "ja": "コカマキリ",
+   "kind": "insect",
+   "places": [
+    "shrubbery",
+    "field_edge"
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "茂みの緑に紛れ、強靭な前脚が電光石火に捉える。",
+    "葉の陰から、鎌のような腕が伸びてくる。"
+   ],
+   "again": [
+    [
+     "また、草の陰で鎌のような前脚が待ち構えている。"
+    ],
+    [
+     "緑の体に紛れた刺客が、じっとこちらを見ている。"
+    ]
+   ],
+   "bye": "霜が降りる頃、あの緑の刺客は地に伏して動かなくなった。"
+  },
+  {
+   "id": "japanese_skink",
+   "ja": "ニホントカゲ",
+   "kind": "reptile",
+   "places": [
+    "field_edge",
+    "shrubbery"
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "土際から素早く現れ、鋭い顎が噛みつく。",
+    "石の隙間から、鈍い色の体が飛び出してくる。"
+   ]
+  },
+  {
+   "id": "tree_frog",
+   "ja": "ニホンアマガエル",
+   "kind": "amphibian",
+   "places": [
+    "spring_grass",
+    "shrubbery"
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "葉の裏から、粘着質のある長い舌が伸びてくる。",
+    "草むらでじっと待ち、不意に口を開く。"
+   ]
+  },
+  {
+   "id": "parasitic_wasp",
+   "ja": "寄生蜂",
+   "kind": "insect",
+   "places": [
+    "spring_grass",
+    "shrubbery"
+   ],
+   "stages": [
+    "egg",
+    "nymph"
+   ],
+   "sev": 3,
+   "texts": [
+    "小さな針が、静かに卵や幼虫の体に突き刺さる。",
+    "空中で捉えられ、腹部の針が深く刺し込まれる。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "night_road",
+    "shrubbery"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の道端に張られた網に、不意に絡め取られる。",
+    "糸の罠に足を取られ、身動きが取れなくなる。"
+   ]
+  },
+  {
+   "id": "centipede",
+   "ja": "ムカデ",
+   "kind": "any",
+   "places": [
+    "winter_soil",
+    "field_edge"
+   ],
+   "stages": [
+    "egg",
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "土の中や石の下から、多くの脚を持つ影が這い寄る。",
+    "暗がりの隙間から、毒を持つ顎が迫る。"
+   ]
+  },
+  {
+   "id": "small_bird",
+   "ja": "小鳥",
+   "kind": "bird",
+   "places": [
+    "spring_grass",
+    "autumn_grass"
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "空から黒い影が降り、鋭い爪が体を掴む。",
+    "草地を低く飛び、素早く口で挟み込む。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "殺虫剤",
+   "kind": "human",
+   "places": [
+    "field_edge"
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "畑に散布された薬剤が、皮膚から浸透する。",
+    "葉に付着した毒が、じわじわと体に回る。"
+   ],
+   "lose": "薬剤に蝕まれ、傷を負った。"
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "shrubbery",
+    "autumn_grass"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "茂みから白い網が、勢いよく振り下ろされる。",
+    "逃げ場のない場所で、大きな枠が視界を覆う。"
+   ],
+   "lose": "網に払われ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "孵化したばかりの幼虫だ。どこで餌を探すか",
+   "stages": [
+    "nymph"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "畑の土際を徘徊する",
+     "ds": "種子や小虫などの餌が豊富。鳥やトカゲに見つかりやすい",
+     "fx": {
+      "food": 0.5,
+      "danger": 0.5
+     },
+     "goto": "field_edge",
+     "say": "畑の土際を歩き回り、落ちた種子や小さな虫を貪欲に食べた。",
+     "chip": "畑で採餌"
+    },
+    {
+     "ja": "草木の茂みに潜む",
+     "ds": "外敵から身を隠しやすい。得られる餌の種類が限られる",
+     "fx": {
+      "food": -0.5,
+      "danger": -0.5
+     },
+     "goto": "shrubbery",
+     "say": "生い茂る草の根元に身を潜め、わずかな餌を拾い集めて成長した。",
+     "chip": "茂みで採餌"
+    }
+   ]
+  },
+  {
+   "q": "終齢幼虫となり、羽化の時が近づいた。どこで脱皮するか",
+   "stages": [
+    "nymph"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "石や資材の陰に潜り込む",
+     "ds": "温度が安定し、外敵から守られる。脱出に時間がかかる",
+     "fx": {
+      "danger": -0.5,
+      "energy": -0.2
+     },
+     "goto": "shrubbery",
+     "say": "石の隙間に深く潜り込み、静かに背中を割って成虫へと姿を変えた。",
+     "chip": "石陰で羽化"
+    },
+    {
+     "ja": "密集した草むらで待機する",
+     "ds": "羽化後すぐに逃げ出せる。風雨にさらされ翅が折れやすい",
+     "fx": {
+      "danger": 0.3,
+      "energy": 0.2
+     },
+     "goto": "spring_grass",
+     "say": "草の茎に掴まって脱皮し、濡れた翅を伸ばして夜明けを待った。",
+     "chip": "草むらで羽化"
+    }
+   ]
+  },
+  {
+   "q": "成虫になった。雌を呼ぶためにどこで鳴くか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "開けた草地で大きく鳴く",
+     "ds": "声が遠くまで届き、雌を呼び寄せやすい。天敵に位置を知らせる",
+     "fx": {
+      "kids": 0.5,
+      "danger": 0.5
+     },
+     "goto": "autumn_grass",
+     "say": "開けた場所で前翅を激しくこすり合わせ、夜の静寂に声を響かせた。",
+     "chip": "大胆な求愛"
+    },
+    {
+     "ja": "茂みの奥深くで静かに鳴く",
+     "ds": "安全に鳴き続けられる。雌に見つかるまでに時間がかかる",
+     "fx": {
+      "kids": -0.3,
+      "danger": -0.5
+     },
+     "goto": "shrubbery",
+     "say": "葉の陰に身を隠しながら、控えめにコロコロと声を漏らした。",
+     "chip": "慎重な求愛"
+    }
+   ]
+  },
+  {
+   "q": "腹に卵を抱えた。どこに産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "湿り気のある地面に産む",
+     "ds": "胚の発育が良い。過湿で卵が腐る恐れがある",
+     "fx": {
+      "kids": 0.5,
+      "danger": 0.3
+     },
+     "goto": "laying_ground",
+     "say": "湿った土に長い産卵管を突き立て、一粒ずつ丁寧に卵を落とした。",
+     "chip": "湿地に産卵"
+    },
+    {
+     "ja": "適度に締まった土に産む",
+     "ds": "冬の乾燥に強く、生存率が安定する。産卵に体力を消耗する",
+     "fx": {
+      "kids": 0.2,
+      "danger": -0.2
+     },
+     "goto": "laying_ground",
+     "say": "固い土を押し広げるように産卵管を入れ、地中深くへ卵を送り込んだ。",
+     "chip": "硬土に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "猛暑の日差しが照りつけ、日中は茂みの奥でじっと息を潜めた。",
+   "full": -10
+  },
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "秋が深まり気温が下がったため、昼間にも鳴き声が響き始めた。",
+   "full": 5
+  },
+  {
+   "month": [
+    8,
+    11
+   ],
+   "stages": [
+    "nymph",
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "地上のカマキリに襲われ、太い後脚で激しく跳躍して逃れた。",
+   "full": -15
+  }
+ ],
+ "lead": "草地や畑の土際で卵が越冬し、春に孵化して幼虫となり、夏に成虫となって鳴き、秋に産卵して命を閉じる。",
+ "texts": {
+  "move": "草地へ、跳びながら移動した。",
+  "fleeJa": "敵が近づくと、後脚で高く跳び去る。",
+  "restJa": "草陰に身を潜めて体を休める。",
+  "watchJa": "複眼で周囲の光と影をうかがう。",
+  "lieJa": "湿った土の中に身を潜める。",
+  "lastMemory": "秋の草地で産卵した夜を思い出した。"
+ },
+ "intro": [
+  "湿った土の中で卵が孵化し、黒い幼虫が姿を現した。",
+  "幼虫は草木の陰を這い回り、成長のために植物や小さな死骸を食べた。"
+ ],
+ "wins": [
+  {
+   "minKids": 30,
+   "title": "秋に卵を残した",
+   "line": "秋の草地に、{kids}個の卵を産み落とした。",
+   "mem": "雌が産卵管を土に突き立て、静かな夜に卵を残したことを思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "夜になると灯火に寄り添い、鳴き声を響かせた時を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "夏の昼、草陰で高く跳躍し、捕食者から逃れた瞬間を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "子を残さなかった",
+  "line": "産卵せずに冬を迎え、その一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "エンマコオロギは卵→幼虫→成虫という一生をおくる不完全変態の虫である。"
+  },
+  {
+   "quote": "成虫は8-11月頃に出現し、交尾はメスが上に乗る形で行い、受精したメスは長い産卵管を地面に突き立て、長さ3mmほどのソーセージ形をした卵を一粒ずつ産卵する。"
+  },
+  {
+   "quote": "成虫の期間は1-2か月ほどで、この間に繁殖行動を行う。"
+  }
+ ]
+}

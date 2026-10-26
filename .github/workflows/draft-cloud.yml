@@ -37,6 +37,7 @@ jobs:
             const q=JSON.parse(fs.readFileSync("data/queue.json","utf8")).map(x=>x.id);
             console.log((want.length?want:[...q.filter(id=>["none","draft"].includes(st(id))),...q.filter(id=>st(id)==="draft-ng")]).slice(0,+process.env.MAX).join(" "))')
           echo "今回: $IDS"
+          export DEADLINE=$(( $(date +%s) + 260*60 ))   # 打ち切り（300分）の前に作りかけを保存して終える
           for id in $IDS; do
             node tools/fetch.js "$id"
             set +e; node tools/draft.js "$id" --tries 4; code=$?; set -e

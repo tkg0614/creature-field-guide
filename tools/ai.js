@@ -54,12 +54,15 @@ async function ask(prompt, minQ = 0, keys = []) {
     const j = await r.json(); if (!j.message) throw new Error(JSON.stringify(j).slice(0, 200));
     return { json: JSON.parse(j.message.content), by: `ollama ${process.env.MODEL || 'gemma2:9b'}` };
   }
+  // DEADLINE（秒・工場が渡す）を過ぎたら新しく頼まない。作りかけを保存して次の回へ（2026-10-26: Gemma の混雑待ちが重なり5時間で打ち切られ、作りかけが消えた）
+  const late = () => process.env.DEADLINE && Date.now() / 1000 > +process.env.DEADLINE;
   for (;;) {
+    if (late()) { const e = new Error('工場の持ち時間が尽きた'); e.allLimited = true; throw e; }
     const p = usable(minQ)[0];
     if (!p) {
       // 休み明けが近い（15分以内）なら待つ。遠ければ、この回はおしまい
       const soon = LIST.filter((q) => (q.quality || 1) >= minQ && process.env[q.key] && cool[q.name]).map((q) => Date.parse(cool[q.name].until) - Date.now()).sort((a, b) => a - b)[0];
-      if (soon != null && soon < 900e3) { console.log(`  全部が休み中。${Math.ceil(soon / 1000)}秒待つ`); await new Promise((r) => setTimeout(r, Math.max(1000, soon + 500))); continue; }
+      if (soon != null && soon < 900e3 && !(process.env.DEADLINE && Date.now() / 1000 + soon / 1000 > +process.env.DEADLINE)) { console.log(`  全部が休み中。${Math.ceil(soon / 1000)}秒待つ`); await new Promise((r) => setTimeout(r, Math.max(1000, soon + 500))); continue; }
       const e = new Error('使える AI が無い（全部が上限で休み中か、鍵が無い）'); e.allLimited = true; throw e;
     }
     let res; try { res = await call(p, prompt); } catch (e) { res = { status: 0, raw: { error: e.message } }; }

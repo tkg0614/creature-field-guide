@@ -7,7 +7,8 @@
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "関東平野",
@@ -21,7 +22,11 @@
    "danger": 1,
    "cover": true,
    "about": "地中で冬を越し、春に水分を吸収して成長する。5月から6月に孵化し、地上へ出る。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 41.126,
    "lon": 140.629
   },
@@ -31,7 +36,11 @@
    "danger": 2,
    "cover": true,
    "about": "黒い体に白い帯を持つ幼虫が潜む。植物や小昆虫を食らい、脱皮を繰り返す。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 41.126,
    "lon": 143.029
   },
@@ -41,7 +50,11 @@
    "danger": 1,
    "cover": true,
    "about": "終齢幼虫が静かに身を潜める。外敵の目を避けながら、羽化の時を待つ。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 43.204,
    "lon": 142.129
   },
@@ -51,7 +64,11 @@
    "danger": 2,
    "cover": true,
    "about": "羽化したばかりの成虫が体を黒く染めるまで休む。夜になると灯火や周辺を徘徊する。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 42.373,
    "lon": 139.729
   },
@@ -61,7 +78,11 @@
    "danger": 3,
    "cover": false,
    "about": "オスが前翅をこすり合わせ、激しく鳴く。雌を呼び寄せ、交尾を行う。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 41.126,
    "lon": 138.229
   },
@@ -71,7 +92,11 @@
    "danger": 2,
    "cover": false,
    "about": "メスが長い産卵管を地面に突き立てる。ソーセージ形の卵を一つずつ産み付ける。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 39.048,
    "lon": 139.129
   },
@@ -81,7 +106,11 @@
    "danger": 1,
    "cover": true,
    "about": "産み付けられた卵が土の中で寒さに耐える。翌春の孵化まで静かに眠る。",
-   "stages": [],
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
    "lat": 39.879,
    "lon": 141.529
   }
@@ -139,5 +168,150 @@
    "laying_ground",
    "winter_soil"
   ]
- ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.3
+ },
+ "stats": {
+  "run": {
+   "ja": "跳躍力",
+   "use": "太い後脚で大きく跳ねて天敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "触角の感度",
+   "use": "夜間の徘徊や餌の探索、周囲の状況を察知する時に効く"
+  },
+  "forage": {
+   "ja": "咀嚼力",
+   "use": "硬い種子や小動物の死骸を噛み砕いて食べる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nymph_early",
+   "ja": "幼虫（初期）",
+   "fromAge": 0.38,
+   "days": 60,
+   "hunger": 10,
+   "grow": 0.6,
+   "goal": "脱皮を繰り返し成長する",
+   "enter": "土の中で孵化した。胸部と腹部の境界に白い横帯があり、草むらで餌を探す。"
+  },
+  {
+   "id": "nymph_late",
+   "ja": "幼虫（後期）",
+   "fromAge": 0.54,
+   "days": 60,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "羽化の準備を整える",
+   "enter": "白い帯が消え、腹側が淡褐色になった。前胸に翅芽が現れ、成虫に近い姿になる。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.74,
+   "days": 60,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "繁殖して次世代を残す",
+   "enter": "物陰で羽化した。黒褐色の体に長い触角を備え、夜の草地を徘徊する。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.7,
+   0.9
+  ],
+  "text": "冬の訪れとともに、地中で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "地中産卵",
+  "ds": "オスが鳴き声で雌を呼び、交尾後、雌が長い産卵管を地面に突き立てて卵を産む",
+  "months": [
+   8,
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "laying_ground"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   500
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "地中で越冬する卵のひとつ"
+  },
+  "ok": "湿った地面に、{born}個の卵を産み落とした。",
+  "ng": "適切な産卵場所が見つからず、卵を産めなかった。",
+  "goal1": "地中に卵を産む",
+  "goal2": "累計で1000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "plant_seeds",
+   "ja": "種子を食べる",
+   "name": "植物の種子",
+   "ds": "イネ科などの種子を咀嚼して食べる",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "places": [
+    "young_grass",
+    "adult_bush"
+   ],
+   "rich": [
+    "young_grass"
+   ],
+   "ok": "地面に落ちた種子を見つけ、しっかりと噛み砕いて食べた。",
+   "full": 20
+  },
+  {
+   "id": "animal_carcass",
+   "ja": "死骸を食べる",
+   "name": "小動物の死骸",
+   "ds": "他の昆虫などの死骸を雑食的に食べる",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "places": [
+    "young_grass",
+    "adult_bush"
+   ],
+   "rich": [
+    "adult_bush"
+   ],
+   "ok": "小さな虫の死骸を見つけ、貪欲に食べた。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "calling_song",
+   "ja": "求愛の鳴き声を発する",
+   "ds": "オスが前翅をこすり合わせ、大きな声で雌を呼び寄せる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.6,
+   "calm": true,
+   "ok": "夜の静寂の中、前翅を震わせてコロコロリーと鳴いた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": []
 }

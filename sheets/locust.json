@@ -2,10 +2,327 @@
  "id": "locust",
  "ja": "トノサマバッタ",
  "sci": "Locusta migratoria",
- "status": "draft",
+ "status": "draft-ng",
  "type": "insect_annual",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の河川敷と草地",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "winter_soil",
+   "ja": "冬の土の中",
+   "danger": 1,
+   "cover": true,
+   "about": "卵が潜み、冬の寒さを耐える場所。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "spring_grass",
+   "ja": "春の河川敷の草地",
+   "danger": 2,
+   "cover": true,
+   "about": "孵化したばかりの幼虫が柔らかい若草を食べる。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "summer_meadow",
+   "ja": "夏の草原",
+   "danger": 2,
+   "cover": true,
+   "about": "脱皮を繰り返し、体が大きくなる。鳥に見つからないよう草に紛れる。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.605,
+   "lon": 139.251
+  },
+  {
+   "id": "field_edge",
+   "ja": "田畑のあぜ道",
+   "danger": 3,
+   "cover": false,
+   "about": "成虫になり、栄養豊富な作物を狙う。天敵の鳥に狙われやすい。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.586,
+   "lon": 139.22
+  },
+  {
+   "id": "windy_plain",
+   "ja": "風の吹き抜ける平原",
+   "danger": 2,
+   "cover": false,
+   "about": "群れをなして飛び回る。風に乗って効率よく移動し、餌を探す。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.56,
+   "lon": 139.213
+  },
+  {
+   "id": "sandy_riverbed",
+   "ja": "砂混じりの河川敷",
+   "danger": 2,
+   "cover": false,
+   "about": "成虫が集まり、交尾する。土に深く卵を産み付け、次世代へ繋ぐ。",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "lat": 36.545,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "spring_grass",
+  "month": 5,
+  "day": 1
+ },
+ "region": {
+  "ja": "日本の河川敷と草地",
+  "lon0": 139.196,
+  "lon1": 139.288,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 5435,
+  "labels": [
+   [
+    36.61636,
+    139.24200000000002,
+    "日本の河川敷と草地"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "field_edge",
+   "winter_soil"
+  ],
+  [
+   "windy_plain",
+   "winter_soil"
+  ],
+  [
+   "spring_grass",
+   "winter_soil"
+  ],
+  [
+   "spring_grass",
+   "summer_meadow"
+  ],
+  [
+   "summer_meadow",
+   "winter_soil"
+  ],
+  [
+   "field_edge",
+   "windy_plain"
+  ],
+  [
+   "sandy_riverbed",
+   "winter_soil"
+  ],
+  [
+   "sandy_riverbed",
+   "spring_grass"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.5
+ },
+ "stats": {
+  "run": {
+   "ja": "跳躍・飛翔力",
+   "use": "天敵から逃れる・群れで長距離を移動する時に効く"
+  },
+  "sense": {
+   "ja": "複眼の視力",
+   "use": "広大な草地で餌や仲間の位置を把握する時に効く"
+  },
+  "forage": {
+   "ja": "摂食力",
+   "use": "硬い草の葉を効率的に噛み砕く時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nymph_early",
+   "ja": "幼虫（前期）",
+   "fromAge": 0,
+   "days": 45,
+   "hunger": 10,
+   "grow": 0.6,
+   "goal": "脱皮を繰り返し成長する",
+   "enter": "土の中から孵化した。春の柔らかな草を食み、体を大きくする。"
+  },
+  {
+   "id": "nymph_late",
+   "ja": "幼虫（後期）",
+   "fromAge": 0.12,
+   "days": 45,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成虫への羽化に備える",
+   "enter": "脱皮を繰り返し、体が黄色みを帯びた。より多くの草を求め、移動範囲を広げる。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.2,
+   "days": 90,
+   "hunger": 15,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "群れで移動し産卵する",
+   "enter": "翅が完成し、空を飛べるようになった。群れをなし、風に乗って草原を渡る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.4,
+   0.7
+  ],
+  "text": "秋の冷気が強まる頃、草むらの中で静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "土中産卵",
+  "ds": "土の中に穴を掘り、卵の塊を産み付ける",
+  "months": [
+   8,
+   9
+  ],
+  "places": [
+   "sandy_riverbed"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   300
+  ],
+  "many": 500,
+  "label": {
+   "ja": "卵の塊",
+   "unit": "個",
+   "child": "越冬する卵のひとつ"
+  },
+  "ok": "砂混じりの土に、{born}個の卵を産み付けた。",
+  "ng": "適切な土壌が見つからず、産卵できなかった。",
+  "goal1": "河川敷に卵を産む",
+  "goal2": "累計で500個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "grass",
+   "ja": "草の葉を食べる",
+   "name": "イネ科の草",
+   "ds": "強力な顎で葉を噛み切り、効率よく摂取する",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "places": [
+    "spring_grass",
+    "summer_meadow",
+    "field_edge"
+   ],
+   "rich": [
+    "summer_meadow"
+   ],
+   "ok": "青々とした草の葉を、勢いよく食み尽くした。",
+   "lose": "鳥に捕らえられ、傷を負った。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "phase_change",
+   "ja": "群生相への移行",
+   "ds": "個体密度が高まると、体色と行動が変化し、群れをなして移動するようになる",
+   "stages": [
+    "nymph_early",
+    "nymph_late",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": true,
+   "ok": "仲間との接触が増え、体が黄色く染まった。群れと共に飛ぶ本能が目覚めた。",
+   "lose": "天敵に襲われ、傷を負った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "to": "summer_meadow",
+   "say": "豊かな草を求め、河川敷から広大な草原へと移動する。"
+  },
+  {
+   "months": [
+    8,
+    9
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "sandy_riverbed",
+   "say": "産卵のため、砂混じりの河川敷へと戻る。"
+  }
+ ],
+ "fail": {
+  "part": "life",
+  "errors": [
+   "stages.nymph_late: 1手 45日が段の長さ（約29日）より長い"
+  ],
+  "got": [
+   "size",
+   "stats",
+   "stages",
+   "oldAge",
+   "breeding",
+   "foods",
+   "special",
+   "levelEvery",
+   "migrate"
+  ],
+  "head": "{\"size\":{\"ja\":\"体長\",\"unit\":\"cm\",\"start\":0.5},\"stats\":{\"run\":{\"ja\":\"跳躍・飛翔力\",\"use\":\"天敵から逃れる・群れで長距離を移動する時に効く\"},\"sense\":{\"ja\":\"複眼の視力\",\"use\":\"広大な草地で餌や仲間の位置を把握する時に効く\"},\"forage\":{\"ja\":\"摂食力\",\"use\":\"硬い草の葉を効率的に噛み砕く時に効く\"}},\"stages\":[{\"id\":\"nymph_early\",\"ja\":\"幼虫（前期）\",\"fromAge\":0,\"days\":45,\"hunger\":10,\"grow\":0.6,\"goal\":\"脱皮を繰り返し成長する\",\"enter\":\"土の中から孵化した。春の柔らかな草を食み、体を大きくする。\"},{\"id\":\"nymph_late\",\"ja\":\"幼虫（後期）\",\"from",
+  "raw": "  \"nymph_late\",\n        \"adult\"\n      ],\n      \"stat\": \"run\",\n      \"base\": 0.5,\n      \"calm\": true,\n      \"ok\": \"仲間との接触が増え、体が黄色く染まった。群れと共に飛ぶ本能が目覚めた。\",\n      \"lose\": \"天敵に襲われ、傷を負った。\"\n    }\n  ],\n  \"levelEvery\": 4,\n  \"migrate\": [\n    {\n      \"months\": [\n        5,\n        6\n      ],\n      \"stages\": [\n        \"nymph_late\",\n        \"adult\"\n      ],\n      \"to\": \"summer_meadow\",\n      \"say\": \"豊かな草を求め、河川敷から広大な草原へと移動する。\"\n    },\n    {\n      \"months\": [\n        8,\n        9\n      ],\n      \"stages\": [\n        \"adult\"\n      ],\n      \"to\": \"sandy_riverbed\",\n      \"say\": \"産卵のため、砂混じりの河川敷へと戻る。\"\n    }\n  ]\n}\n```"
  }
 }

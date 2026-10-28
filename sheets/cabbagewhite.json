@@ -2,12 +2,15 @@
  "id": "cabbagewhite",
  "ja": "モンシロチョウ",
  "sci": "Pieris rapae",
- "status": "draft",
+ "status": "checked",
  "type": "insect_annual",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "埼玉県の畑地",
@@ -21,7 +24,12 @@
    "danger": 1,
    "cover": false,
    "about": "黄色い卵が一つずつ産み付けられる。日光にさらされ、孵化の時を待つ。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.69,
    "lon": 138.207
   },
@@ -31,7 +39,12 @@
    "danger": 2,
    "cover": true,
    "about": "青緑色の幼虫が潜み、葉を食む。アオムシコマユバチに寄生される危険がある。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.69,
    "lon": 138.239
   },
@@ -41,7 +54,12 @@
    "danger": 1,
    "cover": true,
    "about": "幼虫が脱皮し、蛹になる場所。周囲の色に化けて外敵の目を欺く。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.718,
    "lon": 138.227
   },
@@ -51,7 +69,12 @@
    "danger": 1,
    "cover": true,
    "about": "蛹のまま冬を越す。寒さに耐え、春の訪れを待つ。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.707,
    "lon": 138.195
   },
@@ -61,7 +84,12 @@
    "danger": 2,
    "cover": false,
    "about": "蛹から成虫が羽化する。白い翼を広げ、初めて空へ舞い上がる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.69,
    "lon": 138.175
   },
@@ -71,7 +99,12 @@
    "danger": 2,
    "cover": false,
    "about": "成虫が蜜を吸い、体力をつける。オスがメスを探して飛び回る。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.662,
    "lon": 138.187
   },
@@ -81,7 +114,12 @@
    "danger": 3,
    "cover": false,
    "about": "強い日差しの中を高速で飛行する。鳥に見つかりやすく、捕食の危険にさらされる。",
-   "stages": [],
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 34.673,
    "lon": 138.219
   }
@@ -139,5 +177,606 @@
    "open_field",
    "wild_flower_patch"
   ]
+ ],
+ "size": {
+  "ja": "開張",
+  "unit": "cm",
+  "start": 3.2
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "天敵から逃れる・配偶者を捜索する時に効く"
+  },
+  "sense": {
+   "ja": "触角の化学感覚",
+   "use": "アブラナ科の植物や配偶者の匂いを見つける時に効く"
+  },
+  "forage": {
+   "ja": "摂食力",
+   "use": "幼虫が硬い葉を食み、成虫が蜜を吸う時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "egg",
+   "ja": "卵",
+   "days": 5,
+   "hunger": 0,
+   "grow": 0.2,
+   "goal": "孵化する",
+   "enter": "キャベツの葉の裏に、黄色い小さな卵が産み付けられた。"
+  },
+  {
+   "id": "larva",
+   "ja": "幼虫",
+   "fromAge": 0.013,
+   "days": 12,
+   "hunger": 10,
+   "grow": 0.5,
+   "goal": "十分に成長して蛹になる",
+   "enter": "殻を食んで孵化した。青緑色の体で、ひたすら葉を食む。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.046,
+   "days": 5,
+   "hunger": 5,
+   "grow": 0.3,
+   "goal": "成虫へと変態する",
+   "enter": "茎や土際に身を固定し、茶褐色の殻に包まれた。体内で劇的な変化が起きる。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.06,
+   "days": 14,
+   "hunger": 12,
+   "grow": 0,
+   "adult": true,
+   "goal": "次世代に命を繋ぐ",
+   "enter": "白い羽を広げて飛び出した。花から花へ飛び、配偶者を捜す。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.08,
+   0.12
+  ],
+  "text": "役目を終え、秋の冷たい風の中で静かに羽を閉じた。"
+ },
+ "breeding": {
+  "ja": "単独産卵",
+  "ds": "アブラナ科の植物の葉の裏に、一粒ずつ丁寧に卵を産み付ける",
+  "months": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "cabbage_leaf_bottom"
+  ],
+  "perYear": 3,
+  "kids": [
+   100,
+   500
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "一つひとつの卵"
+  },
+  "ok": "キャベツの葉の裏に、{born}個の卵を産み付けた。",
+  "ng": "適切な葉が見つからず、産卵できなかった。",
+  "goal1": "アブラナ科の葉に産卵する",
+  "goal2": "累計で1000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "cabbage_leaf",
+   "ja": "キャベツの葉を食む",
+   "name": "キャベツ",
+   "ds": "強力な顎で葉をかじり取り、栄養を摂取する",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "cabbage_leaf_bottom",
+    "cabbage_leaf_top"
+   ],
+   "rich": [
+    "cabbage_leaf_bottom"
+   ],
+   "ok": "青々とした葉を激しく食み、体を大きくした。",
+   "full": 30
+  },
+  {
+   "id": "stored_energy",
+   "ja": "蓄積エネルギーを消費する",
+   "name": "脂肪体",
+   "ds": "蛹の期間中、幼虫時代に蓄えた栄養を分解して生き延びる",
+   "stages": [
+    "pupa"
+   ],
+   "places": [
+    "cabbage_stem",
+    "winter_soil"
+   ],
+   "rich": [
+    "cabbage_stem"
+   ],
+   "ok": "静止したまま、体内の栄養を消費して変態を進めた。",
+   "full": 10
+  },
+  {
+   "id": "nectar",
+   "ja": "花の蜜を吸う",
+   "name": "花の蜜",
+   "ds": "長い口吻を伸ばし、野の花から糖分を摂取する",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "wild_flower_patch",
+    "open_field"
+   ],
+   "rich": [
+    "wild_flower_patch"
+   ],
+   "ok": "口吻を器用に伸ばし、甘い蜜を吸い上げた。",
+   "full": 20
+  }
+ ],
+ "special": [
+  {
+   "id": "parasitism",
+   "ja": "寄生される",
+   "ds": "アオムシコマユバチに卵を植え付けられ、内部から食い荒らされる",
+   "stages": [
+    "larva"
+   ],
+   "stat": "sense",
+   "base": 0.3,
+   "calm": false,
+   "ok": "アオムシコマユバチに寄生され、傷を負った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "cotesia_vestalis",
+   "ja": "アオムシコマユバチ",
+   "kind": "insect",
+   "places": [
+    "cabbage_leaf_top",
+    "cabbage_leaf_bottom"
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "sev": 3,
+   "texts": [
+    "小さな蜂が、幼虫の体に鋭い針を突き立てる。",
+    "体内で育つ寄生卵が、内側から組織を食い荒らす。"
+   ],
+   "again": [
+    [
+     "また、あの小さな蜂が幼虫を物色している。"
+    ],
+    [
+     "執拗な寄生蜂が、葉の裏を飛び回る。"
+    ]
+   ],
+   "bye": "季節が変わり、寄生蜂の姿が畑から消えた。"
+  },
+  {
+   "id": "sparrow",
+   "ja": "スズメ",
+   "kind": "bird",
+   "places": [
+    "cabbage_leaf_top",
+    "open_field"
+   ],
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "茶色の小鳥が、葉の上の幼虫を素早くついばむ。",
+    "鋭いくちばしが、白い羽を狙って急降下する。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "オニグモ",
+   "kind": "arachnid",
+   "places": [
+    "open_field",
+    "wild_flower_patch"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "露に濡れた白い網が、行く手を遮る。",
+    "粘り気のある糸が、羽を絡め取って逃がさない。"
+   ],
+   "again": [
+    [
+     "また、あの道端に大きな網が張られている。"
+    ],
+    [
+     "同じ主の網が、再び行く手をふさぐ。"
+    ]
+   ],
+   "bye": "激しい雨が降り、あのクモの網は跡形もなく破れ去った。"
+  },
+  {
+   "id": "pesticide",
+   "ja": "農薬",
+   "kind": "human",
+   "places": [
+    "cabbage_leaf_top",
+    "cabbage_leaf_bottom"
+   ],
+   "stages": [
+    "egg",
+    "larva",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "霧状の薬剤が、葉の表面を白く覆い尽くす。",
+    "見えない毒が、気門から体内に浸透する。"
+   ],
+   "lose": "薬剤に蝕まれ、傷を負った。"
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "open_field",
+    "wild_flower_patch"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "白い大きな網が、空を覆うように振り下ろされる。",
+    "逃げ場のない空間に、網の目が迫る。"
+   ],
+   "lose": "網に払われ、羽の先が裂けて傷を負った。"
+  },
+  {
+   "id": "lacewing_larva",
+   "ja": "クサカゲロウの幼虫",
+   "kind": "insect",
+   "places": [
+    "cabbage_leaf_bottom"
+   ],
+   "stages": [
+    "egg",
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭い大あごを持つ幼虫が、卵を狙って忍び寄る。",
+    "柔らかな体を、容赦なく貫く。"
+   ]
+  },
+  {
+   "id": "ladybug",
+   "ja": "ナナホシテントウ",
+   "kind": "insect",
+   "places": [
+    "cabbage_leaf_bottom"
+   ],
+   "stages": [
+    "egg",
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "赤い甲虫が、葉の裏で卵を貪り食う。",
+    "幼虫の体を、執拗に噛み砕く。"
+   ]
+  },
+  {
+   "id": "great_tit",
+   "ja": "シジュウカラ",
+   "kind": "bird",
+   "places": [
+    "cabbage_stem",
+    "winter_soil"
+   ],
+   "stages": [
+    "larva",
+    "pupa"
+   ],
+   "sev": 3,
+   "texts": [
+    "鋭い視線が、茎に潜む蛹を見つけ出す。",
+    "強いくちばしが、硬い殻を砕いて中身を奪う。"
+   ]
+  },
+  {
+   "id": "praying_mantis",
+   "ja": "カマキリ",
+   "kind": "insect",
+   "places": [
+    "cabbage_leaf_top",
+    "open_field"
+   ],
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑色の擬態に紛れ、鎌のような前脚が待ち構える。",
+    "一瞬の隙を突き、鋭い爪が体を締め上げる。"
+   ]
+  },
+  {
+   "id": "flycatcher",
+   "ja": "ヒタキ",
+   "kind": "bird",
+   "places": [
+    "open_field"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "枝先から鋭く飛び出し、空中で白い影を捕らえる。",
+    "素早い動きで、舞い踊る成虫を追い詰める。"
+   ]
+  }
+ ],
+ "choices": [
+  {
+   "q": "孵化した。どこで葉を食むか",
+   "stages": [
+    "larva"
+   ],
+   "month": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "葉の表側で食む",
+     "ds": "新鮮な葉にすぐにありつける。鳥などの天敵に見つかりやすい",
+     "fx": {
+      "food": 0.5,
+      "danger": 0.5
+     },
+     "goto": "cabbage_leaf_top",
+     "say": "葉の表側で旺盛に食い進み、体を大きくした。",
+     "chip": "表側で摂食"
+    },
+    {
+     "ja": "葉の裏側に潜む",
+     "ds": "外敵から身を隠せる。移動に時間がかかり、摂食効率が落ちる",
+     "fx": {
+      "food": -0.2,
+      "danger": -0.5
+     },
+     "goto": "cabbage_leaf_bottom",
+     "say": "葉の裏側に身を潜め、静かに時間をかけて葉を食んだ。",
+     "chip": "裏側で摂食"
+    }
+   ]
+  },
+  {
+   "q": "十分に成長した。どこで蛹になるか",
+   "stages": [
+    "larva"
+   ],
+   "month": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "キャベツの茎に固定する",
+     "ds": "安定して固定でき、羽化後の脱出が容易である。視認されやすい",
+     "fx": {
+      "danger": 0.3,
+      "energy": -0.2
+     },
+     "goto": "cabbage_stem",
+     "say": "太い茎にしっかりと体を固定し、殻に閉じこもった。",
+     "chip": "茎で蛹化"
+    },
+    {
+     "ja": "土際や落葉の下へ降りる",
+     "ds": "地表のゴミに紛れて隠れられる。羽化時に登る労力がかかる",
+     "fx": {
+      "danger": -0.5,
+      "energy": -0.5
+     },
+     "goto": "winter_soil",
+     "say": "土の隙間に潜り込み、外敵の目を逃れて蛹となった。",
+     "chip": "土中で蛹化"
+    }
+   ]
+  },
+  {
+   "q": "蜜を求めて飛ぶ。どこへ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "野の花が咲く道端へ飛ぶ",
+     "ds": "蜜が豊富で体力を回復できる。産卵場所から遠ざかる",
+     "fx": {
+      "food": 0.8,
+      "kids": -0.3
+     },
+     "goto": "wild_flower_patch",
+     "say": "道端の白い花から蜜を吸い、飛翔のための体力を蓄えた。",
+     "chip": "野花で吸蜜"
+    },
+    {
+     "ja": "キャベツの畑にとどまる",
+     "ds": "産卵場所が近く効率的に子を残せる。蜜が少なく空腹になりやすい",
+     "fx": {
+      "food": -0.3,
+      "kids": 0.5
+     },
+     "goto": "open_field",
+     "say": "畑の中を飛び回り、産卵に適した若葉を探索した。",
+     "chip": "畑で待機"
+    }
+   ]
+  },
+  {
+   "q": "卵を産み付ける。どのような株を選ぶか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "ぽつんと咲く孤立した株",
+     "ds": "競争相手が少なく、幼虫が健やかに育つ。見つけるのに時間がかかる",
+     "fx": {
+      "kids": 0.5,
+      "danger": -0.2
+     },
+     "goto": "cabbage_leaf_bottom",
+     "say": "離れた場所にある一株の葉裏に、丁寧に卵を産み落とした。",
+     "chip": "孤立株に産卵"
+    },
+    {
+     "ja": "密集して植えられた株",
+     "ds": "一度に多くの卵を産める。幼虫同士で食い合いが起きやすい",
+     "fx": {
+      "kids": -0.2,
+      "danger": 0.2
+     },
+     "goto": "cabbage_leaf_bottom",
+     "say": "密集したキャベツの葉に、次から次へと卵を付けた。",
+     "chip": "密集株に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.3,
+   "say": "アオムシコマユバチに寄生され、体内で幼虫が育った。",
+   "full": -20
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "pupa"
+   ],
+   "p": 0.4,
+   "say": "厳しい冬の寒さが訪れ、蛹のまま深い眠りについた。",
+   "full": -5
+  },
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "激しい夕立に見舞われ、翅が濡れてしばらく飛べなくなった。",
+   "full": -10
+  }
+ ],
+ "lead": "埼玉県の畑で卵が孵化し、葉を食べ成長し、蛹となって冬を越し、春に成虫となって次の世代を残す。",
+ "texts": {
+  "move": "{to}へ、風に乗って飛び立った。",
+  "fleeJa": "葉の裏へ逃げ込む",
+  "restJa": "葉の表で体を休める",
+  "watchJa": "複眼で周囲の捕食者を警戒する",
+  "lieJa": "葉の裏に身を潜める",
+  "lastMemory": "最後に春の菜園で仲間と交尾した日を思い出す。"
+ },
+ "intro": [
+  "春先、キャベツの葉の表で卵がかたまっていた。",
+  "数日後、黄緑色の幼虫が殻を食べて孵化した。"
+ ],
+ "wins": [
+  {
+   "minKids": 100,
+   "title": "春の菜園に命をつなげた",
+   "line": "成熟した成虫は、{kids}個の卵をキャベツの葉に産み付けた。",
+   "mem": "交尾後、花粉を運びながら飛び回った日々を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "幼虫が葉の裏で仲間と共に食べた新芽の匂いを思い出す。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "蛹の殻を破って羽化した瞬間、朝日の光を浴びたことを思い出す。"
+  }
+ ],
+ "noKids": {
+  "title": "子を残せなかった",
+  "line": "冬の土中で蛹が死に、次の世代を残さずに一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "Pieris rapae is a small-to-medium-sized butterfly species of the whites-and-yellows family Pieridae."
+  },
+  {
+   "quote": "The caterpillar of this species, often referred to as the \"imported cabbageworm\", is a pest to crucifer crops such as cabbage, kale, bok choy and broccoli."
+  },
+  {
+   "quote": "Adults are diurnal and fly throughout the day, except for early morning and evening."
+  }
  ]
 }

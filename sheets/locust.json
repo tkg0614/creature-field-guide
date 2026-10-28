@@ -2,25 +2,28 @@
  "id": "locust",
  "ja": "トノサマバッタ",
  "sci": "Locusta migratoria",
- "status": "draft-ng",
+ "status": "checked",
  "type": "insect_annual",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "日本の河川敷と草地",
   "geo": "Japan",
-  "scale": "local"
+  "scale": "regional"
  },
  "places": [
   {
    "id": "winter_soil",
-   "ja": "冬の土の中",
+   "ja": "冬の河川敷の土",
    "danger": 1,
    "cover": true,
-   "about": "卵が潜み、冬の寒さを耐える場所。",
+   "about": "卵が土の中で冬を越す。寒さに耐え、春の訪れを待つ。",
    "stages": [
     "nymph_early",
     "nymph_late",
@@ -34,96 +37,112 @@
    "ja": "春の河川敷の草地",
    "danger": 2,
    "cover": true,
-   "about": "孵化したばかりの幼虫が柔らかい若草を食べる。",
+   "about": "孵化した幼虫が柔らかい若草を食べる。緑に紛れて外敵から身を隠す。",
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
    "lat": 36.575,
-   "lon": 139.271
+   "lon": 139.239
   },
   {
-   "id": "summer_meadow",
+   "id": "summer_field",
    "ja": "夏の草原",
    "danger": 2,
    "cover": true,
-   "about": "脱皮を繰り返し、体が大きくなる。鳥に見つからないよう草に紛れる。",
+   "about": "脱皮を繰り返し、体が大きく成長する。十分な食料を確保し、成虫への準備を整える。",
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
-   "lat": 36.605,
-   "lon": 139.251
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
-   "id": "field_edge",
-   "ja": "田畑のあぜ道",
-   "danger": 3,
+   "id": "sunny_slope",
+   "ja": "日当たりの良い斜面",
+   "danger": 2,
    "cover": false,
-   "about": "成虫になり、栄養豊富な作物を狙う。天敵の鳥に狙われやすい。",
+   "about": "成虫へと羽化した個体が集まる。強い日差しを浴びて体温を上げ、活動を活発にする。",
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
-   "lat": 36.586,
-   "lon": 139.22
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
    "id": "windy_plain",
    "ja": "風の吹き抜ける平原",
-   "danger": 2,
+   "danger": 3,
    "cover": false,
-   "about": "群れをなして飛び回る。風に乗って効率よく移動し、餌を探す。",
+   "about": "数が増えると群れをなし、風に乗って遠方へ飛ぶ。空を覆うほどの群れとなり、新たな土地へ移動する。",
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
-   "lat": 36.56,
-   "lon": 139.213
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
-   "id": "sandy_riverbed",
-   "ja": "砂混じりの河川敷",
+   "id": "autumn_riverbank",
+   "ja": "秋の河川敷の砂地",
    "danger": 2,
    "cover": false,
-   "about": "成虫が集まり、交尾する。土に深く卵を産み付け、次世代へ繋ぐ。",
+   "about": "成虫が交尾し、土の中に卵を産み付ける。次世代に命を託し、短い一生を終える。",
    "stages": [
     "nymph_early",
     "nymph_late",
     "adult"
    ],
-   "lat": 36.545,
-   "lon": 139.251
+   "lat": 36.575,
+   "lon": 139.239
   }
  ],
  "start": {
   "place": "spring_grass",
   "month": 5,
-  "day": 1
+  "day": 10
  },
  "region": {
   "ja": "日本の河川敷と草地",
-  "lon0": 139.196,
-  "lon1": 139.288,
-  "lat0": 36.622,
-  "lat1": 36.528,
-  "k": 5435,
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
   "labels": [
    [
-    36.61636,
-    139.24200000000002,
+    36.583800000000004,
+    139.239,
     "日本の河川敷と草地"
    ]
   ]
  },
  "edges": [
   [
-   "field_edge",
+   "spring_grass",
    "winter_soil"
+  ],
+  [
+   "summer_field",
+   "winter_soil"
+  ],
+  [
+   "spring_grass",
+   "summer_field"
+  ],
+  [
+   "sunny_slope",
+   "winter_soil"
+  ],
+  [
+   "spring_grass",
+   "sunny_slope"
   ],
   [
    "windy_plain",
@@ -131,26 +150,14 @@
   ],
   [
    "spring_grass",
-   "winter_soil"
-  ],
-  [
-   "spring_grass",
-   "summer_meadow"
-  ],
-  [
-   "summer_meadow",
-   "winter_soil"
-  ],
-  [
-   "field_edge",
    "windy_plain"
   ],
   [
-   "sandy_riverbed",
+   "autumn_riverbank",
    "winter_soil"
   ],
   [
-   "sandy_riverbed",
+   "autumn_riverbank",
    "spring_grass"
   ]
  ],
@@ -161,67 +168,67 @@
  },
  "stats": {
   "run": {
-   "ja": "跳躍・飛翔力",
-   "use": "天敵から逃れる・群れで長距離を移動する時に効く"
+   "ja": "飛翔力",
+   "use": "群れで長距離を移動する・天敵から逃げる時に効く"
   },
   "sense": {
    "ja": "複眼の視力",
-   "use": "広大な草地で餌や仲間の位置を把握する時に効く"
+   "use": "広大な草原で餌場や仲間を探す時に効く"
   },
   "forage": {
    "ja": "摂食力",
-   "use": "硬い草の葉を効率的に噛み砕く時に効く"
+   "use": "硬い草の葉を効率よく切り刻んで食べる時に効く"
   }
  },
  "stages": [
   {
    "id": "nymph_early",
    "ja": "幼虫（前期）",
-   "fromAge": 0,
-   "days": 45,
+   "days": 40,
    "hunger": 10,
    "grow": 0.6,
    "goal": "脱皮を繰り返し成長する",
-   "enter": "土の中から孵化した。春の柔らかな草を食み、体を大きくする。"
+   "enter": "春の土から孵化した。緑や茶色の体で草地を這い、若葉を食む。"
   },
   {
    "id": "nymph_late",
    "ja": "幼虫（後期）",
-   "fromAge": 0.12,
-   "days": 45,
+   "fromAge": 0.11,
+   "days": 40,
    "hunger": 12,
    "grow": 0.8,
    "goal": "成虫への羽化に備える",
-   "enter": "脱皮を繰り返し、体が黄色みを帯びた。より多くの草を求め、移動範囲を広げる。"
+   "enter": "体が大きくなり、食欲が増した。個体密度が高まると体色が変わり、群れをなす。"
   },
   {
    "id": "adult",
    "ja": "成虫",
-   "fromAge": 0.2,
-   "days": 90,
+   "fromAge": 0.22,
+   "days": 100,
    "hunger": 15,
-   "grow": 0.2,
+   "grow": 0.1,
    "adult": true,
-   "goal": "群れで移動し産卵する",
-   "enter": "翅が完成し、空を飛べるようになった。群れをなし、風に乗って草原を渡る。"
+   "goal": "子孫を残して冬を迎える",
+   "enter": "羽が生え、空を飛べるようになった。風に乗って移動し、広範な草地を食い尽くす。"
   }
  ],
  "oldAge": {
   "years": [
-   0.4,
-   0.7
+   0.5,
+   0.8
   ],
-  "text": "秋の冷気が強まる頃、草むらの中で静かに動かなくなった。"
+  "text": "秋が深まり霜が降りる頃、草むらの中で静かに動かなくなった。"
  },
  "breeding": {
   "ja": "土中産卵",
-  "ds": "土の中に穴を掘り、卵の塊を産み付ける",
+  "ds": "産卵管を土に突き刺し、卵をまとめて産み付ける",
   "months": [
    8,
-   9
+   9,
+   10
   ],
   "places": [
-   "sandy_riverbed"
+   "autumn_riverbank"
   ],
   "perYear": 1,
   "kids": [
@@ -230,21 +237,21 @@
   ],
   "many": 500,
   "label": {
-   "ja": "卵の塊",
+   "ja": "卵",
    "unit": "個",
    "child": "越冬する卵のひとつ"
   },
-  "ok": "砂混じりの土に、{born}個の卵を産み付けた。",
-  "ng": "適切な土壌が見つからず、産卵できなかった。",
-  "goal1": "河川敷に卵を産む",
+  "ok": "河川敷の砂地に、{born}個の卵を産み落とした。",
+  "ng": "適切な産卵場所が見つからず、卵を産めなかった。",
+  "goal1": "土の中に卵を産む",
   "goal2": "累計で500個の卵を産む"
  },
  "foods": [
   {
-   "id": "grass",
+   "id": "grass_leaves",
    "ja": "草の葉を食べる",
    "name": "イネ科の草",
-   "ds": "強力な顎で葉を噛み切り、効率よく摂取する",
+   "ds": "強力な大顎で、草原に生える様々な草の葉をかじり取る",
    "stages": [
     "nymph_early",
     "nymph_late",
@@ -252,77 +259,484 @@
    ],
    "places": [
     "spring_grass",
-    "summer_meadow",
-    "field_edge"
+    "summer_field",
+    "windy_plain"
    ],
    "rich": [
-    "summer_meadow"
+    "summer_field"
    ],
-   "ok": "青々とした草の葉を、勢いよく食み尽くした。",
-   "lose": "鳥に捕らえられ、傷を負った。",
+   "ok": "青々とした草の葉を、旺盛な食欲で食べた。",
    "full": 30
   }
  ],
  "special": [
   {
-   "id": "phase_change",
-   "ja": "群生相への移行",
-   "ds": "個体密度が高まると、体色と行動が変化し、群れをなして移動するようになる",
+   "id": "phase_polyphenism",
+   "ja": "相変異",
+   "ds": "個体密度が高まると、色や行動が変わり、集団で移動する群生相へと変化する",
    "stages": [
-    "nymph_early",
     "nymph_late",
     "adult"
    ],
    "stat": "run",
-   "base": 0.5,
-   "calm": true,
-   "ok": "仲間との接触が増え、体が黄色く染まった。群れと共に飛ぶ本能が目覚めた。",
-   "lose": "天敵に襲われ、傷を負った。"
+   "base": 0.8,
+   "calm": false,
+   "ok": "仲間との接触が増え、集団で行動する群生相へと姿を変えた。"
   }
  ],
  "levelEvery": 4,
  "migrate": [
   {
    "months": [
-    5,
-    6
+    7,
+    8
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "windy_plain",
+   "say": "群れをなし、風に乗って新たな餌場である広大な平原へと移動する。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "autumn_riverbank",
+   "say": "産卵のため、砂地の多い河川敷へと戻る。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "praying_mantis",
+   "ja": "カマキリ",
+   "kind": "insect",
+   "places": [
+    "summer_field",
+    "sunny_slope"
    ],
    "stages": [
     "nymph_late",
     "adult"
    ],
-   "to": "summer_meadow",
-   "say": "豊かな草を求め、河川敷から広大な草原へと移動する。"
+   "sev": 3,
+   "texts": [
+    "草むらの中で、鋭い鎌のような前脚が静かに待ち構えている。",
+    "緑の体に擬態した捕食者が、電光石火の速さで襲いかかる。"
+   ],
+   "again": [
+    [
+     "また、あの草の陰に潜むカマキリに遭遇した。"
+    ],
+    [
+     "鋭い鎌を持つ影が、再び行く手を阻む。"
+    ]
+   ],
+   "bye": "秋の深まりとともに、あの恐ろしい捕食者は姿を消した。"
   },
   {
-   "months": [
-    8,
-    9
+   "id": "bull_headed_shrike",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "summer_field",
+    "windy_plain",
+    "autumn_riverbank"
    ],
    "stages": [
     "adult"
    ],
-   "to": "sandy_riverbed",
-   "say": "産卵のため、砂混じりの河川敷へと戻る。"
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "小高い枝から、鋭い眼光が獲物を定めている。",
+    "空を切り裂く速さで急降下し、強靭なくちばしが突き刺さる。"
+   ],
+   "again": [
+    [
+     "また、あの見張り台のような枝にモズが止まっている。"
+    ],
+    [
+     "空から鋭い影が、執拗に追いかけてくる。"
+    ]
+   ],
+   "bye": "冬の訪れとともに、あの冷酷な狩人は南へと去った。"
+  },
+  {
+   "id": "japanese_toad",
+   "ja": "ニホンヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "spring_grass",
+    "summer_field"
+   ],
+   "stages": [
+    "nymph_early",
+    "nymph_late"
+   ],
+   "sev": 2,
+   "texts": [
+    "湿った地面から、ぶつぶつとした皮膚の塊がゆっくりと近づく。",
+    "粘着質のある長い舌が、一瞬で体を絡めとる。"
+   ]
+  },
+  {
+   "id": "japanese_skink",
+   "ja": "ニホントカゲ",
+   "kind": "reptile",
+   "places": [
+    "sunny_slope",
+    "summer_field"
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "日当たりの良い岩陰から、素早い鱗の体が飛び出してくる。",
+    "鋭い顎が、逃げる間もなく体を噛み砕く。"
+   ]
+  },
+  {
+   "id": "robber_fly",
+   "ja": "アブ",
+   "kind": "insect",
+   "places": [
+    "summer_field",
+    "windy_plain"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "空中で静止していた影が、突然弾丸のように加速する。",
+    "鋭い口吻が、背中から深く突き刺さる。"
+   ]
+  },
+  {
+   "id": "golden_orb_weaver",
+   "ja": "コガネグモ",
+   "kind": "arachnid",
+   "places": [
+    "summer_field",
+    "autumn_riverbank"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "草と草の間に、黄金色に光る粘着質の網が張り巡らされている。",
+    "もがけばもがくほど、強靭な糸が体に絡みつく。"
+   ]
+  },
+  {
+   "id": "tree_sparrow",
+   "ja": "スズメ",
+   "kind": "bird",
+   "places": [
+    "summer_field",
+    "autumn_riverbank"
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "地面を跳ね回る茶色の影が、素早く距離を詰めてくる。",
+    "小さな、しかし鋭いくちばしが、脚や腹部を狙う。"
+   ]
+  },
+  {
+   "id": "large_billed_crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "windy_plain",
+    "autumn_riverbank"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "上空から巨大な黒い影が降りてきて、視界を遮る。",
+    "太く強いくちばしが、容赦なく体を押し潰す。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "殺虫剤",
+   "kind": "human",
+   "places": [
+    "summer_field"
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "草の葉に、不自然な光沢を持つ液滴が付着している。",
+    "風に乗って、鼻を突く化学薬品の臭いが漂ってくる。"
+   ],
+   "lose": "薬剤にさらされ、傷を負った。",
+   "fleeJa": "風上に逃れる",
+   "hideJa": "土の隙間に潜り込む"
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "summer_field",
+    "sunny_slope"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "背後から、白い大きな網が勢いよく振り下ろされる。",
+    "逃げ場のない袋状の空間に、閉じ込められる。"
+   ],
+   "lose": "網に絡め取られ、傷を負った。",
+   "fleeJa": "全力で高く飛び上がる",
+   "hideJa": "茂みの奥深くへ飛び込む"
   }
  ],
- "fail": {
-  "part": "life",
-  "errors": [
-   "stages.nymph_late: 1手 45日が段の長さ（約29日）より長い"
-  ],
-  "got": [
-   "size",
-   "stats",
-   "stages",
-   "oldAge",
-   "breeding",
-   "foods",
-   "special",
-   "levelEvery",
-   "migrate"
-  ],
-  "head": "{\"size\":{\"ja\":\"体長\",\"unit\":\"cm\",\"start\":0.5},\"stats\":{\"run\":{\"ja\":\"跳躍・飛翔力\",\"use\":\"天敵から逃れる・群れで長距離を移動する時に効く\"},\"sense\":{\"ja\":\"複眼の視力\",\"use\":\"広大な草地で餌や仲間の位置を把握する時に効く\"},\"forage\":{\"ja\":\"摂食力\",\"use\":\"硬い草の葉を効率的に噛み砕く時に効く\"}},\"stages\":[{\"id\":\"nymph_early\",\"ja\":\"幼虫（前期）\",\"fromAge\":0,\"days\":45,\"hunger\":10,\"grow\":0.6,\"goal\":\"脱皮を繰り返し成長する\",\"enter\":\"土の中から孵化した。春の柔らかな草を食み、体を大きくする。\"},{\"id\":\"nymph_late\",\"ja\":\"幼虫（後期）\",\"from",
-  "raw": "  \"nymph_late\",\n        \"adult\"\n      ],\n      \"stat\": \"run\",\n      \"base\": 0.5,\n      \"calm\": true,\n      \"ok\": \"仲間との接触が増え、体が黄色く染まった。群れと共に飛ぶ本能が目覚めた。\",\n      \"lose\": \"天敵に襲われ、傷を負った。\"\n    }\n  ],\n  \"levelEvery\": 4,\n  \"migrate\": [\n    {\n      \"months\": [\n        5,\n        6\n      ],\n      \"stages\": [\n        \"nymph_late\",\n        \"adult\"\n      ],\n      \"to\": \"summer_meadow\",\n      \"say\": \"豊かな草を求め、河川敷から広大な草原へと移動する。\"\n    },\n    {\n      \"months\": [\n        8,\n        9\n      ],\n      \"stages\": [\n        \"adult\"\n      ],\n      \"to\": \"sandy_riverbed\",\n      \"say\": \"産卵のため、砂混じりの河川敷へと戻る。\"\n    }\n  ]\n}\n```"
- }
+ "choices": [
+  {
+   "q": "土から孵化した。どこで最初の食事を摂るか",
+   "stages": [
+    "nymph_early"
+   ],
+   "month": [
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "青々とした河川敷の草地へ向かう",
+     "ds": "柔らかい若葉が多く、栄養を摂取しやすい。鳥に見つかりやすい",
+     "fx": {
+      "food": 0.5,
+      "danger": 0.5
+     },
+     "goto": "spring_grass",
+     "say": "瑞々しい若葉を食み、脱皮を繰り返して体を大きくした。",
+     "chip": "草地で成長"
+    },
+    {
+     "ja": "日当たりの良い斜面にとどまる",
+     "ds": "日光で体温が上がり、活動が活発になる。餌となる草が少ない",
+     "fx": {
+      "energy": 0.5,
+      "food": -0.5
+     },
+     "goto": "sunny_slope",
+     "say": "陽光を浴びて体を温め、効率よく代謝を高めた。",
+     "chip": "斜面で日光浴"
+    }
+   ]
+  },
+  {
+   "q": "周囲に仲間が増えてきた。どのような生き方を選ぶか",
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "month": [
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "単独相のまま、緑の草陰に潜む",
+     "ds": "体色が周囲に溶け込み、天敵から逃れやすい。移動能力が低い",
+     "fx": {
+      "danger": -0.5,
+      "energy": -0.2
+     },
+     "goto": "summer_field",
+     "say": "緑色の体に擬態し、静かに草を食んで夏を過ごした。",
+     "chip": "単独相を選択"
+    },
+    {
+     "ja": "群集相へと変わり、大群に加わる",
+     "ds": "集団で移動し、広範囲の餌場を確保できる。目立ちやすく捕食されやすい",
+     "fx": {
+      "food": 0.5,
+      "danger": 0.8
+     },
+     "goto": "windy_plain",
+     "say": "体色が黄色く変わり、数万の仲間とともに空を覆った。",
+     "chip": "群集相を選択"
+    }
+   ]
+  },
+  {
+   "q": "秋の気配が近づいた。どこで配偶者を探すか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "風の吹き抜ける平原へ飛ぶ",
+     "ds": "風に乗って効率よく広範囲を探索できる。体力を激しく消耗する",
+     "fx": {
+      "energy": -0.8,
+      "kids": 0.5
+     },
+     "goto": "windy_plain",
+     "say": "強い風に身を任せ、遠くの平原で伴侶となる相手に出会った。",
+     "chip": "平原で探索"
+    },
+    {
+     "ja": "慣れ親しんだ夏の草原にとどまる",
+     "ds": "体力の消耗を抑えられる。競争相手が多く、好条件の場所が少ない",
+     "fx": {
+      "energy": 0.2,
+      "kids": -0.2
+     },
+     "goto": "summer_field",
+     "say": "見慣れた草むらの中で、静かに交尾の相手を待った。",
+     "chip": "草原で待機"
+    }
+   ]
+  },
+  {
+   "q": "産卵の時期を迎えた。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "河川敷の砂混じりの土に産み付ける",
+     "ds": "水はけが良く、卵が腐りにくい。乾燥しすぎると孵化率が下がる",
+     "fx": {
+      "kids": 0.5,
+      "danger": -0.2
+     },
+     "goto": "autumn_riverbank",
+     "say": "砂地の土を掘り起こし、次世代への希望を深く埋めた。",
+     "chip": "砂地に産卵"
+    },
+    {
+     "ja": "草地の湿った土に産み付ける",
+     "ds": "適度な湿り気が保たれ、孵化しやすい。冬の寒さで凍結する恐れがある",
+     "fx": {
+      "kids": -0.2,
+      "danger": 0.2
+     },
+     "goto": "winter_soil",
+     "say": "湿り気を帯びた土壌へ、腹先を押し付けて卵を産み落とした。",
+     "chip": "湿土に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "nymph_early",
+    "nymph_late"
+   ],
+   "p": 0.3,
+   "say": "季節風が吹き抜け、新鮮な若葉が大量に生え揃った。",
+   "full": 20
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "nymph_late",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "猛暑で草地が枯れ上がり、食料を求めて移動を強いられた。",
+   "full": -15
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "急激な冷え込みに見舞われ、筋肉が凝固して動けなくなった。",
+   "full": -20
+  }
+ ],
+ "lead": "河川敷の土で卵が越冬し、春に孵化して幼虫となり、夏の草原で成長し、秋に成虫となって群れを作り、次の冬へ卵を残す。",
+ "texts": {
+  "move": "{to}へ、跳びながら風に乗って移動した。",
+  "fleeJa": "草むらへ急いで逃げた。",
+  "restJa": "草の葉の上で止まり、体を休めた。",
+  "watchJa": "複眼で周囲の草食者や天敵を観察した。",
+  "lieJa": "土の中に潜んで身を隠した。",
+  "lastMemory": "秋の風が吹く河川敷で、群れの先頭に立ち空へ舞い上がった日を思い出す。"
+ },
+ "intro": [
+  "春の河川敷の土に埋まっていた卵が、温かい雨で湿り、幼虫がかえった。",
+  "芽吹く草を食みながら、体を大きく伸ばしていった。"
+ ],
+ "wins": [
+  {
+   "minKids": 200,
+   "title": "秋に次世代を繋いだ",
+   "line": "成虫は{kids}個の卵を土に産み付け、次の春へ命を託した。",
+   "mem": "群れの中で高く跳び、空へ舞い上がった光景を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "春の草地で初めて羽化した瞬間を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "夏の草原で群れと共に長距離飛行した日を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "子を残さずに終わった",
+  "line": "群れが崩壊し、卵を産むことなくその一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "成虫は風に乗って時速15〜20kmで飛び、1日で5〜130km移動できる。"
+  },
+  {
+   "quote": "成虫は自重数グラムの新鮮な植物を1日で食べる。"
+  },
+  {
+   "quote": "群れは平方キロメートルあたり4000万から8000万個体になることがある。"
+  }
+ ]
 }

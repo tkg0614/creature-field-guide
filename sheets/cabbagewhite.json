@@ -1,0 +1,143 @@
+{
+ "id": "cabbagewhite",
+ "ja": "モンシロチョウ",
+ "sci": "Pieris rapae",
+ "status": "draft",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "埼玉県の畑地",
+  "geo": "Saitama Prefecture",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "cabbage_leaf_top",
+   "ja": "キャベツの葉の表",
+   "danger": 1,
+   "cover": false,
+   "about": "黄色い卵が一つずつ産み付けられる。日光にさらされ、孵化の時を待つ。",
+   "stages": [],
+   "lat": 34.69,
+   "lon": 138.207
+  },
+  {
+   "id": "cabbage_leaf_bottom",
+   "ja": "キャベツの葉の裏",
+   "danger": 2,
+   "cover": true,
+   "about": "青緑色の幼虫が潜み、葉を食む。アオムシコマユバチに寄生される危険がある。",
+   "stages": [],
+   "lat": 34.69,
+   "lon": 138.239
+  },
+  {
+   "id": "cabbage_stem",
+   "ja": "キャベツの茎や土際",
+   "danger": 1,
+   "cover": true,
+   "about": "幼虫が脱皮し、蛹になる場所。周囲の色に化けて外敵の目を欺く。",
+   "stages": [],
+   "lat": 34.718,
+   "lon": 138.227
+  },
+  {
+   "id": "winter_soil",
+   "ja": "冬の土中や落葉下",
+   "danger": 1,
+   "cover": true,
+   "about": "蛹のまま冬を越す。寒さに耐え、春の訪れを待つ。",
+   "stages": [],
+   "lat": 34.707,
+   "lon": 138.195
+  },
+  {
+   "id": "spring_garden",
+   "ja": "春の菜園",
+   "danger": 2,
+   "cover": false,
+   "about": "蛹から成虫が羽化する。白い翼を広げ、初めて空へ舞い上がる。",
+   "stages": [],
+   "lat": 34.69,
+   "lon": 138.175
+  },
+  {
+   "id": "wild_flower_patch",
+   "ja": "野の花が咲く道端",
+   "danger": 2,
+   "cover": false,
+   "about": "成虫が蜜を吸い、体力をつける。オスがメスを探して飛び回る。",
+   "stages": [],
+   "lat": 34.662,
+   "lon": 138.187
+  },
+  {
+   "id": "open_field",
+   "ja": "開けた畑の空間",
+   "danger": 3,
+   "cover": false,
+   "about": "強い日差しの中を高速で飛行する。鳥に見つかりやすく、捕食の危険にさらされる。",
+   "stages": [],
+   "lat": 34.673,
+   "lon": 138.219
+  }
+ ],
+ "start": {
+  "place": "cabbage_leaf_top",
+  "month": 4,
+  "day": 10
+ },
+ "region": {
+  "ja": "埼玉県の畑地",
+  "lon0": 138.156,
+  "lon1": 138.258,
+  "lat0": 34.737,
+  "lat1": 34.643,
+  "k": 4902,
+  "labels": [
+   [
+    34.73136,
+    138.207,
+    "埼玉県の畑地"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "cabbage_leaf_top",
+   "open_field"
+  ],
+  [
+   "cabbage_leaf_top",
+   "winter_soil"
+  ],
+  [
+   "cabbage_leaf_bottom",
+   "open_field"
+  ],
+  [
+   "cabbage_leaf_bottom",
+   "cabbage_stem"
+  ],
+  [
+   "cabbage_stem",
+   "winter_soil"
+  ],
+  [
+   "spring_garden",
+   "winter_soil"
+  ],
+  [
+   "spring_garden",
+   "wild_flower_patch"
+  ],
+  [
+   "open_field",
+   "wild_flower_patch"
+  ]
+ ]
+}

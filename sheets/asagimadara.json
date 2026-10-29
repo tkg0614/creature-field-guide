@@ -6,206 +6,222 @@
  "type": "insect_annual",
  "country": "jp",
  "by": {
-  "places": "gemini gemini-3.8-flash",
-  "life": "gemini-older gemini-3.7-flash",
-  "foes": "gemini-older gemini-3.7-flash",
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
   "choices": "gemini-gemma gemma-4-31b-it",
   "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
-  "ja": "本州中部から南西諸島",
-  "geo": "Japan",
+  "ja": "日本列島から台湾",
+  "geo": "East Asia",
   "scale": "regional"
  },
  "places": [
   {
-   "id": "coastal_broadleaf_forest",
-   "ja": "紀伊半島の海岸林",
-   "danger": 1,
-   "cover": true,
-   "about": "常緑のキジョランが生い茂る林内。冬の寒風を避け、葉裏で毒を蓄えながら幼虫が越冬する。",
-   "stages": [
-    "larva",
-    "teneral",
-    "adult"
-   ],
-   "lat": 33,
-   "lon": 133
-  },
-  {
-   "id": "satoyama_edge",
-   "ja": "春の里山の林縁",
+   "id": "coastal_kijoran",
+   "ja": "沿岸部のキジョランの葉",
    "danger": 2,
    "cover": true,
-   "about": "新緑の中で蛹から羽化する。初夏の陽気の中、飛び立つ体力をつけるため春の花々の蜜を吸う。",
+   "about": "常緑の葉の裏に卵が産みつけられる。幼虫は毒のある葉を食べて成長し、冬を越す。",
    "stages": [
+    "egg",
     "larva",
-    "teneral",
+    "pupa",
+    "adult"
+   ],
+   "lat": 34.513,
+   "lon": 135.411
+  },
+  {
+   "id": "highland_forest",
+   "ja": "高原の林縁",
+   "danger": 2,
+   "cover": true,
+   "about": "食草のイケマなどが自生する。羽化した成虫が蜜を吸い、繁殖を行う。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
     "adult"
    ],
    "lat": 33,
    "lon": 135.4
   },
   {
-   "id": "highland_meadow",
-   "ja": "初夏の霧ヶ峰高原",
-   "danger": 1,
-   "cover": false,
-   "about": "平地の猛暑を逃れてたどり着く涼しい草地。ヒヨドリバナが咲き誇り、オスが求愛に必要な成分を補給する。",
-   "stages": [
-    "larva",
-    "teneral",
-    "adult"
-   ],
-   "lat": 35.283,
-   "lon": 133.927
-  },
-  {
-   "id": "windy_pass",
-   "ja": "秋風の白樺峠",
+   "id": "summer_meadow",
+   "ja": "夏の花咲く草原",
    "danger": 2,
    "cover": false,
-   "about": "南への旅立ちを控えたチョウが集まる尾根。吹き上げる上昇気流に乗って長距離飛行へ滑空する。",
+   "about": "フジバカマなどのキク科の花が咲く。成虫が蜜を集め、渡りに備えて体力を蓄える。",
    "stages": [
+    "egg",
     "larva",
-    "teneral",
+    "pupa",
     "adult"
    ],
-   "lat": 36.109,
-   "lon": 137.654
+   "lat": 37.49,
+   "lon": 139.836
   },
   {
-   "id": "open_ocean",
-   "ja": "太平洋の海上",
+   "id": "migration_ridge",
+   "ja": "渡りの途中の尾根",
    "danger": 3,
    "cover": false,
-   "about": "遮るもののない大海原。強い横風に煽られ、落水すれば命を落とす危険を冒して南西へ渡る。",
+   "about": "南へ向かうための通り道。強い風に煽られながら、1日200km以上の距離を移動する。",
    "stages": [
+    "egg",
     "larva",
-    "teneral",
+    "pupa",
     "adult"
    ],
-   "lat": 34.004,
-   "lon": 136.193
+   "lat": 33.846,
+   "lon": 131.544
   },
   {
-   "id": "subtropical_beach",
-   "ja": "奄美大島の海浜林",
+   "id": "okinawa_shrub",
+   "ja": "南西諸島の低木林",
    "danger": 2,
    "cover": true,
-   "about": "千キロを超える旅を終えた成虫が舞い降りる。海岸沿いのスナビキソウの花蜜を吸って羽を休める。",
+   "about": "秋に日本本土から辿り着く場所。暖かい気候の中で冬を過ごす。",
    "stages": [
+    "egg",
     "larva",
-    "teneral",
+    "pupa",
     "adult"
    ],
-   "lat": 28.32,
-   "lon": 129.397
+   "lat": 26.52,
+   "lon": 128.053
+  },
+  {
+   "id": "taiwan_forest",
+   "ja": "台湾の山林",
+   "danger": 2,
+   "cover": true,
+   "about": "1500km以上の旅の終着点の一つ。現地の食草を求め、次世代へ命をつなぐ。",
+   "stages": [
+    "egg",
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 30.717,
+   "lon": 133.927
   }
  ],
  "start": {
-  "place": "coastal_broadleaf_forest",
-  "month": 10,
+  "place": "coastal_kijoran",
+  "month": 9,
   "day": 15
  },
  "region": {
-  "ja": "本州中部から南西諸島",
-  "lon0": 126.92,
-  "lon1": 140.131,
-  "lat0": 38.586,
-  "lat1": 25.843,
-  "k": 38,
+  "ja": "日本列島から台湾",
+  "lon0": 124.518,
+  "lon1": 143.371,
+  "lat0": 41.025,
+  "lat1": 22.985,
+  "k": 27,
   "labels": [
    [
-    37.821419999999996,
-    133.5255,
-    "本州中部から南西諸島"
+    39.9426,
+    133.9445,
+    "日本列島から台湾"
    ]
   ]
  },
  "edges": [
   [
-   "coastal_broadleaf_forest",
-   "satoyama_edge"
+   "coastal_kijoran",
+   "highland_forest"
   ],
   [
-   "coastal_broadleaf_forest",
-   "highland_meadow"
+   "coastal_kijoran",
+   "migration_ridge"
   ],
   [
-   "open_ocean",
-   "satoyama_edge"
+   "highland_forest",
+   "taiwan_forest"
   ],
   [
-   "highland_meadow",
-   "open_ocean"
+   "coastal_kijoran",
+   "summer_meadow"
   ],
   [
-   "open_ocean",
-   "windy_pass"
+   "highland_forest",
+   "summer_meadow"
   ],
   [
-   "highland_meadow",
-   "windy_pass"
+   "migration_ridge",
+   "taiwan_forest"
   ],
   [
-   "coastal_broadleaf_forest",
-   "subtropical_beach"
+   "okinawa_shrub",
+   "taiwan_forest"
   ],
   [
-   "satoyama_edge",
-   "subtropical_beach"
+   "migration_ridge",
+   "okinawa_shrub"
   ]
  ],
  "size": {
-  "ja": "体長",
+  "ja": "前翅長",
   "unit": "cm",
-  "start": 0.3
+  "start": 5
  },
  "stats": {
   "run": {
    "ja": "飛翔力",
-   "use": "風に乗って海を渡る・上昇気流を捉える時に効く"
+   "use": "1000km以上の長距離を移動する時に効く"
   },
   "sense": {
-   "ja": "気流感知",
-   "use": "渡りに適した風や蜜源を見つける時に効く"
+   "ja": "視覚・嗅覚",
+   "use": "吸蜜する花や産卵場所を探す時に効く"
   },
   "forage": {
    "ja": "吸蜜力",
-   "use": "花から蜜を吸う・幼虫が葉を食べる時に効く"
+   "use": "花の蜜を効率よく吸い上げる時に効く"
   }
  },
  "stages": [
   {
-   "id": "larva",
-   "ja": "幼虫",
-   "days": 6,
-   "hunger": 8,
-   "grow": 0.4,
-   "goal": "食草を食べて体に毒を蓄える",
-   "enter": "キジョランの葉裏で孵化した。毒のある葉を食べ進め、鮮やかな警戒色をまとう。"
+   "id": "egg",
+   "ja": "卵",
+   "days": 10,
+   "hunger": 0,
+   "grow": 0.1,
+   "goal": "幼虫になる",
+   "enter": "食草の葉裏に産み付けられた。静かに時を待ち、孵化の準備を整える。"
   },
   {
-   "id": "teneral",
-   "ja": "初夏成虫",
-   "fromAge": 0.08,
-   "days": 10,
+   "id": "larva",
+   "ja": "幼虫",
+   "fromAge": 0.03,
+   "days": 120,
    "hunger": 10,
-   "grow": 0.4,
-   "goal": "高原へ登り体を充実させる",
-   "enter": "浅葱色の翅を広げて羽化した。夏の暑さを避けて涼しい高原の草地を目指す。"
+   "grow": 0.5,
+   "goal": "十分に成長して蛹になる",
+   "enter": "孵化した。毒のあるキジョランの葉を食み、身に毒を蓄えて成長する。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.36,
+   "days": 30,
+   "hunger": 0,
+   "grow": 0.3,
+   "goal": "成虫に脱皮する",
+   "enter": "青緑色の蛹になった。尾部だけで逆さまに吊り下がり、劇的な変化を待つ。"
   },
   {
    "id": "adult",
-   "ja": "渡り成虫",
-   "fromAge": 0.18,
-   "days": 12,
+   "ja": "成熟成虫",
+   "fromAge": 0.45,
+   "days": 60,
    "hunger": 12,
-   "grow": 0.2,
+   "grow": 0.1,
    "adult": true,
-   "goal": "南の島へ海を渡り産卵する",
-   "enter": "秋の訪れとともに南を目指す。海を越えて暖かい南西諸島へ命をつなぐ。"
+   "goal": "南へ渡り、子を残す",
+   "enter": "水色の斑紋を持つ翅を広げた。秋風に乗り、遥か南の地を目指して飛び立つ。"
   }
  ],
  "oldAge": {
@@ -213,406 +229,357 @@
    0.3,
    0.6
   ],
-  "text": "南の島にたどり着き、翅の鱗粉を落としきって静かに力尽きた。"
+  "text": "南の島か本土の暖地で、役目を終えて静かに息を引き取った。"
  },
  "breeding": {
   "ja": "葉裏への産卵",
-  "ds": "キジョランやカモメヅルの葉の裏に、白く小さな卵を1つずつ丁寧に産み付ける",
+  "ds": "食草となるキョウチクトウ科の植物の葉裏に卵を産み付ける",
   "months": [
    9,
-   10,
-   11
+   10
   ],
   "places": [
-   "subtropical_beach",
-   "coastal_broadleaf_forest"
+   "coastal_kijoran"
   ],
   "perYear": 1,
   "kids": [
-   50,
-   200
+   100,
+   500
   ],
-  "many": 300,
+  "many": 1000,
   "label": {
-   "ja": "産んだ卵",
+   "ja": "卵",
    "unit": "個",
-   "child": "葉裏の卵のひとつ"
+   "child": "産み付けられた卵のひとつ"
   },
-  "ok": "キョウチクトウ科植物の葉裏に、{born}個の卵を産み落とした。",
-  "ng": "適した食草が見つからず、産卵できなかった。",
-  "goal1": "食草の葉裏に卵を産む",
-  "goal2": "累計で300個の卵を産む"
+  "ok": "キジョランの葉裏に、{born}個の卵を産み付けた。",
+  "ng": "適切な食草が見つからず、産卵できなかった。",
+  "goal1": "食草に卵を産む",
+  "goal2": "次世代を繋ぐ"
  },
  "foods": [
   {
-   "id": "marsdenia_leaf",
+   "id": "kijoran_leaf",
    "ja": "キジョランの葉を食べる",
-   "name": "キジョランの葉",
-   "ds": "毒性アルカロイドを含む葉を円形に噛み切り、染み出る乳汁を避けて食べる",
+   "name": "キジョラン",
+   "ds": "毒性のあるアルカロイドを含む葉を食べ、体内に取り込む",
    "stages": [
     "larva"
    ],
    "places": [
-    "coastal_broadleaf_forest",
-    "satoyama_edge"
+    "coastal_kijoran"
    ],
    "rich": [
-    "coastal_broadleaf_forest"
+    "coastal_kijoran"
    ],
-   "ok": "葉の筋を傷つけて乳汁を止め、柔らかい葉肉を食べて体に毒を蓄えた。",
-   "full": 30
+   "ok": "キジョランの葉を食み、身に毒を蓄えた。",
+   "full": 20
   },
   {
    "id": "flower_nectar",
-   "ja": "ヒヨドリバナの花蜜を吸う",
-   "name": "ヒヨドリバナの蜜",
-   "ds": "口吻を伸ばして花蜜を吸い、フェロモンの元となるアルカロイドを補給する",
-   "stages": [
-    "teneral",
-    "adult"
-   ],
-   "places": [
-    "highland_meadow",
-    "satoyama_edge",
-    "windy_pass"
-   ],
-   "rich": [
-    "highland_meadow"
-   ],
-   "ok": "白い花冠に口吻を差し込み、たっぷりと蜜を吸い上げた。",
-   "full": 25
-  },
-  {
-   "id": "coastal_nectar",
-   "ja": "海浜植物の花蜜を吸う",
-   "name": "海浜植物の花蜜",
-   "ds": "海辺に咲くスナビキソウなどの花にとまり、渡りのエネルギーとなる蜜を吸う",
+   "ja": "花の蜜を吸う",
+   "name": "キク科の花",
+   "ds": "フジバカマやヒヨドリバナなどの蜜を吸い、エネルギーを得る",
    "stages": [
     "adult"
    ],
    "places": [
-    "subtropical_beach",
-    "coastal_broadleaf_forest"
+    "summer_meadow",
+    "migration_ridge",
+    "okinawa_shrub"
    ],
    "rich": [
-    "subtropical_beach"
+    "summer_meadow"
    ],
-   "ok": "潮風の中で花にとまり、甘い蜜を吸って体力を回復させた。",
+   "ok": "鮮やかな花から蜜を吸い、飛翔の力を蓄えた。",
    "full": 30
   }
  ],
  "special": [
   {
-   "id": "thermal_soaring",
-   "ja": "上昇気流に乗る",
-   "ds": "大きな翅を広げて羽ばたかずに気流を捉え、体力を温存しながら長距離を滑空する",
+   "id": "warning_color",
+   "ja": "警戒色を提示する",
+   "ds": "鮮やかな体色で、毒を持っていることを天敵に知らせる",
    "stages": [
-    "teneral",
+    "larva",
+    "pupa",
     "adult"
    ],
-   "stat": "run",
-   "base": 0.75,
+   "stat": "sense",
+   "base": 0.6,
    "calm": true,
-   "ok": "上昇気流をうまく捉え、羽ばたくことなく悠々と空高く舞い上がった。"
+   "ok": "鮮やかな色を誇示し、鳥などの天敵に襲われるのを避けた。"
   }
  ],
  "levelEvery": 4,
  "migrate": [
   {
    "months": [
-    6,
-    7
-   ],
-   "stages": [
-    "teneral"
-   ],
-   "to": "highland_meadow",
-   "say": "平地の暑さを避けるため、涼風が吹き抜ける霧ヶ峰高原へ群れて登る。"
-  },
-  {
-   "months": [
     9,
-    10
+    10,
+    11
    ],
    "stages": [
     "adult"
    ],
-   "to": "subtropical_beach",
-   "say": "秋風に乗って白樺峠を越え、遠く太平洋を渡って奄美大島の海浜林へ旅立つ。"
+   "to": "okinawa_shrub",
+   "say": "秋になると日本本土から南西諸島や台湾へ、1000km以上の旅に出る。"
+  },
+  {
+   "months": [
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "highland_forest",
+   "say": "春から初夏にかけ、南西諸島から本土の冷涼な高原へと北上する。"
   }
  ],
  "foes": [
   {
-   "id": "predatory_stink_bug",
-   "ja": "クチブトカメムシ",
-   "kind": "insect",
-   "places": [
-    "coastal_broadleaf_forest"
-   ],
-   "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "texts": [
-    "キジョランの葉裏から、鋭いくちばしを伸ばしてにじり寄る。",
-    "肉食のカメムシが、柔らかい幼虫の体に狙いを定める。"
-   ]
-  },
-  {
-   "id": "lynx_spider",
-   "ja": "ササグモ",
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
    "kind": "arachnid",
    "places": [
-    "coastal_broadleaf_forest",
-    "satoyama_edge"
+    "migration_ridge",
+    "highland_forest"
    ],
    "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "texts": [
-    "網を張らずに葉の上を徘徊し、鋭い脚で飛びかかってくる。",
-    "緑色の細身のクモが、葉の影から素早く間合いを詰める。"
-   ]
-  },
-  {
-   "id": "paper_wasp",
-   "ja": "セグロアシナガバチ",
-   "kind": "insect",
-   "places": [
-    "coastal_broadleaf_forest",
-    "satoyama_edge"
-   ],
-   "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "texts": [
-    "低空を唸りを上げて飛び、葉の裏を丹念に探し回る。",
-    "大あごを開いたアシナガバチが、キジョランの蔓に降り立つ。"
-   ]
-  },
-  {
-   "id": "robber_fly",
-   "ja": "シオヤアブ",
-   "kind": "insect",
-   "places": [
-    "highland_meadow"
-   ],
-   "stages": [
-    "teneral"
-   ],
-   "sev": 2,
-   "fast": true,
-   "texts": [
-    "高原の風を突いて、背後から猛烈な速度で迫る。",
-    "剛毛に覆われた太い脚を広げ、飛翔中の体に組みついてくる。"
-   ]
-  },
-  {
-   "id": "praying_mantis",
-   "ja": "オオカマキリ",
-   "kind": "insect",
-   "places": [
-    "highland_meadow",
-    "windy_pass"
-   ],
-   "stages": [
-    "teneral",
     "adult"
    ],
    "sev": 2,
    "texts": [
-    "ヒヨドリバナの花に擬態し、鎌をもたげて待ち伏せる。",
-    "吸蜜に訪れた瞬間、電光石火の鎌が振り下ろされる。"
+    "空を横切る道に、透明な糸の罠が張り巡らされている。",
+    "風に揺れる網が、飛翔する体を絡めとる。"
    ],
    "again": [
     [
-     "またしても、花房の奥にあの緑色の鎌が潜んでいる。"
-    ],
-    [
-     "同じカマキリが、蜜を吸う隙をじっとうかがっている。"
+     "また、あの尾根の間に大きな網が張られている。",
+     "同じ主の網が、行く手をふさぐ。"
     ]
    ],
-   "bye": "高原に冷たい初霜が降り、あのカマキリの気配も花の間から途絶えた。"
+   "bye": "秋の強い風が吹き荒れ、あのクモの網は跡形もなく破れ去った。"
   },
   {
-   "id": "marking_researcher",
-   "ja": "マーキング調査員",
-   "kind": "human",
+   "id": "paper_wasp",
+   "ja": "アシナガバチ",
+   "kind": "insect",
    "places": [
-    "highland_meadow",
-    "windy_pass"
+    "coastal_kijoran",
+    "highland_forest"
    ],
    "stages": [
-    "teneral",
-    "adult"
+    "larva",
+    "pupa"
    ],
-   "sev": 1,
+   "sev": 3,
    "texts": [
-    "白い捕虫網を構え、花に止まる姿へ素早く忍び寄る。",
-    "頭上から丸い網が翻り、逃げ道を塞ごうと迫る。"
+    "鋭い顎を持つ狩人が、葉の裏を執拗に探索している。",
+    "毒針が、柔らかい皮膚を貫こうと狙いを定める。"
    ],
-   "lose": "網で捕らえられて翅を強く押さえられ、傷を負った。",
-   "fleeJa": "風に乗って高く舞い上がる",
-   "hideJa": "群がるアザミの葉陰に滑りこむ"
+   "again": [
+    [
+     "また、あの茂みの陰に巣を作るバチがいる。",
+     "執拗な狩人が、再び食草の周りを飛び回る。"
+    ]
+   ],
+   "bye": "冬の冷気が訪れ、あの猛々しい狩人は姿を消した。"
   },
   {
    "id": "bull_headed_shrike",
    "ja": "モズ",
    "kind": "bird",
    "places": [
-    "windy_pass"
+    "summer_meadow",
+    "migration_ridge"
    ],
    "stages": [
     "adult"
    ],
    "sev": 3,
-   "fast": true,
    "texts": [
-    "峠の枯れ枝から急降下し、鋭い鉤爪を突き出してくる。",
-    "毒のある胴体を避け、翅の付け根を狙ってくちばしを打ち込む。"
+    "枯れ枝の頂点から、鋭い眼光が獲物を捉える。",
+    "急降下する黒い影が、空中で体をひったくる。"
    ]
   },
   {
-   "id": "joro_spider",
-   "ja": "ジョロウグモ",
+   "id": "crab_spider",
+   "ja": "カニグモ",
    "kind": "arachnid",
    "places": [
-    "windy_pass"
+    "summer_meadow"
    ],
    "stages": [
     "adult"
    ],
    "sev": 2,
    "texts": [
-    "峠の尾根道に、巨大な黄金色の粘網が張り巡らされている。",
-    "南風に乗って飛ぶ行く手を遮り、網の中央で主が待ち構える。"
-   ],
-   "again": [
-    [
-     "またしても、風の抜ける小径にあの主の強靭な網が張られている。"
-    ],
-    [
-     "同じ大網が、谷を渡る風の通り道を塞いでいる。"
-    ]
-   ],
-   "bye": "峠を吹き抜ける木枯らしが吹き荒れ、あの大きな網は跡形もなく吹き飛ばされた。"
+    "花びらと同化した体が、静かに獲物を待っている。",
+    "吸蜜に夢中になった隙に、太い脚が体にまとわりつく。"
+   ]
   },
   {
-   "id": "black_tailed_gull",
-   "ja": "ウミネコ",
+   "id": "black_garden_ant",
+   "ja": "クロオオアリ",
+   "kind": "insect",
+   "places": [
+    "coastal_kijoran",
+    "highland_forest"
+   ],
+   "stages": [
+    "egg",
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面から這い上がった黒い軍勢が、葉の上を埋め尽くす。",
+    "小さな顎が、卵の殻や幼虫の体を執拗に噛む。"
+   ]
+  },
+  {
+   "id": "assassin_bug",
+   "ja": "サシガメ",
+   "kind": "insect",
+   "places": [
+    "coastal_kijoran",
+    "highland_forest"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "擬態した体が、葉の陰から音もなく近づく。",
+    "鋭い口吻が、幼虫の柔らかい節の間を突き刺す。"
+   ]
+  },
+  {
+   "id": "flycatcher",
+   "ja": "ヒタキ",
    "kind": "bird",
    "places": [
-    "open_ocean"
+    "highland_forest",
+    "okinawa_shrub"
    ],
    "stages": [
     "adult"
    ],
    "sev": 2,
-   "fast": true,
    "texts": [
-    "荒波の上を旋回しながら、低空を滑空する細い影を見つけ急降下する。",
-    "海面すれすれを飛ぶ体をめがけ、太いくちばしが迫る。"
+    "枝先から鋭い飛び出しを見せ、空中で獲物を捕らえる。",
+    "素早い動きで、飛翔する体をくちばしで挟み込む。"
    ]
   },
   {
-   "id": "giant_wood_spider",
-   "ja": "オオジョロウグモ",
-   "kind": "arachnid",
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
    "places": [
-    "subtropical_beach"
+    "summer_meadow",
+    "okinawa_shrub"
    ],
    "stages": [
     "adult"
    ],
    "sev": 2,
    "texts": [
-    "海浜のモクマオウの枝間に、黄色い頑丈な網を大きく広げている。",
-    "南方の島にたどり着いた旅の終わりを、巨大なクモが見下ろす。"
+    "大きな黒い影が、地上に降りた隙に襲いかかる。",
+    "強靭なくちばしが、逃げ場のない体を捉える。"
+   ]
+  },
+  {
+   "id": "butterfly_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "summer_meadow",
+    "migration_ridge"
    ],
-   "again": [
-    [
-     "またしても、海浜林の梢にあの巨大な網が張られている。"
-    ],
-    [
-     "同じ主の網が、南の島での休息を阻む。"
-    ]
+   "stages": [
+    "adult"
    ],
-   "bye": "季節外れの台風が島をかすめ去り、あの巨大な網は木々の枝ごと吹き払われた。"
+   "sev": 2,
+   "texts": [
+    "草原から、白い網が勢いよく振り下ろされる。",
+    "日差しを遮る大きな枠が、視界を塞ぐ。"
+   ],
+   "lose": "白い網に払われ、羽の先が裂けて傷を負った。"
   }
  ],
  "choices": [
   {
-   "q": "越冬を終え、春の陽光が降り注いだ。どこで成長を急ぐか",
+   "q": "冬が近づいた。幼虫のままどこで寒さをしのぐか",
    "stages": [
     "larva"
    ],
    "month": [
-    3,
-    4
+    11,
+    12
    ],
    "opts": [
     {
-     "ja": "常緑のキジョランに留まる",
-     "ds": "安定して食草を確保できる。成長速度が緩やかになる",
+     "ja": "沿岸部のキジョランの葉にとどまる",
+     "ds": "常緑の葉があり飢えない。潮風にさらされ体温を奪われやすい",
      "fx": {
-      "danger": -0.5,
-      "energy": 0.5
+      "food": 1,
+      "danger": 0.5
      },
-     "goto": "satoyama_edge",
-     "say": "冬を越した常緑の葉を食み、静かに体を大きくした。",
-     "chip": "常緑葉で成長"
+     "goto": "coastal_kijoran",
+     "say": "常緑のキジョランの葉に身を寄せ、冬の寒さを耐え忍んだ。",
+     "chip": "沿岸部で越冬"
     },
     {
-     "ja": "新芽の出た若葉へ移る",
-     "ds": "栄養価が高く急速に成長できる。天敵に見つかりやすい",
+     "ja": "山地の食草の根元に潜む",
+     "ds": "寒風を避けられる。春まで食草の芽吹きを待つ必要があり飢えやすい",
      "fx": {
-      "danger": 0.5,
-      "energy": 1
+      "food": -0.5,
+      "danger": -0.5
      },
-     "goto": "satoyama_edge",
-     "say": "瑞々しい新芽を貪り、短期間で蛹になる準備を整えた。",
-     "chip": "新芽で成長"
+     "goto": "highland_forest",
+     "say": "枯れ草の根元に深く潜り込み、春の訪れを静かに待った。",
+     "chip": "山地で越冬"
     }
    ]
   },
   {
-   "q": "羽化した。酷暑を避け、どこで夏を過ごすか",
+   "q": "成虫になった。どの花で蜜を吸い、体を作るか",
    "stages": [
-    "teneral"
+    "adult"
    ],
    "month": [
-    5,
-    6
+    7,
+    8
    ],
    "opts": [
     {
-     "ja": "標高の高い高原へ登る",
-     "ds": "涼しく繁殖に適している。移動に体力を消耗する",
+     "ja": "フジバカマやヒヨドリバナに集まる",
+     "ds": "PAを摂取できフェロモンを生成できる。目立つため鳥に狙われやすい",
      "fx": {
-      "energy": -0.5,
-      "kids": 1
+      "energy": 1,
+      "danger": 0.5
      },
-     "goto": "highland_meadow",
-     "say": "涼風が吹き抜ける高原の草地へ登り、次世代への準備を始めた。",
-     "chip": "高原へ移動"
+     "goto": "summer_meadow",
+     "say": "紫色のフジバカマに降り立ち、濃い蜜とともに成分を体に取り込んだ。",
+     "chip": "PAを摂取"
     },
     {
-     "ja": "低地の林縁に留まる",
-     "ds": "移動の負担がなく蜜が得やすい。暑さで活動時間が制限される",
+     "ja": "林縁の小さな野花を巡る",
+     "ds": "人目に付きにくく安全。十分な成分が得られず求愛に不利になる",
      "fx": {
-      "energy": 0.5,
-      "kids": -0.5
+      "energy": -0.5,
+      "danger": -0.5
      },
-     "goto": "satoyama_edge",
-     "say": "里山の林縁でキク科の花から蜜を吸い、暑い日をやり過ごした。",
-     "chip": "低地で待機"
+     "goto": "highland_forest",
+     "say": "森の縁に咲く名もなき花から、静かに蜜を吸い上げた。",
+     "chip": "野花で吸蜜"
     }
    ]
   },
   {
-   "q": "秋風が吹き始めた。南への長い旅をどう始めるか",
+   "q": "秋の気配が濃くなった。南への旅をどう進めるか",
    "stages": [
     "adult"
    ],
@@ -622,31 +589,31 @@
    ],
    "opts": [
     {
-     "ja": "山の峠で強い気流に乗る",
-     "ds": "少ない力で高速に移動できる。急激な天候変化に巻き込まれやすい",
+     "ja": "尾根の強い気流に乗って南下する",
+     "ds": "一気に距離を稼げる。強風で体力を激しく消耗する",
+     "fx": {
+      "energy": -1,
+      "danger": -0.5
+     },
+     "goto": "migration_ridge",
+     "say": "山々の尾根を越え、秋の風に身を任せて南へと滑空した。",
+     "chip": "気流で南下"
+    },
+    {
+     "ja": "林縁や草原をゆっくり移動する",
+     "ds": "体力を温存できる。移動に時間がかかり冬の到来に間に合わない恐れがある",
      "fx": {
       "energy": 0.5,
       "danger": 0.5
      },
-     "goto": "windy_pass",
-     "say": "白樺峠の強い上昇気流に乗り、一気に南へと高度を上げた。",
-     "chip": "気流で南下"
-    },
-    {
-     "ja": "海岸沿いの林を辿る",
-     "ds": "休息場所を確保しながら進める。目的地への到達に時間がかかる",
-     "fx": {
-      "energy": -0.5,
-      "danger": -0.5
-     },
-     "goto": "coastal_broadleaf_forest",
-     "say": "海岸線の森を道標に、ゆっくりと南へと翅を羽ばたかせた。",
-     "chip": "沿岸を南下"
+     "goto": "summer_meadow",
+     "say": "花から花へと飛び移りながら、ゆっくりと南の空を目指した。",
+     "chip": "低空で南下"
     }
    ]
   },
   {
-   "q": "目の前に広がる太平洋。どうやって南西諸島へ渡るか",
+   "q": "旅の終わりに、次世代へ命をつなぐ。どこに産卵するか",
    "stages": [
     "adult"
    ],
@@ -656,26 +623,26 @@
    ],
    "opts": [
     {
-     "ja": "外洋を直線的に横断する",
-     "ds": "最短距離で目的地に着ける。嵐に遭うと逃げ場がない",
+     "ja": "南西諸島の低木林に産卵する",
+     "ds": "温暖な地で確実に孵化できる。本土への帰還に長い時間を要する",
      "fx": {
-      "energy": -1,
-      "danger": 1
+      "kids": 1,
+      "energy": -0.5
      },
-     "goto": "open_ocean",
-     "say": "果てしなく続く青い海の上を、一心不乱に南へと飛び続けた。",
-     "chip": "外洋横断"
+     "goto": "okinawa_shrub",
+     "say": "遥か南の島に辿り着き、食草の葉裏に小さな卵を託した。",
+     "chip": "南西諸島に産卵"
     },
     {
-     "ja": "沿岸の島々を伝って飛ぶ",
-     "ds": "途中で休息と吸蜜ができる。飛行距離が大幅に伸びる",
+     "ja": "本土沿岸部のキジョランに産卵する",
+     "ds": "次世代が北上しやすい。冬の寒さで幼虫が死ぬリスクがある",
      "fx": {
-      "energy": 0,
-      "danger": -0.5
+      "kids": -0.5,
+      "energy": 0.5
      },
-     "goto": "subtropical_beach",
-     "say": "点在する島々に寄り道しながら、潮風に吹かれて南下した。",
-     "chip": "島伝いに移動"
+     "goto": "coastal_kijoran",
+     "say": "本土の海岸線に戻り、常緑の葉に卵を産み落とした。",
+     "chip": "本土沿岸に産卵"
     }
    ]
   }
@@ -683,27 +650,15 @@
  "happen": [
   {
    "month": [
-    4,
-    5
+    5,
+    6
    ],
    "stages": [
     "larva"
    ],
    "p": 0.3,
-   "say": "食草の毒成分を体内に取り込み、鮮やかな警戒色を身にまとった。",
+   "say": "毒のあるガガイモ科の葉を食み、体内にアルカロイドを蓄えた。",
    "full": 10
-  },
-  {
-   "month": [
-    7,
-    8
-   ],
-   "stages": [
-    "teneral"
-   ],
-   "p": 0.2,
-   "say": "フジバカマの花から蜜を吸い、雄はフェロモン分泌のための成分を蓄えた。",
-   "full": 15
   },
   {
    "month": [
@@ -714,66 +669,66 @@
     "adult"
    ],
    "p": 0.2,
-   "say": "激しい秋雨に打たれ、翅が濡らされ、傷を負った。",
+   "say": "激しい秋雨に煽られ、岩に叩きつけられ、傷を負った。",
    "full": -20
   },
   {
    "month": [
-    11,
-    12
+    6,
+    7
    ],
    "stages": [
-    "adult"
+    "pupa"
    ],
-   "p": 0.1,
-   "say": "南西諸島の海浜林に辿り着き、暖かい冬を越すための休息地を得た。",
-   "full": 10
+   "p": 0.25,
+   "say": "青緑色の蛹となり、内部で劇的な変化を遂げながら羽化の時を待った。",
+   "full": 5
   }
  ],
- "lead": "卵は葉裏に産み付けられ、幼虫は有毒植物を食べて成長し、春に蛹となり、夏に渡り成虫となって秋に南西諸島へ長距離移動し、そこで子を残して死ぬのである。",
+ "lead": "高原の林縁で卵が孵化し、夏の草原で幼虫が成長、秋に山の尾根で蛹化し、成熟成虫となって南西諸島へ渡り、命を繋ぐ。",
  "texts": {
-  "move": "高原へ、風に乗って飛んでいった。",
+  "move": "{to}へ、風に乗って飛んでいった。",
   "fleeJa": "草の隙間へ飛び去る",
-  "restJa": "草に止まって体を休める",
+  "restJa": "花の上に止まって体を休める",
   "watchJa": "複眼で周囲の気配をうかがう",
-  "lieJa": "葉の裏に身を潜める",
-  "lastMemory": "秋の海岸で、遠くの灯りを眺めながら最後の飛翔を思い出した。"
+  "lieJa": "葉裏に身を潜める",
+  "lastMemory": "秋の山裾で、寒風に吹かれながら最後の卵を産んだ日を思い出した。"
  },
  "intro": [
-  "葉裏の湿った場所で卵が孵化し、幼虫が出たのである。",
-  "幼虫はキョウチクトウ科の有毒植物を食べて成長したのである。"
+  "高原の林縁の葉裏に産み付けられた卵が、雨に濡れた朝にかすかに揺れながら孵化した。",
+  "幼虫は黄色と黒の斑点が並び、葉の裏でゆっくりと食草を食べて成長した。"
  ],
  "wins": [
   {
    "minKids": 200,
-   "title": "秋の南西諸島で命をつないだ",
-   "line": "南西諸島の海岸林に、{kids}個の卵を産み落とした。",
-   "mem": "潮風に吹かれながら、次世代が羽化する光景を思い出した。"
+   "title": "南西諸島へ命をつないだ",
+   "line": "高原の林縁に、{kids}個の卵を産み落とした。",
+   "mem": "風に乗って遠くへ旅立つ仲間を思い出した。"
   }
  ],
  "memories": [
   {
    "flag": "c0_1",
-   "text": "高原の霧が立ち込める朝、初夏成虫として羽化した瞬間を思い出した。"
+   "text": "高原の花畑で、蜜を吸いながら光を浴びた日を思い出した。"
   },
   {
    "flag": "c0_2",
-   "text": "秋の白樺峠で、強風に逆らいながら長距離飛行した日を思い出した。"
+   "text": "蛹の青緑色が光り、金属光沢の斑点が揺れた瞬間を思い出した。"
   }
  ],
  "noKids": {
   "title": "命をつなげなかった",
-  "line": "渡り途中で餌が尽き、子を残すことなくその一生を終えた。"
+  "line": "渡りの途中で餌が尽き、卵を残すことなくその一生を終えた。"
  },
  "facts": [
   {
-   "quote": "幼虫はキョウチクトウ科（旧分類ではガガイモ科）のキジョラン、カモメヅル、イケマ、サクラランなどを食草とし、卵は食草の葉裏に産みつけられる。"
+   "quote": "幼虫はキョウチクトウ科のキジョランなどを食草とし、毒性の強いアルカロイドを取り込んで毒化する。"
   },
   {
-   "quote": "蛹は垂蛹型で、尾部だけで逆さ吊りになる。蛹は青緑色で、金属光沢のある黒い斑点がある。"
+   "quote": "蛹は青緑色で金属光沢のある黒い斑点があり、垂蛹型で尾部だけが逆さ吊りになる。"
   },
   {
-   "quote": "成虫は秋に日本本土から南西諸島・台湾への渡り個体が多く、1日あたり200 km以上の距離を移動することも確認されている。"
+   "quote": "成虫は秋に日本本土から南西諸島・台湾へ1500km以上移動し、1日200km以上の速度で飛行することが確認されている。"
   }
  ]
 }

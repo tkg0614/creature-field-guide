@@ -4,5 +4,133 @@
  "sci": "Prosopocoilus inclinatus",
  "status": "draft",
  "type": "insect_annual",
- "country": "jp"
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の雑木林",
+  "geo": "Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "decaying_wood",
+   "ja": "林床の朽ち木",
+   "danger": 1,
+   "cover": true,
+   "about": "湿った朽ち木の中。幼虫は木材を食べて1年から2年かけて成長する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "pupa_chamber",
+   "ja": "朽ち木の中の蛹室",
+   "danger": 1,
+   "cover": true,
+   "about": "土や木屑で固めた部屋。幼虫期の蓄えを使い、成虫へと変態する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "forest_floor",
+   "ja": "林床の落ち葉の下",
+   "danger": 2,
+   "cover": true,
+   "about": "羽化したばかりの成虫が身を潜める。樹液を求めて活動を始めるまで体力を蓄える。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "sap_tree",
+   "ja": "クヌギやコナラの樹液口",
+   "danger": 3,
+   "cover": false,
+   "about": "甘い樹液が集まる場所。オス同士が激しく争い、メスを奪い合う。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "tree_trunk",
+   "ja": "樹幹の表面",
+   "danger": 2,
+   "cover": false,
+   "about": "大きな顎が邪魔で狭い場所に隠れられないため、木の表面で休息する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "oviposition_wood",
+   "ja": "産卵用の朽ち木",
+   "danger": 2,
+   "cover": true,
+   "about": "メスが顎で穴を掘り、次世代の卵を産み付ける。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  }
+ ],
+ "start": {
+  "place": "decaying_wood",
+  "month": 7,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の雑木林",
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
+  "labels": [
+   [
+    36.583800000000004,
+    139.239,
+    "日本の雑木林"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "decaying_wood",
+   "pupa_chamber"
+  ],
+  [
+   "decaying_wood",
+   "forest_floor"
+  ],
+  [
+   "forest_floor",
+   "pupa_chamber"
+  ],
+  [
+   "decaying_wood",
+   "sap_tree"
+  ],
+  [
+   "pupa_chamber",
+   "sap_tree"
+  ],
+  [
+   "decaying_wood",
+   "tree_trunk"
+  ],
+  [
+   "pupa_chamber",
+   "tree_trunk"
+  ],
+  [
+   "decaying_wood",
+   "oviposition_wood"
+  ],
+  [
+   "oviposition_wood",
+   "pupa_chamber"
+  ]
+ ]
 }

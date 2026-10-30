@@ -1,0 +1,155 @@
+{
+ "id": "divingbeetle",
+ "ja": "ゲンゴロウ",
+ "sci": "Cybister chinensis",
+ "status": "draft",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の里山",
+  "geo": "Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "autumn_paddy",
+   "ja": "秋の水田",
+   "danger": 2,
+   "cover": true,
+   "about": "繁殖期に成虫が集まる。水草の間に卵が産み付けられる。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "spring_pond",
+   "ja": "春の池",
+   "danger": 2,
+   "cover": true,
+   "about": "孵化した幼虫が水草に潜む。小魚や水生昆虫を捕食する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "muddy_bank",
+   "ja": "水辺の泥の中",
+   "danger": 1,
+   "cover": true,
+   "about": "土の中に潜り蛹になる。成虫への脱皮を待つ。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "summer_paddy",
+   "ja": "夏の水田",
+   "danger": 3,
+   "cover": false,
+   "about": "餌を求めて浅い水域へ出る。サギなどの天敵に狙われやすい。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "deep_pond",
+   "ja": "深い溜池",
+   "danger": 1,
+   "cover": true,
+   "about": "天敵を避けて生活する本拠地。流線形の体で高速に遊泳する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "night_air",
+   "ja": "夜の空中",
+   "danger": 2,
+   "cover": false,
+   "about": "別の池へ移動するために飛ぶ。街灯などの光に誘われる。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "winter_bottom",
+   "ja": "冬の池底",
+   "danger": 0,
+   "cover": true,
+   "about": "深い水底で冬を越す。酸素消費を抑えて静止する。",
+   "stages": [],
+   "lat": 36.575,
+   "lon": 139.239
+  }
+ ],
+ "start": {
+  "place": "autumn_paddy",
+  "month": 9,
+  "day": 1
+ },
+ "region": {
+  "ja": "日本の里山",
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
+  "labels": [
+   [
+    36.583800000000004,
+    139.239,
+    "日本の里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "autumn_paddy",
+   "spring_pond"
+  ],
+  [
+   "autumn_paddy",
+   "muddy_bank"
+  ],
+  [
+   "muddy_bank",
+   "spring_pond"
+  ],
+  [
+   "autumn_paddy",
+   "summer_paddy"
+  ],
+  [
+   "spring_pond",
+   "summer_paddy"
+  ],
+  [
+   "autumn_paddy",
+   "deep_pond"
+  ],
+  [
+   "deep_pond",
+   "spring_pond"
+  ],
+  [
+   "autumn_paddy",
+   "night_air"
+  ],
+  [
+   "night_air",
+   "spring_pond"
+  ],
+  [
+   "autumn_paddy",
+   "winter_bottom"
+  ],
+  [
+   "spring_pond",
+   "winter_bottom"
+  ]
+ ]
+}

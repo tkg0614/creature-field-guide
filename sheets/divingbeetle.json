@@ -21,7 +21,11 @@
    "danger": 2,
    "cover": true,
    "about": "繁殖期に成虫が集まる。水草の間に卵が産み付けられる。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -31,7 +35,11 @@
    "danger": 2,
    "cover": true,
    "about": "孵化した幼虫が水草に潜む。小魚や水生昆虫を捕食する。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -41,7 +49,11 @@
    "danger": 1,
    "cover": true,
    "about": "土の中に潜り蛹になる。成虫への脱皮を待つ。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -51,7 +63,11 @@
    "danger": 3,
    "cover": false,
    "about": "餌を求めて浅い水域へ出る。サギなどの天敵に狙われやすい。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -61,7 +77,11 @@
    "danger": 1,
    "cover": true,
    "about": "天敵を避けて生活する本拠地。流線形の体で高速に遊泳する。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -71,7 +91,11 @@
    "danger": 2,
    "cover": false,
    "about": "別の池へ移動するために飛ぶ。街灯などの光に誘われる。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   },
@@ -81,7 +105,11 @@
    "danger": 0,
    "cover": true,
    "about": "深い水底で冬を越す。酸素消費を抑えて静止する。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
    "lat": 36.575,
    "lon": 139.239
   }
@@ -151,5 +179,197 @@
    "spring_pond",
    "winter_bottom"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 3.3
+ },
+ "stats": {
+  "run": {
+   "ja": "遊泳力",
+   "use": "水中で素早く移動し、天敵から逃れる時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚",
+   "use": "水中の獲物の匂いを嗅ぎつける時に効く"
+  },
+  "forage": {
+   "ja": "捕獲力",
+   "use": "鋭い爪で獲物を押さえつける時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "幼虫",
+   "days": 100,
+   "hunger": 10,
+   "grow": 0.7,
+   "goal": "蛹になるまで成長する",
+   "enter": "水田の底で孵化した。水中のトラとして、小動物を狩る。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.27,
+   "days": 20,
+   "hunger": 5,
+   "grow": 0.2,
+   "goal": "成虫へと姿を変える",
+   "enter": "水辺の泥の中に潜り、繭を作った。静かに脱皮の時を待つ。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.33,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "次世代に命を繋ぐ",
+   "enter": "泥から這い出し、羽化した。流線形の体で水の中を自在に泳ぐ。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   0.9,
+   1.1
+  ],
+  "text": "冬の池底で活動を停止し、そのまま静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "水中産卵",
+  "ds": "秋の水田や池の浅瀬で、水草などに卵を産み付ける",
+  "months": [
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "autumn_paddy"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   500
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "越冬する卵のひとつ"
+  },
+  "ok": "秋の水田に、{born}個の卵を産み付けた。",
+  "ng": "適切な産卵場所が見つからず、卵を落とせなかった。",
+  "goal1": "水田に卵を産む",
+  "goal2": "累計で1000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "aquatic_prey",
+   "ja": "水生小動物を捕らえる",
+   "name": "水生小動物",
+   "ds": "オタマジャクシや水生昆虫を、強力な顎で噛み砕く",
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "places": [
+    "summer_paddy",
+    "deep_pond"
+   ],
+   "rich": [
+    "summer_paddy"
+   ],
+   "ok": "鋭い爪で獲物を押さえ、強力な顎で捕らえた。",
+   "full": 30
+  },
+  {
+   "id": "small_fish",
+   "ja": "弱った小魚を捕らえる",
+   "name": "小魚",
+   "ds": "嗅覚で弱った魚を察知し、泳ぎ回って捕獲する",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "deep_pond"
+   ],
+   "rich": [
+    "deep_pond"
+   ],
+   "ok": "水中の匂いを辿り、弱ったメダカを捕らえた。",
+   "full": 40
+  },
+  {
+   "id": "stored_energy",
+   "ja": "蓄えを消費する",
+   "name": "幼虫期の栄養",
+   "ds": "蛹の期間は食事をせず、幼虫時に蓄えた脂肪を消費する",
+   "stages": [
+    "pupa"
+   ],
+   "places": [
+    "muddy_bank"
+   ],
+   "rich": [
+    "muddy_bank"
+   ],
+   "ok": "泥の中で静かに、蓄えられた栄養を消費して体を造り替えた。",
+   "full": 10
+  }
+ ],
+ "special": [
+  {
+   "id": "basking",
+   "ja": "甲羅干しをする",
+   "ds": "日光浴により体温を上げ、表皮の菌の繁殖を抑える",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.5,
+   "calm": true,
+   "ok": "流木の上で日光を浴び、体を乾かして殺菌した。"
+  },
+  {
+   "id": "bird_attack",
+   "ja": "鳥に襲われる",
+   "ds": "サギなどの鳥類に捕食されそうになる",
+   "stages": [
+    "larva",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.6,
+   "calm": false,
+   "ok": "サギの嘴に激しく突き刺され、傷を負った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "summer_paddy",
+   "say": "繁殖と摂餌のため、深い池から浅い水田へと移動する。"
+  },
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "winter_bottom",
+   "say": "冬の寒さを避けるため、水深のある池の底へと潜る。"
+  }
  ]
 }

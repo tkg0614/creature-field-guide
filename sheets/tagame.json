@@ -1,0 +1,807 @@
+{
+ "id": "tagame",
+ "ja": "タガメ",
+ "sci": "Kirkaldyia deyrolli",
+ "status": "checked",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini-older gemini-3.7-flash",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "播磨の内陸ため池群",
+  "geo": "Kato, Hyogo",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "breeding_pond",
+   "ja": "杭が立つ浅いため池",
+   "danger": 1,
+   "cover": true,
+   "about": "水面から突き出た杭やアシに卵塊が産みつけられる。父親が水をかけて乾燥や外敵から守る。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.919,
+   "lon": 134.973
+  },
+  {
+   "id": "vegetated_paddy",
+   "ja": "水草が茂る初夏の水田",
+   "danger": 2,
+   "cover": true,
+   "about": "オタマジャクシや小魚が豊富に群れる浅瀬。孵化した幼虫が水草に隠れ、獲物を待ち伏せる。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.919,
+   "lon": 135.005
+  },
+  {
+   "id": "muddy_ditch",
+   "ja": "泥深い土の用水路",
+   "danger": 2,
+   "cover": true,
+   "about": "ため池と水田を結ぶ流れの緩い水路。泥に体を半分潜らせ、通りかかるドジョウに鎌状の前脚を伸ばす。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.947,
+   "lon": 134.993
+  },
+  {
+   "id": "open_pond",
+   "ja": "浮き草が漂うため池の沖",
+   "danger": 3,
+   "cover": false,
+   "about": "遊泳する大型の魚が多い開けた水面。隠れる足場が乏しく、空からのサギなどの天敵にも見つかりやすい。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.936,
+   "lon": 134.961
+  },
+  {
+   "id": "fallow_paddy",
+   "ja": "水が残る秋の休耕田",
+   "danger": 1,
+   "cover": true,
+   "about": "水草が繁茂し、羽化を終えた新成虫が集まる。越冬に必要なエネルギーを蓄えるためにカエルを貪食する。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.919,
+   "lon": 134.941
+  },
+  {
+   "id": "lighted_roadside",
+   "ja": "街灯が照らす夜の舗装路",
+   "danger": 3,
+   "cover": false,
+   "about": "繁殖や越冬地を求めて夜間に飛翔した個体が光に引き寄せられて落下する。乾燥や車による圧死の危険が高い。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.891,
+   "lon": 134.953
+  },
+  {
+   "id": "leaf_litter",
+   "ja": "水辺の雑木林の落ち葉の下",
+   "danger": 1,
+   "cover": true,
+   "about": "水から上がった成虫が潜り込む越冬場所。湿った腐葉土や倒木の下で春が訪れるまでじっと動かずに耐える。",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "lat": 34.902,
+   "lon": 134.985
+  }
+ ],
+ "start": {
+  "place": "breeding_pond",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "播磨の内陸ため池群",
+  "lon0": 134.922,
+  "lon1": 135.024,
+  "lat0": 34.966,
+  "lat1": 34.872,
+  "k": 4902,
+  "labels": [
+   [
+    34.96036,
+    134.973,
+    "播磨の内陸ため池群"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "breeding_pond",
+   "leaf_litter"
+  ],
+  [
+   "breeding_pond",
+   "open_pond"
+  ],
+  [
+   "leaf_litter",
+   "vegetated_paddy"
+  ],
+  [
+   "muddy_ditch",
+   "vegetated_paddy"
+  ],
+  [
+   "muddy_ditch",
+   "open_pond"
+  ],
+  [
+   "fallow_paddy",
+   "open_pond"
+  ],
+  [
+   "fallow_paddy",
+   "lighted_roadside"
+  ],
+  [
+   "leaf_litter",
+   "lighted_roadside"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 1.1
+ },
+ "stats": {
+  "run": {
+   "ja": "遊泳・飛翔力",
+   "use": "水中で獲物を追う際や夜間に別の水辺へ渡る時に効く"
+  },
+  "sense": {
+   "ja": "複眼の視力",
+   "use": "水中のわずかな動きや夜の光を見分ける時に効く"
+  },
+  "forage": {
+   "ja": "前脚の把持力",
+   "use": "太い前脚で暴れる獲物を力強く抑え込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "nymph",
+   "ja": "幼虫",
+   "days": 6,
+   "hunger": 10,
+   "grow": 0.5,
+   "goal": "脱皮を繰り返して体を大きくする",
+   "enter": "杭の卵から一斉に孵化して水へ落ちた。水草にしがみつき、小さな獲物を狙う。"
+  },
+  {
+   "id": "new_adult",
+   "ja": "新成虫",
+   "fromAge": 0.16,
+   "days": 18,
+   "hunger": 8,
+   "grow": 0.3,
+   "goal": "冬越しに向けて十分に餌を食べる",
+   "enter": "頑丈な前脚と大きな翅を持つ成虫へ羽化した。秋の終わりに越冬場所を探す。"
+  },
+  {
+   "id": "adult",
+   "ja": "繁殖期成虫",
+   "fromAge": 0.75,
+   "days": 12,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "水田で交尾し卵を守り抜く",
+   "enter": "春の訪れとともに目覚め、水田へ飛来した。貪欲に獲物を捕食し、繁殖に備える。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1.4
+  ],
+  "text": "夏の終わり、水草の根元に掴まったまま静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "杭への産卵と給水保護",
+  "ds": "水面上に突き出た杭や稲に雌が卵を産みつけ、雄が夜間に水をかけて乾きや外敵から守る",
+  "months": [
+   5,
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "breeding_pond",
+   "vegetated_paddy"
+  ],
+  "perYear": 2,
+  "kids": [
+   60,
+   110
+  ],
+  "many": 250,
+  "label": {
+   "ja": "守った卵",
+   "unit": "個",
+   "child": "杭に産みつけられた卵塊"
+  },
+  "ok": "水面上に突き出た杭に{born}個の卵塊が産みつけられ、雄が夜通し水を浴びせて保護した。",
+  "ng": "産卵に適した杭や水草が見つからず、産卵できなかった。",
+  "goal1": "水上の杭に卵を産み育てる",
+  "goal2": "累計で250個の卵を守り抜く"
+ },
+ "foods": [
+  {
+   "id": "tadpole",
+   "ja": "オタマジャクシを捕らえる",
+   "name": "オタマジャクシ",
+   "ds": "水草の間を泳ぐオタマジャクシを前脚で挟み込み、口吻を突き刺す",
+   "stages": [
+    "nymph"
+   ],
+   "places": [
+    "vegetated_paddy",
+    "breeding_pond",
+    "muddy_ditch"
+   ],
+   "rich": [
+    "vegetated_paddy"
+   ],
+   "ok": "素早く前脚で抱え込み、消化液を流し込んで吸汁した。",
+   "lose": "暴れる獲物に鋭く抵抗され、傷を負った。",
+   "full": 22
+  },
+  {
+   "id": "frog",
+   "ja": "カエルを待ち伏せて襲う",
+   "name": "トノサマガエル",
+   "ds": "水面近くでじっと潜み、通りかかったカエルに強靭な前脚で組み付く",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "places": [
+    "vegetated_paddy",
+    "breeding_pond",
+    "fallow_paddy"
+   ],
+   "rich": [
+    "vegetated_paddy"
+   ],
+   "ok": "強烈な力でカエルを抑え込み、逃げる隙を与えず仕留めた。",
+   "lose": "カエルの力強い跳躍に振り回され、傷を負った。",
+   "full": 35
+  },
+  {
+   "id": "loach",
+   "ja": "底に潜むドジョウを捕食する",
+   "name": "ドジョウ",
+   "ds": "泥底を這うドジョウに狙いを定め、鎌状の前脚の爪を深く突き立てる",
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "places": [
+    "muddy_ditch",
+    "fallow_paddy",
+    "breeding_pond"
+   ],
+   "rich": [
+    "muddy_ditch"
+   ],
+   "ok": "泥から顔を出したドジョウを素早く捕獲し、体内を満たした。",
+   "lose": "激しく身をよじられて振り払われ、傷を負った。",
+   "full": 38
+  }
+ ],
+ "special": [
+  {
+   "id": "mimic_wait",
+   "ja": "枯葉姿勢で待ち伏せる",
+   "ds": "水草や杭に斜め下向きで静止し、枯葉そっくりの姿で天敵をやり過ごし獲物を待つ",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "水草に溶け込むようにじっと動かず、周囲の異変をやり過ごした。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "new_adult"
+   ],
+   "to": "leaf_litter",
+   "say": "水田の水が落とされる秋の夜、羽ばたいて水辺の雑木林へ向かい、落ち葉の下へ潜り込む。"
+  },
+  {
+   "months": [
+    4,
+    5
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "vegetated_paddy",
+   "say": "春の気温上昇とともに落ち葉から這い出し、水草が茂り始めた水田へ飛翔して戻る。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "diving_beetle_larva",
+   "ja": "ゲンゴロウの幼虫",
+   "kind": "insect",
+   "places": [
+    "vegetated_paddy",
+    "breeding_pond"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥の底から、三日月形の大あごを広げた幼虫が迫る。",
+    "水草の茎に潜み、すれ違いざまに牙を突き刺そうと狙う。"
+   ]
+  },
+  {
+   "id": "older_tagame_nymph",
+   "ja": "タガメの兄姉幼虫",
+   "kind": "insect",
+   "places": [
+    "vegetated_paddy",
+    "breeding_pond"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "先に孵化した大柄な同胞が、太い前脚を広げて襲いかかる。",
+    "水草の茂みから、脱皮を重ねた仲間の影が忍び寄る。"
+   ]
+  },
+  {
+   "id": "largemouth_bass",
+   "ja": "オオクチバス",
+   "kind": "fish",
+   "places": [
+    "open_pond",
+    "breeding_pond"
+   ],
+   "stages": [
+    "nymph",
+    "new_adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ため池の深みから、太い魚影が素早く浮上してくる。",
+    "大きな口を広げ、周囲の水ごと一気に吸い込もうとする。"
+   ]
+  },
+  {
+   "id": "common_carp",
+   "ja": "コイ",
+   "kind": "fish",
+   "places": [
+    "open_pond",
+    "muddy_ditch"
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥を巻き上げながら、巨大な口が水底を吸いあさる。",
+    "濁った水の向こうから、重苦しい巨影が迫ってくる。"
+   ]
+  },
+  {
+   "id": "bullfrog",
+   "ja": "ウシガエル",
+   "kind": "amphibian",
+   "places": [
+    "vegetated_paddy",
+    "breeding_pond",
+    "fallow_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水草の間から、巨大な緑の頭部がぬっと現れる。",
+    "太い後脚で水を蹴り、丸のみにしようと跳びかかってくる。"
+   ],
+   "again": [
+    [
+     "また、あの低い鳴き声を響かせる巨大なカエルが潜んでいる。"
+    ],
+    [
+     "同じ大ガエルが、水草の陰からじっと見据えている。"
+    ]
+   ],
+   "bye": "ため池の落水が始まり、あの巨大なカエルも泥の奥深くへ姿を消した。"
+  },
+  {
+   "id": "grey_heron",
+   "ja": "アオサギ",
+   "kind": "bird",
+   "places": [
+    "breeding_pond",
+    "vegetated_paddy",
+    "fallow_paddy"
+   ],
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "浅瀬に静止していた長い影が、稲妻のように首を伸ばす。",
+    "水面を割って、槍のような鋭いくちばしが突き刺さる。"
+   ],
+   "again": [
+    [
+     "また、あの青灰色の巨鳥が浅瀬に立ち尽くしている。"
+    ],
+    [
+     "抜き足差し足で忍び寄る、あのサギの影が水面に落ちる。"
+    ]
+   ],
+   "bye": "空を旋回した猛禽の影に驚き、あのサギは大きな翼を羽ばたかせて飛び去った。"
+  },
+  {
+   "id": "jungle_crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "lighted_roadside"
+   ],
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "街灯の光に落ちて動けない体を、黒い巨躯が見下ろしている。",
+    "アスファルトを踏み鳴らし、太いくちばしが振り下ろされる。"
+   ]
+  },
+  {
+   "id": "japanese_weasel",
+   "ja": "イタチ",
+   "kind": "mammal",
+   "places": [
+    "muddy_ditch",
+    "leaf_litter",
+    "fallow_paddy"
+   ],
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥深い水路の縁を、細身の獣が素早く駆け回る。",
+    "濡れた鼻先をひくつかせ、鋭い牙を剥き出して飛びかかる。"
+   ],
+   "again": [
+    [
+     "また、あの茶色い獣が落ち葉を踏み分けて現れる。"
+    ],
+    [
+     "鋭い眼光を放つあのイタチが、水辺の草むらに鼻を突っ込む。"
+    ]
+   ],
+   "bye": "里山の猟犬の吠え声が響きわたり、あのイタチは藪の奥へと走り去った。"
+  },
+  {
+   "id": "car_traffic",
+   "ja": "夜の自動車",
+   "kind": "human",
+   "places": [
+    "lighted_roadside"
+   ],
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "街灯に誘われて落ちた舗装路へ、激しい轟音と光が突進してくる。",
+    "アスファルトを焦がす黒い車輪が、すぐ眼前を通り抜ける。"
+   ],
+   "lose": "硬い車輪に弾き飛ばされ、前脚を折られて傷を負った。",
+   "fleeJa": "泥の側溝へ転がり落ちる",
+   "hideJa": "道路の白線のくぼみに平伏する"
+  },
+  {
+   "id": "poaching_net",
+   "ja": "乱獲者のたも網",
+   "kind": "human",
+   "places": [
+    "breeding_pond",
+    "vegetated_paddy"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の水面を照らす懐中電灯とともに、網の枠が突っ込まれる。",
+    "足場の杭ごとすくい上げようと、目の細かい網が迫る。"
+   ],
+   "lose": "網の縁で激しく叩かれ、翅の関節を痛めて傷を負った。",
+   "fleeJa": "深みの泥へ一気に潜り込む",
+   "hideJa": "杭の裏側の陰にぴったり身を寄せる"
+  }
+ ],
+ "choices": [
+  {
+   "q": "水中で獲物を待つ。どこに潜むか",
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "month": [
+    6,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "水草の茂みに潜む",
+     "ds": "カエルなどの獲物が集まりやすい。天敵に見つかりやすい",
+     "fx": {
+      "food": 0.5,
+      "danger": 0.5
+     },
+     "goto": "vegetated_paddy",
+     "say": "緑の茂みに身を潜め、通りかかる獲物を強靭な前脚で挟み込んだ。",
+     "chip": "水草で待ち伏せ"
+    },
+    {
+     "ja": "泥底に深く潜る",
+     "ds": "天敵から身を隠せる。獲物との遭遇率が下がる",
+     "fx": {
+      "food": -0.5,
+      "danger": -0.5
+     },
+     "goto": "muddy_ditch",
+     "say": "泥の中に体を沈め、気配を消して静かに時を待った。",
+     "chip": "泥底で待機"
+    }
+   ]
+  },
+  {
+   "q": "羽化したばかりの夜。どこへ向かうか",
+   "stages": [
+    "new_adult"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "生まれた池にとどまる",
+     "ds": "環境に慣れている。年上の個体に共食いされる恐れがある",
+     "fx": {
+      "danger": 0.5,
+      "energy": 0.5
+     },
+     "goto": "breeding_pond",
+     "say": "慣れ親しんだ水辺に留まり、夜の静寂の中で獲物を探した。",
+     "chip": "故郷に留まる"
+    },
+    {
+     "ja": "夜空へ飛び立ち、別の水場を探す",
+     "ds": "新たな領土を得られる。飛行による体力消耗が激しい",
+     "fx": {
+      "danger": -0.5,
+      "energy": -1
+     },
+     "goto": "vegetated_paddy",
+     "say": "力強く羽ばたき、夜の風に乗って未知の水田へと移動した。",
+     "chip": "新天地へ飛翔"
+    }
+   ]
+  },
+  {
+   "q": "夜の飛翔中。強い光が見えた。どう反応するか",
+   "stages": [
+    "new_adult",
+    "adult"
+   ],
+   "month": [
+    7,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "光に誘われて近づく",
+     "ds": "効率よく相手を探せる可能性がある。街灯の下で力尽きる危険がある",
+     "fx": {
+      "danger": 1,
+      "kids": 0.5
+     },
+     "goto": "lighted_roadside",
+     "say": "眩い街灯に惹きつけられ、舗装路へと降り立った。",
+     "chip": "光に誘われる"
+    },
+    {
+     "ja": "光を避け、水辺の闇を進む",
+     "ds": "安全に移動できる。交尾相手に出会うまでに時間がかかる",
+     "fx": {
+      "danger": -0.5,
+      "kids": -0.5
+     },
+     "goto": "vegetated_paddy",
+     "say": "人工の光を避け、草木の匂いが漂う暗がりの水辺を辿った。",
+     "chip": "闇に潜む"
+    }
+   ]
+  },
+  {
+   "q": "雌が卵を産み付けた。雄としてどう守るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "杭に産み付けられた卵を守る",
+     "ds": "水流があり酸素供給がしやすい。外敵に見つかりやすい",
+     "fx": {
+      "kids": 0.5,
+      "danger": 0.5
+     },
+     "goto": "breeding_pond",
+     "say": "雌と繋がったまま、絶えず水をかけ続けて卵に酸素を送った。",
+     "chip": "杭で育卵"
+    },
+    {
+     "ja": "水草の茎に産み付けられた卵を守る",
+     "ds": "周囲に隠れやすく安全。水流が少なく酸素不足になりやすい",
+     "fx": {
+      "kids": -0.5,
+      "danger": -0.5
+     },
+     "goto": "vegetated_paddy",
+     "say": "草陰に身を寄せ、卵が乾かぬよう丁寧に水を掛けた。",
+     "chip": "水草で育卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "nymph",
+    "new_adult",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "猛暑で水温が上がり、水中の酸素が不足して呼吸が苦しくなった。",
+   "full": -10
+  },
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "稲刈りが始まり水田の水が引いた。生き残るため、夜空へ飛び立つ。",
+   "full": -20
+  },
+  {
+   "month": [
+    12,
+    1
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "p": 0.2,
+   "say": "冬の冷気が水底まで届き、泥の中で深い眠りについた。",
+   "full": -5
+  }
+ ],
+ "lead": "水草の茂る水辺に潜み、魚やカエルを狩る水中の強者。短い成虫の季節に、雄が卵を守り抜き、次代へ命をつなぐ。",
+ "texts": {
+  "move": "{to}へ、夜の闇に紛れて飛んでいった。",
+  "fleeJa": "水草の陰へ潜り込む",
+  "restJa": "泥の底でじっと身を潜める",
+  "watchJa": "複眼で獲物の動きをうかがう",
+  "lieJa": "水底の泥に半分身を沈める",
+  "lastMemory": "雄が懸命に水をかけ続けた、あの卵の塊を思い出した。"
+ },
+ "intro": [
+  "水草の茂る浅い水辺で、卵からかえった。",
+  "まわりには、捕食の標的となる小さな水生昆虫が泳いでいる。"
+ ],
+ "wins": [
+  {
+   "minKids": 10,
+   "title": "次代へ命をつないだ",
+   "line": "杭や稲の茎に、{kids}個の卵を産み付けた。",
+   "mem": "夜の水面で、激しく獲物を狩った日々を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "水底で魚やカエルを待ち伏せ、強靭な前脚で捕らえた時を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "街灯の強い光に誘われ、夜空を飛んだ時の感覚を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命をつなげなかった",
+  "line": "街灯の光に惑わされ、水辺に戻れぬまま、乾いた地面で一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "前脚は鎌状で極めて太い捕獲脚になっており、前脚の先端には1本の爪があり、強靭な前脚の力・鋭い爪で捕獲された獲物はまず逃げられない。"
+  },
+  {
+   "quote": "成虫・幼虫とも獲物を待ち伏せて襲い掛かり捕食する肉食性昆虫で、目の前で動いている捕獲可能なものならば何でも襲い掛かって捕食する。"
+  },
+  {
+   "quote": "夜通し人工照明の強い光で照らされるような場所へ誘引された個体はそこで飛翔できず、朝日を浴びて乾燥により死亡してしまう。"
+  }
+ ]
+}

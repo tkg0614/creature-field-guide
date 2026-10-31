@@ -1,10 +1,10 @@
 {
  "openrouter": {
-  "until": "2026-10-31T19:30:19.651Z",
+  "until": "2026-10-31T20:46:32.228Z",
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-10-31T18:49:45.351Z",
+  "until": "2026-10-31T20:40:57.782Z",
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
@@ -12,7 +12,7 @@
   "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
  },
  "gemini-pro": {
-  "until": "2026-10-31T20:29:02.495Z",
+  "until": "2026-11-01T02:29:03.314Z",
   "why": "壊れた返事 404 {\"error\":\"使えるモデルが一覧に無い\"}"
  },
  "gemini-older": {

@@ -1,0 +1,494 @@
+{
+ "id": "antlion",
+ "ja": "ウスバカゲロウ",
+ "sci": "Hagenomyia micans",
+ "status": "draft",
+ "type": "insect_annual",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の住宅街の庭",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "eggs_sand",
+   "ja": "軒下の乾いた砂地",
+   "danger": 1,
+   "cover": true,
+   "about": "風雨を避けられるさらさらした砂。成虫が産み付けた卵が静かに眠る。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "sand_surface",
+   "ja": "砂の表面",
+   "danger": 2,
+   "cover": false,
+   "about": "孵化したばかりの幼虫が這い回る。自分に合った巣作りの場所を探す。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "antlion_pit",
+   "ja": "すり鉢状の巣",
+   "danger": 1,
+   "cover": true,
+   "about": "砂に掘った罠の底。落ちてきたアリを大顎で捕らえ、消化液で溶かして吸う。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.603,
+   "lon": 139.259
+  },
+  {
+   "id": "deep_sand",
+   "ja": "砂の深い層",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の寒さを避けて潜む場所。代謝を落として長い時間をかけて成長する。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.592,
+   "lon": 139.227
+  },
+  {
+   "id": "pupal_cocoon",
+   "ja": "土中の丸い繭",
+   "danger": 1,
+   "cover": true,
+   "about": "土の中に作った繭の中。幼虫から成虫へと姿を変える。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.207
+  },
+  {
+   "id": "emergence_point",
+   "ja": "羽化したばかりの地表",
+   "danger": 3,
+   "cover": false,
+   "about": "地面から這い出した直後の場所。翅を乾かすまで外敵にさらされる。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.547,
+   "lon": 139.219
+  },
+  {
+   "id": "night_garden",
+   "ja": "夜の庭の茂み",
+   "danger": 2,
+   "cover": true,
+   "about": "ひらひらと舞い、小昆虫を捕らえる。短い成虫の期間に交尾し、次世代へ繋ぐ。",
+   "stages": [
+    "larva",
+    "pupa",
+    "adult"
+   ],
+   "lat": 36.558,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "eggs_sand",
+  "month": 8,
+  "day": 10
+ },
+ "region": {
+  "ja": "日本の住宅街の庭",
+  "lon0": 139.188,
+  "lon1": 139.29,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 4902,
+  "labels": [
+   [
+    36.61636,
+    139.23899999999998,
+    "日本の住宅街の庭"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "deep_sand",
+   "eggs_sand"
+  ],
+  [
+   "eggs_sand",
+   "night_garden"
+  ],
+  [
+   "night_garden",
+   "sand_surface"
+  ],
+  [
+   "antlion_pit",
+   "sand_surface"
+  ],
+  [
+   "antlion_pit",
+   "deep_sand"
+  ],
+  [
+   "deep_sand",
+   "pupal_cocoon"
+  ],
+  [
+   "emergence_point",
+   "pupal_cocoon"
+  ],
+  [
+   "emergence_point",
+   "night_garden"
+  ]
+ ],
+ "size": {
+  "ja": "前翅長",
+  "unit": "cm",
+  "start": 4
+ },
+ "stats": {
+  "run": {
+   "ja": "飛翔力",
+   "use": "夜間にひらひらと舞い、天敵から逃れる時に効く"
+  },
+  "sense": {
+   "ja": "触角の感知力",
+   "use": "夜の闇で獲物や配偶者の気配を察知する時に効く"
+  },
+  "forage": {
+   "ja": "捕獲力",
+   "use": "幼虫が砂に落とした獲物を大顎で捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "アリジゴク",
+   "days": 180,
+   "hunger": 10,
+   "grow": 0.6,
+   "goal": "すり鉢状の巣で獲物を待つ",
+   "enter": "軒下の乾いた砂地にすり鉢状の巣を作り、底に潜む。落ちてきたアリを大顎で捕らえる。"
+  },
+  {
+   "id": "pupa",
+   "ja": "蛹",
+   "fromAge": 0.8,
+   "days": 30,
+   "hunger": 0,
+   "grow": 0.2,
+   "goal": "成虫へ脱皮する",
+   "enter": "砂の深い層に丸い繭を作り、静かに体を変化させる。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 0.9,
+   "days": 21,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "子を残して生涯を終える",
+   "enter": "地表へ羽化した。夜の庭をひらひらと舞い、配偶者をさがす。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1.5
+  ],
+  "text": "夏の終わり、役目を終えて静かに動かなくなった。"
+ },
+ "breeding": {
+  "ja": "砂地への産卵",
+  "ds": "成虫が夜間に活動し、風雨を避けられる乾いた砂地に卵を産み付ける。",
+  "months": [
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "eggs_sand"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   500
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "次代のアリジゴク"
+  },
+  "ok": "乾いた砂地に、{born}個の卵を産み落とした。",
+  "ng": "適した砂地が見つからず、産卵できなかった。",
+  "goal1": "砂地に卵を産む",
+  "goal2": "累計で1000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "ants",
+   "ja": "アリを捕らえる",
+   "name": "アリ",
+   "ds": "すり鉢の底で待ち伏せし、大顎で捕らえて消化液を注入する。",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "antlion_pit"
+   ],
+   "rich": [
+    "antlion_pit"
+   ],
+   "ok": "巣に落ちたアリを素早く捕らえ、吸汁した。",
+   "full": 30
+  },
+  {
+   "id": "small_insects",
+   "ja": "小昆虫を捕らえる",
+   "name": "飛翔昆虫",
+   "ds": "夜間に飛び回り、小さな虫を捕らえて食べる。",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "night_garden"
+   ],
+   "rich": [
+    "night_garden"
+   ],
+   "ok": "夜の茂みで小さな羽虫を捕らえて食べた。",
+   "full": 20
+  }
+ ],
+ "special": [
+  {
+   "id": "sand_throwing",
+   "ja": "砂を浴びせかける",
+   "ds": "大顎を使って砂を獲物に浴びせかけ、巣の中心部へ滑り落とす。",
+   "stages": [
+    "larva"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": true,
+   "ok": "もがくアリに砂を浴びせかけ、底へと引きずり込んだ。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "wolf_spider",
+   "ja": "コモリグモ",
+   "kind": "arachnid",
+   "places": [
+    "antlion_pit",
+    "sand_surface"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "砂の縁から、多眼の捕食者が音もなく忍び寄る。",
+    "鋭い牙が、砂の下に潜む体を貫く。"
+   ]
+  },
+  {
+   "id": "large_ant",
+   "ja": "大型のアリ",
+   "kind": "insect",
+   "places": [
+    "antlion_pit"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "獲物のはずのアリが、逆に大あごで反撃してくる。",
+    "群れで襲いかかり、砂の巣をかき回す。"
+   ]
+  },
+  {
+   "id": "ground_beetle",
+   "ja": "オサムシ",
+   "kind": "insect",
+   "places": [
+    "sand_surface"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒光りする甲虫が、砂の上を高速で移動する。",
+    "強靭な大あごが、幼虫の体を挟み込む。"
+   ]
+  },
+  {
+   "id": "collector",
+   "ja": "採集者",
+   "kind": "human",
+   "places": [
+    "antlion_pit"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "好奇心に満ちた指先が、砂を掘り返す。",
+    "プラスチックの容器に、強引に回収される。"
+   ],
+   "lose": "指で強く押さえつけられ、傷を負った。"
+  },
+  {
+   "id": "parasitic_wasp",
+   "ja": "寄生バチ",
+   "kind": "insect",
+   "places": [
+    "pupal_cocoon"
+   ],
+   "stages": [
+    "pupa"
+   ],
+   "sev": 3,
+   "texts": [
+    "細い産卵管が、土の層を突き抜けて届く。",
+    "繭の中へ、静かに卵が流し込まれる。"
+   ]
+  },
+  {
+   "id": "ant_worker",
+   "ja": "働きアリ",
+   "kind": "insect",
+   "places": [
+    "pupal_cocoon"
+   ],
+   "stages": [
+    "pupa"
+   ],
+   "sev": 2,
+   "texts": [
+    "土中の繭の匂いを嗅ぎつけたアリが、群れて襲う。",
+    "硬い繭を噛み砕き、中身を食い荒らす。"
+   ]
+  },
+  {
+   "id": "bat",
+   "ja": "コウモリ",
+   "kind": "mammal",
+   "places": [
+    "night_garden"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "暗闇の中、超音波が獲物の位置を正確に捉える。",
+    "膜のような翼が、空中で鋭く舞い降りる。"
+   ],
+   "again": [
+    [
+     "また、夜の空を切り裂く不気味な影が舞っている。"
+    ],
+    [
+     "耳を澄ませば、獲物を探す超音波の気配がする。"
+    ]
+   ],
+   "bye": "夜が明け、太陽が昇ると、あの黒い影は洞窟へと消えた。"
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "night_garden"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜露に濡れた透明な糸が、飛行ルートを塞いでいる。",
+    "粘着質の糸に絡まり、身動きが取れなくなる。"
+   ],
+   "again": [
+    [
+     "庭の茂みに、再び白く光る網が張り巡らされている。"
+    ],
+    [
+     "同じ主の網が、夜の飛行を妨げる。"
+    ]
+   ],
+   "bye": "激しい夏の夕立が、庭の網をすべて引きちぎった。"
+  },
+  {
+   "id": "nightjar",
+   "ja": "ヨタカ",
+   "kind": "bird",
+   "places": [
+    "night_garden"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "月明かりの下、大きな口を開けた鳥が急降下してくる。",
+    "羽ばたきを止めた瞬間、鋭いくちばしが捉える。"
+   ]
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "night_garden"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ライトに照らされた瞬間、白い網が空を覆う。",
+    "逃げ場のない空間へ、強引に押し込められる。"
+   ],
+   "lose": "網の目に激しく打ち付けられ、羽の先が裂けて傷を負った。"
+  }
+ ]
+}

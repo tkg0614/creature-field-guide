@@ -1,22 +1,26 @@
 {
  "openrouter": {
-  "until": "2026-10-31T00:35:55.912Z",
+  "until": "2026-10-31T15:29:03.476Z",
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-10-30T23:53:56.503Z",
+  "until": "2026-10-31T15:11:54.257Z",
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
-  "until": "2026-10-31T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-31T15:05:05.793Z",
+  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
  },
  "gemini-pro": {
-  "until": "2026-10-31T01:31:05.546Z",
+  "until": "2026-10-31T20:29:02.495Z",
   "why": "壊れた返事 404 {\"error\":\"使えるモデルが一覧に無い\"}"
  },
  "gemini-older": {
-  "until": "2026-10-31T08:05:00.000Z",
-  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
+  "until": "2026-10-31T15:11:53.942Z",
+  "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
+ },
+ "groq": {
+  "until": "2026-10-31T15:02:55.441Z",
+  "why": "{\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01m5brcpcqexd9hg4hmeagw7ez` service tier `on_demand` on tokens per m"
  }
 }

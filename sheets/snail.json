@@ -1,0 +1,755 @@
+{
+ "id": "snail",
+ "ja": "ミスジマイマイ",
+ "sci": "Euhadra peliomphala",
+ "status": "checked",
+ "type": "small_invertebrate",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "関東南部から中部地方東部",
+  "geo": "Kanto",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "forest_soil",
+   "ja": "広葉樹林の湿った土の中",
+   "danger": 1,
+   "cover": true,
+   "about": "腐葉土が積もり、適度な湿り気がある。卵が孵化し、幼貝が成長を始める場所である。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 34.9,
+   "lon": 139.888
+  },
+  {
+   "id": "tree_trunk",
+   "ja": "樹木の幹",
+   "danger": 2,
+   "cover": false,
+   "about": "地上から樹上へ移動する経路となる。鳥などの天敵に襲われやすい。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 34.917,
+   "lon": 138.963
+  },
+  {
+   "id": "tree_canopy",
+   "ja": "樹上の高い枝葉",
+   "danger": 1,
+   "cover": true,
+   "about": "人の背丈を超える高さまで登る。高湿度の日にはここで活動し、葉を食べる。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.232,
+   "lon": 139.107
+  },
+  {
+   "id": "garden_hedge",
+   "ja": "庭園の生け垣",
+   "danger": 2,
+   "cover": true,
+   "about": "人家の近くで安定した環境にある。子供に拾い上げられることがある。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.434,
+   "lon": 139.375
+  },
+  {
+   "id": "stone_wall",
+   "ja": "石垣の隙間",
+   "danger": 0,
+   "cover": true,
+   "about": "日陰で湿気が保たれやすい。乾燥した日に殻にこもり、休眠するのに適している。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 34.933,
+   "lon": 138.096
+  },
+  {
+   "id": "under_log",
+   "ja": "朽ち木や石の下",
+   "danger": 1,
+   "cover": true,
+   "about": "外敵の目から遮断される。冬の寒さをしのぐ安全な場所である。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 33.225,
+   "lon": 138.334
+  },
+  {
+   "id": "forest_floor",
+   "ja": "広葉樹の疎林の地面",
+   "danger": 2,
+   "cover": true,
+   "about": "落ち葉の下に潜む。繁殖期にはここで相手を探し、精莢を交換する。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 32,
+   "lon": 139.999
+  }
+ ],
+ "start": {
+  "place": "forest_soil",
+  "month": 5,
+  "day": 1
+ },
+ "region": {
+  "ja": "関東南部から中部地方東部",
+  "lon0": 137.525,
+  "lon1": 140.57,
+  "lat0": 36.005,
+  "lat1": 31.429,
+  "k": 164,
+  "labels": [
+   [
+    35.73044,
+    139.0475,
+    "関東南部から中部地方東部"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "forest_soil",
+   "garden_hedge"
+  ],
+  [
+   "forest_soil",
+   "tree_canopy"
+  ],
+  [
+   "tree_canopy",
+   "tree_trunk"
+  ],
+  [
+   "garden_hedge",
+   "tree_trunk"
+  ],
+  [
+   "garden_hedge",
+   "tree_canopy"
+  ],
+  [
+   "stone_wall",
+   "tree_trunk"
+  ],
+  [
+   "stone_wall",
+   "tree_canopy"
+  ],
+  [
+   "stone_wall",
+   "under_log"
+  ],
+  [
+   "tree_trunk",
+   "under_log"
+  ],
+  [
+   "forest_floor",
+   "under_log"
+  ],
+  [
+   "forest_floor",
+   "forest_soil"
+  ]
+ ],
+ "size": {
+  "ja": "殻径",
+  "unit": "cm",
+  "start": 0.3
+ },
+ "stats": {
+  "run": {
+   "ja": "這う力",
+   "use": "樹上や地表を移動する時に効く"
+  },
+  "sense": {
+   "ja": "湿度の感知",
+   "use": "雨の日や湿った場所を探す時に効く"
+  },
+  "forage": {
+   "ja": "食む力",
+   "use": "植物の葉や腐植を食べる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "ふ化幼体",
+   "days": 60,
+   "hunger": 6,
+   "grow": 1.2,
+   "enter": "小さな殻を抱えて、湿った土の上に現れた。"
+  },
+  {
+   "id": "young",
+   "ja": "未成体",
+   "fromAge": 0.2,
+   "days": 150,
+   "hunger": 10,
+   "grow": 1.8,
+   "goal": "殻を大きくする",
+   "enter": "体を伸ばし、地表から樹上へと活動範囲を広げた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.3,
+   "adult": true,
+   "goal": "子孫を残す",
+   "enter": "頭部に突起が現れ、成熟した。他個体と精子を交換し、卵を産む。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   4
+  ],
+  "text": "長い年月を経て殻が脆くなった。雨の日を待ちきれず、静かに土へ還った。"
+ },
+ "breeding": {
+  "ja": "卵を産み落とす",
+  "ds": "湿った土や朽ち木の下に、白い卵を産み付ける",
+  "months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "places": [
+   "forest_floor",
+   "under_log",
+   "garden_hedge"
+  ],
+  "perYear": 1,
+  "kids": [
+   30,
+   40
+  ],
+  "many": 150,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった子マイマイの一匹"
+  },
+  "ok": "湿った土の奥に、{born}個の卵を託した。",
+  "ng": "土が乾ききっており、卵を残せなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を40個産む"
+ },
+ "foods": [
+  {
+   "id": "decaying_leaf",
+   "ja": "腐葉を食む",
+   "name": "朽ちた葉",
+   "ds": "地面に積もった分解の進んだ葉をゆっくりと削り取る",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "under_log",
+    "garden_hedge"
+   ],
+   "rich": [
+    "forest_floor",
+    "under_log"
+   ],
+   "ok": "柔らかくなった腐葉を食み、栄養を蓄えた。",
+   "full": 30
+  },
+  {
+   "id": "fresh_leaf",
+   "ja": "若葉を食む",
+   "name": "樹上の葉",
+   "ds": "樹上に登り、瑞々しい広葉樹の葉を食べる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "tree_trunk",
+    "tree_canopy",
+    "garden_hedge"
+   ],
+   "rich": [
+    "tree_canopy"
+   ],
+   "ok": "高い枝まで登り、新鮮な葉を食んだ。",
+   "full": 45
+  }
+ ],
+ "special": [
+  {
+   "id": "estivation",
+   "ja": "殻にこもる",
+   "ds": "乾燥や低温を避け、殻の口を塞いで休眠する",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "空気が乾いた。殻に深くこもり、雨が降るまで眠った。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "flatworm",
+   "ja": "陸生プランナリア",
+   "kind": "any",
+   "places": [
+    "forest_soil",
+    "under_log",
+    "garden_hedge"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "粘つく平たい体が、湿った土の上を音もなく滑ってくる。",
+    "触覚で獲物を探り、殻の隙間からじわじわと侵入する。"
+   ],
+   "again": [
+    "また、あの白っぽいプランナリアだ。執拗に粘液の跡を辿っている。",
+    "ぬらぬらと光る体が、再び目の前の落ち葉の下から現れた。"
+   ],
+   "bye": "殻が十分に厚くなり、プランナリアの口ではもう攻略できない。"
+  },
+  {
+   "id": "crow",
+   "ja": "ハシボソガラス",
+   "kind": "bird",
+   "places": [
+    "forest_floor",
+    "garden_hedge",
+    "stone_wall"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "鋭い眼光が、石垣の上の白い殻を捉える。",
+    "太いくちばしで殻を掴み、地面に叩きつけて砕こうとする。"
+   ],
+   "again": [
+    "また、あの片足のガラスだ。高い枝からじっとこちらを監視している。",
+    "聞き覚えのある鳴き声と共に、黒い影が空から急降下してくる。"
+   ],
+   "bye": "樹上の高い枝葉の奥深くに逃げ込み、鳥の視界から消えた。"
+  },
+  {
+   "id": "ground_beetle",
+   "ja": "オオサムシ",
+   "kind": "any",
+   "places": [
+    "forest_soil",
+    "under_log"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒光りする甲虫が、土の隙間から猛スピードで突進してくる。",
+    "鋭い大あごが、柔らかい幼い殻を容赦なく噛み砕く。"
+   ]
+  },
+  {
+   "id": "centipede",
+   "ja": "ムカデ",
+   "kind": "any",
+   "places": [
+    "under_log",
+    "stone_wall",
+    "forest_soil"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "無数の足が、石の隙間からざわざわと這い出してくる。",
+    "毒を持つあごが、殻の縁から軟体部へ鋭く突き刺さる。"
+   ]
+  },
+  {
+   "id": "toad",
+   "ja": "アズマヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "forest_floor",
+    "garden_hedge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "いぼのある大きな体が、草むらの中でじっと息を潜めている。",
+    "粘つく長い舌が、一瞬で殻ごと口の中へ巻き込む。"
+   ]
+  },
+  {
+   "id": "thrush",
+   "ja": "ツグミ",
+   "kind": "bird",
+   "places": [
+    "forest_floor",
+    "forest_soil"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面を跳ねながら、落ち葉の下を鋭いくちばしでつつく。",
+    "素早い動きで殻を捉え、空へと飛び去ろうとする。"
+   ]
+  },
+  {
+   "id": "shrew",
+   "ja": "トガリネズミ",
+   "kind": "mammal",
+   "places": [
+    "forest_soil",
+    "under_log"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "小さな鼻先を激しく動かし、土の中の気配を嗅ぎつける。",
+    "鋭い歯が、未成熟な殻をガリガリと削り取る。"
+   ]
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "garden_hedge",
+    "stone_wall",
+    "forest_floor"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "器用な前足が、石垣の隙間から獲物を探り出す。",
+    "強力な顎で殻を噛み砕き、中身を効率よく啜り上げる。"
+   ]
+  },
+  {
+   "id": "white_eye",
+   "ja": "メジロ",
+   "kind": "bird",
+   "places": [
+    "tree_trunk",
+    "tree_canopy"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "小さな緑色の鳥が、枝の上を忙しなく飛び回る。",
+    "鋭いくちばしが、樹皮に張り付いた小さな殻を突き刺す。"
+   ]
+  },
+  {
+   "id": "child",
+   "ja": "子供",
+   "kind": "human",
+   "places": [
+    "garden_hedge",
+    "stone_wall",
+    "forest_floor"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "大きな手が、不意に上から降りてきて体を掴み上げる。",
+    "プラスチックの容器に入れられ、見知らぬ場所へ運ばれる。"
+   ],
+   "lose": "無理に殻から引き剥がされ、体の一部を断たれて傷を負った。",
+   "fleeJa": "殻の中に深く潜り込む",
+   "hideJa": "葉の裏に身を隠す"
+  }
+ ],
+ "choices": [
+  {
+   "q": "夏の晴天が続き、空気が乾いてきた。どこでやり過ごすか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "樹上の高い枝葉へ登る",
+     "ds": "葉の陰に湿り気がある。鳥に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "tree_canopy",
+     "say": "葉の陰に身を寄せ、わずかな湿り気を求めた。",
+     "chip": "樹上で待つ"
+    },
+    {
+     "ja": "朽ち木や石の下へ潜る",
+     "ds": "乾燥から確実に身を守れる。餌には乏しい",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "under_log",
+     "say": "冷たい土に身を沈め、殻にこもって眠った。",
+     "chip": "石の下で待つ"
+    }
+   ]
+  },
+  {
+   "q": "激しい雨が降り、活動しやすい環境になった。どこへ移動するか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "樹木の幹を這い上がる",
+     "ds": "高い場所の新鮮な葉に届く。外敵にさらされる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "tree_trunk",
+     "say": "粘液を出し、垂直の幹をゆっくりと登った。",
+     "chip": "幹を登る"
+    },
+    {
+     "ja": "地面の落ち葉の間を移動する",
+     "ds": "腐植質などの餌が豊富。移動速度が落ちる",
+     "fx": {
+      "food": 1,
+      "danger": -1
+     },
+     "goto": "forest_floor",
+     "say": "湿った落ち葉をかき分け、餌を探して進んだ。",
+     "chip": "地表を這う"
+    }
+   ]
+  },
+  {
+   "q": "交尾を終え、卵を産み付ける場所を探している。どこに産むか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "林の湿った土の中に産む",
+     "ds": "孵化後の生存率が高い。土中の天敵に襲われる",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "forest_soil",
+     "say": "柔らかい土を掘り、白い卵を丁寧に埋めた。",
+     "chip": "林に産む"
+    },
+    {
+     "ja": "庭園の生け垣の根元に産む",
+     "ds": "環境が安定している。人の踏みつけに遭いやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "garden_hedge",
+     "say": "人の手の届く生け垣の下に、卵を産み落とした。",
+     "chip": "庭に産む"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "p": 0.5,
+   "say": "地温が上がり、殻を破って湿った土の中へ這い出した。"
+  },
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "young"
+   ],
+   "p": 0.3,
+   "say": "触角の間に頭疣が現れ、生殖機能が成熟した。"
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "鳥に殻を砕かれ、傷を負った。",
+   "danger": 1
+  },
+  {
+   "month": [
+    11,
+    12
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.9,
+   "say": "気温が16度を下回り、代謝が落ちて深い休眠に入った。"
+  }
+ ],
+ "lead": "春に卵から孵化し、雨の日に樹上を這い、秋に土へ戻り、冬の霜が来る前に次の春への卵を残す。",
+ "texts": {
+  "move": "{to}の樹上へ這い上がった。",
+  "fleeJa": "殻に閉じこもり、身を守った。",
+  "restJa": "湿った土や葉の陰で休んだ。",
+  "watchJa": "葉の揺れや土の振動を感じ取った。",
+  "lieJa": "落ち葉の影に身を潜めた。",
+  "lastMemory": "雨上がりの湿った樹皮を這った感触を思い出した。"
+ },
+ "intro": [
+  "春の庭園、湿った土の中で卵から孵化した。",
+  "まだ透明な殻を持ち、湿った環境を求めて樹上へと這い上がる。"
+ ],
+ "wins": [
+  {
+   "minKids": 30,
+   "title": "卵包を残した",
+   "line": "30個の卵包が土に埋められ、次の春へと続く。",
+   "mem": "落ち葉の下に産み落とした小さな卵包の感触を思い出した。"
+  },
+  {
+   "minKids": 100,
+   "title": "多くの命を残した",
+   "line": "{kids}個の卵包が、次の季節を待つ。",
+   "mem": "大量に産んだ卵包が、雨に濡れた土に埋まる音を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "湿った土の豊かな匂いと、葉の裏側の冷たさを思い出した。"
+  },
+  {
+   "flag": "rain_summer",
+   "text": "夏の豪雨の後、樹皮に残る水滴を這う感覚を思い出した。"
+  },
+  {
+   "flag": "first_frost",
+   "text": "晩秋の朝、初めての霜が葉先を白く染めた瞬間を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "卵包を残さずに死んだ",
+  "line": "最初の霜が降りた朝に動きを止め、卵包を残さずに土に還った。"
+ },
+ "facts": [
+  {
+   "text": "寿命は野生で2〜4年、成熟は約1年である。",
+   "quote": "寿命は野生でのおよその値（一覧に入れる時の目安・検品で確かめる）。成熟はおおよそ1年。"
+  },
+  {
+   "text": "繁殖期は4月から10月で、特に春から初夏に多く産卵し、産卵数は30〜40個、最大150個の記録がある。高温・高湿度の日は樹上を這い回り、気温16℃・湿度70%を下回ると休眠に入る。",
+   "quote": "繁殖期は4月-10月で、特に春から初夏にかけて多く産卵する。産卵数は30-40個ほど、最大150個の記録がある。高温・高湿度の日は樹上を這い回るが、気温16℃・湿度70%を下回ると不活発になり休眠に入る。"
+  }
+ ]
+}

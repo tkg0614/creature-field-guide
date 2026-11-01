@@ -1,0 +1,11 @@
+{
+ "id": "ayu",
+ "ja": "アユ",
+ "sci": "Plecoglossus altivelis",
+ "status": "draft-ng",
+ "type": "fish",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ }
+}

@@ -1,0 +1,752 @@
+{
+ "id": "pillbug",
+ "ja": "オカダンゴムシ",
+ "sci": "Armadillidium vulgare",
+ "status": "checked",
+ "type": "small_invertebrate",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "東京都世田谷区の住宅街",
+  "geo": "Setagaya, Tokyo",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "moist_stone",
+   "ja": "湿った石の下",
+   "danger": 1,
+   "cover": true,
+   "about": "親の腹袋から出たばかりの仔が集まる。適度な湿り気が保たれ、外敵から身を隠しやすい。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.653
+  },
+  {
+   "id": "fallen_leaves",
+   "ja": "庭の落ち葉の中",
+   "danger": 2,
+   "cover": true,
+   "about": "分解され始めた枯葉が豊富にある。主食の宝庫だが、クモやムカデに見つかりやすい。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.685
+  },
+  {
+   "id": "rotting_log",
+   "ja": "朽ち木の下",
+   "danger": 1,
+   "cover": true,
+   "about": "内部に水分が蓄えられており、脱皮の際に適している。隙間が多く、身を潜めやすい。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.675,
+   "lon": 139.673
+  },
+  {
+   "id": "deep_soil",
+   "ja": "水辺に近い深い土中",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の寒さをしのぐ場所である。土が凍らず、体内の水分を維持できる。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.664,
+   "lon": 139.641
+  },
+  {
+   "id": "cardboard_waste",
+   "ja": "捨てられた段ボールの隙間",
+   "danger": 2,
+   "cover": true,
+   "about": "人間が捨てた紙類が湿り気を帯びている。餌は少ないが、一時的な避難所になる。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.621
+  },
+  {
+   "id": "flower_bed",
+   "ja": "花壇の土壌",
+   "danger": 2,
+   "cover": true,
+   "about": "有機物が豊富で成長に適している。耕されると地表に晒され、乾燥して死に至る。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.619,
+   "lon": 139.633
+  },
+  {
+   "id": "garden_path",
+   "ja": "庭の散歩道",
+   "danger": 3,
+   "cover": false,
+   "about": "餌を探して移動する通り道である。天敵の鳥やトカゲに狙われやすく、乾燥のリスクが高い。",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 35.63,
+   "lon": 139.665
+  }
+ ],
+ "start": {
+  "place": "moist_stone",
+  "month": 4,
+  "day": 10
+ },
+ "region": {
+  "ja": "東京都世田谷区の住宅街",
+  "lon0": 139.602,
+  "lon1": 139.704,
+  "lat0": 35.694,
+  "lat1": 35.6,
+  "k": 4902,
+  "labels": [
+   [
+    35.68836,
+    139.65300000000002,
+    "東京都世田谷区の住宅街"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "garden_path",
+   "moist_stone"
+  ],
+  [
+   "deep_soil",
+   "moist_stone"
+  ],
+  [
+   "fallen_leaves",
+   "garden_path"
+  ],
+  [
+   "fallen_leaves",
+   "rotting_log"
+  ],
+  [
+   "deep_soil",
+   "rotting_log"
+  ],
+  [
+   "cardboard_waste",
+   "deep_soil"
+  ],
+  [
+   "cardboard_waste",
+   "flower_bed"
+  ],
+  [
+   "flower_bed",
+   "garden_path"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.2
+ },
+ "stats": {
+  "run": {
+   "ja": "丸まる力",
+   "use": "外敵から身を守り、乾燥を防ぐ時に効く"
+  },
+  "sense": {
+   "ja": "触角の感度",
+   "use": "暗闇で餌や湿り気を探る時に効く"
+  },
+  "forage": {
+   "ja": "分解する力",
+   "use": "朽ちた葉や菌類を消化する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "ふ化幼体",
+   "days": 30,
+   "hunger": 5,
+   "grow": 0.5,
+   "goal": "親の袋で育つ",
+   "enter": "母の腹にある袋の中で、保護されながら過ごした。"
+  },
+  {
+   "id": "juvenile",
+   "ja": "未成体",
+   "fromAge": 0.1,
+   "days": 150,
+   "hunger": 8,
+   "grow": 1,
+   "goal": "脱皮を繰り返す",
+   "enter": "袋を離れ、湿った石の下で脱皮を繰り返した。"
+  },
+  {
+   "id": "subadult",
+   "ja": "亜成体",
+   "fromAge": 0.5,
+   "days": 150,
+   "hunger": 10,
+   "grow": 0.8,
+   "goal": "体を大きくする",
+   "enter": "殻が厚くなり、より広い範囲で餌を探し始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "子を育てる",
+   "enter": "成熟し、繁殖の準備が整った。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   3
+  ],
+  "text": "殻の光沢が失われ、動きが鈍くなった。湿った土の隙間で、静かに朽ち果てた。"
+ },
+ "breeding": {
+  "ja": "腹の袋で育てる",
+  "ds": "雌は腹部のマルスピウムという袋に卵を抱え、ふ化まで保護する",
+  "months": [
+   9,
+   10,
+   11,
+   12
+  ],
+  "places": [
+   "moist_stone",
+   "fallen_leaves",
+   "rotting_log"
+  ],
+  "perYear": 1,
+  "kids": [
+   10,
+   50
+  ],
+  "many": 100,
+  "label": {
+   "ja": "抱えた卵",
+   "unit": "個",
+   "child": "幼体"
+  },
+  "ok": "腹の袋に{born}個の卵を抱え、大切に守り抜いた。",
+  "ng": "天敵に襲われ、袋の中の卵を失った。",
+  "goal1": "卵を抱える",
+  "goal2": "卵を100個抱える"
+ },
+ "foods": [
+  {
+   "id": "plant_litter",
+   "ja": "落ち葉を食む",
+   "name": "分解された植物",
+   "ds": "湿った落ち葉や腐植質をゆっくりと食べる",
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "places": [
+    "fallen_leaves",
+    "rotting_log",
+    "flower_bed"
+   ],
+   "rich": [
+    "fallen_leaves"
+   ],
+   "ok": "柔らかくなった落ち葉をかじり、栄養を蓄えた。",
+   "full": 20
+  },
+  {
+   "id": "fungi_dung",
+   "ja": "菌類や糞を食む",
+   "name": "菌類・動物の糞",
+   "ds": "土中の菌類や動物の糞を食べて分解する",
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "places": [
+    "moist_stone",
+    "deep_soil",
+    "rotting_log"
+   ],
+   "rich": [
+    "rotting_log"
+   ],
+   "ok": "土に潜む菌類を見つけ出し、効率よく栄養を摂った。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "roll_up",
+   "ja": "球状に丸まる",
+   "ds": "外敵に触れられた際、体を完全に球状にして急所を守る",
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "素早く体を丸め、硬い外殻で身を守った。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "wolf_spider",
+   "ja": "コモリグモ",
+   "kind": "any",
+   "places": [
+    "fallen_leaves",
+    "garden_path"
+   ],
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "八つの目が暗闇に光り、音もなく背後から忍び寄る。",
+    "鋭い牙が、丸まった殻の隙間を正確に狙う。"
+   ]
+  },
+  {
+   "id": "centipede",
+   "ja": "ムカデ",
+   "kind": "any",
+   "places": [
+    "moist_stone",
+    "rotting_log",
+    "deep_soil"
+   ],
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "赤い節足が、湿った土を高速で掻き分けて迫る。",
+    "強靭な毒あごが、硬い外殻を強引にこじ開ける。"
+   ],
+   "again": [
+    [
+     "また、あの太いムカデだ。石の隙間から触覚を伸ばしている。"
+    ],
+    [
+     "執拗なムカデが、朽ち木の陰まで追いかけてくる。"
+    ]
+   ],
+   "bye": "何度も脱皮を繰り返し、殻がさらに厚く硬くなったことで、あごが届かなくなった。"
+  },
+  {
+   "id": "ground_beetle",
+   "ja": "オオゴミムシ",
+   "kind": "any",
+   "places": [
+    "fallen_leaves",
+    "garden_path",
+    "flower_bed"
+   ],
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒く光る甲虫が、落ち葉の下を猛スピードで駆け抜ける。",
+    "鋭い大あごが、逃げ惑う体を挟み込む。"
+   ]
+  },
+  {
+   "id": "toad",
+   "ja": "ニホンヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "garden_path",
+    "flower_bed",
+    "moist_stone"
+   ],
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "いぼのある大きな体が、夜の庭にどっしりと構えている。",
+    "粘つく長い舌が、一瞬で体を絡め取る。"
+   ]
+  },
+  {
+   "id": "shrew",
+   "ja": "トガリネズミ",
+   "kind": "mammal",
+   "places": [
+    "fallen_leaves",
+    "deep_soil",
+    "rotting_log"
+   ],
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "小さな鼻が激しく動き、土の中の気配を敏感に察知する。",
+    "鋭い前歯が、丸まった体を容赦なく噛み砕く。"
+   ],
+   "again": [
+    [
+     "また、あの素早いトガリネズミだ。落ち葉を激しく掘り返している。"
+    ],
+    [
+     "鋭い鳴き声を上げるトガリネズミが、狭い隙間まで潜り込んでくる。"
+    ]
+   ],
+   "bye": "深い土中の、トガリネズミの手が届かない岩の割れ目へ逃げ込んだ。"
+  },
+  {
+   "id": "thrush",
+   "ja": "ツグミ",
+   "kind": "bird",
+   "places": [
+    "garden_path",
+    "flower_bed",
+    "fallen_leaves"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面を跳ねながら、鋭いくちばしで土を突き崩す。",
+    "視界が開けた場所で、不意に上から襲いかかる。"
+   ]
+  },
+  {
+   "id": "salamander",
+   "ja": "サンショウウオ",
+   "kind": "amphibian",
+   "places": [
+    "deep_soil",
+    "moist_stone"
+   ],
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "濡れた皮膚を持つ体が、ゆっくりと土の中から現れる。",
+    "湿った口が、丸まった体を丸ごと飲み込もうとする。"
+   ]
+  },
+  {
+   "id": "trowel",
+   "ja": "園芸用スコップ",
+   "kind": "human",
+   "places": [
+    "flower_bed",
+    "garden_path"
+   ],
+   "stages": [
+    "hatchling",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "銀色の金属刃が、土を大きく掘り返して突き刺さる。",
+    "突然、頭上の世界が割れ、強い光の中に放り出される。"
+   ],
+   "lose": "金属の縁に強く挟まれ、外殻を砕かれて傷を負った。",
+   "fleeJa": "土の深い割れ目へ潜り込む",
+   "hideJa": "石の陰でじっと丸まる"
+  }
+ ],
+ "choices": [
+  {
+   "q": "真夏の昼下がり、地表の水分が失われてきた。どこへ逃れるか",
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "湿った石の下へ深く潜る",
+     "ds": "乾燥を避けられるが、餌となる有機物は少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "moist_stone",
+     "say": "冷たく湿った石の下に身を潜め、乾きをやり過ごした。",
+     "chip": "石の下"
+    },
+    {
+     "ja": "捨てられた段ボールの隙間に潜る",
+     "ds": "適度な湿り気があり、隠れ場所として優秀である",
+     "fx": {
+      "danger": 0,
+      "food": 0
+     },
+     "goto": "cardboard_waste",
+     "say": "段ボールの波状の隙間に潜り込み、外敵の目を逃れた。",
+     "chip": "段ボール"
+    },
+    {
+     "ja": "乾きかけた落ち葉の中に留まる",
+     "ds": "餌は豊富だが、乾燥で体液を失う危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "fallen_leaves",
+     "say": "乾き始めた落ち葉の下で、腐植質を貪り食った。",
+     "chip": "落ち葉層"
+    }
+   ]
+  },
+  {
+   "q": "冬の冷気が厳しくなった。凍結を避けるためどこへ移動するか",
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "水辺に近い深い土中へ潜る",
+     "ds": "土が凍らず水分を維持できる。活動量は著しく落ちる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "deep_soil",
+     "say": "凍てついた地表を離れ、湿り気の残る深い土の中で眠った。",
+     "chip": "深土へ潜る"
+    },
+    {
+     "ja": "朽ち木の下の空洞に集まる",
+     "ds": "ある程度の餌が確保できるが、冷気にさらされやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "rotting_log",
+     "say": "朽ち木の空洞に仲間と身を寄せ合い、冬を越そうとした。",
+     "chip": "朽ち木の下"
+    }
+   ]
+  },
+  {
+   "q": "夜になり湿度が上がった。餌を探しに地表へ出るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "庭の散歩道を這って移動する",
+     "ds": "多様な餌に出会えるが、クモなどの天敵に襲われやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "garden_path",
+     "say": "夜の静まり返った道を滑るように進み、落ちた種子を食らった。",
+     "chip": "地表を渡る"
+    },
+    {
+     "ja": "石の下でじっと待機する",
+     "ds": "安全だが、空腹に耐える必要がある",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "moist_stone",
+     "say": "暗い石の下で身を丸め、外の世界が静まるのを待った。",
+     "chip": "石の下で待機"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "p": 0.5,
+   "say": "母の腹にある育児嚢から這い出し、初めて湿った土に触れた。"
+  },
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "juvenile"
+   ],
+   "p": 0.3,
+   "say": "脱皮を繰り返し、外骨格が次第に硬く黒ずんできた。"
+  },
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "徘徊中にムカデに捕らえられたが、体を丸めて逃げ延び、わずかに傷を負った。",
+   "danger": 1
+  },
+  {
+   "month": [
+    12,
+    1
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.7,
+   "say": "地温が下がり、代謝が落ちて体の動きが鈍くなった。"
+  }
+ ],
+ "lead": "湿った石の下で卵を抱え、季節を巡りながら数回産卵し、最後は土へ還る。",
+ "texts": {
+  "move": "{to}の湿った石の下へ潜り込んだ。",
+  "fleeJa": "危険を感じて丸くなり、転がって逃げる。",
+  "restJa": "湿った石の隙間で静かに休む。",
+  "watchJa": "周囲の振動を antenna で感知する。",
+  "lieJa": "落ち葉の影に身を縮めて待機する。",
+  "lastMemory": "雨上がりの湿気が体を満たす感覚を思い出す。"
+ },
+ "intro": [
+  "春の雨が降りしきる庭の石の下で、卵包からふ化した。",
+  "透明な体で土粒子を押し分けながら、湿度の高い場所を探し始めた。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "命の卵包を残した",
+   "line": "石の下に産んだ卵包が、次の季節まで湿りを保ち続ける。",
+   "mem": "最初の卵包が湿った土に埋まる感触を覚えている。"
+  },
+  {
+   "minKids": 20,
+   "title": "多数の命を残した",
+   "line": "{kids}個の卵包が次々に孵化し、庭を埋め尽くす。",
+   "mem": "多数の子が石の間を這い回る様子を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "湿った石の冷たさと苔の匂いを思い出す。"
+  },
+  {
+   "flag": "rain_pavement",
+   "text": "雨上がりの舗装に残る水滴が体表に付く感覚を覚えている。"
+  },
+  {
+   "flag": "first_frost",
+   "text": "晩秋の初霜が石表面に降り、体が凍りつくのを感じた。"
+  }
+ ],
+ "noKids": {
+  "title": "土に還る",
+  "line": "卵を残さず、最初の霜が降りた朝に動きを止めた。"
+ },
+ "facts": [
+  {
+   "text": "乾燥を避けるため高湿度・低光環境を好み、石や木の下、段ボールの隙間などに棲む。",
+   "quote": "The greatest limitation to the A. vulgare's survival is the risk of drying out (desiccation). As such, they thrive in regions with higher humidities, moderate temperatures, and lower light conditions."
+  },
+  {
+   "text": "雌は腹部の袋（marsupium）で卵を抱え、数回にわたり卵包を産む。卵包は湿った環境で冬を越し、春に孵化する。",
+   "quote": "Egg‑brooding females may be those most susceptible to predation. These females care for their eggs in a pouch until they hatch, which can slow them down."
+  }
+ ]
+}

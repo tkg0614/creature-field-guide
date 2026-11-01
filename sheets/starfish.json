@@ -2,12 +2,15 @@
  "id": "starfish",
  "ja": "イトマキヒトデ",
  "sci": "Patiria pectinifera",
- "status": "draft",
+ "status": "checked",
  "type": "drifter",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "日本沿岸",
@@ -371,6 +374,375 @@
    ],
    "to": "shallow_rocky_bottom",
    "say": "海流に運ばれ、定住するための浅い岩礁へと降りた。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "luidia_quinaria",
+   "ja": "ルイディア",
+   "kind": "any",
+   "places": [
+    "shallow_rocky_bottom",
+    "coarse_sediment"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "肉食性のヒトデが、管足を絡ませて強引に引き寄せる。",
+    "白い体を持つ捕食者が、ゆっくりと腕を伸ばして包囲する。"
+   ],
+   "again": [
+    "また、あの白い体を持つルイディアだ。執拗に追ってくる。",
+    "砂礫の向こうから、ルイディアの腕が再び伸びてくる。"
+   ],
+   "bye": "岩の隙間に深く潜り込み、ルイディアの追跡を振り切った。"
+  },
+  {
+   "id": "charonia_lampas",
+   "ja": "ボウシュウボラ",
+   "kind": "mollusc",
+   "places": [
+    "shallow_rocky_bottom",
+    "subtidal_deep"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "巨大な巻貝が、鋭い歯舌で身を削り取る。",
+    "ボウシュウボラが近づき、強力な酸で組織を溶かしながら食らう。"
+   ],
+   "again": [
+    "また、あの大きな殻を持つボウシュウボラだ。ゆっくりと距離を詰める。",
+    "岩陰から、ボウシュウボラの大きな影が再び現れる。"
+   ],
+   "bye": "潮の流れに乗り、ボウシュウボラの届かない岩礁の端へ逃れた。"
+  },
+  {
+   "id": "sea_urchin",
+   "ja": "ウニ",
+   "kind": "any",
+   "places": [
+    "rocky_surface",
+    "tide_pool"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ウニの口辺にある歯のような構造が、身をかじり取る。",
+    "岩場に張り付いたウニが、接触した部分を少しずつ食む。"
+   ]
+  },
+  {
+   "id": "octopus",
+   "ja": "タコ",
+   "kind": "mollusc",
+   "places": [
+    "rocky_surface",
+    "subtidal_deep"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "強力な吸盤を持つ腕が、体を岩から無理やり引き剥がす。",
+    "タコの鋭いくちばしが、腕の付け根に深く突き刺さる。"
+   ]
+  },
+  {
+   "id": "crab",
+   "ja": "カニ",
+   "kind": "crustacean",
+   "places": [
+    "rocky_surface",
+    "tide_pool"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭いハサミが、腕の端を切り裂いていく。",
+    "岩の隙間に潜むカニが、通りかかった腕を素早く挟み込む。"
+   ]
+  },
+  {
+   "id": "anchovy",
+   "ja": "カタクチイワシ",
+   "kind": "fish",
+   "places": [
+    "open_sea_surface",
+    "current_edge"
+   ],
+   "stages": [
+    "bipinnaria",
+    "brachiolaria"
+   ],
+   "sev": 1,
+   "texts": [
+    "小魚の群れが通り抜け、プランクトンと共に吸い込まれる。",
+    "カタクチイワシの口が、漂う幼生を次々と飲み込んでいく。"
+   ]
+  },
+  {
+   "id": "jellyfish",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "open_sea_surface",
+    "current_edge"
+   ],
+   "stages": [
+    "bipinnaria",
+    "brachiolaria"
+   ],
+   "sev": 1,
+   "texts": [
+    "漂う触手に絡まり、麻痺させられてゆっくりと口へ運ばれる。",
+    "クラゲの傘の下に閉じ込められ、消化液にさらされる。"
+   ]
+  },
+  {
+   "id": "wrasse",
+   "ja": "ベラ",
+   "kind": "fish",
+   "places": [
+    "shallow_rocky_bottom",
+    "tide_pool"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "好奇心旺盛な魚が、腕の先端をついばむ。",
+    "ベラが素早く近づき、稚ヒトデの体を一口にかじり取る。"
+   ]
+  },
+  {
+   "id": "human_collector",
+   "ja": "採取者",
+   "kind": "human",
+   "places": [
+    "tide_pool"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "潮だまりを覗く人間が、手で掴み上げる。",
+    "観察のために、岩から無理やり引き剥がされる。"
+   ],
+   "lose": "無理に岩から剥がされ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "海流に身を任せて漂う。どの水域へ向かうか",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria"
+   ],
+   "month": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "潮目へ流される",
+     "ds": "プランクトンが豊富。捕食者に狙われやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "current_edge",
+     "say": "潮目の流れに乗り、微小な餌を濾し取った。",
+     "chip": "潮目に乗る"
+    },
+    {
+     "ja": "沿岸の表層を漂う",
+     "ds": "外敵は少ないが、餌となるプランクトンも乏しい",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "open_sea_surface",
+     "say": "穏やかな表層を漂い、静かに時を待った。",
+     "chip": "表層を漂う"
+    }
+   ]
+  },
+  {
+   "q": "着底し、ヒトデの形へと変わる。どこに定着するか",
+   "stages": [
+    "brachiolaria"
+   ],
+   "month": [
+    5,
+    6,
+    11,
+    12
+   ],
+   "opts": [
+    {
+     "ja": "粗い砂礫地に降り立つ",
+     "ds": "好みの環境で成長が早い。潜砂能力が低いため外敵に弱い",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "coarse_sediment",
+     "say": "粗い砂礫地に降り立ち、有機物の破片を食んだ。",
+     "chip": "砂礫地へ着底"
+    },
+    {
+     "ja": "岩場の表面に張り付く",
+     "ds": "足場が安定し身を隠しやすい。餌の種類が限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "rocky_surface",
+     "say": "岩場の表面に張り付き、薄い藻類を口にした。",
+     "chip": "岩場へ着底"
+    }
+   ]
+  },
+  {
+   "q": "成熟し、餌を求めて移動する。どの場所を拠点にするか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "潮だまりにとどまる",
+     "ds": "貝類などの餌が豊富。干潮時の高水温と乾燥にさらされる",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "tide_pool",
+     "say": "潮だまりの浅い水に潜み、小さな貝を捕らえた。",
+     "chip": "潮だまりへ"
+    },
+    {
+     "ja": "水深40メートルの低層へ潜る",
+     "ds": "環境が安定し外敵も少ない。餌の密度が低い",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "subtidal_deep",
+     "say": "水深40メートルの暗がりに身を置き、死骸を食んだ。",
+     "chip": "低層へ潜る"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "ボウシュウボラに襲われ、傷を負った。",
+   "hp": -30
+  },
+  {
+   "month": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.08,
+   "say": "肉食性のヒトデに襲われ、傷を負った。",
+   "hp": -20
+  },
+  {
+   "month": [
+    1,
+    2
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "強い冬の嵐で岩場から剥がされ、傷を負った。",
+   "hp": -15
+  }
+ ],
+ "lead": "日本沿岸の浅い海で生まれ、幼生として漂い、岩礁に着底して成体となる。青い体を揺らし、貝や死骸を食んで生きる。",
+ "texts": {
+  "move": "{to}へ、潮流に乗って漂う、あるいは管足で這う。",
+  "fleeJa": "捕食者に襲われ、岩の隙間へ逃げ込む。",
+  "loseJa": "ボウシュウボラに捕食され、傷を負った。",
+  "restJa": "岩場の表面に張り付き、静止する。",
+  "watchJa": "腕の先端にある目で光を感じ、周囲を観察する。",
+  "lieJa": "潮だまりの底で、身を潜める。",
+  "lastMemory": "海流に身を任せて漂った、幼い日の記憶を思い出す。"
+ },
+ "intro": [
+  "日本沿岸の浅い海、春か秋の夜に卵が放たれた。",
+  "周囲には、同時に生まれた無数の幼生が漂っている。"
+ ],
+ "wins": [
+  {
+   "minKids": 500000,
+   "title": "大量の卵を産み落とした",
+   "line": "{kids}個の卵が海に放たれ、次なる生へと繋がる。",
+   "mem": "潮の流れに乗り、光の粒となって散らばる卵たちの光景を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "プランクトンとして海を漂い、流れに身を任せた記憶。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "卵を残せなかった",
+   "line": "次世代に命を繋ぐことなく、静かに海へ還る。",
+   "mem": "寄せては返す波の音だけが、記憶に残っている。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "Patiria pectinifera feeds on algae and sea grasses, detritus and small invertebrates.",
+   "source": "https://en.wikipedia.org/wiki/Patiria_pectinifera"
+  },
+  {
+   "quote": "Females spawn about 500,000 eggs each year.",
+   "source": "https://en.wikipedia.org/wiki/Patiria_pectinifera"
   }
  ]
 }

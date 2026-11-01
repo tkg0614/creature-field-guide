@@ -1,0 +1,782 @@
+{
+ "id": "squid",
+ "ja": "スルメイカ",
+ "sci": "Todarodes pacificus",
+ "status": "checked",
+ "type": "semelparous",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本近海および北太平洋",
+  "geo": "North Pacific Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "east_china_sea",
+   "ja": "東シナ海の表層",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "卵が産み付けられ、ふ化する場所である。幼体がプランクトンと共に漂う。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 36,
+   "lon": 133
+  },
+  {
+   "id": "kuroshio_current",
+   "ja": "黒潮の流路",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "海流に乗って北上する。小型の魚類など多くの捕食者に狙われる。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 36,
+   "lon": 135.4
+  },
+  {
+   "id": "pacific_coastal",
+   "ja": "太平洋沿岸域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "小魚や甲殻類を捕食して急速に成長する。群れをなして移動する。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 38.078,
+   "lon": 134.5
+  },
+  {
+   "id": "sea_of_japan",
+   "ja": "日本海域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "回遊の途中で寄る餌場である。水温の変化に合わせて分布を変える。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 43.06,
+   "lon": 137.335
+  },
+  {
+   "id": "deep_layer",
+   "ja": "中深層海域",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "水深500メートルまで潜る。暗い海域で外敵から身を隠し休息する。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 36,
+   "lon": 130.6
+  },
+  {
+   "id": "surface_water",
+   "ja": "海面付近",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "水面を飛び跳ねて高速で移動する。海鳥に襲われる危険がある。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 33.922,
+   "lon": 131.5
+  },
+  {
+   "id": "spawning_ground",
+   "ja": "東シナ海の産卵場",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "成熟した個体が集まり産卵する。一生を終える終の棲家である。",
+   "stages": [
+    "paralarva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 34.753,
+   "lon": 133.9
+  }
+ ],
+ "start": {
+  "place": "east_china_sea",
+  "month": 1,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本近海および北太平洋",
+  "lon0": 128.579,
+  "lon1": 139.356,
+  "lat0": 45.081,
+  "lat1": 31.901,
+  "k": 46,
+  "labels": [
+   [
+    44.290200000000006,
+    133.9675,
+    "日本近海および北太平洋"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "east_china_sea",
+   "spawning_ground"
+  ],
+  [
+   "east_china_sea",
+   "kuroshio_current"
+  ],
+  [
+   "kuroshio_current",
+   "spawning_ground"
+  ],
+  [
+   "kuroshio_current",
+   "pacific_coastal"
+  ],
+  [
+   "east_china_sea",
+   "pacific_coastal"
+  ],
+  [
+   "pacific_coastal",
+   "sea_of_japan"
+  ],
+  [
+   "kuroshio_current",
+   "sea_of_japan"
+  ],
+  [
+   "deep_layer",
+   "surface_water"
+  ],
+  [
+   "deep_layer",
+   "east_china_sea"
+  ],
+  [
+   "spawning_ground",
+   "surface_water"
+  ]
+ ],
+ "size": {
+  "ja": "外套長",
+  "unit": "cm",
+  "start": 0.2
+ },
+ "stats": {
+  "run": {
+   "ja": "噴射推進",
+   "use": "漏斗から水を勢いよく吹き出し、高速で移動する時に効く"
+  },
+  "sense": {
+   "ja": "警戒心",
+   "use": "外敵を察知し、墨を吐いて逃れる時に効く"
+  },
+  "forage": {
+   "ja": "触腕の捕食",
+   "use": "獲物を素早く捕らえ、鋭い嘴で噛み砕く時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "paralarva",
+   "ja": "浮遊幼生",
+   "days": 60,
+   "hunger": 10,
+   "grow": 1.5,
+   "goal": "海流に乗って北上する",
+   "enter": "ふ化後、プランクトンと共に表層を漂う。"
+  },
+  {
+   "id": "juvenile",
+   "ja": "若イカ",
+   "fromAge": 0.2,
+   "days": 150,
+   "hunger": 12,
+   "grow": 2,
+   "goal": "急速に成長する",
+   "enter": "黒潮の流れに乗り、北の海へと移動を始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 0.6,
+   "days": 155,
+   "hunger": 15,
+   "grow": 0.5,
+   "adult": true,
+   "goal": "産卵場へ戻る",
+   "enter": "成熟し、大きな体となって南への回遊を開始した。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1
+  ],
+  "text": "産卵を終え、体力が尽きた。海流に身を任せ、静かに死を迎えた。"
+ },
+ "breeding": {
+  "ja": "東シナ海での産卵",
+  "ds": "冬の東シナ海に集まり、一度だけ卵を産み付ける",
+  "months": [
+   12,
+   1,
+   2
+  ],
+  "places": [
+   "spawning_ground"
+  ],
+  "perYear": 1,
+  "kids": [
+   300,
+   4000
+  ],
+  "many": 4000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した浮遊幼生"
+  },
+  "ok": "{born}個の卵を産み付けた。",
+  "ng": "産卵場に到達できず、卵を産みそびれた。",
+  "goal1": "東シナ海へ戻る",
+  "goal2": "4000個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "plankton",
+   "ja": "プランクトンを捕らえる",
+   "name": "プランクトン",
+   "ds": "海中を漂う微小な甲殻類などを捕らえる",
+   "stages": [
+    "paralarva"
+   ],
+   "places": [
+    "surface_water"
+   ],
+   "rich": [
+    "surface_water"
+   ],
+   "ok": "微小な甲殻類を捕らえて食べた。",
+   "full": 15
+  },
+  {
+   "id": "small_fish",
+   "ja": "小魚を捕らえる",
+   "name": "小魚",
+   "ds": "素早い動きで小魚を追い詰め、触腕で捕らえる",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "kuroshio_current",
+    "pacific_coastal",
+    "sea_of_japan"
+   ],
+   "rich": [
+    "kuroshio_current"
+   ],
+   "ok": "小魚を触腕で捕らえ、嘴で噛み砕いた。",
+   "full": 30
+  },
+  {
+   "id": "crustacean",
+   "ja": "甲殻類を食べる",
+   "name": "甲殻類",
+   "ds": "エビなどの甲殻類を捕らえて食べる",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "pacific_coastal",
+    "sea_of_japan"
+   ],
+   "rich": [
+    "pacific_coastal"
+   ],
+   "ok": "エビを捕らえて、鋭い嘴で食べた。",
+   "full": 25
+  }
+ ],
+ "special": [
+  {
+   "id": "ink_escape",
+   "ja": "墨を吐いて逃げる",
+   "ds": "外敵に襲われた際、墨を吐いて視界を遮り逃走する",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.6,
+   "calm": true,
+   "ok": "黒い墨を勢いよく吐き出し、外敵をまいた。",
+   "lose": "墨を吐く間もなく捕らえられ、傷を負った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "paralarva",
+    "juvenile"
+   ],
+   "to": "pacific_coastal",
+   "say": "黒潮に乗って北上し、豊かな海域で成長する。"
+  },
+  {
+   "months": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "spawning_ground",
+   "say": "成熟し、産卵のために南の東シナ海へ戻る。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "zooplankton",
+   "ja": "大型動物プランクトン",
+   "kind": "any",
+   "places": [
+    "east_china_sea",
+    "surface_water"
+   ],
+   "stages": [
+    "paralarva"
+   ],
+   "sev": 1,
+   "texts": [
+    "透明な体が、プランクトンの触手に絡め取られる。",
+    "小さな口が、潮に漂う幼生を吸い込む。"
+   ]
+  },
+  {
+   "id": "planktivorous_fish",
+   "ja": "プランクトン食の魚",
+   "kind": "fish",
+   "places": [
+    "east_china_sea",
+    "surface_water"
+   ],
+   "stages": [
+    "paralarva"
+   ],
+   "sev": 2,
+   "texts": [
+    "銀色の群れが、海中の幼生をまとめて飲み込む。",
+    "鋭い口先が、潮の流れから幼生をかすめ取る。"
+   ]
+  },
+  {
+   "id": "dolphin",
+   "ja": "イルカ",
+   "kind": "mammal",
+   "places": [
+    "kuroshio_current",
+    "pacific_coastal",
+    "sea_of_japan"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "音速のクリック音が響き、灰色の影が高速で接近する。",
+    "巧みな連携で追い詰められ、逃げ場を失う。"
+   ],
+   "again": [
+    "また、右の鰭に傷のあるイルカだ。波を切って執拗に追ってくる。",
+    "あの傷のあるイルカが、群れの先頭で獲物を追い込んでいる。"
+   ],
+   "bye": "産卵のために東シナ海へ戻る際、深い海域へ逃れることで追跡をかわした。"
+  },
+  {
+   "id": "sperm_whale",
+   "ja": "マッコウクジラ",
+   "kind": "mammal",
+   "places": [
+    "deep_layer",
+    "pacific_coastal"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "深海から巨大な頭部が浮上し、海水を大量に飲み込む。",
+    "巨大な顎が、群れごと一気に吸い込む。"
+   ]
+  },
+  {
+   "id": "seal",
+   "ja": "アザラシ",
+   "kind": "mammal",
+   "places": [
+    "pacific_coastal",
+    "sea_of_japan"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "滑らかな体躯が水流を切り裂き、背後から襲いかかる。",
+    "鋭い牙が、逃げる腕を捉える。"
+   ]
+  },
+  {
+   "id": "baleen_whale",
+   "ja": "ヒゲクジラ",
+   "kind": "mammal",
+   "places": [
+    "kuroshio_current",
+    "pacific_coastal"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "巨大な口が海面を横切り、大量の海水とともに飲み込まれる。",
+    "逃げる間もなく、巨大なフィルターに閉じ込められる。"
+   ]
+  },
+  {
+   "id": "ray",
+   "ja": "エイ",
+   "kind": "fish",
+   "places": [
+    "deep_layer",
+    "pacific_coastal"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "海底から平たい影が舞い上がり、触手を包み込む。",
+    "鋭い口が、もがく体を締め付ける。"
+   ]
+  },
+  {
+   "id": "albatross",
+   "ja": "アホウドリ",
+   "kind": "bird",
+   "places": [
+    "surface_water",
+    "pacific_coastal"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海面を滑空する白い翼が、水面近くの獲物を捉える。",
+    "鋭い嘴が、水面に跳ねた体を貫く。"
+   ]
+  },
+  {
+   "id": "tuna",
+   "ja": "マグロ",
+   "kind": "fish",
+   "places": [
+    "kuroshio_current",
+    "pacific_coastal",
+    "sea_of_japan"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "鋼のような速さを持つ魚が、側面から突撃してくる。",
+    "鋭い牙が、外套膜を深く切り裂く。"
+   ],
+   "again": [
+    "また、背びれが大きく裂けたマグロだ。猛烈な速度で旋回している。",
+    "あの裂けた背びれの個体が、群れの弱った個体を狙っている。"
+   ],
+   "bye": "体が大きく成長し、噴流による急加速で追跡を振り切る術を覚えた。"
+  },
+  {
+   "id": "jigging",
+   "ja": "釣り針・ルアー",
+   "kind": "human",
+   "places": [
+    "pacific_coastal",
+    "sea_of_japan",
+    "kuroshio_current"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の海に光るルアーが、好奇心を誘い寄せる。",
+    "鋭い針が、触手を深く貫通する。"
+   ],
+   "lose": "釣り針に深く掛けられ、傷を負った。"
+  },
+  {
+   "id": "gill_net",
+   "ja": "刺網",
+   "kind": "human",
+   "places": [
+    "pacific_coastal",
+    "sea_of_japan",
+    "kuroshio_current"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "透明な網が、回遊路に静かに張り巡らされている。",
+    "もがけばもがくほど、細い糸が体に食い込む。"
+   ],
+   "lose": "網の糸に身を切られ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "腹が減った。何を狙うか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "小魚を追い詰める",
+     "ds": "栄養価が高く成長が早まる。体力を激しく消耗する",
+     "fx": {
+      "food": 0.8,
+      "danger": 0.4
+     },
+     "say": "素早い小魚を追い詰め、鋭い嘴で一気に仕留めた。",
+     "chip": "小魚"
+    },
+    {
+     "ja": "甲殻類を探す",
+     "ds": "安定して獲物が得られる。一度に得られる栄養は少ない",
+     "fx": {
+      "food": 0.4,
+      "danger": -0.2
+     },
+     "say": "海底付近を探索し、潜んでいた甲殻類を吸盤で捕らえた。",
+     "chip": "甲殻類"
+    },
+    {
+     "ja": "同種の個体を襲う",
+     "ds": "効率的に大量の栄養を得られる。激しい争いになり傷つきやすい",
+     "fx": {
+      "food": 1,
+      "danger": 0.8
+     },
+     "say": "群れの中で弱った個体を襲い、容赦なく喰らった。",
+     "chip": "共食い"
+    }
+   ]
+  },
+  {
+   "q": "外敵の気配がした。どう逃れるか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "墨を吐いて急加速する",
+     "ds": "確実に視界を遮れる。短距離の逃走に限られる",
+     "fx": {
+      "danger": -0.6,
+      "food": -0.2
+     },
+     "say": "濃い墨を吐いて敵の目を眩ませ、ジェット噴射で遠ざかった。",
+     "chip": "墨と噴射"
+    },
+    {
+     "ja": "水面から飛び出す",
+     "ds": "海中の捕食者を完全に振り切れる。海鳥に狙われる危険がある",
+     "fx": {
+      "danger": -0.4,
+      "food": -0.1
+     },
+     "say": "水面を突き抜け、空中に飛び出して海中の追手から逃れた。",
+     "chip": "跳躍"
+    }
+   ]
+  },
+  {
+   "q": "北上する季節だ。どの海域を進むか",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "黒潮の速い流れに乗る",
+     "ds": "少ない労力で遠くまで移動できる。外敵に見つかりやすい",
+     "fx": {
+      "danger": 0.5,
+      "food": -0.2
+     },
+     "goto": "kuroshio_current",
+     "say": "黒潮の強い流れに身を任せ、効率よく北の海へ向かった。",
+     "chip": "黒潮"
+    },
+    {
+     "ja": "沿岸の緩やかな海域を進む",
+     "ds": "餌が豊富で体力を維持できる。移動に時間がかかる",
+     "fx": {
+      "danger": -0.2,
+      "food": 0.6
+     },
+     "goto": "pacific_coastal",
+     "say": "沿岸の豊かな海域を通り、獲物を捕らえながらゆっくりと北上した。",
+     "chip": "沿岸域"
+    }
+   ]
+  },
+  {
+   "q": "南へ戻り、産卵の時を迎えた。どこに卵を産むか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "暖かい表層海域",
+     "ds": "卵の成長が早く孵化率が高まる。捕食者に狙われやすい",
+     "fx": {
+      "kids": 0.8,
+      "danger": 0.6
+     },
+     "goto": "spawning_ground",
+     "say": "暖かい表層に数千の卵を放ち、次世代への希望を託した。",
+     "chip": "表層"
+    },
+    {
+     "ja": "安定した中深層海域",
+     "ds": "外敵が少なく生存率が上がる。孵化までに時間がかかる",
+     "fx": {
+      "kids": 0.4,
+      "danger": -0.4
+     },
+     "goto": "spawning_ground",
+     "say": "静まり返った中深層に卵を産み付け、外敵から遠ざけた。",
+     "chip": "中深層"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "stages": [
+    "paralarva"
+   ],
+   "p": 0.2,
+   "say": "ろ過摂食者の大きな口に吸い込まれ、傷を負った。",
+   "danger": 0.7
+  },
+  {
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "海鳥に狙われ、水面近くで激しく攻撃された。",
+   "danger": 0.5
+  },
+  {
+   "stages": [
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "産卵を終え、急速に体力が衰えていった。",
+   "danger": 0.8
+  }
+ ],
+ "lead": "東シナ海で浮遊幼生として生まれ、北上して成長し、再び南へ戻って産卵し、一生を終える。海流に身を任せ、獲物を追う旅である。",
+ "texts": {
+  "move": "{to}へ移動した。",
+  "fleeJa": "危険を感じて海面へ飛び出した。",
+  "restJa": "中深層海域で静かに漂う。",
+  "watchJa": "大きな目で周囲の獲物を探す。",
+  "lieJa": "暗い海中で休息する。",
+  "lastMemory": "産卵した海に差し込む冬の光を思い出す。"
+ },
+ "intro": [
+  "冬の東シナ海で、卵から浮遊幼生が生まれた。",
+  "周囲には無数の幼生が漂い、プランクトンを食べて育つ。"
+ ],
+ "wins": [
+  {
+   "title": "産卵し、生を終えた",
+   "line": "生まれた故郷の海で卵を産み落とし、静かに死んだ。",
+   "mem": "次世代へ繋いだ卵の温もりを思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "黒潮の流れに乗り、北の海へと運ばれた日を思い出す。"
+  }
+ ],
+ "noKids": [],
+ "facts": [
+  {
+   "quote": "This species of squid can weigh up to 0.5 kg."
+  },
+  {
+   "quote": "The eggs hatch into larvae after only 102–113 hours (somewhere around five days), depending on the water temperature."
+  }
+ ]
+}

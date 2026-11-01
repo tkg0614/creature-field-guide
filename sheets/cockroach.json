@@ -2,7 +2,806 @@
  "id": "cockroach",
  "ja": "クロゴキブリ",
  "sci": "Periplaneta fuliginosa",
- "status": "draft",
+ "status": "checked",
  "type": "insect_annual",
- "country": "jp"
+ "country": "jp",
+ "by": {
+  "places": "gemini-older gemini-3.7-flash",
+  "life": "gemini-older gemini-3.7-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "東京都世田谷区の住宅街",
+  "geo": "Setagaya, Tokyo",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "under_sink_gap",
+   "ja": "流し台の裏の配管隙間",
+   "danger": 1,
+   "cover": true,
+   "about": "暗く湿り気のある温かい隙間。乾燥から守られた卵鞘から小さな幼虫が這い出る。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.653
+  },
+  {
+   "id": "kitchen_floor",
+   "ja": "真夜中の台所",
+   "danger": 3,
+   "cover": false,
+   "about": "こぼれた油や食品くずをあさる場所。突然明かりが灯り、人に叩き潰される危険が高い。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.685
+  },
+  {
+   "id": "under_flowerpots",
+   "ja": "庭の植木鉢の底",
+   "danger": 1,
+   "cover": true,
+   "about": "湿った土と鉢の隙間に身を寄せる。落ち葉や小昆虫の死骸を食べて水分を補う。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.675,
+   "lon": 139.673
+  },
+  {
+   "id": "concrete_gutter",
+   "ja": "住宅街の雨水側溝",
+   "danger": 2,
+   "cover": true,
+   "about": "泥や有機物が堆積する湿った通り道。湿度が高く過ごしやすいが、大型のクモが潜む。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.664,
+   "lon": 139.641
+  },
+  {
+   "id": "garbage_station",
+   "ja": "屋外のゴミ集積場",
+   "danger": 3,
+   "cover": false,
+   "about": "生ゴミや段ボールが山積みになる餌場。豊富な栄養を得られるが、ネズミや鳥の襲撃に晒される。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.647,
+   "lon": 139.621
+  },
+  {
+   "id": "night_garden_tree",
+   "ja": "夜の庭木の幹",
+   "danger": 2,
+   "cover": false,
+   "about": "蒸し暑い夏の夜に登る高い場所。フェロモンを放ち、羽を広げて配偶者を誘う。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.619,
+   "lon": 139.633
+  },
+  {
+   "id": "winter_attic",
+   "ja": "壁の中と屋根裏の隙間",
+   "danger": 1,
+   "cover": true,
+   "about": "冬の寒風を遮る人家の隙間。活動を鈍らせて身を潜め、春の暖かさを待つ。",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "lat": 35.63,
+   "lon": 139.665
+  }
+ ],
+ "start": {
+  "place": "under_sink_gap",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "東京都世田谷区の住宅街",
+  "lon0": 139.602,
+  "lon1": 139.704,
+  "lat0": 35.694,
+  "lat1": 35.6,
+  "k": 4902,
+  "labels": [
+   [
+    35.68836,
+    139.65300000000002,
+    "東京都世田谷区の住宅街"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "under_sink_gap",
+   "winter_attic"
+  ],
+  [
+   "concrete_gutter",
+   "under_sink_gap"
+  ],
+  [
+   "kitchen_floor",
+   "winter_attic"
+  ],
+  [
+   "kitchen_floor",
+   "under_flowerpots"
+  ],
+  [
+   "concrete_gutter",
+   "under_flowerpots"
+  ],
+  [
+   "concrete_gutter",
+   "garbage_station"
+  ],
+  [
+   "garbage_station",
+   "night_garden_tree"
+  ],
+  [
+   "night_garden_tree",
+   "winter_attic"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.4
+ },
+ "stats": {
+  "run": {
+   "ja": "疾走力",
+   "use": "光や殺虫剤から隙間へ逃げ込む時に効く"
+  },
+  "sense": {
+   "ja": "気流と触角の察知",
+   "use": "尾毛で空気の動きを感じ、配偶者のフェロモンを探す時に効く"
+  },
+  "forage": {
+   "ja": "採食力",
+   "use": "暗闇で油汚れや有機物の残屑を素早く齧る時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "early_nymph",
+   "ja": "若齢幼虫",
+   "days": 15,
+   "hunger": 10,
+   "grow": 0.3,
+   "goal": "乾燥を避けて湿った隙間で育つ",
+   "enter": "卵鞘から一斉に孵化した。白褐色の小さな体で配管の奥へと散る。"
+  },
+  {
+   "id": "late_nymph",
+   "ja": "中・終齢幼虫",
+   "fromAge": 0.35,
+   "days": 30,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "冬を越し脱皮を重ねて体を大きくする",
+   "enter": "脱皮を繰り返し黒褐色の艶が出た。寒さを避けて屋根裏や壁の隙間に潜む。"
+  },
+  {
+   "id": "adult",
+   "ja": "成虫",
+   "fromAge": 1,
+   "days": 20,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "夜の闇で交尾し卵鞘を産む",
+   "enter": "羽化を終え、全身を濃茶色の長い翅が覆った。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1.2,
+   1.5
+  ],
+  "text": "秋風が冷たくなる頃、脚の関節が固まり暗い隙間の底で動かなくなった。"
+ },
+ "breeding": {
+  "ja": "卵鞘産卵",
+  "ds": "硬い外殻で覆われた卵鞘を形成し、湿り気のある暗い隙間に貼り付ける",
+  "months": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "places": [
+   "under_sink_gap",
+   "under_flowerpots"
+  ],
+  "perYear": 8,
+  "kids": [
+   18,
+   26
+  ],
+  "many": 200,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "卵鞘の中の卵"
+  },
+  "ok": "隙間の奥の木部に卵鞘を塗り付けた。中に{born}個の卵を収めた。",
+  "ng": "安全で湿り気のある隙間が見つからず、産卵を見送った。",
+  "goal1": "湿った隙間に卵鞘を産み付ける",
+  "goal2": "累計で200個の卵を産む"
+ },
+ "foods": [
+  {
+   "id": "kitchen_crumbs",
+   "ja": "台所の油や食品くずを食べる",
+   "name": "食品残屑",
+   "ds": "人間が眠ったあとの台所の床や流し台を徘徊し、油汚れやパンくずを齧り取る",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "places": [
+    "kitchen_floor",
+    "under_sink_gap"
+   ],
+   "rich": [
+    "kitchen_floor"
+   ],
+   "ok": "真夜中の床を走り、こぼれた油の膜を舐め取った。",
+   "full": 30
+  },
+  {
+   "id": "decaying_refuse",
+   "ja": "屋外の有機物や残飯を漁る",
+   "name": "腐敗有機物",
+   "ds": "ゴミ集積場や側溝に溜まった生ゴミや小動物の死骸を大あごで噛み砕く",
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "places": [
+    "concrete_gutter",
+    "garbage_station",
+    "under_flowerpots"
+   ],
+   "rich": [
+    "garbage_station"
+   ],
+   "ok": "破れた袋の隙間に潜り込み、熟した果実の皮を貪った。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "flatten_escape",
+   "ja": "扁平潜伏",
+   "ds": "極めて薄い体を活かして、わずか数ミリの配管や壁の隙間に滑り込む",
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.7,
+   "calm": true,
+   "ok": "光が差した瞬間、瞬時に流し台の裏の裂け目へと身を滑り込ませた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "to": "night_garden_tree",
+   "say": "初夏の気温上昇に誘われ、餌と配偶者を求めて屋外の庭木へと移動する。"
+  },
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph"
+   ],
+   "to": "winter_attic",
+   "say": "秋の冷え込みを感じ、冷風の遮られる屋根裏や壁内の隙間へと引き返す。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "huntsman_spider",
+   "ja": "アシダカグモ",
+   "kind": "arachnid",
+   "places": [
+    "under_sink_gap",
+    "kitchen_floor",
+    "winter_attic"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "壁の暗がりから、長い脚を一気に広げて飛び出してくる。",
+    "音もなく背後へ回り込み、牙を剥いて飛びかかる。"
+   ],
+   "again": [
+    [
+     "また、暗がりの天井にあの長い脚の影が潜んでいる。"
+    ],
+    [
+     "同じ徘徊性の主が、壁の隙間で待ち伏せている。"
+    ]
+   ],
+   "bye": "冷え込みが厳しくなり、あの巨大なクモの気配も消え去った。"
+  },
+  {
+   "id": "japanese_gecko",
+   "ja": "ニホンヤモリ",
+   "kind": "reptile",
+   "places": [
+    "kitchen_floor",
+    "night_garden_tree",
+    "under_flowerpots"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "吸盤のついた指で窓ガラスを走り、素早く首を振る。",
+    "明かりに透ける白い腹を見せ、猛然と間合いを詰めてくる。"
+   ]
+  },
+  {
+   "id": "cockroach_wasp",
+   "ja": "セナガアナバチ",
+   "kind": "insect",
+   "places": [
+    "under_flowerpots",
+    "concrete_gutter",
+    "night_garden_tree"
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "金属光沢の青い翅を震わせ、触角を狙って急降下してくる。",
+    "針を構えた素早い蜂が、頭部をめがけて執拗に回り込む。"
+   ],
+   "again": [
+    [
+     "また、あの青い輝きを持つ狩り蜂が低く飛び回っている。"
+    ],
+    [
+     "同じ狩り蜂が、匂いをたどって隙間をのぞき込んでいる。"
+    ]
+   ],
+   "bye": "夏の盛りを過ぎ、あの青い狩り蜂の羽音も途絶えた。"
+  },
+  {
+   "id": "black_rat",
+   "ja": "クマネズミ",
+   "kind": "mammal",
+   "places": [
+    "winter_attic",
+    "kitchen_floor",
+    "garbage_station"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "梁の上から、長い尾を引きずって黒い影が駆け下りてくる。",
+    "鋭い門歯を鳴らし、暗がりの中を鼻を鳴らして探り寄せる。"
+   ],
+   "again": [
+    [
+     "また、あの黒いネズミが天井裏を忙しなく走っている。"
+    ],
+    [
+     "屋根裏の主が、暗闇の中から嗅覚を研ぎ澄まして迫る。"
+    ]
+   ],
+   "bye": "家主が仕掛けた罠が作動し、あのネズミの足音が止んだ。"
+  },
+  {
+   "id": "japanese_toad",
+   "ja": "アズマヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "under_flowerpots",
+    "concrete_gutter"
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "湿った植木鉢の陰から、重量のある体がのしかかるように現れる。",
+    "粘着質の太い舌が、閃光のように口元から伸びる。"
+   ]
+  },
+  {
+   "id": "praying_mantis",
+   "ja": "ハラビロカマキリ",
+   "kind": "insect",
+   "places": [
+    "night_garden_tree",
+    "under_flowerpots"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph"
+   ],
+   "sev": 2,
+   "texts": [
+    "枝葉に紛れた前脚が、目にも留まらぬ速さで振り下ろされる。",
+    "三角の頭をかしげ、左右の複眼でじっと間合いを測っている。"
+   ]
+  },
+  {
+   "id": "brown_rat",
+   "ja": "ドブネズミ",
+   "kind": "mammal",
+   "places": [
+    "concrete_gutter",
+    "garbage_station"
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "側溝の汚水を押しのけ、巨大な体躯が突進してくる。",
+    "ゴミ袋の裂け目から、湿った鼻先を突き出して噛みつく。"
+   ]
+  },
+  {
+   "id": "domestic_cat",
+   "ja": "イエネコ",
+   "kind": "mammal",
+   "places": [
+    "kitchen_floor",
+    "under_flowerpots"
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭い爪を伸ばした前足が、頭上から素早く叩きつけられる。",
+    "低く身をかがめ、瞳孔を開いた瞳で逃げ道を塞ぎにかかる。"
+   ]
+  },
+  {
+   "id": "pesticide_spray",
+   "ja": "殺虫スプレー",
+   "kind": "human",
+   "places": [
+    "kitchen_floor",
+    "under_sink_gap"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "突然強い光が当たり、激しい噴射音が部屋に響きわたる。",
+    "霧状の冷たい刺激臭が、逃げ込む隙間へ容赦なく吹きつけられる。"
+   ],
+   "lose": "霧状の薬剤を浴びせられ、傷を負った。",
+   "fleeJa": "床の幅木のわずかな隙間へ滑り込む",
+   "hideJa": "排水パイプの影に張りついてやり過ごす"
+  },
+  {
+   "id": "sticky_trap",
+   "ja": "粘着シート",
+   "kind": "human",
+   "places": [
+    "under_sink_gap",
+    "kitchen_floor"
+   ],
+   "stages": [
+    "early_nymph",
+    "late_nymph",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "通り道に甘い匂いのする平らな箱が置かれている。",
+    "足先が触れた瞬間、強力な糊が爪に絡みつく。"
+   ],
+   "lose": "強粘着の糊に足を取られ、傷を負った。",
+   "fleeJa": "足を強引に引き剥がして後退する",
+   "hideJa": "足場の端を慎重に伝って回り込む"
+  }
+ ],
+ "choices": [
+  {
+   "q": "夏の夜、孵化した幼虫が水気と餌を求めている。どこへ向かうか",
+   "stages": [
+    "early_nymph"
+   ],
+   "month": [
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "流し台の裏の配管隙間に潜む",
+     "ds": "水気と油汚れが豊富にある。人間の殺虫剤や毒餌に遭遇しやすい",
+     "fx": {
+      "food": 0.8,
+      "danger": 0.6
+     },
+     "goto": "under_sink_gap",
+     "say": "湿った配管の継ぎ目に潜り込み、付着した有機物の汚れをかじった。",
+     "chip": "流し台の裏"
+    },
+    {
+     "ja": "庭の植木鉢の底の隙間に隠れる",
+     "ds": "人目に触れず安全に過ごせる。日照りで乾燥すると脱水しやすい",
+     "fx": {
+      "food": -0.3,
+      "danger": -0.5
+     },
+     "goto": "under_flowerpots",
+     "say": "植木鉢の底の湿った土に身を寄せ、落ち葉の腐植質を食べて耐えた。",
+     "chip": "植木鉢の底"
+    }
+   ]
+  },
+  {
+   "q": "気温が下がり晩秋を迎えた。冬を越すためにどこへ身を寄せるか",
+   "stages": [
+    "late_nymph"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "住宅街の雨水側溝の奥深くへ降りる",
+     "ds": "湿度が高く乾燥から身を守れる。大雨で濁流に流される恐れがある",
+     "fx": {
+      "danger": 0.4,
+      "energy": 0.3
+     },
+     "goto": "concrete_gutter",
+     "say": "側溝の冷たいコンクリートの割れ目に潜り、泥の湿り気で冬をやり過ごした。",
+     "chip": "雨水側溝"
+    },
+    {
+     "ja": "壁の中と屋根裏の隙間に潜り込む",
+     "ds": "寒風を防ぎ暖気を得やすい。水分が乏しく体が干からびやすい",
+     "fx": {
+      "danger": -0.4,
+      "energy": -0.3
+     },
+     "goto": "winter_attic",
+     "say": "壁の隙間をよじ登り、屋根裏の断熱材の隅で静かに春を待った。",
+     "chip": "屋根裏の隙間"
+    }
+   ]
+  },
+  {
+   "q": "初夏に成虫へと羽化した。夜間の採餌場としてどこを目指すか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "屋外のゴミ集積場へ飛ぶ",
+     "ds": "腐敗物や生ゴミなど栄養が極めて豊富。夜行性の天敵に見つかりやすい",
+     "fx": {
+      "food": 0.9,
+      "danger": 0.7
+     },
+     "goto": "garbage_station",
+     "say": "黒褐色の翅を広げて飛び、ゴミ袋の破れ目から残飯を漁った。",
+     "chip": "ゴミ集積場"
+    },
+    {
+     "ja": "夜の庭木の幹にとどまる",
+     "ds": "樹皮の影で安全に潜める。得られる樹液や小昆虫の量が限られる",
+     "fx": {
+      "food": -0.2,
+      "danger": -0.6
+     },
+     "goto": "night_garden_tree",
+     "say": "庭木の幹を静かに這い、染み出た樹液を舐めて夜明けを迎えた。",
+     "chip": "庭木の幹"
+    }
+   ]
+  },
+  {
+   "q": "体内で卵鞘が成熟した。産卵場所としてどこを選ぶか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    7,
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "流し台の裏の暗がりに産み落とす",
+     "ds": "幼虫が孵化後すぐに餌を得られる。人間による清掃や駆除で失われやすい",
+     "fx": {
+      "kids": 0.7,
+      "danger": 0.5
+     },
+     "goto": "under_sink_gap",
+     "say": "配管の裏の温かい木枠に、黒褐色の硬い卵鞘をしっかりと貼り付けた。",
+     "chip": "屋内に産卵"
+    },
+    {
+     "ja": "庭の植木鉢の底に産み付ける",
+     "ds": "駆除の手を逃れやすい。冬の乾燥と冷え込みで卵が死ぬ恐れがある",
+     "fx": {
+      "kids": -0.3,
+      "danger": -0.5
+     },
+     "goto": "under_flowerpots",
+     "say": "湿った植木鉢の底の土を掘り、目立たないように卵鞘を隠した。",
+     "chip": "屋外に産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "early_nymph"
+   ],
+   "p": 0.35,
+   "say": "真夜中の台所でこぼれた油の跡を見つけ、腹を満たした。",
+   "full": 15
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "late_nymph",
+    "adult"
+   ],
+   "p": 0.25,
+   "say": "突然照らされた光とともに薬剤が吹き付けられ、慌てて床下の隙間へ逃げ込んだ。",
+   "full": -15
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "late_nymph"
+   ],
+   "p": 0.3,
+   "say": "氷点下の冷気がコンクリートの隙間に染み込み、春まで身動きが止まった。",
+   "full": -10
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "夜間の高い湿度と気温に促され、活発に飛び回って交尾相手を見つけた。",
+   "full": 10
+  }
+ ],
+ "lead": "住宅街の湿った暗がりで生まれ、夜の台所や側溝を這い回って育つ。人目を避けて隙間に潜み、卵鞘を残すまで生き延びられるか。",
+ "texts": {
+  "move": "{to}の隙間へ、滑り込むように走っていった。",
+  "fleeJa": "暗い物陰へ逃げ込む",
+  "restJa": "壁の隙間で体を休める",
+  "watchJa": "長い触角で空気の動きをうかがう",
+  "lieJa": "床下に身を潜める",
+  "lastMemory": "夜の台所で、物陰に卵鞘を産みつけた時を思い出した。"
+ },
+ "intro": [
+  "住宅街の庭先、湿った植木鉢の底に産みつけられた卵鞘からかえった。",
+  "まわりには、朽ちた落ち葉や乾いたミミズの破片が散らばっている。"
+ ],
+ "wins": [
+  {
+   "minKids": 10,
+   "title": "暗がりに命をつないだ",
+   "line": "流し台の裏や壁の隙間に、{kids}個の卵鞘を産み落とした。",
+   "mem": "夜の静まり返った家屋で、暗がりに卵鞘を固定した時を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "湿った側溝の壁を這い、夜のゴミ集積場へ潜り込んだ時を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "初夏の夜、脱皮を終えて暗褐色に輝く翅を伸ばした時を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命をつなげなかった",
+  "line": "卵鞘をひとつも残すことなく、暗がりの中で一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "Like most cockroaches, it is a scavenger, whereby it feeds on many different types of foods including dry earthworms, pet food, pet waste such as feces and urine, paper, and many types of ripe fruits."
+  },
+  {
+   "quote": "The smokybrown cockroach prefers warmer climates and is not cold-tolerant. It may, however, be able to survive colder climates by going indoors. It often lives around the perimeter of buildings especially places where these insects can feed and confine themselves."
+  },
+  {
+   "quote": "Females can oviposit an average of 10 or more oothecae in favorable environments, but this is highly dependent on the cockroaches' body fat, thereby as her body mass decreases fewer ootheca are oviposited in a season."
+  }
+ ]
 }

@@ -1,0 +1,802 @@
+{
+ "id": "sawagani",
+ "ja": "サワガニ",
+ "sci": "Geothelphusa dehaani",
+ "status": "checked",
+ "type": "small_invertebrate",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "木曽谷の渓流",
+  "geo": "Kiso Valley",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "stream_rock_bottom",
+   "ja": "渓流の石の下",
+   "danger": 1,
+   "cover": true,
+   "about": "澄んだ水が流れる。母ガニが腹に抱えた稚ガニが孵化し、しばらく保護される。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.669,
+   "lon": 137.623
+  },
+  {
+   "id": "deep_crevice",
+   "ja": "岩の深い隙間",
+   "danger": 0,
+   "cover": true,
+   "about": "外敵の目が届かず、水温も安定している。脱皮や冬眠に最適な場所である。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.669,
+   "lon": 137.655
+  },
+  {
+   "id": "leaf_bed",
+   "ja": "落ち葉が溜まる川底",
+   "danger": 2,
+   "cover": true,
+   "about": "藻類やミミズなどの餌が豊富である。隠れ場所はあるが、大型の魚に見つかりやすい。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.694,
+   "lon": 137.648
+  },
+  {
+   "id": "stream_edge",
+   "ja": "川辺の浅瀬",
+   "danger": 3,
+   "cover": false,
+   "about": "陸生昆虫が落ちてくる。遮蔽物が少なく、カワセミやサギに狙われる。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.688,
+   "lon": 137.618
+  },
+  {
+   "id": "forest_floor",
+   "ja": "沢沿いの林床",
+   "danger": 2,
+   "cover": true,
+   "about": "雨の日には地上へ出る。湿った土や落ち葉の下を移動し、餌を探す。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.68,
+   "lon": 137.594
+  },
+  {
+   "id": "open_channel",
+   "ja": "流れの速い本流",
+   "danger": 3,
+   "cover": false,
+   "about": "水流が強く、体力を消耗する。イワナなどの天敵に襲われやすい。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.655,
+   "lon": 137.587
+  },
+  {
+   "id": "roadside",
+   "ja": "雨の日の路上",
+   "danger": 3,
+   "cover": false,
+   "about": "雨に誘われて川から離れる。車に踏まれたり、乾燥して死ぬ危険がある。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.65,
+   "lon": 137.618
+  },
+  {
+   "id": "submerged_log",
+   "ja": "水没した朽ち木の下",
+   "danger": 1,
+   "cover": true,
+   "about": "複雑な隙間が多く、身を潜めやすい。水生昆虫が集まり、効率よく餌を得られる。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 35.649,
+   "lon": 137.643
+  }
+ ],
+ "start": {
+  "place": "stream_rock_bottom",
+  "month": 7,
+  "day": 15
+ },
+ "region": {
+  "ja": "木曽谷の渓流",
+  "lon0": 137.567,
+  "lon1": 137.675,
+  "lat0": 35.714,
+  "lat1": 35.629,
+  "k": 4630,
+  "labels": [
+   [
+    35.7089,
+    137.621,
+    "木曽谷の渓流"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "roadside",
+   "stream_rock_bottom"
+  ],
+  [
+   "stream_edge",
+   "stream_rock_bottom"
+  ],
+  [
+   "deep_crevice",
+   "submerged_log"
+  ],
+  [
+   "deep_crevice",
+   "leaf_bed"
+  ],
+  [
+   "leaf_bed",
+   "stream_edge"
+  ],
+  [
+   "forest_floor",
+   "stream_edge"
+  ],
+  [
+   "forest_floor",
+   "open_channel"
+  ],
+  [
+   "open_channel",
+   "roadside"
+  ],
+  [
+   "roadside",
+   "submerged_log"
+  ]
+ ],
+ "size": {
+  "ja": "甲幅",
+  "unit": "mm",
+  "start": 2
+ },
+ "stats": {
+  "run": {
+   "ja": "歩行力",
+   "use": "岩場や林床を移動し、外敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "夜行の勘",
+   "use": "暗闇で獲物や天敵の気配を察知する時に効く"
+  },
+  "forage": {
+   "ja": "雑食の顎",
+   "use": "昆虫や落ち葉など多様な餌を砕く時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "稚ガニ",
+   "days": 60,
+   "hunger": 6,
+   "grow": 0.8,
+   "goal": "母に守られる",
+   "enter": "母ガニの腹に抱かれ、守られて過ごした。"
+  },
+  {
+   "id": "young",
+   "ja": "未成体",
+   "fromAge": 0.2,
+   "days": 150,
+   "hunger": 10,
+   "grow": 1.2,
+   "goal": "体を大きくする",
+   "enter": "母のもとを離れ、石の下で獲物を探し始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 3,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.3,
+   "adult": true,
+   "goal": "子を残す",
+   "enter": "体色が定まり、夏に交尾を行う。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   4,
+   10
+  ],
+  "text": "冬の冷気が岩陰まで届いた。冬眠から覚めぬまま、静かに土へ還った。"
+ },
+ "breeding": {
+  "ja": "抱卵する",
+  "ds": "夏に交尾し、数十個の卵を腹肢に抱えて保護する",
+  "months": [
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "stream_rock_bottom",
+   "deep_crevice"
+  ],
+  "perYear": 1,
+  "kids": [
+   30,
+   60
+  ],
+  "many": 50,
+  "label": {
+   "ja": "抱えた卵",
+   "unit": "個",
+   "child": "かえった稚ガニの一匹"
+  },
+  "ok": "腹肢に{born}個の卵を抱え、孵化まで守り抜いた。",
+  "ng": "外敵に襲われ、卵を散らしてしまった。",
+  "goal1": "卵を抱える",
+  "goal2": "卵を50個抱える"
+ },
+ "foods": [
+  {
+   "id": "insect_eat",
+   "ja": "小虫を捕らえる",
+   "name": "水生・陸生昆虫",
+   "ds": "夜間に活動し、小さな虫やカタツムリ、ミミズを捕食する",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "stream_edge",
+    "leaf_bed",
+    "forest_floor"
+   ],
+   "rich": [
+    "leaf_bed"
+   ],
+   "ok": "素早く鋏を動かし、小さな虫を捕らえて食べた。",
+   "full": 40
+  },
+  {
+   "id": "leaf_eat",
+   "ja": "落ち葉を食む",
+   "name": "藻類と落ち葉",
+   "ds": "川底に溜まった落ち葉や藻類を食べて栄養を得る",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "leaf_bed",
+    "stream_rock_bottom"
+   ],
+   "rich": [
+    "leaf_bed"
+   ],
+   "ok": "水底の柔らかい落ち葉をゆっくりと食べた。",
+   "full": 20
+  }
+ ],
+ "special": [
+  {
+   "id": "rainy_walk",
+   "ja": "雨の日の徘徊",
+   "ds": "雨の日には川を離れ、林床や路上まで歩き回る",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": true,
+   "ok": "湿った空気に誘われ、沢沿いの林床へと足を踏み出した。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "iwana",
+   "ja": "イワナ",
+   "kind": "fish",
+   "places": [
+    "stream_rock_bottom",
+    "open_channel"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "銀色の影が、速い流れの中を電光石火に突き抜ける。",
+    "大きな口が、石の隙間に潜む小さな体を一気に吸い込む。"
+   ],
+   "again": [
+    [
+     "また、あの銀色の影だ。流れの速い場所で待ち構えている。",
+     "鋭い眼光が、石の隙間に潜む小さな影を捉えている。"
+    ]
+   ],
+   "bye": "甲羅が硬く大きくなり、魚の口にはもう入らなくなった。"
+  },
+  {
+   "id": "itachi",
+   "ja": "イタチ",
+   "kind": "mammal",
+   "places": [
+    "stream_rock_bottom",
+    "deep_crevice",
+    "stream_edge"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "しなやかな細い体が、岩の狭い隙間を音もなく滑り込んでくる。",
+    "鋭い牙が、逃げ場のない岩陰で甲羅を強く噛み砕く。"
+   ],
+   "again": [
+    [
+     "また、あのしなやかな体が隙間から覗いている。",
+     "執拗に石をひっくり返し、潜伏場所を暴こうとする。"
+    ]
+   ],
+   "bye": "岩のさらに深い裂け目へ逃げ込み、追跡をかわした。"
+  },
+  {
+   "id": "karasu",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "roadside",
+    "forest_floor",
+    "stream_edge"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "大きな黒い翼が、雨の日の路上に音を立てて降り立つ。",
+    "強靭なくちばしが、逃げ場のない地面を力強く叩く。"
+   ],
+   "again": [
+    [
+     "また、あの黒い翼が頭上を旋回している。",
+     "鋭いくちばしが、雨の日の路上を執拗に突き回す。"
+    ]
+   ],
+   "bye": "深い落ち葉の層に身を隠し、空からの視線を遮った。"
+  },
+  {
+   "id": "azuma_hikigaeru",
+   "ja": "アズマヒキガエル",
+   "kind": "amphibian",
+   "places": [
+    "stream_edge",
+    "forest_floor"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "いぼのある重い体が、湿った土の上をゆっくりと這い寄る。",
+    "粘つく長い舌が、一瞬の隙をついて体を絡めとる。"
+   ]
+  },
+  {
+   "id": "kawasemi",
+   "ja": "カワセミ",
+   "kind": "bird",
+   "places": [
+    "stream_edge",
+    "open_channel"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "青い閃光が、水面を切り裂いて垂直に突き刺さる。",
+    "鋭いくちばしが、浅瀬に潜む体を正確に捉える。"
+   ]
+  },
+  {
+   "id": "yamasemi",
+   "ja": "ヤマセミ",
+   "kind": "bird",
+   "places": [
+    "stream_edge",
+    "open_channel"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "枝の上から鋭い目で水底を凝視し、獲物を定めている。",
+    "猛烈な勢いで急降下し、水飛沫と共に体を挟み込む。"
+   ]
+  },
+  {
+   "id": "mozu",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "forest_floor",
+    "stream_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "小柄な体が、林床の落ち葉の上を素早く跳ね回る。",
+    "鋭いくちばしで体を掴み、近くの鋭い棘に突き刺そうとする。"
+   ]
+  },
+  {
+   "id": "sagi",
+   "ja": "サギ",
+   "kind": "bird",
+   "places": [
+    "stream_edge",
+    "open_channel"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "長い脚が、浅瀬に静かに、彫像のように佇んでいる。",
+    "黄色いくちばしが、水底から一気に突き上げられる。"
+   ]
+  },
+  {
+   "id": "inoshishi",
+   "ja": "イノシシ",
+   "kind": "mammal",
+   "places": [
+    "leaf_bed",
+    "forest_floor",
+    "stream_rock_bottom"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "太い鼻先が、川底の石や落ち葉を激しく掘り返す。",
+    "無作法な蹄が、潜んでいた場所を無慈悲に踏み潰す。"
+   ]
+  },
+  {
+   "id": "namazu",
+   "ja": "ナマズ",
+   "kind": "fish",
+   "places": [
+    "stream_rock_bottom",
+    "leaf_bed"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥にまぎれた大きな口が、底を這う振動を察知する。",
+    "暗い水底から、獲物を一気に飲み込む真空のような吸引力が襲う。"
+   ]
+  },
+  {
+   "id": "human_collector",
+   "ja": "人間の採集者",
+   "kind": "human",
+   "places": [
+    "stream_edge",
+    "stream_rock_bottom"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "大きな手が、潜んでいた石を乱暴にひっくり返す。",
+    "網が水底をさらい、逃げ場のない体を一気に掬い上げる。"
+   ],
+   "lose": "捕獲され、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "雨が降り、辺りがしっとりと濡れた。どこへ移動するか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "林床や路上へ這い出す",
+     "ds": "陸上の虫などの餌が得やすい。鳥や人間に見つかる危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "forest_floor",
+     "say": "濡れた地面を辿り、森の奥へと足を踏み出した。",
+     "chip": "陸上へ進出"
+    },
+    {
+     "ja": "石の下に潜み待つ",
+     "ds": "外敵から身を守れる。得られる餌は限られる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "stream_rock_bottom",
+     "say": "冷たい水に身を任せ、雨が止むのをじっと待った。",
+     "chip": "石の下で待機"
+    }
+   ]
+  },
+  {
+   "q": "夜の帳が下り、活動の時間となった。どこで餌を探すか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "落ち葉が溜まる川底を漁る",
+     "ds": "有機物や小さな虫が豊富。水流に流されるリスクがある",
+     "fx": {
+      "food": 1,
+      "danger": 0
+     },
+     "goto": "leaf_bed",
+     "say": "積もった落ち葉をひっくり返し、小さな虫を捕らえた。",
+     "chip": "落ち葉層を漁る"
+    },
+    {
+     "ja": "流れの速い本流へ出る",
+     "ds": "流れてくる餌を捕らえられる。大型の魚に見つかりやすい",
+     "fx": {
+      "food": 0,
+      "danger": 1
+     },
+     "goto": "open_channel",
+     "say": "激しい流れに抗いながら、流れてくる餌を狙った。",
+     "chip": "本流へ出る"
+    }
+   ]
+  },
+  {
+   "q": "腹に抱えた卵が成熟してきた。どこで孵化まで過ごすか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "岩の深い隙間に潜む",
+     "ds": "外敵から卵を確実に守れる。餌を得る機会が減る",
+     "fx": {
+      "kids": 1,
+      "danger": -1
+     },
+     "goto": "deep_crevice",
+     "say": "外敵の届かない狭い岩隙に身を潜め、卵を慈しんだ。",
+     "chip": "岩隙で保護"
+    },
+    {
+     "ja": "水没した朽ち木の下に潜む",
+     "ds": "周囲に餌が多い。隙間が広く、天敵に狙われやすい",
+     "fx": {
+      "kids": 0,
+      "danger": 1
+     },
+     "goto": "submerged_log",
+     "say": "朽ち木の陰に隠れ、周囲の気配を警戒しながら卵を抱えた。",
+     "chip": "朽ち木の下で保護"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "p": 0.5,
+   "say": "母ガニの腹から離れ、淡黄褐色の小さな体で石の隙間に潜り込んだ。"
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "young"
+   ],
+   "p": 0.3,
+   "say": "成長に伴い、体色が次第に地域特有の色へと変化した。"
+  },
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "上空からカワセミが急降下し、鋭い嘴に挟まれ、傷を負った。",
+   "danger": 1
+  },
+  {
+   "month": [
+    12
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.9,
+   "say": "水温が下がり、岩陰の深い場所で冬眠に入った。"
+  }
+ ],
+ "lead": "山の清流で生まれ、岩陰に潜み、夜に餌を探し、数年で子を抱えて川底に戻る。",
+ "texts": {
+  "move": "{to}の水流へ潜った",
+  "fleeJa": "天敵に追われ岩の隙間へ逃げ込む",
+  "restJa": "岩の下で静かに休む",
+  "watchJa": "水面の微かな揺れを警戒する",
+  "lieJa": "流れの陰に身を潜める",
+  "lastMemory": "雨上がりの冷たい水が体を包んだ感触を思い出す"
+ },
+ "intro": [
+  "木曽谷の渓流、清らかな水の中で卵包から稚ガニが孵化した",
+  "透明な殻を持ち、岩の間をゆっくりと這い進む"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を抱えて川底に戻した",
+   "line": "産んだ{kids}個の卵が水中で育ち、次の世代となる",
+   "mem": "母の腹に抱かれた稚ガニの揺れる姿を思い出す"
+  },
+  {
+   "minKids": 10,
+   "title": "多くの子を残した",
+   "line": "{kids}個の卵が岩陰で守られ、春に孵化した",
+   "mem": "多数の稚ガニが岩の間で闘う光景を思い出す"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_rain",
+   "text": "春の雨が降り、流れが増したときの冷たさを覚えている"
+  },
+  {
+   "flag": "winter_hibernate",
+   "text": "冬の岩陰で凍える水の中でじっと身を潜めた夜を思い出す"
+  },
+  {
+   "flag": "night_hunt",
+   "text": "月明かりの下、岩の隙間から小さな昆虫を捕らえる瞬間を覚えている"
+  }
+ ],
+ "noKids": {
+  "title": "子を残さずに消えた",
+  "line": "産卵期を迎えず、岩陰で静かに命を閉じた"
+ },
+ "facts": [
+  {
+   "text": "寿命は数年から十年ほどで、成熟は約3年である。清流の岩陰で暮らし、夜行性である。",
+   "quote": "寿命は数年-10年程とされ、成熟は3年頃である（Wikipedia）"
+  },
+  {
+   "text": "雌は夏に約50個の大粒卵を腹部で抱え、直接稚ガニとして孵化する。幼生は母の腹で保護され、数日後に岩陰へ放たれる。",
+   "quote": "雌は直径2mmほどの卵を数十個産卵し、腹肢に抱えて保護する。幼生は卵の中で変態し、孵化する際には既にカニの姿となっている（Wikipedia）"
+  }
+ ]
+}

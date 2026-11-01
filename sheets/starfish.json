@@ -1,0 +1,376 @@
+{
+ "id": "starfish",
+ "ja": "イトマキヒトデ",
+ "sci": "Patiria pectinifera",
+ "status": "draft",
+ "type": "drifter",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本沿岸",
+  "geo": "Coastal waters of Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "open_sea_surface",
+   "ja": "沿岸の表層",
+   "danger": 2,
+   "cover": false,
+   "about": "卵から孵化したビピンナリア幼生が漂う。微小なプランクトンを食べて成長する。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.271,
+   "lon": 132.309
+  },
+  {
+   "id": "current_edge",
+   "ja": "潮目",
+   "danger": 2,
+   "cover": false,
+   "about": "流れがぶつかり、餌となるプランクトンが密集する。ブラキオラリア幼生へと成長し、着底の機会を待つ。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.271,
+   "lon": 134.709
+  },
+  {
+   "id": "shallow_rocky_bottom",
+   "ja": "浅い岩礁の底",
+   "danger": 2,
+   "cover": true,
+   "about": "稚ヒトデとして着底する場所。岩の隙間で小型の無脊椎動物を捕食する。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.147,
+   "lon": 134.179
+  },
+  {
+   "id": "coarse_sediment",
+   "ja": "粗い砂礫地",
+   "danger": 1,
+   "cover": true,
+   "about": "泥よりも粗い底質を好む。死骸やデトリタスを胃を反転させて消化する。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.675,
+   "lon": 131.908
+  },
+  {
+   "id": "rocky_surface",
+   "ja": "岩場の表面",
+   "danger": 2,
+   "cover": false,
+   "about": "管足で岩に貼りつき、貝類や海藻を食べる。外敵にさらされやすい。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.104,
+   "lon": 130.147
+  },
+  {
+   "id": "tide_pool",
+   "ja": "潮だまり",
+   "danger": 1,
+   "cover": true,
+   "about": "潮が引いた後も水が残る場所。環境変化に強く、多様な餌が得られる。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 33.23,
+   "lon": 129.606
+  },
+  {
+   "id": "subtidal_deep",
+   "ja": "水深40メートルの低層",
+   "danger": 1,
+   "cover": true,
+   "about": "比較的安定した水温の環境。岩陰に潜み、ゆっくりと餌を探す。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 32.867,
+   "lon": 131.908
+  },
+  {
+   "id": "predator_reef",
+   "ja": "捕食者の多い岩礁",
+   "danger": 3,
+   "cover": false,
+   "about": "ボウシュウボラやウニが徘徊する。捕食されれば身を裂かれる。",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria",
+    "juv",
+    "adult"
+   ],
+   "lat": 32.77,
+   "lon": 133.805
+  }
+ ],
+ "start": {
+  "place": "open_sea_surface",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本沿岸",
+  "lon0": 128.075,
+  "lon1": 136.24,
+  "lat0": 37.678,
+  "lat1": 31.239,
+  "k": 61,
+  "labels": [
+   [
+    37.29166,
+    132.1575,
+    "日本沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "coarse_sediment",
+   "open_sea_surface"
+  ],
+  [
+   "open_sea_surface",
+   "subtidal_deep"
+  ],
+  [
+   "current_edge",
+   "predator_reef"
+  ],
+  [
+   "current_edge",
+   "shallow_rocky_bottom"
+  ],
+  [
+   "coarse_sediment",
+   "shallow_rocky_bottom"
+  ],
+  [
+   "coarse_sediment",
+   "rocky_surface"
+  ],
+  [
+   "rocky_surface",
+   "tide_pool"
+  ],
+  [
+   "subtidal_deep",
+   "tide_pool"
+  ],
+  [
+   "predator_reef",
+   "subtidal_deep"
+  ]
+ ],
+ "size": {
+  "ja": "輻長",
+  "unit": "cm",
+  "start": 0.1
+ },
+ "stats": {
+  "run": {
+   "ja": "管足の歩行力",
+   "use": "岩場をゆっくり移動する時に効く"
+  },
+  "sense": {
+   "ja": "先端の視覚",
+   "use": "光の方向や明暗を感じる時に効く"
+  },
+  "forage": {
+   "ja": "胃の反転能力",
+   "use": "獲物を包み込んで消化する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "bipinnaria",
+   "ja": "ビピンナリア幼生",
+   "days": 30,
+   "hunger": 10,
+   "grow": 0.1
+  },
+  {
+   "id": "brachiolaria",
+   "ja": "ブラキオラリア幼生",
+   "fromAge": 0.1,
+   "days": 30,
+   "hunger": 12,
+   "grow": 0.2,
+   "goal": "着底する",
+   "enter": "腕の原基が発達し、底に付く準備が整った。"
+  },
+  {
+   "id": "juv",
+   "ja": "稚ヒトデ",
+   "fromAge": 0.2,
+   "days": 60,
+   "hunger": 15,
+   "grow": 0.5,
+   "goal": "体を大きくする",
+   "enter": "岩場に着底し、五本の腕を持つヒトデの形になった。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 20,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "生殖腺が成熟し、卵と精子を放てるようになった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   3,
+   10
+  ],
+  "text": "管足の力が衰え、岩場から剥がれて静かに朽ち果てた。"
+ },
+ "breeding": {
+  "ja": "産卵",
+  "ds": "春と秋に、海中で卵と精子を放出して受精させる",
+  "months": [
+   3,
+   4,
+   9,
+   10
+  ],
+  "places": [
+   "shallow_rocky_bottom"
+  ],
+  "perYear": 2,
+  "kids": [
+   100000,
+   500000
+  ],
+  "many": 500000,
+  "label": {
+   "ja": "放った卵",
+   "unit": "個",
+   "child": "受精して漂い始めた卵の一粒"
+  },
+  "ok": "海中に{born}個の卵を放ち、次世代へと繋いだ。",
+  "ng": "体力が不足し、十分な数の卵を放てなかった。",
+  "goal1": "産卵する",
+  "goal2": "50万個の卵を放つ"
+ },
+ "foods": [
+  {
+   "id": "zooplankton",
+   "ja": "動物プランクトンを食べる",
+   "name": "動物プランクトン",
+   "ds": "幼生期に海中を漂いながら捕食する",
+   "stages": [
+    "bipinnaria",
+    "brachiolaria"
+   ],
+   "places": [
+    "open_sea_surface",
+    "current_edge"
+   ],
+   "rich": [
+    "current_edge"
+   ],
+   "ok": "海中を漂い、小さなプランクトンを捕らえた。",
+   "full": 20
+  },
+  {
+   "id": "benthic_food",
+   "ja": "底生生物を食べる",
+   "name": "貝類や死骸",
+   "ds": "胃を反転させて獲物を包み込み、体外で消化する",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "shallow_rocky_bottom",
+    "rocky_surface",
+    "tide_pool",
+    "coarse_sediment"
+   ],
+   "rich": [
+    "shallow_rocky_bottom"
+   ],
+   "ok": "岩場の貝に張り付き、胃を広げて包み込んだ。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "stomach_evert",
+   "ja": "胃を反転させる",
+   "ds": "口から胃を外に押し出し、大きな獲物を包み込んで消化する",
+   "stages": [
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.7,
+   "calm": true,
+   "ok": "獲物を完全に覆い尽くし、強力な消化液で溶かした。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "stages": [
+    "bipinnaria"
+   ],
+   "to": "open_sea_surface",
+   "say": "潮の流れに乗り、広い海へと漂い出した。"
+  },
+  {
+   "months": [
+    5,
+    6,
+    11,
+    12
+   ],
+   "stages": [
+    "brachiolaria"
+   ],
+   "to": "shallow_rocky_bottom",
+   "say": "海流に運ばれ、定住するための浅い岩礁へと降りた。"
+  }
+ ]
+}

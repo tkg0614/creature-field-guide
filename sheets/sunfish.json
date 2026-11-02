@@ -1,0 +1,149 @@
+{
+ "id": "sunfish",
+ "ja": "マンボウ",
+ "sci": "Mola mola",
+ "status": "draft",
+ "type": "fish",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "北太平洋から温帯海域",
+  "geo": "North Pacific",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "spawn_ground",
+   "ja": "外洋の表層",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "無数の卵が漂う海面近く。仔魚はトゲに覆われ、プランクトンと共に漂う。",
+   "stages": [],
+   "lat": 41.794,
+   "lon": 140.756
+  },
+  {
+   "id": "subtropical_sea",
+   "ja": "亜熱帯の海域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "暖かい海。体を大きく成長させながら、小動物を捕食する。",
+   "stages": [],
+   "lat": 41.794,
+   "lon": 143.156
+  },
+  {
+   "id": "mesopelagic_zone",
+   "ja": "中深層の海域",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "冷たい深海。主食であるクラゲを求めて深く潜る。",
+   "stages": [],
+   "lat": 43.872,
+   "lon": 142.256
+  },
+  {
+   "id": "surface_layer",
+   "ja": "海面付近",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "太陽光が降り注ぐ海面。横になって体を温め、寄生虫を落とす。",
+   "stages": [],
+   "lat": 43.041,
+   "lon": 139.856
+  },
+  {
+   "id": "kuroshio_current",
+   "ja": "黒潮流域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "日本近海を流れる暖流。効率よく移動するための通り道となる。",
+   "stages": [],
+   "lat": 41.794,
+   "lon": 138.356
+  },
+  {
+   "id": "japan_offshore",
+   "ja": "日本の沖合",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "成熟した個体が回遊する豊かな海。大型の個体が集まる。",
+   "stages": [],
+   "lat": 39.716,
+   "lon": 139.256
+  },
+  {
+   "id": "temperate_sea",
+   "ja": "温帯の海域",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "北方の冷たい海。季節に応じて水温の変化を追いながら泳ぐ。",
+   "stages": [],
+   "lat": 40.547,
+   "lon": 141.656
+  }
+ ],
+ "start": {
+  "place": "spawn_ground",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "北太平洋から温帯海域",
+  "lon0": 136.916,
+  "lon1": 144.596,
+  "lat0": 45.312,
+  "lat1": 38.276,
+  "k": 65,
+  "labels": [
+   [
+    44.88984,
+    140.756,
+    "北太平洋から温帯海域"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "spawn_ground",
+   "surface_layer"
+  ],
+  [
+   "spawn_ground",
+   "temperate_sea"
+  ],
+  [
+   "subtropical_sea",
+   "temperate_sea"
+  ],
+  [
+   "mesopelagic_zone",
+   "subtropical_sea"
+  ],
+  [
+   "mesopelagic_zone",
+   "surface_layer"
+  ],
+  [
+   "kuroshio_current",
+   "surface_layer"
+  ],
+  [
+   "japan_offshore",
+   "kuroshio_current"
+  ],
+  [
+   "japan_offshore",
+   "temperate_sea"
+  ]
+ ]
+}

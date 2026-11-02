@@ -1,0 +1,772 @@
+{
+ "id": "whiteshark",
+ "ja": "ホホジロザメ",
+ "sci": "Carcharodon carcharias",
+ "status": "checked",
+ "type": "fish",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "世界各地の温帯・熱帯海域",
+  "geo": "Global temperate and tropical oceans",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "south_africa_shallow",
+   "ja": "南アフリカ沿岸の浅瀬",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "仔サメが誕生し、成長するまでの保育場。小魚を追いながら、生き残るための体力をつける。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -34.5,
+   "lon": 19
+  },
+  {
+   "id": "california_coast",
+   "ja": "カリフォルニア沿岸",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "湧昇流により餌となる小魚が豊富に集まる。若魚が急速に体を大きくさせる場所である。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -34.5,
+   "lon": 21.4
+  },
+  {
+   "id": "pacific_open",
+   "ja": "北太平洋の外洋",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "目的地へ向かう果てしない青い世界。強い潮の流れに乗り、数千キロを回遊する。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -32.422,
+   "lon": 20.5
+  },
+  {
+   "id": "guadalupe_island",
+   "ja": "グアダルーペ島周辺",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "アザラシの繁殖地が近い。成魚が集まり、海面へ飛び出す獲物を待ち伏せする。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -33.253,
+   "lon": 18.1
+  },
+  {
+   "id": "australia_coast",
+   "ja": "オーストラリア沿岸",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "多様な海洋生物が暮らす豊かな海域。大型の魚や海洋哺乳類を狙い、捕食を行う。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -34.5,
+   "lon": 16.6
+  },
+  {
+   "id": "southern_ocean_edge",
+   "ja": "南大洋の境界域",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "天敵であるシャチの活動圏と重なる危険な海。不意に襲われ、肝臓を狙われる。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -36.578,
+   "lon": 17.5
+  },
+  {
+   "id": "atlantic_deep",
+   "ja": "北大西洋の深海域",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "水温が低い深場へ潜る。エネルギーを温存し、次の回遊に向けた休息をとる。",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "lat": -35.747,
+   "lon": 19.9
+  }
+ ],
+ "start": {
+  "place": "south_africa_shallow",
+  "month": 9,
+  "day": 1
+ },
+ "region": {
+  "ja": "世界各地の温帯・熱帯海域",
+  "lon0": 15.16,
+  "lon1": 22.84,
+  "lat0": -30.982,
+  "lat1": -38.018,
+  "k": 65,
+  "labels": [
+   [
+    -31.40416,
+    19,
+    "世界各地の温帯・熱帯海域"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "guadalupe_island",
+   "south_africa_shallow"
+  ],
+  [
+   "atlantic_deep",
+   "south_africa_shallow"
+  ],
+  [
+   "atlantic_deep",
+   "california_coast"
+  ],
+  [
+   "california_coast",
+   "pacific_open"
+  ],
+  [
+   "guadalupe_island",
+   "pacific_open"
+  ],
+  [
+   "australia_coast",
+   "guadalupe_island"
+  ],
+  [
+   "australia_coast",
+   "southern_ocean_edge"
+  ],
+  [
+   "atlantic_deep",
+   "southern_ocean_edge"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 120
+ },
+ "stats": {
+  "run": {
+   "ja": "突進力",
+   "use": "獲物を奇襲する時に効く"
+  },
+  "sense": {
+   "ja": "電気受容",
+   "use": "砂に潜む獲物や血の匂いを辿る時に効く"
+  },
+  "forage": {
+   "ja": "捕食力",
+   "use": "アザラシなどの厚い皮を噛み切る時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "pup",
+   "ja": "仔魚",
+   "days": 150,
+   "hunger": 12,
+   "grow": 10,
+   "goal": "未成魚になる",
+   "enter": "母体から生まれ、浅瀬に身を潜めた。"
+  },
+  {
+   "id": "young",
+   "ja": "未成魚",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 16,
+   "grow": 5,
+   "goal": "成魚になる",
+   "enter": "体格が上がり、より広い海域へと回遊を始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 12,
+   "days": 120,
+   "hunger": 20,
+   "grow": 1,
+   "adult": true,
+   "goal": "頂点に立つ",
+   "enter": "成熟し、海獣を主食とする海の覇者となった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   30,
+   70
+  ],
+  "text": "長い年月をかけて海を巡った巨体が、静かに深海へと沈んだ。"
+ },
+ "breeding": {
+  "ja": "胎内での孵化と出産",
+  "ds": "胎内で卵を孵化させ、仔魚として産み出す",
+  "months": [
+   11,
+   12,
+   1
+  ],
+  "places": [
+   "south_africa_shallow",
+   "california_coast"
+  ],
+  "perYear": 1,
+  "kids": [
+   2,
+   12
+  ],
+  "many": 5,
+  "label": {
+   "ja": "仔魚",
+   "unit": "匹",
+   "child": "一匹の仔魚"
+  },
+  "ok": "{born}匹の仔魚を産み落とした。",
+  "ng": "繁殖地にたどり着けず、次世代を残せなかった。",
+  "goal1": "仔魚を産む",
+  "goal2": "仔魚を5匹産む"
+ },
+ "foods": [
+  {
+   "id": "small_fish",
+   "ja": "小魚を追う",
+   "name": "小型の魚類",
+   "ds": "浅瀬で素早く泳ぐ小魚を捕らえる",
+   "stages": [
+    "pup",
+    "young"
+   ],
+   "places": [
+    "south_africa_shallow",
+    "california_coast",
+    "australia_coast"
+   ],
+   "rich": [
+    "south_africa_shallow"
+   ],
+   "ok": "小魚を鋭い歯で捕らえ、素早く飲み込んだ。",
+   "full": 30
+  },
+  {
+   "id": "marine_mammals",
+   "ja": "海獣を襲う",
+   "name": "アザラシ・イルカ",
+   "ds": "水面から猛烈な勢いで飛び上がり、獲物を仕留める",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "south_africa_shallow",
+    "california_coast",
+    "guadalupe_island",
+    "australia_coast"
+   ],
+   "rich": [
+    "guadalupe_island"
+   ],
+   "ok": "アザラシの厚い皮を噛み切り、腹を満たした。",
+   "full": 60
+  },
+  {
+   "id": "scavenge",
+   "ja": "死骸を漁る",
+   "name": "クジラの死骸",
+   "ds": "漂う巨大な死骸を嗅ぎつけ、大量に食べる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "pacific_open",
+    "atlantic_deep",
+    "southern_ocean_edge"
+   ],
+   "rich": [
+    "pacific_open"
+   ],
+   "ok": "クジラの死骸にたどり着き、飽きるまで食らった。",
+   "full": 80
+  }
+ ],
+ "special": [
+  {
+   "id": "rete_mirabile",
+   "ja": "部分的な温血性",
+   "ds": "筋肉の熱を保持し、冷たい海でも活動的に泳げる",
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "体温を維持し、冷たい深海から急加速で獲物を襲った。",
+   "lose": "シャチに襲われ、傷を負った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "to": "pacific_open",
+   "say": "沿岸を離れ、餌を求めて太平洋の外洋へと回遊した。"
+  },
+  {
+   "months": [
+    11,
+    12,
+    1
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "south_africa_shallow",
+   "say": "繁殖の季節に合わせ、南アフリカの沿岸へと戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "orca",
+   "ja": "シャチ",
+   "kind": "mammal",
+   "places": [
+    "south_africa_shallow",
+    "california_coast",
+    "pacific_open",
+    "guadalupe_island",
+    "australia_coast",
+    "southern_ocean_edge",
+    "atlantic_deep"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "白黒の巨躯が、冷たい海を切り裂いて猛スピードで突進してくる。",
+    "水中に鋭いクリック音が反響し、複数の影が逃げ場を狭めていく。"
+   ],
+   "again": [
+    [
+     "また、あの鋭い眼光を持つシャチの群れだ。"
+    ],
+    [
+     "群れをなしたシャチが、執拗に追跡してくる。"
+    ]
+   ],
+   "bye": "外洋の深海へと急速潜行し、シャチの追撃を完全に振り切った。"
+  },
+  {
+   "id": "white_shark_adult",
+   "ja": "成魚のホホジロザメ",
+   "kind": "fish",
+   "places": [
+    "south_africa_shallow",
+    "california_coast",
+    "australia_coast"
+   ],
+   "stages": [
+    "pup",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "自分より遥かに巨大な影が、浅瀬の底から静かに浮上する。",
+    "圧倒的な顎の大きさが、逃げ場のない仔魚を飲み込もうとする。"
+   ],
+   "again": [
+    [
+     "また、背びれに深い傷のある巨大な個体だ。"
+    ],
+    [
+     "傷のある巨躯が、獲物を定めるようにゆっくりと旋回している。"
+    ]
+   ],
+   "bye": "体が十分に成長し、もう同種に捕食される心配はなくなった。"
+  },
+  {
+   "id": "mako",
+   "ja": "アオザメ",
+   "kind": "fish",
+   "places": [
+    "pacific_open",
+    "atlantic_deep",
+    "southern_ocean_edge"
+   ],
+   "stages": [
+    "pup",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "藍色の流線形が、猛烈な速度で側方から突き抜ける。",
+    "鋭い歯を持つアオザメが、未成魚の隙を突いて襲いかかる。"
+   ]
+  },
+  {
+   "id": "tiger_shark",
+   "ja": "イタチザメ",
+   "kind": "fish",
+   "places": [
+    "south_africa_shallow",
+    "australia_coast",
+    "california_coast"
+   ],
+   "stages": [
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "横縞の模様を持つ巨躯が、濁った海中からゆっくりと近づく。",
+    "強力な顎が、未成魚の体を強く締め付ける。"
+   ]
+  },
+  {
+   "id": "large_tuna",
+   "ja": "大型のマグロ",
+   "kind": "fish",
+   "places": [
+    "pacific_open",
+    "atlantic_deep"
+   ],
+   "stages": [
+    "pup"
+   ],
+   "sev": 1,
+   "fast": true,
+   "texts": [
+    "巨大なマグロの群れが、高速で泳ぎながら小魚ごと仔魚を追い詰める。",
+    "銀色の巨体が、水流を乱しながら猛スピードで突進してくる。"
+   ]
+  },
+  {
+   "id": "commercial_longline",
+   "ja": "商業用の延縄",
+   "kind": "human",
+   "places": [
+    "pacific_open",
+    "atlantic_deep",
+    "southern_ocean_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海中に、餌のついた無数の針が静かに垂れ下がっている。",
+    "漂う獲物の臭いに誘われ、金属の仕掛けが口元に迫る。"
+   ],
+   "lose": "鋭い釣り針が口元を貫いて裂き、傷を負った。"
+  },
+  {
+   "id": "beach_net",
+   "ja": "防護ネット",
+   "kind": "human",
+   "places": [
+    "south_africa_shallow",
+    "australia_coast",
+    "california_coast"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海岸線に沿って、透明なナイロンの壁が張り巡らされている。",
+    "泳ぎの中で不意に網に接触し、身動きが取れなくなる。"
+   ],
+   "lose": "網に絡まって激しく暴れ、皮膚が深く裂けて傷を負った。"
+  },
+  {
+   "id": "recreational_fishing",
+   "ja": "遊漁",
+   "kind": "human",
+   "places": [
+    "guadalupe_island",
+    "california_coast",
+    "australia_coast"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "水面から太いラインが降りてきて、大きなルアーが目の前で踊る。",
+    "好奇心で近づいた瞬間、強力な引き上げ力が体を強引に吊り上げる。"
+   ],
+   "lose": "太い釣り糸がエラや鰭に食い込み、傷を負った。"
+  },
+  {
+   "id": "trawl_net",
+   "ja": "底引き網",
+   "kind": "human",
+   "places": [
+    "atlantic_deep",
+    "pacific_open"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海底を這う巨大な網が、砂煙を上げながらすべてを飲み込んでいく。",
+    "逃げ場のない袋状の空間に押し込められ、他の魚と激突する。"
+   ],
+   "lose": "網の壁に激突し、ひれが裂けて傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "沿岸の浅瀬で育った。そろそろ外洋へ出る時だ。どこへ向かうか",
+   "stages": [
+    "pup"
+   ],
+   "opts": [
+    {
+     "ja": "カリフォルニア沿岸へ北上する",
+     "ds": "餌となる小魚が豊富。長距離の移動で体力を消耗する",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "california_coast",
+     "say": "波に乗り、北方の豊かな海域を目指して泳ぎ出した。",
+     "chip": "カリフォルニアへ"
+    },
+    {
+     "ja": "南アフリカの浅瀬に留まる",
+     "ds": "移動の負担が少ない。競争相手が多く餌が限られる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "south_africa_shallow",
+     "say": "慣れ親しんだ浅瀬に身を潜め、獲物を待ち構えた。",
+     "chip": "沿岸に留まる"
+    }
+   ]
+  },
+  {
+   "q": "体格が大きくなり、獲物の好みが変わった。どこで狩りを行うか",
+   "stages": [
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "グアダルーペ島周辺でアザラシを狙う",
+     "ds": "高カロリーな獲物が集まる。他の大型個体との衝突がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "guadalupe_island",
+     "say": "切り立った岩礁が続く島へ向かい、海面を跳ねるアザラシを追った。",
+     "chip": "アザラシを狙う"
+    },
+    {
+     "ja": "北太平洋の外洋を回遊する",
+     "ds": "天敵に遭遇する確率が下がる。餌の密度が低く飢えやすい",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "pacific_open",
+     "say": "底の見えない紺碧の外洋へと漕ぎ出し、孤独な旅を始めた。",
+     "chip": "外洋を回遊"
+    }
+   ]
+  },
+  {
+   "q": "成熟の時期を迎えた。冬の回遊先をどこに定めるか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "南大洋の境界域へ南下する",
+     "ds": "冷たい海だが餌が豊富。水温低下により活動性が落ちる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "southern_ocean_edge",
+     "say": "体温を保つ能力を活かし、氷山が漂う南の海へと潜った。",
+     "chip": "南大洋へ"
+    },
+    {
+     "ja": "北大西洋の深海域へ移動する",
+     "ds": "安定した環境で休息できる。獲物に出会う頻度が低い",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "atlantic_deep",
+     "say": "光の届かない深海へと降り、静寂の中で時を過ごした。",
+     "chip": "北大西洋へ"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "stages": [
+    "pup",
+    "young",
+    "adult"
+   ],
+   "p": 0.05,
+   "say": "シャチの群れに襲われ、肝臓を食い荒らされ、傷を負った。",
+   "full": -30
+  },
+  {
+   "month": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "漂流するクジラの死骸に遭遇し、数日間にわたって飽食した。",
+   "full": 40
+  },
+  {
+   "month": [
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "pup",
+    "young"
+   ],
+   "p": 0.08,
+   "say": "海岸付近の防護ネットに絡まり、もがいた末に脱出した。",
+   "full": -10
+  }
+ ],
+ "lead": "南アフリカ沖の浅瀬で生まれ、成長すると遠くの海へ旅し、獲物を追い、次世代へ命をつなぐ。",
+ "texts": {
+  "move": "{to}へ、力強く泳いでいく。",
+  "fleeJa": "尾びれを激しく振って急加速し、捕食者から逃れる。",
+  "restJa": "ゆっくり泳ぎながらエネルギーを蓄える。",
+  "watchJa": "水温と獲物の影を探り続ける。",
+  "lieJa": "深海の暗闇に潜り、待ち伏せる。",
+  "lastMemory": "広がる青い海原で獲物を追いかけた日々を思い出す。"
+ },
+ "intro": [
+  "南アフリカ沿岸の浅瀬で、胎内で育った仔魚が生まれた。",
+  "小さな体で海面近くを漂い、光を浴びながら泳ぎ始めた。"
+ ],
+ "wins": [
+  {
+   "minKids": 2,
+   "title": "子を残す",
+   "line": "{kids}匹の仔魚を、潮流に乗せて産んだ。",
+   "mem": "母の背中に抱かれた仔魚たちが海へ放たれた光景を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "浅瀬で小魚を群れで捕食した頃を思い出す。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "氷のように冷たい深海でアザラシを狙った瞬間を思い出す。"
+  }
+ ],
+ "noKids": {
+  "title": "力尽きる",
+  "line": "次の世代を残すことなく、深い海の底へと沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "The great white shark (Carcharodon carcharias) is a large shark.",
+   "ja": "ホホジロザメは大型のサメである。"
+  },
+  {
+   "quote": "It has about 300 triangular, serrated teeth that are continuously replaced.",
+   "ja": "約300本の三角形で鋸歯状の歯を持ち、絶えず生え変わる。"
+  },
+  {
+   "quote": "White sharks inhabit tropical and temperate ocean waters around the world and can be found both near coasts and in the open ocean.",
+   "ja": "ホホジロザメは熱帯から温帯の海域に生息し、沿岸でも外洋でも見られる。"
+  },
+  {
+   "quote": "The species reproduces with pups hatching from eggs inside the female before being born live.",
+   "ja": "胎内で卵が孵化し、仔魚として生まれる。"
+  }
+ ]
+}

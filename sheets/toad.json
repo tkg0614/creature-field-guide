@@ -1,0 +1,409 @@
+{
+ "id": "toad",
+ "ja": "ニホンヒキガエル",
+ "sci": "Bufo japonicus",
+ "status": "draft-ng",
+ "type": "reptile_amphibian",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "近畿地方の里山",
+  "geo": "Kinki",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "pond",
+   "ja": "池の浅瀬",
+   "danger": 2,
+   "cover": true,
+   "about": "水草に卵が紐状に絡みつく。オオキベリアオゴミムシの幼虫に狙われる。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.773,
+   "lon": 135.493
+  },
+  {
+   "id": "under_stone",
+   "ja": "石や倒木の下",
+   "danger": 1,
+   "cover": true,
+   "about": "昼間の休息場所である。湿り気が保たれ、外敵の視線を遮る。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.773,
+   "lon": 135.525
+  },
+  {
+   "id": "forest_floor",
+   "ja": "雑木林の林床",
+   "danger": 2,
+   "cover": true,
+   "about": "夜間に徘徊し、ミミズや甲虫を捕食する。落ち葉の下に身を潜める。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.801,
+   "lon": 135.513
+  },
+  {
+   "id": "garden",
+   "ja": "民家の庭先",
+   "danger": 2,
+   "cover": true,
+   "about": "昆虫が豊富に集まる。人間やペットに踏まれる危険がある。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.79,
+   "lon": 135.481
+  },
+  {
+   "id": "paddy_edge",
+   "ja": "水田のあぜ道",
+   "danger": 3,
+   "cover": false,
+   "about": "餌となる虫が多い。遮蔽物が少なく、猛禽類に見つかりやすい。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.773,
+   "lon": 135.461
+  },
+  {
+   "id": "underground",
+   "ja": "土の中",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の寒さをしのぐ越冬場所である。深い眠りにつき、外敵から隔絶される。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.745,
+   "lon": 135.473
+  },
+  {
+   "id": "urban_gap",
+   "ja": "都市部の隙間",
+   "danger": 1,
+   "cover": true,
+   "about": "コンクリートの隙間など。適応力が強く、街中でも生息する。",
+   "stages": [
+    "tadpole",
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "lat": 34.756,
+   "lon": 135.505
+  }
+ ],
+ "start": {
+  "place": "pond",
+  "month": 3,
+  "day": 15
+ },
+ "region": {
+  "ja": "近畿地方の里山",
+  "lon0": 135.442,
+  "lon1": 135.544,
+  "lat0": 34.82,
+  "lat1": 34.726,
+  "k": 4902,
+  "labels": [
+   [
+    34.81436,
+    135.493,
+    "近畿地方の里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "garden",
+   "pond"
+  ],
+  [
+   "pond",
+   "urban_gap"
+  ],
+  [
+   "under_stone",
+   "urban_gap"
+  ],
+  [
+   "forest_floor",
+   "under_stone"
+  ],
+  [
+   "forest_floor",
+   "garden"
+  ],
+  [
+   "garden",
+   "paddy_edge"
+  ],
+  [
+   "paddy_edge",
+   "underground"
+  ],
+  [
+   "underground",
+   "urban_gap"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 7
+ },
+ "stats": {
+  "run": {
+   "ja": "跳躍力",
+   "use": "外敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "夜間の嗅覚",
+   "use": "獲物や配偶者を探す時に効く"
+  },
+  "forage": {
+   "ja": "舌の粘着力",
+   "use": "小さな虫を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "tadpole",
+   "ja": "おたまじゃくし",
+   "days": 90,
+   "hunger": 6,
+   "grow": 0.5,
+   "goal": "カエルになる",
+   "enter": "池の底で藻類を食べ、次第に後ろ足が生えてきた。"
+  },
+  {
+   "id": "juvenile",
+   "ja": "幼蛙",
+   "days": 120,
+   "hunger": 8,
+   "grow": 0.3,
+   "goal": "若蛙になる",
+   "enter": "尾が消え、水辺を離れて陸へと散った。"
+  },
+  {
+   "id": "young",
+   "ja": "若蛙",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 10,
+   "grow": 0.2,
+   "goal": "おとなになる",
+   "enter": "体が大きくなり、皮膚のイボがはっきりとしてきた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成蛙",
+   "fromAge": 3,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "enter": "十分な大きさに達し、繁殖が可能になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   5,
+   10
+  ],
+  "text": "冬眠の途中で、静かに土に還った。"
+ },
+ "breeding": {
+  "ja": "池に紐状の卵を産む",
+  "ds": "早春に浅い水場に集まり、長い紐状の卵塊を産みつける",
+  "months": [
+   3,
+   4
+  ],
+  "places": [
+   "pond"
+  ],
+  "perYear": 1,
+  "kids": [
+   6000,
+   14000
+  ],
+  "many": 14000,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "おたまじゃくし"
+  },
+  "ok": "水草に絡まるように、{born}個の卵を産みつけた。",
+  "ng": "水場が見つからず、産卵できなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を10000個産む"
+ },
+ "foods": [
+  {
+   "id": "algae",
+   "ja": "藻類を食む",
+   "name": "藻",
+   "ds": "池の底に生える藻や有機物を食べる",
+   "stages": [
+    "tadpole"
+   ],
+   "places": [
+    "pond"
+   ],
+   "rich": [
+    "pond"
+   ],
+   "ok": "池の底でゆっくりと藻を食んだ。",
+   "full": 10
+  },
+  {
+   "id": "worm",
+   "ja": "ミミズを掘り出す",
+   "name": "ミミズ",
+   "ds": "湿った土の中からミミズを捕食する",
+   "stages": [
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "garden",
+    "paddy_edge"
+   ],
+   "rich": [
+    "forest_floor"
+   ],
+   "ok": "土を掘り起こし、太いミミズを呑み込んだ。",
+   "full": 30
+  },
+  {
+   "id": "ant",
+   "ja": "アリを捕らえる",
+   "name": "アリ",
+   "ds": "地面を歩くアリを素早く舌で捕らえる",
+   "stages": [
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "garden",
+    "urban_gap"
+   ],
+   "rich": [
+    "garden"
+   ],
+   "ok": "行列を作るアリを、次々と舌で絡め取った。",
+   "full": 15
+  },
+  {
+   "id": "beetle",
+   "ja": "甲虫を食べる",
+   "name": "甲虫",
+   "ds": "小型の甲虫を捕食する",
+   "stages": [
+    "juvenile",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "garden",
+    "paddy_edge"
+   ],
+   "rich": [
+    "paddy_edge"
+   ],
+   "ok": "硬い殻を持つ甲虫を、そのまま口に放り込んだ。",
+   "full": 20
+  }
+ ],
+ "special": [
+  {
+   "id": "poison_gland",
+   "ja": "耳後腺の毒",
+   "ds": "耳の後ろの腺から毒を分泌し、外敵を遠ざける",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.7,
+   "calm": true,
+   "ok": "耳後腺から白い毒液を出し、天敵を追い払った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    3
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "pond",
+   "say": "繁殖のため、冬眠地から池へと向かう。"
+  },
+  {
+   "months": [
+    6
+   ],
+   "stages": [
+    "juvenile"
+   ],
+   "to": "forest_floor",
+   "say": "カエルとなり、水辺を離れて陸へ散る。"
+  }
+ ],
+ "fail": {
+  "part": "life",
+  "errors": [
+   "stages.juvenile: fromAge（年）が無い"
+  ],
+  "got": [
+   "size",
+   "stats",
+   "stages",
+   "oldAge",
+   "breeding",
+   "foods",
+   "special",
+   "levelEvery",
+   "migrate"
+  ],
+  "head": "{\"size\":{\"ja\":\"体長\",\"unit\":\"cm\",\"start\":7},\"stats\":{\"run\":{\"ja\":\"跳躍力\",\"use\":\"外敵から逃げる時に効く\"},\"sense\":{\"ja\":\"夜間の嗅覚\",\"use\":\"獲物や配偶者を探す時に効く\"},\"forage\":{\"ja\":\"舌の粘着力\",\"use\":\"小さな虫を捕らえる時に効く\"}},\"stages\":[{\"id\":\"tadpole\",\"ja\":\"おたまじゃくし\",\"days\":90,\"hunger\":6,\"grow\":0.5,\"goal\":\"カエルになる\",\"enter\":\"池の底で藻類を食べ、次第に後ろ足が生えてきた。\"},{\"id\":\"juvenile\",\"ja\":\"幼蛙\",\"days\":120,\"hunger\":8,\"grow\":0.3,\"goal\":\"若蛙になる\",\"enter\":\"尾が消え、水辺を離れ",
+  "raw": "   \"id\": \"poison_gland\",\n      \"ja\": \"耳後腺の毒\",\n      \"ds\": \"耳の後ろの腺から毒を分泌し、外敵を遠ざける\",\n      \"stages\": [\n        \"young\",\n        \"adult\"\n      ],\n      \"stat\": \"sense\",\n      \"base\": 0.7,\n      \"calm\": true,\n      \"ok\": \"耳後腺から白い毒液を出し、天敵を追い払った。\"\n    }\n  ],\n  \"levelEvery\": 4,\n  \"migrate\": [\n    {\n      \"months\": [\n        3\n      ],\n      \"stages\": [\n        \"adult\"\n      ],\n      \"to\": \"pond\",\n      \"say\": \"繁殖のため、冬眠地から池へと向かう。\"\n    },\n    {\n      \"months\": [\n        6\n      ],\n      \"stages\": [\n        \"juvenile\"\n      ],\n      \"to\": \"forest_floor\",\n      \"say\": \"カエルとなり、水辺を離れて陸へ散る。\"\n    }\n  ]\n}\n```"
+ }
+}

@@ -2,11 +2,15 @@
  "id": "sunfish",
  "ja": "マンボウ",
  "sci": "Mola mola",
- "status": "draft",
+ "status": "checked",
  "type": "fish",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "北太平洋から温帯海域",
@@ -21,7 +25,12 @@
    "danger": 2,
    "cover": false,
    "about": "無数の卵が漂う海面近く。仔魚はトゲに覆われ、プランクトンと共に漂う。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 41.794,
    "lon": 140.756
   },
@@ -32,7 +41,12 @@
    "danger": 2,
    "cover": false,
    "about": "暖かい海。体を大きく成長させながら、小動物を捕食する。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 41.794,
    "lon": 143.156
   },
@@ -43,7 +57,12 @@
    "danger": 1,
    "cover": false,
    "about": "冷たい深海。主食であるクラゲを求めて深く潜る。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 43.872,
    "lon": 142.256
   },
@@ -54,7 +73,12 @@
    "danger": 3,
    "cover": false,
    "about": "太陽光が降り注ぐ海面。横になって体を温め、寄生虫を落とす。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 43.041,
    "lon": 139.856
   },
@@ -65,7 +89,12 @@
    "danger": 2,
    "cover": false,
    "about": "日本近海を流れる暖流。効率よく移動するための通り道となる。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 41.794,
    "lon": 138.356
   },
@@ -76,7 +105,12 @@
    "danger": 2,
    "cover": false,
    "about": "成熟した個体が回遊する豊かな海。大型の個体が集まる。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 39.716,
    "lon": 139.256
   },
@@ -87,7 +121,12 @@
    "danger": 2,
    "cover": false,
    "about": "北方の冷たい海。季節に応じて水温の変化を追いながら泳ぐ。",
-   "stages": [],
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
    "lat": 40.547,
    "lon": 141.656
   }
@@ -145,5 +184,536 @@
    "japan_offshore",
    "temperate_sea"
   ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.2
+ },
+ "stats": {
+  "run": {
+   "ja": "巡航力",
+   "use": "外洋を効率よく移動する時に効く"
+  },
+  "sense": {
+   "ja": "水温感知",
+   "use": "適温の海域や獲物を探す時に効く"
+  },
+  "forage": {
+   "ja": "捕食力",
+   "use": "漂うクラゲを捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 30,
+   "hunger": 10,
+   "grow": 0.5
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.1,
+   "days": 60,
+   "hunger": 12,
+   "grow": 2,
+   "goal": "未成魚になる",
+   "enter": "棘が消え、体が左右に平たくなってきた。"
+  },
+  {
+   "id": "young",
+   "ja": "未成魚",
+   "fromAge": 1,
+   "days": 120,
+   "hunger": 15,
+   "grow": 5,
+   "goal": "成魚になる",
+   "enter": "体長が数十センチに達し、外洋の表層を泳ぎ回る。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 5,
+   "days": 180,
+   "hunger": 20,
+   "grow": 1,
+   "adult": true,
+   "goal": "生き抜く",
+   "enter": "巨体を獲得し、海面で日光浴を行う習慣がついた。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   20
+  ],
+  "text": "巨いな体は次第に動かなくなり、静かに深海へと沈んだ。"
+ },
+ "breeding": {
+  "ja": "外洋での産卵",
+  "ds": "暖流の表層で、一度に莫大な数の卵を産み放つ",
+  "months": [
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "spawn_ground"
+  ],
+  "perYear": 1,
+  "kids": [
+   100000000,
+   300000000
+  ],
+  "many": 200000000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した仔魚の一匹"
+  },
+  "ok": "海面に、{born}個の卵を放った。",
+  "ng": "潮の流れに乗り切れず、産卵に失敗した。",
+  "goal1": "卵を産む",
+  "goal2": "卵を2億個産む"
+ },
+ "foods": [
+  {
+   "id": "zooplankton",
+   "ja": "プランクトンを食べる",
+   "name": "動物プランクトン",
+   "ds": "小さなプランクトンを吸い込む",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "spawn_ground",
+    "surface_layer"
+   ],
+   "rich": [
+    "surface_layer"
+   ],
+   "ok": "漂うプランクトンを次々と吸いこんだ。",
+   "full": 30
+  },
+  {
+   "id": "jellyfish",
+   "ja": "クラゲを捕食する",
+   "name": "クラゲ",
+   "ds": "海中を漂うクラゲを捕らえて食べる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "surface_layer",
+    "mesopelagic_zone",
+    "japan_offshore"
+   ],
+   "rich": [
+    "japan_offshore"
+   ],
+   "ok": "漂うクラゲをゆっくりと口に運んだ。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "sunbathing",
+   "ja": "日光浴で体を温める",
+   "ds": "海面に横たわり、太陽の光で体温を上げる",
+   "stages": [
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": true,
+   "ok": "海面で横になり、太陽の光を浴びて体温を回復させた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6,
+    7
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "surface_layer",
+   "say": "体温を上げるため、海面付近へと浮上した。"
+  },
+  {
+   "months": [
+    11,
+    12,
+    1
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "mesopelagic_zone",
+   "say": "冷たい海を避け、中深層の海域へと潜った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "jelly",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "spawn_ground",
+    "surface_layer"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "漂う透明な傘が、プランクトンと共に仔魚を呑みこむ。",
+    "触手の刺胞が、小さな体に突き刺さる。"
+   ]
+  },
+  {
+   "id": "anchovy",
+   "ja": "カタクチイワシ",
+   "kind": "fish",
+   "places": [
+    "surface_layer",
+    "kuroshio_current"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "銀色の小魚の群れが、口を大きく開けて仔魚を吸いこむ。",
+    "密集した群れに囲まれ、逃げ場を失う。"
+   ]
+  },
+  {
+   "id": "squid",
+   "ja": "ヤリイカ",
+   "kind": "mollusc",
+   "places": [
+    "mesopelagic_zone",
+    "kuroshio_current"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭い触腕が、不意に稚魚の体を絡めとる。",
+    "鋭い嘴が、柔らかい皮膚を突き破る。"
+   ]
+  },
+  {
+   "id": "tuna",
+   "ja": "マグロ",
+   "kind": "fish",
+   "places": [
+    "kuroshio_current",
+    "japan_offshore"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "弾丸のような速度で、未成魚の側面に激突してくる。",
+    "強靭な顎が、逃げ遅れた個体を一気に捕らえる。"
+   ]
+  },
+  {
+   "id": "shark",
+   "ja": "サメ",
+   "kind": "fish",
+   "places": [
+    "japan_offshore",
+    "temperate_sea"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "鋭い歯が、厚い皮膚を切り裂いて深く食い込む。",
+    "深海から不意に突き上げられ、腹部を噛まれる。"
+   ],
+   "again": [
+    [
+     "また、右目の濁ったサメだ。執拗に後を追ってくる。"
+    ],
+    [
+     "濁った目のサメが、暗い海中から静かに接近する。"
+    ]
+   ],
+   "bye": "巨体となり、並のサメでは太刀打ちできないほど皮膚が厚くなった。"
+  },
+  {
+   "id": "sea_lion",
+   "ja": "アシカ",
+   "kind": "mammal",
+   "places": [
+    "japan_offshore",
+    "subtropical_sea"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "俊敏な動きで翻弄され、鰭を噛みちぎられる。",
+    "水面近くで休息している最中、鋭い牙に襲われる。"
+   ]
+  },
+  {
+   "id": "orca",
+   "ja": "シャチ",
+   "kind": "mammal",
+   "places": [
+    "temperate_sea",
+    "japan_offshore"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "知能の高い捕食者が群れで連携し、逃げ道を塞ぐ。",
+    "巨大な衝撃と共に水面に押し上げられ、窒息させられる。"
+   ],
+   "again": [
+    [
+     "また、背びれの欠けたシャチの群れだ。"
+    ],
+    [
+     "背びれの欠けたシャチが、獲物を追い詰めるように旋回する。"
+    ]
+   ],
+   "bye": "外洋のさらに深い海域へ逃れ、シャチの追跡を振り切った。"
+  },
+  {
+   "id": "gillnet",
+   "ja": "刺し網",
+   "kind": "human",
+   "places": [
+    "japan_offshore"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "透明な網が視界を遮り、巨体を締め上げる。",
+    "もがけばもがくほど、網の糸が皮膚に深く食い込む。"
+   ],
+   "lose": "網に絡め取られ、激しくもがいた拍子に鰭が裂けて傷を負った。",
+   "fleeJa": "網の隙間から強引に体をねじ出す",
+   "hideJa": "網が仕掛けられていない海域へ移動する"
+  }
+ ],
+ "choices": [
+  {
+   "q": "餌となるクラゲを追う。どの海域で探すか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "海面付近で探す",
+     "ds": "餌は豊富に見つかる。海鳥や漁網に遭遇する危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "surface_layer",
+     "say": "陽光が降り注ぐ海面で、漂うクラゲをゆっくりと飲み込んだ。",
+     "chip": "海面で探す"
+    },
+    {
+     "ja": "中深層まで潜る",
+     "ds": "天敵は少ない。水温が低く代謝が落ち、活動が鈍くなる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "mesopelagic_zone",
+     "say": "冷たい暗い海へと潜り、静かに獲物を待った。",
+     "chip": "中深層で探す"
+    }
+   ]
+  },
+  {
+   "q": "深海での活動で体温が低下した。どうやって体温を戻すか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "海面で横になり日光浴をする",
+     "ds": "効率よく体温を上げられる。外敵に身をさらすことになる",
+     "fx": {
+      "food": 0,
+      "danger": 1
+     },
+     "goto": "surface_layer",
+     "say": "海面に身を横たえ、太陽の熱で冷えた体を温めた。",
+     "chip": "日光浴をする"
+    },
+    {
+     "ja": "亜熱帯の暖海へ移動する",
+     "ds": "安定した水温を得られる。長距離の移動に体力を消費する",
+     "fx": {
+      "food": -1,
+      "danger": 0
+     },
+     "goto": "subtropical_sea",
+     "say": "暖かい海流に乗り、南の海へとゆっくり泳いだ。",
+     "chip": "暖海へ移動"
+    }
+   ]
+  },
+  {
+   "q": "成熟し、産卵の時期を迎えた。どこに卵を放つか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "外洋の表層に大量に産み落とす",
+     "ds": "拡散し生存圏が広がる。多くが捕食されるため生存率は低い",
+     "fx": {
+      "kids": 1,
+      "danger": 0
+     },
+     "goto": "spawn_ground",
+     "say": "途方もない数の卵を海に放ち、次世代への希望を託した。",
+     "chip": "外洋で産卵"
+    },
+    {
+     "ja": "黒潮流域に産み落とす",
+     "ds": "運ばれる先で餌が得やすい。個体密度が高まり競争が激しくなる",
+     "fx": {
+      "kids": 0,
+      "danger": -1
+     },
+     "goto": "kuroshio_current",
+     "say": "力強い黒潮の流れに身を任せ、卵を海へと解き放った。",
+     "chip": "黒潮流域で産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.3,
+   "say": "小さな口でプランクトンを食み、急いで体を大きくした。",
+   "full": 10
+  },
+  {
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "p": 0.1,
+   "say": "大型のサメに襲われ、皮膚を深く切り裂かれ、傷を負った。",
+   "full": -20
+  },
+  {
+   "month": [
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "海面で日光浴をしている最中、寄生虫が皮膚に付着し、不快感に襲われた。",
+   "full": -5
+  }
+ ],
+ "lead": "外洋の表層で生まれ、世界最大級の魚へと成長する。海面で陽光を浴び、漂うように生きる。",
+ "texts": {
+  "move": "{to}へ、ゆっくりと泳いでいった。",
+  "fleeJa": "巨体を揺らして逃れる",
+  "restJa": "海面に横たわり日を浴びる",
+  "watchJa": "漂うクラゲの群れを探す",
+  "lieJa": "深い海へと潜る",
+  "lastMemory": "陽光が降り注ぐ、穏やかな海面での時間を思い出した。"
+ },
+ "intro": [
+  "外洋の表層、青い海原で生まれた。",
+  "孵化したばかりの体は小さく、トゲのあるフグに似ている。"
+ ],
+ "wins": [
+  {
+   "minKids": 300000000,
+   "title": "海に命を託した",
+   "line": "{kids}個の卵を、広大な海へと放った。",
+   "mem": "泡のように広がっていく卵の群れを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "日本の沖合で、暖かい潮に身を任せた日々を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "深い海から海面へ上がり、太陽の光を浴びた瞬間を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "潮に消える",
+  "line": "次の世代へ命をつなぐことなく、静かに海の底へ沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "Adults typically weigh between 247 and 1,000 kg (545 and 2,205 lb).",
+   "ja": "成魚の体重は通常247キログラムから1,000キログラムの間である。"
+  },
+  {
+   "quote": "Its common English name, sunfish, refers to the animal's habit of sunbathing at the surface of the sea.",
+   "ja": "英語名のサンフィッシュは、海面で日光浴をする習性に由来する。"
+  },
+  {
+   "quote": "sunfish fry resemble spiky pufferfish more than they resemble adult molas.",
+   "ja": "仔魚の時期は、成魚よりもトゲのあるフグに似ている。"
+  },
+  {
+   "quote": "The caudal fin of the ocean sunfish is replaced by a rounded clavus, creating the body's distinct truncated shape.",
+   "ja": "尾びれは丸い擬尾（clavus）に置き換わり、独特の切り落とされたような体形となっている。"
+  }
  ]
 }

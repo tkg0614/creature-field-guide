@@ -1,0 +1,142 @@
+{
+ "id": "gecko",
+ "ja": "ニホンヤモリ",
+ "sci": "Gekko japonicus",
+ "status": "draft",
+ "type": "reptile_amphibian",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "本州の住宅街",
+  "geo": "Honshu",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "wall_gap_nest",
+   "ja": "壁の狭いすき間",
+   "danger": 1,
+   "cover": true,
+   "about": "粘着質の卵が産み付けられる場所。狭く暗いため、外敵に卵を見つかりにくい。",
+   "stages": [],
+   "lat": 37.49,
+   "lon": 139.836
+  },
+  {
+   "id": "outdoor_light",
+   "ja": "屋外灯の周辺",
+   "danger": 3,
+   "cover": false,
+   "about": "夜、灯りに集まる昆虫が豊富にいる。開けているため、カラスや猫に狙われやすい。",
+   "stages": [],
+   "lat": 37.49,
+   "lon": 139.868
+  },
+  {
+   "id": "wooden_eaves",
+   "ja": "軒下の木材",
+   "danger": 1,
+   "cover": true,
+   "about": "高い位置にあり、視界が開けている。隙間に身を潜めつつ、獲物を待ち伏せできる。",
+   "stages": [],
+   "lat": 37.518,
+   "lon": 139.856
+  },
+  {
+   "id": "underfloor",
+   "ja": "家の床下",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の寒さをしのげる安定した空間。天敵の侵入が少なく、冬眠に適している。",
+   "stages": [],
+   "lat": 37.507,
+   "lon": 139.824
+  },
+  {
+   "id": "stone_fence",
+   "ja": "庭の石垣",
+   "danger": 2,
+   "cover": true,
+   "about": "クモやワラジムシなどの餌が多い。石の隙間に逃げ込めるが、ヘビに遭遇する恐れがある。",
+   "stages": [],
+   "lat": 37.49,
+   "lon": 139.804
+  },
+  {
+   "id": "window_frame",
+   "ja": "窓枠のサッシ",
+   "danger": 2,
+   "cover": false,
+   "about": "趾下薄板で垂直な面を自在に移動できる。ガラス越しに獲物を探すが、外から見えやすい。",
+   "stages": [],
+   "lat": 37.462,
+   "lon": 139.816
+  },
+  {
+   "id": "attic_gap",
+   "ja": "屋根裏の隙間",
+   "danger": 0,
+   "cover": true,
+   "about": "静かで暗い休息場所。高い位置にあるため、地上の天敵から完全に隔離されている。",
+   "stages": [],
+   "lat": 37.473,
+   "lon": 139.848
+  }
+ ],
+ "start": {
+  "place": "wall_gap_nest",
+  "month": 7,
+  "day": 15
+ },
+ "region": {
+  "ja": "本州の住宅街",
+  "lon0": 139.785,
+  "lon1": 139.887,
+  "lat0": 37.537,
+  "lat1": 37.443,
+  "k": 4902,
+  "labels": [
+   [
+    37.53136,
+    139.836,
+    "本州の住宅街"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "underfloor",
+   "wall_gap_nest"
+  ],
+  [
+   "attic_gap",
+   "wall_gap_nest"
+  ],
+  [
+   "attic_gap",
+   "outdoor_light"
+  ],
+  [
+   "outdoor_light",
+   "wooden_eaves"
+  ],
+  [
+   "underfloor",
+   "wooden_eaves"
+  ],
+  [
+   "stone_fence",
+   "underfloor"
+  ],
+  [
+   "stone_fence",
+   "window_frame"
+  ],
+  [
+   "attic_gap",
+   "window_frame"
+  ]
+ ]
+}

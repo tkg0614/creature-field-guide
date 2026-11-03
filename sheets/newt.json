@@ -7,217 +7,236 @@
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini gemini-3.8-flash",
+  "life": "gemini-gemma gemma-4-31b-it",
   "foes": "gemini-gemma gemma-4-31b-it",
   "choices": "gemini-gemma gemma-4-31b-it",
   "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
-  "ja": "兵庫県丹波篠山市の里山",
-  "geo": "Tamba-Sasayama",
+  "ja": "近畿地方の里山",
+  "geo": "Kinki",
   "scale": "local"
  },
  "places": [
   {
-   "id": "paddy_field",
-   "ja": "水田の浅瀬",
+   "id": "paddy_water",
+   "ja": "水田の水底",
+   "danger": 3,
+   "cover": false,
+   "about": "卵が産み付けられる場所。魚や水生昆虫に狙われやすい。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 34.773,
+   "lon": 135.493
+  },
+  {
+   "id": "pond_plants",
+   "ja": "池の抽水植物の間",
    "danger": 2,
    "cover": true,
-   "about": "卵が産み付けられる場所。水草に守られ、小さな水生昆虫が餌となる。",
+   "about": "幼生がえらで呼吸し、成長する。茎の陰に身を隠せる。",
    "stages": [
     "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "lat": 35.031,
-   "lon": 135.334
+   "lat": 34.773,
+   "lon": 135.525
   },
   {
-   "id": "pond_edge",
-   "ja": "池のほとりの水草帯",
+   "id": "moist_soil",
+   "ja": "湿った土壌",
    "danger": 2,
    "cover": true,
-   "about": "えらを持つ幼生が育つ。水草の陰に身を潜め、プランクトンを食べる。",
+   "about": "変態して陸に上がった若者が暮らす。土中の小虫を捕食する。",
    "stages": [
     "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "lat": 35.031,
-   "lon": 135.366
+   "lat": 34.801,
+   "lon": 135.513
   },
   {
-   "id": "forest_floor",
-   "ja": "林の湿った落ち葉の下",
+   "id": "forest_leaf",
+   "ja": "林の落ち葉の下",
    "danger": 1,
    "cover": true,
-   "about": "変態して陸に上がった若者が暮らす。土の中の小さな虫を捕らえて食べる。",
+   "about": "成体の主戦場。湿り気が保たれ、外敵の目から逃れやすい。",
    "stages": [
     "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "lat": 35.059,
-   "lon": 135.354
+   "lat": 34.79,
+   "lon": 135.481
   },
   {
-   "id": "under_log",
-   "ja": "朽ち木の根元",
+   "id": "stone_gap",
+   "ja": "石垣の隙間",
+   "danger": 0,
+   "cover": true,
+   "about": "ひんやりとした暗がり。昼間の休息や雨宿りに適している。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "lat": 34.773,
+   "lon": 135.461
+  },
+  {
+   "id": "winter_bottom",
+   "ja": "池の泥底",
    "danger": 1,
    "cover": true,
-   "about": "昼間は日光を避け、体を湿らせて休む。天敵の目から逃れやすい。",
+   "about": "冬眠に浸る深い泥の中。外気の影響を受けず、静かに春を待つ。",
    "stages": [
     "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "lat": 35.048,
-   "lon": 135.322
+   "lat": 34.745,
+   "lon": 135.473
   },
   {
-   "id": "grassland",
+   "id": "grass_edge",
    "ja": "草地のへり",
    "danger": 2,
    "cover": false,
-   "about": "餌となる昆虫が豊富にいる。開けているため、鳥に見つかる危険がある。",
+   "about": "繁殖期に水辺へ戻る際の通り道。開けており、鳥に見つかりやすい。",
    "stages": [
     "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "lat": 35.031,
-   "lon": 135.302
-  },
-  {
-   "id": "pond_mud",
-   "ja": "池の底の泥の中",
-   "danger": 0,
-   "cover": true,
-   "about": "冬眠のための深い泥の中。外気の影響を受けず、静かに春を待つ。",
-   "stages": [
-    "larva",
-    "juvenile",
-    "adult"
-   ],
-   "lat": 35.003,
-   "lon": 135.314
-  },
-  {
-   "id": "breeding_pond",
-   "ja": "静かな溜池",
-   "danger": 2,
-   "cover": true,
-   "about": "成熟した個体が交尾のために集まる。腹の赤色を誇示し、毒で外敵を威嚇する。",
-   "stages": [
-    "larva",
-    "juvenile",
-    "adult"
-   ],
-   "lat": 35.014,
-   "lon": 135.346
+   "lat": 34.756,
+   "lon": 135.505
   }
  ],
  "start": {
-  "place": "paddy_field",
+  "place": "paddy_water",
   "month": 4,
-  "day": 10
+  "day": 15
  },
  "region": {
-  "ja": "兵庫県丹波篠山市の里山",
-  "lon0": 135.283,
-  "lon1": 135.385,
-  "lat0": 35.078,
-  "lat1": 34.984,
+  "ja": "近畿地方の里山",
+  "lon0": 135.442,
+  "lon1": 135.544,
+  "lat0": 34.82,
+  "lat1": 34.726,
   "k": 4902,
   "labels": [
    [
-    35.07236,
-    135.334,
-    "兵庫県丹波篠山市の里山"
+    34.81436,
+    135.493,
+    "近畿地方の里山"
    ]
   ]
  },
  "edges": [
   [
-   "breeding_pond",
-   "paddy_field"
+   "forest_leaf",
+   "paddy_water"
   ],
   [
-   "paddy_field",
-   "under_log"
+   "grass_edge",
+   "paddy_water"
   ],
   [
-   "breeding_pond",
-   "pond_edge"
+   "grass_edge",
+   "pond_plants"
   ],
   [
-   "forest_floor",
-   "pond_edge"
+   "moist_soil",
+   "pond_plants"
   ],
   [
-   "forest_floor",
-   "under_log"
+   "forest_leaf",
+   "moist_soil"
   ],
   [
-   "grassland",
-   "under_log"
+   "forest_leaf",
+   "stone_gap"
   ],
   [
-   "grassland",
-   "pond_mud"
+   "stone_gap",
+   "winter_bottom"
   ],
   [
-   "breeding_pond",
-   "pond_mud"
+   "grass_edge",
+   "winter_bottom"
   ]
  ],
  "size": {
   "ja": "全長",
   "unit": "cm",
-  "start": 2
+  "start": 8
  },
  "stats": {
   "run": {
-   "ja": "水かきと尾の推進力",
-   "use": "水草の間をすり抜けて逃げる時に効く"
+   "ja": "逃避力",
+   "use": "外敵から逃げる時に効く"
   },
   "sense": {
-   "ja": "フェロモンをかぎ分ける鼻",
-   "use": "異性や水底の獲物を探る時に効く"
+   "ja": "化学感覚",
+   "use": "獲物や配偶者を察知する時に効く"
   },
   "forage": {
-   "ja": "素早い丸呑み",
-   "use": "動く小動物を捕らえる時に効く"
+   "ja": "捕食力",
+   "use": "獲物を捕らえる時に効く"
   }
  },
  "stages": [
   {
    "id": "larva",
    "ja": "幼生",
-   "days": 45,
-   "hunger": 6,
-   "grow": 0.3
+   "days": 150,
+   "hunger": 8,
+   "grow": 0.4,
+   "goal": "変態する",
+   "enter": "えらを持ち、水中で生活している。"
   },
   {
    "id": "juvenile",
    "ja": "幼体",
-   "fromAge": 0.5,
-   "days": 90,
-   "hunger": 8,
-   "grow": 0.35,
-   "goal": "幼体になる",
-   "enter": "外鰓が消えて変態を終え、湿った陸地へと這い上がった。"
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 10,
+   "grow": 0.3,
+   "goal": "若イモリになる",
+   "enter": "えらが消え、肺で呼吸して陸へ上がった。"
+  },
+  {
+   "id": "subadult",
+   "ja": "若イモリ",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.2,
+   "goal": "成熟する",
+   "enter": "腹部の赤みが強まり、体が大きくなった。"
   },
   {
    "id": "adult",
    "ja": "成体",
    "fromAge": 3,
-   "days": 120,
-   "hunger": 10,
-   "grow": 0.2,
+   "days": 180,
+   "hunger": 15,
+   "grow": 0.1,
    "adult": true,
-   "goal": "おとなになる",
-   "enter": "成熟を迎えて水辺へ戻り、腹の鮮やかな赤色が定着した。"
+   "goal": "繁殖する",
+   "enter": "完全に成熟し、繁殖のために水辺へ戻る体になった。"
   }
  ],
  "oldAge": {
@@ -225,24 +244,22 @@
    10,
    25
   ],
-  "text": "冷え込んだ泥の底で、長い眠りについたまま静かに息を引き取った。"
+  "text": "冬眠の泥底で、静かに息を引き取った。"
  },
  "breeding": {
-  "ja": "水草に卵を包み産みつける",
-  "ds": "春から初夏にかけて水中で求愛し、水草の葉を器用に折り曲げて卵を産みつける",
+  "ja": "水辺で産卵する",
+  "ds": "春から初夏にかけ、フェロモンで誘い合い交尾し、卵を産み落とす",
   "months": [
-   4,
-   5,
+   3,
    6
   ],
   "places": [
-   "breeding_pond",
-   "pond_edge",
-   "paddy_field"
+   "paddy_water",
+   "pond_plants"
   ],
   "perYear": 1,
   "kids": [
-   30,
+   20,
    100
   ],
   "many": 200,
@@ -251,126 +268,122 @@
    "unit": "個",
    "child": "かえった幼生の一匹"
   },
-  "ok": "後ろ足で水草の葉を丁寧に折り、{born}個の卵をひとつずつ包み込んだ。",
-  "ng": "産卵に適した水草が見当たらず、産みそびれた。",
+  "ok": "水草の葉に、{born}個の白い卵を丁寧に貼り付けた。",
+  "ng": "適した産卵場所が見つからず、卵を産みそびれた。",
   "goal1": "卵を産む",
   "goal2": "卵を200個産む"
  },
  "foods": [
   {
-   "id": "water_flea",
-   "ja": "ミジンコをついばむ",
-   "name": "ミジンコ",
-   "ds": "水草の間を漂う微小な甲殻類を吸い込む",
+   "id": "water_bug",
+   "ja": "水生昆虫を捕らえる",
+   "name": "水生昆虫",
+   "ds": "水底や水草の間で、小さな虫を捕食する",
    "stages": [
-    "larva"
+    "larva",
+    "adult"
    ],
    "places": [
-    "pond_edge",
-    "paddy_field",
-    "breeding_pond"
+    "paddy_water",
+    "pond_plants"
    ],
    "rich": [
-    "pond_edge"
+    "pond_plants"
    ],
-   "ok": "水草の茂みで漂うミジンコを、口をすぼめて吸い込んだ。",
-   "full": 15
+   "ok": "水草の陰から素早く身を乗り出し、小さな虫を呑み込んだ。",
+   "full": 20
   },
   {
    "id": "soil_bug",
-   "ja": "林床の土壌小動物を追う",
-   "name": "トビムシやワラジムシ",
-   "ds": "落ち葉の隙間を歩き回り、微小な節足動物を捕らえる",
+   "ja": "土中の虫を漁る",
+   "name": "土壌生物",
+   "ds": "湿った土の中や落ち葉の下にいる小さな獲物を探す",
    "stages": [
-    "juvenile"
+    "juvenile",
+    "subadult"
    ],
    "places": [
-    "forest_floor",
-    "under_log"
+    "moist_soil",
+    "forest_leaf"
    ],
    "rich": [
-    "forest_floor"
+    "forest_leaf"
    ],
-   "ok": "湿った落ち葉をかき分け、隠れていたトビムシを素早くくわえ込んだ。",
+   "ok": "湿った落ち葉の下を潜り、土中の小さな虫を捕らえた。",
    "full": 20
   },
   {
    "id": "tadpole",
    "ja": "オタマジャクシを襲う",
    "name": "オタマジャクシ",
-   "ds": "浅瀬に群れるカエルの幼生を待ち伏せて呑み込む",
+   "ds": "水辺でゆっくり動く幼生を捕食する",
    "stages": [
     "adult"
    ],
    "places": [
-    "paddy_field",
-    "breeding_pond",
-    "pond_edge"
+    "paddy_water",
+    "pond_plants"
    ],
    "rich": [
-    "paddy_field"
+    "paddy_water"
    ],
-   "ok": "水草の影からぬっと顔を出し、通りかかったオタマジャクシを丸呑みにした。",
+   "ok": "泥底から静かに近づき、オタマジャクシを一口で呑み込んだ。",
    "full": 30
-  },
-  {
-   "id": "earthworm",
-   "ja": "水底のミミズを食らう",
-   "name": "ミミズ",
-   "ds": "泥の中から露出したミミズの端をくわえて引っ張り出す",
-   "stages": [
-    "adult"
-   ],
-   "places": [
-    "pond_mud",
-    "paddy_field",
-    "under_log"
-   ],
-   "rich": [
-    "pond_mud"
-   ],
-   "ok": "泥底に潜むミミズをしっかりとくわえ、時間をかけて呑み下した。",
-   "full": 35
   }
  ],
  "special": [
   {
    "id": "warning_color",
-   "ja": "威嚇と警告色",
-   "ds": "体を反らせて鮮やかな腹の赤色を見せつけ、毒を持つことを知らせる",
+   "ja": "警告色",
+   "ds": "腹部の鮮やかな赤色で、毒を持っていることを敵に知らせる",
    "stages": [
+    "subadult",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.5,
+   "calm": true,
+   "ok": "腹の赤色を誇示し、外敵に毒があることを知らせて追い払った。"
+  },
+  {
+   "id": "regeneration",
+   "ja": "肢の再生",
+   "ds": "欠損した足や尾などの身体部位を再び生やす",
+   "stages": [
+    "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
    "stat": "run",
-   "base": 0.7,
+   "base": 0.3,
    "calm": true,
-   "ok": "背を大きく反らして真っ赤な腹を見せつけ、外敵の追撃をためらわせた。"
+   "ok": "失った肢が時間をかけてゆっくりと再生し、元の姿に戻った。"
   }
  ],
  "levelEvery": 4,
  "migrate": [
   {
    "months": [
-    4,
+    3,
     5
    ],
    "stages": [
     "adult"
    ],
-   "to": "breeding_pond",
-   "say": "春の訪れとともに陸を離れ、繁殖のために静かな溜池の水へと入った。"
+   "to": "paddy_water",
+   "say": "繁殖のため水辺へ戻る"
   },
   {
    "months": [
-    10,
+    9,
     11
    ],
    "stages": [
     "adult"
    ],
-   "to": "forest_floor",
-   "say": "朝晩の冷え込みを感じて水底を離れ、冬越しの場となる林の落ち葉の下へもぐり込んだ。"
+   "to": "forest_leaf",
+   "say": "冬を越すため林へ上がる"
   }
  ],
  "foes": [
@@ -379,163 +392,66 @@
    "ja": "アオサギ",
    "kind": "bird",
    "places": [
-    "breeding_pond",
-    "pond_edge"
+    "paddy_water",
+    "pond_plants"
    ],
    "stages": [
     "larva",
-    "juvenile",
     "adult"
    ],
    "sev": 3,
    "texts": [
-    "水辺に静かに佇み、鋭い眼で水面を凝視している。",
-    "電光石火の速さで嘴が突き刺さり、水底から引きずり上げられる。"
-   ],
-   "again": [
-    [
-     "また、あの足の長いサギだ。水辺でじっと動かずに待っている。"
-    ],
-    [
-     "あのサギが、再び水際に降り立った。"
-    ]
-   ],
-   "bye": "泥の底深くへ潜り込む術を覚え、水面の影をやり過ごせるようになった。"
+    "水面を静かに滑る長い首が、不意に鋭い嘴を突き立てる。",
+    "水草の陰に潜む影を、正確な一撃で捉える。"
+   ]
   },
   {
-   "id": "grass_snake",
+   "id": "striped_snake",
    "ja": "シマヘビ",
    "kind": "reptile",
    "places": [
-    "pond_edge",
-    "grassland",
-    "forest_floor"
+    "grass_edge",
+    "moist_soil",
+    "pond_plants"
    ],
    "stages": [
     "juvenile",
+    "subadult",
     "adult"
    ],
-   "sev": 3,
+   "sev": 2,
    "fast": true,
    "texts": [
-    "草を分けて音もなく忍び寄る。",
-    "粘つく舌が獲物の気配を捉え、鋭い牙が皮膚に食い込む。"
+    "草むらから音もなく忍び寄り、ぬらぬらとした体が獲物を包み込む。",
+    "湿った土の匂いを辿り、逃げ場のない隅へと追い詰める。"
    ],
    "again": [
     [
-     "また、あの鱗の鈍いシマヘビだ。草むらの陰でこちらを窺っている。"
+     "また、あの黒い縞のヘビだ。水辺の岩陰でじっと待っている。"
     ],
     [
-     "あのシマヘビが、再び湿った落ち葉の下から現れた。"
+     "黒い縞のヘビが、ぬらぬらとした身をくねらせて迫ってくる。"
     ]
    ],
-   "bye": "腹の赤色が鮮やかになり、毒への警戒心からヘビも容易に口を開かなくなった。"
-  },
-  {
-   "id": "giant_water_bug",
-   "ja": "タガメ",
-   "kind": "insect",
-   "places": [
-    "paddy_field",
-    "breeding_pond"
-   ],
-   "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "fast": true,
-   "texts": [
-    "水底の草むらに潜み、獲物が近づく振動を待っている。",
-    "太い前脚が幼い体をがっしりと掴み、逃げ場を奪う。"
-   ]
-  },
-  {
-   "id": "crucian_carp",
-   "ja": "フナ",
-   "kind": "fish",
-   "places": [
-    "breeding_pond",
-    "pond_mud"
-   ],
-   "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "texts": [
-    "泥の中でもがく幼生を、大きな口が吸い込む。",
-    "群れをなして水底を浚い、小さな命を次々と飲み込んでいく。"
-   ]
-  },
-  {
-   "id": "raccoon_dog",
-   "ja": "ホンドタヌキ",
-   "kind": "mammal",
-   "places": [
-    "forest_floor",
-    "pond_edge"
-   ],
-   "stages": [
-    "juvenile",
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "夜の闇に紛れて現れ、湿った土の匂いを嗅ぎ分ける。",
-    "鋭い牙が、逃げ遅れた体を容赦なく噛み砕く。"
-   ]
+   "bye": "腹の赤色が鮮やかになり、毒を警戒したヘビが口を離した。"
   },
   {
    "id": "crow",
    "ja": "ハシブトガラス",
    "kind": "bird",
    "places": [
-    "grassland",
-    "pond_edge"
+    "forest_leaf",
+    "grass_edge"
    ],
    "stages": [
     "juvenile",
-    "adult"
+    "subadult"
    ],
    "sev": 2,
+   "fast": true,
    "texts": [
-    "上空から鋭い眼で地上を監視している。",
-    "不意に急降下し、太い嘴で体を挟み上げる。"
-   ]
-  },
-  {
-   "id": "water_snake",
-   "ja": "ニホンアマガサヘビ",
-   "kind": "reptile",
-   "places": [
-    "breeding_pond",
-    "pond_edge"
-   ],
-   "stages": [
-    "larva",
-    "juvenile",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "水面を滑るように泳ぎ、獲物を追い詰める。",
-    "水中で素早く巻きつき、逃げ道を完全に塞ぐ。"
-   ]
-  },
-  {
-   "id": "dragonfly_nymph",
-   "ja": "ヤゴ",
-   "kind": "insect",
-   "places": [
-    "paddy_field",
-    "breeding_pond"
-   ],
-   "stages": [
-    "larva"
-   ],
-   "sev": 2,
-   "texts": [
-    "水草の陰に身を潜め、獲物が視界に入るのを待つ。",
-    "下顎が鋭く突き出され、小さな幼生を貫く。"
+    "空から黒い影が急降下し、太い嘴が湿った土を抉る。",
+    "鋭い眼光が、落ち葉の隙間に潜むわずかな動きを見逃さない。"
    ]
   },
   {
@@ -543,104 +459,186 @@
    "ja": "ニホンイタチ",
    "kind": "mammal",
    "places": [
-    "under_log",
-    "forest_floor"
+    "stone_gap",
+    "forest_leaf"
    ],
    "stages": [
     "juvenile",
-    "adult"
+    "subadult"
    ],
    "sev": 2,
    "fast": true,
    "texts": [
-    "朽ち木の隙間から、細長い体が滑り込んでくる。",
-    "素早い動きで追い詰め、鋭い牙で首元を狙う。"
+    "石垣の隙間にまで細い体が潜り込み、鋭い牙が喉元を狙う。",
+    "素早い身のこなしで、逃げ惑う獲物を追い詰める。"
+   ],
+   "again": [
+    [
+     "また、耳の欠けたイタチだ。落ち葉の下まで執拗に嗅ぎ回る。"
+    ],
+    [
+     "耳の欠けたイタチが、石垣の隙間から鋭い牙を覗かせている。"
+    ]
+   ],
+   "bye": "体格が十分に大きくなり、小獣が容易に呑み込めなくなった。"
+  },
+  {
+   "id": "crucian_carp",
+   "ja": "フナ",
+   "kind": "fish",
+   "places": [
+    "paddy_water",
+    "pond_plants"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥底を掘り返す大きな口が、小さな幼生をまとめて吸い込む。",
+    "水底の泥をかき混ぜ、潜んでいた幼生をあぶり出す。"
+   ]
+  },
+  {
+   "id": "giant_water_bug",
+   "ja": "タガメ",
+   "kind": "insect",
+   "places": [
+    "paddy_water",
+    "pond_plants"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "水草の陰から強靭な前脚が伸び、逃げ場のない幼生を捕らえる。",
+    "水中でじっと待ち伏せ、通りかかった獲物を電撃的に挟み込む。"
+   ]
+  },
+  {
+   "id": "dragonfly_larva",
+   "ja": "ヤンマの幼虫",
+   "kind": "insect",
+   "places": [
+    "paddy_water",
+    "pond_plants"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "泥に潜んでいた下唇が、電光石火の速さで幼生を突き刺す。",
+    "水底の砂に身を隠し、獲物が近づく振動をじっと待つ。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "ホンドタヌキ",
+   "kind": "mammal",
+   "places": [
+    "forest_leaf",
+    "moist_soil"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "太い前足が落ち葉を激しく掻き分け、潜んでいた体を暴き出す。",
+    "鋭い嗅覚で土の中の気配を察し、力任せに掘り返す。"
    ]
   },
   {
    "id": "human_collector",
-   "ja": "イモリ採りの子供",
+   "ja": "採集者",
    "kind": "human",
    "places": [
-    "breeding_pond",
-    "forest_floor"
+    "paddy_water",
+    "grass_edge"
    ],
    "stages": [
+    "juvenile",
+    "subadult",
     "adult"
    ],
    "sev": 1,
    "texts": [
-    "網を持って水辺を歩き、石の下や草むらをひっくり返す。",
-    "不意に掬い上げられ、プラスチックの容器に閉じ込められる。"
+    "採集者の網が、水辺の草むらを乱暴にかき回す。",
+    "好奇心に駆られた手が、石の隙間から無理やり引きずり出す。"
    ],
-   "lose": "網で強く押さえつけられ、皮膚を擦りむいて傷を負った。",
-   "fleeJa": "隙を見て水の中へ飛び込む",
-   "hideJa": "泥の中に深く潜ってやり過ごす"
+   "lose": "網の目に強く押し付けられ、皮膚を擦られて傷を負った。",
+   "fleeJa": "泥の中に深く潜り、気配を消す",
+   "hideJa": "水底の石の隙間に身を寄せ、やり過ごす"
   }
  ],
  "choices": [
   {
-   "q": "初夏、水中で獲物を探す。どこへ向かうか",
+   "q": "初夏、水中で獲物を探す。どこに潜むか",
    "stages": [
     "larva"
    ],
    "opts": [
     {
-     "ja": "水田の浅瀬で小型の甲殻類を追う",
-     "ds": "餌が豊富にいる。外敵に見つかりやすい",
+     "ja": "抽水植物の根元に潜む",
+     "ds": "餌となる小型甲殻類が多い。魚などの天敵に見つかりやすい",
      "fx": {
       "food": 1,
       "danger": 1
      },
-     "goto": "paddy_field",
-     "say": "水草の間をすり抜け、小さなエビを捕らえた。",
-     "chip": "浅瀬で狩る"
+     "goto": "pond_plants",
+     "say": "植物の影に身を隠し、通りかかる小さな獲物を狙った。",
+     "chip": "植物の間で狩る"
     },
     {
-     "ja": "池の底の泥に潜んで待つ",
-     "ds": "身を隠しやすい。獲物との遭遇率が低い",
+     "ja": "水底の泥の中に身を潜める",
+     "ds": "天敵の目に付きにくい。獲物との遭遇率が下がる",
      "fx": {
       "food": -1,
       "danger": -1
      },
-     "goto": "pond_mud",
-     "say": "泥の中に身を沈め、通りかかる獲物を静かに待った。",
-     "chip": "泥に潜む"
+     "goto": "paddy_water",
+     "say": "泥の中に体を沈め、振動で獲物の接近を待った。",
+     "chip": "泥底で待つ"
     }
    ]
   },
   {
-   "q": "秋、陸上で餌を探す。どこを歩くか",
+   "q": "秋、陸へ上がった。どこで夜を過ごすか",
    "stages": [
-    "juvenile"
+    "juvenile",
+    "subadult"
    ],
    "opts": [
     {
-     "ja": "朽ち木の根元で土中の虫を狙う",
-     "ds": "湿り気があり餌が見つかりやすい。競争相手が多い",
+     "ja": "林の落ち葉の下に潜る",
+     "ds": "適度な湿り気があり餌も豊富。天敵に襲われるリスクがある",
      "fx": {
       "food": 1,
-      "danger": -1
-     },
-     "goto": "under_log",
-     "say": "湿った土を掘り起こし、潜んでいた小さな虫を飲み込んだ。",
-     "chip": "根元を掘る"
-    },
-    {
-     "ja": "林の落ち葉の下を広く探索する",
-     "ds": "獲物の種類は多い。乾燥しやすく体力を消耗する",
-     "fx": {
-      "food": -1,
       "danger": 1
      },
-     "goto": "forest_floor",
-     "say": "乾いた落ち葉をかき分け、獲物の気配を追った。",
-     "chip": "落ち葉を歩く"
+     "goto": "forest_leaf",
+     "say": "湿った落ち葉に身を包み、土中の小さな虫を追った。",
+     "chip": "落ち葉に潜る"
+    },
+    {
+     "ja": "石垣の隙間に逃げ込む",
+     "ds": "外敵から身を守りやすい。餌となる虫が見つけにくい",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "stone_gap",
+     "say": "冷たく狭い岩の間に体を押し込み、静止した。",
+     "chip": "石垣に隠れる"
     }
    ]
   },
   {
-   "q": "春、繁殖の季節だ。どこで相手を探すか",
+   "q": "春、繁殖の季節だ。交尾の相手をどう探すか",
    "stages": [
     "adult"
    ],
@@ -651,26 +649,62 @@
    ],
    "opts": [
     {
-     "ja": "静かな溜池の深場へ潜る",
-     "ds": "相手に出会う確率が高い。天敵に狙われやすい",
+     "ja": "水辺の草地を広く泳ぎ回る",
+     "ds": "フェロモンを広げやすく相手に出会いやすい。鳥に見つかりやすい",
      "fx": {
       "kids": 1,
       "danger": 1
      },
-     "goto": "breeding_pond",
-     "say": "水底の砂を蹴り、フェロモンを放つ相手を求めて泳いだ。",
-     "chip": "深場へ潜る"
+     "goto": "grass_edge",
+     "say": "フェロモンを放ちながら、相手を求めて水面近くを泳いだ。",
+     "chip": "水辺を回遊する"
     },
     {
-     "ja": "池のほとりの水草帯を巡る",
-     "ds": "身を隠しながら移動できる。相手を見つけるのに時間がかかる",
+     "ja": "水草の茂みでじっと待つ",
+     "ds": "天敵から身を隠せる。相手と出会う機会が少ない",
      "fx": {
       "kids": -1,
       "danger": -1
      },
-     "goto": "pond_edge",
-     "say": "水草の陰に身を隠しながら、慎重に周囲を探索した。",
-     "chip": "水草帯を巡る"
+     "goto": "pond_plants",
+     "say": "水草に身を隠し、近づいてくる相手の気配を待った。",
+     "chip": "茂みで待機する"
+    }
+   ]
+  },
+  {
+   "q": "晩秋、冷え込んできた。どこで冬を越すか",
+   "stages": [
+    "juvenile",
+    "subadult",
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "池の泥底深くへ潜る",
+     "ds": "温度変化が少なく安定している。酸素が不足しやすい",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "winter_bottom",
+     "say": "泥の底に深く潜り、冬の寒さをやり過ごした。",
+     "chip": "泥底で冬眠"
+    },
+    {
+     "ja": "湿った土壌の穴に潜る",
+     "ds": "春先に早く活動を開始できる。凍結の危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "goto": "moist_soil",
+     "say": "土の中の空洞に身を寄せ、春が来るのを待った。",
+     "chip": "土中で冬眠"
     }
    ]
   }
@@ -683,11 +717,13 @@
     2
    ],
    "stages": [
+    "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
    "p": 0.3,
-   "say": "冬の冷え込みが厳しくなり、泥の底で深い眠りに落ちた。",
+   "say": "気温が下がり、代謝が極限まで落ちた。深い眠りに落ちた。",
    "full": -10
   },
   {
@@ -697,44 +733,64 @@
     8
    ],
    "stages": [
-    "larva",
     "juvenile",
+    "subadult",
     "adult"
    ],
    "p": 0.1,
-   "say": "不注意に身を晒し、鳥に捕らえられ、傷を負った。",
+   "say": "鳥に襲われたが、腹の赤色を誇示して毒を警告し、逃げ延びた。",
+   "danger": 1
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.5,
+   "say": "えらが退化し、肺で呼吸を始めた。水辺から陸へと上がった。",
    "danger": 1
   }
  ],
- "lead": "水田や池の浅瀬で産卵し、幼生は水中でえらで暮らし、成体になると陸へ上がり、再び水に戻る。",
+ "lead": "水田の水底で産卵し、幼生はえらで泳ぎ、成体になると陸に上がり、再び水中へ戻る。",
  "texts": {
-  "move": "{to}へ、ゆっくりと泳ぎながら進む。",
-  "fleeJa": "危険を感じて水底の泥へ逃げる",
-  "restJa": "水草の陰で体を丸めて休む",
-  "watchJa": "水面近くで獲物を待ち構える",
-  "lieJa": "泥の中で体を横たえて眠る",
-  "lastMemory": "春の雨が水面に波紋を広げた光景を思い出す。"
+  "move": "{to}へ、ゆっくりと泳ぐ。",
+  "fleeJa": "危険を感じて水草の陰へ逃げる",
+  "restJa": "水底の泥の上で体を伸ばす",
+  "watchJa": "水面近くで獲物を見張る",
+  "lieJa": "水草の葉の裏で体を丸めて横たわる",
+  "lastMemory": "春の雨が水面に波紋を作る音を思い出す。"
  },
  "intro": [
-  "水田の浅瀬に産み落とされた卵が、約三週間で孵化した。",
-  "小さな幼体はえらを使い、ゆっくりと水中を漂う。"
+  "水田の水底の柔らかな泥に産まれた卵が、約三週間で孵化した。",
+  "淡い色の幼生はえらを開き、ゆっくりと水中を漂う。"
  ],
- "wins": [],
- "memories": [
+ "wins": [
   {
-   "flag": "c0_1",
-   "text": "雨後の水面に映る赤い腹の光が、捕食者を遠ざけた瞬間を思い出す。"
+   "minKids": 7,
+   "title": "子を残した",
+   "line": "{kids}個の卵が次の命になる。",
+   "mem": "卵が水草に貼り付けられ、次の世代が芽吹く様子を思い出す。"
   }
  ],
- "facts": [
+ "memories": [
   {
-   "quote": "The Japanese fire-bellied newt contains high levels of tetrodotoxin, a neurotoxin accumulated mainly from their diet."
-  },
+   "flag": "c1_1",
+   "text": "夏の昼、池の表面で光が揺れ、仲間が餌を捕まえる姿を思い出す。"
+  }
+ ],
+ "noKids": [],
+ "facts": [
   {
    "quote": "Adults are 8 to 15 cm long."
   },
   {
-   "quote": "They breed from spring to the beginning of summer, both sexes producing pheromones when ready to mate."
+   "quote": "They contain high levels of tetrodotoxin, a neurotoxin accumulated mainly from their diet."
+  },
+  {
+   "quote": "Eggs are 2.1 to 2.3 mm long."
   }
  ]
 }

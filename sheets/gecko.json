@@ -2,11 +2,15 @@
  "id": "gecko",
  "ja": "ニホンヤモリ",
  "sci": "Gekko japonicus",
- "status": "draft",
+ "status": "checked",
  "type": "reptile_amphibian",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "本州の住宅街",
@@ -20,7 +24,11 @@
    "danger": 1,
    "cover": true,
    "about": "粘着質の卵が産み付けられる場所。狭く暗いため、外敵に卵を見つかりにくい。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.49,
    "lon": 139.836
   },
@@ -30,7 +38,11 @@
    "danger": 3,
    "cover": false,
    "about": "夜、灯りに集まる昆虫が豊富にいる。開けているため、カラスや猫に狙われやすい。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.49,
    "lon": 139.868
   },
@@ -40,7 +52,11 @@
    "danger": 1,
    "cover": true,
    "about": "高い位置にあり、視界が開けている。隙間に身を潜めつつ、獲物を待ち伏せできる。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.518,
    "lon": 139.856
   },
@@ -50,7 +66,11 @@
    "danger": 0,
    "cover": true,
    "about": "冬の寒さをしのげる安定した空間。天敵の侵入が少なく、冬眠に適している。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.507,
    "lon": 139.824
   },
@@ -60,7 +80,11 @@
    "danger": 2,
    "cover": true,
    "about": "クモやワラジムシなどの餌が多い。石の隙間に逃げ込めるが、ヘビに遭遇する恐れがある。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.49,
    "lon": 139.804
   },
@@ -70,7 +94,11 @@
    "danger": 2,
    "cover": false,
    "about": "趾下薄板で垂直な面を自在に移動できる。ガラス越しに獲物を探すが、外から見えやすい。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.462,
    "lon": 139.816
   },
@@ -80,7 +108,11 @@
    "danger": 0,
    "cover": true,
    "about": "静かで暗い休息場所。高い位置にあるため、地上の天敵から完全に隔離されている。",
-   "stages": [],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
    "lat": 37.473,
    "lon": 139.848
   }
@@ -138,5 +170,534 @@
    "attic_gap",
    "window_frame"
   ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 10
+ },
+ "stats": {
+  "run": {
+   "ja": "壁走力",
+   "use": "外敵から逃げる時に効く"
+  },
+  "sense": {
+   "ja": "夜視力",
+   "use": "暗がりで獲物を探す時に効く"
+  },
+  "forage": {
+   "ja": "吸着力",
+   "use": "垂直な面で獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "幼体",
+   "days": 120,
+   "hunger": 6,
+   "grow": 0.4,
+   "goal": "若体になる",
+   "enter": "孵化して間もない。体色は淡く、小さな虫を追って壁を這い回る。"
+  },
+  {
+   "id": "young",
+   "ja": "若体",
+   "fromAge": 1,
+   "days": 150,
+   "hunger": 8,
+   "grow": 0.3,
+   "goal": "成体になる",
+   "enter": "体が成長し、環境に合わせて体色を変化させることができるようになった。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 10,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "全長10センチを超え、繁殖が可能な体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   5,
+   10
+  ],
+  "text": "冬の冷え込みに耐えきれず、壁の隙間で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "壁や木に産卵する",
+  "ds": "5月から9月にかけて、粘着質に覆われた卵を2個ずつ産みつける",
+  "months": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "places": [
+   "wooden_eaves",
+   "wall_gap_nest",
+   "window_frame"
+  ],
+  "perYear": 3,
+  "kids": [
+   2,
+   2
+  ],
+  "many": 6,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "かえったばかりの仔ヤモリ"
+  },
+  "ok": "壁の隙間に、{born}個の白い卵を産みつけた。",
+  "ng": "安全な隙間が見つからず、卵を産み落とせなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を6個産む"
+ },
+ "foods": [
+  {
+   "id": "insect",
+   "ja": "灯りに集まる虫を食べる",
+   "name": "昆虫",
+   "ds": "夜の屋外灯に集まる蛾やコオロギを捕らえる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "outdoor_light",
+    "window_frame"
+   ],
+   "rich": [
+    "outdoor_light"
+   ],
+   "ok": "灯火に誘われた虫を、素早く口に含んだ。",
+   "full": 15
+  },
+  {
+   "id": "spider",
+   "ja": "クモを捕らえる",
+   "name": "クモ",
+   "ds": "壁の隅や隙間に潜むクモを待ち伏せして食べる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "wall_gap_nest",
+    "wooden_eaves"
+   ],
+   "rich": [
+    "wall_gap_nest"
+   ],
+   "ok": "壁の隅にいたクモを、電撃的な速さで捕らえた。",
+   "full": 20
+  },
+  {
+   "id": "woodlouse",
+   "ja": "ワラジムシを食べる",
+   "name": "ワラジムシ",
+   "ds": "床下や石垣の湿った場所にいる節足動物を食べる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "underfloor",
+    "stone_fence"
+   ],
+   "rich": [
+    "underfloor"
+   ],
+   "ok": "床下の暗がりで、這い回るワラジムシを呑み込んだ。",
+   "full": 10
+  }
+ ],
+ "special": [
+  {
+   "id": "autotomy",
+   "ja": "自切",
+   "ds": "敵に捕まった際、尾を切り離して逃れる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": false,
+   "ok": "敵に尾を掴まれたが、自ら切り離して隙間に逃げ込んだ。"
+  },
+  {
+   "id": "wall_stick",
+   "ja": "趾下薄板による吸着",
+   "ds": "指の裏の微細な構造で、ガラス面などの垂直な壁に張り付く",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.7,
+   "calm": true,
+   "ok": "指先の薄板を使い、滑らかな窓ガラスを垂直に登った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "cat",
+   "ja": "ネコ",
+   "kind": "mammal",
+   "places": [
+    "outdoor_light",
+    "wooden_eaves",
+    "stone_fence"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "鋭い爪が、壁を蹴って一気に距離を詰める。",
+    "獲物を狙う金色の瞳が、暗がりの隙間をじっと見据えている。"
+   ],
+   "again": [
+    [
+     "また、あの三毛のネコだ。庭の石垣で待ち構えている。"
+    ],
+    [
+     "三毛のネコが、壁の隙間を執拗に覗き込んでいる。"
+    ]
+   ],
+   "bye": "動きが速くなり、狭い隙間へ逃げ込む術を心得た。"
+  },
+  {
+   "id": "striped_snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "underfloor",
+    "wall_gap_nest",
+    "stone_fence"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "鱗を持つ細長い体が、床下の暗がりを音もなく滑ってくる。",
+    "獲物の匂いを嗅ぎつけたヘビが、隙間から頭を突き出す。"
+   ],
+   "again": [
+    [
+     "また、あの太いアオダイショウだ。床下で出くわした。"
+    ],
+    [
+     "太いアオダイショウが、石垣の陰からゆっくりと現れる。"
+    ]
+   ],
+   "bye": "体が十分に大きくなり、もう一口で呑み込まれることはない。"
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "wooden_eaves",
+    "outdoor_light",
+    "window_frame"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い翼を広げた巨鳥が、軒下へ急降下してくる。",
+    "強靭な嘴が、壁に張り付いた体を正確に捉えようとする。"
+   ]
+  },
+  {
+   "id": "weasel",
+   "ja": "ニホンイタチ",
+   "kind": "mammal",
+   "places": [
+    "underfloor",
+    "wall_gap_nest"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "小柄な獣が、狭い壁の隙間に鼻先を突っ込んでくる。",
+    "素早い身のこなしで、床下の隠れ家を暴き立てる。"
+   ]
+  },
+  {
+   "id": "buzzard",
+   "ja": "ノスリ",
+   "kind": "bird",
+   "places": [
+    "wooden_eaves",
+    "outdoor_light"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "高い空から鋭い眼が、屋外灯に集まる影を捉える。",
+    "猛禽の鋭い鉤爪が、背中めがけて一気に突き刺さる。"
+   ]
+  },
+  {
+   "id": "shrike",
+   "ja": "モズ",
+   "kind": "bird",
+   "places": [
+    "wooden_eaves",
+    "stone_fence"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "小さな鳥が、鋭い嘴で幼い体をひっつかむ。",
+    "獲物を棘に突き刺そうと、空へと舞い上がる。"
+   ]
+  },
+  {
+   "id": "spider",
+   "ja": "大型クモ",
+   "kind": "arachnid",
+   "places": [
+    "wall_gap_nest",
+    "underfloor"
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "sev": 1,
+   "texts": [
+    "節くれだった脚を持つ大蜘蛛が、壁の隙間で待ち構えている。",
+    "粘着質な糸に絡め取られ、身動きが封じられる。"
+   ]
+  },
+  {
+   "id": "human_cleaner",
+   "ja": "掃除をする人",
+   "kind": "human",
+   "places": [
+    "window_frame",
+    "wall_gap_nest"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "強い薬剤が、窓枠の隙間から霧のように吹き付けられる。",
+    "掃除用の刷毛が、潜んでいた隙間を強引に掻き出す。"
+   ],
+   "lose": "強い薬剤にさらされ、皮膚を焼かれて傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "夜、腹を空かせた。どこで獲物を待つか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "屋外灯の明かりの下で待つ",
+     "ds": "灯りに集まる虫が多く、効率よく食事ができる。天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "outdoor_light",
+     "say": "灯りに集まる羽虫を、素早い動きで捕らえた。",
+     "chip": "灯火で狩る"
+    },
+    {
+     "ja": "石垣のすき間でじっと待つ",
+     "ds": "身を隠しやすく安全である。獲物との遭遇率は低い",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "stone_fence",
+     "say": "暗がりに紛れ、通りかかる節足動物を狙った。",
+     "chip": "石垣で待つ"
+    }
+   ]
+  },
+  {
+   "q": "初夏、繁殖の季節だ。相手をどう探すか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "壁の高い場所を広く移動する",
+     "ds": "相手に見つかりやすく、出会いの機会が増える。上空の鳥に狙われやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "wooden_eaves",
+     "say": "高い場所から周囲を見渡し、仲間の気配を追った。",
+     "chip": "壁を巡る"
+    },
+    {
+     "ja": "窓枠のサッシ沿いに慎重に進む",
+     "ds": "天敵の目を避けながら移動できる。出会える確率は低い",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "window_frame",
+     "say": "ガラスの縁を伝い、気配を消して静かに移動した。",
+     "chip": "サッシを伝う"
+    }
+   ]
+  },
+  {
+   "q": "秋が深まり冷えてきた。どこで冬を越すか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "家の床下の土に潜る",
+     "ds": "温度が安定しており、外敵に襲われにくい。春の目覚めが遅くなる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "underfloor",
+     "say": "湿った土の温もりに身を任せ、深く潜った。",
+     "chip": "床下へ"
+    },
+    {
+     "ja": "壁の狭いすき間に潜り込む",
+     "ds": "比較的暖かい。家の中の虫に遭遇する機会があるが、人に見つかりやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "wall_gap_nest",
+     "say": "狭い隙間に体を押し込み、外気を遮断した。",
+     "chip": "壁の隙間へ"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "気温が下がり、代謝が落ちた。深い眠りに落ち、春を待った。",
+   "full": -10
+  },
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "野良猫に捕まり、尾を自切され、傷を負った。",
+   "danger": 1
+  }
+ ],
+ "lead": "本州の住宅街の壁隙間で産卵し、夜は灯りに集まる虫を捕食し、冬は壁の裏で眠る。",
+ "texts": {
+  "move": "{to}へ、ゆっくりと這い進む。",
+  "fleeJa": "危険を感じて壁の隙間へ逃げ込む",
+  "restJa": "暗い隙間で体を丸めて休む",
+  "watchJa": "灯りの周囲で獲物を見張る",
+  "lieJa": "壁の縁で体を伸ばして横たわる",
+  "lastMemory": "灯火の揺らめきと虫の羽音を思い出す"
+ },
+ "intro": [
+  "壁の狭いすき間に産み付けられた卵が、春の温かさで孵化した。",
+  "淡い灰色の幼体は壁の縁を這い、光に集まる小さな虫を捕らえる。"
+ ],
+ "wins": [
+  {
+   "minKids": 2,
+   "title": "子を残した",
+   "line": "{kids}個の卵が次の命になる。",
+   "mem": "壁の上で揺れる小さな命を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "夜、灯りの周りで獲物を待ち、尾を自切された光景を思い出す。"
+  }
+ ],
+ "noKids": [],
+ "facts": [
+  {
+   "quote": "ニホンヤモリは主に昆虫を捕食する（Wikipedia）"
+  },
+  {
+   "quote": "尾を自切し、脂肪組織を失うが出血は防げる（Wikipedia）"
+  },
+  {
+   "quote": "5〜9月に1回2個の卵を壁や木に産み、1.5〜2か月で孵化する（Wikipedia）"
+  }
  ]
 }

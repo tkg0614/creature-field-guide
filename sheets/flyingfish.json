@@ -1,0 +1,11 @@
+{
+ "id": "flyingfish",
+ "ja": "トビウオ",
+ "sci": "Cypselurus agoo",
+ "status": "draft",
+ "type": "fish",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it"
+ }
+}

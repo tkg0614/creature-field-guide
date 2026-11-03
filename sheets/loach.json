@@ -1,0 +1,815 @@
+{
+ "id": "loach",
+ "ja": "ドジョウ",
+ "sci": "Misgurnus anguillicaudatus",
+ "status": "checked",
+ "type": "fish",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "東アジアの淡水域",
+  "geo": "East Asia",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "tanbo_spawn",
+   "ja": "田んぼの浅瀬",
+   "danger": 2,
+   "cover": true,
+   "about": "初夏に水が入ると産卵が始まる。泥の中に卵が産み付けられる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "mud_bottom",
+   "ja": "泥底",
+   "danger": 1,
+   "cover": true,
+   "about": "泥深くにもぐり、外敵から身を隠す。腸で空気を吸い、低酸素状態でも耐える。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "waterway",
+   "ja": "水路",
+   "danger": 2,
+   "cover": false,
+   "about": "餌を求めて移動する通り道。流れが緩やかな場所を好む。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "pond_edge",
+   "ja": "池の縁",
+   "danger": 2,
+   "cover": true,
+   "about": "水草が茂り、小さな甲殻類や昆虫の幼虫が豊富にいる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "gravel_bed",
+   "ja": "砂礫底",
+   "danger": 1,
+   "cover": false,
+   "about": "髭を使い、砂や小石の間から有機物や餌をかき出す。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "dry_mud",
+   "ja": "干上がった泥地",
+   "danger": 3,
+   "cover": true,
+   "about": "水が引いた後も、粘液で体を包み込み生き延びる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "plant_leaf",
+   "ja": "水草の葉の上",
+   "danger": 2,
+   "cover": true,
+   "about": "休息の場所。時折、死んだように横たわって体を休める。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  }
+ ],
+ "start": {
+  "place": "tanbo_spawn",
+  "month": 6,
+  "day": 1
+ },
+ "region": {
+  "ja": "東アジアの淡水域",
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
+  "labels": [
+   [
+    36.583800000000004,
+    139.239,
+    "東アジアの淡水域"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "mud_bottom",
+   "tanbo_spawn"
+  ],
+  [
+   "tanbo_spawn",
+   "waterway"
+  ],
+  [
+   "mud_bottom",
+   "waterway"
+  ],
+  [
+   "pond_edge",
+   "tanbo_spawn"
+  ],
+  [
+   "mud_bottom",
+   "pond_edge"
+  ],
+  [
+   "gravel_bed",
+   "tanbo_spawn"
+  ],
+  [
+   "gravel_bed",
+   "mud_bottom"
+  ],
+  [
+   "dry_mud",
+   "tanbo_spawn"
+  ],
+  [
+   "dry_mud",
+   "mud_bottom"
+  ],
+  [
+   "plant_leaf",
+   "tanbo_spawn"
+  ],
+  [
+   "mud_bottom",
+   "plant_leaf"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.1
+ },
+ "stats": {
+  "run": {
+   "ja": "跳躍力",
+   "use": "水面を飛び出し、危険を回避したり移動したりする時に効く"
+  },
+  "sense": {
+   "ja": "気圧感知力",
+   "use": "嵐の前触れを察知し、行動を変える時に効く"
+  },
+  "forage": {
+   "ja": "泥掘り能力",
+   "use": "泥の中の底生生物や有機物を探し出す時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 30,
+   "hunger": 10,
+   "grow": 0.5,
+   "goal": "稚魚になる",
+   "enter": "卵からふ化し、プランクトンを食べて泳ぎ始めた。"
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.08,
+   "days": 120,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "未成魚になる",
+   "enter": "体色が茶褐色に変わり、泥の中へ潜る習性を身につけた。"
+  },
+  {
+   "id": "young",
+   "ja": "未成魚",
+   "fromAge": 0.4,
+   "days": 150,
+   "hunger": 15,
+   "grow": 1,
+   "goal": "成魚になる",
+   "enter": "体つきが太くなり、腸で空気を呼吸する能力が発達した。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 20,
+   "grow": 0.3,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体長が10センチを超えた。産卵期に合わせて浅瀬へ向かう。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   3,
+   10
+  ],
+  "text": "泥の底で静かに呼吸を止め、土へと還った。"
+ },
+ "breeding": {
+  "ja": "田んぼでの産卵",
+  "ds": "初夏、田に水が入る時期に浅瀬で産卵する",
+  "months": [
+   5,
+   6
+  ],
+  "places": [
+   "tanbo_spawn"
+  ],
+  "perYear": 1,
+  "kids": [
+   1000,
+   10000
+  ],
+  "many": 5000,
+  "label": {
+   "ja": "卵",
+   "unit": "個",
+   "child": "ふ化した仔魚"
+  },
+  "ok": "水が入った田んぼの浅瀬に、{born}個の卵を産み付けた。",
+  "ng": "水温が上がらず、産卵のタイミングを逃した。",
+  "goal1": "卵を産む",
+  "goal2": "卵を5000個産む"
+ },
+ "foods": [
+  {
+   "id": "plankton",
+   "ja": "プランクトンを食べる",
+   "name": "動物プランクトン",
+   "ds": "水中に漂う小さなプランクトンを吸いこむ",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "tanbo_spawn",
+    "waterway"
+   ],
+   "rich": [
+    "tanbo_spawn"
+   ],
+   "ok": "漂う小さなプランクトンを、次々と吸いこんだ。",
+   "full": 30
+  },
+  {
+   "id": "benthic_inv",
+   "ja": "底生生物を捕食する",
+   "name": "水生昆虫の幼虫・甲殻類",
+   "ds": "泥の中をひげで探り、小さな虫やエビを捕らえる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "mud_bottom",
+    "waterway",
+    "gravel_bed"
+   ],
+   "rich": [
+    "mud_bottom"
+   ],
+   "ok": "泥の中に潜む幼虫を、鋭く吸い上げた。",
+   "full": 40
+  },
+  {
+   "id": "detritus",
+   "ja": "有機物を食べる",
+   "name": "デトリタス",
+   "ds": "泥に混じる有機物や死骸を口に含んで食べる",
+   "stages": [
+    "adult"
+   ],
+   "places": [
+    "mud_bottom",
+    "dry_mud"
+   ],
+   "rich": [
+    "mud_bottom"
+   ],
+   "ok": "泥に混じる有機物を、ゆっくりと口に含んだ。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "intestinal_breathing",
+   "ja": "腸呼吸で生き延びる",
+   "ds": "水面に口を出し、腸で空気呼吸を行うことで低酸素状態を耐える",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.5,
+   "calm": true,
+   "ok": "水面に口を出し、腸で空気を吸い込んで酸欠をしのいだ。"
+  },
+  {
+   "id": "mucus_shield",
+   "ja": "粘液で乾燥を防ぐ",
+   "ds": "体表に水分を保持する粘液の層を作り、短期間の干上がりに耐える",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.3,
+   "calm": true,
+   "ok": "体表に粘液を纏い、干上がった泥の中でも水分を保った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "tanbo_spawn",
+   "say": "水が入った田んぼへ、産卵のために水路から入り込んだ。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "waterway",
+   "say": "秋になり水が抜ける前に、深い水路や泥底へと戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "dragonfly_larva",
+   "ja": "ヤゴ",
+   "kind": "insect",
+   "places": [
+    "tanbo_spawn",
+    "waterway"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "水草の陰に潜むヤゴが、下顎を伸ばして仔魚を捕らえる。",
+    "泥底の暗がりに潜み、通りかかる小さな命を待ち構える。"
+   ]
+  },
+  {
+   "id": "water_beetle",
+   "ja": "ゲンゴロウ",
+   "kind": "insect",
+   "places": [
+    "tanbo_spawn",
+    "waterway"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "強靭な脚を持つゲンゴロウが、稚魚を力強く押さえつける。",
+    "水中を自在に泳ぎ回り、不意に背後から襲いかかる。"
+   ]
+  },
+  {
+   "id": "frog",
+   "ja": "カエル",
+   "kind": "amphibian",
+   "places": [
+    "pond_edge",
+    "waterway"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "岸辺に構えたカエルが、長い舌を伸ばして稚魚を絡め取る。",
+    "泥の上に身を潜め、水面をかすめる獲物を狙う。"
+   ]
+  },
+  {
+   "id": "kingfisher",
+   "ja": "カワセミ",
+   "kind": "bird",
+   "places": [
+    "waterway",
+    "pond_edge"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "瑠璃色の閃光が水面を突き破り、稚魚を正確に捉える。",
+    "鋭い嘴が水中に突き刺さり、逃げる間もなく捕らえられる。"
+   ],
+   "again": [
+    [
+     "また、あの鋭い眼光を持つカワセミだ。"
+    ],
+    [
+     "水辺の枝に止まったカワセミが、じっとこちらを監視している。"
+    ]
+   ],
+   "bye": "体が大きくなり、水底の泥に深く潜ればもう狙われない。"
+  },
+  {
+   "id": "grey_heron",
+   "ja": "アオサギ",
+   "kind": "bird",
+   "places": [
+    "tanbo_spawn",
+    "waterway"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "灰色の巨躯が静止し、獲物が近づくのをじっと待つ。",
+    "稲妻のような速さで嘴が振り下ろされ、成魚を挟み込む。"
+   ],
+   "again": [
+    [
+     "また、足元の長いアオサギだ。"
+    ],
+    [
+     "泥地に佇むアオサギが、ゆっくりと首を曲げて狙いを定める。"
+    ]
+   ],
+   "bye": "泥深くへと潜り込み、アオサギの嘴が届かない場所へ逃げ延びた。"
+  },
+  {
+   "id": "bass",
+   "ja": "オオクチバス",
+   "kind": "fish",
+   "places": [
+    "waterway",
+    "pond_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "巨大な口を開いたバスが、未成魚をまとめて吸い込む。",
+    "水草の茂みから突如として現れ、逃げ場を奪う。"
+   ]
+  },
+  {
+   "id": "water_snake",
+   "ja": "シマヘビ",
+   "kind": "reptile",
+   "places": [
+    "waterway",
+    "mud_bottom"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ぬらぬらとした体が水底を這い、獲物の振動を察知する。",
+    "獲物を逃さない強い顎で、成魚をしっかりと噛みしめる。"
+   ]
+  },
+  {
+   "id": "raccoon_dog",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "waterway",
+    "dry_mud"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥まみれの太い前足が、浅瀬の底を激しくかき回す。",
+    "鋭い嗅覚で泥の中の気配を察し、強引に掘り起こす。"
+   ]
+  },
+  {
+   "id": "human_net",
+   "ja": "人間（網漁）",
+   "kind": "human",
+   "places": [
+    "tanbo_spawn",
+    "waterway"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "泥の中まで届く長い網が、水路の底をさらう。",
+    "逃げ場のない浅瀬で、粗い網目に絡め取られる。"
+   ],
+   "lose": "網に激しく擦られ、皮膚が剥げて傷を負った。",
+   "fleeJa": "網が届かない泥の深層へ潜り込む",
+   "hideJa": "水草の根元に身を潜めてやり過ごす"
+  },
+  {
+   "id": "human_hook",
+   "ja": "人間（釣り）",
+   "kind": "human",
+   "places": [
+    "waterway",
+    "pond_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "餌に誘われて近づいたところを、鋭い針が口元に迫る。",
+    "水面から垂らされた糸が、泥底の視界を遮る。"
+   ],
+   "lose": "鋭い釣り針が口元を貫いて裂き、傷を負った。",
+   "fleeJa": "違和感を察して即座に餌を吐き出す",
+   "hideJa": "泥の中に深く潜り、気配を消す"
+  }
+ ],
+ "choices": [
+  {
+   "q": "成長に伴い、住処を広げる。浅瀬に留まるか、水路へ出るか",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "田んぼの浅瀬に留まる",
+     "ds": "餌となる小型無脊椎動物が豊富。鳥などの天敵に見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "tanbo_spawn",
+     "say": "餌の多い浅瀬で泥を掘り起こし、腹を満たした。",
+     "chip": "浅瀬に留まる"
+    },
+    {
+     "ja": "水路へ移動する",
+     "ds": "水深があり天敵から身を隠しやすい。餌の密度は低い",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "waterway",
+     "say": "流れのある水路へ入り、安全な泥底を求めて泳いだ。",
+     "chip": "水路へ移動"
+    }
+   ]
+  },
+  {
+   "q": "水が引き、寒さが増してきた。泥深く潜るか、水辺を移動するか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "泥底深くにもぐり込む",
+     "ds": "冬眠に近い状態で体力を温存できる。餌は得られない",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "mud_bottom",
+     "say": "冷たい泥の中へ深く潜り、静かに春を待った。",
+     "chip": "泥に潜る"
+    },
+    {
+     "ja": "水路の縁で餌を探す",
+     "ds": "冬でもわずかな餌を追える。外敵に晒されるリスクがある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "pond_edge",
+     "say": "凍らぬ水辺を巡り、泥に潜む小さな虫を追った。",
+     "chip": "水辺を移動"
+    }
+   ]
+  },
+  {
+   "q": "初夏、産卵の時が来た。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "水が入ったばかりの田んぼ",
+     "ds": "仔魚の成長に適した環境。干上がりのリスクがある",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "tanbo_spawn",
+     "say": "水が満ちた田んぼへ入り、浅瀬に卵を産み付けた。",
+     "chip": "田んぼで産卵"
+    },
+    {
+     "ja": "安定した水路の辺縁",
+     "ds": "水量は安定しており生存率が高い。流れで卵が散らばりやすい",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "waterway",
+     "say": "水量の安定した水路の隅に、静かに卵を落とした。",
+     "chip": "水路で産卵"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6,
+    7
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "p": 0.2,
+   "say": "サギに狙われ、間一髪で泥の中へ逃げ込んだ。",
+   "full": -10
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "気圧の変化を察知し、激しく泳ぎ回って体力を消耗した。",
+   "full": -5
+  },
+  {
+   "month": [
+    10,
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "泥底で他の個体と身を寄せ合い、冬の寒さを凌いだ。",
+   "full": 10
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "水が干上がった泥地で、粘液に包まれ空気呼吸で生き延びた。",
+   "full": 5
+  }
+ ],
+ "lead": "日本の田んぼや水路の泥底に潜み、腸で空気を吸い、季節の巡りに合わせて生きる。泥に身を隠し、静かに時を待つ。",
+ "texts": {
+  "move": "{to}へ、ぬらぬらと泳いでいった。",
+  "fleeJa": "泥の中へ素早く潜り込む",
+  "restJa": "泥底に身を沈めて休む",
+  "watchJa": "髭を動かして底の獲物を探る",
+  "lieJa": "水草の葉の上でじっと横たわる",
+  "lastMemory": "ぬくもりある泥の感触と、静かな水底の記憶を思い出した。"
+ },
+ "intro": [
+  "初夏の田んぼの浅瀬で生まれた。",
+  "小さな体で泥の隙間に潜み、生き延びる道を模索する。"
+ ],
+ "wins": [
+  {
+   "minKids": 2000,
+   "title": "田んぼに次代を託した",
+   "line": "{kids}個の卵を、水草や泥の間に産み付けた。",
+   "mem": "初夏の陽光が降り注ぐ、浅い水辺の光景を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "干上がった泥地で、粘液に包まれ、じっと雨を待った日々を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "空気が変わり、嵐が来る気配に突き動かされて泳ぎ回った記憶を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "泥に還る",
+  "line": "次の世代を残すことなく、静かに泥の底へと沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "Pond loaches are bottom-dwelling omnivores whose diet consists largely of small benthic invertebrates and detritus.",
+   "ja": "底生性の雑食性であり、主に小型の底生無脊椎動物や有機堆積物を食べる。"
+  },
+  {
+   "quote": "the pond loach can burrow into and hide in soft substrates, breathe atmospheric air through enteral respiration if necessary",
+   "ja": "柔らかい底質に潜って身を隠すことができ、必要に応じて腸呼吸によって空気呼吸を行う。"
+  },
+  {
+   "quote": "can survive short periods of drought by producing a layer of moisture-trapping mucus to keep themselves damp.",
+   "ja": "水分を保持する粘液の層を作ることで、短期間の干ばつを生き延びることができる。"
+  },
+  {
+   "quote": "This term comes from their ability to detect changes in barometric pressure before a storm and react with frantic swimming or standing on end.",
+   "ja": "嵐の前の気圧の変化を察知し、激しく泳いだり直立したりする反応を示す。"
+  }
+ ]
+}

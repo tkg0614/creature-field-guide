@@ -1,0 +1,713 @@
+{
+ "id": "salamander",
+ "ja": "オオサンショウウオ",
+ "sci": "Andrias japonicus",
+ "status": "checked",
+ "type": "reptile_amphibian",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "西日本の山あいの川",
+  "geo": "West Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "nesting_den",
+   "ja": "雄が守る巣穴",
+   "danger": 0,
+   "cover": true,
+   "about": "雄が丁寧に掃除し、外敵から卵を守る。交配の舞台となる場所である。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 35.423,
+   "lon": 136.763
+  },
+  {
+   "id": "headwater_stream",
+   "ja": "山奥の小さな源流",
+   "danger": 2,
+   "cover": true,
+   "about": "水流が緩やかで、小さな水生昆虫が豊富である。幼生が身を潜めて成長する。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 34.858,
+   "lon": 133.776
+  },
+  {
+   "id": "tributary_crevice",
+   "ja": "支流の岩陰",
+   "danger": 1,
+   "cover": true,
+   "about": "本流の大型個体との競争を避けられる。水生昆虫や小魚を捕食する。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 34.915,
+   "lon": 134.861
+  },
+  {
+   "id": "river_bottom",
+   "ja": "本流の川底",
+   "danger": 1,
+   "cover": true,
+   "about": "大きな岩や沈木が点在する。擬態して魚やカニが通りかかるのを待つ。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 34.942,
+   "lon": 132.537
+  },
+  {
+   "id": "paddy_stream",
+   "ja": "田んぼの脇を流れる川",
+   "danger": 2,
+   "cover": false,
+   "about": "カエルなどの餌が非常に多い。コンクリート護岸が多く、隠れ場所が少ない。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 34.734,
+   "lon": 136.515
+  },
+  {
+   "id": "winter_pool",
+   "ja": "深い淵の底",
+   "danger": 0,
+   "cover": true,
+   "about": "水温の変化が少なく、冬眠に適している。代謝を落として静かに過ごす。",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "lat": 33.601,
+   "lon": 132.819
+  }
+ ],
+ "start": {
+  "place": "nesting_den",
+  "month": 9,
+  "day": 1
+ },
+ "region": {
+  "ja": "西日本の山あいの川",
+  "lon0": 131.269,
+  "lon1": 138.031,
+  "lat0": 36.691,
+  "lat1": 32.333,
+  "k": 74,
+  "labels": [
+   [
+    36.429520000000004,
+    134.65,
+    "西日本の山あいの川"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "nesting_den",
+   "paddy_stream"
+  ],
+  [
+   "nesting_den",
+   "tributary_crevice"
+  ],
+  [
+   "headwater_stream",
+   "tributary_crevice"
+  ],
+  [
+   "headwater_stream",
+   "river_bottom"
+  ],
+  [
+   "paddy_stream",
+   "tributary_crevice"
+  ],
+  [
+   "river_bottom",
+   "winter_pool"
+  ],
+  [
+   "headwater_stream",
+   "winter_pool"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 10
+ },
+ "stats": {
+  "run": {
+   "ja": "潜り抜ける力",
+   "use": "岩の隙間や狭い場所へ逃げ込む時に効く"
+  },
+  "sense": {
+   "ja": "側線の感知力",
+   "use": "水の振動で獲物や外敵を察知する時に効く"
+  },
+  "forage": {
+   "ja": "吸引する力",
+   "use": "獲物を一気に吸い込み呑み込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "幼生",
+   "days": 150,
+   "hunger": 8,
+   "grow": 0.4,
+   "goal": "若魚になる",
+   "enter": "外鰓を持ち、源流の浅瀬で小さな獲物を追う。"
+  },
+  {
+   "id": "juvenile",
+   "ja": "若魚",
+   "fromAge": 1,
+   "days": 150,
+   "hunger": 10,
+   "grow": 0.3,
+   "goal": "成体になる",
+   "enter": "鰓が消失し、皮膚呼吸と肺呼吸で生きる体になった。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 5,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "体が大きく成長し、巣穴を確保して繁殖ができるようになった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   50,
+   80
+  ],
+  "text": "冷たい川底の岩陰で、静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "雄が守る巣穴で産卵する",
+  "ds": "晩夏から初秋にかけ、雄が確保した巣穴に雌が卵を産み落とす",
+  "months": [
+   8,
+   9
+  ],
+  "places": [
+   "nesting_den"
+  ],
+  "perYear": 1,
+  "kids": [
+   100,
+   500
+  ],
+  "many": 1000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった幼生の一匹"
+  },
+  "ok": "雄が守る巣穴に、{born}個の卵を産み落とした。",
+  "ng": " suitable な巣穴が見つからず、産みそびれた。",
+  "goal1": "卵を産む",
+  "goal2": "卵を1000個産む"
+ },
+ "foods": [
+  {
+   "id": "crab",
+   "ja": "カニを捕らえる",
+   "name": "淡水蟹",
+   "ds": "岩陰に潜み、通りかかったカニを素早く呑み込む",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "headwater_stream",
+    "tributary_crevice",
+    "river_bottom"
+   ],
+   "rich": [
+    "tributary_crevice"
+   ],
+   "ok": "岩陰から身を乗り出し、カニを丸ごと呑み込んだ。",
+   "full": 30
+  },
+  {
+   "id": "fish",
+   "ja": "魚を待ち伏せる",
+   "name": "小魚",
+   "ds": "川底でじっと待ち、振動を察知して獲物を捕らえる",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "tributary_crevice",
+    "river_bottom",
+    "winter_pool"
+   ],
+   "rich": [
+    "river_bottom"
+   ],
+   "ok": "水流に身を任せ、通りかかった魚を瞬時に呑み込んだ。",
+   "full": 20
+  },
+  {
+   "id": "frog",
+   "ja": "カエルを呑み込む",
+   "name": "カエル",
+   "ds": "田んぼ脇の川などで、水辺に寄ったカエルを襲う",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "paddy_stream",
+    "tributary_crevice"
+   ],
+   "rich": [
+    "paddy_stream"
+   ],
+   "ok": "泥に紛れて近づき、水辺のカエルを呑み込んだ。",
+   "full": 25
+  }
+ ],
+ "special": [
+  {
+   "id": "skin_respiration",
+   "ja": "皮膚呼吸",
+   "ds": "首元の皮膚のひだで効率よく酸素を取り込む",
+   "stages": [
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.6,
+   "calm": true,
+   "ok": "皮膚のひだから酸素を吸収し、水中で長く耐えた。"
+  },
+  {
+   "id": "milky_secretion",
+   "ja": "粘液分泌",
+   "ds": "脅威を感じた際、強い臭いのする乳白色の物質を出す",
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": true,
+   "ok": "強い臭いのする粘液を出し、外敵を遠ざけた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    8,
+    9
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "headwater_stream",
+   "say": "繁殖のため、本流から源流の巣穴へと遡上した。"
+  },
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "river_bottom",
+   "say": "繁殖を終え、再び本流の深い底へと戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "gray_heron",
+   "ja": "アオサギ",
+   "kind": "bird",
+   "places": [
+    "headwater_stream",
+    "paddy_stream"
+   ],
+   "stages": [
+    "larva",
+    "juvenile"
+   ],
+   "sev": 2,
+   "texts": [
+    "水辺に静かに佇む灰色の影が、鋭い嘴を水中に突き出す。",
+    "濁流の隙間に潜む小さな影を、正確に捉えて引き上げる。"
+   ]
+  },
+  {
+   "id": "kingfisher",
+   "ja": "カワセミ",
+   "kind": "bird",
+   "places": [
+    "headwater_stream"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "青い閃光が水面を切り裂き、一気に潜り込む。",
+    "小さな幼生が、鋭い嘴によって水面へと連れ去られる。"
+   ]
+  },
+  {
+   "id": "yamame",
+   "ja": "ヤマメ",
+   "kind": "fish",
+   "places": [
+    "headwater_stream",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "fast": true,
+   "texts": [
+    "川の流れに逆らう銀色の魚が、岩陰の幼生に気づく。",
+    "素早い動きで接近し、小さな口で幼生を呑み込む。"
+   ]
+  },
+  {
+   "id": "iwana",
+   "ja": "イワナ",
+   "kind": "fish",
+   "places": [
+    "headwater_stream",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "深い淵に潜む黒い魚が、獲物をじっと待っている。",
+    "不意に飛び出した魚が、幼生の柔らかい体を一口に食らう。"
+   ]
+  },
+  {
+   "id": "river_otter",
+   "ja": "ニホンカワウソ",
+   "kind": "mammal",
+   "places": [
+    "river_bottom",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "しなやかな体を持つ獣が、水底を自在に泳ぎ回る。",
+    "鋭い牙が、岩陰に身を潜める体に深く突き刺さる。"
+   ],
+   "again": [
+    [
+     "また、あの身軽なカワウソだ。水底の岩を一つひとつ調べてくる。"
+    ],
+    [
+     "カワウソが、獲物を追い詰めるように水底を疾走してくる。"
+    ]
+   ],
+   "bye": "体が巨大になり、水底の獣も容易には手を出せなくなった。"
+  },
+  {
+   "id": "raccoon_dog",
+   "ja": "ホンドタヌキ",
+   "kind": "mammal",
+   "places": [
+    "paddy_stream",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の川辺を、ずんぐりした獣が嗅ぎ回りながら歩く。",
+    "水際の浅瀬に潜む姿を、鋭い嗅覚で見つけ出す。"
+   ]
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "paddy_stream",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "器用な前足で石をどかし、底に潜む獲物を探る。",
+    "外来の獣が、夜の静寂を破って川底を荒らし回る。"
+   ]
+  },
+  {
+   "id": "giant_salamander_adult",
+   "ja": "成体のオオサンショウウオ",
+   "kind": "amphibian",
+   "places": [
+    "nesting_den",
+    "river_bottom"
+   ],
+   "stages": [
+    "larva",
+    "juvenile"
+   ],
+   "sev": 3,
+   "texts": [
+    "自分より遥かに大きな影が、ゆっくりと近づいてくる。",
+    "同種の成体が、幼い個体を獲物として口に含もうとする。"
+   ],
+   "again": [
+    [
+     "また、あの巨大な個体だ。縄張りの境界で待ち構えている。"
+    ],
+    [
+     "巨大な同種が、岩の隙間に潜む幼い体を追い詰めてくる。"
+    ]
+   ],
+   "bye": "十分に成長し、もう同種に呑まれる心配はなくなった。"
+  },
+  {
+   "id": "human_collector",
+   "ja": "密猟者",
+   "kind": "human",
+   "places": [
+    "river_bottom",
+    "tributary_crevice"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の川底に、強い光を放つ懐中電灯が照らし出される。",
+    "大きな網が水底をさらい、逃げ場を奪われる。"
+   ],
+   "lose": "無理に引き揚げられ、皮膚を強く擦られて傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "腹が減った。どこで獲物を待つか",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "源流の浅瀬で小さな獲物を狙う",
+     "ds": "外敵に襲われにくい。得られる餌は少ない",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "headwater_stream",
+     "say": "冷たい流れに身を任せ、流れてくる水生昆虫を待った。",
+     "chip": "源流で待つ"
+    },
+    {
+     "ja": "田んぼ脇の川でカエルを狙う",
+     "ds": "餌が豊富にある。人や環境の変化にさらされる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "paddy_stream",
+     "say": "泥の混じった川底に潜み、跳ねるカエルの振動を捉えた。",
+     "chip": "田んぼの川"
+    }
+   ]
+  },
+  {
+   "q": "繁殖の季節だ。どうやって子を残すか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    8,
+    9
+   ],
+   "opts": [
+    {
+     "ja": "力強く競争し、最良の巣穴を奪う",
+     "ds": "交尾の機会が増える。他の雄との激しい争いがある",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "nesting_den",
+     "say": "大きな口を開けて威嚇し、巣穴の主としての地位を確立した。",
+     "chip": "巣穴を奪う"
+    },
+    {
+     "ja": "控えめに巣穴の周辺で機会を待つ",
+     "ds": "争いを避けられる。交尾できる確率は低い",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "tributary_crevice",
+     "say": "岩陰に身を潜め、雌が巣穴に入る瞬間を静かに待った。",
+     "chip": "周辺で待つ"
+    }
+   ]
+  },
+  {
+   "q": "冬が近づき水温が下がった。どこでやり過ごすか",
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "深い淵の底へ潜る",
+     "ds": "水温が安定し、外敵から逃れられる。餌にありつけない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "winter_pool",
+     "say": "光の届かない深い底へ沈み、泥の中に体を埋めた。",
+     "chip": "深い淵"
+    },
+    {
+     "ja": "支流の岩陰に身を寄せる",
+     "ds": "春先に早く活動できる。凍結や干上がりの危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "goto": "tributary_crevice",
+     "say": "冷たい岩の隙間に体を押し込み、眠りについた。",
+     "chip": "岩陰"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "larva",
+    "juvenile",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "代謝が極限まで落ち、深い眠りの中で時を過ごした。",
+   "full": -5
+  },
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "外敵に襲われ、皮膚から強い匂いのする白い液体を出して逃れた。",
+   "danger": 1
+  }
+ ],
+ "lead": "西日本の山あいの川に住み、夜に獲物を待ち伏せし、雄が巣穴で卵を守る。",
+ "texts": {
+  "move": "{to}へ、泥に身を潜めながらゆっくりと進む。",
+  "fleeJa": "危険を感じて岩陰へ逃げ込む",
+  "restJa": "川底の石の下で静かに体を休める",
+  "watchJa": "側線で水の振動を感じ取り、獲物を待つ",
+  "lieJa": "砂や泥に身を沈めて横たわる",
+  "lastMemory": "冷たい水の流れと、暗い巣穴の静寂を思い出す。"
+ },
+ "intro": [
+  "雄が守る巣穴で、冷たい水に抱かれた卵が孵化した。",
+  "幼生は山奥の小さな源流で、水生昆虫などを食べて成長する。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を残した",
+   "line": "{kids}個の卵が次の命になる。",
+   "mem": "巣穴で卵を外敵から守り抜いた日々を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "夜の静寂の中、不意に飛び込んできたカニを飲み込んだ感触を思い出す。"
+  }
+ ],
+ "noKids": {
+  "line": "子を残さぬまま、川の流れに身を任せる。",
+  "mem": "深い淵の底で、ただ静かに時を過ごした記憶を思い出す。"
+ },
+ "facts": [
+  {
+   "quote": "In the wild, it may live for nearly 80 years.（Wikipedia）"
+  },
+  {
+   "quote": "Adults feed mainly on freshwater crabs, other crustaceans, worms, insects, frogs, other small amphibians, fish, and even small mammals.（Wikipedia）"
+  },
+  {
+   "quote": "The Japanese giant salamander remains in bodies of water its entire life.（Wikipedia）"
+  }
+ ]
+}

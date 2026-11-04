@@ -1,0 +1,518 @@
+{
+ "id": "cuckoo",
+ "ja": "カッコウ",
+ "sci": "Cuculus canorus",
+ "status": "draft",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "東アジアからアフリカにかけての渡りルート",
+  "geo": "Eurasia and Africa",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "host_nest",
+   "ja": "ヨシ原の他種の巣",
+   "danger": 1,
+   "cover": true,
+   "about": "オオヨシキリなどの巣に卵を産み付ける。親鳥が運ぶ虫を食べて成長する。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "grassland_edge",
+   "ja": "草原の林縁",
+   "danger": 2,
+   "cover": true,
+   "about": "生い茂る草むらで身を隠す。芋虫などの昆虫を捕らえて食べる。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "open_perch",
+   "ja": "見晴らしのよい枝",
+   "danger": 2,
+   "cover": false,
+   "about": "高い枝に止まり、大きな声で鳴いて縄張りを主張する。天敵に見つかりやすい。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "host_search_area",
+   "ja": "托卵先の茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "他種の巣を探して密かに移動する。タカに似た姿で外敵を威圧する。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "migration_stopover",
+   "ja": "渡りの中継地",
+   "danger": 2,
+   "cover": true,
+   "about": "長い旅の途中で休息し、栄養を蓄える。多様な昆虫を捕食する。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.871,
+   "lon": 136.058
+  },
+  {
+   "id": "winter_savanna",
+   "ja": "アフリカのサバンナ",
+   "danger": 2,
+   "cover": false,
+   "about": "温暖な気候の中で冬を過ごす。開けた場所で獲物を探す。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 33.717,
+   "lon": 138.927
+  }
+ ],
+ "start": {
+  "place": "host_nest",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "東アジアからアフリカにかけての渡りルート",
+  "lon0": 135.104,
+  "lon1": 140.193,
+  "lat0": 37.529,
+  "lat1": 32.763,
+  "k": 98,
+  "labels": [
+   [
+    37.24304,
+    137.6485,
+    "東アジアからアフリカにかけての渡りルート"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "grassland_edge",
+   "host_nest"
+  ],
+  [
+   "host_nest",
+   "open_perch"
+  ],
+  [
+   "grassland_edge",
+   "open_perch"
+  ],
+  [
+   "host_nest",
+   "host_search_area"
+  ],
+  [
+   "grassland_edge",
+   "host_search_area"
+  ],
+  [
+   "migration_stopover",
+   "winter_savanna"
+  ],
+  [
+   "host_nest",
+   "migration_stopover"
+  ],
+  [
+   "host_nest",
+   "winter_savanna"
+  ],
+  [
+   "grassland_edge",
+   "winter_savanna"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 32
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "大陸を横断する渡りや外敵からの逃走に効く"
+  },
+  "sense": {
+   "ja": "見張る目",
+   "use": "托卵先の巣を効率よく探す時に効く"
+  },
+  "forage": {
+   "ja": "捕食技",
+   "use": "茂みの芋虫などの獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 30,
+   "hunger": 10,
+   "grow": 1.5
+  },
+  {
+   "id": "juv",
+   "ja": "若鳥",
+   "fromAge": 0.15,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "成鳥になる",
+   "enter": "白い項の斑紋が消え、羽色が落ち着いた。自力で虫を捕らえる術を覚えた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖に成功する",
+   "enter": "オスは slate-grey の胸板を、メスは擬態に役立つ羽色を備えた。托卵が可能な体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   4,
+   8
+  ],
+  "text": "翼の力が衰え、渡りの途中で力尽きた。アフリカのサバンナで静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "他種の巣に托卵する",
+  "ds": "オオヨシキリなどの巣にこっそり卵を産み、育てさせる",
+  "months": [
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "host_search_area",
+   "host_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   5
+  ],
+  "many": 15,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "他種の巣に{born}個の卵を産み、親鳥に育てさせ始めた。",
+  "ng": "托卵先の巣が見つからず、卵を産むことができなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を15個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親鳥が運ぶ虫",
+   "ds": "他種の親鳥が運ぶ虫を、口を大きく開けて待つ",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "host_nest"
+   ],
+   "rich": [
+    "host_nest"
+   ],
+   "ok": "親鳥が運んできた虫を夢中で飲みこんだ。",
+   "full": 30
+  },
+  {
+   "id": "insect",
+   "ja": "虫を捕らえる",
+   "name": "芋虫",
+   "ds": "茂みや枝の上の芋虫を鋭い嘴で捕らえる",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "grassland_edge",
+    "open_perch",
+    "winter_savanna"
+   ],
+   "rich": [
+    "grassland_edge"
+   ],
+   "ok": "葉の裏に隠れていた太い芋虫を素早く捕らえた。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "hawk_mimic",
+   "ja": "タカへの擬態",
+   "ds": "姿をハイタカに似せ、他種の鳥を威圧して巣に近づく",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.8,
+   "calm": true,
+   "ok": "タカに似た姿で近づき、親鳥を追い払って卵を産み付けた。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "to": "grassland_edge",
+   "say": "春の訪れとともに、繁殖地である東アジアの草原へと戻った。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "to": "winter_savanna",
+   "say": "繁殖期を終え、冬を越すためにアフリカのサバンナへと旅立った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "sparrowhawk",
+   "ja": "ハイタカ",
+   "kind": "bird",
+   "places": [
+    "open_perch",
+    "grassland_edge",
+    "migration_stopover"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "鋭い爪を突き立て、空中で捕らえる。",
+    "林の隙間から灰色の影が一直線に突っ込んでくる。"
+   ],
+   "again": [
+    "またあの灰色の影が、林の隙間から急降下してきた。",
+    "ハイタカが、見晴らしのよい枝の近くを旋回している。"
+   ],
+   "bye": "ハイタカに似た姿で静止し、相手を欺いて逃げ切った。"
+  },
+  {
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "host_nest",
+    "grassland_edge"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い嘴が、巣の中のヒナを狙い、鋭く突き刺す。",
+    "親鳥の不在をうかがい、枝を伝ってにじり寄ってくる。"
+   ],
+   "again": [
+    "またあの大きなカラスが、枝の上から監視している。",
+    "カラスが、巣のふちで低く鳴きながら機をうかがっている。"
+   ],
+   "bye": "羽が生え揃い、巣を飛び出したため、カラスは諦めた。"
+  },
+  {
+   "id": "rat_snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "host_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "鱗のある体が、ヨシの茎を伝って静かに忍び寄る。",
+    "細い舌を出し入れし、巣の縁に鎌首を持ちあげる。"
+   ],
+   "again": [
+    "またあの太い胴体のヘビが、巣の縁に鎌首を上げている。",
+    "ヘビが、ヨシ原の茂みからゆっくりと這いあがってくる。"
+   ],
+   "bye": "巣立ち、空へ逃げたため、ヘビは地上に留まった。"
+  },
+  {
+   "id": "goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "grassland_edge",
+    "migration_stopover"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "強力な脚の爪で背後から襲い、逃げ道を塞ぐ。",
+    "猛スピードで急降下し、空中で捉える。"
+   ]
+  },
+  {
+   "id": "owl",
+   "ja": "フクロウ",
+   "kind": "bird",
+   "places": [
+    "open_perch",
+    "winter_savanna"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "夜の闇に紛れ、音もなく背後から襲いかかる。",
+    "ねぐらで休む鳥を、上空から急降下して捕らえる。"
+   ]
+  },
+  {
+   "id": "weasel",
+   "ja": "イタチ",
+   "kind": "mammal",
+   "places": [
+    "host_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "赤褐色の細い体が、茂みをかき分けて巣へ侵入する。",
+    "鋭い牙をむき出しにして、ヒナへ飛びかかる。"
+   ]
+  },
+  {
+   "id": "stray_cat",
+   "ja": "ノラネコ",
+   "kind": "mammal",
+   "places": [
+    "grassland_edge",
+    "migration_stopover"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "低い姿勢で草むらを歩き、不意に飛びかかってくる。",
+    "鋭い爪を立て、地面に降りた若鳥を捕らえる。"
+   ]
+  },
+  {
+   "id": "monitor_lizard",
+   "ja": "オオトカゲ",
+   "kind": "reptile",
+   "places": [
+    "winter_savanna"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面を這う太い体が、休息中の鳥に忍び寄る。",
+    "強い顎で、不意を突かれた足を噛み砕く。"
+   ]
+  },
+  {
+   "id": "african_snake",
+   "ja": "アフリカのヘビ",
+   "kind": "reptile",
+   "places": [
+    "winter_savanna"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "乾いた地面から飛び出し、低い枝に止まる鳥を襲う。",
+    "鋭い牙で毒を注入し、身動きを封じる。"
+   ]
+  },
+  {
+   "id": "bird_net",
+   "ja": "捕鳥網",
+   "kind": "human",
+   "places": [
+    "migration_stopover"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "渡りの途中の空に、見えない細い糸が張り巡らされている。",
+    "休息地で、足もとに巧妙な罠が仕掛けられている。"
+   ],
+   "lose": "細い糸が翼に絡みつき、傷を負った。"
+  }
+ ]
+}

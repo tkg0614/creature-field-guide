@@ -2,7 +2,748 @@
  "id": "turtle",
  "ja": "クサガメ",
  "sci": "Mauremys reevesii",
- "status": "draft",
+ "status": "checked",
  "type": "reptile_amphibian",
- "country": "jp"
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-older gemini-3.7-flash",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "埼玉県・荒川流域",
+  "geo": "Arakawa River",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "sandy_bank",
+   "ja": "日当たりのよい砂地の岸辺",
+   "danger": 3,
+   "cover": false,
+   "about": "初夏に土を掘って卵が産み付けられる。孵化直後の幼体は鳥や小動物に狙われやすく、生存率が低い。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.706,
+   "lon": 140.352
+  },
+  {
+   "id": "shallow_pond",
+   "ja": "浅い池の泥底",
+   "danger": 1,
+   "cover": true,
+   "about": "泥や砂が堆積しており、身を隠しやすい。水草の間で小さな虫やエビを捕食する。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.706,
+   "lon": 140.384
+  },
+  {
+   "id": "basking_log",
+   "ja": "水面に浮かぶ流木",
+   "danger": 2,
+   "cover": false,
+   "about": "日光を浴びて体温を上げる場所。外敵に見つかりやすいため、危険を察知するとすぐに潜水する。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.734,
+   "lon": 140.372
+  },
+  {
+   "id": "canal_edge",
+   "ja": "用水路の縁",
+   "danger": 2,
+   "cover": true,
+   "about": "水流が緩やかで餌が集まりやすい。コンクリートの隙間や草陰に潜んで獲物を待つ。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.723,
+   "lon": 140.34
+  },
+  {
+   "id": "marsh_grass",
+   "ja": "湿地の草むら",
+   "danger": 1,
+   "cover": true,
+   "about": "背の高い水草が茂る。魚や甲殻類などの餌が豊富に存在する。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.706,
+   "lon": 140.32
+  },
+  {
+   "id": "deep_bottom",
+   "ja": "池の深い底",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の間、泥に潜って眠る。外気の影響を受けにくく、静かに春を待つ。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.678,
+   "lon": 140.332
+  },
+  {
+   "id": "rocky_shore",
+   "ja": "岩場の水際",
+   "danger": 2,
+   "cover": true,
+   "about": "岩の隙間に身を寄せられる。日光浴に適しているが、天敵の接近に注意が必要だ。",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "lat": 37.689,
+   "lon": 140.364
+  }
+ ],
+ "start": {
+  "place": "sandy_bank",
+  "month": 8,
+  "day": 15
+ },
+ "region": {
+  "ja": "埼玉県・荒川流域",
+  "lon0": 140.301,
+  "lon1": 140.403,
+  "lat0": 37.753,
+  "lat1": 37.659,
+  "k": 4902,
+  "labels": [
+   [
+    37.74736,
+    140.35199999999998,
+    "埼玉県・荒川流域"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "canal_edge",
+   "sandy_bank"
+  ],
+  [
+   "rocky_shore",
+   "sandy_bank"
+  ],
+  [
+   "rocky_shore",
+   "shallow_pond"
+  ],
+  [
+   "basking_log",
+   "shallow_pond"
+  ],
+  [
+   "basking_log",
+   "canal_edge"
+  ],
+  [
+   "canal_edge",
+   "marsh_grass"
+  ],
+  [
+   "deep_bottom",
+   "marsh_grass"
+  ],
+  [
+   "deep_bottom",
+   "rocky_shore"
+  ]
+ ],
+ "size": {
+  "ja": "甲長",
+  "unit": "cm",
+  "start": 3
+ },
+ "stats": {
+  "run": {
+   "ja": "甲羅に籠もる力",
+   "use": "敵から身を守る時に効く"
+  },
+  "sense": {
+   "ja": "気配を察する勘",
+   "use": "外敵の接近や水温の変化に気づく時に効く"
+  },
+  "forage": {
+   "ja": "噛み砕く顎の力",
+   "use": "硬い獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "hatchling",
+   "ja": "仔亀",
+   "days": 60,
+   "hunger": 8,
+   "grow": 0.35
+  },
+  {
+   "id": "young",
+   "ja": "若亀",
+   "fromAge": 1.5,
+   "days": 90,
+   "hunger": 10,
+   "grow": 0.3,
+   "goal": "若亀になる",
+   "enter": "甲羅のキールがくっきりと盛り上がり、活発に泳ぎ回るようになった。"
+  },
+  {
+   "id": "adult",
+   "ja": "成亀",
+   "fromAge": 8,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.15,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "甲羅が20センチメートルを超えて硬く引き締まり、繁殖できる体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   20,
+   40
+  ],
+  "text": "冷え込む冬の泥底で、静かに一生を終えた。"
+ },
+ "breeding": {
+  "ja": "日当たりのよい砂地に産卵する",
+  "ds": "初夏に水辺を離れ、後ろ足で掘った土の中に白い卵を産み落とす",
+  "months": [
+   6,
+   7,
+   8
+  ],
+  "places": [
+   "sandy_bank"
+  ],
+  "perYear": 1,
+  "kids": [
+   4,
+   11
+  ],
+  "many": 40,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえった仔亀"
+  },
+  "ok": "温まった砂地の土を器用に掘り、{born}個の卵を産み落として埋め戻した。",
+  "ng": "安全に土を掘れる場所が見つからず、産卵を見送った。",
+  "goal1": "卵を産む",
+  "goal2": "卵を40個産む"
+ },
+ "foods": [
+  {
+   "id": "water_bug",
+   "ja": "水生昆虫をあさる",
+   "name": "ヤゴ",
+   "ds": "浅瀬の泥や水草の根元を探り、潜む水生昆虫を捕らえる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "shallow_pond",
+    "canal_edge",
+    "marsh_grass"
+   ],
+   "rich": [
+    "shallow_pond"
+   ],
+   "ok": "泥底に潜むヤゴの幼虫を見つけ、素早くくわえ込んだ。",
+   "full": 15
+  },
+  {
+   "id": "pond_snail",
+   "ja": "巻貝を噛み砕く",
+   "name": "タニシ",
+   "ds": "水底の石や護岸に張り付く貝を頑丈な顎で砕いて呑む",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "shallow_pond",
+    "canal_edge",
+    "deep_bottom"
+   ],
+   "rich": [
+    "canal_edge"
+   ],
+   "ok": "硬いタニシの殻を力強い顎でバリバリと噛み砕き、中身を呑み込んだ。",
+   "full": 25
+  },
+  {
+   "id": "water_weed",
+   "ja": "水草の新芽を食べる",
+   "name": "水草",
+   "ds": "水底に生える柔らかい藻や水草を前足で押さえながらちぎる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "shallow_pond",
+    "marsh_grass"
+   ],
+   "rich": [
+    "marsh_grass"
+   ],
+   "ok": "生い茂る水草を前足で押さえ、みずみずしい新芽を食いちぎった。",
+   "full": 15
+  }
+ ],
+ "special": [
+  {
+   "id": "basking",
+   "ja": "甲羅干し",
+   "ds": "流木や岸辺に這い上がり、日光を浴びて体温を上げる",
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.65,
+   "calm": true,
+   "ok": "流木の上で手足を伸ばして日光を浴び、冷えた体を芯まで温めた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "to": "deep_bottom",
+   "say": "水温が下がる冬を迎えて池の深い底へ潜り、泥に埋もれて冬眠に入った。"
+  },
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "to": "shallow_pond",
+   "say": "春のぬくもりを感じて泥底から這い出し、浅い池の泥底へと泳ぎ戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "heron",
+   "ja": "アオサギ",
+   "kind": "bird",
+   "places": [
+    "shallow_pond",
+    "canal_edge",
+    "marsh_grass"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "水辺に静止する灰色の巨影が、鋭い眼光で水面を凝視している。",
+    "電光石火の速さで黄色い嘴が突き刺さり、小さな体を捉える。"
+   ]
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "sandy_bank",
+    "canal_edge"
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い羽を持つ鳥が、上空から仔亀の動きを捉えて急降下する。",
+    "太く鋭い嘴が、柔らかい甲羅の隙間を執拗に突き回す。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "ホンドタヌキ",
+   "kind": "mammal",
+   "places": [
+    "sandy_bank",
+    "marsh_grass",
+    "canal_edge"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ずんぐりした体躯の獣が、湿った土の匂いを嗅ぎながら近づいてくる。",
+    "太い前足で甲羅をひっくり返し、無防備な腹部へ牙を立てる。"
+   ],
+   "again": [
+    [
+     "また、あの太ったタヌキだ。岸辺の茂みからこちらを伺っている。"
+    ],
+    [
+     "太ったタヌキが、水際の泥地をせわしなく歩き回っている。"
+    ]
+   ],
+   "bye": "甲羅が十分に厚く硬くなり、タヌキの牙では容易に砕けない。"
+  },
+  {
+   "id": "mink",
+   "ja": "ニホンミンク",
+   "kind": "mammal",
+   "places": [
+    "canal_edge",
+    "rocky_shore",
+    "deep_bottom"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "褐色のしなやかな体が、水の中を矢のように突き抜けて迫る。",
+    "逃げる間もなく鋭い牙が首筋に食い込み、水底へと引きずり込まれる。"
+   ]
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "shallow_pond",
+    "basking_log",
+    "canal_edge"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "目の周りに黒い隈を持つ獣が、器用な前足で水底を探っている。",
+    "一度捕らえられれば、強い握力で甲羅を固定され、逃げ場を失う。"
+   ],
+   "again": [
+    [
+     "また、灰色のマスクをしたアライグマだ。水辺で獲物を洗う仕草をしている。"
+    ],
+    [
+     "灰色のマスクをしたアライグマが、流木の陰から不意に飛び出してきた。"
+    ]
+   ],
+   "bye": "体が大きく重くなり、アライグマの細い指ではもう捉えきれない。"
+  },
+  {
+   "id": "boar",
+   "ja": "ニホンイノシシ",
+   "kind": "mammal",
+   "places": [
+    "sandy_bank",
+    "marsh_grass"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "荒い鼻息とともに、黒い巨体が土手を激しく踏みしだいてくる。",
+    "強力な鼻先で土を掘り返し、潜んでいた幼い体を無慈悲に暴き出す。"
+   ]
+  },
+  {
+   "id": "kite",
+   "ja": "トビ",
+   "kind": "bird",
+   "places": [
+    "basking_log",
+    "shallow_pond"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "円を描いて旋回していた黒い鳥が、急激に高度を下げて襲いかかる。",
+    "鋭い鉤爪が背甲を掴み、そのまま空高くへと吊り上げられる。"
+   ]
+  },
+  {
+   "id": "badger",
+   "ja": "アナグマ",
+   "kind": "mammal",
+   "places": [
+    "marsh_grass",
+    "sandy_bank"
+   ],
+   "stages": [
+    "hatchling",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "白黒の顔をした獣が、力強い爪で地面を深く掘り起こしてくる。",
+    "土の中に身を潜めていても、鋭い嗅覚によって正確に位置を突き止められる。"
+   ]
+  },
+  {
+   "id": "bass",
+   "ja": "オオクチバス",
+   "kind": "fish",
+   "places": [
+    "shallow_pond",
+    "deep_bottom"
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "緑がかった巨大な魚が、水底の泥に紛れて静かに待ち構えている。",
+    "大きな口が突然開き、真空状態で小さな体を一気に吸い込む。"
+   ]
+  },
+  {
+   "id": "human_catcher",
+   "ja": "カメを捕る人間",
+   "kind": "human",
+   "places": [
+    "canal_edge",
+    "shallow_pond"
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "水際に不自然な網が仕掛けられ、逃げ道を塞がれている。",
+    "大きな手によって強引に引き揚げられ、地上へと晒される。"
+   ],
+   "lose": "網で強く締め付けられ、甲羅の端を圧迫されて傷を負った。",
+   "fleeJa": "泥の深い底へ潜り込み、気配を消してやり過ごす",
+   "hideJa": "水草の密集した陰に身を潜め、静かに時を待つ"
+  }
+ ],
+ "choices": [
+  {
+   "q": "初夏、腹を空かせた。どこで獲物を探すか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "浅い池の泥底をあさる",
+     "ds": "ミミズなどの餌が多い。水底の視界が悪く、天敵に気づきにくい",
+     "fx": {
+      "food": 1,
+      "danger": -1
+     },
+     "goto": "shallow_pond",
+     "say": "泥の中をゆっくりと進み、潜んでいた水生昆虫を捕らえた。",
+     "chip": "泥底をあさる"
+    },
+    {
+     "ja": "湿地の草むらで待つ",
+     "ds": "身を隠しやすい。獲物との遭遇率が下がる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "marsh_grass",
+     "say": "茂みの影に潜み、通りかかった小さな魚を狙った。",
+     "chip": "草むらで待つ"
+    }
+   ]
+  },
+  {
+   "q": "初夏、産卵の季節だ。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    6
+   ],
+   "opts": [
+    {
+     "ja": "日当たりのよい砂地の岸辺を掘る",
+     "ds": "地温が高く、孵化が早まる。外敵に見つかりやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "sandy_bank",
+     "say": "後肢で土を深く掘り、白く丸い卵を丁寧に埋めた。",
+     "chip": "砂地に産卵"
+    },
+    {
+     "ja": "湿地の草むらの奥に潜る",
+     "ds": "天敵に見つかりにくい。地温が低く、成長が遅くなる",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "marsh_grass",
+     "say": "草の根元に身を隠し、静かに土を掘って卵を産んだ。",
+     "chip": "草むらに産卵"
+    }
+   ]
+  },
+  {
+   "q": "晩秋、冷え込みが厳しくなった。どこで冬眠するか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "month": [
+    11,
+    12
+   ],
+   "opts": [
+    {
+     "ja": "池の深い底に潜る",
+     "ds": "水温が安定し、凍結の危険がない。春の目覚めが遅い",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "deep_bottom",
+     "say": "泥の底深くへ潜り込み、心拍を落として眠りについた。",
+     "chip": "深い底で冬眠"
+    },
+    {
+     "ja": "浅い池の泥底に身を寄せる",
+     "ds": "春先に早く暖まる。凍結して身動きが取れなくなる恐れがある",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "goto": "shallow_pond",
+     "say": "浅瀬の泥に体を埋め、春の訪れを待った。",
+     "chip": "浅瀬で冬眠"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ],
+   "stages": [
+    "hatchling",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "流木に登り、甲羅に日光を浴びて体温を上げた。",
+   "full": 5
+  },
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "hatchling"
+   ],
+   "p": 0.1,
+   "say": "水辺に近づいたところを大型の鳥に襲われ、甲羅に傷を負った。",
+   "danger": 1
+  }
+ ],
+ "lead": "日本の池や川に住み、夏は甲羅干しで体を温め、冬は水底で眠る。初夏には土を掘り、次世代へ命を繋ぐ。",
+ "texts": {
+  "move": "{to}へ、ゆっくりと這い進む。",
+  "fleeJa": "危険を感じて水の中へ潜る",
+  "restJa": "日当たりのよい場所で甲羅を乾かす",
+  "watchJa": "水面から鼻先を出し、周囲を伺う",
+  "lieJa": "泥底に身を沈めて静止する",
+  "lastMemory": "水面に反射する陽光の眩しさを思い出す。"
+ },
+ "intro": [
+  "初夏の温かな土の中で、小さな卵が孵化した。",
+  "褐色の甲羅を持つ仔亀は、本能に従い水辺を目指して這う。"
+ ],
+ "wins": [
+  {
+   "minKids": 5,
+   "title": "子を残した",
+   "line": "{kids}個の卵を土に埋め、次代へ託した。",
+   "mem": "土を掘り、卵を産み落とした時の感触を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "成熟し、全身が黒く染まった日の記憶を思い出す。"
+  }
+ ],
+ "noKids": {
+  "line": "子を残せぬまま、静かに時を終えた。",
+  "mem": "かつて見た、眩い夏の陽光を思い出す。"
+ },
+ "facts": [
+  {
+   "quote": "最大甲長30センチメートル（Wikipedia）"
+  },
+  {
+   "quote": "メラニズムは7歳以上の成熟したオスに認められ、全身が完全に黒くなる（Wikipedia）"
+  },
+  {
+   "quote": "日本の池や川に生息し、夏に甲羅干しを行い、冬は水底で冬眠する。"
+  }
+ ]
 }

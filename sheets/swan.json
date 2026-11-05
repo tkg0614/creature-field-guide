@@ -8,22 +8,22 @@
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
-  "foes": "gemini-older gemini-3.7-flash",
+  "foes": "gemini-gemma gemma-4-31b-it",
   "choices": "gemini-gemma gemma-4-31b-it",
-  "texts": "gemini-gemma gemma-4-31b-it"
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
-  "ja": "シベリアの亜北極圏から東アジアの湖沼",
-  "geo": "Siberia to East Asia",
+  "ja": "シベリアの亜寒帯から東アジアの湖沼まで",
+  "geo": "Eurosiberia to East Asia",
   "scale": "regional"
  },
  "places": [
   {
-   "id": "breeding_nest",
-   "ja": "シベリアの亜北極圏の巣",
-   "danger": 1,
+   "id": "siberian_wetland",
+   "ja": "シベリアの低地湿原",
+   "danger": 2,
    "cover": true,
-   "about": "水辺の茂みに作られた巣。親鳥が外敵からヒナを守る。",
+   "about": "水辺の茂みに草を積み上げて巣を作る。親鳥が外敵からヒナを厳重に守る。",
    "stages": [
     "chick",
     "juv",
@@ -34,11 +34,11 @@
    "lon": 145
   },
   {
-   "id": "siberian_lake",
+   "id": "taiga_lake",
    "ja": "タイガ地帯の湖沼",
    "danger": 1,
    "cover": false,
-   "about": "広大な水面で水草を食べる。視界が開けており、猛禽類の接近に気づきやすい。",
+   "about": "浅い水底の植物を食べて成長する。広い水面は外敵の接近に気づきやすい。",
    "stages": [
     "chick",
     "juv",
@@ -49,11 +49,11 @@
    "lon": 147.4
   },
   {
-   "id": "migration_stop",
-   "ja": "渡り途中の湿地",
+   "id": "migration_stopover",
+   "ja": "渡り道の沿岸湿地",
    "danger": 2,
    "cover": true,
-   "about": "長距離飛行の休息地。エネルギーを蓄えるため、集中的に採餌する。",
+   "about": "長い旅の途中で休息し、エネルギーを蓄える。葦原に身を隠して夜を過ごす。",
    "stages": [
     "chick",
     "juv",
@@ -65,25 +65,25 @@
   },
   {
    "id": "hokkaido_lake",
-   "ja": "北海道の冬湖",
+   "ja": "北海道の凍らぬ湖",
    "danger": 1,
    "cover": false,
-   "about": "凍らない湖に集い、冬を越す。広い水面で群れを作り、互いに警戒し合う。",
+   "about": "冬の間、家族で集まり水草を食べる。開けた水面で群れを作り、互いに警戒する。",
    "stages": [
     "chick",
     "juv",
     "young",
     "adult"
    ],
-   "lat": 43.452,
-   "lon": 142.82
+   "lat": 43.434,
+   "lon": 142.952
   },
   {
-   "id": "tohoku_paddy",
-   "ja": "東北の浸水田",
+   "id": "tohoku_pond",
+   "ja": "東北地方の池やため池",
    "danger": 2,
    "cover": false,
-   "about": "冬の田んぼで根や種子を食べる。電線などの人工物による衝突のリスクがある。",
+   "about": "人里に近い水辺で冬を越す。電線などの人工物による事故のリスクがある。",
    "stages": [
     "chick",
     "juv",
@@ -94,69 +94,73 @@
    "lon": 140.732
   },
   {
-   "id": "reed_shelter",
-   "ja": "湖畔のヨシ原",
-   "danger": 1,
+   "id": "nature_reserve",
+   "ja": "野生鳥類保護区",
+   "danger": 0,
    "cover": true,
-   "about": "密生するヨシが風を遮る。夜間の休息や、外敵からの隠れ場所となる。",
+   "about": "管理された安全な水辺で過ごす。天敵が少なく、穏やかに時間を過ごせる。",
    "stages": [
     "chick",
     "juv",
     "young",
     "adult"
    ],
-   "lat": 36.575,
-   "lon": 139.239
+   "lat": 47.717,
+   "lon": 145.927
   }
  ],
  "start": {
-  "place": "breeding_nest",
-  "month": 6,
-  "day": 1
+  "place": "siberian_wetland",
+  "month": 5,
+  "day": 20
  },
  "region": {
-  "ja": "シベリアの亜北極圏から東アジアの湖沼",
-  "lon0": 136.791,
-  "lon1": 149.848,
-  "lat0": 54.731,
-  "lat1": 34.127,
-  "k": 38,
+  "ja": "シベリアの亜寒帯から東アジアの湖沼まで",
+  "lon0": 138.732,
+  "lon1": 149.4,
+  "lat0": 54.283,
+  "lat1": 37.174,
+  "k": 47,
   "labels": [
    [
-    53.49476,
-    143.3195,
-    "シベリアの亜北極圏から東アジアの湖沼"
+    53.256460000000004,
+    144.066,
+    "シベリアの亜寒帯から東アジアの湖沼まで"
    ]
   ]
  },
  "edges": [
   [
-   "breeding_nest",
-   "siberian_lake"
+   "siberian_wetland",
+   "taiga_lake"
   ],
   [
-   "breeding_nest",
-   "migration_stop"
+   "migration_stopover",
+   "siberian_wetland"
   ],
   [
-   "migration_stop",
-   "siberian_lake"
-  ],
-  [
-   "hokkaido_lake",
-   "tohoku_paddy"
-  ],
-  [
-   "breeding_nest",
-   "hokkaido_lake"
-  ],
-  [
-   "reed_shelter",
-   "tohoku_paddy"
+   "migration_stopover",
+   "taiga_lake"
   ],
   [
    "hokkaido_lake",
-   "reed_shelter"
+   "tohoku_pond"
+  ],
+  [
+   "hokkaido_lake",
+   "nature_reserve"
+  ],
+  [
+   "nature_reserve",
+   "tohoku_pond"
+  ],
+  [
+   "nature_reserve",
+   "siberian_wetland"
+  ],
+  [
+   "nature_reserve",
+   "taiga_lake"
   ]
  ],
  "size": {
@@ -167,15 +171,15 @@
  "stats": {
   "run": {
    "ja": "飛ぶ力",
-   "use": "長距離を高速で移動し、外敵から逃れる時に効く"
+   "use": "外敵から逃れたり、遠くの繁殖地へ渡る時に効く"
   },
   "sense": {
-   "ja": "合図の目",
-   "use": "頭を振る動作で仲間に飛び立ちを促す時に効く"
+   "ja": "見張る目",
+   "use": "つがいや家族の居場所を確認する時に効く"
   },
   "forage": {
    "ja": "潜る技",
-   "use": "首を深く伸ばして水底の植物を食む時に効く"
+   "use": "水底の植物を根こそぎ引き抜く時に効く"
   }
  },
  "stages": [
@@ -188,23 +192,23 @@
   },
   {
    "id": "juv",
-   "ja": "若鳥",
+   "ja": "幼鳥",
    "fromAge": 0.25,
-   "days": 180,
+   "days": 120,
    "hunger": 12,
-   "grow": 0.5,
-   "goal": "冬を越して若鳥になる",
-   "enter": "灰褐色の羽に包まれ、親に従って水辺を歩く。"
+   "grow": 0.6,
+   "goal": "若鳥になる",
+   "enter": "灰褐色の羽に包まれた。親に導かれ、水辺での過ごし方を学ぶ。"
   },
   {
    "id": "young",
-   "ja": "亜成鳥",
+   "ja": "若鳥",
    "fromAge": 1,
    "days": 180,
    "hunger": 14,
    "grow": 0.3,
-   "goal": "成熟して成鳥になる",
-   "enter": "羽が白くなり始めた。嘴の黄色い模様がはっきりしてくる。"
+   "goal": "成鳥になる",
+   "enter": "羽が白くなり始めた。自力で長い距離を飛べるようになった。"
   },
   {
    "id": "adult",
@@ -214,27 +218,27 @@
    "hunger": 14,
    "grow": 0.1,
    "adult": true,
-   "goal": "つがいを得て繁殖する",
-   "enter": "純白の羽をまとった。一生を共にする伴侶を求めて飛ぶ。"
+   "goal": "おとなになる",
+   "enter": "純白の羽に包まれた。一生を共にする伴侶を探し、繁殖に参加する。"
   }
  ],
  "oldAge": {
   "years": [
    10,
-   15
+   25
   ],
-  "text": "翼の力が衰え、冬の湖で静かに息を引き取った。"
+  "text": "翼の力が衰え、水面を滑る速度が落ちた。冬の凍てつく湖で静かに息を引き取った。"
  },
  "breeding": {
-  "ja": "亜北極圏の湿地で営巣する",
-  "ds": "水辺の茂みに植物を集めて巣を作り、2〜7個の卵を温める",
+  "ja": "湿原でつがいで育てる",
+  "ds": "水辺の茂みに植物を組み上げて巣を作り、卵を温める",
   "months": [
    5,
    6,
    7
   ],
   "places": [
-   "breeding_nest"
+   "siberian_wetland"
   ],
   "perYear": 1,
   "kids": [
@@ -247,74 +251,72 @@
    "unit": "個",
    "child": "かえったヒナの一羽"
   },
-  "ok": "水辺の巣に{born}個の卵を産み、つがいで交代で温めた。",
-  "ng": "外敵に襲われ、営巣を断念した。",
+  "ok": "水辺の巣に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "外敵に襲われ、傷を負った。",
   "goal1": "卵を産む",
-  "goal2": "卵を12個産む"
+  "goal2": "卵を7個産む"
  },
  "foods": [
   {
    "id": "fed",
    "ja": "親の運ぶ餌を待つ",
    "name": "親が運ぶ水草",
-   "ds": "巣の中で親が嘴で運んできた水草を受け取る",
+   "ds": "巣の中で親が運んできた水草や小動物を口にする",
    "stages": [
     "chick"
    ],
    "places": [
-    "breeding_nest"
+    "siberian_wetland"
    ],
    "rich": [
-    "breeding_nest"
+    "siberian_wetland"
    ],
-   "ok": "親が戻り、運んできた水草を夢中で飲みこんだ。",
+   "ok": "親が戻り、運んできた新鮮な水草を夢中で食べた。",
    "full": 30
   },
   {
    "id": "water_plant",
-   "ja": "水底の植物を食む",
+   "ja": "水底の植物を食べる",
    "name": "水草",
-   "ds": "首を深く水中に差し込み、底にある根や茎を食む",
+   "ds": "長い首を水中に差し込み、底にある植物の根や茎を食べる",
    "stages": [
     "juv",
     "young",
     "adult"
    ],
    "places": [
-    "siberian_lake",
+    "siberian_wetland",
+    "taiga_lake",
     "hokkaido_lake",
-    "tohoku_paddy"
+    "tohoku_pond"
    ],
    "rich": [
-    "siberian_lake",
-    "hokkaido_lake"
+    "siberian_wetland"
    ],
-   "ok": "水底に潜り、栄養豊富な水草をまとめて引き抜いた。",
+   "ok": "水底に潜り、栄養豊富な水草の根を力強く引き抜いた。",
    "full": 40
   }
  ],
  "special": [
   {
-   "id": "flight_signal",
-   "ja": "飛び立ちの合図",
-   "ds": "頭を振ったり羽を動かしたりして、群れの飛び立ちを調整する",
+   "id": "high_flight",
+   "ja": "高高度飛行",
+   "ds": "ジェット気流を利用して、極めて高い高度を高速で移動する",
    "stages": [
-    "juv",
-    "young",
     "adult"
    ],
-   "stat": "sense",
-   "base": 0.6,
+   "stat": "run",
+   "base": 0.8,
    "calm": true,
-   "ok": "激しく頭を振り、仲間に飛び立つタイミングを知らせた。"
+   "ok": "強い追い風に乗り、雲の上を高速で突き抜けた。"
   }
  ],
  "levelEvery": 3,
  "migrate": [
   {
    "months": [
-    10,
-    11
+    9,
+    10
    ],
    "stages": [
     "juv",
@@ -322,7 +324,7 @@
     "adult"
    ],
    "to": "hokkaido_lake",
-   "say": "寒さが近づき、家族と共に北海道や東北の湖へと南下した。"
+   "say": "秋の訪れとともに、家族で南の凍らぬ湖を目指して飛び立った。"
   },
   {
    "months": [
@@ -334,185 +336,145 @@
     "young",
     "adult"
    ],
-   "to": "breeding_nest",
-   "say": "春の訪れとともに、繁殖地であるシベリアの亜北極圏へ戻った。"
+   "to": "siberian_wetland",
+   "say": "春の気配を感じ、繁殖地であるシベリアの湿原へと戻った。"
   }
  ],
  "foes": [
   {
-   "id": "raven",
-   "ja": "ワタリガラス",
-   "kind": "bird",
+   "id": "red_fox",
+   "ja": "アカギツネ",
+   "kind": "mammal",
    "places": [
-    "breeding_nest",
-    "siberian_lake"
+    "siberian_wetland",
+    "taiga_lake"
    ],
    "stages": [
     "chick"
    ],
-   "sev": 2,
-   "texts": [
-    "黒い巨鳥が羽音を立てて巣の縁に舞い降り、鋭い嘴を向ける。",
-    "親鳥が餌を探しに水辺へ離れた隙を突き、背後から飛び降りてくる。"
-   ],
-   "again": [
-    [
-     "また、あの風切羽の擦り切れたワタリガラスが巣の上を旋回している。"
-    ],
-    [
-     "風切羽の擦り切れたワタリガラスが、すぐそばの低木にとまって様子をうかがっている。"
-    ]
-   ],
-   "bye": "立ち上がって太いくちばしを突きだすと、ワタリガラスは諦めて飛び去った。"
-  },
-  {
-   "id": "red_fox",
-   "ja": "キツネ",
-   "kind": "mammal",
-   "places": [
-    "breeding_nest",
-    "reed_shelter",
-    "tohoku_paddy"
-   ],
-   "stages": [
-    "chick",
-    "juv",
-    "young"
-   ],
    "sev": 3,
    "texts": [
-    "赤褐色のキツネが浅瀬を音もなく渡り、草陰から飛び出してきた。",
-    "雪の畦道に身を低く伏せ、水際で休む姿をじっと狙っている。"
+    "草むらから赤い影が忍び寄り、巣の縁に足をかける。",
+    "鋭い牙で、無防備なヒナをひっつかむ。"
    ],
    "again": [
-    [
-     "また、あの尾の先が白いキツネが水際をうろついている。"
-    ],
-    [
-     "尾の先が白いキツネが、ヨシの茂みに潜んでこちらを見据えている。"
-    ]
+    "また、あの尾の先が白いキツネが湿原をうろついている。",
+    "尾の先が白いキツネが、遠くからじっとこちらを見つめている。"
    ],
-   "bye": "首を高く伸ばして太い威嚇の声を響かせると、キツネは踵を返して逃げ出した。"
-  },
-  {
-   "id": "wolverine",
-   "ja": "クズリ",
-   "kind": "mammal",
-   "places": [
-    "breeding_nest",
-    "siberian_lake"
-   ],
-   "stages": [
-    "chick",
-    "juv"
-   ],
-   "sev": 3,
-   "texts": [
-    "太い足で湿地を駆け抜け、頑丈な顎を鳴らして突進してくる。",
-    "低く唸り声を上げながら、親鳥の警戒の隙を突いて巣へ迫る。"
-   ]
+   "bye": "親鳥が激しく翼を打ち鳴らして威嚇すると、キツネは森へ逃げ帰った。"
   },
   {
    "id": "white_tailed_eagle",
    "ja": "オジロワシ",
    "kind": "bird",
    "places": [
-    "siberian_lake",
-    "migration_stop",
+    "siberian_wetland",
+    "taiga_lake",
     "hokkaido_lake"
    ],
    "stages": [
-    "juv",
-    "young",
-    "adult"
+    "chick",
+    "juv"
    ],
    "sev": 3,
    "fast": true,
    "texts": [
-    "灰褐色の大きな翼を広げ、水面すれすれを猛スピードで滑空してくる。",
-    "鋭い黄色い鉤爪を突き出し、群れの端にいる個体めがけて急降下してきた。"
+    "巨大な翼を広げた白い影が、上空から急降下してくる。",
+    "鋭い爪が、水面を泳ぐ幼鳥の背中に深く突き刺さる。"
    ],
    "again": [
-    [
-     "また、あの尾羽の白い大鷲が低空を旋回している。"
-    ],
-    [
-     "尾羽の白い大鷲が、凍った湖畔の立ち枯れ木からじっと見下ろしている。"
-    ]
+    "あの金色の瞳を持つワシが、再び湖畔の枯れ木に止まっている。",
+    "金色の瞳を持つワシが、低空を旋回しながら獲物を探している。"
    ],
-   "bye": "家族が一斉に水面を叩いて咆哮のような声を上げると、大鷲は諦めて飛び去った。"
+   "bye": "群れの仲間が周囲を囲んで激しく鳴き声を上げると、ワシは諦めて飛び去った。"
   },
   {
    "id": "golden_eagle",
    "ja": "イヌワシ",
    "kind": "bird",
    "places": [
-    "siberian_lake",
-    "migration_stop"
+    "siberian_wetland",
+    "taiga_lake"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "切り立った崖から、茶褐色の猛禽が一直線に襲いかかる。",
+    "強靭な足爪が、ヒナの柔らかい体を強く締め上げる。"
+   ]
+  },
+  {
+   "id": "raven",
+   "ja": "ワタリガラス",
+   "kind": "bird",
+   "places": [
+    "siberian_wetland",
+    "taiga_lake"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い羽の鳥が、親鳥の隙をうかがいながら巣に近づく。",
+    "太いくちばしで、卵やヒナを執拗に狙う。"
+   ]
+  },
+  {
+   "id": "mink",
+   "ja": "ミンク",
+   "kind": "mammal",
+   "places": [
+    "siberian_wetland",
+    "taiga_lake",
+    "hokkaido_lake"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒褐色のしなやかな体が、水辺の茂みから音もなく現れる。",
+    "低い姿勢で忍び寄り、巣の中のヒナに飛びかかる。"
+   ]
+  },
+  {
+   "id": "large_gull",
+   "ja": "大型のカモメ",
+   "kind": "bird",
+   "places": [
+    "migration_stopover",
+    "hokkaido_lake"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "騒がしく鳴くカモメの群れが、水辺の巣を包囲する。",
+    "親鳥が離れた一瞬の隙に、鋭いくちばしをヒナへ突き立てる。"
+   ]
+  },
+  {
+   "id": "wolf",
+   "ja": "オオカミ",
+   "kind": "mammal",
+   "places": [
+    "siberian_wetland",
+    "taiga_lake"
    ],
    "stages": [
     "juv",
     "young"
    ],
    "sev": 3,
-   "fast": true,
    "texts": [
-    "黄金色の後頭部を光らせ、上空の雲間から一直線に突っ込んでくる。",
-    "力強い羽ばたきで背後から迫り、鋭い爪で背中を捕らえようとする。"
-   ]
-  },
-  {
-   "id": "eagle_owl",
-   "ja": "ワシミミズク",
-   "kind": "bird",
-   "places": [
-    "siberian_lake",
-    "reed_shelter"
-   ],
-   "stages": [
-    "chick",
-    "juv"
-   ],
-   "sev": 2,
-   "fast": true,
-   "texts": [
-    "音もなく夜の闇を裂き、大きな羽角を立てた猛禽が舞い降りてくる。",
-    "薄明の湖畔で、水草の陰に身を寄せる姿へ音もなく襲いかかってきた。"
-   ]
-  },
-  {
-   "id": "steller_sea_eagle",
-   "ja": "オオワシ",
-   "kind": "bird",
-   "places": [
-    "hokkaido_lake"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 3,
-   "texts": [
-    "黄色く巨大なくちばしを持つ大鷲が、結氷した水面を滑るように迫る。",
-    "氷の上で翼を広げて高く跳び上がり、鉤爪を振り下ろしてくる。"
-   ]
-  },
-  {
-   "id": "stray_dog",
-   "ja": "野犬",
-   "kind": "mammal",
-   "places": [
-    "reed_shelter",
-    "tohoku_paddy"
-   ],
-   "stages": [
-    "young",
-    "adult"
-   ],
-   "sev": 2,
-   "texts": [
-    "泥にまみれた大型の犬が、浸水田の泥を撥ね上げて突進してくる。",
-    "水辺のヨシ原に隠れ、休息中の群れへ牙を剥いて飛び出してきた。"
+    "灰色の大きな影が、湖畔の茂みから静かに姿を現す。",
+    "低い唸り声を上げ、若鳥へ向かって一気に跳躍する。"
    ]
   },
   {
@@ -520,147 +482,115 @@
    "ja": "送電線",
    "kind": "human",
    "places": [
-    "migration_stop",
-    "tohoku_paddy"
+    "migration_stopover",
+    "hokkaido_lake",
+    "tohoku_pond"
    ],
    "stages": [
-    "juv",
     "young",
     "adult"
    ],
    "sev": 2,
    "texts": [
-    "薄暮の空に溶け込んだ細い架線が、飛行進路を遮るように何本も横切っている。",
-    "濃い朝霧の中を飛行中、行く手に突然鋼鉄のワイヤーが現れる。"
+    "空を横切る太い電線が、視界を遮る。",
+    "霧の深い日、気づかぬうちに電線に接触する。"
    ],
-   "lose": "視界の悪い霧の中で架線に衝突して墜落し、傷を負った。",
-   "fleeJa": "翼をすぼめて急降下してかわす",
-   "hideJa": "力強く羽ばたいて高度を一気に上げる"
+   "lose": "電線に接触され、傷を負った。",
+   "fleeJa": "慌てて翼をばたつかせて離れる",
+   "hideJa": "低空を飛び、障害物を避ける"
   },
   {
-   "id": "lead_poisoning",
-   "ja": "沈降した鉛弾",
+   "id": "lead_shot",
+   "ja": "鉛弾",
    "kind": "human",
    "places": [
     "hokkaido_lake",
-    "tohoku_paddy"
+    "tohoku_pond"
    ],
    "stages": [
     "young",
     "adult"
    ],
-   "sev": 2,
+   "sev": 1,
    "texts": [
-    "かつての狩猟で水底の泥に沈んだ散弾が、水草の根元に混ざっている。",
-    "泥底の草根を掘り起こして食べる際、鈍く光る小さな鉛粒を吸い込む。"
+    "湖底の泥の中に、小さな鉛の粒が沈んでいる。",
+    "水草を食べる際、誤って鉛弾を飲み込む。"
    ],
-   "lose": "底泥の草根とともに鉛弾を飲み込んで鉛中毒になり、傷を負った。",
-   "fleeJa": "泥を吐き出して水で洗い流す",
-   "hideJa": "首を引き抜いて別の浅瀬へ移る"
+   "lose": "鉛弾を摂取され、傷を負った。",
+   "fleeJa": "水面へ上がり、激しく鳴く",
+   "hideJa": "泥の深い場所へ潜る"
   }
  ],
  "choices": [
   {
-   "q": "湖で餌を探す。どうやって食べるか",
+   "q": "冬の湖でどのように餌を探すか",
    "stages": [
     "juv",
     "young"
    ],
    "opts": [
     {
-     "ja": "深く潜って水草を抜く",
-     "ds": "多くの餌が得られる。体力を激しく消耗する",
+     "ja": "開けた水面で水草を食む",
+     "ds": "餌が豊富に得られる。天敵に見つかりやすい",
      "fx": {
       "food": 1,
-      "energy": -1
-     },
-     "say": "長い首を深く沈め、底に根を張る水草を引き抜いた。",
-     "chip": "深く潜る"
-    },
-    {
-     "ja": "水面の浮草をついばむ",
-     "ds": "体力を温存できる。得られる餌は少ない",
-     "fx": {
-      "food": -1,
-      "energy": 1
-     },
-     "say": "水面に浮かぶ草を軽くついばみ、静かに時間を過ごした。",
-     "chip": "水面で食べる"
-    }
-   ]
-  },
-  {
-   "q": "冬が近づき、南へ渡る時が来た。どう飛ぶか",
-   "stages": [
-    "juv",
-    "young"
-   ],
-   "month": [
-    9,
-    10
-   ],
-   "opts": [
-    {
-     "ja": "強い気流に乗って高く飛ぶ",
-     "ds": "移動時間を短縮できる。低酸素と寒さに晒される",
-     "fx": {
-      "energy": 1,
       "danger": 1
      },
-     "say": "激しいジェット気流に乗り、雲の上まで舞い上がった。",
-     "chip": "高空を飛ぶ"
+     "say": "白い体を晒し、深く首を伸ばして水底の草を食んだ。",
+     "chip": "開けた水面"
     },
     {
-     "ja": "低空で地形を確認しながら飛ぶ",
-     "ds": "安全に移動できる。飛行時間が長くなり疲弊する",
+     "ja": "ヨシ原の縁で静かに探す",
+     "ds": "身を隠せる。餌の量に限りがある",
      "fx": {
-      "energy": -1,
+      "food": -1,
       "danger": -1
      },
-     "say": "水面に近い高度を保ち、休息地を探しながら進んだ。",
-     "chip": "低空を飛ぶ"
+     "say": "茂みの陰に身を潜め、水面に浮かぶ藻類を拾い集めた。",
+     "chip": "ヨシ原の縁"
     }
    ]
   },
   {
-   "q": "日本の冬をどこで過ごすか",
+   "q": "渡りの途中で休息地を選ぶ。どこに降りるか",
    "stages": [
     "juv",
     "young",
     "adult"
    ],
    "month": [
+    10,
     11,
-    12,
-    1
+    3,
+    4
    ],
    "opts": [
     {
-     "ja": "北海道の広い湖へ向かう",
-     "ds": "餌が豊富にある。猛禽類に見つかりやすい",
+     "ja": "賑やかな沿岸湿地へ",
+     "ds": "情報が得やすく餌も多い。病気が広がりやすい",
      "fx": {
       "food": 1,
       "danger": 1
      },
-     "goto": "hokkaido_lake",
-     "say": "凍らぬ広い湖に降り立ち、白い群れに混じった。",
-     "chip": "北海道の湖へ"
+     "goto": "migration_stopover",
+     "say": "多くの仲間が集う湿地に降り立ち、賑やかな鳴き声に混じった。",
+     "chip": "沿岸湿地"
     },
     {
-     "ja": "東北の浸水田へ向かう",
-     "ds": "身を隠しやすい。餌の量に限りがある",
+     "ja": "静かな内陸の池へ",
+     "ds": "安全に休息できる。餌が少ないことがある",
      "fx": {
       "food": -1,
       "danger": -1
      },
-     "goto": "tohoku_paddy",
-     "say": "静かな水田に降り、ヨシ原の陰に身を潜めた。",
-     "chip": "東北の水田へ"
+     "goto": "tohoku_pond",
+     "say": "人里離れた静かな池に舞い降り、羽を休めた。",
+     "chip": "内陸の池"
     }
    ]
   },
   {
-   "q": "繁殖期に巣をどこに構えるか",
+   "q": "繁殖期に巣を構える。どのような場所を選ぶか",
    "stages": [
     "adult"
    ],
@@ -671,25 +601,25 @@
    "opts": [
     {
      "ja": "水辺の深い茂みの中",
-     "ds": "外敵から見つかりにくい。巣作りが困難である",
+     "ds": "外敵から隠れやすい。巣作りが困難で体力を消耗する",
      "fx": {
       "danger": -1,
-      "kids": -1
+      "energy": -1
      },
-     "goto": "breeding_nest",
-     "say": "厚い草むらに身を隠し、外から見えない巣を組んだ。",
-     "chip": "茂みの中"
+     "goto": "siberian_wetland",
+     "say": "生い茂る草をかき分け、水際にどっしりとした巣を組んだ。",
+     "chip": "深い茂み"
     },
     {
-     "ja": "見晴らしの良い水際",
-     "ds": "縄張りを誇示しやすい。キツネに狙われやすい",
+     "ja": "視界の開けた岸辺",
+     "ds": "周囲を警戒しやすい。外敵に見つかりやすい",
      "fx": {
       "danger": 1,
-      "kids": 1
+      "energy": 1
      },
-     "goto": "breeding_nest",
-     "say": "開けた水際に陣取り、太い声を響かせて周囲を威嚇した。",
-     "chip": "開けた水際"
+     "goto": "siberian_wetland",
+     "say": "開けた岸辺に陣取り、周囲に鋭い視線を走らせた。",
+     "chip": "開けた岸辺"
     }
    ]
   }
@@ -698,17 +628,31 @@
   {
    "month": [
     10,
-    11
+    11,
+    12
    ],
    "stages": [
-    "chick",
     "juv",
     "young",
     "adult"
    ],
    "p": 0.1,
-   "say": "鳥インフルエンザが流行し、群れの仲間が次々と倒れた。",
+   "say": "鳥インフルエンザが流行し、周囲の仲間が次々と倒れた。",
    "full": -20
+  },
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "p": 0.15,
+   "say": "空から金色の鷲が急降下し、鋭い爪が羽を捉えた。",
+   "danger": 1
   },
   {
    "month": [
@@ -721,72 +665,60 @@
     "adult"
    ],
    "p": 0.2,
-   "say": "猛烈な寒波で湖面が厚く凍りつき、餌場が閉ざされた。",
+   "say": "記録的な寒波が襲い、湖面が厚い氷に閉ざされた。",
    "food": -10
-  },
-  {
-   "month": [
-    6,
-    7
-   ],
-   "stages": [
-    "chick"
-   ],
-   "p": 0.15,
-   "say": "空からオオワシが急降下し、巣の上の静寂を切り裂いた。",
-   "danger": 1
   }
  ],
- "lead": "シベリアの亜北極圏で生まれ、冬は東アジアの湖沼へ渡る。つがいとなり、一生を共にする。水辺に白き姿を映し、どこまで命をつなげるか。",
+ "lead": "シベリアの湿原で生まれ、夏は北方の湖で育ち、冬は北海道や東北へ渡り、つがいは一生を共にする。",
  "texts": {
-  "move": "{to}へ、力強く羽ばたいて飛んでいった。",
-  "fleeJa": "鋭い声で鳴いて飛び去る",
-  "restJa": "水面に浮かび、首を休める",
-  "watchJa": "水底の草を求めて潜る",
-  "lieJa": "ヨシ原の陰に身を潜める",
-  "lastMemory": "シベリアの冷たい風と、つがいの温もりを思い出した。"
+  "move": "{to}へ、大きく羽ばたきながら長距離を飛んだ。",
+  "fleeJa": "鋭い羽ばたきで天敵から逃れた。",
+  "restJa": "水辺の岸で片足を伸ばし、首をすぼめて休む。",
+  "watchJa": "湖面に映る光を見つめ、餌を待つ。",
+  "lieJa": "草むらに身を潜め、静かに佇む。",
+  "lastMemory": "春の巣から見下ろす、凍らぬ湖の光景を思い出す。"
  },
  "intro": [
-  "シベリアの亜北極圏、水辺の茂みに作られた巣で生まれた。",
-  "親鳥が運ぶ餌を待ち、急速に体を大きくする。"
+  "シベリアの低地湿原の巣で、青白い卵からヒナが孵化した。",
+  "親鳥が運んできた水草や小魚を待ち、巣の中で温められた。"
  ],
  "wins": [
   {
    "minKids": 1,
    "title": "巣立ちを見届けた",
-   "line": "{kids}羽のヒナが羽ばたきを覚え、シベリアの空へ巣立っていった。",
-   "mem": "初めて子が空へ舞い上がった日の光を、思い出した。"
+   "line": "{kids}羽のヒナが羽ばたきを覚え、湖へと飛び立った。",
+   "mem": "ヒナが初めて水面に足を踏み入れた朝を思い出した。"
   },
   {
-   "minKids": 4,
+   "minKids": 6,
    "title": "多くの若鳥を送り出した",
-   "line": "{kids}羽の子を育て上げ、家族で冬の渡りへと出発した。",
-   "mem": "賑やかな鳴き声に囲まれ、北の空を飛んだ日を思い出した。"
+   "line": "{kids}羽の子を育て、北の湖と北海道の湖へと送り出した。",
+   "mem": "群れで空を舞い、遠くの山々を越えた日を思い出した。"
   }
  ],
  "memories": [
   {
-   "flag": "first_migration",
-   "text": "家族と共に数千キロの空を飛び、初めて冬の湖に辿り着いたことを思い出した。"
+   "flag": "first_catch",
+   "text": "水中で頭を沈め、初めて大きな水草の茂みを摘んだ瞬間を思い出した。"
   },
   {
    "flag": "first_winter",
-   "text": "凍てつく冬の湖で、つがいと共に静かに時を過ごしたことを思い出した。"
+   "text": "凍てつく湖面で風に耐え、仲間と共に暖を取った冬を思い出した。"
   }
  ],
- "noKids": "子を残すことなく、静かに命を終えた。",
+ "noKids": "子を残すことなく、静かに湖面に沈んだ。",
  "facts": [
   {
-   "quote": "Whooper swans pair for life.",
-   "factJa": "オオハクチョウのつがいは一生続く。"
+   "quote": "Whooper swans typically live for 10–15 years, the maximum recorded age was a bird in captivity which lived in excess of 25 years.",
+   "factJa": "野生では10〜15年、生涯最大で25年以上生きた個体も記録されている。"
   },
   {
-   "quote": "In China and Russia, fledging occurs 90–105 days after hatching, at a mass of 6.5–7 kg (14–15 lb).",
-   "factJa": "中国やロシアでは、孵化から90〜105日で体重6.5〜7kgになり巣立つ。"
+   "quote": "Whooper swans pair for life. Nests are built in or near water in dense cover.",
+   "factJa": "つがいは一生続き、巣は水辺の茂みの中に作られる。"
   },
   {
-   "quote": "Avian influenza can have outbreaks in the species leading to mass mortality",
-   "factJa": "鳥インフルエンザの流行により、大量死することがある。"
+   "quote": "The whooper swan is a long distance migrant, and usually flies at an altitude of 50–200 m at speeds of up to 100 km/h.",
+   "factJa": "長距離渡りを行い、標高50〜200メートルで時速100キロメートルまで飛ぶ。"
   }
  ]
 }

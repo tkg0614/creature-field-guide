@@ -2,14 +2,15 @@
  "id": "tancho",
  "ja": "タンチョウ",
  "sci": "Grus japonensis",
- "status": "draft",
+ "status": "checked",
  "type": "bird",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
   "foes": "gemini-gemma gemma-4-31b-it",
-  "choices": "gemini-gemma gemma-4-31b-it"
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "北海道の湿原と農耕地",
@@ -695,6 +696,58 @@
    "p": 0.2,
    "say": "夏の乾燥で浅瀬の水が引き、魚が姿を消した。",
    "food": -10
+  }
+ ],
+ "lead": "北海道の湿原に巣を作り、冬は給餌場に集まるタンチョウは、つがいで踊りながら繁殖し、長寿を全うする鳥である。",
+ "texts": {
+  "move": "{to}へ、大きく翼を広げて飛び立ったである。",
+  "fleeJa": "鋭い鳴き声を上げて、敵から逃げ去ったである。",
+  "restJa": "片足で立ち、首を縮めて休んだである。",
+  "watchJa": "水辺を見つめ、餌を待ち構えたである。",
+  "lieJa": "草むらに身を潜めて、静かに佇んだである。",
+  "lastMemory": "湿原の浅い水辺で、仲間と共に踊った光景を思い出したである。"
+ },
+ "intro": [
+  "湿原の浅い水辺の巣で、白い卵からヒナが生まれたである。",
+  "粗い草と葦で作られた巣の中で、親鳥が運ぶ餌を待ち続けたである。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが羽ばたきを覚え、水辺へ巣立っていったである。",
+   "mem": "ヒナが初めて巣の縁を離れた朝を思い出したである。"
+  },
+  {
+   "minKids": 6,
+   "title": "多くの若鳥を送り出した",
+   "line": "{kids}羽の子を育て上げ、湿原の空へと送り出したである。",
+   "mem": "賑やかなコロニーで、子らと共に舞った日を思い出したである。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "湿原の浅い水辺で、初めて小魚を捕らえ、仲間に見せた瞬間を思い出したである。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "凍てつく冬の給餌場で、仲間と共に餌を分け合い、生き延びたことを思い出したである。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに命を終えたである。",
+ "facts": [
+  {
+   "quote": "The red-crowned crane is among the largest and heaviest cranes, typically measuring about 150 to 158 cm tall and 101.2–150 cm in length.",
+   "factJa": "タンチョウは最大級で最も重い鶴の一つで、体高は約150〜158cm、体長は101.2〜150cmである。"
+  },
+  {
+   "quote": "Adult red-crowned cranes have a highly omnivorous diet, though the dietary preferences have not been fully studied.",
+   "factJa": "成鳥は非常に雑食性で、植物から小魚、両生類、甲殻類まで幅広く食べるが、好みは十分に研究されていない。"
+  },
+  {
+   "quote": "The population of red-crowned cranes in Japan is mostly non-migratory, with the race in Hokkaidō moving only 150 km to its wintering grounds.",
+   "factJa": "日本のタンチョウはほとんど定住種で、北海道の個体は冬季の餌場へ約150kmだけ移動する。"
   }
  ]
 }

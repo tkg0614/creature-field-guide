@@ -2,13 +2,15 @@
  "id": "cuckoo",
  "ja": "カッコウ",
  "sci": "Cuculus canorus",
- "status": "draft",
+ "status": "checked",
  "type": "bird",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
-  "foes": "gemini-gemma gemma-4-31b-it"
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "東アジアからアフリカにかけての渡りルート",
@@ -513,6 +515,234 @@
     "休息地で、足もとに巧妙な罠が仕掛けられている。"
    ],
    "lose": "細い糸が翼に絡みつき、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "巣の中で餌をねだる。どう振る舞うか",
+   "stages": [
+    "chick"
+   ],
+   "opts": [
+    {
+     "ja": "他の卵やヒナを押し出す",
+     "ds": "餌を独占できる。親鳥に気づかれる危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "背中を使って、他の卵を巣の外へ押し出した。親鳥が運ぶ餌を独占した。",
+     "chip": "他を追い出す"
+    },
+    {
+     "ja": "静かに餌を待つ",
+     "ds": "目立たず安全。餌の分け前が少なくなる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "say": "他のヒナに混じり、静かに口を開けた。餌の分け前は少なかった。",
+     "chip": "静かに待つ"
+    }
+   ]
+  },
+  {
+   "q": "托卵先の巣を見つけた。どうやって卵を産むか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "猛禽類に化けて強引に近づく",
+     "ds": "素早く産卵できる。正体が見破られ攻撃される",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "host_nest",
+     "say": "ハイタカに似た姿で親鳥を威嚇し、隙を見て素早く卵を産み落とした。",
+     "chip": "擬態で近づく"
+    },
+    {
+     "ja": "親鳥が離れるまで潜んで待つ",
+     "ds": "安全に産卵できる。時間がかかり機会を逃す",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "host_nest",
+     "say": "茂みに身を潜め、親鳥が巣を離れる瞬間をじっと待った。",
+     "chip": "潜んで待つ"
+    }
+   ]
+  },
+  {
+   "q": "冬を越すためアフリカへ向かう。どこで休息するか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "開けた草原の中継地で休む",
+     "ds": "体力を回復しやすい。外敵に見つかりやすい",
+     "fx": {
+      "energy": 1,
+      "danger": 1
+     },
+     "goto": "migration_stopover",
+     "say": "見晴らしのよい草原に降り立ち、羽を休めて体力を回復させた。",
+     "chip": "草原で休む"
+    },
+    {
+     "ja": "森の深い茂みで休む",
+     "ds": "身を隠しやすい。餌を探しにくい",
+     "fx": {
+      "energy": -1,
+      "danger": -1
+     },
+     "goto": "migration_stopover",
+     "say": "密な葉に身を隠し、外敵の目を避けながら静かに眠った。",
+     "chip": "茂みで休む"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期の草原で獲物を探す。どこから狙うか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "高い枝から見下ろす",
+     "ds": "獲物を見つけやすい。自分の姿も目立つ",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "open_perch",
+     "say": "高い枝に止まり、草むらの中を動く虫の気配を探った。",
+     "chip": "高い枝から"
+    },
+    {
+     "ja": "茂みの中を歩いて探す",
+     "ds": "敵に見つかりにくい。獲物を追い詰めにくい",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "grassland_edge",
+     "say": "足元の草をかき分け、隠れている毛虫を追い詰めた。",
+     "chip": "茂みの中を"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.1,
+   "say": "育ての親が異変に気づき、雛への給餌を拒んだ。",
+   "food": -10
+  },
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "渡りの途中で激しい嵐に巻き込まれ、方向を見失った。",
+   "energy": -15
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "サバンナの乾季が厳しく、餌となる昆虫が激減した。",
+   "food": -10
+  }
+ ],
+ "lead": "他種の巣で生まれ、南の国へ渡り、また他種の巣に卵を託す。タカに似た姿で身を隠し、寄生して命をつなぐ。",
+ "texts": {
+  "move": "{to}へ、羽ばたいて飛んでいった。",
+  "fleeJa": "鋭く鳴いて飛び去る",
+  "restJa": "見晴らしのよい枝で羽を休める",
+  "watchJa": "托卵先の茂みをじっとうかがう",
+  "lieJa": "草むらに身を潜める",
+  "lastMemory": "南の空へ向かう、長い旅路の風を思い出した。"
+ },
+ "intro": [
+  "ヨシ原などの他種の巣で、擬態した卵から生まれた。",
+  "血のつながらない親鳥が運ぶ餌を待ち、急速に成長する。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "托卵を成功させた",
+   "line": "{kids}個の卵を他種の巣に託し、次代へつないだ。",
+   "mem": "密かに巣へ忍び込み、卵を産み落とした瞬間を思い出した。"
+  },
+  {
+   "minKids": 5,
+   "title": "多くの巣に命を託した",
+   "line": "{kids}個以上の卵を各地の巣に託し、種を広げた。",
+   "mem": "草原のあちこちで、他種の親が我が子を育てる光景を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_migration",
+   "text": "初めてアフリカのサバンナへ至る、果てしない空の旅を思い出した。"
+  },
+  {
+   "flag": "mimicry",
+   "text": "タカに似た姿で、他種の鳥たちを欺き巣へ近づいたことを思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに命を終えた。",
+ "facts": [
+  {
+   "quote": "It is a brood parasite, which means it lays eggs in the nests of other bird species, particularly of dunnocks, meadow pipits, and reed warblers.",
+   "factJa": "托卵を行う鳥であり、オオヨシキリなどの他種の巣に卵を産み付ける。"
+  },
+  {
+   "quote": "The adult too is a mimic, in its case of the sparrowhawk; since that species is a predator, the mimicry gives the female time to lay her eggs without being attacked.",
+   "factJa": "成鳥はハイタカに似た姿をしており、これにより攻撃を避け、托卵しやすくしている。"
+  },
+  {
+   "quote": "This species is a widespread summer migrant to Europe and Asia, and winters in Africa.",
+   "factJa": "ヨーロッパやアジアで夏を過ごし、冬はアフリカへ渡る。"
   }
  ]
 }

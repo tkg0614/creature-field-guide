@@ -1,0 +1,706 @@
+{
+ "id": "owl",
+ "ja": "フクロウ",
+ "sci": "Strix uralensis",
+ "status": "checked",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の森林地帯",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "tree_hollow",
+   "ja": "木のうろ",
+   "danger": 1,
+   "cover": true,
+   "about": "太い木の幹にある天然の穴。親鳥に守られ、ヒナが外の世界に出るまで過ごす。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "forest_floor",
+   "ja": "林床",
+   "danger": 1,
+   "cover": true,
+   "about": "落ち葉が積もった地面。鋭い聴覚を使い、潜むネズミを捕らえる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "forest_edge",
+   "ja": "林のへり",
+   "danger": 2,
+   "cover": false,
+   "about": "森と開けた地の境界。獲物を見つけやすいが、外敵に姿をさらしやすい。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.603,
+   "lon": 139.259
+  },
+  {
+   "id": "roost_branch",
+   "ja": "ねぐらの枝",
+   "danger": 1,
+   "cover": true,
+   "about": "葉が茂った太い枝。日中の強い光を避け、静かに眠る。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.592,
+   "lon": 139.227
+  },
+  {
+   "id": "dead_tree",
+   "ja": "枯れ木",
+   "danger": 1,
+   "cover": false,
+   "about": "視界が開けた高い切り株。周囲を監視し、獲物の動きをうかがう。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.207
+  },
+  {
+   "id": "canopy",
+   "ja": "樹冠",
+   "danger": 1,
+   "cover": true,
+   "about": "森の最上層。夜になると深い声で鳴き、縄張りを主張する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.547,
+   "lon": 139.219
+  },
+  {
+   "id": "abandoned_nest",
+   "ja": "他種の古巣",
+   "danger": 2,
+   "cover": true,
+   "about": "カラスなどが残した大きな巣。うろが見つからない時の代替の住処となる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.558,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "tree_hollow",
+  "month": 5,
+  "day": 1
+ },
+ "region": {
+  "ja": "日本の森林地帯",
+  "lon0": 139.188,
+  "lon1": 139.29,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 4902,
+  "labels": [
+   [
+    36.61636,
+    139.23899999999998,
+    "日本の森林地帯"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "roost_branch",
+   "tree_hollow"
+  ],
+  [
+   "abandoned_nest",
+   "tree_hollow"
+  ],
+  [
+   "abandoned_nest",
+   "forest_floor"
+  ],
+  [
+   "forest_edge",
+   "forest_floor"
+  ],
+  [
+   "forest_edge",
+   "roost_branch"
+  ],
+  [
+   "dead_tree",
+   "roost_branch"
+  ],
+  [
+   "canopy",
+   "dead_tree"
+  ],
+  [
+   "abandoned_nest",
+   "canopy"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 50
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "音もなく夜空を舞い、獲物に接近する時に効く"
+  },
+  "sense": {
+   "ja": "聴く力",
+   "use": "暗闇の中で獲物のわずかな動きを察知する時に効く"
+  },
+  "forage": {
+   "ja": "掴む技",
+   "use": "鋭い爪で獲物を確実に仕留める時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 60,
+   "hunger": 10,
+   "grow": 1.2
+  },
+  {
+   "id": "juv",
+   "ja": "巣立ちビナ",
+   "fromAge": 0.2,
+   "days": 60,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "若鳥になる",
+   "enter": "翼が伸びて巣を離れた。親の助けを借りながら、森での生き方を学ぶ。"
+  },
+  {
+   "id": "young",
+   "ja": "若鳥",
+   "fromAge": 1,
+   "days": 120,
+   "hunger": 14,
+   "grow": 0.3,
+   "goal": "成鳥になる",
+   "enter": "自力で獲物を狩る術を身につけた。自分の縄張りを探して森を回る。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "成熟し、つがいとなった。木のうろを確保し、子育てができる体になった。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   20
+  ],
+  "text": "聴力と視力が衰え、獲物を捕らえる速度が落ちた。深い森のうろの中で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "木のうろで子を育てる",
+  "ds": "木のうろや他種の古巣を利用し、卵を産んで温める",
+  "months": [
+   3,
+   4,
+   5
+  ],
+  "places": [
+   "tree_hollow",
+   "abandoned_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   2,
+   5
+  ],
+  "many": 6,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "木のうろに{born}個の卵を産み、交代で温め始めた。",
+  "ng": "適当なうろが見つからず、営巣できなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を6個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が運ぶネズミ",
+   "ds": "巣の中で鳴き声を上げ、親が運んできた小動物をねだる",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "tree_hollow"
+   ],
+   "rich": [
+    "tree_hollow"
+   ],
+   "ok": "親が戻り、運んできたネズミを夢中で食べた。",
+   "full": 30
+  },
+  {
+   "id": "rodent",
+   "ja": "林床のネズミを狩る",
+   "name": "小型齧歯類",
+   "ds": "夜の森を静かに飛び、地面を走るネズミを急降下して捕らえる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "forest_edge"
+   ],
+   "rich": [
+    "forest_floor"
+   ],
+   "ok": "鋭い爪を突き立て、林床を走るネズミを一撃で仕留めた。",
+   "full": 35
+  }
+ ],
+ "special": [
+  {
+   "id": "silent_flight",
+   "ja": "静寂の飛行",
+   "ds": "羽の構造で風切り音を消し、獲物に気づかれず接近する",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "音もなく夜空を滑空し、獲物の背後にまで近づいた。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "canopy",
+    "forest_edge",
+    "roost_branch"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "林の隙間から白い胸の猛禽が一直線に突っ込んでくる。",
+    "鋭い爪を伸ばし、背後から襲いかかってきた。"
+   ],
+   "again": [
+    [
+     "また、あの胸の斑が濃いオオタカだ。ねぐらの上を旋回している。"
+    ],
+    [
+     "胸の斑が濃いオオタカが、林縁の枯れ木から見下ろしている。"
+    ]
+   ],
+   "bye": "十分な飛翔能力を身につけ、鋭い叫び声で追い払った。"
+  },
+  {
+   "id": "eagle_owl",
+   "ja": "ワシミミズク",
+   "kind": "bird",
+   "places": [
+    "canopy",
+    "roost_branch"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "闇に溶け込む巨大な影が、音もなくねぐらに降り立つ。",
+    "圧倒的な体格の主が、鋭い眼光で獲物を射抜く。"
+   ],
+   "again": [
+    [
+     "あの耳羽の長い個体が、また近くの樹冠に止まっている。"
+    ],
+    [
+     "耳羽の長い個体が、夜の森で低く唸るように鳴いている。"
+    ]
+   ],
+   "bye": "縄張りから離れ、より深い森の奥へと逃げ延びた。"
+  },
+  {
+   "id": "marten",
+   "ja": "ニホンテン",
+   "kind": "mammal",
+   "places": [
+    "tree_hollow",
+    "abandoned_nest"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "しなやかな体が樹皮を掴み、うろの入り口まで忍び寄る。",
+    "鋭い牙をむき出しにして、巣の中へ飛び込んできた。"
+   ]
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "tree_hollow",
+    "abandoned_nest",
+    "forest_edge"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "しつこく鳴き声を上げ、親鳥を巣から追い出そうとする。",
+    "親鳥の不在を突き、太いくちばしを巣の中に突き入れる。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor",
+    "abandoned_nest"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "丸い背中を低くかがめ、地面に落ちたヒナへにじり寄る。",
+    "暗がりから不意に飛び出し、足もとの獲物を捕らえようとする。"
+   ]
+  },
+  {
+   "id": "red_fox",
+   "ja": "キツネ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "枯れ葉の中に身を伏せ、跳躍の機をじっとうかがっている。",
+    "黄金色の体が、林床を音もなく滑るように移動してくる。"
+   ]
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "tree_hollow",
+    "abandoned_nest"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "器用な前足で巣の縁を掴み、中をのぞきこむ。",
+    "しつこく木のうろを探索し、中のヒナを追い詰める。"
+   ]
+  },
+  {
+   "id": "golden_eagle",
+   "ja": "イヌワシ",
+   "kind": "bird",
+   "places": [
+    "canopy",
+    "forest_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "上空から急降下し、強靭な爪で背中をひっかく。",
+    "大きな翼を広げ、逃げ場のない枝の上まで追い詰める。"
+   ]
+  },
+  {
+   "id": "human_road",
+   "ja": "車",
+   "kind": "human",
+   "places": [
+    "forest_edge"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の道路を横切ろうとして、強いライトに照らされる。",
+    "アスファルトの上で、激しい走行音が近づいてくる。"
+   ],
+   "lose": "車に撥ねられ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "夜の森で獲物を狙う。どう動くか",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "枝に止まってじっと待つ",
+     "ds": "体力を消耗しない。獲物に出会うまで時間がかかる",
+     "fx": {
+      "energy": 1,
+      "food": -1
+     },
+     "say": "太い枝に身を潜め、林床を走るネズミの足音を待った。",
+     "chip": "待ち伏せ"
+    },
+    {
+     "ja": "低空を飛び回って探す",
+     "ds": "獲物を見つけやすい。体力を使い、敵に気づかれやすい",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "say": "静かに羽ばたき、茂みのわずかな揺れを追った。",
+     "chip": "索敵飛行"
+    }
+   ]
+  },
+  {
+   "q": "巣立って間もない。どこに身を隠すか",
+   "stages": [
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "うっそうとした樹冠に潜む",
+     "ds": "天敵に見つかりにくい。餌を探しにくい",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "canopy",
+     "say": "葉の隙間に身を寄せ、夜が来るのを待った。",
+     "chip": "樹冠へ"
+    },
+    {
+     "ja": "林のへりで獲物をうかがう",
+     "ds": "小動物が見つけやすい。外敵にさらされる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "forest_edge",
+     "say": "開けた場所で、地面を走る小動物を凝視した。",
+     "chip": "林のへりへ"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期が来た。どこに巣を構えるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    2,
+    3
+   ],
+   "opts": [
+    {
+     "ja": "天然の木のうろを探す",
+     "ds": "安全性が高く、ヒナが育ちやすい。場所が見つからないこともある",
+     "fx": {
+      "kids": 1,
+      "danger": -1
+     },
+     "goto": "tree_hollow",
+     "say": "深く静かな木の穴を見つけ、そこを根城に定めた。",
+     "chip": "木のうろ"
+    },
+    {
+     "ja": "他種の鳥が残した古巣を使う",
+     "ds": "手っ取り早く巣を作れる。構造が弱く、敵に狙われやすい",
+     "fx": {
+      "danger": 1,
+      "kids": -1
+     },
+     "goto": "abandoned_nest",
+     "say": "誰かが使っていた古い巣に降り立ち、足場を整えた。",
+     "chip": "古巣"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "冬の森でネズミが激減し、飢えが襲った。",
+   "food": -15
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "p": 0.1,
+   "say": "激しい台風が森を揺らし、ねぐらの枝が大きくしなった。",
+   "danger": 1
+  },
+  {
+   "month": [
+    1,
+    2
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.15,
+   "say": "厳しい寒波が襲い、親鳥の運ぶ餌が途絶えがちになった。",
+   "full": -10
+  }
+ ],
+ "lead": "日本の森の暗がりに潜み、鋭い聴覚でネズミを狩る。木のうろに巣を作り、静かに夜を支配して命をつなぐ。",
+ "texts": {
+  "move": "{to}へ、音もなく羽ばたいて飛んでいった。",
+  "fleeJa": "鋭く鳴いて、闇の中へ飛び去る",
+  "restJa": "太い枝に止まり、目を閉じて休む",
+  "watchJa": "耳を澄ませ、林床のわずかな音を待つ",
+  "lieJa": "樹皮に身を寄せ、風景に溶け込む",
+  "lastMemory": "深い森の静寂と、木のうろの温もりを思い出した。"
+ },
+ "intro": [
+  "日本の森林地帯、木のうろにある巣で生まれた。",
+  "親鳥が運んでくるネズミなどの餌を待ち、体を大きくする。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を巣立たせた",
+   "line": "{kids}羽のヒナが夜の森へ飛び立っていった。",
+   "mem": "初めて親となった日の、誇らしい気持ちを思い出した。"
+  },
+  {
+   "minKids": 3,
+   "title": "多くの命を繋いだ",
+   "line": "{kids}羽の子を育て上げ、深い森へと送り出した。",
+   "mem": "賑やかな巣の中で、子らの鳴き声に囲まれた日々を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "林床を走るネズミを、初めて正確に捉えた瞬間を思い出した。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "凍てつく冬の夜、飢えに耐えて生き延びたことを思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、森の静寂に消えた。",
+ "facts": [
+  {
+   "quote": "The Ural owl is something of a dietary generalist like many members of the Strix genus, but it is usually locally reliant on small mammals, especially small rodents such as voles.",
+   "factJa": "食性は多様だが、主にハタネズミなどの小型哺乳類に依存している。"
+  },
+  {
+   "quote": "Ural owls tend to vigorously protect a set territory on which they have historically nested on a variety of natural nest sites, including tree cavities and stumps",
+   "factJa": "定まった縄張りを強く守り、木のうろや切り株などの自然な場所に巣を作る。"
+  },
+  {
+   "quote": "Full-grown specimens range in total length from 50 to 64 cm",
+   "factJa": "成鳥の全長は50〜64cmに達する比較的大型の種である。"
+  }
+ ]
+}

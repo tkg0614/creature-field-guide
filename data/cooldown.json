@@ -1,11 +1,11 @@
 {
  "openrouter": {
-  "until": "2026-11-05T18:28:08.662Z",
+  "until": "2026-11-05T19:29:20.036Z",
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-11-05T18:26:04.125Z",
-  "why": "壊れた返事 503 {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary"
+  "until": "2026-11-05T18:56:28.608Z",
+  "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
   "until": "2026-11-06T08:05:00.000Z",

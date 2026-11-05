@@ -1,0 +1,700 @@
+{
+ "id": "tancho",
+ "ja": "タンチョウ",
+ "sci": "Grus japonensis",
+ "status": "draft",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "北海道の湿原と農耕地",
+  "geo": "Hokkaido",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "wetland_nest",
+   "ja": "湿原の浅い水辺の巣",
+   "danger": 1,
+   "cover": true,
+   "about": "草や小枝を積み上げた皿状の巣がある。親が運んでくる昆虫を食べて成長する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.452,
+   "lon": 142.82
+  },
+  {
+   "id": "marsh_forage",
+   "ja": "開けた湿原",
+   "danger": 1,
+   "cover": false,
+   "about": "泥の中に潜む小魚やカエルを狙う。視界が広く、外敵をいち早く察知できる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.452,
+   "lon": 142.852
+  },
+  {
+   "id": "river_shallows",
+   "ja": "川の浅瀬",
+   "danger": 1,
+   "cover": false,
+   "about": "素早い動きで魚を捕らえる。水流があり、足元を隠す草が少ない。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.48,
+   "lon": 142.84
+  },
+  {
+   "id": "reed_bed",
+   "ja": "ヨシ原の茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "生い茂るヨシが天敵の視線を遮る。休息や羽づくろいに適している。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.469,
+   "lon": 142.808
+  },
+  {
+   "id": "rice_paddy",
+   "ja": "冬の刈田",
+   "danger": 2,
+   "cover": false,
+   "about": "落ち穂の米を食べる。遮るものがなく、猛禽類の目に付きやすい。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.452,
+   "lon": 142.788
+  },
+  {
+   "id": "winter_feeding_site",
+   "ja": "冬の給餌場",
+   "danger": 1,
+   "cover": false,
+   "about": "冬に多くの個体が集まる。安定して餌を得られるが、密集して過ごす。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.424,
+   "lon": 142.8
+  },
+  {
+   "id": "open_field",
+   "ja": "草原",
+   "danger": 2,
+   "cover": false,
+   "about": "ネズミや昆虫を探して歩く。隠れる場所が少なく、常に周囲を警戒する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 43.435,
+   "lon": 142.832
+  }
+ ],
+ "start": {
+  "place": "wetland_nest",
+  "month": 5,
+  "day": 10
+ },
+ "region": {
+  "ja": "北海道の湿原と農耕地",
+  "lon0": 142.769,
+  "lon1": 142.871,
+  "lat0": 43.499,
+  "lat1": 43.405,
+  "k": 4902,
+  "labels": [
+   [
+    43.49336,
+    142.82,
+    "北海道の湿原と農耕地"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "open_field",
+   "wetland_nest"
+  ],
+  [
+   "reed_bed",
+   "wetland_nest"
+  ],
+  [
+   "marsh_forage",
+   "open_field"
+  ],
+  [
+   "marsh_forage",
+   "river_shallows"
+  ],
+  [
+   "reed_bed",
+   "river_shallows"
+  ],
+  [
+   "reed_bed",
+   "rice_paddy"
+  ],
+  [
+   "rice_paddy",
+   "winter_feeding_site"
+  ],
+  [
+   "open_field",
+   "winter_feeding_site"
+  ]
+ ],
+ "size": {
+  "ja": "体高",
+  "unit": "cm",
+  "start": 150
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "天敵から逃れ、空へ舞い上がる時に効く"
+  },
+  "sense": {
+   "ja": "見張る目",
+   "use": "遠くの異変や外敵をいち早く察知する時に効く"
+  },
+  "forage": {
+   "ja": "突く技",
+   "use": "魚や昆虫を素早く捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 60,
+   "hunger": 10,
+   "grow": 1.2
+  },
+  {
+   "id": "juv",
+   "ja": "幼鳥",
+   "fromAge": 0.2,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "若鳥になる",
+   "enter": "巣を離れ、親に導かれて湿原を歩き始めた。"
+  },
+  {
+   "id": "young",
+   "ja": "若鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.3,
+   "goal": "成鳥になる",
+   "enter": "厳しい最初の冬を越えた。羽色はまだ褐色が混じっている。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 3,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "頭頂に鮮やかな赤い皮膚が現れた。つがいを組み、舞い踊る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   20,
+   40
+  ],
+  "text": "翼を広げる力が衰え、静かに湿原の泥に沈んだ。"
+ },
+ "breeding": {
+  "ja": "湿原でつがいで育てる",
+  "ds": "湿原の浅い水辺に巣を作り、つがいで2羽のヒナを育てる",
+  "months": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "wetland_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   2
+  ],
+  "many": 2,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "湿原の浅い水辺に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "つがいとの調和が乱れ、営巣に至らなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を2個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が運ぶ昆虫",
+   "ds": "巣の上で親が運んできた昆虫や小魚を受け取る",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "wetland_nest"
+   ],
+   "rich": [
+    "wetland_nest"
+   ],
+   "ok": "親が戻り、運んできた昆虫を夢中で飲みこんだ。",
+   "full": 30
+  },
+  {
+   "id": "wetland_prey",
+   "ja": "湿原の生き物を捕らえる",
+   "name": "魚やカエル",
+   "ds": "水辺を歩き、魚やカエル、昆虫を鋭い嘴で突き刺す",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "marsh_forage",
+    "river_shallows",
+    "reed_bed"
+   ],
+   "rich": [
+    "river_shallows"
+   ],
+   "ok": "水底の魚を電光石火の速さで突き刺し、丸呑みにした。",
+   "full": 35
+  },
+  {
+   "id": "winter_grain",
+   "ja": "刈田の穀物を食べる",
+   "name": "米の落ち穂",
+   "ds": "冬の刈田で、地面に残った米の粒や種子を拾い集める",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "rice_paddy",
+    "winter_feeding_site"
+   ],
+   "rich": [
+    "winter_feeding_site"
+   ],
+   "ok": "雪の合間に見える米の粒を、効率よく拾い集めた。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "mating_dance",
+   "ja": "求愛の舞",
+   "ds": "つがいで激しく舞い踊り、絆を深める",
+   "stages": [
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "つがいと共に高く跳ね、美しい舞を披露した。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "wetland_nest",
+   "say": "春が訪れ、繁殖のための巣作りを始めた湿原へと戻った。"
+  },
+  {
+   "months": [
+    10,
+    11
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "to": "winter_feeding_site",
+   "say": "冬に備え、餌が豊富な給餌場や刈田へと移動した。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "red_fox",
+   "ja": "キタキツネ",
+   "kind": "mammal",
+   "places": [
+    "wetland_nest",
+    "marsh_forage",
+    "open_field"
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "枯れ草に身を潜めた黄金色の影が、ゆっくりと巣へ近づく。",
+    "低い姿勢で湿原を横切り、隙をうかがって跳躍してくる。"
+   ],
+   "again": [
+    "また、あの尾の先が白いキツネが、草むらからこちらをうかがっている。",
+    "尾の先が白いキツネが、遠くの畦道からじっと見つめている。"
+   ],
+   "bye": "体が大きくなり、鋭いくちばしで威嚇できるようになると、キツネは近づかなくなった。"
+  },
+  {
+   "id": "goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "reed_bed",
+    "open_field",
+    "marsh_forage"
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "young"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "林の端から灰色の影が急降下し、鋭い爪を突き出す。",
+    "視界の外から一直線に突っ込み、背後から襲いかかってくる。"
+   ],
+   "again": [
+    "また、あの胸の斑が濃いオオタカが、上空を低く旋回している。",
+    "胸の斑が濃いオオタカが、枯れ木の枝から鋭い眼光を向けている。"
+   ],
+   "bye": "翼に力がつき、空中で激しく羽ばたいて対抗すると、オオタカは諦めて飛び去った。"
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "wetland_nest",
+    "marsh_forage"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い影が巣のふちに舞い降り、鋭いくちばしを突き出す。",
+    "親鳥の留守をうかがい、湿原の地面をせわしなく歩き回る。"
+   ]
+  },
+  {
+   "id": "weasel",
+   "ja": "シベリアイタチ",
+   "kind": "mammal",
+   "places": [
+    "wetland_nest",
+    "reed_bed"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "褐色の細長い体が、ヨシの根元から素早く飛び出してくる。",
+    "水辺の茂みをすり抜け、低い姿勢でヒナへにじり寄る。"
+   ]
+  },
+  {
+   "id": "tanuki",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "wetland_nest",
+    "marsh_forage"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "丸い背中を低くかがめ、暗がりから巣の縁へ近づく。",
+    "湿原の夜、低い鳴き声を上げながら獲物を探して徘徊する。"
+   ]
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "wetland_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "器用な前足を使って、巣の中の卵やヒナをかき回す。",
+    "夜の静寂に紛れ、湿原の浅い水辺にある巣へ忍び寄る。"
+   ]
+  },
+  {
+   "id": "sea_eagle",
+   "ja": "ステラー海鵰",
+   "kind": "bird",
+   "places": [
+    "river_shallows",
+    "marsh_forage"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "texts": [
+    "巨大な翼を広げた白い猛禽が、川面から獲物をひったくる。",
+    "上空から圧倒的な質量を持って急降下し、衝撃と共に襲う。"
+   ]
+  },
+  {
+   "id": "white_eagle",
+   "ja": "オジロワシ",
+   "kind": "bird",
+   "places": [
+    "river_shallows",
+    "open_field"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "texts": [
+    "白い尾羽をなびかせ、低空から獲物を追い詰める。",
+    "鋭い爪を広げ、逃げ惑う幼鳥へ向かって猛スピードで突進する。"
+   ]
+  },
+  {
+   "id": "human_hazard",
+   "ja": "罠と電線",
+   "kind": "human",
+   "places": [
+    "rice_paddy",
+    "winter_feeding_site"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "冬の刈田に、人間が仕掛けた見えない罠が潜んでいる。",
+    "空を横切る黒い電線が、飛行ルートの行く手をふさぐ。"
+   ],
+   "lose": "罠にかけられ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "湿原で餌を探す。どのような方法で獲物を狙うか",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "泥の中にくちばしを突き刺す",
+     "ds": "虫や根を確実に得られる。高カロリーな獲物は少ない",
+     "fx": {
+      "food": 1,
+      "energy": 0
+     },
+     "say": "泥の中にくちばしを突き刺し、土中の虫や植物の根を探った。",
+     "chip": "泥を探る"
+    },
+    {
+     "ja": "水中の魚を素早く突き刺す",
+     "ds": "魚などの栄養価の高い餌が得られる。空振りが多く体力を消耗する",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "say": "水底をうかがい、素早く首を伸ばして小魚を突き刺した。",
+     "chip": "魚を狙う"
+    }
+   ]
+  },
+  {
+   "q": "冬の寒さが厳しくなった。どこで過ごすか",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "給餌場へ向かう",
+     "ds": "餌が安定して手に入る。個体密度が高く、病気や争いが起きやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "winter_feeding_site",
+     "say": "人から与えられる餌を求め、大群の中に混じった。",
+     "chip": "給餌場へ"
+    },
+    {
+     "ja": "刈田で残った籾を探す",
+     "ds": "静かに過ごせる。雪が積もると餌が完全に見えなくなる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "rice_paddy",
+     "say": "静かな刈田を歩き、地面に残った籾を拾い集めた。",
+     "chip": "刈田へ"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期に巣を作る。どこに場所を構えるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4
+   ],
+   "opts": [
+    {
+     "ja": "視界の開けた浅瀬に作る",
+     "ds": "外敵に気づきやすく、ヒナを守りやすい。風雨にさらされやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "wetland_nest",
+     "say": "視界の開けた浅瀬に巣を構え、周囲を警戒した。",
+     "chip": "開けた場所"
+    },
+    {
+     "ja": "ヨシ原の茂みに寄り添って作る",
+     "ds": "外敵から身を隠しやすい。視界が悪く、不意の襲撃に弱い",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "wetland_nest",
+     "say": "ヨシ原の茂みに寄り添い、外敵から身を隠して巣を組んだ。",
+     "chip": "茂みの近く"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "深い雪が湿原を覆い、地面の餌が隠れた。",
+   "full": -15
+  },
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.15,
+   "say": "キツネが巣に近づき、ヒナが激しく鳴いた。",
+   "danger": 1
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "夏の乾燥で浅瀬の水が引き、魚が姿を消した。",
+   "food": -10
+  }
+ ]
+}

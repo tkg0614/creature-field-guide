@@ -1,0 +1,746 @@
+{
+ "id": "kingfisher",
+ "ja": "カワセミ",
+ "sci": "Alcedo atthis",
+ "status": "checked",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本の河川流域と水辺",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "riverbank_burrow",
+   "ja": "土手の穴巣",
+   "danger": 1,
+   "cover": true,
+   "about": "土の崖に掘られた横穴。親鳥が運ぶ小魚を待ち、成長する。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "overhanging_branch",
+   "ja": "張り出した枝",
+   "danger": 2,
+   "cover": true,
+   "about": "水面に突き出た枝。獲物を狙って静止し、一気に飛び込む。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "clear_shallows",
+   "ja": "澄んだ浅瀬",
+   "danger": 2,
+   "cover": false,
+   "about": "水底が見える浅い流れ。小魚やエビが泳ぐ。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.603,
+   "lon": 139.259
+  },
+  {
+   "id": "riverside_bush",
+   "ja": "水辺の茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "川沿いの低木林。羽づくろいを行い、外敵から身を隠す。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.592,
+   "lon": 139.227
+  },
+  {
+   "id": "estuary",
+   "ja": "河口や港",
+   "danger": 2,
+   "cover": false,
+   "about": "冬季に訪れる汽水域。塩分を含む水域で小魚を捕る。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.207
+  },
+  {
+   "id": "farm_pond",
+   "ja": "ため池",
+   "danger": 2,
+   "cover": false,
+   "about": "田園地帯の静かな池。流れのない水域で獲物を探す。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.547,
+   "lon": 139.219
+  },
+  {
+   "id": "thicket_roost",
+   "ja": "川沿いの藪",
+   "danger": 1,
+   "cover": true,
+   "about": "密に生い茂る草木。夜間のねぐらとして利用する。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.558,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "riverbank_burrow",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の河川流域と水辺",
+  "lon0": 139.188,
+  "lon1": 139.29,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 4902,
+  "labels": [
+   [
+    36.61636,
+    139.23899999999998,
+    "日本の河川流域と水辺"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "riverbank_burrow",
+   "riverside_bush"
+  ],
+  [
+   "riverbank_burrow",
+   "thicket_roost"
+  ],
+  [
+   "overhanging_branch",
+   "thicket_roost"
+  ],
+  [
+   "clear_shallows",
+   "overhanging_branch"
+  ],
+  [
+   "clear_shallows",
+   "riverside_bush"
+  ],
+  [
+   "estuary",
+   "riverside_bush"
+  ],
+  [
+   "estuary",
+   "farm_pond"
+  ],
+  [
+   "farm_pond",
+   "thicket_roost"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 16
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "水面低く高速で移動し、外敵から逃れる時に効く"
+  },
+  "sense": {
+   "ja": "見通す目",
+   "use": "水中の獲物を正確に捉える時に効く"
+  },
+  "forage": {
+   "ja": "飛び込み",
+   "use": "水中に急降下して獲物を捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 30,
+   "hunger": 10,
+   "grow": 1.5
+  },
+  {
+   "id": "juv",
+   "ja": "若鳥",
+   "fromAge": 0.2,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "自立する",
+   "enter": "巣を離れた。羽色がくすみ、自ら魚を追う術を学ぶ。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "鮮やかな青色の羽に包まれた。土手に穴を掘り、つがいを求める。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   10
+  ],
+  "text": "飛び込む力が衰え、水面を捉えきれなくなった。静かな水辺で息を引き取った。"
+ },
+ "breeding": {
+  "ja": "土手の穴で子を育てる",
+  "ds": "川岸の土手に横穴を掘り、奥に白い卵を産み付ける",
+  "months": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "places": [
+   "riverbank_burrow"
+  ],
+  "perYear": 1,
+  "kids": [
+   3,
+   7
+  ],
+  "many": 10,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "土手の穴巣に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "適切な土手が見つからず、営巣場所を確保できなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を10個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が運ぶ小魚",
+   "ds": "暗い穴の中で、親が運んでくる魚を口を開けて待つ",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "riverbank_burrow"
+   ],
+   "rich": [
+    "riverbank_burrow"
+   ],
+   "ok": "親が戻り、運んできた小魚を喉を鳴らして受け取った。",
+   "full": 30
+  },
+  {
+   "id": "river_fish",
+   "ja": "浅瀬の魚を捕らえる",
+   "name": "小魚",
+   "ds": "枝の上から水面を凝視し、一気に飛び込んで魚を捕らえる",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "clear_shallows",
+    "farm_pond",
+    "estuary"
+   ],
+   "rich": [
+    "clear_shallows"
+   ],
+   "ok": "水飛沫を上げて飛び込み、銀色の小魚を嘴で捉えた。",
+   "full": 35
+  },
+  {
+   "id": "pond_frog",
+   "ja": "水辺のカエルを捕らえる",
+   "name": "カエル",
+   "ds": "水辺の茂みから飛び出し、陸上の獲物を仕留める",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "riverside_bush",
+    "farm_pond"
+   ],
+   "rich": [
+    "farm_pond"
+   ],
+   "ok": "茂みに隠れていたカエルを、鋭い嘴で突き刺した。",
+   "full": 25
+  }
+ ],
+ "special": [
+  {
+   "id": "dive_hunt",
+   "ja": "急降下狩り",
+   "ds": "高い場所から垂直に飛び込み、水中の獲物を仕留める",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": true,
+   "ok": "張り出した枝から一直線に飛び込み、獲物を丸呑みにした。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    11,
+    12
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "to": "estuary",
+   "say": "冬の寒さを避け、餌の豊富な河口や港へと移動した。"
+  },
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "riverbank_burrow",
+   "say": "春の訪れとともに、繁殖のための土手へと戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "overhanging_branch",
+    "riverside_bush",
+    "thicket_roost"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "林の隙間から灰色の影が一直線に突っ込んでくる。",
+    "鋭い爪を伸ばし、背後から猛然と襲いかかってきた。"
+   ],
+   "again": [
+    "また、あの鋭い眼光のオオタカが上空を旋回している。",
+    "オオタカが、川沿いの枯れ木からじっとこちらを見下ろしている。"
+   ],
+   "bye": "速度を上げて水面へ低く飛び込むと、オオタカは追撃を諦めた。"
+  },
+  {
+   "id": "sparrowhawk",
+   "ja": "ハイタカ",
+   "kind": "bird",
+   "places": [
+    "overhanging_branch",
+    "riverside_bush"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "茂みの陰から、小さな猛禽が電光石火の速さで飛び出す。",
+    "不意に視界に飛び込んできた鋭い爪が、翼をかすめる。"
+   ]
+  },
+  {
+   "id": "crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "riverbank_burrow"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い大きな影が土手の穴口に降り立ち、中をのぞきこむ。",
+    "親鳥の不在を突き、太いくちばしを巣穴の奥へ突き入れる。"
+   ]
+  },
+  {
+   "id": "weasel",
+   "ja": "ニホンイタチ",
+   "kind": "mammal",
+   "places": [
+    "riverbank_burrow"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "赤褐色の細長い体が、土手の穴から音もなく侵入してくる。",
+    "狭い巣穴の中で、鋭い牙がヒナに襲いかかる。"
+   ]
+  },
+  {
+   "id": "marten",
+   "ja": "テン",
+   "kind": "mammal",
+   "places": [
+    "riverbank_burrow",
+    "thicket_roost"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "texts": [
+    "茶褐色のしなやかな体が、土手の崖を器用に登ってくる。",
+    "ねぐらの枝に忍び寄り、鋭い爪で背後から組み伏せる。"
+   ],
+   "again": [
+    "また、あの茶褐色のテンが土手の穴をうかがっている。",
+    "テンが、川沿いの藪の中で低く身を構えている。"
+   ],
+   "bye": "親鳥が激しく鳴き声を上げて威嚇すると、テンは藪の中へ消えた。"
+  },
+  {
+   "id": "raccoon",
+   "ja": "アライグマ",
+   "kind": "mammal",
+   "places": [
+    "riverbank_burrow"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "器用な前足で土を掘り起こし、巣穴の中へ手を伸ばしてくる。",
+    "夜の静寂に紛れ、土手の穴を執拗に探っている。"
+   ]
+  },
+  {
+   "id": "rat_snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "riverbank_burrow"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑がかった胴体が、うねうねと巣穴の奥へ潜り込む。",
+    "細い舌を出し入れし、逃げ場のないヒナに鎌首をもたげる。"
+   ]
+  },
+  {
+   "id": "cat",
+   "ja": "ノネコ",
+   "kind": "mammal",
+   "places": [
+    "overhanging_branch",
+    "riverside_bush",
+    "farm_pond"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "茂みの陰で身を潜めていた猫が、一気に跳躍してくる。",
+    "水辺の枝に止まった瞬間、鋭い爪が突き出される。"
+   ]
+  },
+  {
+   "id": "black_kite",
+   "ja": "トビ",
+   "kind": "bird",
+   "places": [
+    "estuary",
+    "farm_pond"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "上空から円を描いて旋回し、隙を見て急降下してくる。",
+    "水面近くを飛ぶ若鳥を、鋭い爪でひったくる。"
+   ]
+  },
+  {
+   "id": "fishing_line",
+   "ja": "釣り糸と針",
+   "kind": "human",
+   "places": [
+    "clear_shallows",
+    "estuary"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水面に浮かぶ擬似餌に惹かれ、勢いよく飛び込む。",
+    "透明な糸が水中で複雑に絡まり、行く手をふさぐ。"
+   ],
+   "lose": "鋭い釣り針に足が引っかかり、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "獲物を狙う。どこに陣取るか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "張り出した枝に止まる",
+     "ds": "視界が広く獲物を見つけやすい。天敵からも見つかりやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "overhanging_branch",
+     "say": "水面にせり出した枝に止まり、鋭い眼光で水底を射抜いた。",
+     "chip": "枝から狙う"
+    },
+    {
+     "ja": "水辺の茂みに潜む",
+     "ds": "身を隠せて安全。獲物を探す範囲が限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "riverside_bush",
+     "say": "葉の隙間に身を潜め、小魚のわずかな跳ねを待った。",
+     "chip": "茂みで待つ"
+    }
+   ]
+  },
+  {
+   "q": "冬の冷え込みが厳しくなった。どこへ移動するか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "河口や港へ向かう",
+     "ds": "水が凍らず餌が豊富。競争相手や人間が多い",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "estuary",
+     "say": "潮の香りが漂う河口へ飛び、冬の魚を追った。",
+     "chip": "河口へ"
+    },
+    {
+     "ja": "凍らないため池に残る",
+     "ds": "静かで安全。餌の数が限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "farm_pond",
+     "say": "村外れの静かなため池に降り、水底の影をじっと見据えた。",
+     "chip": "ため池へ"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期が来た。どこに穴巣を掘るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "砂混じりの柔らかい土手を選ぶ",
+     "ds": "掘りやすく巣作りが早い。崩れやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "riverbank_burrow",
+     "say": "柔らかい土手に嘴を突き立て、深く横穴を掘った。",
+     "chip": "砂土の壁"
+    },
+    {
+     "ja": "硬い粘土質の土手を選ぶ",
+     "ds": "頑丈で安全。掘るのに時間がかかる",
+     "fx": {
+      "danger": -1,
+      "kids": -1
+     },
+     "goto": "riverbank_burrow",
+     "say": "硬い壁を根気強く削り、堅牢な隠れ家を築いた。",
+     "chip": "粘土の壁"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "川面が凍りつき、魚に手が届かなくなった。",
+   "food": -15
+  },
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.1,
+   "say": "激しい豪雨で川が増水し、土手の穴巣に水が流れ込んだ。",
+   "danger": 1
+  },
+  {
+   "month": [
+    8,
+    9
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "大雨で水が濁り、水中の獲物が見えなくなった。",
+   "food": -10
+  }
+ ],
+ "lead": "土手の穴巣で生まれ、澄んだ水辺で魚を狙い、再び土手の穴に子を育む。青い閃光となって水面を駆け、どこまで命をつなげるか。",
+ "texts": {
+  "move": "{to}へ、鋭く直線的に飛んでいった。",
+  "fleeJa": "短く鋭い声を上げて飛び去る",
+  "restJa": "張り出した枝に止まって休む",
+  "watchJa": "枝の上から水面をじっと見つめる",
+  "lieJa": "茂みの陰に身を潜める",
+  "lastMemory": "土手の穴巣から見た、きらめく水面を思い出した。"
+ },
+ "intro": [
+  "土手の穴の奥にある巣で、白い卵から生まれた。",
+  "暗い穴の中で、親鳥が運んでくる小魚を待つ。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが成長し、水辺へと巣立っていった。",
+   "mem": "ヒナが初めて水面へ飛び込んだ日を思い出した。"
+  },
+  {
+   "minKids": 3,
+   "title": "多くの若鳥を送り出した",
+   "line": "{kids}羽の子を育て上げ、川の流れへと送り出した。",
+   "mem": "賑やかな穴巣の中で、子らと過ごした時間を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "澄んだ浅瀬で、初めて素早く魚を捕らえた瞬間を思い出した。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "凍てつく冬の河口で、厳しい寒さを耐え抜いたことを思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに命を終えた。",
+ "facts": [
+  {
+   "quote": "The glossy white eggs are laid in a nest at the end of a burrow in a riverbank.",
+   "factJa": "艶のある白い卵を、土手の穴の奥にある巣に産む。"
+  },
+  {
+   "quote": "It feeds mainly on fish, caught by diving, and has special visual adaptations to enable it to see prey under water.",
+   "factJa": "主に飛び込んで捕らえた魚を食べ、水中での獲物を見極める特殊な視覚を持つ。"
+  },
+  {
+   "quote": "The flight of the kingfisher is fast, direct and usually low over water.",
+   "factJa": "飛行は速く直線的で、通常は水面に近い低空を飛ぶ。"
+  }
+ ]
+}

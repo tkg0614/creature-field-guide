@@ -1,0 +1,784 @@
+{
+ "id": "greattit",
+ "ja": "シジュウカラ",
+ "sci": "Parus minor",
+ "status": "checked",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本の林や公園",
+  "geo": "Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "tree_hollow_nest",
+   "ja": "木の穴や巣箱",
+   "danger": 1,
+   "cover": true,
+   "about": "苔や羽毛で敷き詰められた心地よい空間。親鳥が運ぶ毛虫を待つ。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "forest_canopy",
+   "ja": "林の梢",
+   "danger": 2,
+   "cover": true,
+   "about": "葉の裏に隠れた毛虫や甲虫を探す。枝の間を素早く飛び回る。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.271
+  },
+  {
+   "id": "park_shrubbery",
+   "ja": "公園の植え込み",
+   "danger": 2,
+   "cover": true,
+   "about": "人の往来があるが、餌となる虫が豊富だ。茂みに身を隠しながら活動する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.603,
+   "lon": 139.259
+  },
+  {
+   "id": "mixed_woods",
+   "ja": "混交林",
+   "danger": 2,
+   "cover": true,
+   "about": "冬の間、他の小鳥とともに群れで暮らす。効率よく餌を探し、外敵を警戒する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.592,
+   "lon": 139.227
+  },
+  {
+   "id": "tree_bark",
+   "ja": "樹皮の隙間",
+   "danger": 1,
+   "cover": false,
+   "about": "硬い種子を樹皮に挟み、くちばしで叩いて割る。足場が不安定で視界が開けている。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.207
+  },
+  {
+   "id": "dense_thicket",
+   "ja": "密な茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "夜間や休息時に身を潜める。外敵から身を守り、体温を維持する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.547,
+   "lon": 139.219
+  },
+  {
+   "id": "mud_wall",
+   "ja": "土手や壁の穴",
+   "danger": 2,
+   "cover": true,
+   "about": "天然の空洞や人工的な隙間に巣を作る。入り口が狭く、外敵の侵入を防ぐ。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.558,
+   "lon": 139.251
+  }
+ ],
+ "start": {
+  "place": "tree_hollow_nest",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の林や公園",
+  "lon0": 139.188,
+  "lon1": 139.29,
+  "lat0": 36.622,
+  "lat1": 36.528,
+  "k": 4902,
+  "labels": [
+   [
+    36.61636,
+    139.23899999999998,
+    "日本の林や公園"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "mixed_woods",
+   "tree_hollow_nest"
+  ],
+  [
+   "mud_wall",
+   "tree_hollow_nest"
+  ],
+  [
+   "forest_canopy",
+   "mud_wall"
+  ],
+  [
+   "forest_canopy",
+   "park_shrubbery"
+  ],
+  [
+   "mixed_woods",
+   "park_shrubbery"
+  ],
+  [
+   "mixed_woods",
+   "tree_bark"
+  ],
+  [
+   "dense_thicket",
+   "tree_bark"
+  ],
+  [
+   "dense_thicket",
+   "mud_wall"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 14.5
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "天敵から素早く飛び立ち逃げる時に効く"
+  },
+  "sense": {
+   "ja": "見張る目",
+   "use": "樹皮の隙間の虫や周囲の異変に気づく時に効く"
+  },
+  "forage": {
+   "ja": "突き刺す嘴",
+   "use": "獲物を捕らえたり種子を叩き割ったりする時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 20,
+   "hunger": 10,
+   "grow": 1.5
+  },
+  {
+   "id": "juv",
+   "ja": "巣立ちビナ",
+   "fromAge": 0.1,
+   "days": 40,
+   "hunger": 12,
+   "grow": 0.6,
+   "goal": "自立する",
+   "enter": "巣を離れ、親に導かれて林の中を飛び回った。"
+  },
+  {
+   "id": "young",
+   "ja": "若鳥",
+   "fromAge": 0.3,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.3,
+   "goal": "冬を越す",
+   "enter": "初めての冬を群れの中で生き抜いた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖する",
+   "enter": "喉の黒い線が太くなり、つがいを求めて鳴いた。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   5
+  ],
+  "text": "羽艶が失われ、飛ぶ力が衰えた。冬の林の茂みの中で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "木の穴で子育てをする",
+  "ds": "木の穴や巣箱に苔や羽毛を敷き、卵を温める",
+  "months": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "places": [
+   "tree_hollow_nest",
+   "mud_wall"
+  ],
+  "perYear": 1,
+  "kids": [
+   4,
+   6
+  ],
+  "many": 9,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "木の穴に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "適当な穴が見つからず、営巣を諦めた。",
+  "goal1": "卵を産む",
+  "goal2": "卵を9個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "毛虫",
+   "ds": "巣の中で口を大きく開き、親が運んできた毛虫を飲み込む",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "tree_hollow_nest"
+   ],
+   "rich": [
+    "tree_hollow_nest"
+   ],
+   "ok": "親鳥が運んできた青い毛虫を夢中で食べた。",
+   "full": 30
+  },
+  {
+   "id": "insect",
+   "ja": "虫を捕らえる",
+   "name": "昆虫",
+   "ds": "樹皮の隙間や葉の裏から、毛虫や甲虫を素早く捕らえる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "tree_bark",
+    "forest_canopy",
+    "park_shrubbery"
+   ],
+   "rich": [
+    "tree_bark"
+   ],
+   "ok": "樹皮の隙間に潜んでいた小さな虫を嘴で突き刺した。",
+   "full": 30
+  },
+  {
+   "id": "seed",
+   "ja": "種や芽を食べる",
+   "name": "種子・芽",
+   "ds": "冬場に木の芽や種子を食べ、エネルギーを蓄える",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "mixed_woods",
+    "forest_canopy"
+   ],
+   "rich": [
+    "mixed_woods"
+   ],
+   "ok": "硬い種子を樹皮に挟み込み、嘴で叩き割って食べた。",
+   "full": 25
+  }
+ ],
+ "special": [
+  {
+   "id": "hammer",
+   "ja": "種子の叩き割り",
+   "ds": "硬い種を樹皮の隙間に固定し、嘴で叩いて殻を割る",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": true,
+   "ok": "種を樹皮にしっかり固定し、鋭い嘴で何度も叩き割った。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "northern_goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "forest_canopy",
+    "mixed_woods"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "林の隙間から灰色の影が猛スピードで突っ込んでくる。",
+    "鋭い爪を広げ、背後から一気に襲いかかってきた。"
+   ],
+   "again": [
+    [
+     "また、あの鋭い眼光のオオタカが林の梢を旋回している。"
+    ],
+    [
+     "梢の枯れ枝に、あのオオタカが止まってこちらを凝視している。"
+    ]
+   ],
+   "bye": "空の影をいち早く察知し、遮蔽物へ逃げ込む術を覚えた。"
+  },
+  {
+   "id": "sparrowhawk",
+   "ja": "ハイタカ",
+   "kind": "bird",
+   "places": [
+    "park_shrubbery",
+    "forest_canopy"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "植え込みの陰から、小柄な猛禽が一直線に飛び出してくる。",
+    "不意を突かれ、鋭い爪が翼を捉える。"
+   ]
+  },
+  {
+   "id": "large_billed_crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "tree_hollow_nest",
+    "park_shrubbery"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い大きな鳥が、巣の入り口を執拗にのぞきこむ。",
+    "親鳥の隙を突き、太いくちばしを巣の中に差し入れる。"
+   ]
+  },
+  {
+   "id": "japanese_marten",
+   "ja": "ニホンテン",
+   "kind": "mammal",
+   "places": [
+    "tree_hollow_nest",
+    "mixed_woods"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "しなやかな褐色の体が、樹皮を器用に登って巣へ近づく。",
+    "狭い穴の中にまで前足を差し入れ、中をかき回す。"
+   ]
+  },
+  {
+   "id": "japanese_weasel",
+   "ja": "ニホンイタチ",
+   "kind": "mammal",
+   "places": [
+    "dense_thicket",
+    "park_shrubbery"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "茂みの根元から、赤褐色の細長い体が弾丸のように飛び出す。",
+    "低い姿勢で素早く接近し、足もとへ飛びかかってくる。"
+   ]
+  },
+  {
+   "id": "raccoon_dog",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "tree_hollow_nest",
+    "mud_wall"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "低い位置にある巣の穴を、太い前足で無理やりこじ開ける。",
+    "暗がりの中で鼻を鳴らし、巣の中の気配を探っている。"
+   ]
+  },
+  {
+   "id": "japanese_ratsnake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "tree_hollow_nest",
+    "mud_wall"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "緑がかった胴体が、音もなく樹皮を伝って巣へ潜り込む。",
+    "細い舌を出し入れしながら、巣の中のヒナを追い詰める。"
+   ]
+  },
+  {
+   "id": "feral_cat",
+   "ja": "ノラネコ",
+   "kind": "mammal",
+   "places": [
+    "park_shrubbery",
+    "tree_bark"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "茂みの陰で、金色の瞳がじっとこちらを凝視している。",
+    "音もなく距離を詰め、鋭い爪を突き出す。"
+   ],
+   "again": [
+    [
+     "また、あの耳の欠けた三毛猫が塀の上で待っている。"
+    ],
+    [
+     "あの三毛猫が、いつもの植え込みで身を潜めている。"
+    ]
+   ],
+   "bye": "茂みのわずかな揺れで気配を読み取り、襲われる前に飛び立てるようになった。"
+  },
+  {
+   "id": "domestic_cat",
+   "ja": "イエネコ",
+   "kind": "mammal",
+   "places": [
+    "park_shrubbery",
+    "tree_bark"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "庭の生垣から、好奇心に満ちた目がこちらを追っている。",
+    "不意に飛び上がり、空中で羽を捉えようとする。"
+   ]
+  },
+  {
+   "id": "glass_window",
+   "ja": "ガラス窓",
+   "kind": "human",
+   "places": [
+    "park_shrubbery"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "透明な壁があることに気づかず、全速力で突進する。",
+    "反射して映る景色を空だと思い込み、一直線に飛ぶ。"
+   ],
+   "lose": "硬いガラスに激突し、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "林の中で餌を探す。どう動くか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "葉の裏を丁寧に調べる",
+     "ds": "毛虫を見つけやすい。天敵に気づかれやすい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "枝から枝へ飛び移り、葉の裏に潜む毛虫を追い詰めた。",
+     "chip": "葉裏を探す"
+    },
+    {
+     "ja": "樹皮の隙間を突つく",
+     "ds": "小さな虫や種が見つかる。効率は落ちる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "say": "幹の裂け目に嘴を差し込み、隠れた小さな虫を掘り出した。",
+     "chip": "樹皮を探す"
+    }
+   ]
+  },
+  {
+   "q": "冬の寒さが厳しくなった。どう過ごすか",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "opts": [
+    {
+     "ja": "他種の鳥が混じる群れに入る",
+     "ds": "外敵に気づきやすい。餌の奪い合いになる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "小鳥たちの賑やかな混成群に混じり、安全に林を移動した。",
+     "chip": "群れに入る"
+    },
+    {
+     "ja": "少数の家族で行動する",
+     "ds": "餌を独占できる。天敵への警戒が疎かになる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "say": "家族だけで静かに、効率よく餌場を回った。",
+     "chip": "家族で動く"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期が来た。どこに巣を作るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "自然の木の穴を探す",
+     "ds": "周囲に溶け込みやすい。場所の奪い合いが激しい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "tree_hollow_nest",
+     "say": "古木の空洞を見つけ、苔や羽毛で底を丁寧に敷き詰めた。",
+     "chip": "木の穴へ"
+    },
+    {
+     "ja": "設置された巣箱を利用する",
+     "ds": "雨風に強く安全。天敵に見つかりやすい",
+     "fx": {
+      "danger": -1,
+      "kids": 1
+     },
+     "goto": "tree_hollow_nest",
+     "say": "人間が建てた巣箱に入り、安定した空間を確保した。",
+     "chip": "巣箱へ"
+    }
+   ]
+  },
+  {
+   "q": "硬い種子を見つけた。どう処理するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "樹皮の隙間に挟んで叩く",
+     "ds": "栄養を得られる。時間と体力を消耗する",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "say": "種を樹皮の裂け目に固定し、鋭い嘴で殻を砕いた。",
+     "chip": "叩いて砕く"
+    },
+    {
+     "ja": "諦めて虫を探す",
+     "ds": "体力を温存できる。貴重な食料を逃す",
+     "fx": {
+      "energy": 1,
+      "food": -1
+     },
+     "say": "硬い種を捨て、再び葉の上の虫を追った。",
+     "chip": "虫を探す"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6,
+    7
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "ヘビが木の穴に近づき、鋭い視線で巣の中をうかがった。",
+   "danger": 1
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "激しい寒波が襲い、林の昆虫の活動が完全に止まった。",
+   "food": -10
+  },
+  {
+   "month": [
+    5,
+    6
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "林に毛虫が大量に発生し、至る所で餌が見つかった。",
+   "food": 15
+  }
+ ],
+ "lead": "日本の林や公園の木の穴で生まれ、枝を飛び回りながら虫を捕らえる小さな鳥である。",
+ "texts": {
+  "move": "{to}へ、軽やかに羽ばたいて向かったである。",
+  "fleeJa": "鋭い鳴き声を上げて、木の枝へ逃げたである。",
+  "restJa": "枝に止まり、羽を広げて休んだである。",
+  "watchJa": "葉の間から獲物を見つめて待ったである。",
+  "lieJa": "茂みの影で身を潜めたである。",
+  "lastMemory": "巣箱の中で見た朝日の光を思い出すである。"
+ },
+ "intro": [
+  "木の穴や巣箱の中で、青緑色の卵からヒナが孵化したである。",
+  "親鳥が毛虫をくわえて運び、ヒナは巣の中で待ったである。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが羽ばたきを覚え、林へ飛び立ったである。",
+   "mem": "ヒナが初めて巣の縁を離れた朝を思い出すである。"
+  },
+  {
+   "minKids": 4,
+   "title": "多くの若鳥を送り出した",
+   "line": "{kids}羽の子を育て上げ、春の林へと送り出したである。",
+   "mem": "賑やかな巣箱で子らと共に歌った日を思い出すである。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "初めて枝先で毛虫を捕らえた瞬間を思い出すである。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "厳しい冬を乗り越え、餌が少ない中で生き延びたことを思い出すである。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに命を終えたである。",
+ "facts": [
+  {
+   "quote": "They forage mainly by gleaning, capturing insects (mainly caterpillars, bugs and beetles) that are disturbed.",
+   "factJa": "主に枝をつついて毛虫や甲虫などの昆虫を捕らえて餌にするである。"
+  },
+  {
+   "quote": "Both parents take part in incubation and hissing from within the nest when threatened.",
+   "factJa": "両親が抱卵に参加し、巣が脅かされるとヒューヒューと鳴いて警戒するである。"
+  },
+  {
+   "quote": "The nests are placed in hollows in trees or in a wall or mud-bank with a narrow entrance hole.",
+   "factJa": "巣は木の穴や壁、土手の狭い入口の洞に作られるである。"
+  }
+ ]
+}

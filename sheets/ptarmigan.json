@@ -1,0 +1,692 @@
+{
+ "id": "ptarmigan",
+ "ja": "ライチョウ",
+ "sci": "Lagopus muta",
+ "status": "checked",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本アルプスの高山帯",
+  "geo": "Hida Mountains",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "nest_ground",
+   "ja": "ハイマツ根元の地面",
+   "danger": 3,
+   "cover": true,
+   "about": "地面に窪みを掘った簡素な巣がある。天敵に見つかりやすく、親鳥が警戒して見守る。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.279,
+   "lon": 137.706
+  },
+  {
+   "id": "creeping_pine",
+   "ja": "ハイマツの茂み",
+   "danger": 2,
+   "cover": true,
+   "about": "低い枝が密集し、外敵から身を隠しやすい。幼鳥が羽を整え、成長を待つ場所である。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.279,
+   "lon": 137.738
+  },
+  {
+   "id": "alpine_meadow",
+   "ja": "高山植物の草原",
+   "danger": 2,
+   "cover": false,
+   "about": "多様な種子や昆虫を食べる。遮るものがなく、猛禽類の視線にさらされる。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.309,
+   "lon": 137.718
+  },
+  {
+   "id": "rocky_ridge",
+   "ja": "岩が露出した稜線",
+   "danger": 1,
+   "cover": false,
+   "about": "オスが縄張り争いを行い、求愛の舞を披露する。視界が開けており、遠くまで見渡せる。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.29,
+   "lon": 137.687
+  },
+  {
+   "id": "snow_slope",
+   "ja": "雪に覆われた斜面",
+   "danger": 2,
+   "cover": false,
+   "about": "冬の間、雪を掘ってハイマツの芽を食べる。白い羽で周囲に溶け込み、身を潜める。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.264,
+   "lon": 137.68
+  },
+  {
+   "id": "sheltered_valley",
+   "ja": "風の弱い谷間",
+   "danger": 1,
+   "cover": true,
+   "about": "冬の厳しい寒さを避け、身を寄せる。岩陰や低い植生が風除けとなる。",
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.249,
+   "lon": 137.718
+  }
+ ],
+ "start": {
+  "place": "nest_ground",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本アルプスの高山帯",
+  "lon0": 137.663,
+  "lon1": 137.755,
+  "lat0": 36.326,
+  "lat1": 36.232,
+  "k": 5435,
+  "labels": [
+   [
+    36.32036,
+    137.709,
+    "日本アルプスの高山帯"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "nest_ground",
+   "rocky_ridge"
+  ],
+  [
+   "nest_ground",
+   "snow_slope"
+  ],
+  [
+   "creeping_pine",
+   "nest_ground"
+  ],
+  [
+   "alpine_meadow",
+   "creeping_pine"
+  ],
+  [
+   "alpine_meadow",
+   "nest_ground"
+  ],
+  [
+   "rocky_ridge",
+   "snow_slope"
+  ],
+  [
+   "nest_ground",
+   "sheltered_valley"
+  ],
+  [
+   "creeping_pine",
+   "sheltered_valley"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 34
+ },
+ "stats": {
+  "run": {
+   "ja": "飛ぶ力",
+   "use": "天敵から飛び立ち逃げる時に効く"
+  },
+  "sense": {
+   "ja": "見張る目",
+   "use": "周囲の異変や外敵に気づく時に効く"
+  },
+  "forage": {
+   "ja": "ついばむ技",
+   "use": "高山植物の芽や葉を効率よく食べる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 30,
+   "hunger": 10,
+   "grow": 1.2
+  },
+  {
+   "id": "juv",
+   "ja": "若鳥",
+   "fromAge": 0.1,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "成鳥になる",
+   "enter": "翼が伸びて巣を離れた。自ら高山植物の芽を探し歩く。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 14,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "繁殖に成功する",
+   "enter": "体が成熟し、繁殖が可能になった。季節に合わせて羽の色を変える。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   3,
+   8
+  ],
+  "text": "羽の色を変える力が衰え、雪原で天敵に見つかった。静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "ハイマツの根元で子育てをする",
+  "ds": "地面に浅い巣を作り、数個の卵を温める",
+  "months": [
+   5,
+   6,
+   7
+  ],
+  "places": [
+   "nest_ground"
+  ],
+  "perYear": 1,
+  "kids": [
+   2,
+   5
+  ],
+  "many": 10,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "ハイマツの根元に{born}個の卵を産み、交代で温め始めた。",
+  "ng": "天敵に巣を荒らされ、卵を守れなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を10個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が運ぶ植物の芽",
+   "ds": "巣の中で親がもたらす高山植物の瑞々しい芽を食べる",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "nest_ground"
+   ],
+   "rich": [
+    "nest_ground"
+   ],
+   "ok": "親が戻り、運んできた芽を夢中で飲みこんだ。",
+   "full": 30
+  },
+  {
+   "id": "alpine_plants",
+   "ja": "高山植物を食べる",
+   "name": "高山植物の芽や葉",
+   "ds": "草原や茂みで、ハイマツの葉や高山植物の芽をついばむ",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "alpine_meadow",
+    "creeping_pine"
+   ],
+   "rich": [
+    "alpine_meadow"
+   ],
+   "ok": "雪解けから顔を出したばかりの芽を食んだ。",
+   "full": 30
+  }
+ ],
+ "special": [
+  {
+   "id": "camouflage",
+   "ja": "季節の擬態",
+   "ds": "冬は白、夏は茶色の羽に変わり、周囲の景色に溶け込む",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.8,
+   "calm": true,
+   "ok": "雪原の中でじっと身を潜め、外敵の目を欺いた。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    11,
+    12
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "to": "sheltered_valley",
+   "say": "冬の厳しい風を避け、標高の低い谷間へと降りた。"
+  },
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "to": "alpine_meadow",
+   "say": "春の訪れとともに、餌の豊かな高山帯へと戻った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "golden_eagle",
+   "ja": "イヌワシ",
+   "kind": "bird",
+   "places": [
+    "rocky_ridge",
+    "alpine_meadow",
+    "snow_slope"
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "空高くから褐色の影が急降下してくる。",
+    "鋭い爪が、逃げる間もなく背中に突き刺さる。"
+   ],
+   "again": [
+    "また、あの大きな翼を持つイヌワシが上空を旋回している。",
+    "山頂の枯れ木に、あの鋭い眼光のイヌワシが止まっている。"
+   ],
+   "bye": "岩場の深い隙間に身を潜めると、イヌワシは獲物を見失い飛び去った。"
+  },
+  {
+   "id": "ermine",
+   "ja": "オコジョ",
+   "kind": "mammal",
+   "places": [
+    "nest_ground",
+    "creeping_pine",
+    "snow_slope"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "白い毛並みの小動物が、雪の中から不意に飛び出す。",
+    "鋭い牙が、幼い首元を正確に狙う。"
+   ],
+   "again": [
+    "雪原に、あの白い影が再び現れた。",
+    "ハイマツの根元を、あの素早いオコジョがうろついている。"
+   ],
+   "bye": "飛ぶ力を身につけ、空へ逃げると、オコジョは地上のまま立ち尽くした。"
+  },
+  {
+   "id": "red_fox",
+   "ja": "ホンドキツネ",
+   "kind": "mammal",
+   "places": [
+    "nest_ground",
+    "alpine_meadow",
+    "snow_slope"
+   ],
+   "stages": [
+    "chick",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黄金色の毛並みが、ハイマツの陰でじっとこちらを見ている。",
+    "低い姿勢で忍び寄り、一気に跳躍してくる。"
+   ],
+   "again": [
+    "尾の先が白いキツネが、また茂みの陰から覗いている。",
+    "あの警戒心の強いキツネが、遠くの稜線から見つめている。"
+   ],
+   "bye": "大声で警告の叫び声を上げると、キツネは諦めて森へ戻った。"
+  },
+  {
+   "id": "northern_goshawk",
+   "ja": "オオタカ",
+   "kind": "bird",
+   "places": [
+    "creeping_pine",
+    "sheltered_valley"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "茂みのすき間から、灰色の猛禽が一直線に突っ込んでくる。",
+    "鋭い爪を伸ばし、背後から一気に襲いかかってきた。"
+   ]
+  },
+  {
+   "id": "japanese_marten",
+   "ja": "ニホンテン",
+   "kind": "mammal",
+   "places": [
+    "creeping_pine",
+    "sheltered_valley"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "しなやかな体が、岩の隙間をすり抜けて近づく。",
+    "鋭い爪を立て、背後から不意に襲いかかる。"
+   ]
+  },
+  {
+   "id": "large_billed_crow",
+   "ja": "ハシブトガラス",
+   "kind": "bird",
+   "places": [
+    "nest_ground",
+    "rocky_ridge"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い翼が空を覆い、甲高い声で鳴きながら降りてくる。",
+    "親鳥の隙を突き、巣のヒナへ太いくちばしを伸ばす。"
+   ]
+  },
+  {
+   "id": "peregrine_falcon",
+   "ja": "ハヤブサ",
+   "kind": "bird",
+   "places": [
+    "rocky_ridge",
+    "snow_slope"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "目にも止まらぬ速さで、上空から弾丸のように突き刺さる。",
+    "空中で捉えられ、そのまま地面へ叩きつけられる。"
+   ]
+  },
+  {
+   "id": "illegal_trap",
+   "ja": "密猟の罠",
+   "kind": "human",
+   "places": [
+    "creeping_pine",
+    "alpine_meadow"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "ハイマツの根元に、金属製の冷たい罠が仕掛けられている。",
+    "気づかぬうちに足元の鎖に絡まる。"
+   ],
+   "lose": "足に罠がかり、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "餌を探して移動する。どこを優先するか",
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "ハイマツの茂みに潜む",
+     "ds": "天敵に見つかりにくい。得られる餌が少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "creeping_pine",
+     "say": "針葉の隙間に身を潜め、足元の小さな芽を突いた。",
+     "chip": "茂みに潜む"
+    },
+    {
+     "ja": "高山植物の草原へ出る",
+     "ds": "多様な植物を食べられる。外敵にさらされる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "alpine_meadow",
+     "say": "開けた草原を歩き、色鮮やかな高山植物を食んだ。",
+     "chip": "草原へ出る"
+    }
+   ]
+  },
+  {
+   "q": "冬の厳しい寒さが来た。どこで越冬するか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "風の弱い谷間へ降りる",
+     "ds": "寒さをしのぎやすい。天敵との遭遇率が上がる",
+     "fx": {
+      "energy": 1,
+      "danger": 1
+     },
+     "goto": "sheltered_valley",
+     "say": "標高を下げ、風を遮る谷の底で雪の下の草を探した。",
+     "chip": "谷間へ降りる"
+    },
+    {
+     "ja": "雪に覆われた斜面に留まる",
+     "ds": "白い羽で完全に同化できる。体力の消耗が激しい",
+     "fx": {
+      "danger": -1,
+      "energy": -1
+     },
+     "goto": "snow_slope",
+     "say": "一面の銀世界に溶け込み、静かに息を潜めた。",
+     "chip": "斜面に留まる"
+    }
+   ]
+  },
+  {
+   "q": "繁殖期に縄張りを構える。どこを選ぶか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "岩が露出した稜線を選ぶ",
+     "ds": "メスに見つかりやすい。猛禽類に見つかる危険がある",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "rocky_ridge",
+     "say": "突き出た岩場に立ち、鋭い声で縄張りを主張した。",
+     "chip": "稜線を選ぶ"
+    },
+    {
+     "ja": "ハイマツの根元に陣取る",
+     "ds": "隠れ場所が多く安全。アピール力が弱くなる",
+     "fx": {
+      "danger": -1,
+      "kids": -1
+     },
+     "goto": "nest_ground",
+     "say": "低い枝の下に身を置き、周囲の気配をうかがった。",
+     "chip": "根元に陣取る"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "p": 0.2,
+   "say": "キツネやオコジョが茂みに忍び寄った。",
+   "danger": 1
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "激しい吹雪が山頂を襲い、視界が閉ざされた。",
+   "energy": -10
+  },
+  {
+   "month": [
+    3,
+    4,
+    10
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "換羽のタイミングがずれ、羽の色が風景から浮き上がった。",
+   "danger": 1
+  }
+ ],
+ "lead": "日本アルプスの高山帯で白い羽に覆われ、季節に応じて茶色に変わる岩千鳥は、厳しい環境で生き抜く姿である。",
+ "texts": {
+  "move": "{to}へ、力強く飛び立った。",
+  "fleeJa": "鋭い鳴き声を上げて逃げ去る",
+  "restJa": "岩陰で身を縮めて休む",
+  "watchJa": "雪原を見渡しながら獲物を待つ",
+  "lieJa": "低く伏せて草むらに身を潜める",
+  "lastMemory": "雪に覆われた稜線で、仲間と鳴き合う音を思い出した。"
+ },
+ "intro": [
+  "高山の岩場に作られた巣で、白い卵からヒナが生まれた。",
+  "巣の中で親鳥が運んできた苔や種子の餌を待ち続けた。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが羽ばたきを覚え、岩場へ飛び立った。",
+   "mem": "ヒナが初めて雪上を踏み出した朝を思い出した。"
+  },
+  {
+   "minKids": 5,
+   "title": "多くの若鳥を育て上げた",
+   "line": "{kids}羽の子を育て、夏の高山草原へ送り出した。",
+   "mem": "群れが高山の風に乗って飛び去る光景を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_flight",
+   "text": "初めて雪の上で飛び立ち、風を切った瞬間を思い出した。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "厳しい冬を乗り越え、白い羽で雪原を歩いた日を思い出した。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに岩陰で命を終えた。",
+ "facts": [
+  {
+   "quote": "The rock ptarmigan is a medium-sized game bird in the grouse tribe.",
+   "factJa": "岩千鳥は雉科に属する中型の狩猟鳥である。"
+  },
+  {
+   "quote": "The rock ptarmigan is camouflaged to match the seasons; its feathers moult from white in winter to grey and brown in spring or summer.",
+   "factJa": "季節に合わせて羽色が変わり、冬は白、春夏は灰色や茶色に変わる。"
+  },
+  {
+   "quote": "The species is largely sedentary, particularly in the more isolated southerly populations such as in Japan and Scotland, which show no more than limited altitudinal migration, moving to lower, more sheltered sites in winter.",
+   "factJa": "日本の個体はほとんど移動せず、冬は低く風除けの場所へ移る程度である。"
+  }
+ ]
+}

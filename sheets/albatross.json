@@ -1,0 +1,778 @@
+{
+ "id": "albatross",
+ "ja": "アホウドリ",
+ "sci": "Phoebastria albatrus",
+ "status": "checked",
+ "type": "bird",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "北太平洋",
+  "geo": "North Pacific Ocean",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "tori_shima_nest",
+   "ja": "鳥島の草原",
+   "danger": 1,
+   "cover": false,
+   "about": "ススキが生える開けた土地に巣を作る。多くの仲間とともにヒナを育てる。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 27.68,
+   "lon": 142.125
+  },
+  {
+   "id": "senkaku_nest",
+   "ja": "南小島の繁殖地",
+   "danger": 1,
+   "cover": false,
+   "about": "鳥島に次ぐ主要な繁殖地である。岩がちな海岸線に巣を構える。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 35.681,
+   "lon": 139.826
+  },
+  {
+   "id": "bering_sea",
+   "ja": "ベーリング海",
+   "danger": 1,
+   "cover": false,
+   "about": "若鳥やオスが集まり、広大な海域を飛び回る。冷たい海で餌を探す。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 32.578,
+   "lon": 141.8
+  },
+  {
+   "id": "northwest_coast",
+   "ja": "日本・ロシア沿岸海域",
+   "danger": 1,
+   "cover": false,
+   "about": "メスが主に餌を求める海域である。沿岸を漂いながら獲物を狙う。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 31.747,
+   "lon": 139.4
+  },
+  {
+   "id": "eastern_pacific",
+   "ja": "北太平洋東部",
+   "danger": 1,
+   "cover": false,
+   "about": "カリフォルニアまで及ぶ遠い海域である。季節に応じて広範囲を移動する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 30.5,
+   "lon": 137.9
+  },
+  {
+   "id": "fishing_ground",
+   "ja": "漁船の航跡",
+   "danger": 2,
+   "cover": false,
+   "about": "船が捨てた魚の残渣を狙って集まる。漁具に絡まる危険がある。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 28.422,
+   "lon": 138.8
+  },
+  {
+   "id": "pelagic_zone",
+   "ja": "外洋の海面",
+   "danger": 1,
+   "cover": false,
+   "about": "主食であるイカを捕らえる。強い風を利用して効率よく滑空する。",
+   "stages": [
+    "chick",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 29.253,
+   "lon": 141.2
+  }
+ ],
+ "start": {
+  "place": "tori_shima_nest",
+  "month": 1,
+  "day": 14
+ },
+ "region": {
+  "ja": "北太平洋",
+  "lon0": 136.632,
+  "lon1": 143.392,
+  "lat0": 36.948,
+  "lat1": 26.413,
+  "k": 74,
+  "labels": [
+   [
+    36.3159,
+    140.012,
+    "北太平洋"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "pelagic_zone",
+   "tori_shima_nest"
+  ],
+  [
+   "fishing_ground",
+   "tori_shima_nest"
+  ],
+  [
+   "bering_sea",
+   "senkaku_nest"
+  ],
+  [
+   "northwest_coast",
+   "senkaku_nest"
+  ],
+  [
+   "bering_sea",
+   "northwest_coast"
+  ],
+  [
+   "bering_sea",
+   "pelagic_zone"
+  ],
+  [
+   "eastern_pacific",
+   "northwest_coast"
+  ],
+  [
+   "eastern_pacific",
+   "fishing_ground"
+  ],
+  [
+   "fishing_ground",
+   "pelagic_zone"
+  ]
+ ],
+ "size": {
+  "ja": "全長",
+  "unit": "cm",
+  "start": 84
+ },
+ "stats": {
+  "run": {
+   "ja": "滑空力",
+   "use": "上昇気流に乗り、最小限の力で遠方へ移動する時に効く"
+  },
+  "sense": {
+   "ja": "探知眼",
+   "use": "広大な海面から獲物の気配を察知する時に効く"
+  },
+  "forage": {
+   "ja": "捕食技",
+   "use": "海面のイカや魚を素早く捕らえる時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "chick",
+   "ja": "ヒナ",
+   "days": 150,
+   "hunger": 15,
+   "grow": 1.5
+  },
+  {
+   "id": "juv",
+   "ja": "若鳥",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.5,
+   "goal": "外洋に慣れる",
+   "enter": "茶褐色の羽に包まれ、巣を離れた。北太平洋の風に乗る。"
+  },
+  {
+   "id": "young",
+   "ja": "亜成鳥",
+   "fromAge": 3,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.3,
+   "goal": "成鳥になる",
+   "enter": "羽の色が次第に白くなった。海での生き方を身につけた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成鳥",
+   "fromAge": 6,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "つがいを得る",
+   "enter": "純白の羽とピンク色の嘴を得た。繁殖地へ戻る準備が整った。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   30,
+   60
+  ],
+  "text": "翼の筋力が衰え、上昇気流を捉えきれなくなった。静かに海面へと降り、波に巻かれた。"
+ },
+ "breeding": {
+  "ja": "島上の草原でつがいで育てる",
+  "ds": "ススキなどの草地に巣を作り、1個の卵を交代で温める",
+  "months": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "places": [
+   "tori_shima_nest",
+   "senkaku_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 1,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "かえったヒナの一羽"
+  },
+  "ok": "草原に{born}個の卵を産み、つがいで交代で温めた。",
+  "ng": "適切な営巣場所が見つからず、繁殖を断念した。",
+  "goal1": "卵を産む",
+  "goal2": "卵を1個産む"
+ },
+ "foods": [
+  {
+   "id": "fed",
+   "ja": "親の運ぶ餌を待つ",
+   "name": "親が吐き戻す魚油",
+   "ds": "巣の中で親を待ち、胃から吐き戻された栄養豊富な油と魚を飲み込む",
+   "stages": [
+    "chick"
+   ],
+   "places": [
+    "tori_shima_nest",
+    "senkaku_nest"
+   ],
+   "rich": [
+    "tori_shima_nest"
+   ],
+   "ok": "親が戻り、濃厚な胃液と小魚を夢中で飲みこんだ。",
+   "full": 40
+  },
+  {
+   "id": "squid",
+   "ja": "海面のイカを捕らえる",
+   "name": "イカ",
+   "ds": "海面を滑空し、見つけたイカを嘴で素早く捕らえる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "pelagic_zone",
+    "bering_sea",
+    "northwest_coast"
+   ],
+   "rich": [
+    "pelagic_zone"
+   ],
+   "ok": "海面に浮かぶイカを、鋭い嘴で電光石火に捕らえた。",
+   "full": 30
+  },
+  {
+   "id": "offal",
+   "ja": "漁船の捨て餌を漁る",
+   "name": "魚の残骸",
+   "ds": "漁船の航跡に集まり、捨てられた魚の切り身や内臓を食べる",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "places": [
+    "fishing_ground"
+   ],
+   "rich": [
+    "fishing_ground"
+   ],
+   "ok": "漁船が捨てた魚の残骸を、競い合うようにして飲みこんだ。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "dynamic_soaring",
+   "ja": "ダイナミック・ソアリング",
+   "ds": "風速の差を利用して、羽ばたかずに高速で移動する",
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "海面付近の風を巧みに利用し、ほとんど力を使わずに海原を滑走した。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    3,
+    4
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "tori_shima_nest",
+   "say": "繁殖の季節となり、生まれ故郷の島へと戻った。"
+  },
+  {
+   "months": [
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "to": "pelagic_zone",
+   "say": "繁殖期を終え、餌を求めて北太平洋の広大な外洋へと旅立った。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "black_rat",
+   "ja": "クマネズミ",
+   "kind": "mammal",
+   "places": [
+    "tori_shima_nest",
+    "senkaku_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 3,
+   "texts": [
+    "暗がりから鋭い牙をむき出しにして、ヒナに襲いかかる。",
+    "草むらの陰から、獲物を探して忍び寄ってくる。"
+   ],
+   "again": [
+    [
+     "また、あの耳の欠けたネズミが草むらから顔を出している。"
+    ],
+    [
+     "耳の欠けたネズミが、巣のふちをうろついている。"
+    ]
+   ],
+   "bye": "親鳥が戻り、鋭いくちばしで追い払った。"
+  },
+  {
+   "id": "feral_cat",
+   "ja": "ノネコ",
+   "kind": "mammal",
+   "places": [
+    "tori_shima_nest",
+    "senkaku_nest"
+   ],
+   "stages": [
+    "chick",
+    "juv"
+   ],
+   "sev": 3,
+   "texts": [
+    "しなやかな体で草むらを潜り、音もなく背後に忍び寄る。",
+    "鋭い爪を隠し、低い姿勢でゆっくりと距離を詰める。"
+   ],
+   "again": [
+    [
+     "また、あの灰色の猫が岩陰からじっと見つめている。"
+    ],
+    [
+     "灰色の猫が、遠くの茂みからこちらを伺っている。"
+    ]
+   ],
+   "bye": "翼を大きく広げて威嚇すると、猫は森へ消えた。"
+  },
+  {
+   "id": "black_tailed_gull",
+   "ja": "ウミネコ",
+   "kind": "bird",
+   "places": [
+    "tori_shima_nest",
+    "senkaku_nest"
+   ],
+   "stages": [
+    "chick"
+   ],
+   "sev": 2,
+   "texts": [
+    "親鳥の隙を突き、巣の中の餌を強引に奪い去る。",
+    "けたたましく鳴きながら、不慣れなヒナを突き回す。"
+   ]
+  },
+  {
+   "id": "skua",
+   "ja": "スキア",
+   "kind": "bird",
+   "places": [
+    "bering_sea",
+    "northwest_coast"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "空中で激しく追い回し、口の中の餌を吐き出させようとする。",
+    "若鳥の背後から急接近し、鋭いくちばしで攻撃する。"
+   ]
+  },
+  {
+   "id": "shark",
+   "ja": "サメ",
+   "kind": "fish",
+   "places": [
+    "pelagic_zone"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "海面に降りた瞬間、巨大な顎が下から突き上げてくる。",
+    "深い青色の海底から、白い腹を見せて急浮上してくる。"
+   ]
+  },
+  {
+   "id": "sea_eagle",
+   "ja": "ウミワシ",
+   "kind": "bird",
+   "places": [
+    "northwest_coast"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 3,
+   "texts": [
+    "切り立った崖の上から、猛烈な速度で急降下してくる。",
+    "鋭い爪を広げ、海面を滑るように飛ぶ鳥を狙う。"
+   ]
+  },
+  {
+   "id": "raven",
+   "ja": "ワタリガラス",
+   "kind": "bird",
+   "places": [
+    "bering_sea"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "北の海で、若鳥の不慣れな飛び方をじっと観察している。",
+    "岩場に止まり、獲物が疲れて降りてくるのを待っている。"
+   ]
+  },
+  {
+   "id": "tuna",
+   "ja": "マグロ",
+   "kind": "fish",
+   "places": [
+    "pelagic_zone"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海面近くで休息する足もとを、銀色の巨体が突き抜ける。",
+    "高速で泳ぐ大きな魚が、不意に水面を割って襲いかかる。"
+   ]
+  },
+  {
+   "id": "longline",
+   "ja": "延縄",
+   "kind": "human",
+   "places": [
+    "fishing_ground"
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "漁船が撒いた透明な糸が、海面に浮かぶ餌と共に漂っている。",
+    "水面に漂う魚の死骸に、細い針が仕掛けられている。"
+   ],
+   "lose": "鋭い針が脚に深く刺さり、傷を負った。",
+   "fleeJa": "もがいて針を外そうとする",
+   "hideJa": "水面に身を伏せて糸を避ける"
+  },
+  {
+   "id": "large_gull",
+   "ja": "大型のカモメ",
+   "kind": "bird",
+   "places": [
+    "bering_sea",
+    "northwest_coast"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "翼を広げた大きな白い影が、若鳥を威圧するように旋回する。",
+    "獲物を追い詰め、海面へ叩き落とそうと激しくぶつかる。"
+   ]
+  }
+ ],
+ "choices": [
+  {
+   "q": "外洋で餌を探す。どう動くか",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "opts": [
+    {
+     "ja": "イカを追って潜る",
+     "ds": "確実な獲物を狙える。体力を消耗する",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "say": "海面に舞い降り、銀色に光るイカを追った。",
+     "chip": "潜って獲る"
+    },
+    {
+     "ja": "漁船の航跡を辿る",
+     "ds": "効率よく餌を得られる。針に掛かる危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "fishing_ground",
+     "say": "船が捨てた魚の残滓を求めて、低空を飛び続けた。",
+     "chip": "船を追う"
+    }
+   ]
+  },
+  {
+   "q": "冬の越冬地をどこにするか",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "month": [
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "ベーリング海へ向かう",
+     "ds": "餌が豊富。移動距離が長く体力を使い切る",
+     "fx": {
+      "food": 1,
+      "energy": -1
+     },
+     "goto": "bering_sea",
+     "say": "北の冷たい海へ飛び、広大な海域を巡った。",
+     "chip": "北太平洋へ"
+    },
+    {
+     "ja": "日本・ロシア沿岸へ向かう",
+     "ds": "移動の負担が少ない。競争相手が多い",
+     "fx": {
+      "energy": 1,
+      "food": -1
+     },
+     "goto": "northwest_coast",
+     "say": "沿岸の海流に乗り、獲物の集まる海域を漂った。",
+     "chip": "沿岸へ"
+    }
+   ]
+  },
+  {
+   "q": "繁殖地でどこに巣を構えるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    12,
+    1
+   ],
+   "opts": [
+    {
+     "ja": "ススキの茂みの近くを選ぶ",
+     "ds": "風を防げて安全。場所の取り合いが激しい",
+     "fx": {
+      "danger": -1,
+      "kids": 1
+     },
+     "goto": "tori_shima_nest",
+     "say": "風を遮るススキの傍らに、土を盛り上げた。",
+     "chip": "茂みのそば"
+    },
+    {
+     "ja": "開けた草原に陣取る",
+     "ds": "つがいに見つかりやすい。天候の影響を直接受ける",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "tori_shima_nest",
+     "say": "視界の開けた草原に降り立ち、つがいを待った。",
+     "chip": "開けた場所"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "chick",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "鳥島で火山が噴火し、灰が草原を覆った。",
+   "danger": 1
+  },
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "juv",
+    "young",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "漁船の延縄に足を取られ、海中へ引きずり込まれた。",
+   "danger": 1
+  },
+  {
+   "month": [
+    12,
+    1
+   ],
+   "stages": [
+    "chick"
+   ],
+   "p": 0.2,
+   "say": "激しい冬の嵐が吹き荒れ、巣の中のヒナが冷え切った。",
+   "energy": -10
+  }
+ ],
+ "lead": "伊豆諸島の鳥島で産卵し、北太平洋を悠々と飛び回り、成熟すると帰巣して一羽の雛を育てる。",
+ "texts": {
+  "move": "{to}へ、大きく翼を広げて飛び立った。",
+  "fleeJa": "鋭い鳴き声を上げて海風に乗り逃げる。",
+  "restJa": "波間に浮かび、片足で体を支えて休む。",
+  "watchJa": "水平線を見つめ、獲物の影を待つ。",
+  "lieJa": "海面に身を沈め、波紋の中で身を隠す。",
+  "lastMemory": "巣から見下ろす広大な海と、初めて羽ばたいた朝を思い出す。"
+ },
+ "intro": [
+  "鳥島の草原に築いた巣で、汚れた白い卵からヒナが生まれた。",
+  "親鳥は海で捕らえたイカをくちばしで運び、ヒナは巣の中で待ち続けた。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "巣立ちを見届けた",
+   "line": "{kids}羽のヒナが羽ばたきを覚え、海へ向かって飛び立った。",
+   "mem": "ヒナが初めて巣の縁を離れた朝を思い出す。"
+  },
+  {
+   "minKids": 5,
+   "title": "多くの子を育て上げた",
+   "line": "{kids}羽の子を育て、北太平洋の風に乗せて送り出した。",
+   "mem": "長い航海の途中で、子らの羽根が光る様子を思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "first_catch",
+   "text": "初めて海面でイカの群れを捕らえ、親鳥が餌を運んできた瞬間を思い出す。"
+  },
+  {
+   "flag": "first_winter",
+   "text": "厳しい冬の嵐の中、海面が凍りつく中で耐え抜いた日々を思い出す。"
+  }
+ ],
+ "noKids": "子を残すことなく、静かに海に身を委ねて命を終えた。",
+ "facts": [
+  {
+   "quote": "The short-tailed albatross feeds mainly on squid, but will follow ships for their discarded offal.",
+   "factJa": "主にイカを捕食し、船の残餌も追う。"
+  },
+  {
+   "quote": "The short-tailed albatross usually first breeds at 10 years of age.",
+   "factJa": "通常10歳で初めて繁殖し始める。"
+  },
+  {
+   "quote": "Both sexes incubate the eggs for around 65 days.",
+   "factJa": "オス雌ともに約65日間抱卵する。"
+  }
+ ]
+}

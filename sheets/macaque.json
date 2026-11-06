@@ -6,176 +6,188 @@
  "type": "mammal",
  "country": "jp",
  "by": {
-  "places": "gemini-older gemini-3.7-flash",
+  "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
   "foes": "gemini-gemma gemma-4-31b-it",
   "choices": "gemini-gemma gemma-4-31b-it",
   "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
-  "ja": "長野・志賀高原",
-  "geo": "Shiga Highlands",
-  "scale": "local"
+  "ja": "日本各地の山岳地帯",
+  "geo": "Japan",
+  "scale": "regional"
  },
  "places": [
   {
-   "id": "deciduous_forest",
-   "ja": "落葉広葉樹の森",
+   "id": "secluded_ground",
+   "ja": "林のひらけた地面",
    "danger": 1,
    "cover": true,
-   "about": "ブナやカエデが生い茂る森。春に出産を控えた母ザルが身を隠し、子を産み育てる。",
+   "about": "母猿が群れの端に離れて子を産む場所。静かで安全な場所が選ばれる。",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "lat": 36.741,
-   "lon": 138.416
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "broadleaf_forest",
+   "ja": "広葉樹林",
+   "danger": 0,
+   "cover": true,
+   "about": "木の皮や芽、果実などの餌が豊富である。雌が多くの時間を過ごす。",
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "forest_floor",
+   "ja": "林床",
+   "danger": 1,
+   "cover": false,
+   "about": "地面に落ちた種子や昆虫を探す。雄が活動的に移動する場所である。",
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
    "id": "rocky_cliff",
-   "ja": "険しい岩壁",
+   "ja": "岩場",
    "danger": 0,
    "cover": true,
-   "about": "切り立った崖の岩棚。地上から天敵が近づきにくく、夜間の安全なねぐらになる。",
+   "about": "外敵から身を守りやすく、夜間の休息に適している。",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "lat": 36.741,
-   "lon": 138.448
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
-   "id": "hot_spring_valley",
-   "ja": "湯煙の立つ谷川",
+   "id": "mountain_stream",
+   "ja": "山中の渓流",
    "danger": 1,
    "cover": false,
-   "about": "谷底に温泉が湧き出る。冬には群れの仲間と身を寄せ合い、湯に浸かって寒さをしのぐ。",
+   "about": "水を飲み、時には泳いで対岸へ渡る。獲物を探すこともある。",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "lat": 36.769,
-   "lon": 138.436
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
-   "id": "oak_forest",
-   "ja": "ミズナラの巨木林",
-   "danger": 2,
-   "cover": true,
-   "about": "秋にドングリが豊富に実る重要な餌場。大型のツキノワグマと出くわす危険がある。",
-   "stages": [
-    "infant",
-    "juvenile",
-    "subadult",
-    "adult"
-   ],
-   "lat": 36.758,
-   "lon": 138.404
-  },
-  {
-   "id": "windy_ridge",
-   "ja": "吹きさらしの尾根",
+   "id": "forest_edge",
+   "ja": "林の縁",
    "danger": 2,
    "cover": false,
-   "about": "群れが別の谷へ移動する通り道。身を隠す木立ちが乏しく、クマタカの空襲に警戒が要る。",
+   "about": "他の群れと遭遇しやすく、緊張感のある場所である。",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "lat": 36.741,
-   "lon": 138.384
+   "lat": 36.575,
+   "lon": 139.239
   },
   {
-   "id": "forest_edge_farmland",
-   "ja": "山あいの畑のへり",
-   "danger": 3,
-   "cover": false,
-   "about": "甘い果実や作物が実る。栄養価は高いが、人間や猟犬に追われて命を落とす危険がある。",
-   "stages": [
-    "infant",
-    "juvenile",
-    "subadult",
-    "adult"
-   ],
-   "lat": 36.713,
-   "lon": 138.396
-  },
-  {
-   "id": "conifer_forest",
-   "ja": "雪深い針葉樹林",
-   "danger": 1,
+   "id": "tree_top",
+   "ja": "樹冠",
+   "danger": 0,
    "cover": true,
-   "about": "雪に閉ざされた冬を耐え忍ぶ場所。枝先の冬芽や硬い樹皮をかじって飢えをしのぐ。",
+   "about": "高い視点から周囲を監視できる。天敵が来た際に逃げ込む。",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "lat": 36.724,
-   "lon": 138.428
+   "lat": 36.575,
+   "lon": 139.239
   }
  ],
  "start": {
-  "place": "deciduous_forest",
-  "month": 5,
-  "day": 10
+  "place": "secluded_ground",
+  "month": 6,
+  "day": 15
  },
  "region": {
-  "ja": "長野・志賀高原",
-  "lon0": 138.365,
-  "lon1": 138.467,
-  "lat0": 36.788,
-  "lat1": 36.694,
-  "k": 4902,
+  "ja": "日本各地の山岳地帯",
+  "lon0": 139.229,
+  "lon1": 139.249,
+  "lat0": 36.585,
+  "lat1": 36.565,
+  "k": 25000,
   "labels": [
    [
-    36.78236,
-    138.416,
-    "長野・志賀高原"
+    36.583800000000004,
+    139.239,
+    "日本各地の山岳地帯"
    ]
   ]
  },
  "edges": [
   [
-   "deciduous_forest",
-   "oak_forest"
+   "broadleaf_forest",
+   "secluded_ground"
   ],
   [
-   "conifer_forest",
-   "deciduous_forest"
+   "forest_floor",
+   "secluded_ground"
   ],
   [
-   "conifer_forest",
+   "broadleaf_forest",
+   "forest_floor"
+  ],
+  [
+   "rocky_cliff",
+   "secluded_ground"
+  ],
+  [
+   "broadleaf_forest",
    "rocky_cliff"
   ],
   [
-   "hot_spring_valley",
-   "rocky_cliff"
+   "mountain_stream",
+   "secluded_ground"
   ],
   [
-   "hot_spring_valley",
-   "oak_forest"
+   "broadleaf_forest",
+   "mountain_stream"
   ],
   [
-   "oak_forest",
-   "windy_ridge"
+   "forest_edge",
+   "secluded_ground"
   ],
   [
-   "forest_edge_farmland",
-   "windy_ridge"
+   "broadleaf_forest",
+   "forest_edge"
   ],
   [
-   "conifer_forest",
-   "forest_edge_farmland"
+   "secluded_ground",
+   "tree_top"
+  ],
+  [
+   "broadleaf_forest",
+   "tree_top"
   ]
  ],
  "size": {
@@ -185,43 +197,43 @@
  },
  "stats": {
   "run": {
-   "ja": "移動力",
-   "use": "森や岩場を自在に駆け回る時に効く"
+   "ja": "脚力",
+   "use": "樹上や地上を素早く移動する時に効く"
   },
   "sense": {
    "ja": "観察眼",
-   "use": "群れの順位や相手の機嫌を読み取る時に効く"
+   "use": "群れの序列や周囲の危険を察知する時に効く"
   },
   "forage": {
-   "ja": "採餌術",
-   "use": "冬の厳しい環境で食料を探し出す時に効く"
+   "ja": "採餌力",
+   "use": "冬の厳しい環境で食料を探す時に効く"
   }
  },
  "stages": [
   {
    "id": "infant",
    "ja": "仔ザル",
-   "days": 60,
+   "days": 150,
    "hunger": 15,
    "grow": 2,
    "goal": "幼ザルになる",
    "enter": "母の乳を飲み、群れの温もりに包まれる。"
   },
   {
-   "id": "juvenile",
+   "id": "juv",
    "ja": "幼ザル",
    "fromAge": 1,
-   "days": 90,
+   "days": 150,
    "hunger": 12,
    "grow": 1.5,
    "goal": "若ザルになる",
-   "enter": "自力で木の実や虫を捕らえ始める。遊びの中で社会性を学ぶ。"
+   "enter": "自力で食べ物を探し、遊びを通じて社会性を学ぶ。"
   },
   {
-   "id": "subadult",
+   "id": "sub",
    "ja": "若ザル",
    "fromAge": 3,
-   "days": 120,
+   "days": 150,
    "hunger": 12,
    "grow": 0.8,
    "goal": "成体になる",
@@ -231,12 +243,12 @@
    "id": "adult",
    "ja": "成体",
    "fromAge": 5,
-   "days": 150,
+   "days": 180,
    "hunger": 12,
    "grow": 0.2,
    "adult": true,
-   "goal": "群れの維持",
-   "enter": "性的に成熟した。群れの秩序の中で役割を持つ。"
+   "goal": "群れの地位を築く",
+   "enter": "肉体が熟した。群れの序列の中で己の立ち位置を定める。"
   }
  ],
  "oldAge": {
@@ -244,21 +256,19 @@
    20,
    30
   ],
-  "text": "群れの絆が薄れた。静かに山の土へと還った。"
+  "text": "老いにより動きが鈍くなった。静かに山の土へと還った。"
  },
  "breeding": {
-  "ja": "群れで子を産む",
-  "ds": "母系の群れの中で、一頭の子を産み育てる",
+  "ja": "冬の交配",
+  "ds": "冬にペアを組み、一頭の子を産み育てる",
   "months": [
    12,
    1,
-   2,
-   3
+   2
   ],
   "places": [
-   "deciduous_forest",
-   "oak_forest",
-   "hot_spring_valley"
+   "secluded_ground",
+   "broadleaf_forest"
   ],
   "perYear": 1,
   "kids": [
@@ -280,95 +290,78 @@
   {
    "id": "milk",
    "ja": "乳を飲む",
-   "name": "母の乳",
+   "name": "母乳",
    "ds": "母の乳を飲み、成長に必要な栄養を得る",
    "stages": [
     "infant"
    ],
    "places": [
-    "deciduous_forest",
-    "oak_forest",
-    "hot_spring_valley",
-    "conifer_forest"
+    "broadleaf_forest",
+    "forest_floor"
    ],
    "rich": [
-    "hot_spring_valley"
+    "broadleaf_forest"
    ],
-   "ok": "母の乳を飲み、心地よく眠る。",
-   "full": 60
+   "ok": "母の乳を飲み、体力を蓄えた。",
+   "full": 50
   },
   {
    "id": "forest_food",
    "ja": "森の幸を食べる",
    "name": "果実や昆虫",
-   "ds": "木の実や虫など、森の多様な食料を採集する",
+   "ds": "森のいたるところにある果実や虫を食べる",
    "stages": [
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
    "places": [
-    "deciduous_forest",
-    "oak_forest",
-    "forest_edge_farmland"
+    "broadleaf_forest",
+    "forest_floor",
+    "tree_top"
    ],
    "rich": [
-    "oak_forest"
+    "tree_top"
    ],
-   "ok": "熟した木の実を頬張る。",
-   "full": 40
+   "ok": "森を歩き回り、食べ物を集めた。",
+   "full": 50
   },
   {
    "id": "winter_food",
-   "ja": "冬の糧を食べる",
-   "name": "木の皮や芽",
-   "ds": "食料が乏しい冬の間、木の皮や芽を食べてしのぐ",
+   "ja": "木の皮や芽を食べる",
+   "name": "樹皮・新芽",
+   "ds": "冬の厳しい寒さの中、木の皮や芽で飢えをしのぐ",
    "stages": [
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
    "places": [
-    "deciduous_forest",
-    "conifer_forest",
-    "oak_forest"
+    "broadleaf_forest",
+    "forest_edge"
    ],
    "rich": [
-    "conifer_forest"
+    "broadleaf_forest"
    ],
-   "ok": "硬い木の皮を噛み、冬を耐え忍ぶ。",
-   "full": 30
+   "ok": "冬の寒さに耐え、木の皮を剥いで食べた。",
+   "full": 40
   }
  ],
  "special": [
   {
    "id": "matrilineal",
-   "ja": "母系の結束",
-   "ds": "母親を中心とした強い絆で行動し、社会的な地位を継承する",
+   "ja": "母系の絆",
+   "ds": "雌は生まれた群れに残り、母から社会的な地位や技術を継承する",
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
    "stat": "sense",
    "base": 0.8,
    "calm": true,
-   "ok": "母の隣で毛繕いをする。群れの安心感に包まれる。"
-  },
-  {
-   "id": "cold_adaptation",
-   "ja": "耐寒性",
-   "ds": "厚い被毛を持ち、氷点下の厳しい寒さの中でも活動できる",
-   "stages": [
-    "juvenile",
-    "subadult",
-    "adult"
-   ],
-   "stat": "forage",
-   "base": 0.7,
-   "calm": true,
-   "ok": "雪に覆われた森を歩く。寒さに屈せず食料を探す。"
+   "ok": "母の隣で毛づくろいをする。群れの絆が深まる。"
   }
  ],
  "levelEvery": 4,
@@ -378,306 +371,278 @@
    "ja": "イヌワシ",
    "kind": "bird",
    "places": [
-    "windy_ridge",
-    "rocky_cliff",
-    "oak_forest"
+    "tree_top",
+    "rocky_cliff"
    ],
    "stages": [
     "infant",
-    "juvenile"
+    "juv"
    ],
    "sev": 2,
    "texts": [
     "空から鋭い爪が降り注ぐ。",
-    "高い空に、巨大な影が舞っている。"
+    "巨大な影が、太陽を遮る。"
    ],
    "again": [
     [
-     "また、あの鋭い鳴き声が聞こえた。"
+     "また、あの高い空に円を描いている。"
     ],
     [
-     "空の向こうに、金色の翼が見える。"
+     "風に乗って、獲物を探す目が光る。"
     ]
    ],
-   "bye": "成体になり、身を守る力がついた。",
-   "lose": "上空から急降下され、傷を負った。"
+   "bye": "成体になり、鋭い牙と力で対抗できる。",
+   "lose": "急降下してきた爪に掴まれ、傷を負った。"
   },
   {
    "id": "black_bear",
    "ja": "ツキノワグマ",
    "kind": "mammal",
    "places": [
-    "deciduous_forest",
-    "conifer_forest",
-    "oak_forest"
+    "broadleaf_forest",
+    "forest_floor"
    ],
    "stages": [
     "infant",
-    "juvenile"
+    "juv",
+    "sub"
    ],
    "sev": 2,
    "texts": [
-    "茂みの奥から、重い足音が近づく。",
-    "黒い巨体が、ゆっくりと距離を詰める。"
+    "藪の中から、重い足音が近づく。",
+    "黒い巨体が、低い唸り声を上げる。"
    ],
    "again": [
     [
      "また、あの獣の臭いが漂ってきた。"
     ],
     [
-     "森の奥で、低い唸り声が響く。"
+     "深い森の奥から、地響きのような声が聞こえる。"
     ]
    ],
-   "bye": "体が大きくなり、クマが狙うには不便になった。",
-   "lose": "不意に襲われ、傷を負った。"
+   "bye": "群れの成熟した雄たちが、威嚇して追い払う。",
+   "lose": "鋭い爪で激しく振り回され、傷を負った。"
   },
   {
-   "id": "eagle_owl",
-   "ja": "ワシミミズク",
+   "id": "hawk_eagle",
+   "ja": "ヤマホーク",
    "kind": "bird",
    "places": [
-    "deciduous_forest",
-    "conifer_forest"
+    "tree_top",
+    "forest_edge"
    ],
    "stages": [
     "infant",
-    "juvenile"
-   ],
-   "sev": 2,
-   "texts": [
-    "夜の闇に、大きな目が光る。",
-    "音もなく、夜空から舞い降りる。"
-   ],
-   "lose": "眠っている間に襲われ、傷を負った。"
-  },
-  {
-   "id": "goshawk",
-   "ja": "オオタカ",
-   "kind": "bird",
-   "places": [
-    "oak_forest",
-    "deciduous_forest"
-   ],
-   "stages": [
-    "infant",
-    "juvenile"
+    "juv"
    ],
    "sev": 1,
    "texts": [
-    "枝の間を、速い影が通り抜ける。",
-    "鋭い眼光が、こちらを捉えている。"
+    "林の隙間から、速い影が突き抜ける。",
+    "鋭い鳴き声が、森に響く。"
    ],
-   "lose": "不意に急襲され、傷を負った。"
+   "lose": "不意に襲いかかった爪に、腕を掴まれ、傷を負った。"
   },
   {
-   "id": "large_billed_crow",
-   "ja": "ハシブトガラス",
+   "id": "owl",
+   "ja": "フクロウ",
    "kind": "bird",
    "places": [
-    "forest_edge_farmland",
-    "hot_spring_valley"
+    "tree_top",
+    "broadleaf_forest"
    ],
    "stages": [
     "infant"
    ],
    "sev": 1,
    "texts": [
-    "しつこく周囲を飛び回り、隙を伺う。",
-    "不気味な鳴き声が、耳元で響く。"
+    "静寂に紛れ、音もなく近づく。",
+    "闇の中で、金色の目が光る。"
    ],
-   "lose": "集団で突き回され、傷を負った。"
+   "lose": "夜の闇から急襲され、傷を負った。"
   },
   {
-   "id": "alpha_male",
-   "ja": "群れの雄",
+   "id": "marten",
+   "ja": "ニホンテン",
    "kind": "mammal",
    "places": [
-    "deciduous_forest",
-    "rocky_cliff",
-    "hot_spring_valley",
-    "oak_forest",
-    "windy_ridge",
-    "forest_edge_farmland",
-    "conifer_forest"
+    "forest_floor",
+    "broadleaf_forest"
    ],
    "stages": [
     "infant"
    ],
+   "sev": 1,
+   "texts": [
+    "足元の落ち葉の下を、素早く動く。",
+    "鋭い牙を持つ小動物が、隙を伺う。"
+   ],
+   "lose": "不意に足元から噛みつかれ、傷を負った。"
+  },
+  {
+   "id": "wild_dog",
+   "ja": "野犬",
+   "kind": "mammal",
+   "places": [
+    "forest_edge",
+    "secluded_ground"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
    "sev": 2,
    "texts": [
-    "威圧的な雄が、冷たい目で見る。",
-    "群れの頂点に立つ者が、こちらへ歩いてくる。"
+    "集団で追い詰める、鋭い吠え声が響く。",
+    "執拗に足跡を辿る、獣の気配がある。"
    ],
-   "lose": "激しく突き飛ばされ、傷を負った。"
+   "lose": "集団に囲まれ、激しく噛みつかれ、傷を負った。"
   },
   {
    "id": "farmer",
    "ja": "農家",
    "kind": "human",
    "places": [
-    "forest_edge_farmland"
+    "forest_edge"
    ],
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
    "sev": 1,
    "texts": [
-    "畑の主が、怒鳴りながら追いかけてくる。",
-    "石や棒が、こちらへ飛んでくる。"
+    "畑を荒らす者に、怒鳴り声が飛ぶ。",
+    "追い払うための道具が、振り上げられる。"
    ],
-   "lose": "追い払われ、石を投げつけられて傷を負った。",
-   "fleeJa": "森へ逃げ帰る",
-   "hideJa": "茂みに身を潜める"
+   "lose": "追い払おうとした人間に叩かれ、傷を負った。"
   },
   {
    "id": "trapper",
-   "ja": "罠猟師",
+   "ja": "猟師",
    "kind": "human",
    "places": [
-    "deciduous_forest",
-    "conifer_forest"
+    "broadleaf_forest",
+    "forest_floor"
    ],
    "stages": [
-    "subadult",
+    "infant",
+    "juv",
+    "sub",
     "adult"
    ],
    "sev": 2,
    "texts": [
-    "足元に、冷たい鉄の罠が隠れている。",
-    "静かに、獲物を待つ気配がある。"
+    "静かに狙いを定める、冷たい視線がある。",
+    "森の中に、金属製の罠が隠されている。"
    ],
-   "lose": "罠に足を挟まれ、傷を負った。",
-   "fleeJa": "高い木に登る",
-   "hideJa": "岩陰に隠れる"
+   "lose": "仕掛けられた罠に足を挟まれ、傷を負った。"
   },
   {
-   "id": "stray_dog",
-   "ja": "野犬",
-   "kind": "mammal",
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
    "places": [
-    "forest_edge_farmland",
-    "hot_spring_valley"
-   ],
-   "stages": [
-    "infant",
-    "juvenile"
-   ],
-   "sev": 1,
-   "texts": [
-    "飢えた犬が、低い唸り声を上げる。",
-    "集団で囲い込み、逃げ道を塞ぐ。"
-   ],
-   "lose": "激しく噛みつかれ、傷を負った。"
-  },
-  {
-   "id": "leopard_cat",
-   "ja": "ベンガルヤマネコ",
-   "kind": "mammal",
-   "places": [
-    "deciduous_forest",
-    "conifer_forest"
+    "tree_top",
+    "forest_edge"
    ],
    "stages": [
     "infant"
    ],
    "sev": 1,
    "texts": [
-    "草むらの中で、小さな耳が動く。",
-    "闇に紛れ、静かに忍び寄る。"
+    "不気味な鳴き声と共に、周囲を囲む。",
+    "鋭い嘴が、弱ったところを狙う。"
    ],
-   "lose": "不意に飛びかかられ、傷を負った。"
+   "lose": "集団で突き刺され、傷を負った。"
   }
  ],
  "choices": [
   {
-   "q": "上の順位の雌にどう接するか",
+   "q": "成熟し、群れを離れる時が来た。どう行動するか",
    "stages": [
-    "infant",
-    "juvenile",
-    "subadult",
-    "adult"
+    "sub"
    ],
    "opts": [
     {
-     "ja": "丁寧に毛繕いをする",
-     "ds": "関係が安定し、保護を得やすい。時間はかかる",
+     "ja": "雄だけの集団に加わる",
+     "ds": "安全だが、序列は低くなる",
      "fx": {
       "danger": -1,
       "food": 0
      },
-     "say": "相手の背中を丁寧に梳いた。信頼の絆が深まった。",
-     "chip": "社交"
+     "say": "若き雄たちと寄り添い、新たな居場所を探した。",
+     "chip": "同盟"
     },
     {
-     "ja": "自分の要求を優先させる",
-     "ds": "効率的に餌を得られる。攻撃され、順位を下げる恐れがある",
+     "ja": "単独で放浪する",
+     "ds": "自由だが、外敵に襲われる危険がある",
      "fx": {
       "danger": 1,
-      "food": 1
-     },
-     "say": "強引に食い物を奪い取った。激しい怒声が飛んだ。",
-     "chip": "強欲"
-    }
-   ]
-  },
-  {
-   "q": "成熟が近づいた。群れをどうするか",
-   "stages": [
-    "subadult"
-   ],
-   "opts": [
-    {
-     "ja": "生まれ故郷の群れに留まる",
-     "ds": "安全だが、順位を上げるのは難しい",
-     "fx": {
-      "danger": -1,
       "food": 0
      },
-     "say": "慣れ親しんだ森に留まった。しかし、居場所は狭い。",
-     "chip": "現状維持"
-    },
-    {
-     "ja": "単独で群れを離れる",
-     "ds": "新たな群れでリーダーになる可能性がある。孤独な旅になる",
-     "fx": {
-      "danger": 1,
-      "food": -1
-     },
-     "say": "故郷の山を降り、未知の森へと足を踏み出した。",
+     "say": "孤独な旅路を選び、深い森を一人で歩いた。",
      "chip": "独立"
     }
    ]
   },
   {
-   "q": "冬の飢えが厳しい。何を食べるか",
+   "q": "毛繕いの相手を選ぶ。誰に尽くすか",
    "stages": [
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
    "opts": [
     {
-     "ja": "木の皮や芽をかじる",
-     "ds": "栄養は少ないが、確実に手に入る",
+     "ja": "高位の雌に尽くす",
+     "ds": "保護を得られるが、時間は奪われる",
      "fx": {
       "danger": -1,
       "food": 0
      },
-     "say": "硬い樹皮をじっくりと噛み砕いた。空腹は消えない。",
-     "chip": "忍耐"
+     "say": "権力ある雌の背中を丁寧に整え、信頼を得た。",
+     "chip": "処世術"
     },
     {
-     "ja": "人里の畑へ忍び込む",
-     "ds": "豊かな作物が得られる。人間に追い払われる危険がある",
+     "ja": "親しい仲間と睦み合う",
+     "ds": "精神的に安定するが、地位は上がらない",
+     "fx": {
+      "danger": 0,
+      "food": 0
+     },
+     "say": "幼馴染の隣で、心地よい時間を共有した。",
+     "chip": "友情"
+    }
+   ]
+  },
+  {
+   "q": "交配の季節だ。どの雌を誘うか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "高位の雌に挑む",
+     "ds": "優れた子を残せるが、激しい闘争を伴う",
      "fx": {
       "danger": 1,
-      "food": 1
+      "food": 0
      },
-     "say": "畑の作物を一気に貪り食った。背後から怒号が聞こえた。",
-     "chip": "冒険"
+     "say": "猛烈なアプローチを仕掛け、競合する雄を退けた。",
+     "chip": "野心"
+    },
+    {
+     "ja": "控えめな雌と絆を深める",
+     "ds": "争いは避けられるが、地位への影響は少ない",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "穏やかな関係を築き、静かに時を過ごした。",
+     "chip": "安定"
     }
    ]
   }
@@ -691,74 +656,75 @@
    ],
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "p": 0.3,
-   "say": "深い雪が山を覆い、視界が白く染まった。",
+   "p": 0.4,
+   "say": "深い雪に覆われ、木の皮や芽をかじって冬をしのいだ。",
    "full": -10
   },
   {
    "month": [
-    9,
-    10
+    6,
+    7,
+    8
    ],
    "stages": [
     "infant",
-    "juvenile",
-    "subadult",
+    "juv",
+    "sub",
     "adult"
    ],
-   "p": 0.4,
-   "say": "森に実った木の実が豊富にあり、腹を満たした。",
-   "full": 20
+   "p": 0.3,
+   "say": "森に実りと虫が溢れ、飽食の季節が訪れた。",
+   "full": 15
   },
   {
    "month": [
-    12,
-    1
+    4,
+    5
    ],
    "stages": [
     "adult"
    ],
    "p": 0.2,
-   "say": "交配の季節となり、顔が赤く染まった。",
-   "full": -5
+   "say": "林のひらけた地面で、新しい命が産声を上げた。",
+   "full": 10
   }
  ],
- "lead": "長野・志賀高原の山岳地帯で、群れの中で生まれ育つニホンザルである。",
+ "lead": "日本の山岳地帯で、群れを成すニホンザルが四季を駆け抜ける。",
  "texts": {
-  "move": "{to}へ、群れで移動する。",
-  "fleeJa": "群れで結束し、捕食者を回避する。",
-  "restJa": "木陰で静かに休む。",
-  "watchJa": "高木の枝から周囲を見渡す。",
-  "lieJa": "岩陰に横たわり、警戒を保つ。",
-  "lastMemory": "母の背中の温もりと、群れの鳴き声を思い出す。"
+  "move": "{to}へ、群れで移動した。",
+  "fleeJa": "敵が近づくと、群れで素早く逃げる",
+  "restJa": "樹冠や岩陰で、静かに休む",
+  "watchJa": "高い木の枝から、周囲を見張る",
+  "lieJa": "地面に横たわり、季節の風を感じる",
+  "lastMemory": "母の温かな抱擁と、群れの声を思い出す。"
  },
  "intro": [
-  "長野・志賀高原で生まれた。",
-  "母の側で、群れの鼓動を感じながら育つ。"
+  "山の中の開けた林床で生まれた。",
+  "母の背中に抱かれ、乳を飲みながら群れの鼓動を聞く。"
  ],
  "wins": [
   {
    "minKids": 1,
    "title": "母となり、群れを導く",
    "line": "{kids}頭の子が、群れの絆を継ぐ。",
-   "mem": "初めて子を抱いた時の、山の静寂を思い出す。"
+   "mem": "初めて子を抱いた時の、山の静けさと温もりを思い出した。"
   }
  ],
  "memories": [
   {
    "flag": "c0_1",
-   "text": "冬の雪の中、樹皮や芽を食べて耐えた日を思い出す。"
+   "text": "雪が降る冬、木の皮や芽をかじりながら、群れで暖を取った日を思い出す。"
   }
  ],
  "noKids": [
   {
    "title": "群れの守護者として生きる",
    "line": "子を残さずとも、群れの絆は続く。",
-   "mem": "仲間と共に木々の間を巡り、季節の変化を感じた日を思い出す。"
+   "mem": "仲間と共に山道を歩いた、風の音を思い出す。"
   }
  ],
  "facts": [
@@ -766,7 +732,7 @@
    "quote": "The Japanese macaque (Macaca fuscata) is a terrestrial Old World monkey species that is native to Japan."
   },
   {
-   "text": "寿命は野生で最大32年、雌は最大30年、雄は最大28年と報告されている。"
+   "text": "寿命は野生で最大約30年、成熟は5歳とされる。"
   }
  ]
 }

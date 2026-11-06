@@ -1,0 +1,687 @@
+{
+ "id": "bear",
+ "ja": "ツキノワグマ",
+ "sci": "Ursus thibetanus japonicus",
+ "status": "checked",
+ "type": "mammal",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "本州・四国",
+  "geo": "Honshu and Shikoku",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "winter_den",
+   "ja": "冬眠用の穴",
+   "danger": 0,
+   "cover": true,
+   "about": "冬の間、雌が子を産み育てる場所。外敵から守られた安全な空間である。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.07,
+   "lon": 134.573
+  },
+  {
+   "id": "deciduous_forest",
+   "ja": "落葉広葉樹林",
+   "danger": 1,
+   "cover": true,
+   "about": "春には草やハーブが豊富に生える。夏には木の実を求めて活動する。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.07,
+   "lon": 136.973
+  },
+  {
+   "id": "beech_forest",
+   "ja": "ブナ林",
+   "danger": 1,
+   "cover": true,
+   "about": "ブナの実という重要な食料がある。生存に欠かせない最高の餌場である。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 36.353,
+   "lon": 135.5
+  },
+  {
+   "id": "alpine_zone",
+   "ja": "高山帯",
+   "danger": 1,
+   "cover": false,
+   "about": "標高3,000メートルを超える場所まで及ぶ。夏場の移動ルートとなる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.916,
+   "lon": 133.117
+  },
+  {
+   "id": "river_side",
+   "ja": "渓流沿い",
+   "danger": 1,
+   "cover": true,
+   "about": "水を飲み、カモシカなどの獲物を探す。茂みに身を隠しやすい。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 32.941,
+   "lon": 132.631
+  },
+  {
+   "id": "village_edge",
+   "ja": "里山の境界",
+   "danger": 2,
+   "cover": false,
+   "about": "柿や栗の果樹園がある。山の実が少ない年に迷い込む。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 31.787,
+   "lon": 135.5
+  }
+ ],
+ "start": {
+  "place": "winter_den",
+  "month": 1,
+  "day": 15
+ },
+ "region": {
+  "ja": "本州・四国",
+  "lon0": 131.328,
+  "lon1": 138.276,
+  "lat0": 37.656,
+  "lat1": 30.484,
+  "k": 72,
+  "labels": [
+   [
+    37.22568,
+    134.80200000000002,
+    "本州・四国"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "alpine_zone",
+   "winter_den"
+  ],
+  [
+   "river_side",
+   "winter_den"
+  ],
+  [
+   "deciduous_forest",
+   "winter_den"
+  ],
+  [
+   "beech_forest",
+   "deciduous_forest"
+  ],
+  [
+   "beech_forest",
+   "winter_den"
+  ],
+  [
+   "alpine_zone",
+   "river_side"
+  ],
+  [
+   "village_edge",
+   "winter_den"
+  ],
+  [
+   "deciduous_forest",
+   "village_edge"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 120
+ },
+ "stats": {
+  "run": {
+   "ja": "走る力",
+   "use": "獲物を追う時や逃げる時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚",
+   "use": "遠くの餌や獲物を探る時に効く"
+  },
+  "forage": {
+   "ja": "採餌能力",
+   "use": "木に登り餌を確保する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "cub",
+   "ja": "仔グマ",
+   "days": 180,
+   "hunger": 15,
+   "grow": 3,
+   "goal": "幼熊になる",
+   "enter": "母の乳を飲み、穴の中で過ごす。"
+  },
+  {
+   "id": "juv",
+   "fromAge": 1,
+   "ja": "幼いグマ",
+   "days": 180,
+   "hunger": 12,
+   "grow": 2,
+   "goal": "若い熊になる",
+   "enter": "母から離れ、自力で草や実を食べる。"
+  },
+  {
+   "id": "sub",
+   "fromAge": 2,
+   "ja": "若いグマ",
+   "days": 180,
+   "hunger": 12,
+   "grow": 1,
+   "goal": "成体になる",
+   "enter": "体が大きく成長し、縄張りを広げる。"
+  },
+  {
+   "id": "adult",
+   "fromAge": 4,
+   "ja": "成体",
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "種を維持する",
+   "enter": "完全に成熟した。冬眠と繁殖を繰り返す。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   20,
+   30
+  ],
+  "text": "冬眠から目覚める力がなくなった。静かに森へ還った。"
+ },
+ "breeding": {
+  "ja": "冬眠中に子を産む",
+  "ds": "冬眠用の穴の中で、一頭か二頭の子を産み育てる",
+  "months": [
+   1,
+   2
+  ],
+  "places": [
+   "winter_den"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   2
+  ],
+  "many": 2,
+  "label": {
+   "ja": "仔グマ",
+   "unit": "頭",
+   "child": "生まれた一頭"
+  },
+  "ok": "穴の中で、{born}頭の仔が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を2頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "乳を飲む",
+   "name": "母の乳",
+   "ds": "母の乳で体を大きくする",
+   "stages": [
+    "cub"
+   ],
+   "places": [
+    "winter_den"
+   ],
+   "rich": [
+    "winter_den"
+   ],
+   "ok": "母の乳を飲み、成長した。",
+   "full": 50
+  },
+  {
+   "id": "plant",
+   "ja": "草や実を食べる",
+   "name": "植物",
+   "ds": "春は草、夏はベリー、秋はドングリやブナの実を食べる",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "deciduous_forest",
+    "beech_forest",
+    "alpine_zone"
+   ],
+   "rich": [
+    "beech_forest"
+   ],
+   "ok": "森の実をたくさん食べた。",
+   "full": 50
+  },
+  {
+   "id": "meat",
+   "ja": "動物を食べる",
+   "name": "野生動物",
+   "ds": "カモシカなどの動物を捕らえて食べる",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "deciduous_forest",
+    "beech_forest",
+    "river_side"
+   ],
+   "rich": [
+    "river_side"
+   ],
+   "ok": "獲物を捕らえ、肉を食らった。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "hibernation",
+   "ja": "冬眠",
+   "ds": "冬の間、穴の中で眠りエネルギーを節約する",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.5,
+   "calm": true,
+   "ok": "深い眠りに落ち、春を待つ。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "male_bear",
+   "ja": "成体の雄グマ",
+   "kind": "mammal",
+   "places": [
+    "deciduous_forest",
+    "beech_forest"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "低い唸り声が近づく。",
+    "鋭い爪が、幼い体を狙う。"
+   ],
+   "again": [
+    "また、あの雄グマの匂いが漂う。",
+    "森の奥から、重い足音が聞こえる。"
+   ],
+   "bye": "体が大きくなり、力で対抗できる。",
+   "lose": "雄グマに襲われ、傷を負った。"
+  },
+  {
+   "id": "hunter",
+   "ja": "猟師",
+   "kind": "human",
+   "places": [
+    "deciduous_forest",
+    "beech_forest",
+    "alpine_zone"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "乾いた銃声が、森に響き渡る。",
+    "獲物を追う、鋭い視線がある。"
+   ],
+   "again": [
+    "また、あの銃声が聞こえた。",
+    "猟犬の吠える声が、近くまで迫る。"
+   ],
+   "bye": "人が立ち入らない、深い山奥へ逃げ延びた。",
+   "lose": "猟銃で撃たれ、傷を負った。"
+  },
+  {
+   "id": "trapper",
+   "ja": "罠の設置者",
+   "kind": "human",
+   "places": [
+    "village_edge",
+    "deciduous_forest"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "足元に、冷たい鉄の牙が潜んでいる。",
+    "静まり返った道端に、罠が仕掛けられている。"
+   ],
+   "again": [
+    "また、足元に違和感がある。",
+    "罠の錆びた匂いが、鼻をつく。"
+   ],
+   "bye": "罠の場所を覚え、避けて通るようになる。",
+   "lose": "罠に捕らえられ、傷を負った。"
+  },
+  {
+   "id": "farmer",
+   "ja": "農家の人",
+   "kind": "human",
+   "places": [
+    "village_edge"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "大声で叫ぶ人間が、棒を振り回す。",
+    "畑の境界に、不快な音が鳴り響く。"
+   ],
+   "lose": "追い払おうとする人間に叩かれ、傷を負った。"
+  },
+  {
+   "id": "stray_dog",
+   "ja": "野犬の群れ",
+   "kind": "mammal",
+   "places": [
+    "village_edge",
+    "deciduous_forest"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "集団で囲い込み、執拗に吠え立てる。",
+    "鋭い牙が、小さな体を狙う。"
+   ],
+   "lose": "野犬に噛まれ、傷を負った。"
+  },
+  {
+   "id": "golden_eagle",
+   "ja": "イヌワシ",
+   "kind": "bird",
+   "places": [
+    "alpine_zone",
+    "beech_forest"
+   ],
+   "stages": [
+    "cub"
+   ],
+   "sev": 1,
+   "texts": [
+    "空から、巨大な影が急降下してくる。",
+    "鋭い爪が、頭上から襲いかかる。"
+   ],
+   "lose": "猛禽類に襲われ、傷を負った。"
+  },
+  {
+   "id": "poacher",
+   "ja": "密猟者",
+   "kind": "human",
+   "places": [
+    "deciduous_forest",
+    "beech_forest"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "密かに近づく、不気味な気配がある。",
+    "法を無視した、残酷な罠が仕掛けられている。"
+   ],
+   "lose": "密猟者の罠に捕らえられ、傷を負った。"
+  },
+  {
+   "id": "rival_bear",
+   "ja": "縄張りを争う成体",
+   "kind": "mammal",
+   "places": [
+    "beech_forest",
+    "deciduous_forest"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "激しい咆哮が、森を震わせる。",
+    "鋭い爪が、互いの肩を切り裂く。"
+   ],
+   "lose": "他の個体に襲われ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "秋、森のドングリが少ない。どこで食料を探すか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "深い森を歩き回る",
+     "ds": "安全だが、飢えに耐える必要がある",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "険しい山道を辿り、わずかな実をかき集めた。",
+     "chip": "忍耐"
+    },
+    {
+     "ja": "里山の境界へ降りる",
+     "ds": "食料は豊富だが、人間に遭遇する危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "人の家の裏庭で、熟した柿や栗を貪り食った。",
+     "chip": "冒険"
+    }
+   ]
+  },
+  {
+   "q": "目の前にニホンカモシカが現れた。どう動くか",
+   "stages": [
+    "juv",
+    "sub"
+   ],
+   "opts": [
+    {
+     "ja": "母の背後で様子を見る",
+     "ds": "安全だが、獲物は分け前になる",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "母が獲物を仕留めるまで、静かに息を潜めた。",
+     "chip": "学習"
+    },
+    {
+     "ja": "隙を突いて飛びかかる",
+     "ds": "獲物を独占できる。反撃される恐れがある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "鋭い爪を立て、一気に獲物へ襲いかかった。",
+     "chip": "挑戦"
+    }
+   ]
+  },
+  {
+   "q": "縄張りを広げる。どの方向へ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "ブナ林の奥深くへ進む",
+     "ds": "食料が安定している。他の個体との競争が激しい",
+     "fx": {
+      "danger": 0,
+      "food": 1
+     },
+     "say": "豊かなブナの森で、自らの居場所を築いた。",
+     "chip": "定住"
+    },
+    {
+     "ja": "高山帯の岩場へ登る",
+     "ds": "競争は少ない。環境が厳しく食料が限られる",
+     "fx": {
+      "danger": 1,
+      "food": -1
+     },
+     "say": "冷たい風が吹く高地で、孤独に生き抜いた。",
+     "chip": "開拓"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    3,
+    4
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.5,
+   "say": "冬眠から目覚めた。腹がひどく減っている。",
+   "full": -20
+  },
+  {
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "ブナの実が豊作となり、森が黄金色に染まった。",
+   "full": 20
+  },
+  {
+   "month": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "猟師の仕掛けた罠に捉えられ、傷を負った。",
+   "full": -15
+  }
+ ],
+ "lead": "本州と四国の深い山々に棲み、季節の巡りに合わせて生きる。秋に実りを蓄え、冬の眠りを経て、次なる世代へ命を繋ぐ。",
+ "texts": {
+  "move": "{to}へ、森を歩いていった。",
+  "fleeJa": "人や外敵を避け、茂みに逃げ込む",
+  "restJa": "心地よい木陰で、体を休める",
+  "watchJa": "鋭い嗅覚を使い、獲物や実を探す",
+  "lieJa": "冬眠の穴で、深く静かに眠る",
+  "lastMemory": "秋の森に漂う、熟したドングリの香りを思い出した。"
+ },
+ "intro": [
+  "冬眠中の穴の中で生まれた。",
+  "母の温もりに包まれ、乳を飲んで体を大きくする。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、子を育てる",
+   "line": "{kids}頭の子が、深い森の歩き方を学ぶ。",
+   "mem": "冬の穴の中で、小さな鼓動を感じた時のことを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "ブナの森で、飽きるまで実を食べ歩いた日を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "森の孤独な旅人として生きる",
+  "line": "子を残さずとも、その足跡は森に刻まれている。",
+  "mem": "高山帯の冷たい風に吹かれ、遠くの山々を眺めた日を思い出した。"
+ },
+ "facts": [
+  {
+   "quote": "The Japanese black bear is a smaller subspecies of the Asian black bear, with males only reaching 60–120 kilograms (130–260 lb) and females only weighing about 40–100 kilograms (88–220 lb)."
+  },
+  {
+   "text": "本州の個体数は増加傾向にあり、最近の推定では約44,000頭に達している。"
+  }
+ ]
+}

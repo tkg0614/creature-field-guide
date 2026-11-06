@@ -1,0 +1,731 @@
+{
+ "id": "seaotter",
+ "ja": "ラッコ",
+ "sci": "Enhydra lutris",
+ "status": "checked",
+ "type": "mammal",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "北太平洋沿岸",
+  "geo": "North Pacific coast",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "kelp_forest",
+   "ja": "ケルプの森",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "深い海藻が茂る。親が子を胸に乗せて育て、外敵から守る場所である。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 59.5,
+   "lon": -150
+  },
+  {
+   "id": "shallow_coast",
+   "ja": "浅瀬の海岸",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "ウニや貝などの餌が豊富である。石を使って獲物を割る。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 59.5,
+   "lon": -147.6
+  },
+  {
+   "id": "rocky_reef",
+   "ja": "岩礁地帯",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "複雑な岩場に獲物が潜む。急流があるため、体力を消耗しやすい。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 61.783,
+   "lon": -149.073
+  },
+  {
+   "id": "quiet_bay",
+   "ja": "静かな湾内",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "波が穏やかで休息に適している。仲間と集まって眠ることがある。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 60.346,
+   "lon": -151.456
+  },
+  {
+   "id": "deep_nearshore",
+   "ja": "沿岸の深場",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "大型の獲物を求めて深く潜る。天敵のシャチに襲われる危険がある。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 58.371,
+   "lon": -151.942
+  },
+  {
+   "id": "tide_pool",
+   "ja": "潮だまり",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "干潮時に小さな甲殻類が集まる。効率よく餌を採取できる。",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 57.217,
+   "lon": -149.073
+  }
+ ],
+ "start": {
+  "place": "kelp_forest",
+  "month": 5,
+  "day": 1
+ },
+ "region": {
+  "ja": "北太平洋沿岸",
+  "lon0": -153.245,
+  "lon1": -146.297,
+  "lat0": 63.086,
+  "lat1": 55.914,
+  "k": 72,
+  "labels": [
+   [
+    62.65568,
+    -149.77100000000002,
+    "北太平洋沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "kelp_forest",
+   "quiet_bay"
+  ],
+  [
+   "deep_nearshore",
+   "kelp_forest"
+  ],
+  [
+   "kelp_forest",
+   "shallow_coast"
+  ],
+  [
+   "rocky_reef",
+   "shallow_coast"
+  ],
+  [
+   "kelp_forest",
+   "rocky_reef"
+  ],
+  [
+   "deep_nearshore",
+   "quiet_bay"
+  ],
+  [
+   "kelp_forest",
+   "tide_pool"
+  ],
+  [
+   "shallow_coast",
+   "tide_pool"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 100
+ },
+ "stats": {
+  "run": {
+   "ja": "泳ぐ力",
+   "use": "海中を自在に移動する時に効く"
+  },
+  "sense": {
+   "ja": "触覚",
+   "use": "海底の獲物を探る時に効く"
+  },
+  "forage": {
+   "ja": "道具の利用",
+   "use": "石で貝を割る時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "pup",
+   "ja": "仔ラッコ",
+   "days": 90,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "幼いラッコになる",
+   "enter": "母の胸に乗せられ、乳を飲む。"
+  },
+  {
+   "id": "juv",
+   "ja": "幼いラッコ",
+   "fromAge": 1,
+   "days": 120,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "若いラッコになる",
+   "enter": "自力で潜り、簡単な獲物を捕らえ始める。"
+  },
+  {
+   "id": "sub",
+   "ja": "若いラッコ",
+   "fromAge": 2,
+   "days": 150,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成体になる",
+   "enter": "体が大きく成長し、石を使う技を習得する。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 4,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "縄張りを維持する",
+   "enter": "成熟し、自立した生活を送る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   20
+  ],
+  "text": "毛の密度が落ち、体温を保てなくなった。静かに波に揺られて眠る。"
+ },
+ "breeding": {
+  "ja": "海岸で子を産む",
+  "ds": "浅瀬やケルプの森で一頭の子を産み、胸に乗せて育てる",
+  "months": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "places": [
+   "kelp_forest",
+   "shallow_coast"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 1,
+  "label": {
+   "ja": "仔ラッコ",
+   "unit": "頭",
+   "child": "生まれた一頭"
+  },
+  "ok": "{born}頭の仔が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を1頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "乳を飲む",
+   "name": "乳",
+   "ds": "母の乳で体力をつけ、厚い毛を蓄える",
+   "stages": [
+    "pup"
+   ],
+   "places": [
+    "kelp_forest",
+    "shallow_coast"
+   ],
+   "rich": [
+    "kelp_forest"
+   ],
+   "ok": "母の乳を飲み、心地よく眠る。",
+   "full": 50
+  },
+  {
+   "id": "shellfish",
+   "ja": "貝やウニを食べる",
+   "name": "甲殻類・軟体動物",
+   "ds": "石を使って殻を割り、中身を食べる",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "kelp_forest",
+    "shallow_coast",
+    "rocky_reef",
+    "tide_pool"
+   ],
+   "rich": [
+    "kelp_forest"
+   ],
+   "ok": "石で貝を割り、中身を堪能した。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "thick_fur",
+   "ja": "密な毛皮",
+   "ds": "極めて密な毛皮で体温を維持し、冷たい海で生き抜く",
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "厚い毛皮に包まれ、海面に浮かぶ。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "orca",
+   "ja": "シャチ",
+   "kind": "mammal",
+   "places": [
+    "kelp_forest",
+    "deep_nearshore",
+    "shallow_coast"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い背びれが、海面を切り裂く。",
+    "冷徹な眼光が、獲物を捉える。"
+   ],
+   "again": [
+    [
+     "再び、不気味な鳴き声が響く。",
+     "黒い影が、ゆっくりと距離を詰める。"
+    ]
+   ],
+   "bye": "成体となり、ケルプの深い森に身を隠す術を覚える。",
+   "lose": "強力な顎に噛みつかれ、傷を負った。"
+  },
+  {
+   "id": "white_shark",
+   "ja": "ホホジロザメ",
+   "kind": "fish",
+   "places": [
+    "deep_nearshore",
+    "shallow_coast"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "深い海から、灰色の影が急上昇する。",
+    "鋭い歯が、水面で白く光る。"
+   ],
+   "again": [
+    [
+     "また、あの冷たい気配が近づく。",
+     "水底から、巨大な影が忍び寄る。"
+    ]
+   ],
+   "bye": "危険な深場を避け、浅瀬の岩礁地帯に留まる。",
+   "lose": "鋭い牙に深く切り裂かれ、傷を負った。"
+  },
+  {
+   "id": "bald_eagle",
+   "ja": "ハクトウワシ",
+   "kind": "bird",
+   "places": [
+    "shallow_coast",
+    "tide_pool",
+    "rocky_reef"
+   ],
+   "stages": [
+    "pup",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "空から、鋭い爪を持つ影が舞い降りる。",
+    "高い空から、獲物を凝視している。"
+   ],
+   "lose": "鋭い爪で背中を掴まれ、傷を負った。"
+  },
+  {
+   "id": "leopard_seal",
+   "ja": "ヒョウアザラシ",
+   "kind": "mammal",
+   "places": [
+    "deep_nearshore",
+    "rocky_reef"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub"
+   ],
+   "sev": 1,
+   "texts": [
+    "流線型の体が、素早く水を切る。",
+    "獲物を狙う、冷酷な視線がある。"
+   ],
+   "lose": "強力な顎に押し潰され、傷を負った。"
+  },
+  {
+   "id": "steller_sea_lion",
+   "ja": "トド",
+   "kind": "mammal",
+   "places": [
+    "rocky_reef",
+    "shallow_coast"
+   ],
+   "stages": [
+    "pup",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "巨大な体が、波打ち際で唸る。",
+    "圧倒的な質量が、目の前に立ちはだかる。"
+   ],
+   "lose": "巨大な体に押し潰され、傷を負った。"
+  },
+  {
+   "id": "fur_hunter",
+   "ja": "毛皮猟師",
+   "kind": "human",
+   "places": [
+    "shallow_coast",
+    "kelp_forest"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "冷酷な眼差しが、厚い毛皮を狙う。",
+    "銃声が、静かな海に響き渡る。"
+   ],
+   "lose": "猟銃に撃たれ、傷を負った。"
+  },
+  {
+   "id": "fishery",
+   "ja": "漁網",
+   "kind": "human",
+   "places": [
+    "kelp_forest",
+    "shallow_coast"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "透明な糸が、水中で静かに広がっている。",
+    "逃げ場のない網が、体を締め付ける。"
+   ],
+   "lose": "網の太い紐に擦られ、傷を負った。"
+  },
+  {
+   "id": "boat",
+   "ja": "小型船",
+   "kind": "human",
+   "places": [
+    "shallow_coast",
+    "quiet_bay"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "激しいエンジン音が、海面を震わせる。",
+    "巨大な船底が、視界を覆い尽くす。"
+   ],
+   "lose": "船底に強く打ち付けられ、傷を負った。"
+  },
+  {
+   "id": "sea_eagle",
+   "ja": "ウミワシ",
+   "kind": "bird",
+   "places": [
+    "tide_pool",
+    "rocky_reef"
+   ],
+   "stages": [
+    "pup"
+   ],
+   "sev": 1,
+   "texts": [
+    "鋭い叫び声が、上空から降り注ぐ。",
+    "獲物を狙う翼が、海面をかすめる。"
+   ],
+   "lose": "鋭い爪に引き裂かれ、傷を負った。"
+  },
+  {
+   "id": "large_shark",
+   "ja": "大型のサメ",
+   "kind": "fish",
+   "places": [
+    "deep_nearshore"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "暗い海底から、鋭い背びれが近づく。",
+    "水流の乱れが、捕食者の接近を告げる。"
+   ],
+   "lose": "鋭い歯に噛みつかれ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "硬い殻の獲物を捕らえた。どうやって中身を出すか",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "石を使って割る",
+     "ds": "効率よく中身を取り出せる。石を探す手間がかかる",
+     "fx": {
+      "danger": 0,
+      "food": 1
+     },
+     "say": "お気に入りの石を胸に乗せ、器用に貝を叩き割った。",
+     "chip": "道具利用"
+    },
+    {
+     "ja": "そのまま噛み砕く",
+     "ds": "すぐに食べられる。得られる量が多くない",
+     "fx": {
+      "danger": 0,
+      "food": 0
+     },
+     "say": "強い顎で殻を砕き、中身をゆっくりと味わった。",
+     "chip": "根気"
+    }
+   ]
+  },
+  {
+   "q": "母が潜水し、餌を探しに行く。どう行動するか",
+   "stages": [
+    "pup",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "母の胸の上で待つ",
+     "ds": "安全で温かい。自立への学習は遅れる",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "母の厚い毛皮に包まれ、心地よく波に揺られていた。",
+     "chip": "依存"
+    },
+    {
+     "ja": "自力で泳ぐ練習をする",
+     "ds": "泳ぎを習得できる。外敵に襲われる危険がある",
+     "fx": {
+      "danger": 1,
+      "food": -1
+     },
+     "say": "短い手足を必死に動かし、冷たい海水を蹴った。",
+     "chip": "挑戦"
+    }
+   ]
+  },
+  {
+   "q": "海に不穏な気配が漂う。身を守る方法は",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "ケルプに体を巻き付ける",
+     "ds": "流されず、姿を隠せる。動きが制限される",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "長い海藻を体に巻き付け、静かに海流に身を任せた。",
+     "chip": "擬態"
+    },
+    {
+     "ja": "岩礁の隙間に逃げ込む",
+     "ds": "物理的に身を守れる。獲物を探す場所から離れる",
+     "fx": {
+      "danger": 0,
+      "food": -1
+     },
+     "say": "鋭い岩の隙間に潜り込み、外の様子を伺った。",
+     "chip": "回避"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "ウニが大量に発生し、最高の餌場となった。",
+   "full": 15
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "冬の激しい嵐が襲い、体力を激しく消耗した。",
+   "full": -15
+  },
+  {
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "近くにシャチが現れ、森の緊張が高まった。",
+   "full": -10
+  }
+ ],
+ "lead": "アラスカの海岸、ケルプの森に生きる。仰向けに浮かび、石で貝を割る知恵を持つ。母の胸で育ち、冷たい海を生き抜く。",
+ "texts": {
+  "move": "{to}へ、ゆったりと泳いでいった。",
+  "fleeJa": "天敵から逃れ、ケルプに身を隠す",
+  "restJa": "海藻を体に巻き付け、漂い眠る",
+  "watchJa": "水面に顔を出し、周囲を警戒する",
+  "lieJa": "深い海底へ潜り、獲物を探す",
+  "lastMemory": "母の胸の温もりと、波の音を思い出した。"
+ },
+ "intro": [
+  "北太平洋の冷たい海で生まれた。",
+  "母の胸に乗せられ、海面の心地よい揺れに身を任せる。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、子を育てる",
+   "line": "{kids}頭の子を胸に乗せ、海を漂う。",
+   "mem": "初めて子を抱いた時の、柔らかな毛並みを思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "お気に入りの石を使い、硬い貝を鮮やかに割った日を思い出した。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "海に溶け込むように生きる",
+   "line": "子を残さずとも、ケルプの森の調和を守り抜いた。",
+   "mem": "どこまでも続く、深い青色の海を思い出した。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "Its use of rocks to dislodge prey and to open shells makes it one of the few mammal species to use tools.",
+   "text": "動物界で最も密度が高い被毛を持ち、体温を維持している。"
+  }
+ ]
+}

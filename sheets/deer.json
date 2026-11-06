@@ -2,14 +2,15 @@
  "id": "deer",
  "ja": "ニホンジカ",
  "sci": "Cervus nippon",
- "status": "draft",
+ "status": "checked",
  "type": "mammal",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
   "life": "gemini-gemma gemma-4-31b-it",
   "foes": "gemini-gemma gemma-4-31b-it",
-  "choices": "gemini-gemma gemma-4-31b-it"
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "日本列島",
@@ -685,6 +686,48 @@
    "p": 0.3,
    "say": "深い雪に足を取られ、餌を探すのに苦労した。",
    "full": -15
+  }
+ ],
+ "lead": "日本の山や森に生息し、秋に角で争い、初夏に子を産むニホンジカである。",
+ "texts": {
+  "move": "{to}へ、群れで移動した。",
+  "fleeJa": "危険を感じ、群れで逃げた。",
+  "restJa": "林の陰で静かに休んだ。",
+  "watchJa": "高い草むらから周囲を見張った。",
+  "lieJa": "柔らかな苔の上に横たわった。",
+  "lastMemory": "母の背中に乗り、春の芽吹きを思い出した。"
+ },
+ "intro": [
+  "山上の草原で生まれた。",
+  "母の側で、群れの匂いを感じながら立ち上がった。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、群れを導く",
+   "line": "{kids}頭の子が、群れの未来を担う。",
+   "mem": "子鹿が初めて立ち上がる姿を見て、春の風を感じた。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "秋の紅葉の中で、オスが角をぶつけ合う姿を思い出した。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "群れの守護者として生きる",
+   "line": "子を残さずとも、群れの安全を守り続けた。",
+   "mem": "仲間と共に雪原を歩き、静かな夜を思い出した。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "The sika deer (Cervus nippon) is a species of deer native to much of East Asia and introduced to other parts of the world."
+  },
+  {
+   "text": "ニホンジカは成体になっても斑点を失わない珍しい鹿である。"
   }
  ]
 }

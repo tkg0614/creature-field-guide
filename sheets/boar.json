@@ -1,0 +1,683 @@
+{
+ "id": "boar",
+ "ja": "イノシシ",
+ "sci": "Sus scrofa",
+ "status": "checked",
+ "type": "mammal",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "日本の山間部と里山",
+  "geo": "Satoyama, Japan",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "thicket",
+   "ja": "深い茂み",
+   "danger": 0,
+   "cover": true,
+   "about": "うり坊が生まれる場所。外敵から身を隠しやすい。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.174,
+   "lon": 136.858
+  },
+  {
+   "id": "forest_floor",
+   "ja": "広葉樹の林床",
+   "danger": 1,
+   "cover": true,
+   "about": "どんぐりや根菜が豊富である。鼻で土を掘り返して餌を探す。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.174,
+   "lon": 136.89
+  },
+  {
+   "id": "forest_edge",
+   "ja": "林の縁",
+   "danger": 2,
+   "cover": true,
+   "about": "里山との境界線である。人間が仕掛けたわなの危険がある。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.202,
+   "lon": 136.878
+  },
+  {
+   "id": "farmland",
+   "ja": "耕作地",
+   "danger": 2,
+   "cover": false,
+   "about": "作物という最高の餌がある。猟師に狙われる危険が高い。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.191,
+   "lon": 136.846
+  },
+  {
+   "id": "river_side",
+   "ja": "川辺の泥地",
+   "danger": 1,
+   "cover": false,
+   "about": "泥浴びをして寄生虫を落とす。水辺の植物を食べる。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.174,
+   "lon": 136.826
+  },
+  {
+   "id": "deep_mountain",
+   "ja": "深山",
+   "danger": 1,
+   "cover": true,
+   "about": "成熟したオスが単独で行動する。険しい地形が天然の壁となる。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.146,
+   "lon": 136.838
+  },
+  {
+   "id": "ruins",
+   "ja": "廃屋の跡",
+   "danger": 1,
+   "cover": true,
+   "about": "崩れた壁や屋根が雨風を凌ぐ場所となる。休息に利用する。",
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "lat": 37.157,
+   "lon": 136.87
+  }
+ ],
+ "start": {
+  "place": "thicket",
+  "month": 4,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本の山間部と里山",
+  "lon0": 136.807,
+  "lon1": 136.909,
+  "lat0": 37.221,
+  "lat1": 37.127,
+  "k": 4902,
+  "labels": [
+   [
+    37.21536,
+    136.858,
+    "日本の山間部と里山"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "farmland",
+   "thicket"
+  ],
+  [
+   "ruins",
+   "thicket"
+  ],
+  [
+   "forest_floor",
+   "ruins"
+  ],
+  [
+   "forest_edge",
+   "forest_floor"
+  ],
+  [
+   "farmland",
+   "forest_edge"
+  ],
+  [
+   "farmland",
+   "river_side"
+  ],
+  [
+   "deep_mountain",
+   "river_side"
+  ],
+  [
+   "deep_mountain",
+   "ruins"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 30
+ },
+ "stats": {
+  "run": {
+   "ja": "突進力",
+   "use": "外敵を追い払う時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚",
+   "use": "土の中の餌を探る時に効く"
+  },
+  "forage": {
+   "ja": "掘り起こし",
+   "use": "根菜や虫を掘り出す時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "uribo",
+   "ja": "うり坊",
+   "days": 120,
+   "hunger": 10,
+   "grow": 3,
+   "goal": "若イノシシになる",
+   "enter": "母の乳を飲み、茂みに隠れて過ごす。"
+  },
+  {
+   "id": "juv",
+   "ja": "若イノシシ",
+   "fromAge": 0.5,
+   "days": 180,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "成体になる",
+   "enter": "乳を離れ、自力で土を掘り始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 1.5,
+   "days": 150,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "群れを維持する",
+   "enter": "体が大きく成長した。牙が生え、力強くなる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   5,
+   15
+  ],
+  "text": "牙が鈍り、足腰が弱った。深い森の中で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "春に子を産む",
+  "ds": "深い茂みや林床で、数頭の子を産み育てる",
+  "months": [
+   3,
+   4,
+   5
+  ],
+  "places": [
+   "thicket",
+   "forest_floor"
+  ],
+  "perYear": 1,
+  "kids": [
+   3,
+   6
+  ],
+  "many": 1,
+  "label": {
+   "ja": "うり坊",
+   "unit": "頭",
+   "child": "生まれた一頭"
+  },
+  "ok": "春の訪れとともに、{born}頭のうり坊が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を数頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "乳を飲む",
+   "name": "母の乳",
+   "ds": "母の乳を飲み、急速に成長する",
+   "stages": [
+    "uribo"
+   ],
+   "places": [
+    "thicket",
+    "forest_floor"
+   ],
+   "rich": [
+    "thicket"
+   ],
+   "ok": "母の乳を飲み、体力をつけた。",
+   "full": 40
+  },
+  {
+   "id": "roots",
+   "ja": "根や実を食べる",
+   "name": "根菜・木の実",
+   "ds": "鼻で土を掘り起こし、根やドングリを食べる",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "forest_floor",
+    "forest_edge",
+    "river_side"
+   ],
+   "rich": [
+    "forest_floor"
+   ],
+   "ok": "土を掘り起こし、好物の根を見つけた。",
+   "full": 60
+  },
+  {
+   "id": "crops",
+   "ja": "農作物を食べる",
+   "name": "作物",
+   "ds": "里山へ降り、耕作地の作物を食べる",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "farmland"
+   ],
+   "rich": [
+    "farmland"
+   ],
+   "ok": "耕作地に忍び込み、作物を食べた。",
+   "full": 80
+  }
+ ],
+ "special": [
+  {
+   "id": "digging",
+   "ja": "土掘り",
+   "ds": "強い鼻先で土を掘り、隠れた餌を見つけ出す",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.7,
+   "calm": true,
+   "ok": "鼻を突き立て、土の中から根を引き抜いた。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "bear",
+   "ja": "ツキノワグマ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor",
+    "deep_mountain",
+    "thicket"
+   ],
+   "stages": [
+    "uribo",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い影が、静かに近づく。",
+    "鋭い爪が、地面を削る音がする。"
+   ],
+   "again": [
+    "また、あの獣の匂いが漂ってきた。",
+    "茂みの奥で、低い唸り声が聞こえる。"
+   ],
+   "bye": "体が大きくなり、相手にされなくなる。",
+   "lose": "鋭い爪で切り裂かれ、傷を負った。"
+  },
+  {
+   "id": "hunter_trap",
+   "ja": "罠",
+   "kind": "human",
+   "places": [
+    "forest_floor",
+    "forest_edge",
+    "thicket"
+   ],
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "地面に、不自然な金属の光が見える。",
+    "足元に、冷たい罠が潜んでいる。"
+   ],
+   "again": [
+    "また、足元に金属の罠が仕掛けられている。",
+    "慣れた道に、新しい罠が置かれている。"
+   ],
+   "bye": "罠の場所を覚え、避けて通るようになる。",
+   "lose": "足首を罠に挟まれ、傷を負った。"
+  },
+  {
+   "id": "hunter_gun",
+   "ja": "猟銃",
+   "kind": "human",
+   "places": [
+    "forest_floor",
+    "forest_edge",
+    "deep_mountain"
+   ],
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "乾いた銃声が、山々に響き渡る。",
+    "人間が、獲物を探して歩いている。"
+   ],
+   "again": [
+    "また、あの鋭い銃声が聞こえた。",
+    "猟犬の吠え声が、近くまで迫っている。"
+   ],
+   "bye": "人の気配をいち早く察し、逃げる術を覚える。",
+   "lose": "銃弾に撃たれ、傷を負った。"
+  },
+  {
+   "id": "farmer",
+   "ja": "農家の人",
+   "kind": "human",
+   "places": [
+    "farmland"
+   ],
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "畑のあちこちに、追い払うための道具がある。",
+    "怒鳴り声と共に、人間が追いかけてくる。"
+   ],
+   "lose": "追い払うための道具で叩かれ、傷を負った。"
+  },
+  {
+   "id": "eagle",
+   "ja": "イヌワシ",
+   "kind": "bird",
+   "places": [
+    "forest_edge",
+    "river_side"
+   ],
+   "stages": [
+    "uribo"
+   ],
+   "sev": 1,
+   "texts": [
+    "空から、巨大な影が急降下してくる。",
+    "鋭い爪が、背中を狙っている。"
+   ],
+   "lose": "空から襲われ、背中を掴まれて傷を負った。"
+  },
+  {
+   "id": "stray_dog",
+   "ja": "野犬",
+   "kind": "mammal",
+   "places": [
+    "forest_edge",
+    "farmland",
+    "ruins"
+   ],
+   "stages": [
+    "uribo",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "聞き慣れない吠え声が、遠くで響く。",
+    "集団で囲い込もうとする気配がある。"
+   ],
+   "lose": "しつこく追い回され、噛みつかれて傷を負った。"
+  },
+  {
+   "id": "owl",
+   "ja": "ワシミミズク",
+   "kind": "bird",
+   "places": [
+    "forest_floor",
+    "thicket"
+   ],
+   "stages": [
+    "uribo"
+   ],
+   "sev": 1,
+   "texts": [
+    "夜の闇から、静かに翼が舞い降りる。",
+    "大きな目が、闇の中で光っている。"
+   ],
+   "lose": "夜襲を受け、頭を掴まれて傷を負った。"
+  },
+  {
+   "id": "wild_dog_pack",
+   "ja": "犬の群れ",
+   "kind": "mammal",
+   "places": [
+    "forest_edge",
+    "ruins"
+   ],
+   "stages": [
+    "uribo",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "複数の犬が、連携して追い詰めてくる。",
+    "逃げ場のない場所まで、執拗に追われる。"
+   ],
+   "lose": "集団に襲われ、四肢を噛まれて傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "母が土を掘り返している。どう動くか",
+   "stages": [
+    "uribo",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "母の足元で拾い食いをする",
+     "ds": "安全だが、得られる量は少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "母が掘り出した根を、こぼれ落ちるままに食べた。",
+     "chip": "依存"
+    },
+    {
+     "ja": "少し離れて自分で掘る",
+     "ds": "食料を確保できる。外敵に気づかれやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "鼻先を土に押し込み、甘い根を掘り当てた。",
+     "chip": "自立"
+    }
+   ]
+  },
+  {
+   "q": "空腹だ。どこへ餌を探しに行くか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "深い茂みに留まる",
+     "ds": "身を隠しやすい。餌は限られる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "茂みの奥で、わずかな落ち葉の下の虫を探した。",
+     "chip": "慎重"
+    },
+    {
+     "ja": "里の耕作地へ降りる",
+     "ds": "豊かな作物が得られる。罠や猟犬の危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "夜の静寂に紛れ、瑞々しい作物を食い荒らした。",
+     "chip": "大胆"
+    }
+   ]
+  },
+  {
+   "q": "繁殖の季節が近づいた。どう過ごすか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "雌の群れと共に歩む",
+     "ds": "精神的な安定がある。競争は激しい",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "信頼できる仲間に囲まれ、森の中をゆっくりと移動した。",
+     "chip": "結束"
+    },
+    {
+     "ja": "単独で縄張りを広げる",
+     "ds": "自由な行動が可能。外敵や他個体との衝突が増える",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "say": "孤独な旅路の中で、己の強さを誇示するように歩いた。",
+     "chip": "孤高"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "p": 0.4,
+   "say": "山にどんぐりが実り、森の地面が黄金色に染まった。",
+   "full": 20
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "uribo",
+    "juv",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "厳しい寒さで土が凍り、餌を掘り出すのが困難になった。",
+   "full": -15
+  },
+  {
+   "month": [
+    11,
+    12,
+    1
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "遠くで猟犬の吠える声が響き、森に緊張が走った。",
+   "full": -5
+  }
+ ],
+ "lead": "日本の山と里の境で、鼻で土を掘り食べ物を探すイノシシは、春にうり坊を産み、群れで暮らす。",
+ "texts": {
+  "move": "{to}へ、群れで移動する。",
+  "fleeJa": "危険を感じ、素早く走り去る。",
+  "restJa": "林の縁で泥浴をしながら休む。",
+  "watchJa": "低く鼻を鳴らし、周囲の音を探る。",
+  "lieJa": "土の中に潜み、静かに身を潜める。",
+  "lastMemory": "仲間と土を掘り分けた日の匂いを思い出す。"
+ },
+ "intro": [
+  "山間部の深い茂みで生まれた。",
+  "母の乳を飲みながら、土の匂いを覚える。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、子を育てる",
+   "line": "{kids}頭の子が、群れの未来を担う。",
+   "mem": "初めて子を抱いたとき、春の土の柔らかさが胸に残る。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "仲間と共に根を掘り、食べ物を分け合った日を思い出す。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "子を残さず、群れの守り手として生きる",
+   "line": "子を残さなくても、群れの警戒は続く。",
+   "mem": "静かな夜、月光に照らされた泥の匂いを思い出す。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "The species is now one of the widest-ranging mammals in the world as well as the most widespread suiform."
+  },
+  {
+   "text": "野生イノシシは雌が主導する母系社会で生活する。"
+  }
+ ]
+}

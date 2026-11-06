@@ -1,0 +1,709 @@
+{
+ "id": "mole",
+ "ja": "アズマモグラ",
+ "sci": "Mogera imaizumii",
+ "status": "checked",
+ "type": "mammal",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "東日本から北日本",
+  "geo": "Eastern Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "forest_nest",
+   "ja": "森林の深い巣穴",
+   "danger": 0,
+   "cover": true,
+   "about": "落葉を敷き詰めた暖かい空間。春に子が生まれる。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 39.174,
+   "lon": 140.732
+  },
+  {
+   "id": "farmland",
+   "ja": "耕作地",
+   "danger": 2,
+   "cover": true,
+   "about": "ミミズなどの餌が豊富。人間による耕作で地表が乱される。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.688,
+   "lon": 138.24
+  },
+  {
+   "id": "grassland",
+   "ja": "草地",
+   "danger": 1,
+   "cover": true,
+   "about": "湿り気のある深い土壌が広がる。効率よくトンネルを掘れる。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 36.971,
+   "lon": 136.767
+  },
+  {
+   "id": "mountain_soil",
+   "ja": "山地の薄い土層",
+   "danger": 1,
+   "cover": true,
+   "about": "土層が浅い。大型のニホンモグラの侵入を防げる。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.534,
+   "lon": 134.384
+  },
+  {
+   "id": "forest_floor",
+   "ja": "林床の土壌",
+   "danger": 1,
+   "cover": true,
+   "about": "腐葉土が厚い。餌となる昆虫や土壌生物が多い。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 39.174,
+   "lon": 140.732
+  },
+  {
+   "id": "urban_green",
+   "ja": "都市部の緑地",
+   "danger": 1,
+   "cover": true,
+   "about": "皇居のような隔離された緑地。外敵が少なく安定している。",
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.684,
+   "lon": 139.751
+  }
+ ],
+ "start": {
+  "place": "forest_nest",
+  "month": 4,
+  "day": 1
+ },
+ "region": {
+  "ja": "東日本から北日本",
+  "lon0": 132.48,
+  "lon1": 142.636,
+  "lat0": 41.078,
+  "lat1": 32.784,
+  "k": 49,
+  "labels": [
+   [
+    40.580360000000006,
+    137.558,
+    "東日本から北日本"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "forest_floor",
+   "forest_nest"
+  ],
+  [
+   "forest_nest",
+   "urban_green"
+  ],
+  [
+   "farmland",
+   "urban_green"
+  ],
+  [
+   "farmland",
+   "grassland"
+  ],
+  [
+   "grassland",
+   "mountain_soil"
+  ],
+  [
+   "farmland",
+   "mountain_soil"
+  ],
+  [
+   "forest_floor",
+   "urban_green"
+  ],
+  [
+   "grassland",
+   "urban_green"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 12.1
+ },
+ "stats": {
+  "run": {
+   "ja": "掘削力",
+   "use": "土を押し除けトンネルを掘る時に効く"
+  },
+  "sense": {
+   "ja": "触覚",
+   "use": "暗い地中で獲物を探る時に効く"
+  },
+  "forage": {
+   "ja": "採餌能力",
+   "use": "効率的にミミズを追い詰める時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "pup",
+   "ja": "仔モグラ",
+   "days": 30,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "幼いモグラになる",
+   "enter": "母の乳を飲み、地中で体を温める。"
+  },
+  {
+   "id": "juv",
+   "ja": "幼いモグラ",
+   "fromAge": 0.3,
+   "days": 60,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "成体になる",
+   "enter": "自力で土を掘り、虫を捕らえ始める。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 1,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "縄張りを維持する",
+   "enter": "体が熟した。独自のトンネル網を築き、生活圏を確保する。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   2,
+   4
+  ],
+  "text": "地中の活動が鈍くなった。静かに土へと還った。"
+ },
+ "breeding": {
+  "ja": "地中の巣で子を産む",
+  "ds": "森林の深い巣穴に落葉を集め、1から6頭の子を産み育てる",
+  "months": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "forest_nest"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   6
+  ],
+  "many": 6,
+  "label": {
+   "ja": "仔モグラ",
+   "unit": "頭",
+   "child": "巣穴で生まれた一頭"
+  },
+  "ok": "巣穴に、{born}頭の仔が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を1頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "母の乳を飲む",
+   "name": "母乳",
+   "ds": "母の乳で栄養を摂り、急速に成長する",
+   "stages": [
+    "pup"
+   ],
+   "places": [
+    "forest_nest"
+   ],
+   "rich": [
+    "forest_nest"
+   ],
+   "ok": "母の乳を飲み、体を温める。",
+   "full": 50
+  },
+  {
+   "id": "earthworm",
+   "ja": "ミミズを食べる",
+   "name": "ミミズ",
+   "ds": "地中のトンネルを巡り、好物のミミズや昆虫を捕らえる",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "farmland",
+    "grassland",
+    "forest_floor",
+    "mountain_soil",
+    "urban_green"
+   ],
+   "rich": [
+    "farmland"
+   ],
+   "ok": "土の中を掘り進み、太いミミズを捕らえた。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "digging",
+   "ja": "地中生活",
+   "ds": "強力な前足で土を掘り、地上に出ることなく生活する",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.8,
+   "calm": true,
+   "ok": "効率的に土を押し除け、トンネルを広げる。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "weasel",
+   "ja": "イタチ",
+   "kind": "mammal",
+   "places": [
+    "farmland",
+    "grassland",
+    "forest_floor",
+    "urban_green"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "細い体が、トンネルを滑るように進む。",
+    "鋭い牙が、暗闇で光る。"
+   ],
+   "again": [
+    [
+     "また、あの執拗な追跡者が来た。"
+    ],
+    [
+     "土の振動が、死の接近を告げる。"
+    ]
+   ],
+   "bye": "深い土層へ逃げ込み、追手を撒く。",
+   "lose": "狭い通路で追い詰められ、噛みつかれて傷を負った。"
+  },
+  {
+   "id": "owl",
+   "ja": "フクロウ",
+   "kind": "bird",
+   "places": [
+    "forest_floor",
+    "grassland",
+    "farmland"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "音もなく、夜の空から舞い降りる。",
+    "鋭い爪が、地表のわずかな動きを捉える。"
+   ],
+   "again": [
+    [
+     "夜空に、死の影が舞う。"
+    ],
+    [
+     "静寂を切り裂き、急降下してくる。"
+    ]
+   ],
+   "bye": "茂みの深い場所へ潜り、視線を遮る。",
+   "lose": "地上に出た瞬間、鋭い爪に掴まれ、傷を負った。"
+  },
+  {
+   "id": "snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "forest_nest",
+    "farmland",
+    "grassland"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "冷たい鱗が、土壁を擦る。",
+    "音もなく、巣穴へと滑り込む。"
+   ],
+   "again": [
+    [
+     "また、冷たい気配が近づく。"
+    ],
+    [
+     "狭い穴の中に、逃げ場のない圧迫感がある。"
+    ]
+   ],
+   "bye": "複雑な分岐路を作り、撹乱する。",
+   "lose": "寝床で不意に襲われ、締め付けられて傷を負った。"
+  },
+  {
+   "id": "fox",
+   "ja": "キツネ",
+   "kind": "mammal",
+   "places": [
+    "farmland",
+    "grassland",
+    "forest_floor"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "鋭い嗅覚が、土の下の気配を嗅ぎつける。",
+    "前足で激しく土を掘り返す。"
+   ],
+   "lose": "土を掘り起こされ、強引に引きずり出されて傷を負った。"
+  },
+  {
+   "id": "hawk",
+   "ja": "タカ",
+   "kind": "bird",
+   "places": [
+    "grassland",
+    "farmland"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "高い空から、地上のわずかな盛り上がりを凝視する。",
+    "急加速して、地面へ突き刺さる。"
+   ],
+   "lose": "地表で不意に襲われ、鋭い爪でひっかかれて傷を負った。"
+  },
+  {
+   "id": "kite",
+   "ja": "トビ",
+   "kind": "bird",
+   "places": [
+    "grassland",
+    "farmland",
+    "urban_green"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "円を描いて飛び、隙をうかがう。",
+    "不意に急降下し、獲物をさらう。"
+   ],
+   "lose": "地上で隙を見せ、鋭い爪で掴み上げられて傷を負った。"
+  },
+  {
+   "id": "cat",
+   "ja": "野良猫",
+   "kind": "mammal",
+   "places": [
+    "urban_green",
+    "farmland"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "好奇心に満ちた目が、土の盛り上がりを追う。",
+    "素早い前足が、土を掻き分ける。"
+   ],
+   "lose": "地表で遊び半分に弄ばれ、鋭い爪で切り裂かれて傷を負った。"
+  },
+  {
+   "id": "farmer",
+   "ja": "農家",
+   "kind": "human",
+   "places": [
+    "farmland"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "土を掘り返す、金属の音が響く。",
+    "罠の冷たい感触が、足に触れる。"
+   ],
+   "lose": "罠に足を挟まれ、激しくもがいて傷を負った。"
+  },
+  {
+   "id": "developer",
+   "ja": "建設機械",
+   "kind": "human",
+   "places": [
+    "urban_green",
+    "farmland"
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "地響きと共に、巨大な重機が迫る。",
+    "土壌が、一気に押し潰される。"
+   ],
+   "lose": "重機に土ごと押し潰され、激しく圧迫されて傷を負った。"
+  },
+  {
+   "id": "tanuki",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor",
+    "farmland"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "太い前足で、土を力強く掘り起こす。",
+    "低い唸り声が、地中に響く。"
+   ],
+   "lose": "土を掘り起こされ、鋭い牙で噛まれて傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "土の中で獲物を探している。どう動くか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "ミミズの多い湿った土を掘る",
+     "ds": "効率よく食料を得られる。地上の天敵に気づかれやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "湿った土を掘り進め、太いミミズを仕留めた。",
+     "chip": "効率重視"
+    },
+    {
+     "ja": "深く静かな土層を探索する",
+     "ds": "安全に移動できる。獲物に出会う確率が下がる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "静寂に包まれた深い土の中を、慎重に移動した。",
+     "chip": "安全策"
+    }
+   ]
+  },
+  {
+   "q": "縄張りを決める。どこに住み着くか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "餌の豊富な耕作地を選ぶ",
+     "ds": "飽食できる。人間や天敵による干渉が多い",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "肥沃な土壌に潜み、絶え間なく獲物を捕らえた。",
+     "chip": "豊穣"
+    },
+    {
+     "ja": "土層の薄い山地へ向かう",
+     "ds": "競合する大型種を避けられる。食料が少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "厳しい環境だが、外敵の少ない静かな土層を得た。",
+     "chip": "隠遁"
+    }
+   ]
+  },
+  {
+   "q": "他個体のトンネルに突き当たった。どう対処するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "力ずくで領域を奪う",
+     "ds": "豊かな餌場を独占できる。激しい争いで傷つく恐れがある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "激しい争いの末、相手を追い払い、豊かな領域を掌中に収めた。",
+     "chip": "闘争"
+    },
+    {
+     "ja": "静かに道を迂回する",
+     "ds": "争いを避けられる。新たなルートを掘る労力がかかる",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "相手の気配を察し、静かに別の方向へ道を切り拓いた。",
+     "chip": "回避"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.4,
+   "say": "春になり、落葉を集めて深い巣穴を整えた。",
+   "full": 10
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "冬の寒さで土が凍り、獲物を探すのが困難になった。",
+   "full": -15
+  },
+  {
+   "month": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "pup",
+    "juv",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "地上に出たところをフクロウに見つかり、鋭い爪に襲われ、傷を負った。",
+   "full": -20
+  }
+ ],
+ "lead": "東日本の草地や耕作地の地下で、トンネルを掘りながら暮らすアズマモグラである。",
+ "texts": {
+  "move": "{to}へ、土を掘り進む。",
+  "fleeJa": "捕食者を避け、素早く土中へ潜る。",
+  "restJa": "巣穴で静かに休む。",
+  "watchJa": "土の表面から獲物の動きを探る。",
+  "lieJa": "トンネルの奥で身を潜める。",
+  "lastMemory": "母が巣穴を整える姿を思い出す。"
+ },
+ "intro": [
+  "草原や耕作地の湿った土に生まれた。",
+  "母の乳で育ち、地下のトンネルで暮らし始める。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、巣穴を守る",
+   "line": "{kids}頭の子が、土の中で生きる術を受け継ぐ。",
+   "mem": "子を抱いた瞬間、土の匂いと暖かさが胸に広がった。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "春の雨後、土が柔らかくなり新たなトンネルを掘った日を思い出す。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "巣穴の守護者として生きる",
+   "line": "子を残さずとも、トンネルを維持し続ける。",
+   "mem": "静かな土の中で、仲間の足音を聞くことを思い出す。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "The small Japanese mole's lifespan is approximately 3 years."
+  },
+  {
+   "text": "1回の出産で1〜6頭の仔モグラを産む。"
+  }
+ ]
+}

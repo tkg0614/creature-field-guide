@@ -1,0 +1,690 @@
+{
+ "id": "deer",
+ "ja": "ニホンジカ",
+ "sci": "Cervus nippon",
+ "status": "draft",
+ "type": "mammal",
+ "country": "jp",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本列島",
+  "geo": "Japanese Archipelago",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "deep_forest",
+   "ja": "深い森の茂み",
+   "danger": 1,
+   "cover": true,
+   "about": "初夏に仔鹿が産まれる場所。草むらに身を隠して過ごす。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.892,
+   "lon": 134.656
+  },
+  {
+   "id": "mountain_meadow",
+   "ja": "山上の草原",
+   "danger": 1,
+   "cover": false,
+   "about": "新鮮な草が豊富に生い茂る。夏の間、多くの個体が集まる。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 36.6,
+   "lon": 141.05
+  },
+  {
+   "id": "broadleaf_forest",
+   "ja": "広葉樹林",
+   "danger": 0,
+   "cover": true,
+   "about": "木陰が多く、日中の休息に適している。天敵から身を隠しやすい。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 38.883,
+   "lon": 139.577
+  },
+  {
+   "id": "ridge_clearing",
+   "ja": "尾根の開けた場所",
+   "danger": 1,
+   "cover": false,
+   "about": "秋に雄が縄張りを主張し、争う場所。遠くまで声が響く。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 37.446,
+   "lon": 137.194
+  },
+  {
+   "id": "lowland_shrub",
+   "ja": "低地の低木林",
+   "danger": 2,
+   "cover": true,
+   "about": "冬の厳しい寒さを避けて移動してくる。餌が少なくなり、飢えに耐える。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 35.718,
+   "lon": 139.77
+  },
+  {
+   "id": "farm_edge",
+   "ja": "耕作地の縁",
+   "danger": 2,
+   "cover": false,
+   "about": "農作物を求めて現れる。人間との衝突が起きやすい場所である。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.595,
+   "lon": 133.771
+  }
+ ],
+ "start": {
+  "place": "deep_forest",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本列島",
+  "lon0": 131.587,
+  "lon1": 143.234,
+  "lat0": 41.067,
+  "lat1": 32.411,
+  "k": 43,
+  "labels": [
+   [
+    40.54764,
+    137.4105,
+    "日本列島"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "deep_forest",
+   "farm_edge"
+  ],
+  [
+   "deep_forest",
+   "ridge_clearing"
+  ],
+  [
+   "lowland_shrub",
+   "mountain_meadow"
+  ],
+  [
+   "broadleaf_forest",
+   "mountain_meadow"
+  ],
+  [
+   "broadleaf_forest",
+   "ridge_clearing"
+  ],
+  [
+   "lowland_shrub",
+   "ridge_clearing"
+  ],
+  [
+   "farm_edge",
+   "ridge_clearing"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 50
+ },
+ "stats": {
+  "run": {
+   "ja": "脚力",
+   "use": "天敵から逃れる時に効く"
+  },
+  "sense": {
+   "ja": "警戒心",
+   "use": "外敵の気配を察知する時に効く"
+  },
+  "forage": {
+   "ja": "採食力",
+   "use": "冬の乏しい餌を探す時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "calf",
+   "ja": "仔鹿",
+   "days": 150,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "若鹿になる",
+   "enter": "母の乳を飲み、森の歩き方を覚える。"
+  },
+  {
+   "id": "juv",
+   "ja": "若鹿",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "亜成体になる",
+   "enter": "草や若葉を食べ始める。群れの中で立ち位置を学ぶ。"
+  },
+  {
+   "id": "sub",
+   "ja": "亜成体",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成体になる",
+   "enter": "体が大きく成長した。雄は立派な角をつけ始める。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 3,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "種を繋ぐ",
+   "enter": "体が熟した。雄は縄張りを競い、雌は子を育てる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   20
+  ],
+  "text": "足腰が弱まり、森の奥で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "秋に交尾し、初夏に産む",
+  "ds": "秋に雄が角で争い、勝ち抜いた者が雌の群れを率いる",
+  "months": [
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "ridge_clearing",
+   "mountain_meadow"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 1,
+  "label": {
+   "ja": "仔鹿",
+   "unit": "頭",
+   "child": "生まれた一頭"
+  },
+  "ok": "森に{born}頭の仔鹿が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "交尾する",
+  "goal2": "子を1頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "乳を飲む",
+   "name": "母乳",
+   "ds": "母の乳を飲み、急速に成長する",
+   "stages": [
+    "calf"
+   ],
+   "places": [
+    "deep_forest",
+    "broadleaf_forest"
+   ],
+   "rich": [
+    "deep_forest"
+   ],
+   "ok": "母の乳を飲み、体力を蓄えた。",
+   "full": 50
+  },
+  {
+   "id": "plants",
+   "ja": "植物を食べる",
+   "name": "草木",
+   "ds": "草や木の葉、低木の芽を食べる",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "mountain_meadow",
+    "broadleaf_forest",
+    "lowland_shrub",
+    "farm_edge"
+   ],
+   "rich": [
+    "mountain_meadow"
+   ],
+   "ok": "青々とした若葉を食んだ。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "antler_fight",
+   "ja": "角の争い",
+   "ds": "秋の繁殖期に雄同士が角をぶつけ合い、強さを競う",
+   "stages": [
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.5,
+   "calm": false,
+   "ok": "激しく角をぶつけ合い、縄張りを主張した。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "mountain_meadow",
+   "say": "涼しい山上の草原へ移動する。"
+  },
+  {
+   "months": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "lowland_shrub",
+   "say": "餌を求め、標高の低い場所へ降りる。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "bear",
+   "ja": "ツキノワグマ",
+   "kind": "mammal",
+   "places": [
+    "deep_forest",
+    "broadleaf_forest"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "茂みの奥から、重い足音が近づく。",
+    "鋭い爪と、獣の臭いが漂う。"
+   ],
+   "again": [
+    [
+     "また、あの黒い影が森に現れた。"
+    ],
+    [
+     "低い唸り声が、背後から聞こえる。"
+    ]
+   ],
+   "bye": "体が大きくなり、簡単には襲われなくなった。",
+   "lose": "熊に襲われ、鋭い爪で引き裂かれ、傷を負った。"
+  },
+  {
+   "id": "eagle",
+   "ja": "イヌワシ",
+   "kind": "bird",
+   "places": [
+    "mountain_meadow",
+    "ridge_clearing"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 2,
+   "texts": [
+    "空高くから、鋭い視線が突き刺さる。",
+    "巨大な影が、地面を滑るように近づく。"
+   ],
+   "again": [
+    [
+     "また、空にあの大きな翼が見えた。"
+    ],
+    [
+     "鋭い鳴き声が、山々に響き渡る。"
+    ]
+   ],
+   "bye": "成長し、空からの攻撃を回避できる大きさになった。",
+   "lose": "鷲に急降下で襲われ、鋭い爪で掴まれ、傷を負った。"
+  },
+  {
+   "id": "hawk",
+   "ja": "クマタカ",
+   "kind": "bird",
+   "places": [
+    "broadleaf_forest",
+    "lowland_shrub"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 1,
+   "texts": [
+    "高い枝から、獲物を狙う目が光る。",
+    "鋭い風切り音が、頭上で鳴る。"
+   ],
+   "lose": "タカに急襲され、背中を掴まれ、傷を負った。"
+  },
+  {
+   "id": "owl",
+   "ja": "ワシミミズク",
+   "kind": "bird",
+   "places": [
+    "deep_forest",
+    "broadleaf_forest"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 1,
+   "texts": [
+    "夜の闇に、静かに舞い降りる影がある。",
+    "音もなく近づく、鋭い爪がある。"
+   ],
+   "lose": "ミミズクに夜襲され、首元を掴まれ、傷を負った。"
+  },
+  {
+   "id": "dog",
+   "ja": "野犬",
+   "kind": "mammal",
+   "places": [
+    "farm_edge",
+    "lowland_shrub"
+   ],
+   "stages": [
+    "calf",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "集団の吠え声が、遠くから聞こえる。",
+    "執拗に追いかけてくる、足音が響く。"
+   ],
+   "lose": "野犬に囲まれ、足首を噛まれ、傷を負った。"
+  },
+  {
+   "id": "fox",
+   "ja": "キタキツネ",
+   "kind": "mammal",
+   "places": [
+    "lowland_shrub",
+    "farm_edge"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 1,
+   "texts": [
+    "草むらの中で、鋭い耳が動く。",
+    "隙を伺う、低い視線がある。"
+   ],
+   "lose": "狐に不意を突かれ、喉元を噛まれ、傷を負った。"
+  },
+  {
+   "id": "tanuki",
+   "ja": "タヌキ",
+   "kind": "mammal",
+   "places": [
+    "lowland_shrub",
+    "farm_edge"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 1,
+   "texts": [
+    "夜の茂みから、じっとこちらを見ている。",
+    "低い姿勢で、ゆっくりと距離を詰める。"
+   ],
+   "lose": "タヌキに襲われ、足先を噛まれ、傷を負った。"
+  },
+  {
+   "id": "hunter",
+   "ja": "猟師",
+   "kind": "human",
+   "places": [
+    "deep_forest",
+    "mountain_meadow",
+    "broadleaf_forest",
+    "ridge_clearing",
+    "lowland_shrub",
+    "farm_edge"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "冷たい金属の音が、森に響く。",
+    "人間が、獲物を探して歩き回る。"
+   ],
+   "lose": "猟銃で撃たれ、傷を負った。"
+  },
+  {
+   "id": "car",
+   "ja": "自動車",
+   "kind": "human",
+   "places": [
+    "farm_edge",
+    "lowland_shrub"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "アスファルトの道に、強い光が差し込む。",
+    "激しいエンジン音が、耳を打つ。"
+   ],
+   "lose": "走行中の車に撥ねられ、傷を負った。"
+  },
+  {
+   "id": "farmer",
+   "ja": "農家",
+   "kind": "human",
+   "places": [
+    "farm_edge"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "畑の縁に、見慣れない罠が仕掛けられている。",
+    "人間が、大声で追い払いに来る。"
+   ],
+   "lose": "罠に足を取られ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "母から離れ、草を食む。どこへ向かうか",
+   "stages": [
+    "calf",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "深い森の茂みに潜む",
+     "ds": "天敵に見つかりにくいが、得られる餌は少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "茂みの陰で、静かに若葉を食んだ。",
+     "chip": "潜伏"
+    },
+    {
+     "ja": "開けた草原へ出る",
+     "ds": "豊かな草を得られるが、外敵に晒される",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "陽光の下、瑞々しい草を口にした。",
+     "chip": "探索"
+    }
+   ]
+  },
+  {
+   "q": "冬が近づき、山上の餌が尽きた。どう動くか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "低地の低木林へ降りる",
+     "ds": "寒さを避けられるが、移動に時間がかかる",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "標高を下げ、冬を越すための枝葉を探した。",
+     "chip": "避寒"
+    },
+    {
+     "ja": "耕作地の縁に忍び込む",
+     "ds": "高カロリーな作物を得られるが、人に見つかる危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "人の目を盗み、甘い作物を口にした。",
+     "chip": "冒険"
+    }
+   ]
+  },
+  {
+   "q": "秋の盛期、雄のライバルが現れた。どう対峙するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "角をぶつけ、正面から争う",
+     "ds": "縄張りと雌を独占できるが、大きな怪我のリスクがある",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "say": "激しく角を打ち鳴らし、力で相手をねじ伏せた。",
+     "chip": "闘争"
+    },
+    {
+     "ja": "距離を置き、譲歩する",
+     "ds": "安全を確保できるが、繁殖の機会を失う",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "静かに道を譲り、争いを避けて森へ消えた。",
+     "chip": "回避"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7
+   ],
+   "stages": [
+    "calf"
+   ],
+   "p": 0.3,
+   "say": "初夏の陽光の中、母の乳を飲んで体力をつけた。",
+   "full": 15
+  },
+  {
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.4,
+   "say": "森に雄の咆哮が響き渡り、空気が張り詰めた。",
+   "full": -5
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "深い雪に足を取られ、餌を探すのに苦労した。",
+   "full": -15
+  }
+ ]
+}

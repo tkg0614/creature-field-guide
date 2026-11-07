@@ -2,10 +2,746 @@
  "id": "ayu",
  "ja": "アユ",
  "sci": "Plecoglossus altivelis",
- "status": "draft-ng",
+ "status": "checked",
  "type": "fish",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "東アジアの沿岸および河川",
+  "geo": "East Asia",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "river_lower_gravel",
+   "ja": "河川下流の砂利底",
+   "sea": false,
+   "danger": 2,
+   "cover": true,
+   "about": "秋に産卵が行われる場所。砂利に掘られた小さな穴に卵が産み付けられる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "river_drift",
+   "ja": "河川の中・下流域",
+   "sea": false,
+   "danger": 3,
+   "cover": false,
+   "about": "孵化した仔魚が海へ流される通り道。多くの個体が天敵に捕食される。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "coastal_sea",
+   "ja": "沿岸域の海",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "冬を過ごす海域。プランクトンなどを食べながら春の回遊に備える。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 37.109,
+   "lon": 137.291
+  },
+  {
+   "id": "river_mouth",
+   "ja": "河口域",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "春に川へ上る入り口。海水から淡水へと体を適応させる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "clear_stream_rock",
+   "ja": "清流の岩場",
+   "sea": false,
+   "danger": 2,
+   "cover": true,
+   "about": "石に付着した藻類を食べる。縄張りを持ち、他の個体を排除して成長する。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "shallow_river",
+   "ja": "川の浅瀬",
+   "sea": false,
+   "danger": 3,
+   "cover": false,
+   "about": "鵜などの天敵に狙われやすい場所。水面近くで活動する際に危険が伴う。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  },
+  {
+   "id": "spawning_return",
+   "ja": "産卵のための下流域",
+   "sea": false,
+   "danger": 1,
+   "cover": true,
+   "about": "秋に成熟した個体が戻ってくる。次世代のために砂利を掘り、卵を産む。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.575,
+   "lon": 139.239
+  }
+ ],
+ "start": {
+  "place": "river_lower_gravel",
+  "month": 10,
+  "day": 1
+ },
+ "region": {
+  "ja": "東アジアの沿岸および河川",
+  "lon0": 136.707,
+  "lon1": 139.823,
+  "lat0": 37.693,
+  "lat1": 35.991,
+  "k": 160,
+  "labels": [
+   [
+    37.59088,
+    138.265,
+    "東アジアの沿岸および河川"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "river_drift",
+   "river_lower_gravel"
+  ],
+  [
+   "river_lower_gravel",
+   "river_mouth"
+  ],
+  [
+   "river_drift",
+   "river_mouth"
+  ],
+  [
+   "coastal_sea",
+   "river_lower_gravel"
+  ],
+  [
+   "coastal_sea",
+   "river_drift"
+  ],
+  [
+   "clear_stream_rock",
+   "river_lower_gravel"
+  ],
+  [
+   "clear_stream_rock",
+   "river_drift"
+  ],
+  [
+   "river_lower_gravel",
+   "shallow_river"
+  ],
+  [
+   "river_drift",
+   "shallow_river"
+  ],
+  [
+   "river_lower_gravel",
+   "spawning_return"
+  ],
+  [
+   "river_drift",
+   "spawning_return"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.1
+ },
+ "stats": {
+  "run": {
+   "ja": "遡上力",
+   "use": "春に海から川へ上る時に効く"
+  },
+  "sense": {
+   "ja": "縄張り意識",
+   "use": "石の藻を独占し、他者を追い払う時に効く"
+  },
+  "forage": {
+   "ja": "削り取り力",
+   "use": "櫛状の歯で岩の藻をこそぎ落とす時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 90,
+   "hunger": 10,
+   "grow": 0.5,
+   "goal": "海へ降りる",
+   "enter": "ふ化後すぐに川の流れに乗り、海へと運ばれた。"
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.25,
+   "days": 90,
+   "hunger": 12,
+   "grow": 5.9,
+   "goal": "川へ戻る",
+   "enter": "沿岸域で冬を越し、体長が6センチほどになった。"
+  },
+  {
+   "id": "young",
+   "ja": "若魚",
+   "fromAge": 0.5,
+   "days": 90,
+   "hunger": 15,
+   "grow": 10,
+   "goal": "縄張りを築く",
+   "enter": "清流の岩場に定着し、石に付いた藻を食み始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 0.75,
+   "days": 90,
+   "hunger": 18,
+   "grow": 5,
+   "adult": true,
+   "goal": "産卵する",
+   "enter": "体長が20センチを超え、婚姻色の橙色と黒が身に現れた。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   1
+  ],
+  "text": "産卵を終え、川の底で静かに息を引き取った。"
+ },
+ "breeding": {
+  "ja": "河川下流での産卵",
+  "ds": "秋に河川の下流域へ戻り、砂利底に穴を掘って産卵する",
+  "months": [
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "river_lower_gravel"
+  ],
+  "perYear": 1,
+  "kids": [
+   1000,
+   10000
+  ],
+  "many": 5000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した仔魚の一匹"
+  },
+  "ok": "砂利の間に、{born}個の卵を丁寧に産み付けた。",
+  "ng": "産卵場所を確保できず、卵を十分に産めなかった。",
+  "goal1": "卵を産む",
+  "goal2": "卵を5000個産む"
+ },
+ "foods": [
+  {
+   "id": "plankton",
+   "ja": "プランクトンを食べる",
+   "name": "動物プランクトン",
+   "ds": "海域で漂う小さなプランクトンを吸いこむ",
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "places": [
+    "coastal_sea",
+    "river_mouth"
+   ],
+   "rich": [
+    "coastal_sea"
+   ],
+   "ok": "潮の流れに漂うプランクトンを、次々と口に含んだ。",
+   "full": 30
+  },
+  {
+   "id": "river_algae",
+   "ja": "石の藻をこそぎ落とす",
+   "name": "付着藻類",
+   "ds": "櫛状の歯を使い、岩に張り付いた藻類を削り取る",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "clear_stream_rock",
+    "shallow_river"
+   ],
+   "rich": [
+    "clear_stream_rock"
+   ],
+   "ok": "鋭い歯で岩肌をこそぎ、緑色の藻を胃に溜めた。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "comb_teeth",
+   "ja": "櫛状歯で藻を食む",
+   "ds": "丸い櫛のような構造の歯を持ち、効率よく藻類を削り取れる",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": true,
+   "ok": "特殊な歯を使い、岩に張り付いた藻を効率よく削り取った。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    11,
+    12,
+    1
+   ],
+   "stages": [
+    "larva"
+   ],
+   "to": "coastal_sea",
+   "say": "川の流れに身を任せ、冬を過ごすために海へと降りた。"
+  },
+  {
+   "months": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "juv"
+   ],
+   "to": "clear_stream_rock",
+   "say": "春の訪れとともに、藻の豊かな清流へと遡上した。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "jellyfish",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "coastal_sea"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "透明な傘が、漂流する仔魚を静かに包み込む。",
+    "刺胞を持つ触手が、逃げ場のない幼い身を絡めとる。"
+   ]
+  },
+  {
+   "id": "goby",
+   "ja": "ハゼの仲間",
+   "kind": "fish",
+   "places": [
+    "coastal_sea",
+    "river_mouth"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "砂底に潜んでいた影が、不意に口を開けて稚魚を吸い込む。",
+    "濁った水底から鋭い突進があり、群れが散らされる。"
+   ]
+  },
+  {
+   "id": "sea_bass",
+   "ja": "スズキ",
+   "kind": "fish",
+   "places": [
+    "coastal_sea",
+    "river_mouth"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "銀色の巨躯が、河口の激流の中で待ち構えている。",
+    "水面を割る鋭い衝撃とともに、稚魚が空中に跳ね上がる。"
+   ]
+  },
+  {
+   "id": "kingfisher",
+   "ja": "カワセミ",
+   "kind": "bird",
+   "places": [
+    "clear_stream_rock",
+    "shallow_river"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "青い閃光が水面を叩き、一瞬で若魚をくちばしに捉える。",
+    "静止していた影が急降下し、水しぶきとともに獲物をさらう。"
+   ]
+  },
+  {
+   "id": "cormorant",
+   "ja": "ウミウ",
+   "kind": "bird",
+   "places": [
+    "clear_stream_rock",
+    "shallow_river",
+    "river_drift"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "黒い翼が水面を滑り、鋭い潜水で逃げ道を塞ぐ。",
+    "太い首を伸ばし、水底の岩陰から強引に引きずり出す。"
+   ],
+   "again": [
+    [
+     "また、右目の周りに白い斑点があるウミウだ。"
+    ],
+    [
+     "白い斑点のあるウミウが、執拗に縄張りを巡回している。"
+    ]
+   ],
+   "bye": "岩の深い隙間に身を潜め、ウミウの潜水が届かない場所へ逃れた。"
+  },
+  {
+   "id": "brown_trout",
+   "ja": "ブラウントラウト",
+   "kind": "fish",
+   "places": [
+    "clear_stream_rock",
+    "shallow_river"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "褐色の巨体が、流れの緩やかな淵で静かに獲物を待つ。",
+    "強烈な加速で突進し、鋭い歯で若魚の体を貫く。"
+   ],
+   "again": [
+    [
+     "また、尾びれが欠けたトラウトだ。"
+    ],
+    [
+     "尾びれの欠けたトラウトが、流れの下流で待ち構えている。"
+    ]
+   ],
+   "bye": "体が十分に大きくなり、トラウトの口に入るサイズではなくなった。"
+  },
+  {
+   "id": "black_bass",
+   "ja": "ブラックバス",
+   "kind": "fish",
+   "places": [
+    "shallow_river",
+    "river_drift"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水草の陰から、大きな口を開けた影がゆっくりと近づく。",
+    "不意に爆発的な加速を見せ、目の前の若魚を丸呑みにする。"
+   ]
+  },
+  {
+   "id": "fisher",
+   "ja": "釣り人",
+   "kind": "human",
+   "places": [
+    "clear_stream_rock",
+    "shallow_river"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水面に小さな擬似餌が落ち、縄張り意識を刺激する。",
+    "銀色の針が、水流に乗って目の前をかすめていく。"
+   ],
+   "lose": "鋭い釣り針に口を貫かれ、傷を負った。",
+   "fleeJa": "針にかかる直前で激しく身をよじる",
+   "hideJa": "大きな石の影に潜り込み、針をかわす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "春が来た。どの川へ上るか",
+   "stages": [
+    "young"
+   ],
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "清流の岩場を目指す",
+     "ds": "石に付着した藻が豊富。激流の中での競争が激しい",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "clear_stream_rock",
+     "say": "岩肌を洗う清流へと入り込み、豊かな藻の群生地を求めて泳いだ。",
+     "chip": "清流へ上る"
+    },
+    {
+     "ja": "緩やかな浅瀬に留まる",
+     "ds": "泳ぐ負担が少なく安全。餌となる藻の量は限られる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "shallow_river",
+     "say": "流れの穏やかな浅瀬に身を置き、静かに時を待った。",
+     "chip": "浅瀬に留まる"
+    }
+   ]
+  },
+  {
+   "q": "縄張りを決める時期だ。どこを拠点にするか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "opts": [
+    {
+     "ja": "流れの速い本流の特等席を奪う",
+     "ds": "最高の藻が得られ成長が早い。他個体との激しい争いになる",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "clear_stream_rock",
+     "say": "鋭い牙で侵入者を追い払い、日当たりの良い岩場を独占した。",
+     "chip": "特等席を奪う"
+    },
+    {
+     "ja": "静かな脇瀬に身を置く",
+     "ds": "争いを避け体力を温存できる。餌が少なく成長は緩やかになる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "shallow_river",
+     "say": "争いのない静かな場所を選び、慎ましく藻を削った。",
+     "chip": "脇瀬に身を置く"
+    }
+   ]
+  },
+  {
+   "q": "成熟の時期を迎えた。このまま産卵して一生を終えるか、海へ戻るか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "河口付近で産卵し、命を繋ぐ",
+     "ds": "次世代へ命を託せる。産卵後の消耗が激しく死に至る",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "spawning_return",
+     "say": "砂利底に浅い穴を掘り、卵を産み落として静かに力尽きた。",
+     "chip": "産卵して死ぬ"
+    },
+    {
+     "ja": "再び海へ下り、生き延びる",
+     "ds": "翌年以降の産卵の機会を得られる。回遊の負担で体力を削られる",
+     "fx": {
+      "food": 1,
+      "kids": -1
+     },
+     "goto": "coastal_sea",
+     "say": "産卵の誘惑を振り切り、再び冬を越すために海へと身を投げ出した。",
+     "chip": "海へ戻る"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "p": 0.2,
+   "say": "沿岸の海で大型の魚に襲われ、傷を負った。",
+   "full": -20
+  },
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "young"
+   ],
+   "p": 0.1,
+   "say": "川を上る途中で、極めて質の良い藻の群生地を発見し、急速に成長した。",
+   "full": 15
+  },
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "鵜飼の鵜に捕らえられ、鋭い嘴に突き刺された。",
+   "full": -30
+  }
+ ],
+ "lead": "秋に川で生まれ、冬を海で過ごし、再び清流へと戻る。石の藻を食み、縄張りを守り抜き、一年という短い生を駆け抜ける。",
+ "texts": {
+  "move": "{to}へ、しなやかに泳いでいった。",
+  "fleeJa": "素早く身を翻して逃れる",
+  "restJa": "流れに身を任せて漂う",
+  "watchJa": "石の上の藻や外敵の気配を伺う",
+  "lieJa": "川底の砂利の間に身を潜める",
+  "lastMemory": "清流のせせらぎと、石に張り付いた藻の味を思い出した。"
+ },
+ "intro": [
+  "秋の河川下流、砂利の底に産み付けられた。",
+  "孵化してすぐに流れに乗り、広い海へと運ばれる。"
+ ],
+ "wins": [
+  {
+   "minKids": 10000,
+   "title": "清流に命を繋いだ",
+   "line": "{kids}個の卵を、砂利の隙間に丁寧に産み付けた。",
+   "mem": "春に遡上し、縄張りを守り抜いた日々を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "冬の間、冷たい沿岸の海で身を潜めていた時間を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "夏の浅瀬で、激しく縄張りを争った記憶を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命の果て",
+  "line": "産卵の時を迎えぬまま、流れに消えていった。"
+ },
+ "facts": [
+  {
+   "quote": "An omnivore, the ayu feeds on algae, crustaceans, insects, sponges, and worms.",
+   "ja": "雑食性であり、藻類、甲殻類、昆虫、海綿、ミミズなどを食べる。"
+  },
+  {
+   "quote": "Adults typically maintain a feeding territory",
+   "ja": "成魚は通常、餌場の縄張りを維持する。"
+  },
+  {
+   "quote": "In reference to its typical one-year lifespan, it is also written as 年魚 (\"year-fish\").",
+   "ja": "一年で一生を終えることから「年魚」とも書かれる。"
+  },
+  {
+   "quote": "The name \"sweetfish\" was inspired by the sweetness of its flesh.",
+   "ja": "身の甘さから「スイートフィッシュ」という名がついた。"
+  }
+ ]
 }

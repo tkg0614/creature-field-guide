@@ -2,10 +2,736 @@
  "id": "seahorse",
  "ja": "タツノオトシゴ",
  "sci": "Hippocampus coronatus",
- "status": "draft-ng",
+ "status": "checked",
  "type": "fish",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "日本沿岸",
+  "geo": "Coastal waters of Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "zostera",
+   "ja": "アマモ場",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "稚魚が産み落とされる場所。細い葉に尾を巻きつけ、流れに身を任せる。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.271,
+   "lon": 132.309
+  },
+  {
+   "id": "shallow_weed",
+   "ja": "浅瀬の藻場",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "小型の甲殻類が豊富に漂う。擬態して身を潜め、獲物を吸い込む。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.271,
+   "lon": 134.709
+  },
+  {
+   "id": "tokyo_bay",
+   "ja": "東京湾の沿岸",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "穏やかな海域。海草の茂みに紛れて生活する。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.47,
+   "lon": 139.848
+  },
+  {
+   "id": "sagami_bay",
+   "ja": "相模湾の浅海",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "多様な海藻が生い茂る。天敵から逃れ、成長を待つ。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 35.227,
+   "lon": 139.373
+  },
+  {
+   "id": "rock_reef",
+   "ja": "岩礁の隙間",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "強い流れを避けられる場所。大型の端脚類などの餌を狙う。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 34.271,
+   "lon": 129.909
+  },
+  {
+   "id": "sandy_bottom",
+   "ja": "砂底の開けた海",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "隠れる場所がなく、捕食者に狙われやすい。移動の際にのみ通過する。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 32.193,
+   "lon": 130.809
+  },
+  {
+   "id": "dense_seaweed",
+   "ja": "海藻の密集地",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "繁殖期に雄雌が集まる。尾でしっかりと固定し、交尾を行う。",
+   "stages": [
+    "larva",
+    "juv",
+    "adult"
+   ],
+   "lat": 33.024,
+   "lon": 133.209
+  }
+ ],
+ "start": {
+  "place": "zostera",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "日本沿岸",
+  "lon0": 126.927,
+  "lon1": 142.83,
+  "lat0": 38.452,
+  "lat1": 29.211,
+  "k": 31,
+  "labels": [
+   [
+    37.89754,
+    134.8785,
+    "日本沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "dense_seaweed",
+   "zostera"
+  ],
+  [
+   "shallow_weed",
+   "zostera"
+  ],
+  [
+   "dense_seaweed",
+   "shallow_weed"
+  ],
+  [
+   "sagami_bay",
+   "tokyo_bay"
+  ],
+  [
+   "shallow_weed",
+   "tokyo_bay"
+  ],
+  [
+   "sagami_bay",
+   "shallow_weed"
+  ],
+  [
+   "rock_reef",
+   "sandy_bottom"
+  ],
+  [
+   "rock_reef",
+   "zostera"
+  ],
+  [
+   "dense_seaweed",
+   "sandy_bottom"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.2
+ },
+ "stats": {
+  "run": {
+   "ja": "遊泳力",
+   "use": "海藻の間をわずかに移動する時に効く"
+  },
+  "sense": {
+   "ja": "擬態力",
+   "use": "周囲の海藻に紛れて天敵から身を隠す時に効く"
+  },
+  "forage": {
+   "ja": "吸引力",
+   "use": "小さな甲殻類を瞬間的に吸い込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 21,
+   "hunger": 10,
+   "grow": 0.5,
+   "goal": "稚魚になる",
+   "enter": "オスの育児嚢の中で栄養を得て育った。"
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.06,
+   "days": 120,
+   "hunger": 15,
+   "grow": 3,
+   "goal": "成魚になる",
+   "enter": "育児嚢から出され、海藻に尾を巻きつけた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 0.5,
+   "days": 150,
+   "hunger": 20,
+   "grow": 0.5,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体が成熟し、繁殖の準備が整った。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1,
+   3
+  ],
+  "text": "海藻に身を任せたまま、静かに生命の灯が消えた。"
+ },
+ "breeding": {
+  "ja": "育児嚢での繁殖",
+  "ds": "6月から11月にかけて、オスが腹部の育児嚢で卵を育てる",
+  "months": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "places": [
+   "zostera",
+   "shallow_weed"
+  ],
+  "perYear": 1,
+  "kids": [
+   12,
+   46
+  ],
+  "many": 29,
+  "label": {
+   "ja": "稚魚",
+   "unit": "匹",
+   "child": "生まれたばかりの一匹"
+  },
+  "ok": "オスの育児嚢から、{born}匹の稚魚が飛び出した。",
+  "ng": "繁殖相手が見つからず、育児嚢が空のまま季節が過ぎた。",
+  "goal1": "稚魚を産む",
+  "goal2": "稚魚を30匹産む"
+ },
+ "foods": [
+  {
+   "id": "copepod",
+   "ja": "カイアシ類を食べる",
+   "name": "コペポーダ",
+   "ds": "微小な甲殻類を吸い込む",
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "places": [
+    "zostera",
+    "shallow_weed"
+   ],
+   "rich": [
+    "zostera"
+   ],
+   "ok": "漂う小さなカイアシ類を、鋭く吸い込んだ。",
+   "full": 30
+  },
+  {
+   "id": "amphipod",
+   "ja": "端脚類を食べる",
+   "name": "ヨコエビ",
+   "ds": "海藻に潜む甲殻類を捕食する",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "places": [
+    "zostera",
+    "shallow_weed",
+    "tokyo_bay",
+    "sagami_bay"
+   ],
+   "rich": [
+    "shallow_weed"
+   ],
+   "ok": "海藻の陰に潜むヨコエビを、一気に吸い上げた。",
+   "full": 40
+  }
+ ],
+ "special": [
+  {
+   "id": "brood_pouch",
+   "ja": "オスの育児嚢",
+   "ds": "オスが卵を保護し、稚魚になるまで育てる特殊な袋",
+   "stages": [
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.5,
+   "calm": true,
+   "ok": "腹部の袋で卵を大切に守り、安全に稚魚へと育て上げた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "jelly",
+   "ja": "クラゲ",
+   "kind": "any",
+   "places": [
+    "tokyo_bay",
+    "sagami_bay"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "漂う透明な傘が、水流に流される仔魚を静かに呑みこむ。",
+    "触手の刺胞が、小さな体に鋭く突き刺さる。"
+   ]
+  },
+  {
+   "id": "small_fish",
+   "ja": "小型の魚類",
+   "kind": "fish",
+   "places": [
+    "tokyo_bay",
+    "sagami_bay"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 2,
+   "texts": [
+    "プランクトンを追う小魚が、仔魚を餌と間違えて吸いこむ。",
+    "群れに囲まれ、逃げ場を失う。"
+   ]
+  },
+  {
+   "id": "shrimp",
+   "ja": "小型のエビ",
+   "kind": "crustacean",
+   "places": [
+    "zostera",
+    "shallow_weed"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "砂底に潜むエビが、不意に長い触手で稚魚を捕らえる。",
+    "鋭い鋏が、小さな体を締め上げる。"
+   ]
+  },
+  {
+   "id": "crab",
+   "ja": "カニ",
+   "kind": "crustacean",
+   "places": [
+    "zostera",
+    "shallow_weed",
+    "rock_reef"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海藻の根元に潜むカニが、ゆっくりと近づく獲物を挟み込む。",
+    "強固な甲殻に押さえつけられ、身動きが取れなくなる。"
+   ]
+  },
+  {
+   "id": "goby",
+   "ja": "ハゼ",
+   "kind": "fish",
+   "places": [
+    "sandy_bottom",
+    "shallow_weed"
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "砂底から不意に飛び出したハゼが、稚魚を一口で吸いこむ。",
+    "素早い突進が、擬態して静止する体を貫く。"
+   ],
+   "again": [
+    [
+     "また、目の赤いハゼだ。"
+    ],
+    [
+     "あの赤い目のハゼが、執拗に周囲を旋回している。"
+    ]
+   ],
+   "bye": "体が大きくなり、ハゼが口にできないサイズになった。"
+  },
+  {
+   "id": "flatfish",
+   "ja": "カレイ",
+   "kind": "fish",
+   "places": [
+    "sandy_bottom",
+    "tokyo_bay"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "砂に擬態した平たい体が、上方から急激に口を開く。",
+    "視界の外から、巨大な口が全てを覆い尽くす。"
+   ]
+  },
+  {
+   "id": "sea_bass",
+   "ja": "スズキ",
+   "kind": "fish",
+   "places": [
+    "shallow_weed",
+    "tokyo_bay",
+    "sagami_bay"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "銀色の巨体が藻場を切り裂き、猛スピードで突進してくる。",
+    "鋭い牙が、尾を巻きつけた海藻ごと引きちぎる。"
+   ],
+   "again": [
+    [
+     "また、背びれの欠けたスズキだ。"
+    ],
+    [
+     "背びれの欠けたスズキが、藻場の隙間を執拗に探っている。"
+    ]
+   ],
+   "bye": "さらに深い海藻の密集地へ逃げ込み、スズキの追跡を完全に振り切った。"
+  },
+  {
+   "id": "octopus",
+   "ja": "タコ",
+   "kind": "mollusc",
+   "places": [
+    "rock_reef",
+    "dense_seaweed"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "岩陰から伸びた吸盤付きの腕が、逃げ場のない体を絡めとる。",
+    "擬態を暴くように、鋭い触手が海藻の隙間をかき回す。"
+   ],
+   "again": [
+    [
+     "また、あの色の変わるタコだ。"
+    ],
+    [
+     "タコが腕を伸ばし、潜んでいる場所を正確に突き止めてくる。"
+    ]
+   ],
+   "bye": "擬態が完璧になり、タコの触手が空を切るようになった。"
+  },
+  {
+   "id": "cormorant",
+   "ja": "ウミウ",
+   "kind": "bird",
+   "places": [
+    "shallow_weed",
+    "zostera"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "水面から鋭い嘴が突き刺さり、海藻に掴まった体を強引に引き抜く。",
+    "黒い影が水中に潜り、激しく水をかき乱しながら獲物を追う。"
+   ]
+  },
+  {
+   "id": "collector",
+   "ja": "採取者",
+   "kind": "human",
+   "places": [
+    "zostera",
+    "shallow_weed"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "水面から網が降りてきて、擬態している体を強引に掬い上げる。",
+    "明るい光の下へ引きずり出され、周囲の海藻が遠のいていく。"
+   ],
+   "lose": "網で掬い上げられ、傷を負った。",
+   "fleeJa": "水流に身を任せて網の隙間を抜ける",
+   "hideJa": "海藻の深い根元に潜り込んでやり過ごす"
+  }
+ ],
+ "choices": [
+  {
+   "q": "稚魚となり、定住する場所を決める。アマモの茂みに潜むか、開けた砂底へ出るか",
+   "stages": [
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "アマモの密集地に身を隠す",
+     "ds": "擬態しやすく天敵に見つかりにくい。餌の密度は低くなる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "zostera",
+     "say": "細いアマモの茎に尾を巻きつけ、風景の一部となって身を潜めた。",
+     "chip": "アマモ場に潜む"
+    },
+    {
+     "ja": "砂底の開けた海へ出る",
+     "ds": "プランクトンが豊富で成長が早い。捕食者に狙われる危険が高まる",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "sandy_bottom",
+     "say": "餌の豊富な開けた海域へ進み、絶えず流れてくる小動物を追った。",
+     "chip": "砂底へ出る"
+    }
+   ]
+  },
+  {
+   "q": "成長に伴い、獲物のサイズを変える。小さなカイアシ類を追うか、大きな端脚類を狙うか",
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "小さなカイアシ類を確実に吸い込む",
+     "ds": "捕食の失敗が少なく体力を維持できる。成長速度は緩やかになる",
+     "fx": {
+      "food": -1,
+      "danger": -1
+     },
+     "goto": "shallow_weed",
+     "say": "小さな獲物を正確に狙い、静かに吸い込んで腹を満たした。",
+     "chip": "小動物を食す"
+    },
+    {
+     "ja": "大きな端脚類を積極的に狙う",
+     "ds": "栄養価が高く急速に成長できる。獲物の抵抗により体力を消耗する",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "shallow_weed",
+     "say": "限界に近いサイズの甲殻類に挑み、激しい吸引音とともに捕食した。",
+     "chip": "大型個体を狙う"
+    }
+   ]
+  },
+  {
+   "q": "繁殖の季節だ。どのような相手と番いになるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "opts": [
+    {
+     "ja": "体格の良い個体と番いになる",
+     "ds": "多くの卵を預かり、子を多く残せる。育児嚢への身体的負担が大きい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "dense_seaweed",
+     "say": "立派な体躯の相手を選び、育児嚢を大きく膨らませて卵を育てた。",
+     "chip": "大型個体と番い"
+    },
+    {
+     "ja": "小ぶりな個体と番いになる",
+     "ds": "身体への負担が少なく生存率が高まる。産まれる子の数は限られる",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "dense_seaweed",
+     "say": "控えめなサイズの相手と番いになり、無理のない範囲で子を育てた。",
+     "chip": "小型個体と番い"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.2,
+   "say": "小型の魚に襲われ、尾を深く噛まれ、傷を負った。",
+   "full": -15
+  },
+  {
+   "month": [
+    9,
+    10
+   ],
+   "stages": [
+    "juv",
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "周囲の海藻に完璧に擬態し、天敵の目を欺いて平穏に過ごした。",
+   "full": 10
+  },
+  {
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "p": 0.1,
+   "say": "強い潮流に流され、身を隠せる藻場から離れて疲弊した。",
+   "full": -10
+  }
+ ],
+ "lead": "日本の浅い海、揺れる海藻に尾を巻きつけ、静かに時を待つ。雄が腹の袋で命を育み、小さな竜たちが海へと放たれる。",
+ "texts": {
+  "move": "{to}へ、ゆっくりと泳いでいった。",
+  "fleeJa": "海藻の影に身を潜める",
+  "restJa": "尾をしっかりと巻きつける",
+  "watchJa": "管状の口吻で獲物を狙う",
+  "lieJa": "周囲の色に身を溶かす",
+  "lastMemory": "揺れる海藻の間で、静かに海を眺めていた日々を思い出した。"
+ },
+ "intro": [
+  "雄の育児嚢の中で、静かに時を待っていた。",
+  "震える体と共に海へ押し出され、小さな体で海藻にすがりつく。"
+ ],
+ "wins": [
+  {
+   "minKids": 12,
+   "title": "次世代を海に放った",
+   "line": "{kids}匹の稚魚を、育児嚢から海へと送り出した。",
+   "mem": "腹の袋が軽くなった瞬間と、散らばっていく小さな命を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "鋭い吸引力で、小さなプランクトンを吸い込んだ瞬間を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "海藻に擬態し、天敵の目を欺いた静寂を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "静かに消える",
+  "line": "子を残すことなく、海藻の茂みの底へと沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "It is endemic to the Pacific coastal waters of Japan (found in shallow coastal waters from Tokyo bay and Sagami bay), where it lives among Zostera seagrasses.",
+   "ja": "日本の太平洋沿岸（東京湾や相模湾の浅海など）の固有種であり、アマモ場に生息する。"
+  },
+  {
+   "quote": "Individuals feed mainly on small crustaceans such as gammarid amphipods and copepods",
+   "ja": "主にヨコエビ類やカイアシ類などの小型甲殻類を餌とする。"
+  },
+  {
+   "quote": "This species is ovoviviparous, with males brooding eggs in a brood pouch before giving birth to live young.",
+   "ja": "卵胎生であり、雄が育児嚢で卵を保護し、稚魚として産み出す。"
+  },
+  {
+   "quote": "Male brood size ranges from 12–46.",
+   "ja": "雄が一度に産み出す稚魚の数は12から46匹である。"
+  }
+ ]
 }

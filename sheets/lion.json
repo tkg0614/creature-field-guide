@@ -1,0 +1,800 @@
+{
+ "id": "lion",
+ "ja": "ライオン",
+ "sci": "Panthera leo",
+ "status": "checked",
+ "type": "mammal",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "タンザニア・セレンゲティ国立公園",
+  "geo": "Serengeti National Park",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "kopje",
+   "ja": "コピエ（岩山）",
+   "danger": 0,
+   "cover": true,
+   "about": "草原の中に隆起した巨岩地帯。外敵から仔を隠し、周囲を見渡す拠点になる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.3,
+   "lon": 34.8
+  },
+  {
+   "id": "riverine_forest",
+   "ja": "川沿いの林",
+   "danger": 1,
+   "cover": true,
+   "about": "水辺に沿って広がる木立。昼間の激しい暑さを避け、静かに休息をとる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.3,
+   "lon": 34.832
+  },
+  {
+   "id": "open_grassland",
+   "ja": "見通しの良い草原",
+   "danger": 1,
+   "cover": false,
+   "about": "広大な草地でヌーやシマウマが群れる。身を隠す場所が極めて乏しい。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.27,
+   "lon": 34.812
+  },
+  {
+   "id": "waterhole",
+   "ja": "サバンナの水場",
+   "danger": 2,
+   "cover": false,
+   "about": "多くの獲物が集まる絶好の狩り場。ブチハイエナやワニとの接触も多い。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.289,
+   "lon": 34.781
+  },
+  {
+   "id": "acacia_bush",
+   "ja": "トゲの多い低木林",
+   "danger": 1,
+   "cover": true,
+   "about": "まばらな潅木が広がる。獲物を仕留めるための待ち伏せに適している。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.315,
+   "lon": 34.774
+  },
+  {
+   "id": "territory_edge",
+   "ja": "縄張りの境目",
+   "danger": 3,
+   "cover": false,
+   "about": "隣接する群れや放浪する雄と頻繁に遭遇する。群れ同士の激しい闘争が起きる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": -2.33,
+   "lon": 34.812
+  }
+ ],
+ "start": {
+  "place": "kopje",
+  "month": 3,
+  "day": 15
+ },
+ "region": {
+  "ja": "タンザニア・セレンゲティ国立公園",
+  "lon0": 34.757,
+  "lon1": 34.849,
+  "lat0": -2.253,
+  "lat1": -2.347,
+  "k": 5435,
+  "labels": [
+   [
+    -2.25864,
+    34.803,
+    "タンザニア・セレンゲティ国立公園"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "kopje",
+   "waterhole"
+  ],
+  [
+   "acacia_bush",
+   "kopje"
+  ],
+  [
+   "kopje",
+   "riverine_forest"
+  ],
+  [
+   "open_grassland",
+   "riverine_forest"
+  ],
+  [
+   "kopje",
+   "open_grassland"
+  ],
+  [
+   "acacia_bush",
+   "waterhole"
+  ],
+  [
+   "kopje",
+   "territory_edge"
+  ],
+  [
+   "riverine_forest",
+   "territory_edge"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 30
+ },
+ "stats": {
+  "run": {
+   "ja": "突進力",
+   "use": "獲物に一気に詰め寄る時に効く"
+  },
+  "sense": {
+   "ja": "夜目の感覚",
+   "use": "暗闇で獲物や敵を探る時に効く"
+  },
+  "forage": {
+   "ja": "狩りの連携",
+   "use": "群れで獲物を包囲する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "cub",
+   "ja": "仔ライオン",
+   "days": 30,
+   "hunger": 15,
+   "grow": 3,
+   "goal": "幼ライオンになる",
+   "enter": "母の乳を飲み、岩山の物陰で身を潜めて育つ。"
+  },
+  {
+   "id": "juv",
+   "ja": "幼ライオン",
+   "fromAge": 1,
+   "days": 60,
+   "hunger": 12,
+   "grow": 2,
+   "goal": "若ライオンになる",
+   "enter": "肉の味を覚えた。群れの仔同士で狩りの真似事をして遊ぶ。"
+  },
+  {
+   "id": "sub",
+   "ja": "若ライオン",
+   "fromAge": 2,
+   "days": 90,
+   "hunger": 12,
+   "grow": 1,
+   "goal": "成獣になる",
+   "enter": "体が引き締まった。群れの狩りに加わり技術を磨く。"
+  },
+  {
+   "id": "adult",
+   "ja": "成獣",
+   "fromAge": 3,
+   "days": 120,
+   "hunger": 10,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "プライドを維持する",
+   "enter": "体が完全に熟した。群れを支え、縄張りを守る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   15
+  ],
+  "text": "獲物を追う力が衰えた。静かに木陰で横たわり、息を引き取った。"
+ },
+ "breeding": {
+  "ja": "隠れ場所で産む",
+  "ds": "群れから少し離れた岩山や茂みで、数頭の仔を産み育てる",
+  "months": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "places": [
+   "kopje",
+   "acacia_bush"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   4
+  ],
+  "many": 3,
+  "label": {
+   "ja": "仔ライオン",
+   "unit": "頭",
+   "child": "プライドに迎えた仔"
+  },
+  "ok": "茂みの奥で、{born}頭の仔が生まれた。",
+  "ng": "無事に子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を2頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "母乳を飲む",
+   "name": "母乳",
+   "ds": "母の乳を飲んで栄養を蓄える",
+   "stages": [
+    "cub"
+   ],
+   "places": [
+    "kopje",
+    "acacia_bush"
+   ],
+   "rich": [
+    "kopje"
+   ],
+   "ok": "母の温もりを感じながら乳を飲んだ。",
+   "full": 40
+  },
+  {
+   "id": "medium_prey",
+   "ja": "草食獣を狩る",
+   "name": "シマウマやヌー",
+   "ds": "群れで連携し、中型の草食獣を仕留めて食べる",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "open_grassland",
+    "waterhole",
+    "riverine_forest"
+   ],
+   "rich": [
+    "open_grassland"
+   ],
+   "ok": "背後から飛びかかり、獲物の喉元を締め上げた。",
+   "full": 60
+  }
+ ],
+ "special": [
+  {
+   "id": "pride_ambush",
+   "ja": "プライドの伏兵",
+   "ds": "仲間と連携して獲物を追い込み、逃げ場を塞ぐ",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.8,
+   "calm": true,
+   "ok": "草むらに低く身を伏せ、仲間の合図を待つ。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    6,
+    7
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "to": "riverine_forest",
+   "say": "乾季が訪れた。水を求め集まる草食獣を追って川沿いの林へ向かう。"
+  },
+  {
+   "months": [
+    11,
+    12
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "to": "open_grassland",
+   "say": "雨季が訪れた。青草が芽吹き獲物が広がる見通しの良い草原へと戻る。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "nomad_male",
+   "ja": "放浪する雄ライオン",
+   "kind": "mammal",
+   "places": [
+    "kopje",
+    "open_grassland",
+    "territory_edge"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "見知らぬ雄の唸り声が、地響きのように届く。",
+    "群れの主を追い払おうと、たくましい雄が迫る。"
+   ],
+   "again": [
+    [
+     "また、あの放浪雄が縄張りをうかがっている。"
+    ],
+    [
+     "低い咆哮が、風に乗って再び近づく。"
+    ]
+   ],
+   "bye": "成獣となり、自らの力で群れを守り抜ける。",
+   "lose": "鋭い牙で喉元を噛み裂かれ、傷を負った。",
+   "fleeJa": "低木の陰に逃げ込む",
+   "hideJa": "岩の隙間に身を潜める"
+  },
+  {
+   "id": "hyena_pack",
+   "ja": "ブチハイエナの群れ",
+   "kind": "mammal",
+   "places": [
+    "open_grassland",
+    "waterhole",
+    "territory_edge"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub"
+   ],
+   "sev": 2,
+   "texts": [
+    "不気味な笑い声を上げ、黄色い影が取り囲む。",
+    "骨をも砕く強靭な顎を鳴らし、間合いを詰める。"
+   ],
+   "again": [
+    [
+     "また、あのハイエナの群れがつきまとう。"
+    ],
+    [
+     "嘲笑うような鳴き声が、暗闇から響く。"
+    ]
+   ],
+   "bye": "堂々たる体格に育ち、一睨みで追い散らす。",
+   "lose": "四方から執拗に噛みつかれ、傷を負った。",
+   "fleeJa": "コピエの岩場へ走る",
+   "hideJa": "母の足元に隠れる"
+  },
+  {
+   "id": "cape_buffalo",
+   "ja": "アフリカスイギュウの群れ",
+   "kind": "mammal",
+   "places": [
+    "open_grassland",
+    "waterhole"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "固い蹄を踏み鳴らし、巨大な黒い壁が突進してくる。",
+    "太い角を振りかざし、激しい鼻息を吐き散らす。"
+   ],
+   "lose": "重い角で宙へ突き上げられ、傷を負った。",
+   "fleeJa": "急旋回して跳びのく",
+   "hideJa": "丈の高い草に伏せる"
+  },
+  {
+   "id": "african_elephant",
+   "ja": "アフリカゾウの群れ",
+   "kind": "mammal",
+   "places": [
+    "waterhole",
+    "riverine_forest",
+    "open_grassland"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "地を揺るがす足音とともに、長い鼻が高く上がる。",
+    "耳を大きく広げ、けたたましい咆哮で威嚇する。"
+   ],
+   "lose": "巨大な巨体に打ち据えられ、傷を負った。",
+   "fleeJa": "素早く駆け抜ける",
+   "hideJa": "低木林の奥へ退く"
+  },
+  {
+   "id": "nile_crocodile",
+   "ja": "ナイルワニ",
+   "kind": "reptile",
+   "places": [
+    "waterhole",
+    "riverine_forest"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水面を音もなく滑る、冷たい瞳が見つめる。",
+    "濁った水が炸裂し、巨大な顎が飛び出す。"
+   ],
+   "lose": "水際で強烈な一撃を浴びせられ、傷を負った。",
+   "fleeJa": "陸地へ跳び退く",
+   "hideJa": "水際から離れて伏せる"
+  },
+  {
+   "id": "leopard",
+   "ja": "ヒョウ",
+   "kind": "mammal",
+   "places": [
+    "kopje",
+    "riverine_forest",
+    "acacia_bush"
+   ],
+   "stages": [
+    "cub"
+   ],
+   "sev": 1,
+   "texts": [
+    "樹上から斑紋の影が、音もなく滑り降りる。",
+    "母の留守を狙い、黄色い眼光が仔に近づく。"
+   ],
+   "lose": "木の上から飛びかかられ、鋭い鉤爪で引き裂かれて傷を負った。",
+   "fleeJa": "母の匂いを追って走る",
+   "hideJa": "岩の割れ目に潜り込む"
+  },
+  {
+   "id": "hippopotamus",
+   "ja": "カバ",
+   "kind": "mammal",
+   "places": [
+    "waterhole",
+    "riverine_forest"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub"
+   ],
+   "sev": 2,
+   "texts": [
+    "巨大な口を大きく開き、鋭い門歯を見せつける。",
+    "巨体を揺らしながら、水場から突進してくる。"
+   ],
+   "lose": "巨体で体当たりされ、傷を負った。",
+   "fleeJa": "乾いた大地へ駆け上がる",
+   "hideJa": "草むらの窪みに隠れる"
+  },
+  {
+   "id": "giraffe",
+   "ja": "キリン",
+   "kind": "mammal",
+   "places": [
+    "acacia_bush",
+    "open_grassland"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "長い首をもたげ、警戒のまなざしを向ける。",
+    "太い脚から、頭蓋を砕くほどの蹴りが放たれる。"
+   ],
+   "lose": "重い前脚で強烈に蹴り飛ばされ、傷を負った。",
+   "fleeJa": "横へ跳んで躱す",
+   "hideJa": "藪の中に伏せる"
+  },
+  {
+   "id": "pastoralist",
+   "ja": "家畜を守る牧民",
+   "kind": "human",
+   "places": [
+    "territory_edge"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "柵の向こうから、鋭い金属の槍が構えられる。",
+    "犬の激しい吠え声とともに、叫び声が迫る。"
+   ],
+   "lose": "投げられた鉄の槍で体を突かれ、傷を負った。",
+   "fleeJa": "暗闇の中へ全力疾走する",
+   "hideJa": "低木の茂みに身を潜める"
+  },
+  {
+   "id": "poacher_snare",
+   "ja": "密猟者のワイヤー罠",
+   "kind": "human",
+   "places": [
+    "riverine_forest",
+    "territory_edge"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "けもの道に、冷たい針金が仕掛けられている。",
+    "草に隠された金属の輪が、獲物を待つ。"
+   ],
+   "lose": "足首をワイヤーで締め上げられ、傷を負った。",
+   "fleeJa": "力任せに後ずさる",
+   "hideJa": "動かずに気配を探る"
+  }
+ ],
+ "choices": [
+  {
+   "q": "見慣れぬ雄ライオンが群れに接近してきた。どう身を守るか",
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "コピエの深い岩陰に身を隠す",
+     "ds": "侵入者に見つかりにくいが、母の保護から離れる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "冷たい岩の裂け目に深く潜み、気配が立ち去るのをじっと待った。",
+     "chip": "潜伏"
+    },
+    {
+     "ja": "母ライオンの足元へ駆け寄る",
+     "ds": "母の庇護を得られるが、威嚇や闘争の巻き添えになる危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "say": "低く唸る母の腹の下へ滑り込み、震えながら身を寄せた。",
+     "chip": "追従"
+    }
+   ]
+  },
+  {
+   "q": "群れが大型のシマウマを包囲した。どう加わるか",
+   "stages": [
+    "juv",
+    "sub"
+   ],
+   "opts": [
+    {
+     "ja": "側面から回り込んで退路を塞ぐ",
+     "ds": "狩りの成功に貢献できるが、獲物の強烈な蹴りを受ける危険がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "全速力で草地を駆け抜け、逃走する獲物の前に立ちはだかった。",
+     "chip": "挟撃"
+    },
+    {
+     "ja": "茂みから仲間の仕掛けを見守る",
+     "ds": "負傷の心配はないが、仕留めた肉の分け前が少なくなる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "トゲの多い低木に伏せ、成獣の鋭い連係動作を目に焼き付けた。",
+     "chip": "観察"
+    }
+   ]
+  },
+  {
+   "q": "生まれ育った群れを離れる時期が来た。どう生き抜くか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "同世代の雄と同盟を組んで放浪する",
+     "ds": "仲間と協力して大型獣を狩れるが、常に獲物を分け合う必要がある",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "兄弟たちと肩を寄せ合い、見知らぬ荒野へ新たな縄張りを求めて旅立った。",
+     "chip": "同盟"
+    },
+    {
+     "ja": "単独で既存のプライドの雄へ挑む",
+     "ds": "群れの乗っ取りに成功すれば君臨できるが、敗退すれば致命傷を負う",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "縄張りの境界で激しく咆哮し、老いた雄へと真っ向から突進した。",
+     "chip": "単独挑戦"
+    }
+   ]
+  },
+  {
+   "q": "乾季の水場に気性の荒いバッファローが現れた。どう仕掛けるか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "仲間と呼吸を合わせて首元へ跳びかかる",
+     "ds": "大量の肉にありつけるが、鋭い角による反撃で命を落とす恐れがある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "仲間の牽制に乗じて背後から飛び乗り、太い喉元に牙を深く突き立てた。",
+     "chip": "正面突破"
+    },
+    {
+     "ja": "深追いを避けて小型の獲物を狙う",
+     "ds": "安全に狩りを終えられるが、得られる獲物は小さく空腹が残る",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "危険な巨獣を見送り、水辺に油断して近づいたイボイノシシへ標的を変えた。",
+     "chip": "堅実"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.35,
+   "say": "雨季の訪れとともに無数のヌーが草原を埋め尽くし、豊かな恵みをもたらした。",
+   "full": 20
+  },
+  {
+   "month": [
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "厳しい乾季により草が枯れ果て、獲物の群れが遠く北の地へ去っていった。",
+   "full": -15
+  },
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "cub"
+   ],
+   "p": 0.15,
+   "say": "群れの統率を崩そうとする放浪雄が侵入し、緊迫した空気に包まれた。",
+   "full": -10
+  }
+ ],
+ "lead": "タンザニア・セレンゲティのサバンナで、プライドと呼ばれる群れと共に生きる。仲間と協力して獲物を追い、広大な草原に君臨する。",
+ "texts": {
+  "move": "{to}へ、群れの仲間と歩いていった。",
+  "fleeJa": "身を低くし、危険をかわす",
+  "restJa": "木陰や岩山で、仲間と身を休める",
+  "watchJa": "岩山から身を起こし、草原の獲物を探す",
+  "lieJa": "サバンナの木陰に、静かに伏せる",
+  "lastMemory": "仲間と身を寄せ合った温もりと、夕暮れのサバンナの風を思い出した。"
+ },
+ "intro": [
+  "セレンゲティのサバンナで生まれた。",
+  "母の乳を飲み、岩山の陰で守られながら育ち始める。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "プライドの血筋を継ぐ",
+   "line": "{kids}頭の子が、サバンナの誇りを受け継ぐ。",
+   "mem": "生まれたばかりの子を優しくなめた日の、夕暮れの草原を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "群れの仲間と息を合わせ、大型の獲物を仕留めた日を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "群れを支え抜いた生涯",
+  "line": "子を残さずとも、プライドの誇りは消えない。",
+  "mem": "仲間と共にサバンナを駆け抜けた日々を思い出した。"
+ },
+ "facts": [
+  {
+   "quote": "A lion pride consists of related females and cubs, and a few or one adult male who is unrelated to the females. Groups of female lions usually hunt together."
+  },
+  {
+   "text": "ライオンは頂点捕食者であり、主に中型から大型の有蹄類を捕食する。"
+  }
+ ]
+}

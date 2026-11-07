@@ -2,12 +2,15 @@
  "id": "waterstrider",
  "ja": "アメンボ",
  "sci": "Aquarius paludum",
- "status": "draft-ng",
+ "status": "checked",
  "type": "insect_annual",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "gemini-gemma gemma-4-31b-it"
  },
  "locale": {
   "ja": "関東平野",
@@ -23,6 +26,7 @@
    "about": "水際に卵が産み付けられる。孵化したばかりの幼虫が水面に慣れる場所である。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 41.126,
@@ -36,6 +40,7 @@
    "about": "水草に身を隠し、小さな虫を狙う。脱皮を繰り返して成長する。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 41.126,
@@ -49,6 +54,7 @@
    "about": "水面に落ちた獲物を素早く捕らえる。魚や鳥に見つかりやすい危険な場所である。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 43.204,
@@ -62,6 +68,7 @@
    "about": "広大な水面を滑走し、餌を探す。成虫となり、活発に活動する。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 42.373,
@@ -75,6 +82,7 @@
    "about": "流れの緩い場所で獲物を待つ。水草の陰に潜んで休息する。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 41.126,
@@ -88,6 +96,7 @@
    "about": "水面の枯れ草や土の隙間に潜む。成虫のまま冬の寒さを耐え忍ぶ。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 39.048,
@@ -101,6 +110,7 @@
    "about": "暖かくなった水面で求愛行動を行う。次の世代へ命を繋ぐための場所である。",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "lat": 39.879,
@@ -169,7 +179,7 @@
  "stats": {
   "run": {
    "ja": "滑走力",
-   "use": "水面を高速で移動し、獲物に近づく・敵から逃げる時に効く"
+   "use": "水面を高速で移動し、獲物に近づく時に効く"
   },
   "sense": {
    "ja": "振動感知力",
@@ -177,29 +187,39 @@
   },
   "forage": {
    "ja": "捕獲力",
-   "use": "前脚で獲物を押さえ、口器を突き刺す時に効く"
+   "use": "前脚で獲物を押さえ、口器で突き刺す時に効く"
   }
  },
  "stages": [
   {
    "id": "nymph",
    "ja": "幼虫",
-   "days": 36,
+   "days": 35,
    "hunger": 10,
-   "grow": 0.8,
-   "goal": "成虫になる",
-   "enter": "水辺で孵化した。水面に浮かび、小さな虫を狙う。"
+   "grow": 0.7,
+   "goal": "脱皮を繰り返し成長する",
+   "enter": "水辺の植物の間で孵化した。水面に浮かび、小さな虫を狙う。"
+  },
+  {
+   "id": "adult_young",
+   "ja": "未成熟成虫",
+   "fromAge": 0.1,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.2,
+   "goal": "冬を越して体力を蓄える",
+   "enter": "羽化した。秋の冷たい水面を滑り、冬の枯れ草の下でじっと耐える。"
   },
   {
    "id": "adult",
-   "ja": "成虫",
-   "fromAge": 0.1,
-   "days": 144,
+   "ja": "成熟成虫",
+   "fromAge": 0.4,
+   "days": 60,
    "hunger": 12,
    "grow": 0.1,
    "adult": true,
-   "goal": "子を残し冬を越す",
-   "enter": "成熟し、水面を自在に滑走できるようになった。"
+   "goal": "次世代に命を繋ぐ",
+   "enter": "春の陽気に誘われ、再び水面へ出た。交尾し、卵を産み付ける。"
   }
  ],
  "oldAge": {
@@ -207,15 +227,15 @@
    0.4,
    0.6
   ],
-  "text": "冬の冷たい水面で動きを止め、静かに生を終えた。"
+  "text": "春の陽だまりの中、役目を終えて静かに水面から消えた。"
  },
  "breeding": {
-  "ja": "水面産卵",
-  "ds": "水際に卵を産み付ける。",
+  "ja": "植物への産卵",
+  "ds": "口器を用いて水辺の植物の組織に卵を挿入する",
   "months": [
-   6,
-   7,
-   8
+   3,
+   4,
+   5
   ],
   "places": [
    "shallow_pond",
@@ -230,21 +250,22 @@
   "label": {
    "ja": "卵",
    "unit": "個",
-   "child": "孵化を待つ卵のひとつ"
+   "child": "水辺の植物に産み付けられた卵のひとつ"
   },
-  "ok": "水草の陰に、{born}個の卵を産み付けた。",
-  "ng": "適切な産卵場所が見つからず、卵を落とせなかった。",
-  "goal1": "水辺に産卵する",
+  "ok": "水草の茎に、{born}個の卵を産み付けた。",
+  "ng": "適した産卵場所が見つからず、卵を産めなかった。",
+  "goal1": "水辺の植物に卵を産む",
   "goal2": "累計で500個の卵を産む"
  },
  "foods": [
   {
-   "id": "fallen_insect",
-   "ja": "水面に落ちた虫を捕らえる",
-   "name": "落虫",
-   "ds": "水面に落ちた小昆虫やクモに素早く近づき、口器を突き刺して消化液を注入する",
+   "id": "small_insects",
+   "ja": "小昆虫を捕らえる",
+   "name": "小昆虫",
+   "ds": "水面に落ちた虫を前脚で押さえ、口器で消化液を注入して吸汁する",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "places": [
@@ -255,42 +276,463 @@
    "rich": [
     "open_water"
    ],
-   "ok": "水面の振動を察知し、落ちた虫を素早く捕らえた。",
+   "ok": "水面に落ちた羽虫を素早く捕らえ、体液を吸い尽くした。",
    "full": 30
   }
  ],
  "special": [
   {
-   "id": "surface_tension_glide",
-   "ja": "表面張力滑走",
-   "ds": "脚の毛と油分で水面に浮かび、中脚で推進して水面を滑る",
+   "id": "surface_tension",
+   "ja": "表面張力の利用",
+   "ds": "脚の密生した毛と油分により、水に沈まずに水面を滑走できる",
    "stages": [
     "nymph",
+    "adult_young",
     "adult"
    ],
    "stat": "run",
    "base": 0.8,
    "calm": true,
-   "ok": "水面に足跡を残しながら、滑るように高速で移動した。"
+   "ok": "脚先の毛で水面を捉え、重力に抗って軽やかに滑走した。"
   }
  ],
  "levelEvery": 4,
- "fail": {
-  "part": "life",
-  "errors": [
-   "stages は3〜5個"
-  ],
-  "got": [
-   "size",
-   "stats",
-   "stages",
-   "oldAge",
-   "breeding",
-   "foods",
-   "special",
-   "levelEvery"
-  ],
-  "head": "{\"size\":{\"ja\":\"体長\",\"unit\":\"cm\",\"start\":1.1},\"stats\":{\"run\":{\"ja\":\"滑走力\",\"use\":\"水面を高速で移動し、獲物に近づく・敵から逃げる時に効く\"},\"sense\":{\"ja\":\"振動感知力\",\"use\":\"水面の波紋から獲物の位置を特定する時に効く\"},\"forage\":{\"ja\":\"捕獲力\",\"use\":\"前脚で獲物を押さえ、口器を突き刺す時に効く\"}},\"stages\":[{\"id\":\"nymph\",\"ja\":\"幼虫\",\"days\":36,\"hunger\":10,\"grow\":0.8,\"goal\":\"成虫になる\",\"enter\":\"水辺で孵化した。水面に浮かび、小さな虫を狙う。\"},{\"id\":\"adult\",\"ja\":\"成虫\",\"fromAge\":0.1,\"days\":144,\"hunger\":12,\"grow\":0",
-  "raw": "を突き刺して消化液を注入する\",\n      \"stages\": [\n        \"nymph\",\n        \"adult\"\n      ],\n      \"places\": [\n        \"open_water\",\n        \"shallow_pond\",\n        \"rice_paddy\"\n      ],\n      \"rich\": [\n        \"open_water\"\n      ],\n      \"ok\": \"水面の振動を察知し、落ちた虫を素早く捕らえた。\",\n      \"full\": 30\n    }\n  ],\n  \"special\": [\n    {\n      \"id\": \"surface_tension_glide\",\n      \"ja\": \"表面張力滑走\",\n      \"ds\": \"脚の毛と油分で水面に浮かび、中脚で推進して水面を滑る\",\n      \"stages\": [\n        \"nymph\",\n        \"adult\"\n      ],\n      \"stat\": \"run\",\n      \"base\": 0.8,\n      \"calm\": true,\n      \"ok\": \"水面に足跡を残しながら、滑るように高速で移動した。\"\n    }\n  ],\n  \"levelEvery\": 4\n}\n```"
- }
+ "foes": [
+  {
+   "id": "crucian_carp",
+   "ja": "フナ",
+   "kind": "fish",
+   "places": [
+    "shallow_pond",
+    "open_water",
+    "rice_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水底から銀色の影が鋭く突き上げる。",
+    "大きな口が、水面ごと獲物を吸い込む。"
+   ]
+  },
+  {
+   "id": "japanese_tree_frog",
+   "ja": "ニホンアマガエル",
+   "kind": "amphibian",
+   "places": [
+    "pond_edge",
+    "shallow_pond",
+    "rice_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "岸辺の草陰から、粘つく長い舌が伸びる。",
+    "緑色の体が、水面へ向かって飛び込んでくる。"
+   ]
+  },
+  {
+   "id": "common_kingfisher",
+   "ja": "カワセミ",
+   "kind": "bird",
+   "places": [
+    "pond_edge",
+    "river_bank",
+    "shallow_pond"
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "青い閃光が、水面を激しく叩く。",
+    "鋭いくちばしが、水しぶきと共に迫る。"
+   ],
+   "again": [
+    [
+     "あの枝に、青い宝石のような鳥が止まっている。"
+    ],
+    [
+     "水辺の止まり木から、鋭い眼光がこちらを射抜く。"
+    ]
+   ],
+   "bye": "季節が変わり、青い閃光は遠い南の地へと去った。"
+  },
+  {
+   "id": "giant_water_bug",
+   "ja": "タガメ",
+   "kind": "insect",
+   "places": [
+    "shallow_pond",
+    "open_water",
+    "rice_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "adult_young",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "水底から巨大な前脚が、獲物を捕らえるため突き出される。",
+    "表面張力の膜を突き破り、強靭なアゴが襲いかかる。"
+   ],
+   "again": [
+    [
+     "また、水底に潜む巨大な影がこちらを伺っている。"
+    ],
+    [
+     "水面下から、逃れられない死の抱擁が忍び寄る。"
+    ]
+   ],
+   "bye": "冬の寒さが深まり、水底の怪物は泥の中へ眠りについた。"
+  },
+  {
+   "id": "diving_beetle",
+   "ja": "ゲンゴロウ",
+   "kind": "insect",
+   "places": [
+    "shallow_pond",
+    "rice_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水面下を泳ぐ黒い影が、下から急襲する。",
+    "鋭い大あごが、水面の膜を突き破って迫る。"
+   ]
+  },
+  {
+   "id": "barn_swallow",
+   "ja": "ツバメ",
+   "kind": "bird",
+   "places": [
+    "open_water",
+    "rice_paddy"
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "低空を飛ぶ黒い影が、水面をかすめていく。",
+    "素早い動きで、水上の獲物をさらう。"
+   ]
+  },
+  {
+   "id": "white_wagtail",
+   "ja": "ハクセキレイ",
+   "kind": "bird",
+   "places": [
+    "pond_edge",
+    "river_bank",
+    "rice_paddy"
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "岸辺を小刻みに走り、素早くくちばしを突き出す。",
+    "水際のわずかな隙を突き、鋭く狙う。"
+   ]
+  },
+  {
+   "id": "orb_weaver",
+   "ja": "ジョロウグモ",
+   "kind": "arachnid",
+   "places": [
+    "pond_edge",
+    "river_bank"
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水辺の枝に張られた網に、不意に触れる。",
+    "粘つく糸に絡まり、クモが静かに近づく。"
+   ]
+  },
+  {
+   "id": "pesticide",
+   "ja": "農薬",
+   "kind": "human",
+   "places": [
+    "rice_paddy"
+   ],
+   "stages": [
+    "nymph",
+    "adult_young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "田んぼの水に、目に見えない毒が混じる。",
+    "水面に漂う薬剤が、じわりと体に染み込む。"
+   ],
+   "lose": "水に溶けた薬剤に蝕まれ、傷を負った。",
+   "fleeJa": "流れのある場所へ逃れる",
+   "hideJa": "水草の根元に身を潜める"
+  },
+  {
+   "id": "insect_net",
+   "ja": "捕虫網",
+   "kind": "human",
+   "places": [
+    "pond_edge",
+    "shallow_pond",
+    "rice_paddy"
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "水面へ向かって、白い網が勢いよく振り下ろされる。",
+    "逃げ場のない網に、あっけなく閉じ込められる。"
+   ],
+   "lose": "網に激しく打ち付けられ、傷を負った。",
+   "fleeJa": "水面を高速で滑走してかわす",
+   "hideJa": "水草の茂みに潜り込む"
+  }
+ ],
+ "choices": [
+  {
+   "q": "孵化したばかりの幼虫だ。どこで獲物を待つか",
+   "stages": [
+    "nymph"
+   ],
+   "month": [
+    4,
+    5
+   ],
+   "opts": [
+    {
+     "ja": "水草の茂る浅瀬にとどまる",
+     "ds": "隠れ場所が多く安全。獲物の種類が限られる",
+     "fx": {
+      "danger": -0.5,
+      "food": -0.2
+     },
+     "goto": "shallow_pond",
+     "say": "水草の影に潜み、水面に落ちる小さな虫をじっと待った。",
+     "chip": "浅瀬で待機"
+    },
+    {
+     "ja": "池の中央まで進出する",
+     "ds": "獲物が落ちてきやすく効率的。鳥などの天敵に見つかりやすい",
+     "fx": {
+      "danger": 0.5,
+      "food": 0.5
+     },
+     "goto": "open_water",
+     "say": "遮るもののない水面を滑走し、獲物の振動を鋭く察知した。",
+     "chip": "中央で狩り"
+    }
+   ]
+  },
+  {
+   "q": "成虫になり、活動範囲を広げる。どこに居を構えるか",
+   "stages": [
+    "adult_young"
+   ],
+   "month": [
+    6,
+    7
+   ],
+   "opts": [
+    {
+     "ja": "夏の田んぼへ移動する",
+     "ds": "餌となる虫が非常に多い。人の手が入るため環境が急変しやすい",
+     "fx": {
+      "food": 1,
+      "danger": 0.5
+     },
+     "goto": "rice_paddy",
+     "say": "陽光が降り注ぐ田んぼへ移動し、飽きるほどに獲物を食らった。",
+     "chip": "田んぼへ移動"
+    },
+    {
+     "ja": "池の岸辺に陣取る",
+     "ds": "環境が安定しており、天敵を避けやすい。餌の競争が激しい",
+     "fx": {
+      "food": -0.2,
+      "danger": -0.5
+     },
+     "goto": "pond_edge",
+     "say": "岸辺の静かな水面に陣取り、慎重に獲物を待つ日々を過ごした。",
+     "chip": "岸辺で定住"
+    }
+   ]
+  },
+  {
+   "q": "繁殖の季節が来た。どこに卵を産み付けるか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    9,
+    10
+   ],
+   "opts": [
+    {
+     "ja": "水草の茎に産み付ける",
+     "ds": "卵が水草に守られ生存率が高まる。産卵に時間がかかる",
+     "fx": {
+      "kids": 0.5,
+      "energy": -0.5
+     },
+     "goto": "shallow_pond",
+     "say": "水草の茎に沿って、丁寧に卵を産み付けた。",
+     "chip": "水草に産卵"
+    },
+    {
+     "ja": "開けた水面に産み落とす",
+     "ds": "素早く産卵を終えられる。冬の間に卵が流される恐れがある",
+     "fx": {
+      "kids": -0.2,
+      "energy": 0.2
+     },
+     "goto": "open_water",
+     "say": "水面を滑るように移動し、効率よく卵を水中に落とした。",
+     "chip": "水面に産卵"
+    }
+   ]
+  },
+  {
+   "q": "冬の寒さが厳しくなった。どこで越冬するか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    11,
+    12
+   ],
+   "opts": [
+    {
+     "ja": "冬の枯れ草の下に潜む",
+     "ds": "寒さをしのぎやすく生存率が高い。春まで餌が得られない",
+     "fx": {
+      "danger": -0.8,
+      "food": -1
+     },
+     "goto": "winter_shelter",
+     "say": "枯れ草の隙間に身を潜め、深い眠りの中で春を待った。",
+     "chip": "草下で越冬"
+    },
+    {
+     "ja": "凍らない水面を探して彷徨う",
+     "ds": "運が良ければ冬の間も餌を得られる。氷に閉じ込められる危険がある",
+     "fx": {
+      "danger": 0.8,
+      "food": 0.3
+     },
+     "goto": "spring_pond",
+     "say": "凍らない水面を探して彷徨い、わずかな獲物を追い続けた。",
+     "chip": "水面で越冬"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5
+   ],
+   "stages": [
+    "nymph"
+   ],
+   "p": 0.3,
+   "say": "春の雨が降り、水面に多くの虫が落ちた。",
+   "full": 15
+  },
+  {
+   "month": [
+    7,
+    8
+   ],
+   "stages": [
+    "adult_young",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "強い突風に煽られ、岸の岩に叩きつけられ、傷を負った。",
+   "full": -15
+  },
+  {
+   "month": [
+    12,
+    1
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "水面が薄く凍りつき、脚が氷に張り付いた。",
+   "full": -20
+  }
+ ],
+ "lead": "水面の表面張力を利用して滑走し、落ちた虫を狩る。冬を越え、次の世代へ命をつなぐまで。",
+ "texts": {
+  "move": "{to}へ、水面を滑るように移動した。",
+  "fleeJa": "水面を蹴って逃げ去る",
+  "restJa": "水草の陰で静止する",
+  "watchJa": "水面の波紋で獲物を探る",
+  "lieJa": "水際の枯れ草に潜む",
+  "lastMemory": "水面に広がる静かな波紋を眺めた日を思い出した。"
+ },
+ "intro": [
+  "水草の茂る浅瀬で、卵からかえった。",
+  "水面に浮かび、小さな虫の幼虫を捕らえて食べる。"
+ ],
+ "wins": [
+  {
+   "minKids": 50,
+   "title": "水面に次代を託した",
+   "line": "{kids}個の卵を水辺に残した。",
+   "mem": "雌雄でつながり、水面を滑走した日々を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "脱皮を繰り返し、体が大きくなった時を思い出した。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "冬の枯れ草の下で、静かに寒さを耐え抜いた日を思い出した。"
+  }
+ ],
+ "noKids": {
+  "title": "命をつなげなかった",
+  "line": "卵を残すことなく、水面でその一生を終えた。"
+ },
+ "facts": [
+  {
+   "quote": "脚先には短い毛が密生しており、これらによって水面にうかんで浮かんでいる。"
+  },
+  {
+   "quote": "水面に獲物となる小動物や死骸が落ちると、すばやく接近して前脚で捕獲し、針のように尖った口器を突き刺して消化液を注ぎ込み、溶けて液状になった体組織を吸汁する"
+  }
+ ]
 }

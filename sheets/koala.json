@@ -1,0 +1,548 @@
+{
+ "id": "koala",
+ "ja": "コアラ",
+ "sci": "Phascolarctos cinereus",
+ "status": "draft",
+ "type": "mammal",
+ "by": {
+  "places": "gemini-gemma gemma-4-31b-it",
+  "life": "gemini-gemma gemma-4-31b-it",
+  "foes": "gemini-gemma gemma-4-31b-it"
+ },
+ "locale": {
+  "ja": "オーストラリア東部・南部沿岸",
+  "geo": "Eastern and Southern coastal regions of Australia",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "pouch",
+   "ja": "母の袋",
+   "danger": 0,
+   "cover": true,
+   "about": "安全な温室である。乳を飲み、成長を待つ。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -28,
+   "lon": 153
+  },
+  {
+   "id": "eucalyptus_canopy",
+   "ja": "ユーカリの樹冠",
+   "danger": 1,
+   "cover": true,
+   "about": "主食の葉が豊富にある。一日の多くを眠って過ごす。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -28,
+   "lon": 155.4
+  },
+  {
+   "id": "open_woodland",
+   "ja": "疎林の地帯",
+   "danger": 2,
+   "cover": false,
+   "about": "木々がまばらな場所。地上へ降りて移動する際に天敵に狙われやすい。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -25.717,
+   "lon": 153.927
+  },
+  {
+   "id": "coastal_scrub",
+   "ja": "沿岸の低木林",
+   "danger": 1,
+   "cover": true,
+   "about": "海風が吹く地域。密集した枝が身を隠すのに適している。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -27.154,
+   "lon": 151.544
+  },
+  {
+   "id": "riverine_forest",
+   "ja": "川沿いの森",
+   "danger": 1,
+   "cover": true,
+   "about": "水辺に近い豊かな森。質の良いユーカリが自生している。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -29.129,
+   "lon": 151.058
+  },
+  {
+   "id": "urban_fringe",
+   "ja": "都市近郊の緑地",
+   "danger": 2,
+   "cover": true,
+   "about": "人間が暮らす街の近く。道路などの人為的な危険が潜んでいる。",
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "lat": -30.283,
+   "lon": 153.927
+  }
+ ],
+ "start": {
+  "place": "pouch",
+  "month": 9,
+  "day": 1
+ },
+ "region": {
+  "ja": "オーストラリア東部・南部沿岸",
+  "lon0": 149.755,
+  "lon1": 156.703,
+  "lat0": -24.414,
+  "lat1": -31.586,
+  "k": 72,
+  "labels": [
+   [
+    -24.84432,
+    153.22899999999998,
+    "オーストラリア東部・南部沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "coastal_scrub",
+   "pouch"
+  ],
+  [
+   "pouch",
+   "riverine_forest"
+  ],
+  [
+   "eucalyptus_canopy",
+   "pouch"
+  ],
+  [
+   "eucalyptus_canopy",
+   "open_woodland"
+  ],
+  [
+   "open_woodland",
+   "pouch"
+  ],
+  [
+   "coastal_scrub",
+   "riverine_forest"
+  ],
+  [
+   "pouch",
+   "urban_fringe"
+  ],
+  [
+   "eucalyptus_canopy",
+   "urban_fringe"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 60
+ },
+ "stats": {
+  "run": {
+   "ja": "登攀力",
+   "use": "樹上を移動する時に効く"
+  },
+  "sense": {
+   "ja": "嗅覚",
+   "use": "食える葉を探す時に効く"
+  },
+  "forage": {
+   "ja": "解毒能力",
+   "use": "毒のある葉を消化する時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "joey_pouch",
+   "ja": "袋の中の仔",
+   "days": 180,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "袋から出る",
+   "enter": "母の袋の中で乳を飲み、ゆっくりと育つ。"
+  },
+  {
+   "id": "joey_wean",
+   "ja": "離乳期の仔",
+   "fromAge": 0.5,
+   "days": 150,
+   "hunger": 12,
+   "grow": 1.5,
+   "goal": "自立する",
+   "enter": "袋を離れ、少しずつユーカリの葉を食べ始める。"
+  },
+  {
+   "id": "juvenile",
+   "ja": "若いコアラ",
+   "fromAge": 1,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成熟する",
+   "enter": "樹上の生活に慣れ、体が大きく成長する。"
+  },
+  {
+   "id": "adult",
+   "ja": "成体",
+   "fromAge": 2,
+   "days": 180,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "種を繋ぐ",
+   "enter": "性的に成熟した。ユーカリの森で静かに暮らす。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   10,
+   15
+  ],
+  "text": "長い眠りに落ちた。森の静寂に溶け込んでいった。"
+ },
+ "breeding": {
+  "ja": "単独で子を産む",
+  "ds": "母が袋の中で一頭の仔を育てる",
+  "months": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "places": [
+   "eucalyptus_canopy",
+   "open_woodland"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 1,
+  "label": {
+   "ja": "仔コアラ",
+   "unit": "頭",
+   "child": "袋に収まった一頭"
+  },
+  "ok": "袋に、{born}頭の仔が生まれた。",
+  "ng": "子を産み落とした。",
+  "goal1": "子を産む",
+  "goal2": "子を1頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "母乳を飲む",
+   "name": "母乳",
+   "ds": "母の乳から栄養を得る",
+   "stages": [
+    "joey_pouch",
+    "joey_wean"
+   ],
+   "places": [
+    "pouch"
+   ],
+   "rich": [
+    "pouch"
+   ],
+   "ok": "母の乳を飲み、体力を蓄えた。",
+   "full": 50
+  },
+  {
+   "id": "eucalyptus",
+   "ja": "ユーカリを食べる",
+   "name": "ユーカリの葉",
+   "ds": "毒を含むが、専門に消化して栄養を得る",
+   "stages": [
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "places": [
+    "eucalyptus_canopy",
+    "open_woodland",
+    "coastal_scrub",
+    "riverine_forest",
+    "urban_fringe"
+   ],
+   "rich": [
+    "eucalyptus_canopy"
+   ],
+   "ok": "毒のある葉をゆっくりと消化した。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "sleep",
+   "ja": "長い睡眠",
+   "ds": "低カロリーな食事を補うため、一日の多くを眠って過ごす",
+   "stages": [
+    "adult"
+   ],
+   "stat": "forage",
+   "base": 0.5,
+   "calm": true,
+   "ok": "深い眠りに落ちる。呼吸がゆっくりと刻まれる。"
+  }
+ ],
+ "levelEvery": 4,
+ "foes": [
+  {
+   "id": "dingo",
+   "ja": "ディンゴ",
+   "kind": "mammal",
+   "places": [
+    "open_woodland",
+    "riverine_forest",
+    "urban_fringe"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭い牙が、喉元を狙う。",
+    "低い唸り声が、森に響く。"
+   ],
+   "again": [
+    [
+     "また、あの飢えた群れが近づいてきた。"
+    ],
+    [
+     "風に乗って、獣の匂いが漂う。"
+    ]
+   ],
+   "bye": "十分な体格を得て、反撃できる。",
+   "lose": "鋭い牙に噛まれ、傷を負った。"
+  },
+  {
+   "id": "wedge_tailed_eagle",
+   "ja": "オジロワシ",
+   "kind": "bird",
+   "places": [
+    "eucalyptus_canopy",
+    "open_woodland"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile"
+   ],
+   "sev": 2,
+   "texts": [
+    "巨大な影が、空から急降下する。",
+    "鋭い爪が、枝を掴む。"
+   ],
+   "again": [
+    [
+     "空に、あの大きな円を描く影が見える。"
+    ]
+   ],
+   "bye": "成長し、鷲が運べないほどの重さになる。",
+   "lose": "鋭い爪で掴み上げられ、傷を負った。"
+  },
+  {
+   "id": "goanna",
+   "ja": "オオオオトカゲ",
+   "kind": "reptile",
+   "places": [
+    "eucalyptus_canopy",
+    "coastal_scrub"
+   ],
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile"
+   ],
+   "sev": 1,
+   "texts": [
+    "鱗に覆われた体が、静かに近づく。",
+    "鋭い舌が、匂いを嗅ぎ分ける。"
+   ],
+   "lose": "鋭い爪で切り裂かれ、傷を負った。"
+  },
+  {
+   "id": "python",
+   "ja": "ニシキヘビ",
+   "kind": "reptile",
+   "places": [
+    "eucalyptus_canopy",
+    "riverine_forest"
+   ],
+   "stages": [
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "太い体が、じわりと巻き付く。",
+    "静かに、獲物を待ち構える。"
+   ],
+   "lose": "強い力で締め付けられ、傷を負った。"
+  },
+  {
+   "id": "feral_cat",
+   "ja": "野良猫",
+   "kind": "mammal",
+   "places": [
+    "urban_fringe",
+    "coastal_scrub"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile"
+   ],
+   "sev": 1,
+   "texts": [
+    "暗闇から、光る目が覗く。",
+    "足音がなく、背後に忍び寄る。"
+   ],
+   "lose": "鋭い爪で引っかかれ、傷を負った。"
+  },
+  {
+   "id": "red_fox",
+   "ja": "アカギツネ",
+   "kind": "mammal",
+   "places": [
+    "open_woodland",
+    "urban_fringe"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile"
+   ],
+   "sev": 1,
+   "texts": [
+    "狡猾な視線が、獲物を定める。",
+    "茂みの奥で、機会を伺う。"
+   ],
+   "lose": "執拗に追い回され、傷を負った。"
+  },
+  {
+   "id": "car",
+   "ja": "自動車",
+   "kind": "human",
+   "places": [
+    "urban_fringe",
+    "open_woodland"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "激しいエンジン音が、静寂を破る。",
+    "眩しい光が、視界を白く染める。"
+   ],
+   "lose": "高速で走る車に撥ねられ、傷を負った。"
+  },
+  {
+   "id": "wildfire",
+   "ja": "山火事",
+   "kind": "human",
+   "places": [
+    "eucalyptus_canopy",
+    "open_woodland",
+    "riverine_forest",
+    "coastal_scrub"
+   ],
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "赤い炎が、空を塗りつぶす。",
+    "熱風が、肺を焼く。"
+   ],
+   "again": [
+    [
+     "遠くから、また煙の匂いが漂ってきた。"
+    ]
+   ],
+   "bye": "火災が収まり、森が再生する。",
+   "lose": "激しい炎に包まれ、傷を負った。"
+  },
+  {
+   "id": "domestic_dog",
+   "ja": "飼い犬",
+   "kind": "human",
+   "places": [
+    "urban_fringe"
+   ],
+   "stages": [
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "激しい吠え声が、耳を打つ。",
+    "制御を離れた犬が、飛びかかってくる。"
+   ],
+   "lose": "激しく噛みつかれ、傷を負った。"
+  },
+  {
+   "id": "land_clearing",
+   "ja": "土地開発",
+   "kind": "human",
+   "places": [
+    "urban_fringe"
+   ],
+   "stages": [
+    "joey_pouch",
+    "joey_wean",
+    "juvenile",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "重機の轟音が、森を切り裂く。",
+    "住処だった樹木が、次々と倒れる。"
+   ],
+   "lose": "倒木の下敷きにされ、傷を負った。"
+  }
+ ]
+}

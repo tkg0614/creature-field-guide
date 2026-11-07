@@ -1,0 +1,810 @@
+{
+ "id": "dolphin",
+ "ja": "ハンドウイルカ",
+ "sci": "Tursiops truncatus",
+ "status": "checked",
+ "type": "mammal",
+ "country": "jp",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini gemini-3.8-flash",
+  "texts": "gemini gemini-3.8-flash"
+ },
+ "locale": {
+  "ja": "相模湾沿岸",
+  "geo": "Sagami Bay",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "inner_bay",
+   "ja": "江の島沖の浅海",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "波が穏やかな砂浜沿いの海。母子が寄り添いながら泳ぎの練習をする。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 35.3,
+   "lon": 139.481
+  },
+  {
+   "id": "rocky_coast",
+   "ja": "真鶴岬の磯場",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "複雑に入り組んだ岩礁が続く。小魚の群れを浅瀬に追い込んで捕らえる。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 35.227,
+   "lon": 141.773
+  },
+  {
+   "id": "island_reef",
+   "ja": "初島周辺の浅瀬",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "潮流が当たり魚が集まる。仲間と連携して魚群を囲い込み、交互に捕食する。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 35.04,
+   "lon": 139.172
+  },
+  {
+   "id": "channel",
+   "ja": "浦賀水道",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "大型船が頻繁に行き交う海峡。船が起こす引き波に乗って高速で泳ぎ抜ける。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 35.143,
+   "lon": 139.756
+  },
+  {
+   "id": "island_coast",
+   "ja": "伊豆大島の沖合",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "外洋に面した開けた海。別の群れと合流し、鳴き声を交わして交流する。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 34.744,
+   "lon": 139.36
+  },
+  {
+   "id": "deep_trough",
+   "ja": "相模トラフの深海",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "水深の深い外洋。音波の反響を頼りに、夜間に浮上するイカを狙って深く潜る。",
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 32.944,
+   "lon": 140.3
+  }
+ ],
+ "start": {
+  "place": "inner_bay",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "相模湾沿岸",
+  "lon0": 138.392,
+  "lon1": 142.553,
+  "lat0": 36.08,
+  "lat1": 32.164,
+  "k": 120,
+  "labels": [
+   [
+    35.84504,
+    140.4725,
+    "相模湾沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "channel",
+   "inner_bay"
+  ],
+  [
+   "inner_bay",
+   "island_reef"
+  ],
+  [
+   "channel",
+   "rocky_coast"
+  ],
+  [
+   "inner_bay",
+   "rocky_coast"
+  ],
+  [
+   "island_coast",
+   "island_reef"
+  ],
+  [
+   "channel",
+   "island_coast"
+  ],
+  [
+   "deep_trough",
+   "island_coast"
+  ],
+  [
+   "channel",
+   "deep_trough"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 100
+ },
+ "stats": {
+  "run": {
+   "ja": "遊泳力",
+   "use": "素早く泳いで獲物を追う時に効く"
+  },
+  "sense": {
+   "ja": "反響定位",
+   "use": "クリック音で周囲の状況を探る時に効く"
+  },
+  "forage": {
+   "ja": "群れの連携",
+   "use": "仲間と獲物を追い詰める時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "calf",
+   "ja": "新生仔",
+   "days": 30,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "幼獣になる",
+   "enter": "母の乳を飲み、寄り添って泳ぐ。"
+  },
+  {
+   "id": "juv",
+   "ja": "幼獣",
+   "fromAge": 2,
+   "days": 60,
+   "hunger": 12,
+   "grow": 1.2,
+   "goal": "若獣になる",
+   "enter": "自力で魚を追い始める。群れの仲間と声を交わす。"
+  },
+  {
+   "id": "sub",
+   "ja": "若獣",
+   "fromAge": 5,
+   "days": 90,
+   "hunger": 12,
+   "grow": 0.8,
+   "goal": "成獣になる",
+   "enter": "体が大きく育った。仲間と協力して狩りを行う。"
+  },
+  {
+   "id": "adult",
+   "ja": "成獣",
+   "fromAge": 8,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.2,
+   "adult": true,
+   "goal": "群れで命をつなぐ",
+   "enter": "性的に成熟した。群れを支え、次の世代を育む。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   25,
+   50
+  ],
+  "text": "力尽きて波間に漂い、静かに青い深海へと沈んでいった。"
+ },
+ "breeding": {
+  "ja": "出産",
+  "ds": "穏やかな浅海で、一頭の仔を産み育てる",
+  "months": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "places": [
+   "inner_bay",
+   "island_reef"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   1
+  ],
+  "many": 1,
+  "label": {
+   "ja": "仔イルカ",
+   "unit": "頭",
+   "child": "群れに生まれた一頭"
+  },
+  "ok": "群れに守られながら、{born}頭の仔を海中へ産み落とした。",
+  "ng": "荒波に阻まれ、出産に至らなかった。",
+  "goal1": "仔を産む",
+  "goal2": "仔を1頭産み育てる"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "母乳を飲む",
+   "name": "母乳",
+   "ds": "母の腹部から出る乳を吸って栄養を得る",
+   "stages": [
+    "calf"
+   ],
+   "places": [
+    "inner_bay",
+    "rocky_coast",
+    "island_reef",
+    "channel",
+    "island_coast"
+   ],
+   "rich": [
+    "inner_bay"
+   ],
+   "ok": "母に寄り添い、栄養豊かな乳を飲んだ。",
+   "full": 50
+  },
+  {
+   "id": "fish",
+   "ja": "小魚を捕らえる",
+   "name": "アジやイワシ",
+   "ds": "群れで連携して魚を浅瀬や海面に追い込む",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "inner_bay",
+    "rocky_coast",
+    "island_reef",
+    "channel",
+    "island_coast"
+   ],
+   "rich": [
+    "inner_bay",
+    "channel"
+   ],
+   "ok": "仲間と呼吸を合わせて魚の群れを囲い込み、捕らえた。",
+   "lose": "サメに威嚇され、傷を負った。",
+   "full": 45
+  },
+  {
+   "id": "squid",
+   "ja": "イカを捕らえる",
+   "name": "イカ",
+   "ds": "音波で位置を特定し、素早く捕食する",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "channel",
+    "island_coast",
+    "deep_trough"
+   ],
+   "rich": [
+    "deep_trough"
+   ],
+   "ok": "反響定位で的確に捉え、イカを丸呑みにした。",
+   "lose": "海底の岩礁に激突され、傷を負った。",
+   "full": 50
+  }
+ ],
+ "special": [
+  {
+   "id": "echolocation",
+   "ja": "エコーロケーション",
+   "ds": "頭部のメロンから音波を放ち、反射波で周囲の地形や獲物を感知する",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.8,
+   "calm": true,
+   "ok": "放った音波の反響を受け止め、濁った海中でも獲物の形を捉えた。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "inner_bay",
+   "say": "水温の上昇とともに、小魚が豊富な沿岸の浅海を目指して泳ぎ進む。"
+  },
+  {
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "island_coast",
+   "say": "冬の冷たい沿岸を避け、水温の安定した外海の沖合へと移動する。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "orca",
+   "ja": "シャチの群れ",
+   "kind": "mammal",
+   "places": [
+    "island_coast",
+    "deep_trough",
+    "channel"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 3,
+   "texts": [
+    "白と黒の巨大な背びれが、波を割って進む。",
+    "海底から響く不気味な声に、群れが一斉に緊張する。"
+   ],
+   "again": [
+    [
+     "また、あの黒い背びれが水平線に現れた。"
+    ],
+    [
+     "聞き覚えのある鋭い声が、海中に響き渡る。"
+    ]
+   ],
+   "bye": "成獣になり、俊敏な身のこなしで外洋へ逃げ切れる。",
+   "lose": "背後から猛烈な体当たりを受け、深い裂傷を負わされ、傷を負った。"
+  },
+  {
+   "id": "great_white",
+   "ja": "ホホジロザメ",
+   "kind": "fish",
+   "places": [
+    "island_coast",
+    "deep_trough",
+    "rocky_coast"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub"
+   ],
+   "sev": 2,
+   "texts": [
+    "青暗い深みから、白みを帯びた大きな影が浮上する。",
+    "三角形の背びれが、海面を静かに切り裂く。"
+   ],
+   "again": [
+    [
+     "底知れぬ深みから、またあの冷たい影が近づく。"
+    ],
+    [
+     "見覚えのある三角のひれが、すぐ横をかすめる。"
+    ]
+   ],
+   "bye": "成長して体が大きくなり、群れの反撃で追い払える。",
+   "lose": "鋭い牙で尾びれの根元を噛み裂かれ、傷を負った。"
+  },
+  {
+   "id": "tiger_shark",
+   "ja": "イタチザメ",
+   "kind": "fish",
+   "places": [
+    "inner_bay",
+    "island_reef",
+    "channel"
+   ],
+   "stages": [
+    "calf",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "濁った潮の奥から、縞模様の巨体が音もなく忍び寄る。",
+    "鈍く光る瞳が、群れのはぐれ仔を狙っている。"
+   ],
+   "lose": "海底の濁りから不意に突進され、傷を負った。"
+  },
+  {
+   "id": "mako_shark",
+   "ja": "アオザメ",
+   "kind": "fish",
+   "places": [
+    "island_coast",
+    "deep_trough"
+   ],
+   "stages": [
+    "calf",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "群青の海を、信じられない速度で影が横切る。",
+    "尖った吻先を向け、一直線に距離を詰めてくる。"
+   ],
+   "lose": "超高速で胸びれを噛み裂かれ、傷を負った。"
+  },
+  {
+   "id": "hammerhead",
+   "ja": "シロシュモクザメ",
+   "kind": "fish",
+   "places": [
+    "inner_bay",
+    "island_reef",
+    "rocky_coast"
+   ],
+   "stages": [
+    "calf"
+   ],
+   "sev": 1,
+   "texts": [
+    "奇妙に左右へ張り出した頭部が、浅瀬の底を這うように泳ぐ。",
+    "母の陰から離れた隙をうかがっている。"
+   ],
+   "lose": "群れからはぐれたところを急襲され、傷を負った。"
+  },
+  {
+   "id": "cookiecutter",
+   "ja": "ダルマザメ",
+   "kind": "fish",
+   "places": [
+    "deep_trough",
+    "island_coast"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "夜の深海から、小さな光を放つ魚が吸い付くように迫る。",
+    "暗がりの中で、突然鋭い痛みが走る。"
+   ],
+   "lose": "深海で皮膚を丸く食いちぎられ、傷を負った。"
+  },
+  {
+   "id": "cargo_ship",
+   "ja": "浦賀水道の大型貨物船",
+   "kind": "human",
+   "places": [
+    "channel"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "重低音が海中を震わせ、見上げるような船底が航路を塞ぐ。",
+    "巨大なスクリューが激しい水流と泡を巻き上げる。"
+   ],
+   "again": [
+    [
+     "また、狭い水道にあの鉄の巨体が立ちふさがる。"
+    ],
+    [
+     "逃げ場のない轟音が、群れの交信をかき消す。"
+    ]
+   ],
+   "bye": "危険な航路を離れ、広大な外洋へと抜け出した。",
+   "lose": "回転するスクリューに接触され、傷を負った。",
+   "fleeJa": "深く潜って船底をやり過ごす",
+   "hideJa": "航路の外の浅瀬へ逃げ込む"
+  },
+  {
+   "id": "set_net",
+   "ja": "沿岸の大型定置網",
+   "kind": "human",
+   "places": [
+    "inner_bay",
+    "rocky_coast"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "魚の群れを追って突入した先に、黒い網の壁が立ちはだかる。",
+    "出口のない網の迷路に、仲間が迷い込む。"
+   ],
+   "lose": "網の強い張力で締めつけられ、傷を負った。",
+   "fleeJa": "反転して網口から脱出する",
+   "hideJa": "海面高く飛び跳ねて網を越える"
+  },
+  {
+   "id": "ghost_net",
+   "ja": "漂流する廃漁網",
+   "kind": "human",
+   "places": [
+    "rocky_coast",
+    "island_reef"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub"
+   ],
+   "sev": 1,
+   "texts": [
+    "海中を漂う半透明の化繊網が、潮に揺れている。",
+    "遊泳中の尾びれに、細い糸がまとわりつく。"
+   ],
+   "lose": "漂うロープに体を擦られ、傷を負った。",
+   "fleeJa": "体をくねらせて網を振りほどく",
+   "hideJa": "流れのない岩陰で停止する"
+  },
+  {
+   "id": "tour_boat",
+   "ja": "レジャーボートのスクリュー",
+   "kind": "human",
+   "places": [
+    "inner_bay",
+    "island_reef"
+   ],
+   "stages": [
+    "calf",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "甲高いエンジン音を響かせ、小舟が高速で旋回する。",
+    "呼吸のために浮上した海面に、鋭い刃が迫る。"
+   ],
+   "lose": "接近したプロペラに背中を裂かれ、傷を負った。",
+   "fleeJa": "急速潜行で白波の下へ潜る",
+   "hideJa": "群れの真ん中に入り込む"
+  }
+ ],
+ "choices": [
+  {
+   "q": "母の群れから離れ、同年代の仲間と泳ぐ機会が巡った。どう動くか",
+   "stages": [
+    "juv",
+    "sub"
+   ],
+   "opts": [
+    {
+     "ja": "母のそばに留まり安全を優先する",
+     "ds": "外敵から身を守りやすいが、狩りの自立が遅れる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "母の泳ぐ水流に乗って進んだ。穏やかな海で手堅く生き延びた。",
+     "chip": "保護"
+    },
+    {
+     "ja": "同世代の若獣の群れに加わる",
+     "ds": "社会性や狩りの技術を試せるが、外敵への警戒が手薄になる",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "同世代の仲間と波間を跳ね、互いの身を擦り寄せて絆を深めた。",
+     "chip:群れ入り": "合流"
+    }
+   ]
+  },
+  {
+   "q": "浅瀬に魚の群れを追い込んだ。どう仕留めるか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "仲間と連携して岸際へ突撃する",
+     "ds": "大量の獲物を捕らえられるが、浅瀬で座礁する危険を伴う",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "クリック音で合図を交わし、一斉に突進して魚群を砂浜へ追い上げた。",
+     "chip": "協調採餌"
+    },
+    {
+     "ja": "深場に残り、逃げ出してきた魚を待つ",
+     "ds": "座礁のリスクを避けられるが、手に入る分け前は少ない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "浅瀬の混乱を見守り、沖へ漏れ出た魚を素早くくわえ取った。",
+     "chip": "安全策"
+    }
+   ]
+  },
+  {
+   "q": "他の雄のグループと海上で出会った。どう接するか",
+   "stages": [
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "独自の口笛音を交わして同盟を結ぶ",
+     "ds": "群れの規模が広がり縄張りを強化できるが、小競り合いのリスクが生じる",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "シグネチャーホイッスルを鳴らし合い、互いの体を誇示して結束を固めた。",
+     "chip": "同盟形成"
+    },
+    {
+     "ja": "一定の距離を置き、接触を避ける",
+     "ds": "無用な衝突を防げるが、広い餌場を独占できない",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "相手の動きを警戒しつつ進路を変え、静かに潮目を離れた。",
+     "chip": "回避"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.35,
+   "say": "初夏の潮に乗って小魚の大群が押し寄せ、湾内が活気づいた。",
+   "full": 15
+  },
+  {
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "calf",
+    "juv"
+   ],
+   "p": 0.25,
+   "say": "激しい台風が相模湾を襲い、荒れ狂う高波に息継ぎを阻まれた。",
+   "full": -15
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "水温が下がり獲物が深場へ潜ったため、遠くまで探索を続けた。",
+   "full": -10
+  }
+ ],
+ "lead": "相模湾の広大な海を、群れの仲間と泳ぐ。音波の反響で獲物を探り、豊かな波間を生き抜く。",
+ "texts": {
+  "move": "{to}へ、群れの仲間と並んで泳ぎ進んだ。",
+  "fleeJa": "尾鰭を力強く振って、急加速で逃げ去る",
+  "restJa": "穏やかな浅瀬で、息を合わせながら漂う",
+  "watchJa": "水面から頭を出し、周囲の様子をうかがう",
+  "lieJa": "静かに波間に浮かび、呼吸を整える",
+  "lastMemory": "母が呼びかけてくれた、高い口笛の音色を思い出した。"
+ },
+ "intro": [
+  "相模湾の柔らかな波間に生まれた。",
+  "母に支えられて海面に顔を出し、初めて息を吸い込んだ。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を育て、海へと送り出す",
+   "line": "{kids}頭の子が母の音を受け継ぎ、広い海へと泳ぎ去った。",
+   "mem": "子のために特別な口笛を鳴らし、寄り添って泳いだ日々を思い出した。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "仲間と音を響かせ合い、魚の群れを追い込んだ日を思い出した。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "群れと共に生き抜く",
+   "line": "子を残さずとも、群れの絆の中で一生を全うした。",
+   "mem": "仲間と体を寄せ合い、青い海を巡り続けた日々を思い出した。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "Common bottlenose dolphin signature whistles, which are in a higher frequency range than humans can hear, have an important role in facilitating mother–calf contact.",
+   "text": "個体固有のシグネチャーホイッスルは、母親と子の接触を保つために重要な役割を果たす。"
+  },
+  {
+   "quote": "Their necks are more flexible than other dolphins' due to five of their seven vertebrae not being fused together like in other dolphins.",
+   "text": "7個の頸椎のうち5個が癒合していないため、他のイルカよりも首を柔軟に動かすことができる。"
+  }
+ ]
+}

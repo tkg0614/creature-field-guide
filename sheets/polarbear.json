@@ -1,0 +1,740 @@
+{
+ "id": "polarbear",
+ "ja": "ホッキョクグマ",
+ "sci": "Ursus maritimus",
+ "status": "checked",
+ "type": "mammal",
+ "by": {
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "カナダ・ハドソン湾沿岸",
+  "geo": "Hudson Bay",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "maternity_den",
+   "ja": "雪の産室",
+   "danger": 0,
+   "cover": true,
+   "about": "雪の吹きだまりに掘られた穴。厳しい風雪を遮り、母の体温で暖められる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 57.951,
+   "lon": -93.335
+  },
+  {
+   "id": "sea_ice_edge",
+   "ja": "海氷の縁",
+   "danger": 1,
+   "cover": false,
+   "about": "氷の割れ目から水面がのぞく。アザラシが浮上する絶好の狩り場である。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 58.8,
+   "lon": -90.6
+  },
+  {
+   "id": "breathing_hole",
+   "ja": "結氷した海の呼吸孔",
+   "danger": 1,
+   "cover": false,
+   "about": "厚い氷にアザラシが開けた息継ぎの穴。気配を消して獲物を待ち伏せる。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 61.083,
+   "lon": -92.073
+  },
+  {
+   "id": "coast_tundra",
+   "ja": "海岸のツンドラ",
+   "danger": 1,
+   "cover": true,
+   "about": "夏に氷が解けたあと過ごす陸地。獲物は極めて少なく、絶食して耐える。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 58.769,
+   "lon": -94.173
+  },
+  {
+   "id": "coastal_gravel",
+   "ja": "岬の砂利浜",
+   "danger": 2,
+   "cover": false,
+   "about": "秋に海が凍るのを待つ場所。空腹の成獣同士が牽制しあう。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 58.76,
+   "lon": -93.222
+  },
+  {
+   "id": "inland_forest",
+   "ja": "内陸の針葉樹林のへり",
+   "danger": 1,
+   "cover": true,
+   "about": "夏の暑さを避けて休むトウヒの林。体力を温存しながら氷が張る季節を待つ。",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "lat": 56.517,
+   "lon": -92.073
+  }
+ ],
+ "start": {
+  "place": "maternity_den",
+  "month": 1,
+  "day": 1
+ },
+ "region": {
+  "ja": "カナダ・ハドソン湾沿岸",
+  "lon0": -95.245,
+  "lon1": -89.528,
+  "lat0": 62.155,
+  "lat1": 55.445,
+  "k": 87,
+  "labels": [
+   [
+    61.7524,
+    -92.38650000000001,
+    "カナダ・ハドソン湾沿岸"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "coastal_gravel",
+   "maternity_den"
+  ],
+  [
+   "coast_tundra",
+   "maternity_den"
+  ],
+  [
+   "coastal_gravel",
+   "sea_ice_edge"
+  ],
+  [
+   "inland_forest",
+   "sea_ice_edge"
+  ],
+  [
+   "breathing_hole",
+   "coastal_gravel"
+  ],
+  [
+   "breathing_hole",
+   "sea_ice_edge"
+  ],
+  [
+   "coast_tundra",
+   "coastal_gravel"
+  ],
+  [
+   "inland_forest",
+   "maternity_den"
+  ],
+  [
+   "coastal_gravel",
+   "inland_forest"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 30
+ },
+ "stats": {
+  "run": {
+   "ja": "氷上の走力",
+   "use": "獲物を追う時や雪原を駆ける時に効く"
+  },
+  "sense": {
+   "ja": "優れた嗅覚",
+   "use": "雪の下の呼吸孔や遠くの獲物を嗅ぎ分ける時に効く"
+  },
+  "forage": {
+   "ja": "待ち伏せの技",
+   "use": "氷の割れ目や呼吸孔でアザラシを捕える時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "cub",
+   "ja": "仔グマ",
+   "days": 30,
+   "hunger": 15,
+   "grow": 2,
+   "goal": "若グマになる",
+   "enter": "雪の産室で生まれ、母の乳を飲んで育つ。"
+  },
+  {
+   "id": "juv",
+   "ja": "若グマ",
+   "fromAge": 2,
+   "days": 60,
+   "hunger": 14,
+   "grow": 1.2,
+   "goal": "亜成獣になる",
+   "enter": "母から離れ、単独で海氷の獲物を狙い始める。"
+  },
+  {
+   "id": "sub",
+   "ja": "亜成獣",
+   "fromAge": 4,
+   "days": 90,
+   "hunger": 13,
+   "grow": 0.6,
+   "goal": "成獣になる",
+   "enter": "体が大きくなり、厳しい冬の氷原を一人で行き来する。"
+  },
+  {
+   "id": "adult",
+   "ja": "成獣",
+   "fromAge": 5,
+   "days": 120,
+   "hunger": 12,
+   "grow": 0.1,
+   "adult": true,
+   "apex": true,
+   "goal": "氷原を生き抜く",
+   "enter": "成熟を迎えた。北極圏の海氷を支配する頂点捕食者となる。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   15,
+   30
+  ],
+  "text": "過酷な氷原で力尽き、静かに雪の上へと倒れた。"
+ },
+ "breeding": {
+  "ja": "雪の産室で子を産む",
+  "ds": "雪に掘った産室で冬を越し、子を産み育てる",
+  "months": [
+   11,
+   12,
+   1
+  ],
+  "places": [
+   "maternity_den"
+  ],
+  "perYear": 1,
+  "kids": [
+   1,
+   2
+  ],
+  "many": 2,
+  "label": {
+   "ja": "仔グマ",
+   "unit": "頭",
+   "child": "産室で生まれた一頭"
+  },
+  "ok": "雪の産室で、{born}頭の仔が生まれた。",
+  "ng": "寒気の中で産室を守りきれなかった。",
+  "goal1": "子を産む",
+  "goal2": "子を2頭産む"
+ },
+ "foods": [
+  {
+   "id": "milk",
+   "ja": "母乳を飲む",
+   "name": "母乳",
+   "ds": "母の濃厚な乳を飲み、寒さに耐える脂肪をつける",
+   "stages": [
+    "cub"
+   ],
+   "places": [
+    "maternity_den",
+    "coast_tundra"
+   ],
+   "rich": [
+    "maternity_den"
+   ],
+   "ok": "母の乳を飲み、体温を保った。",
+   "lose": "十分な乳が得られず、寒さに凍えて傷を負った。",
+   "full": 60
+  },
+  {
+   "id": "seal",
+   "ja": "ワモンアザラシを狩る",
+   "name": "アザラシの脂肪",
+   "ds": "海氷の呼吸孔や氷の縁で待ち伏せ、アザラシを仕留める",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "breathing_hole",
+    "sea_ice_edge"
+   ],
+   "rich": [
+    "breathing_hole"
+   ],
+   "ok": "息を吸いに浮上したアザラシを一撃で捕えた。",
+   "lose": "氷の割れ目に逃げられ、深い傷を負った。",
+   "full": 80
+  }
+ ],
+ "special": [
+  {
+   "id": "blubber",
+   "ja": "厚い脂肪層",
+   "ds": "寒冷地に適応した脂肪と密生した毛皮で体温を守る",
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.8,
+   "calm": true,
+   "ok": "極寒の吹雪の中でも体温を逃がさず耐え忍んだ。"
+  }
+ ],
+ "levelEvery": 4,
+ "migrate": [
+  {
+   "months": [
+    7,
+    8
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "coast_tundra",
+   "say": "海氷が解け落ちた。夏を耐えるため陸地へと渡る。"
+  },
+  {
+   "months": [
+    11,
+    12
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "to": "breathing_hole",
+   "say": "海が凍り始めた。アザラシを追って結氷した海へと戻る。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "male_adult",
+   "ja": "成獣のオス",
+   "kind": "mammal",
+   "places": [
+    "sea_ice_edge",
+    "coast_tundra",
+    "coastal_gravel"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 2,
+   "texts": [
+    "巨大な影が、雪原を横切る。",
+    "低い唸り声が、空気を震わせる。"
+   ],
+   "again": [
+    [
+     "また、別のオスが近づいてきた。"
+    ],
+    [
+     "雪の向こうに、大きな耳が見える。"
+    ]
+   ],
+   "bye": "十分に成長し、自力で対抗できるようになる。",
+   "lose": "鋭い爪で切り裂かれ、傷を負った。"
+  },
+  {
+   "id": "orca",
+   "ja": "シャチ",
+   "kind": "mammal",
+   "places": [
+    "sea_ice_edge"
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub"
+   ],
+   "sev": 2,
+   "texts": [
+    "黒い背びれが、氷の縁をなぞる。",
+    "水面が、不気味に波打つ。"
+   ],
+   "again": [
+    [
+     "また、あの黒い背びれが現れた。"
+    ],
+    [
+     "水中で、鋭いクリック音が響く。"
+    ]
+   ],
+   "bye": "氷の上に留まり、海へ出る機会を減らす。",
+   "lose": "強力な顎で噛まれ、傷を負った。"
+  },
+  {
+   "id": "arctic_wolf",
+   "ja": "ホッキョクオオカミ",
+   "kind": "mammal",
+   "places": [
+    "coast_tundra",
+    "coastal_gravel"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "遠くから、集団の遠吠えが聞こえる。",
+    "白い毛並みの群れが、距離を詰める。"
+   ],
+   "lose": "群れに執拗に攻め立てられ、傷を負った。"
+  },
+  {
+   "id": "brown_bear",
+   "ja": "ヒグマ",
+   "kind": "mammal",
+   "places": [
+    "inland_forest",
+    "coast_tundra"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "茶色の大きな体が、森の縁に現れる。",
+    "縄張りを主張する、激しい咆哮が響く。"
+   ],
+   "lose": "激しい突き合いに巻き込まれ、傷を負った。"
+  },
+  {
+   "id": "walrus",
+   "ja": "セイウチ",
+   "kind": "mammal",
+   "places": [
+    "coastal_gravel",
+    "sea_ice_edge"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "巨大な牙が、威嚇するように向けられる。",
+    "重い体が、地響きを立てて突進してくる。"
+   ],
+   "lose": "長い牙で突き上げられ、傷を負った。"
+  },
+  {
+   "id": "female_adult",
+   "ja": "成獣の雌",
+   "kind": "mammal",
+   "places": [
+    "sea_ice_edge",
+    "breathing_hole"
+   ],
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "獲物を奪い合う、鋭い視線がぶつかる。",
+    "低い唸り声が、氷の上に響く。"
+   ],
+   "lose": "激しい突き合いになり、傷を負った。"
+  },
+  {
+   "id": "native_hunter",
+   "ja": "先住民の猟師",
+   "kind": "human",
+   "places": [
+    "sea_ice_edge",
+    "coast_tundra"
+   ],
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "雪の上に、規則正しい足跡が点在している。",
+    "冷たい銃口が、こちらを向く。"
+   ],
+   "lose": "銃弾に撃たれ、傷を負った。"
+  },
+  {
+   "id": "poacher",
+   "ja": "密猟者",
+   "kind": "human",
+   "places": [
+    "coastal_gravel",
+    "sea_ice_edge"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "見慣れない船が、海岸に近づく。",
+    "金属的な機械音が、静寂を破る。"
+   ],
+   "lose": "罠に掛かり、鋭い鋼線で傷を負った。"
+  },
+  {
+   "id": "town_patrol",
+   "ja": "町の巡回員",
+   "kind": "human",
+   "places": [
+    "coast_tundra"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "赤いランプを灯した車が、雪原を走る。",
+    "拡声器から、激しい警告音が鳴る。"
+   ],
+   "lose": "ゴム弾に撃たれ、傷を負った。"
+  },
+  {
+   "id": "researcher_team",
+   "ja": "調査チーム",
+   "kind": "human",
+   "places": [
+    "sea_ice_edge",
+    "coast_tundra"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "白い防寒服を着た人々が、周囲を囲む。",
+    "不自然な機械の音が、耳に届く。"
+   ],
+   "lose": "麻酔銃に撃たれ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "アザラシを狩る。どの方法で狙うか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "呼吸孔でじっと待つ",
+     "ds": "確実だが、時間がかかる",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "氷の穴の傍らで息を潜め、獲物が顔を出す瞬間を待った。",
+     "chip": "忍耐"
+    },
+    {
+     "ja": "氷の上を忍び寄る",
+     "ds": "効率的に狩れるが、気づかれやすい",
+     "fx": {
+      "danger": 0,
+      "food": 1
+     },
+     "say": "白い毛に紛れ、獲物の背後へと静かに距離を詰めた。",
+     "chip": "追跡"
+    }
+   ]
+  },
+  {
+   "q": "海氷が解け始めた。夏をどこで過ごすか",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "海岸線に留まる",
+     "ds": "氷の戻りを早く察知できる。飢えが深刻になる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "波打ち際で海を眺め、再び氷が閉じる日を静かに待った。",
+     "chip": "待機"
+    },
+    {
+     "ja": "内陸の森へ向かう",
+     "ds": "わずかな食料が見つかる。体力を消耗する",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "say": "針葉樹林の縁を歩き、鳥の卵や小動物を探して彷徨った。",
+     "chip": "探索"
+    }
+   ]
+  },
+  {
+   "q": "母が狩りをしている。どう振る舞うか",
+   "stages": [
+    "cub",
+    "juv"
+   ],
+   "opts": [
+    {
+     "ja": "母の動きを観察する",
+     "ds": "狩りの術を学べる。腹は空いたままになる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "母が獲物を仕留める鋭い一撃を、じっと見つめていた。",
+     "chip": "学習"
+    },
+    {
+     "ja": "自分でも獲物を追う",
+     "ds": "経験が得られる。母に叱られたり危険に晒される",
+     "fx": {
+      "danger": 1,
+      "food": 0
+     },
+     "say": "不慣れな足取りで氷を蹴り、獲物へと飛びかかった。",
+     "chip": "挑戦"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "激しい吹雪が視界を奪い、氷の世界が白一色に染まった。",
+   "full": -10
+  },
+  {
+   "month": [
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "cub",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.2,
+   "say": "海氷が砕け散り、陸へと追いやられた。",
+   "full": -20
+  },
+  {
+   "month": [
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "体内に蓄積した化学物質が、内臓に負担をかける。",
+   "full": -15
+  }
+ ],
+ "lead": "カナダ・ハドソン湾沿岸の氷上で、母熊と共に生まれたホッキョクグマは、氷と海を舞台に狩りと育児を繰り返す。",
+ "texts": {
+  "move": "{to}へ、氷上をゆっくり歩く。",
+  "fleeJa": "氷の裂け目から逃げ、海へ潜る。",
+  "restJa": "雪の産室で静かに休む。",
+  "watchJa": "氷の縁で息抜き孔を見張り、アザラシを待つ。",
+  "lieJa": "凍った海面に身を横たえ、体温を保つ。",
+  "lastMemory": "母の背中の温もりと、氷のきらめきを思い出す。"
+ },
+ "intro": [
+  "カナダ・ハドソン湾沿岸の雪の産室で生まれた。",
+  "母熊の乳で育ち、氷上で狩りの基礎を学んだ。"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "母となり、子グマを導く",
+   "line": "{kids}頭の子が、氷上の生き方を受け継ぐ。",
+   "mem": "初めて子を抱いた瞬間、凍てつく風の音が胸に残る。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "氷の裂け目でアザラシを待ち伏せし、成功した狩りの瞬間を鮮明に覚えている。"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "孤高の捕食者として生きる",
+   "line": "子を残さずとも、氷上の王として君臨する。",
+   "mem": "静かな氷原で、遠くの海を見つめた日を思い出す。"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "Polar bears are both terrestrial and pagophilic (ice-living) and are considered marine mammals because of their dependence on marine ecosystems."
+  },
+  {
+   "text": "子グマは母と最大2.5年共に暮らす。"
+  }
+ ]
+}

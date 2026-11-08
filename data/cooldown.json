@@ -4,12 +4,12 @@
   "why": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortl"
  },
  "gemini-gemma": {
-  "until": "2026-11-08T16:45:58.375Z",
+  "until": "2026-11-08T17:17:39.184Z",
   "why": "壊れた返事 500 {\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"status\":\"INTERNAL\"}}"
  },
  "gemini": {
-  "until": "2026-11-08T16:43:14.871Z",
-  "why": "壊れた返事 0 {\"error\":\"fetch failed\"}"
+  "until": "2026-11-09T08:05:00.000Z",
+  "why": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https:"
  },
  "gemini-pro": {
   "until": "2026-11-08T21:16:18.150Z",

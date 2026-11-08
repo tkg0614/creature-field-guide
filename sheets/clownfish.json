@@ -2,10 +2,750 @@
  "id": "clownfish",
  "ja": "カクレクマノミ",
  "sci": "Amphiprion ocellaris",
- "status": "draft-ng",
+ "status": "checked",
  "type": "fish",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini-older gemini-3.7-flash",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "沖縄諸島のサンゴ礁",
+  "geo": "Okinawa Islands",
+  "scale": "local"
+ },
+ "places": [
+  {
+   "id": "anemone_rock",
+   "ja": "イソギンチャク根元の岩肌",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "親魚が卵を産み付ける岩の土台。雄が胸びれで新鮮な海水を送り、外敵を追い払う。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.475,
+   "lon": 127.912
+  },
+  {
+   "id": "reef_surface",
+   "ja": "礁池の表層水域",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "孵化した仔魚が漂う浅い海面近く。微小な動物プランクトンが豊富だが、隠れ場は一切ない。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.475,
+   "lon": 127.944
+  },
+  {
+   "id": "coral_crevice",
+   "ja": "枝サンゴのすき間",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "宿主を探す稚魚が一時的に潜り込む場所。狭い隙間に身を寄せるが、居心地は長続きしない。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.503,
+   "lon": 127.932
+  },
+  {
+   "id": "magnifica_tentacles",
+   "ja": "センジュイソギンチャクの触手間",
+   "sea": true,
+   "danger": 0,
+   "cover": true,
+   "about": "強い刺胞毒の触手が外敵を完全に阻む絶対の安全地帯。粘液に包まれた体が触手をすり抜ける。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.492,
+   "lon": 127.9
+  },
+  {
+   "id": "gigantea_carpet",
+   "ja": "ハタゴイソギンチャクの群落",
+   "sea": true,
+   "danger": 1,
+   "cover": true,
+   "about": "礁池の砂地に広がる平らな宿主。波は穏やかだが、干潮のたびに水温が急上昇する。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.475,
+   "lon": 127.88
+  },
+  {
+   "id": "host_upper_water",
+   "ja": "宿主の直上の水中",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "流れてくる浮遊小動物をついばむ餌場。危険を感じると即座に触手の森へ飛び込む。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.447,
+   "lon": 127.892
+  },
+  {
+   "id": "outer_reef_slope",
+   "ja": "礁斜面の外縁部",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "宿主を持たない個体が追い出されてさまよう深場。大型のフエフキダイやハタが巡回する。",
+   "stages": [
+    "larva",
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "lat": 26.458,
+   "lon": 127.924
+  }
+ ],
+ "start": {
+  "place": "anemone_rock",
+  "month": 6,
+  "day": 15
+ },
+ "region": {
+  "ja": "沖縄諸島のサンゴ礁",
+  "lon0": 127.861,
+  "lon1": 127.963,
+  "lat0": 26.522,
+  "lat1": 26.428,
+  "k": 4902,
+  "labels": [
+   [
+    26.51636,
+    127.912,
+    "沖縄諸島のサンゴ礁"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "anemone_rock",
+   "magnifica_tentacles"
+  ],
+  [
+   "anemone_rock",
+   "outer_reef_slope"
+  ],
+  [
+   "outer_reef_slope",
+   "reef_surface"
+  ],
+  [
+   "coral_crevice",
+   "reef_surface"
+  ],
+  [
+   "coral_crevice",
+   "magnifica_tentacles"
+  ],
+  [
+   "gigantea_carpet",
+   "magnifica_tentacles"
+  ],
+  [
+   "gigantea_carpet",
+   "host_upper_water"
+  ],
+  [
+   "host_upper_water",
+   "outer_reef_slope"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.4
+ },
+ "stats": {
+  "run": {
+   "ja": "俊敏さ",
+   "use": "触手や岩陰へ素早く逃げ込む時に効く"
+  },
+  "sense": {
+   "ja": "共生の勘",
+   "use": "宿主の匂いや群れの序列を察する時に効く"
+  },
+  "forage": {
+   "ja": "採餌力",
+   "use": "水中のプランクトンや藻類をついばむ時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "浮遊仔魚",
+   "days": 12,
+   "hunger": 10,
+   "grow": 0.08
+  },
+  {
+   "id": "juv",
+   "ja": "着底稚魚",
+   "fromAge": 0.04,
+   "days": 40,
+   "hunger": 12,
+   "grow": 0.35,
+   "goal": "宿主を見つけて着底する",
+   "enter": "体色が鮮やかな橙色に変わり、白い帯が現れた。イソギンチャクの触手へ身を寄せる。"
+  },
+  {
+   "id": "subadult",
+   "ja": "若魚",
+   "fromAge": 0.5,
+   "days": 60,
+   "hunger": 15,
+   "grow": 0.4,
+   "goal": "群れの序列を維持する",
+   "enter": "体長が5センチを超えた。先住魚の攻撃をかわしながら、触手の根元に居場所を確保した。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 2,
+   "days": 90,
+   "hunger": 18,
+   "grow": 0.15,
+   "adult": true,
+   "goal": "成熟して繁殖する",
+   "enter": "群れの中で最大の大きさに育ち、雌へと性転換した。雄と寄り添い岩肌の産卵床を守る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   6,
+   20
+  ],
+  "text": "幾度もの産卵を重ねたのち、触手を揺らすイソギンチャクの根元で静かに息絶えた。"
+ },
+ "breeding": {
+  "ja": "イソギンチャク根元の産卵",
+  "ds": "温暖な季節の満月や新月のころ、宿主の根元にある岩肌を掃除して卵を産みつける",
+  "months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "places": [
+   "anemone_rock"
+  ],
+  "perYear": 4,
+  "kids": [
+   300,
+   1000
+  ],
+  "many": 800,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "個",
+   "child": "ふ化した仔魚の一匹"
+  },
+  "ok": "きれいに磨いた岩肌へ、{born}個の卵を産みつけた。雄が胸びれで新鮮な水を送り続ける。",
+  "ng": "周囲をうろつく外敵に脅かされ、産卵床を整えられなかった。",
+  "goal1": "卵を産みつける",
+  "goal2": "卵を800個産みつける"
+ },
+ "foods": [
+  {
+   "id": "plankton",
+   "ja": "表層のプランクトンを吸いこむ",
+   "name": "動物プランクトン",
+   "ds": "海面近くを漂う微小な甲殻類を捕食する",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "reef_surface"
+   ],
+   "rich": [
+    "reef_surface"
+   ],
+   "ok": "海面近くの微小なプランクトンを、小さな口で吸いこんだ。",
+   "full": 35
+  },
+  {
+   "id": "drifting_food",
+   "ja": "流れてくる動物プランクトンをついばむ",
+   "name": "小型甲殻類・魚卵",
+   "ds": "イソギンチャクの上を通り過ぎる浮遊生物を素早く拾い上げる",
+   "stages": [
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "places": [
+    "host_upper_water",
+    "magnifica_tentacles",
+    "gigantea_carpet"
+   ],
+   "rich": [
+    "host_upper_water"
+   ],
+   "ok": "触手からわずかに離れ、潮に乗って流れてきた小さなエビをついばんだ。",
+   "full": 40
+  },
+  {
+   "id": "algae_debris",
+   "ja": "岩肌の藻類や寄生虫を削り取る",
+   "name": "底生藻類・寄生生物",
+   "ds": "宿主の周辺の岩肌に生えた藻類や、宿主に付着した異物を食べる",
+   "stages": [
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "places": [
+    "anemone_rock",
+    "magnifica_tentacles",
+    "gigantea_carpet"
+   ],
+   "rich": [
+    "anemone_rock"
+   ],
+   "ok": "イソギンチャクの根元を突き、付着した微小藻類や汚れをついばんだ。",
+   "full": 32
+  }
+ ],
+ "special": [
+  {
+   "id": "mucus_coat",
+   "ja": "粘液の鎧で身を守る",
+   "ds": "体表を覆う粘液により、刺胞毒に撃たれることなく触手の中へ滑りこむ",
+   "stages": [
+    "juv",
+    "subadult",
+    "adult"
+   ],
+   "stat": "sense",
+   "base": 0.8,
+   "calm": true,
+   "ok": "猛毒を持つ触手の隙間に素早く潜りこみ、追ってきた外敵をやり過ごした。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "jelly",
+   "ja": "ミズクラゲ",
+   "kind": "any",
+   "places": [
+    "reef_surface"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "陽光が透ける表層を無数の透明な傘が漂い、仔魚の逃げ道を塞ぐ。",
+    "刺胞を備えた半透明の触手が水流に揺れ、触れるものすべてを麻痺させる。"
+   ]
+  },
+  {
+   "id": "silverside",
+   "ja": "ヤクシマイワシの群れ",
+   "kind": "fish",
+   "places": [
+    "reef_surface"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "銀色にきらめく小魚の群れが、水面近くを漂うプランクトンを吸いこんでいく。",
+    "密集したイワシの群れが一斉に反転し、遊泳力の弱い仔魚を飲みこむ。"
+   ]
+  },
+  {
+   "id": "baby_trevally",
+   "ja": "ギンガメアジの幼魚",
+   "kind": "fish",
+   "places": [
+    "reef_surface"
+   ],
+   "stages": [
+    "larva",
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黄色みを帯びた若魚が、水面下を俊敏に泳ぎ回り獲物を探している。",
+    "海底へ降りようとする稚魚を捉え、鋭いダッシュで水流を切り裂く。"
+   ]
+  },
+  {
+   "id": "wrasse",
+   "ja": "ヤマブキベラ",
+   "kind": "fish",
+   "places": [
+    "coral_crevice",
+    "host_upper_water"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "黄色と緑の鮮やかな体がサンゴの隙間を巡回し、着底直後の小魚を狙う。",
+    "突起した顎を器用に使い、イソギンチャクへ辿り着く前の稚魚をくわえ去る。"
+   ],
+   "again": [
+    [
+     "また、背びれが欠けたヤマブキベラだ。"
+    ],
+    [
+     "背びれの欠けたヤマブキベラが、着底の隙を執拗に窺っている。"
+    ]
+   ],
+   "bye": "イソギンチャクの毒針に守られ、欠けびれのヤマブキベラも手出しを諦めた。"
+  },
+  {
+   "id": "honeycomb_grouper",
+   "ja": "カンモンハタ",
+   "kind": "fish",
+   "places": [
+    "anemone_rock",
+    "coral_crevice"
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "sev": 2,
+   "texts": [
+    "網目模様の体が岩肌に溶け込み、獲物が通りかかるのをじっと待つ。",
+    "宿主の根元から一瞬で飛び出し、大きな口を広げて吸いこみにかかる。"
+   ],
+   "again": [
+    [
+     "また、片目が白濁したカンモンハタだ。岩陰からじっと見上げている。"
+    ],
+    [
+     "白濁した目のカンモンハタが、イソギンチャクの真下で待ち伏せている。"
+    ]
+   ],
+   "bye": "体が成魚の大きさに育ち、小型のハタの口には入らなくなった。"
+  },
+  {
+   "id": "trumpetfish",
+   "ja": "ヘラヤガラ",
+   "kind": "fish",
+   "places": [
+    "host_upper_water",
+    "outer_reef_slope"
+   ],
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "sev": 2,
+   "texts": [
+    "細長い体を縦にして海藻のように漂い、気配を消して接近してくる。",
+    "筒のような細長い口管を瞬時に伸ばし、直上の水を猛烈な勢いで吸いこむ。"
+   ]
+  },
+  {
+   "id": "bluefin_trevally",
+   "ja": "カスミアジ",
+   "kind": "fish",
+   "places": [
+    "host_upper_water",
+    "outer_reef_slope"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "鮮烈な青いひれを光らせ、リーフの縁から猛スピードで突進してくる。",
+    "イソギンチャクから餌を求めて浮上した瞬間を見逃さず、背後から襲いかかる。"
+   ],
+   "again": [
+    [
+     "また、青く光る大型のカスミアジだ。頭上を高速で旋回している。"
+    ],
+    [
+     "青いカスミアジが、イソギンチャクから少し離れた隙を突いて急降下してくる。"
+    ]
+   ],
+   "bye": "毒触手の安全圏から離れずに暮らす術を極め、カスミアジの急襲を完全に遮断した。"
+  },
+  {
+   "id": "coral_trout",
+   "ja": "スジアラ",
+   "kind": "fish",
+   "places": [
+    "outer_reef_slope",
+    "host_upper_water"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "赤褐色の巨体がサンゴの影から現れ、俊敏な反転で一気に間合いを詰める。",
+    "頑丈な顎と鋭い歯を剥き出しにし、触手の外にいる成魚を丸呑みにしようとする。"
+   ]
+  },
+  {
+   "id": "moray",
+   "ja": "ドクウツボ",
+   "kind": "fish",
+   "places": [
+    "anemone_rock",
+    "coral_crevice"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "斑点のある太い首をくねらせ、イソギンチャクが固着する岩棚の穴から這い出る。",
+    "鋭利な歯が並ぶ口を大きく開閉させながら、岩肌の巣穴へ直接頭を突っ込んでくる。"
+   ]
+  },
+  {
+   "id": "aquarium_collector",
+   "ja": "観賞魚採集ダイバー",
+   "kind": "human",
+   "places": [
+    "magnifica_tentacles",
+    "gigantea_carpet",
+    "anemone_rock"
+   ],
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "水中に金属棒と透明な手網が差し込まれ、触手の間へ執拗に追いつめられる。",
+    "激しい泡の音とともに巨大な影が覆いかぶさり、宿主の触手をかき分けて迫る。"
+   ],
+   "lose": "差し出された網の縁に体を激しく打ちつけられ、傷を負った。",
+   "fleeJa": "毒触手の最深部にある岩の割れ目へ潜り込む",
+   "hideJa": "刺胞が最も密生した触手の根元に身を縮める"
+  }
+ ],
+ "choices": [
+  {
+   "q": "海表層での浮遊生活を終え、宿主となるイソギンチャクを探す。どの場所を狙うか",
+   "stages": [
+    "larva"
+   ],
+   "opts": [
+    {
+     "ja": "小規模なイソギンチャクに潜り込む",
+     "ds": "侵入のハードルは低い。得られる餌や保護の範囲は狭い",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "anemone_rock",
+     "say": "小さな触手の揺らぎに身を寄せ、かろうじて生き延びた。",
+     "chip": "小規模な宿主を選択"
+    },
+    {
+     "ja": "大規模なイソギンチャクを狙う",
+     "ds": "保護範囲が広く餌も豊富。先住個体による激しい排斥がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "gigantea_carpet",
+     "say": "広大な触手の森へと飛び込み、激しい拒絶に耐えながら居場所を確保した。",
+     "chip": "大規模な宿主を選択"
+    }
+   ]
+  },
+  {
+   "q": "群れの序列は厳しい。このまま従属魚として留まるか、別の宿主を求めるか",
+   "stages": [
+    "juv",
+    "subadult"
+   ],
+   "opts": [
+    {
+     "ja": "現在の群れで耐え忍ぶ",
+     "ds": "捕食されるリスクは低い。成長速度は抑制される",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "goto": "magnifica_tentacles",
+     "say": "最下層の地位に甘んじ、上位個体の顔色を伺いながら日々を過ごした。",
+     "chip": "現状維持"
+    },
+    {
+     "ja": "危険を冒して別の宿主へ移る",
+     "ds": "開けた海域を泳ぐため捕食リスクが高い。上位の地位を得る好機がある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "outer_reef_slope",
+     "say": "宿主を離れ、青い海原を横切って新たな安住の地を求めた。",
+     "chip": "宿主を乗り換える"
+    }
+   ]
+  },
+  {
+   "q": "群れの最上位個体が消えた。空いた雌の座を巡り、誰が主導権を握るか",
+   "stages": [
+    "subadult",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "雌へと性転換し、群れの頂点に立つ",
+     "ds": "繁殖の中心となり、群れを支配できる。維持に多大な体力を消耗する",
+     "fx": {
+      "kids": 1,
+      "danger": 0
+     },
+     "goto": "host_upper_water",
+     "say": "身体を大きく成長させ、群れを統べる雌としての役割を引き継いだ。",
+     "chip": "雌へ性転換"
+    },
+    {
+     "ja": "雄として雌を支え、繁殖に専念する",
+     "ds": "地位は二番手となるが、安定して産卵に寄与できる",
+     "fx": {
+      "kids": 1,
+      "food": 0
+     },
+     "goto": "magnifica_tentacles",
+     "say": "雌の傍らで献身的に振る舞い、次世代へ命を繋ぐ雄となった。",
+     "chip": "雄として定着"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    5,
+    6,
+    7
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.3,
+   "say": "海表層で捕食者に襲われ、鰭を傷つけられた。",
+   "full": -20
+  },
+  {
+   "month": [
+    8,
+    9,
+    10
+   ],
+   "stages": [
+    "juv"
+   ],
+   "p": 0.2,
+   "say": "先住の個体に激しく攻撃され、一時的に宿主から追い出された。",
+   "full": -10
+  },
+  {
+   "month": [
+    1,
+    2,
+    3
+   ],
+   "stages": [
+    "adult"
+   ],
+   "p": 0.15,
+   "say": "宿主の触手の間で寄生虫を掃除し、共生関係を深めた。",
+   "full": 15
+  }
+ ],
+ "lead": "沖縄のサンゴ礁でイソギンチャクと共に暮らし、成長とともに性転換を繰り返す小さな魚である。",
+ "texts": {
+  "move": "海流に乗り、イソギンチャクの近くへ泳いでいった。",
+  "fleeJa": "尾びれを速く振り、急いで逃げた。",
+  "restJa": "岩陰で静かに身を潜めて休んだ。",
+  "watchJa": "周囲の光と影を見て捕食者を警戒した。",
+  "lieJa": "砂底に潜り込み、身を隠した。",
+  "lastMemory": "仲間と共にイソギンチャクの中で揺れる光景を思い出した。"
+ },
+ "intro": [
+  "沖縄の暖かい海で卵が産まれ、表層の流れに乗って漂った。",
+  "浮遊仔魚となり、光の届く水面をゆっくりと漂っていた。"
+ ],
+ "wins": [],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "幼い頃、イソギンチャクの触手に守られながら餌を受け取った日々を思い出す。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "成魚となり、群れの雌が卵を産む姿を見守った光景を思い出す。"
+  }
+ ],
+ "noKids": {
+  "title": "次世代を残さずに",
+  "line": "最後の卵を産むことなく、静かに海底へと沈んだ。"
+ },
+ "facts": [
+  {
+   "quote": "A. ocellaris are known to grow about 11 cm (4.3 inches) long.",
+   "ja": "体長は約11センチメートルに達する。"
+  },
+  {
+   "quote": "It is a protandrous hermaphrodite, which means the male can change its sex to female during its life.",
+   "ja": "雄は成長すると雌へと性転換する雌雄同体である。"
+  },
+  {
+   "quote": "Amphiprion ocellaris typically lives in small groups on outer reef slopes or in sheltered lagoons at a maximal depth of 15 meters.",
+   "ja": "外礁斜面や保護されたラグーンの浅場（最大15メートル）に小群で生息する。"
+  }
+ ]
 }

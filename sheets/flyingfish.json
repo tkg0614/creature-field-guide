@@ -2,10 +2,792 @@
  "id": "flyingfish",
  "ja": "トビウオ",
  "sci": "Cypselurus agoo",
- "status": "draft-ng",
+ "status": "checked",
  "type": "fish",
  "country": "jp",
  "by": {
-  "places": "gemini-gemma gemma-4-31b-it"
- }
+  "places": "gemini gemini-3.8-flash",
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini gemini-3.8-flash",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
+ },
+ "locale": {
+  "ja": "東シナ海から日本海",
+  "geo": "Sea of Japan",
+  "scale": "regional"
+ },
+ "places": [
+  {
+   "id": "yakushima_drift",
+   "ja": "屋久島沖の流れ藻",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "黒潮が洗う暖かい海。漂うホンダワラに絡みついた卵から仔魚が孵化する。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 30.348,
+   "lon": 130.524
+  },
+  {
+   "id": "goto_coastal",
+   "ja": "五島列島の沿岸",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "海藻が茂る沿岸域。成長中の稚魚が動物プランクトンを食べながら体を伸ばす。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 32.046,
+   "lon": 128.402
+  },
+  {
+   "id": "oki_offshore",
+   "ja": "隠岐諸島沖の表層",
+   "sea": true,
+   "danger": 2,
+   "cover": false,
+   "about": "対馬暖流が運ぶ餌に恵まれた海。外洋の表層を群れで高速に回遊する。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 34.244,
+   "lon": 130.104
+  },
+  {
+   "id": "noto_open_sea",
+   "ja": "能登半島沖の外洋",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "シイラやマグロが下層から突き上げる危険地帯。海面を蹴って空中へ滑空して逃げる。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 36.811,
+   "lon": 138.815
+  },
+  {
+   "id": "sado_coastal",
+   "ja": "佐渡島沿岸の藻場",
+   "sea": true,
+   "danger": 2,
+   "cover": true,
+   "about": "初夏に成熟した群れが押し寄せる産卵場。沿岸の海藻に粘着糸で卵を産み付ける。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 38.067,
+   "lon": 138.351
+  },
+  {
+   "id": "tsushima_strait",
+   "ja": "対馬海峡の潮境",
+   "sea": true,
+   "danger": 3,
+   "cover": false,
+   "about": "潮流が激しくぶつかる海域。秋に南下する群れを刺網や大型回遊魚が待ち受ける。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 34.095,
+   "lon": 129.871
+  },
+  {
+   "id": "east_china_sea",
+   "ja": "東シナ海の中央部",
+   "sea": true,
+   "danger": 1,
+   "cover": false,
+   "about": "冬でも水温が保たれる広大な越冬域。荒波のなか春の北上に備えて過ごす。",
+   "stages": [
+    "larva",
+    "juv",
+    "young",
+    "adult"
+   ],
+   "lat": 34.317,
+   "lon": 140.615
+  }
+ ],
+ "start": {
+  "place": "yakushima_drift",
+  "month": 5,
+  "day": 15
+ },
+ "region": {
+  "ja": "東シナ海から日本海",
+  "lon0": 124.738,
+  "lon1": 144.279,
+  "lat0": 41.731,
+  "lat1": 26.684,
+  "k": 26,
+  "labels": [
+   [
+    40.82818,
+    134.5085,
+    "東シナ海から日本海"
+   ]
+  ]
+ },
+ "edges": [
+  [
+   "goto_coastal",
+   "yakushima_drift"
+  ],
+  [
+   "tsushima_strait",
+   "yakushima_drift"
+  ],
+  [
+   "goto_coastal",
+   "tsushima_strait"
+  ],
+  [
+   "oki_offshore",
+   "tsushima_strait"
+  ],
+  [
+   "goto_coastal",
+   "oki_offshore"
+  ],
+  [
+   "noto_open_sea",
+   "sado_coastal"
+  ],
+  [
+   "east_china_sea",
+   "noto_open_sea"
+  ],
+  [
+   "east_china_sea",
+   "sado_coastal"
+  ],
+  [
+   "noto_open_sea",
+   "oki_offshore"
+  ]
+ ],
+ "size": {
+  "ja": "体長",
+  "unit": "cm",
+  "start": 0.5
+ },
+ "stats": {
+  "run": {
+   "ja": "滑空力",
+   "use": "水面を蹴って飛び出し、天敵から逃れる時に効く"
+  },
+  "sense": {
+   "ja": "風波を読む勘",
+   "use": "風上をとらえて長く滑空し、潮境を探す時に効く"
+  },
+  "forage": {
+   "ja": "表層捕食力",
+   "use": "波間に漂う動物プランクトンを素早く吸い込む時に効く"
+  }
+ },
+ "stages": [
+  {
+   "id": "larva",
+   "ja": "仔魚",
+   "days": 10,
+   "hunger": 8,
+   "grow": 0.15
+  },
+  {
+   "id": "juv",
+   "ja": "稚魚",
+   "fromAge": 0.08,
+   "days": 25,
+   "hunger": 12,
+   "grow": 0.4,
+   "goal": "稚魚になる",
+   "enter": "胸びれが次第に広がり、海面近くで流れ藻の陰に身を寄せた。"
+  },
+  {
+   "id": "young",
+   "ja": "若魚",
+   "fromAge": 0.35,
+   "days": 50,
+   "hunger": 15,
+   "grow": 0.3,
+   "goal": "若魚になる",
+   "enter": "背が藍色に染まり、水面から跳び出して短い滑空を始めた。"
+  },
+  {
+   "id": "adult",
+   "ja": "成魚",
+   "fromAge": 1,
+   "days": 60,
+   "hunger": 16,
+   "grow": 0.1,
+   "adult": true,
+   "goal": "おとなになる",
+   "enter": "体長が30センチに達した。大きな胸びれを翼のように広げ、初夏の海を渡る。"
+  }
+ ],
+ "oldAge": {
+  "years": [
+   1.5,
+   2.5
+  ],
+  "text": "幾度も海原を滑空した翼のような胸びれが力を失い、静かに波間に沈んだ。"
+ },
+ "breeding": {
+  "ja": "藻場での産卵",
+  "ds": "初夏、沿岸の海藻や流れ藻に粘着糸を持つ卵を産みつける",
+  "months": [
+   5,
+   6,
+   7
+  ],
+  "places": [
+   "sado_coastal",
+   "goto_coastal"
+  ],
+  "perYear": 1,
+  "kids": [
+   5000,
+   25000
+  ],
+  "many": 20000,
+  "label": {
+   "ja": "産んだ卵",
+   "unit": "粒",
+   "child": "ふ化した仔魚の一匹"
+  },
+  "ok": "揺れる海藻に、粘着糸で絡みつく{born}粒の卵を産みつけた。",
+  "ng": "荒れ狂う波に阻まれ、産卵に適した藻場へたどり着けなかった。",
+  "goal1": "卵を産みつける",
+  "goal2": "卵を2万粒産む"
+ },
+ "foods": [
+  {
+   "id": "micro_zooplankton",
+   "ja": "微小プランクトンを吸う",
+   "name": "小型甲殻類の幼生",
+   "ds": "海面直下に漂う微小なプランクトンをとらえる",
+   "stages": [
+    "larva"
+   ],
+   "places": [
+    "yakushima_drift",
+    "goto_coastal",
+    "sado_coastal"
+   ],
+   "rich": [
+    "yakushima_drift"
+   ],
+   "ok": "海面を漂う小さなカイアシ類を次々に吸いこんだ。",
+   "full": 35
+  },
+  {
+   "id": "zooplankton",
+   "ja": "動物プランクトンを追う",
+   "name": "アミ類や端脚類",
+   "ds": "波間に群れる甲殻類をついばむ",
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "places": [
+    "tsushima_strait",
+    "oki_offshore",
+    "yakushima_drift"
+   ],
+   "rich": [
+    "tsushima_strait"
+   ],
+   "ok": "表層を漂うアミの群れを見つけ、腹を満たした。",
+   "full": 40
+  },
+  {
+   "id": "pelagic_plankton",
+   "ja": "表層の浮遊生物を捕食する",
+   "name": "大型動物プランクトンや小魚の仔魚",
+   "ds": "海面すれすれを泳ぎながら獲物を丸呑みにする",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "places": [
+    "noto_open_sea",
+    "oki_offshore",
+    "east_china_sea"
+   ],
+   "rich": [
+    "noto_open_sea"
+   ],
+   "ok": "潮境に集まる端脚類や小魚の仔を勢いよく捕らえた。",
+   "full": 42
+  }
+ ],
+ "special": [
+  {
+   "id": "gliding",
+   "ja": "海面滑空で逃れる",
+   "ds": "発達した胸びれを広げて海面から飛び出し、天敵の追撃をかわす",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "stat": "run",
+   "base": 0.75,
+   "calm": true,
+   "ok": "海面を尾びれで激しく叩いて宙へ飛び出し、風に乗って数百メートル滑空した。"
+  }
+ ],
+ "levelEvery": 3,
+ "migrate": [
+  {
+   "months": [
+    4,
+    5,
+    6
+   ],
+   "stages": [
+    "adult"
+   ],
+   "to": "sado_coastal",
+   "say": "暖流に乗って北上し、産卵場となる北の沿岸藻場を目指した。"
+  },
+  {
+   "months": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "to": "east_china_sea",
+   "say": "水温の低下とともに南下し、暖かい東シナ海の外洋へと針路をとった。"
+  }
+ ],
+ "foes": [
+  {
+   "id": "moon_jelly",
+   "ja": "ミズクラゲ",
+   "kind": "any",
+   "places": [
+    "yakushima_drift",
+    "goto_coastal",
+    "sado_coastal"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "半透明の傘が水面下を漂い、泳ぎの覚束ない仔魚に迫る。",
+    "毒針を備えた触手が行く手をふさぎ、絡め取ろうとする。"
+   ]
+  },
+  {
+   "id": "anchovy",
+   "ja": "カタクチイワシ",
+   "kind": "fish",
+   "places": [
+    "goto_coastal",
+    "tsushima_strait",
+    "oki_offshore"
+   ],
+   "stages": [
+    "larva"
+   ],
+   "sev": 1,
+   "texts": [
+    "銀色の小魚の群れが、口を広げて表層の微小な命を呑みこんでいく。",
+    "細長い魚体が目まぐるしく交差し、仔魚を吸い寄せる。"
+   ]
+  },
+  {
+   "id": "chub_mackerel",
+   "ja": "マサバ",
+   "kind": "fish",
+   "places": [
+    "tsushima_strait",
+    "noto_open_sea",
+    "oki_offshore"
+   ],
+   "stages": [
+    "juv"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "青緑の波模様を光らせたマサバが、稚魚の群れを鋭く散らす。",
+    "高速の旋回で水流を乱し、逃げ遅れた稚魚を捕らえる。"
+   ]
+  },
+  {
+   "id": "squid",
+   "ja": "スルメイカ",
+   "kind": "any",
+   "places": [
+    "tsushima_strait",
+    "oki_offshore",
+    "noto_open_sea"
+   ],
+   "stages": [
+    "juv",
+    "young"
+   ],
+   "sev": 2,
+   "texts": [
+    "夜の表層へ浮上してきたイカが、長い触腕を伸ばして襲いかかる。",
+    "暗い海中から鋭い嘴を光らせ、背後から急接近してくる。"
+   ]
+  },
+  {
+   "id": "dolphinfish",
+   "ja": "シイラ",
+   "kind": "fish",
+   "places": [
+    "yakushima_drift",
+    "tsushima_strait",
+    "oki_offshore",
+    "east_china_sea"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "fast": true,
+   "texts": [
+    "金緑色の巨体が水面近くを疾走し、海中から激しく突きあげる。",
+    "波間を切り裂いて猛追し、飛び立とうとする瞬間を狙ってくる。"
+   ],
+   "again": [
+    [
+     "また、背びれが黄色いシイラだ。海面下から影が迫る。"
+    ],
+    [
+     "黄色い背びれのシイラが、着水の瞬間を狙って突進してくる。"
+    ]
+   ],
+   "bye": "力強い水面滑走で百メートル以上を飛び続け、黄色い背びれのシイラを完全に振り切った。"
+  },
+  {
+   "id": "sailfish",
+   "ja": "バショウカジキ",
+   "kind": "fish",
+   "places": [
+    "tsushima_strait",
+    "east_china_sea",
+    "noto_open_sea"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "巨大な背びれを帆のように広げ、突き出た長い吻で獲物を払う。",
+    "圧倒的な遊泳力で水面を割り、逃げ惑う魚を追尾する。"
+   ],
+   "again": [
+    [
+     "また、青黒い大きな背びれを広げたバショウカジキだ。"
+    ],
+    [
+     "大きな背びれのバショウカジキが、鋭い吻を突き出して追ってくる。"
+    ]
+   ],
+   "bye": "空中での急旋回で軌道を逸らし、バショウカジキの猛追から逃げ切った。"
+  },
+  {
+   "id": "bluefin_tuna",
+   "ja": "クロマグロ",
+   "kind": "fish",
+   "places": [
+    "tsushima_strait",
+    "oki_offshore",
+    "noto_open_sea"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 3,
+   "fast": true,
+   "texts": [
+    "黒々とした紡錘形の巨体が、深層から砲弾のように浮上してくる。",
+    "海面を激しく泡立てながら突進し、群れごと丸呑みにしようとする。"
+   ]
+  },
+  {
+   "id": "shearwater",
+   "ja": "オオミズナギドリ",
+   "kind": "bird",
+   "places": [
+    "oki_offshore",
+    "noto_open_sea",
+    "sado_coastal"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "海面を滑空する細長い翼が、空中へ飛び出した瞬間を見逃さず降下してくる。",
+    "波間すれすれを飛びながら、鋭いくちばしを突き出して捕らえにかかる。"
+   ]
+  },
+  {
+   "id": "set_net",
+   "ja": "沿岸の定置網",
+   "kind": "human",
+   "places": [
+    "goto_coastal",
+    "sado_coastal"
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "岸沿いの海中に巨大な網が張り巡らされ、潮に乗る群れを遮る。",
+    "行く手をふさぐ垣網に誘導され、袋状の奥へと追い込まれていく。"
+   ],
+   "lose": "網目に胸びれを挟まれて強引にもがき、薄い皮膜を裂かれて傷を負った。",
+   "fleeJa": "網の上を飛び越えて外へ脱出する",
+   "hideJa": "網の隙間を探してすり抜ける"
+  },
+  {
+   "id": "rope_drive_fishing",
+   "ja": "ロープ引き漁船",
+   "kind": "human",
+   "places": [
+    "yakushima_drift"
+   ],
+   "stages": [
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "二隻の船が海面に巨大な網を広げ、水しぶきをあげて群れを威嚇する。",
+    "海中へ潜った漁師たちの影が迫り、狭い網の中へと追い立てられる。"
+   ],
+   "lose": "包囲網の隙間から飛び出そうとしてロープに激突し、側線を強打され、傷を負った。",
+   "fleeJa": "海面を蹴って網の外側へ大きく滑空する",
+   "hideJa": "流れ藻の影に沈んで身を潜める"
+  }
+ ],
+ "choices": [
+  {
+   "q": "初夏の気配が近づいた。日本海側へ北上するか、南方の海にとどまるか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "日本海側へ北上する",
+     "ds": "餌となるプランクトンが豊富。沿岸の巻き網に遭遇する危険がある",
+     "fx": {
+      "food": 1,
+      "danger": 1
+     },
+     "goto": "noto_open_sea",
+     "say": "対馬海流に乗り、プランクトンが舞う日本海北部の表層へと進んだ。",
+     "chip": "日本海へ北上"
+    },
+    {
+     "ja": "南方の暖かい海にとどまる",
+     "ds": "移動の体力を温存できる。大型の捕食者が多く、常に緊張を強いられる",
+     "fx": {
+      "danger": 1,
+      "food": -1
+     },
+     "goto": "east_china_sea",
+     "say": "黒潮の源流域に身を置き、南方の青い海で静かに時を過ごした。",
+     "chip": "南方にとどまる"
+    }
+   ]
+  },
+  {
+   "q": "成熟の時を迎えた。どちらの産卵場へ向かうか",
+   "stages": [
+    "adult"
+   ],
+   "month": [
+    5,
+    6
+   ],
+   "opts": [
+    {
+     "ja": "沿岸の藻場へ向かう",
+     "ds": "卵を固定しやすく生存率が高まる。沿岸の天敵に狙われやすい",
+     "fx": {
+      "kids": 1,
+      "danger": 1
+     },
+     "goto": "goto_coastal",
+     "say": "岸近くの海藻が揺れる浅瀬へ入り込み、粘着性のある卵を産みつけた。",
+     "chip": "沿岸で産卵"
+    },
+    {
+     "ja": "沖合の流れ藻へ向かう",
+     "ds": "外洋の潮流に乗り、仔魚が広く分散できる。卵が流失するリスクがある",
+     "fx": {
+      "kids": -1,
+      "danger": -1
+     },
+     "goto": "yakushima_drift",
+     "say": "漂流する藻の塊を見つけ、その隙間に次世代の命を託した。",
+     "chip": "流れ藻で産卵"
+    }
+   ]
+  },
+  {
+   "q": "捕食者の影が迫る。大きく跳ねて滑空するか、群れに潜むか",
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "海面を滑空して逃げる",
+     "ds": "捕食者を完全に振り切れる。体力を激しく消耗し、漁船に飛び込む危険がある",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "goto": "oki_offshore",
+     "say": "胸びれを大きく広げ、水面すれすれを猛スピードで滑走した。",
+     "chip": "滑空して逃走"
+    },
+    {
+     "ja": "群れの中心に潜む",
+     "ds": "体力の消耗を抑えられる。群れごと捕食者に襲われるリスクがある",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "goto": "tsushima_strait",
+     "say": "銀色の鱗を輝かせる群れに紛れ、捕食者の視線をくらませた。",
+     "chip": "群れで防御"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    6,
+    7,
+    8
+   ],
+   "stages": [
+    "larva"
+   ],
+   "p": 0.25,
+   "say": "シイラの猛攻にさらされ、傷を負った。",
+   "full": -20
+  },
+  {
+   "month": [
+    5,
+    6,
+    7
+   ],
+   "stages": [
+    "juv"
+   ],
+   "p": 0.2,
+   "say": "流れ藻に集まる動物プランクトンを食み、急速に成長した。",
+   "full": 15
+  },
+  {
+   "month": [
+    7,
+    8,
+    9
+   ],
+   "stages": [
+    "young",
+    "adult"
+   ],
+   "p": 0.1,
+   "say": "風を読み、数百メートルに及ぶ見事な滑空を決めた。",
+   "full": 10
+  }
+ ],
+ "lead": "日本の暖かい海の表層で生まれ、胸びれを広げて滑空し、捕食者を逃れながら成長し、潮流に乗って産卵場へ戻る旅を繰り返す。",
+ "texts": {
+  "move": "{to}へ、軽やかに泳ぎ続けた。",
+  "fleeJa": "胸びれを大きく広げて急加速し、空中へ飛び上がった。",
+  "restJa": "海面近くでゆっくり漂い、餌を待った。",
+  "watchJa": "水温とプランクトンの動きを探りながら、姿勢を調整した。",
+  "lieJa": "波間の藻に身を隠し、静かに息を潜めた。",
+  "lastMemory": "広がる青い海原を滑空した日々を思い出す。"
+ },
+ "intro": [
+  "暖かな春の海面、流木や藻に付着した卵から孵化した。",
+  "小さな仔魚は表層を漂いながら、プランクトンを捕食した。"
+ ],
+ "wins": [
+  {
+   "minKids": 5000000,
+   "title": "次世代へ命を託す",
+   "line": "{kids}個の卵を、潮流に乗せて海へ放った。",
+   "mem": "光が揺れる水面に散らばった卵の群れを思い出す。"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "初夏の海面で、風に乗りながら数百メートル飛んだ瞬間を思い出す。"
+  },
+  {
+   "flag": "c0_2",
+   "text": "捕食者のマグロが迫るとき、急旋回して水中へ潜った瞬間を思い出す。"
+  }
+ ],
+ "noKids": {
+  "title": "命尽きる",
+  "line": "次の世代を残さず、深い海へと沈んでいった。"
+ },
+ "facts": [
+  {
+   "quote": "全長は約30-40 cmで、背は藍色、腹は白色である。",
+   "ja": "全長は約30-40 cmで、背は藍色、腹は白色である。"
+  },
+  {
+   "quote": "胸びれを広げて滑空し、最大で100 mほど飛ぶことができ、速度は空中で50-70 km/hに達する。",
+   "ja": "胸びれを広げて滑空し、最大で100 mほど飛ぶことができ、速度は空中で50-70 km/hに達する。"
+  },
+  {
+   "quote": "産卵は流木や海藻に粘着性のある卵を産みつける。",
+   "ja": "産卵は流木や海藻に粘着性のある卵を産みつける。"
+  }
+ ]
 }

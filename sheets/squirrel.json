@@ -2,12 +2,15 @@
  "id": "squirrel",
  "ja": "ニホンリス",
  "sci": "Sciurus lis",
- "status": "draft-ng",
+ "status": "checked",
  "type": "mammal",
  "country": "jp",
  "by": {
   "places": "gemini-gemma gemma-4-31b-it",
-  "life": "gemini-gemma gemma-4-31b-it"
+  "life": "gemini gemini-3.8-flash",
+  "foes": "gemini-gemma gemma-4-31b-it",
+  "choices": "gemini-gemma gemma-4-31b-it",
+  "texts": "groq openai/gpt-oss-120b"
  },
  "locale": {
   "ja": "本州・四国",
@@ -178,62 +181,62 @@
  "size": {
   "ja": "体長",
   "unit": "cm",
-  "start": 16
+  "start": 6
  },
  "stats": {
   "run": {
-   "ja": "跳躍力",
-   "use": "枝から枝へ飛び移る時に効く"
+   "ja": "樹上を駆ける力",
+   "use": "枝から枝へ素早く移動し天敵をかわす時に効く"
   },
   "sense": {
-   "ja": "嗅覚",
-   "use": "埋めた木の実を探し出す時に効く"
+   "ja": "天敵への警戒",
+   "use": "テンや猛禽類の気配をいち早く察知する時に効く"
   },
   "forage": {
-   "ja": "貯食の技",
-   "use": "冬に備えて効率よく食料を蓄える時に効く"
+   "ja": "木の実を扱う技",
+   "use": "硬いクルミの殻を割り実を取り出す時に効く"
   }
  },
  "stages": [
   {
    "id": "infant",
    "ja": "仔リス",
-   "days": 40,
-   "hunger": 15,
-   "grow": 2,
-   "goal": "幼リスになる",
-   "enter": "母の乳を飲み、樹上の巣で過ごす。"
+   "days": 10,
+   "hunger": 8,
+   "grow": 1.5,
+   "goal": "巣立ちを迎える",
+   "enter": "樹上の巣で生まれた。母の乳を飲んで育つ。"
   },
   {
    "id": "juv",
    "ja": "幼リス",
-   "fromAge": 0,
-   "days": 60,
-   "hunger": 12,
-   "grow": 1.5,
-   "goal": "若いリスになる",
-   "enter": "離乳し、親の導きで森の歩き方を覚える。"
+   "fromAge": 0.2,
+   "days": 20,
+   "hunger": 10,
+   "grow": 1,
+   "goal": "独り立ちする",
+   "enter": "巣の外へ出た。マツの実などを自力で齧り始める。"
   },
   {
    "id": "sub",
    "ja": "若いリス",
    "fromAge": 0.5,
-   "days": 120,
+   "days": 30,
    "hunger": 12,
-   "grow": 0.8,
+   "grow": 0.5,
    "goal": "成体になる",
-   "enter": "自力で木の実を集め始める。縄張りの意識が芽生える。"
+   "enter": "生まれ育った森を離れ、自分の行動圏を探す。"
   },
   {
    "id": "adult",
    "ja": "成体",
    "fromAge": 1,
-   "days": 180,
+   "days": 45,
    "hunger": 12,
-   "grow": 0.2,
+   "grow": 0.1,
    "adult": true,
-   "goal": "種を繋ぐ",
-   "enter": "体が成熟した。独自の縄張りを持ち、冬に備えて貯食を行う。"
+   "goal": "森で命をつなぐ",
+   "enter": "体が成熟した。冬に向けて木の実を貯食する。"
   }
  ],
  "oldAge": {
@@ -241,11 +244,11 @@
    3,
    6
   ],
-  "text": "体力が衰え、天敵から逃げられなくなった。静かに森に還る。"
+  "text": "樹上を跳ぶ力が衰えた。静かに森の土へと還っていった。"
  },
  "breeding": {
-  "ja": "樹上の巣で子を産む",
-  "ds": "春と初夏の二回に分けて、球形の巣の中で2〜6匹の子を産み育てる",
+  "ja": "樹上で子を産み育てる",
+  "ds": "樹上の球形の巣で、年に1〜2回子を産み育てる",
   "months": [
    2,
    3,
@@ -260,23 +263,40 @@
    2,
    6
   ],
-  "many": 2,
+  "many": 4,
   "label": {
    "ja": "仔リス",
    "unit": "匹",
-   "child": "巣に生まれた一匹"
+   "child": "巣に生まれた仔"
   },
-  "ok": "巣に、{born}匹の仔が生まれた。",
+  "ok": "樹上の巣で、{born}匹の仔が生まれた。",
   "ng": "子を産み落とした。",
   "goal1": "子を産む",
-  "goal2": "子を数匹産む"
+  "goal2": "子を産み育てる"
  },
  "foods": [
   {
-   "id": "seeds",
-   "ja": "種子や実を食べる",
-   "name": "木の実",
-   "ds": "オニグルミやマツの種子を食べる。秋には地中に埋めて貯蔵する",
+   "id": "milk",
+   "ja": "母乳を飲む",
+   "name": "母乳",
+   "ds": "巣の中で母の乳を飲み、栄養を得る",
+   "stages": [
+    "infant"
+   ],
+   "places": [
+    "nest"
+   ],
+   "rich": [
+    "nest"
+   ],
+   "ok": "母の乳を飲み、腹を満たした。",
+   "full": 40
+  },
+  {
+   "id": "pine_seed",
+   "ja": "マツの実を食べる",
+   "name": "マツの種子",
+   "ds": "マツの球果から種子を器用に剥ぎ取って食べる",
    "stages": [
     "juv",
     "sub",
@@ -284,49 +304,480 @@
    ],
    "places": [
     "pine_forest",
+    "subalpine_forest"
+   ],
+   "rich": [
+    "pine_forest"
+   ],
+   "ok": "球果の鱗片を剥がし、種子を食べた。",
+   "full": 35
+  },
+  {
+   "id": "walnut",
+   "ja": "クルミを割って食べる",
+   "name": "オニグルミ",
+   "ds": "硬い殻の合わせ目を前歯で齧り、割って中身を食べる",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "places": [
     "mixed_forest",
     "forest_floor"
    ],
    "rich": [
     "mixed_forest"
    ],
-   "ok": "硬い殻をかじり、中身を食べた。",
-   "full": 50
+   "ok": "殻の割れ目に歯を差し込み、中身を削り取って食べた。",
+   "full": 45
+  },
+  {
+   "id": "buds_and_fungi",
+   "ja": "芽やキノコを食べる",
+   "name": "植物の芽やキノコ",
+   "ds": "春の新芽や、林床や倒木に生えたキノコを食べる",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "places": [
+    "mixed_forest",
+    "deadwood",
+    "forest_floor",
+    "forest_edge"
+   ],
+   "rich": [
+    "forest_floor"
+   ],
+   "ok": "みずみずしい新芽やキノコを齧った。",
+   "full": 25
   }
  ],
  "special": [
   {
-   "id": "hoarding",
+   "id": "scatter_hoarding",
    "ja": "貯食",
-   "ds": "冬に備えて木の実を林の地面や倒木に埋める",
+   "ds": "クルミなどの硬い木の実を地中や倒木の隙間に埋め、冬の食料として保存する",
    "stages": [
     "sub",
     "adult"
    ],
    "stat": "forage",
-   "base": 0.7,
+   "base": 0.8,
    "calm": true,
-   "ok": "地面に穴を掘り、実を隠した。冬の備えが整う。"
+   "ok": "地面を掘ってクルミを埋め、落ち葉をかぶせて隠した。"
   }
  ],
- "levelEvery": 4,
- "fail": {
-  "part": "life",
-  "errors": [
-   "stages.juv: fromAge（年）が無い",
-   "stages.infant: この段の食べ物が無い（ヒナなら親の運ぶ餌、仔なら母の乳）"
-  ],
-  "got": [
-   "size",
-   "stats",
-   "stages",
-   "oldAge",
-   "breeding",
-   "foods",
-   "special",
-   "levelEvery"
-  ],
-  "head": "{\"size\":{\"ja\":\"体長\",\"unit\":\"cm\",\"start\":16},\"stats\":{\"run\":{\"ja\":\"跳躍力\",\"use\":\"枝から枝へ飛び移る時に効く\"},\"sense\":{\"ja\":\"嗅覚\",\"use\":\"埋めた木の実を探し出す時に効く\"},\"forage\":{\"ja\":\"貯食の技\",\"use\":\"冬に備えて効率よく食料を蓄える時に効く\"}},\"stages\":[{\"id\":\"infant\",\"ja\":\"仔リス\",\"days\":40,\"hunger\":15,\"grow\":2,\"goal\":\"幼リスになる\",\"enter\":\"母の乳を飲み、樹上の巣で過ごす。\"},{\"id\":\"juv\",\"ja\":\"幼リス\",\"fromAge\":0,\"days\":60,\"hunger\":12,\"grow\":1.5,\"goal\":\"若いリスになる\",\"enter\":\"離乳し、親の",
-  "raw": "オニグルミやマツの種子を食べる。秋には地中に埋めて貯蔵する\",\n      \"stages\": [\n        \"juv\",\n        \"sub\",\n        \"adult\"\n      ],\n      \"places\": [\n        \"pine_forest\",\n        \"mixed_forest\",\n        \"forest_floor\"\n      ],\n      \"rich\": [\n        \"mixed_forest\"\n      ],\n      \"ok\": \"硬い殻をかじり、中身を食べた。\",\n      \"full\": 50\n    }\n  ],\n  \"special\": [\n    {\n      \"id\": \"hoarding\",\n      \"ja\": \"貯食\",\n      \"ds\": \"冬に備えて木の実を林の地面や倒木に埋める\",\n      \"stages\": [\n        \"sub\",\n        \"adult\"\n      ],\n      \"stat\": \"forage\",\n      \"base\": 0.7,\n      \"calm\": true,\n      \"ok\": \"地面に穴を掘り、実を隠した。冬の備えが整う。\"\n    }\n  ],\n  \"levelEvery\": 4\n}\n```"
- }
+ "levelEvery": 3,
+ "migrate": [],
+ "foes": [
+  {
+   "id": "marten",
+   "ja": "ニホンテン",
+   "kind": "mammal",
+   "places": [
+    "nest",
+    "pine_forest",
+    "mixed_forest",
+    "deadwood",
+    "forest_floor",
+    "subalpine_forest",
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "鋭い爪が、樹皮を掴む。",
+    "静かに、背後へ近づく。"
+   ],
+   "again": [
+    [
+     "また、あの鋭い眼光が光った。"
+    ],
+    [
+     "森の奥から、低い鳴き声が聞こえる。"
+    ]
+   ],
+   "bye": "経験を積み、相手の動きを読み切れるようになる。",
+   "lose": "鋭い牙に首を噛まれ、傷を負った。"
+  },
+  {
+   "id": "raptor",
+   "ja": "タカやフクロウ",
+   "kind": "bird",
+   "places": [
+    "pine_forest",
+    "mixed_forest",
+    "forest_floor",
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "空から、巨大な影が急降下する。",
+    "鋭い爪が、風を切る音がする。"
+   ],
+   "again": [
+    [
+     "上空を、鋭い目が旋回している。"
+    ],
+    [
+     "不意に、太陽が遮られた。"
+    ]
+   ],
+   "bye": "茂みの深い場所を覚え、隠れられる。",
+   "lose": "強力な爪で掴み上げられ、傷を負った。"
+  },
+  {
+   "id": "fox",
+   "ja": "キツネ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor",
+    "forest_edge"
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "地面を走る、赤い影が見える。",
+    "低い姿勢で、じりじりと距離を詰める。"
+   ],
+   "lose": "不意に飛びかかられ、傷を負った。"
+  },
+  {
+   "id": "crow",
+   "ja": "カラス",
+   "kind": "bird",
+   "places": [
+    "nest",
+    "pine_forest",
+    "mixed_forest",
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "黒い翼が、不気味に舞う。",
+    "しつこく、周囲を飛び回る。"
+   ],
+   "lose": "鋭い嘴で突かれ、傷を負った。"
+  },
+  {
+   "id": "cat",
+   "ja": "飼い猫",
+   "kind": "mammal",
+   "places": [
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "家から逃げ出した、鋭い目が光る。",
+    "音もなく、足元へ忍び寄る。"
+   ],
+   "lose": "鋭い爪でひっかかれ、傷を負った。"
+  },
+  {
+   "id": "dog",
+   "ja": "飼い犬",
+   "kind": "mammal",
+   "places": [
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "激しい吠え声が、森に響く。",
+    "猛烈な勢いで、追いかけてくる。"
+   ],
+   "lose": "鋭い牙に噛まれ、傷を負った。"
+  },
+  {
+   "id": "road",
+   "ja": "道路の車",
+   "kind": "human",
+   "places": [
+    "forest_edge"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 2,
+   "texts": [
+    "アスファルトの道に、強い光が差す。",
+    "激しいエンジン音が、空気を震わせる。"
+   ],
+   "lose": "走行する車に撥ねられ、傷を負った。"
+  },
+  {
+   "id": "developer",
+   "ja": "林業の重機",
+   "kind": "human",
+   "places": [
+    "pine_forest",
+    "mixed_forest"
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "sev": 1,
+   "texts": [
+    "大きな機械の音が、森を切り裂く。",
+    "住み慣れた木々が、次々と倒れる。"
+   ],
+   "lose": "重機に追い回され、傷を負った。"
+  },
+  {
+   "id": "snake",
+   "ja": "アオダイショウ",
+   "kind": "reptile",
+   "places": [
+    "forest_floor",
+    "deadwood"
+   ],
+   "stages": [
+    "infant",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "草むらで、鱗が鈍く光る。",
+    "音もなく、体をくねらせて近づく。"
+   ],
+   "lose": "鋭い牙に噛まれ、傷を負った。"
+  },
+  {
+   "id": "weasel",
+   "ja": "イタチ",
+   "kind": "mammal",
+   "places": [
+    "forest_floor",
+    "deadwood"
+   ],
+   "stages": [
+    "infant",
+    "juv"
+   ],
+   "sev": 1,
+   "texts": [
+    "細長い体が、隙間から現れる。",
+    "素早い動きで、逃げ道を塞ぐ。"
+   ],
+   "lose": "鋭い牙に噛まれ、傷を負った。"
+  }
+ ],
+ "choices": [
+  {
+   "q": "大粒のオニグルミを見つけた。どうするか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "その場で殻を割り、食べる",
+     "ds": "空腹を満たせるが、外敵に気づかれやすい",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "鋭い前歯で殻の継ぎ目を噛み切り、中身を頬張った。",
+     "chip": "即時消費"
+    },
+    {
+     "ja": "地中に埋めて貯蔵する",
+     "ds": "冬の備えになるが、今は飢えを堪える必要がある",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "林の地面に素早く穴を掘り、実を隠した。",
+     "chip": "貯食"
+    }
+   ]
+  },
+  {
+   "q": "他個体の縄張りに踏み込んだ。どう対処するか",
+   "stages": [
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "静かに引き返す",
+     "ds": "争いを避けられるが、良い餌場を諦めることになる",
+     "fx": {
+      "danger": -1,
+      "food": -1
+     },
+     "say": "気配を消し、元の森へと静かに戻った。",
+     "chip": "回避"
+    },
+    {
+     "ja": "威嚇して居座る",
+     "ds": "縄張りを広げられる可能性があるが、激しい争いになる",
+     "fx": {
+      "danger": 1,
+      "food": 1
+     },
+     "say": "尾を激しく振り、鋭い鳴き声で相手を威嚇した。",
+     "chip": "主張"
+    }
+   ]
+  },
+  {
+   "q": "上空に猛禽類の影が見えた。どこへ逃げるか",
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "opts": [
+    {
+     "ja": "倒木や枯れ木の陰に潜む",
+     "ds": "視線を遮れるが、地上で捕まるリスクがある",
+     "fx": {
+      "danger": 0,
+      "food": -1
+     },
+     "say": "朽ちた木の隙間に身を潜め、息を殺した。",
+     "chip": "潜伏"
+    },
+    {
+     "ja": "一気に樹冠へ駆け上がる",
+     "ds": "安全な高所へ逃げられるが、体力を激しく消耗する",
+     "fx": {
+      "danger": -1,
+      "food": 0
+     },
+     "say": "垂直に近い幹を蹴り上げ、枝の茂みへと飛び込んだ。",
+     "chip": "逃走"
+    }
+   ]
+  }
+ ],
+ "happen": [
+  {
+   "month": [
+    9,
+    10,
+    11
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.4,
+   "say": "森にオニグルミが実り、貯食に最適な季節が来た。",
+   "full": 20
+  },
+  {
+   "month": [
+    12,
+    1,
+    2
+   ],
+   "stages": [
+    "infant",
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "冬毛に変わり、灰褐色の体が冬の森に溶け込んだ。",
+   "full": -10
+  },
+  {
+   "month": [
+    3,
+    4,
+    5
+   ],
+   "stages": [
+    "juv",
+    "sub",
+    "adult"
+   ],
+   "p": 0.3,
+   "say": "樹々の芽や花が開き、新鮮な植物質を口にした。",
+   "full": 15
+  }
+ ],
+ "lead": "本州の森林で、樹上の球形の巣に生まれたニホンリスは、季節の実を集めて冬を備えるである。",
+ "texts": {
+  "move": "{to}へ、木々の間を跳び回るである",
+  "fleeJa": "捕食者が近づくと、枝を駆け上がり逃げるである",
+  "restJa": "枝の陰で静かに休むである",
+  "watchJa": "高い枝から周囲を見渡し、食料を探すである",
+  "lieJa": "巣の中で丸くなり、眠りにつくである",
+  "lastMemory": "秋に埋めた木の実を掘り出した時の匂いを思い出すである"
+ },
+ "intro": [
+  "本州の混交林で生まれたである",
+  "母の乳を飲み、巣の中で目を覚ますである"
+ ],
+ "wins": [
+  {
+   "minKids": 1,
+   "title": "子を育て、領域を守るである",
+   "line": "{kids}匹の子が、木の実を隠す技術を受け継ぐである",
+   "mem": "子供たちが巣に戻ってきた時の、枝のざわめきを思い出すである"
+  }
+ ],
+ "memories": [
+  {
+   "flag": "c0_1",
+   "text": "落ち葉の絨毯の上で、木の実を埋めた日の静けさを思い出すである"
+  }
+ ],
+ "noKids": [
+  {
+   "title": "子を残さず、森の静寂に溶けるである",
+   "line": "子を持たずに、木陰で最後を迎えるである",
+   "mem": "風に揺れる枝の音だけが残るである"
+  }
+ ],
+ "facts": [
+  {
+   "quote": "Japanese squirrels are herbivores and feed primarily on seeds, fruits, buds, and flowers gathered from trees; insects and fungi are also eaten more sporadically."
+  },
+  {
+   "text": "寿命は野生で5年とされるである"
+  }
+ ]
 }

@@ -113,7 +113,7 @@ function validate(S, src = '', part = null) {
     if (/です|ます[。、]|ました/.test(t)) err.push(`言葉: だ・である調にする「${t.slice(0, 30)}」`);
     if (/[!！?？]$/.test(t) && !/^(q|.*か)$/.test(t)) { /* 問いの q は「〜か」で終える */ }
     if (/[!！]$/.test(t)) err.push(`言葉: 感嘆符で終えない「${t.slice(0, 30)}」`);
-    if (/[うくぐすつぬぶむるただい]である(。|$)/.test(t)) err.push(`言葉: 動詞の後ろに「である」（tools/fix.js で直る）「${t.slice(0, 30)}」`);
+    if (/[うくぐすつぬぶむるただい]である(。|$)/.test(t) && !(S.facts || []).some((f) => f.quote === t)) err.push(`言葉: 動詞の後ろに「である」（tools/fix.js で直る）「${t.slice(0, 30)}」`);
   }
   for (const f of S.facts || []) if (src && f.quote && !src.includes(f.quote)) warn.push(`facts: 資料に無い引用「${String(f.quote).slice(0, 30)}」`);
   return { errors: [...new Set(err)], warnings: warn };

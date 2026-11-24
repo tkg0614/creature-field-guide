@@ -8,7 +8,7 @@ function fixStr(t, n) { return t.replace(VERB_DEARU, (m, a, b) => { n.c++; retur
 function walk(o, n) {
   if (typeof o === 'string') return fixStr(o, n);
   if (Array.isArray(o)) return o.map((v) => walk(v, n));
-  if (o && typeof o === 'object') { for (const k of Object.keys(o)) if (k !== 'facts') o[k] = walk(o[k], n); return o; }
+  if (o && typeof o === 'object') { for (const k of Object.keys(o)) if (k !== 'quote') o[k] = walk(o[k], n); return o; }
   return o;
 }
 module.exports = { walk, VERB_DEARU };

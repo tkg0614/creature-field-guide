@@ -2,7 +2,7 @@
  "id": "deer",
  "ja": "ニホンジカ",
  "sci": "Cervus nippon",
- "status": "checked",
+ "status": "reviewed",
  "type": "mammal",
  "country": "jp",
  "by": {
@@ -496,12 +496,9 @@
    "ja": "猟師",
    "kind": "human",
    "places": [
-    "deep_forest",
-    "mountain_meadow",
-    "broadleaf_forest",
     "ridge_clearing",
-    "lowland_shrub",
-    "farm_edge"
+    "farm_edge",
+    "lowland_shrub"
    ],
    "stages": [
     "juv",
